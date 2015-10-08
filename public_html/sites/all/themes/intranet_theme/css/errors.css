@@ -1,0 +1,11 @@
+@media only screen and (max-width: 480px) {
+  button:not(.action-item-inline, .action-item-merge),
+  [type="reset"]:not(.action-item-inline, .action-item-merge),
+  [type="submit"]:not(.action-item-inline, .action-item-merge),
+  [type="button"]:not(.action-item-inline, .action-item-merge),
+  [class*="action-item"]:not(.action-item-inline, .action-item-merge) {
+    display: block;
+    width: 100%;
+    margin: .5em 0;
+  }
+}

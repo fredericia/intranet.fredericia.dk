@@ -1,0 +1,119 @@
+<?php
+/**
+ * @file
+ * Code for the OS2Intra message notify feature.
+ */
+
+include_once 'os2intra_message_notify.features.inc';
+/**
+ *
+ * @author Thomas Thune Hansen <tth@bellcom.dk>
+ * @copyright bellcom open source aps
+ */
+
+/*
+ * Implements hook_menu()
+ */
+function os2intra_message_notify_menu(){
+  $items = array();
+
+  $items['os2intra_message_notify/ajax'] = array(
+    'title' => 'os2intra message notify ajax callback',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'os2intra_message_notify_ajax_callback',
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+/*
+ * Implements hook_init()
+ */
+function os2intra_message_notify_init(){
+  global $user;
+  $last_access =  isset($user->access) ? $user->access : "";
+  $ignore_uris = array(
+    '/media/*',
+    '/printpdf/*',
+  );
+
+  if (!path_is_admin(current_path()) && $user->uid && !drupal_match_path(request_uri(), implode("\n", $ignore_uris))){
+
+    drupal_add_js(drupal_get_path('module', 'os2intra_message_notify') . '/inc/jquery-purr/jquery.purr.js');
+    drupal_add_js(drupal_get_path('module', 'os2intra_message_notify') . '/js/purr.js', array('scope' => 'footer'));
+    drupal_add_css(drupal_get_path('module', 'os2intra_message_notify') . '/purrcss/purr.css');
+
+    // Get aaaalllll messages.
+    $query = new EntityFieldQuery;
+    $result = $query
+      ->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'os2intra_message_notification')
+      ->fieldCondition('field_os2intra_message_enddate', 'value', date('Y-m-d') . ' 00:00:00', '>=')
+      ->execute();
+
+    // Get the current users groups.
+    $user_groups = og_get_groups_by_user();
+    // Loop over result
+    if(isset($result['node'])){
+      foreach($result['node'] as $node_info){
+
+        $node = node_load($node_info->nid);
+
+        $changed = $node->changed;
+        // Show node only it is changed after user last access, drupal session update every 180 sec.
+        if ($changed < $last_access) {
+          continue;
+        }
+          // Collect all target nids.
+        $targets = array();
+        if (isset($node->og_group_ref[LANGUAGE_NONE])) {
+          foreach($node->og_group_ref[LANGUAGE_NONE] as $reference) {
+            if(in_array($reference['target_id'], $user_groups['node'])) {
+                  $targets[] = $reference['target_id'];
+            }
+          }
+        }
+        // Dont show message if not global or in a user group.
+        if (!empty($node->og_group_ref[LANGUAGE_NONE]) && !count($targets)) {
+          continue;
+        }
+        // Later we save the nids to the _SESSION variable, so that we dont show
+        // the messages more than once
+        if(isset($_SESSION['os2intra_messages_shown'])){
+          if(in_array($node->nid, $_SESSION['os2intra_messages_shown'])){
+            continue;
+          }
+        }
+        $title = $node->title;
+        $message = isset($node->body[LANGUAGE_NONE][0]['value'])? preg_replace( "/\r|\n/", "", $node->body[LANGUAGE_NONE][0]['value']) : '';
+        $sticky = $node->field_os2intra_message_sticky[LANGUAGE_NONE][0]['value'] == 1 ? 'true' :'false';
+
+        // Generate js for the notifier and add it as inline js
+        $js = <<<EOF
+        var notice = '<div class="notice" data-nid="$node->nid">'
+            + '<div class="notice-body">'
+              + '<h3><a href="/node/$node->nid">$title</a></h3>'
+              + '<p> $message </p>'
+            + '</div>'
+            + '<div class="notice-bottom">'
+            + '</div>'
+          + '</div>';
+        jQuery(notice).purr({isSticky:$sticky});
+EOF;
+
+        drupal_add_js($js, array('scope' => 'footer', 'type' => 'inline'));
+      }
+    }
+  }
+}
+
+/*
+ * Ajax callback for saving the node id in session variable.
+ */
+function os2intra_message_notify_ajax_callback($id){
+  if(is_numeric($id)){
+    $_SESSION['os2intra_messages_shown'][] = $id;
+  }
+  return TRUE;
+}

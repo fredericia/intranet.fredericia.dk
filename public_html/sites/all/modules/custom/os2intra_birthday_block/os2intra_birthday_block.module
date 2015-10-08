@@ -1,0 +1,106 @@
+<?php
+/**
+ * @author Thomas Thune Hansen <tth@bellcom.dk>
+ * @copyright bellcom open source aps
+ */
+
+/*
+ * Implements hook_block_info()
+ */
+function os2intra_birthday_block_block_info(){
+  $blocks['block'] = array(
+    'info' => t('Birthdays'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  return $blocks;
+}
+
+/*
+ * Implements hook_block_view()
+ */
+function os2intra_birthday_block_block_view($delta = ''){
+  $block = array();
+
+  switch($delta){
+    case 'block':
+      $block['subject'] = t('Birthdays');
+
+      $markup = os2intra_birthday_block_create_markup();
+      $block['content'] = $markup;
+
+      break;
+
+  }
+
+  return $block;
+}
+
+/*
+ * Helper function for generating list markup
+ *
+ * @return
+ *  list of birthdays, markup
+ */
+function os2intra_birthday_block_create_markup(){
+  // Load variable with number of birthdays to show
+  $set_count = variable_get('os2intra_birthday_block_count', 2);
+
+  // Crazy sql
+  $sql ='
+    SELECT
+      entity_id,
+      field_os2intra_birthday_value,
+      field_os2intra_birthday_value + INTERVAL(YEAR(CURRENT_TIMESTAMP) - YEAR(field_os2intra_birthday_value)) + 0 YEAR AS currbirthday,
+      DAY(field_os2intra_birthday_value) as day,
+      MONTH(field_os2intra_birthday_value) as month
+    FROM `field_data_field_os2intra_birthday`
+      ORDER BY CASE WHEN currbirthday < CURRENT_TIMESTAMP
+      THEN currbirthday + INTERVAL 1 YEAR
+      ELSE currbirthday
+    END
+  ';
+
+  $result = db_query($sql);
+
+  $count = 0;
+
+  // Iterate over results
+  foreach($result as $record){
+    if($count >= $set_count){
+      continue;
+    }
+    $count++;
+
+    $user_entity = user_load($record->entity_id);
+
+    // Imagestyle
+    $style = 'os2intra_birthday_avatar';
+
+    // generate url for image
+    $image_url = "";
+    if(!empty($user_entity->picture)){
+      $image_url = image_style_url($style, $user_entity->picture->uri);
+    }
+
+    $firstname = '';
+    $lastname = '';
+
+    if(!empty($user_entity->field_name_first)){
+      $firstname = $user_entity->field_name_first[LANGUAGE_NONE][0]['value'];
+    }
+    if(!empty($user_entity->field_name_last)){
+      $lastname = $user_entity->field_name_last[LANGUAGE_NONE][0]['value'];
+    }
+
+    $item = '<img src="'.$image_url.'"></img>';
+    $item .= '<span class="birthday">'.$record->day.'/'.$record->month.'</span>';
+    $item .= '<span class="name">'.$firstname.' '.$lastname.'</span>';
+
+    $items[] = $item;
+  }
+
+  $markup = theme_item_list(array('items' => $items, 'title' => '', 'type' => 'ul', 'attributes' => array('class' => 'os2intra_birthdays_block_list')));
+
+  return $markup;
+}

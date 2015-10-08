@@ -1,0 +1,100 @@
+<?php
+/**
+ *
+ * @author Thomas Thune Hansen <tth@bellcom.dk>
+ * @copyright bellcom open source aps
+ */
+
+/*
+ * Implements hook_block_info()
+ */
+function os2web_intra_user_menu_block_info(){
+  $blocks = array();
+
+  $blocks['top_menu'] = array(
+    'info' => t('OS2web Intra User top menu'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+/*
+ * Implements hook_block_view()
+ */
+function os2web_intra_user_menu_block_view($delta = ''){
+  $block = array();
+
+  switch($delta){
+    case 'top_menu':
+      global $user;
+      $user_entity = user_load($user->uid);
+
+      // Get users real name
+      $name = "";
+
+      if(!empty($user_entity->field_name_first)){
+        $name = $user_entity->field_name_first[LANGUAGE_NONE][0]['value'];
+      }
+
+      if(!empty($user_entity->field_name_last)){
+        $name .= ' ' . $user_entity->field_name_last[LANGUAGE_NONE][0]['value'];
+      }
+
+      // Load organization taxonomy vocabulary
+      // get tree
+      $vocab = taxonomy_vocabulary_machine_name_load('os2intra_organizaiton_tax');
+      $tree = taxonomy_get_tree($vocab->vid);
+
+      // Determine parent
+      if($user->uid){
+        $vocab = taxonomy_vocabulary_machine_name_load('os2intra_organizaiton_tax');
+        $tree = taxonomy_get_tree($vocab->vid);
+
+        foreach($tree as $term){
+          if($term->parents[0] == 0){
+            $top_org_tid = $term->tid;
+            continue;
+          }
+        }
+
+      // Get users OG group memberships
+      // Just get the first one, normal users shouldn't have
+      // more than one
+      $user_groups = og_get_groups_by_user($user);
+      $user_group_id = array_shift(reset($user_groups));
+      $user_group = node_load($user_group_id);
+
+      // Build list with links
+      $items = array();
+        $items = array();
+
+        $items[] = l($name, 'user');
+
+        $items[] = '<a href="/node/'.$user_group_id.'">'. $user_group->title . '</a>';
+
+        // If the user can use node basket, display the basket link
+        if(user_access('use node basket')){
+          $items[] = '<a href="/node_basket/basket/view">'.t('Basket').'</a>';
+        }
+
+        $items[] = '<a href="/taxonomy/term/'.$top_org_tid.'">'. t('Municipality') . '</a>';
+
+        $items[] = '<a href="/groups/">' . t('Groups') . '</a>';
+
+        $items[] = '<a href="/user/logout/">' . t('Log out') . '</a>';
+
+        $img_path = drupal_get_path('theme','intranet_theme')."/images/help.png";
+
+        //Yani: add help link to the user menu.
+        $items[] = '<a href="/intranet"><img style="height:20px;width:20px;vertical-align:middle;" src="/'. $img_path . '" /></a>';
+
+        $markup = theme_item_list(array('items' => $items, 'title' => '', 'type' => 'ul', 'attributes' => array()));
+        $block['content'] = $markup;
+        break;
+      }
+  }
+
+  return $block;
+}
+
