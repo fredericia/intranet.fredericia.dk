@@ -43,8 +43,22 @@ function fki_preprocess_html(&$variables) {
   $variables['classes_array'][] = 'footer-attached';
   $variables['classes_array'][] = 'main-navigation-enabled-md';
   $variables['classes_array'][] = 'main-navigation-enabled-lg';
+
   $variables['classes_array'][] = 'sidebar-left-enabled-xs';
   $variables['classes_array'][] = 'sidebar-left-enabled-sm';
+  $variables['classes_array'][] = 'sidebar-left-enabled-md';
+  $variables['classes_array'][] = 'sidebar-left-enabled-lg';
+
+  $variables['classes_array'][] = 'sidebar-content-off-canvas-xs';
+  $variables['classes_array'][] = 'sidebar-content-off-canvas-sm';
+  $variables['classes_array'][] = 'sidebar-content-off-canvas-md';
+  $variables['classes_array'][] = 'sidebar-content-off-canvas-lg';
+
+  $variables['classes_array'][] = 'sidebar-state-closed-xs';
+  $variables['classes_array'][] = 'sidebar-state-closed-sm';
+  $variables['classes_array'][] = 'sidebar-state-closed-md';
+  $variables['classes_array'][] = 'sidebar-state-closed-lg';
+
   $variables['classes_array'][] = 'simple-navigation-enabled-xs';
   $variables['classes_array'][] = 'simple-navigation-enabled-sm';
 }

@@ -1,0 +1,263 @@
+// |--------------------------------------------------------------------------
+// | Off-canvas content
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .bs3-sidebar-content-off-canvas
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {
+
+	// Off-canvas content
+	.bs3-sidebar-content-off-canvas {}
+}
+
+// Mobile - only
+@media @media-query-mobile-only {
+
+	// Off-canvas content
+	.csstransforms3d {
+
+		.bs3-sidebar-content-off-canvas-xs {
+
+			&.sidebar-left-open {
+
+				.inner-wrapper {
+					.translate3d(@bs3-sidebar-left-width, 0, 0);
+				}
+			}
+
+			&.sidebar-right-open {
+
+				.inner-wrapper {
+					.translate3d(-@bs3-sidebar-right-width, 0, 0);
+				}
+			}
+		}
+	}
+
+	// Off-canvas content
+	.no-csstransforms3d {
+
+		.bs3-sidebar-content-off-canvas-xs {
+
+			&.sidebar-left-open {
+
+				.inner-wrapper {
+					margin-left: @bs3-sidebar-left-width;
+					margin-right: -@bs3-sidebar-left-width;
+				}
+			}
+
+			&.sidebar-right-open {
+
+				.inner-wrapper {
+					margin-left: -@bs3-sidebar-right-width;
+				}
+			}
+		}
+	}
+}
+
+// Tablet
+@media @media-query-tablet {
+
+	// Off-canvas content
+	.bs3-sidebar-content-off-canvas {}
+}
+
+// Tablet - only
+@media @media-query-tablet-only {
+
+	// Off-canvas content
+	.csstransforms3d {
+
+		.bs3-sidebar-content-off-canvas-sm {
+
+			&.sidebar-left-open {
+
+				.inner-wrapper {
+					.translate3d(@bs3-sidebar-left-width, 0, 0);
+				}
+			}
+
+			&.sidebar-right-open {
+
+				.inner-wrapper {
+					.translate3d(-@bs3-sidebar-right-width, 0, 0);
+				}
+			}
+		}
+	}
+
+	// Off-canvas content
+	.no-csstransforms3d {
+
+		.bs3-sidebar-content-off-canvas-sm {
+
+			&.sidebar-left-open {
+
+				.inner-wrapper {
+					margin-left: @bs3-sidebar-left-width;
+					margin-right: -@bs3-sidebar-left-width;
+				}
+			}
+
+			&.sidebar-right-open {
+
+				.inner-wrapper {
+					margin-left: -@bs3-sidebar-right-width;
+				}
+			}
+		}
+	}
+}
+
+// Desktop
+@media @media-query-desktop {
+
+	// Off-canvas content
+	.bs3-sidebar-content-off-canvas {}
+}
+
+// Desktop - only
+@media @media-query-desktop-only {
+
+	// Off-canvas content
+	.csstransforms3d {
+
+		.bs3-sidebar-content-off-canvas-md {
+
+			&.sidebar-left-open {
+
+				.inner-wrapper {
+					.translate3d(@bs3-sidebar-left-width, 0, 0);
+				}
+			}
+
+			&.sidebar-right-open {
+
+				.inner-wrapper {
+					.translate3d(-@bs3-sidebar-right-width, 0, 0);
+				}
+			}
+		}
+	}
+
+	// Off-canvas content
+	.no-csstransforms3d {
+
+		.bs3-sidebar-content-off-canvas-md {
+
+			&.sidebar-left-open {
+
+				.inner-wrapper {
+					margin-left: @bs3-sidebar-left-width;
+					margin-right: -@bs3-sidebar-left-width;
+				}
+			}
+
+			&.sidebar-right-open {
+
+				.inner-wrapper {
+					margin-left: -@bs3-sidebar-right-width;
+				}
+			}
+		}
+	}
+}
+
+// Large desktop
+@media @media-query-large-desktop {
+
+	// Off-canvas content
+	.bs3-sidebar-content-off-canvas {}
+}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {
+
+	// Off-canvas content
+	.csstransforms3d {
+
+		.bs3-sidebar-content-off-canvas-lg {
+
+			&.sidebar-left-open {
+
+				.inner-wrapper {
+					.translate3d(@bs3-sidebar-left-width, 0, 0);
+				}
+			}
+
+			&.sidebar-right-open {
+
+				.inner-wrapper {
+					.translate3d(-@bs3-sidebar-right-width, 0, 0);
+				}
+			}
+		}
+	}
+
+	// Off-canvas content
+	.no-csstransforms3d {
+
+		.bs3-sidebar-content-off-canvas-lg {
+
+			&.sidebar-left-open {
+
+				.inner-wrapper {
+					margin-left: @bs3-sidebar-left-width;
+					margin-right: -@bs3-sidebar-left-width;
+				}
+			}
+
+			&.sidebar-right-open {
+
+				.inner-wrapper {
+					margin-left: -@bs3-sidebar-right-width;
+				}
+			}
+		}
+	}
+}
+
+// Print
+@media print {
+
+	// Off-canvas content
+	.bs3-sidebar-content-off-canvas {}
+}
+
+// Touch
+.touch {
+
+	// Off-canvas content
+	.bs3-sidebar-content-off-canvas {}
+}
+
+// No touch
+.no-touch {
+
+	// Off-canvas content
+	.bs3-sidebar-content-off-canvas {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Off-canvas content mixin
+.bs3-sidebar-mixin-content-off-canvas() {}

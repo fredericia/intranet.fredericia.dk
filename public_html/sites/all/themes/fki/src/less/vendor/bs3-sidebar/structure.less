@@ -26,6 +26,12 @@
 // | -- Attached
 // | -- Detached
 // |
+// | - Static
+// | -- Phone
+// | -- Tablet
+// | -- Desktop
+// | -- Large desktop
+// |
 // | - Enabled
 // | -- Hidden state
 // | --- Phone
@@ -33,7 +39,7 @@
 // | --- Desktop
 // | --- Large desktop
 // |
-// | - Toggle
+// | - Toggle button
 // |
 
 .inner-wrapper {
@@ -67,80 +73,6 @@
 	&.sidebar-right {
 		width: @bs3-sidebar-right-width;
 		.box-shadow(@bs3-sidebar-right-box-shadow);
-	}
-}
-
-// Toggle
-.csstransforms3d {
-
-	.sidebar {
-
-		&.sidebar-left {
-			.translate3d(-@bs3-sidebar-left-width, 0, 0);
-		}
-
-		&.sidebar-right {
-			right: 0;
-			.translate3d(@bs3-sidebar-right-width, 0, 0);
-		}
-	}
-
-	.sidebar-left-open {
-
-		.sidebar-left {
-			.translate3d(0, 0, 0);
-		}
-
-		.inner-wrapper {
-			.translate3d(@bs3-sidebar-left-width, 0, 0);
-		}
-	}
-
-	.sidebar-right-open {
-
-		.sidebar-right {
-			.translate3d(0, 0, 0);
-		}
-
-		.inner-wrapper {
-			.translate3d(-@bs3-sidebar-right-width, 0, 0);
-		}
-	}
-}
-.no-csstransforms3d {
-
-	.sidebar {
-
-		&.sidebar-left {
-			left: -@bs3-sidebar-left-width;
-		}
-
-		&.sidebar-right {
-			right: -@bs3-sidebar-right-width;
-		}
-	}
-
-	.sidebar-left-open {
-
-		.sidebar-left {
-			left: 0;
-		}
-
-		.inner-wrapper {
-			margin-left: @bs3-sidebar-left-width;
-			margin-right: -@bs3-sidebar-left-width;
-		}
-	}
-
-	.sidebar-right-open {
-
-		.sidebar-right {
-			right: 0;
-		}
-
-		.inner-wrapper {
-			margin-left: -@bs3-sidebar-right-width;
-		}
 	}
 }
 
@@ -581,6 +513,94 @@
 }
 
 // --------------------------------------------------
+// Static
+// --------------------------------------------------
+//
+// Introduction
+// - Defines in which screen sizes the sidebar can
+// - be visible.
+// - If the screen size is altered to a size, which
+// - does not have the visibility class set, the
+// - sidebar automatically closes.
+// - By default the sidebar is always hidden. It's
+// - therefor necessary to add the visibility classes
+// - to display the sidebar at all.
+//
+// Why use this? It's just extra work and creating
+// a uglier code base?
+// - To prevent that the sidebar is being displayed,
+// - in unintended screen sizes which can break the
+// - websites layout.
+// - As mentioned above, the sidebar is always
+// - hidden by default. This has been done, to
+// - enforce this line of thinking.
+//
+@media @media-query-mobile-only {
+
+	.sidebar-left-static-xs {
+
+		.sidebar-left {
+			display: block;
+		}
+	}
+
+	.sidebar-right-static-xs {
+
+		.sidebar-right {
+			display: block;
+		}
+	}
+}
+@media @media-query-tablet-only {
+
+	.sidebar-left-static-sm {
+
+		.sidebar-left {
+			display: block;
+		}
+	}
+
+	.sidebar-right-static-sm {
+
+		.sidebar-right {
+			display: block;
+		}
+	}
+}
+@media @media-query-desktop-only {
+
+	.sidebar-left-static-md {
+
+		.sidebar-left {
+			display: block;
+		}
+	}
+
+	.sidebar-right-static-md {
+
+		.sidebar-right {
+			display: block;
+		}
+	}
+}
+@media @media-query-large-desktop-only {
+
+	.sidebar-left-static-lg {
+
+		.sidebar-left {
+			display: block;
+		}
+	}
+
+	.sidebar-right-static-lg {
+
+		.sidebar-right {
+			display: block;
+		}
+	}
+}
+
+// --------------------------------------------------
 // Enabled
 // --------------------------------------------------
 //
@@ -669,7 +689,7 @@
 }
 
 // --------------------------------------------------
-// Toggle
+// Toggle button
 // --------------------------------------------------
 //
 // Introduction
