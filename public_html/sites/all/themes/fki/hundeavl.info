@@ -2,8 +2,8 @@
 ;; Theme information
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-name        = 'fki.dk'
-description = 'Beautiful theme for fki.dk.'
+name        = 'intranet.fredericia.dk'
+description = 'Beautiful theme for intranet.fredericia.dk.'
 core        = '7.x'
 screenshot  = 'dist/img/screenshot.png'
 base theme  = 'bellcom'

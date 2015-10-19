@@ -23,6 +23,7 @@
 .background-color-primary { background-color: @brand-primary; }
 .background-color-secondary { background-color: @brand-secondary; }
 .background-color-tertiary { background-color: @brand-tertiary; }
+.background-color-quinary { background-color: @brand-quinary; }
 
 // Overlay
 .background-overlay-dark {
@@ -64,6 +65,24 @@
 .background-overlay-tertiary {
 	background-color: @brand-tertiary;
 	background-color: fade(@brand-tertiary, 80%);
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.background-overlay-quaternary {
+	background-color: @brand-quaternary;
+	background-color: fade(@brand-quaternary, 80%);
+	position: relative;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.background-overlay-quinary {
+	background-color: @brand-quinary;
+	background-color: fade(@brand-quinary, 80%);
 	position: relative;
 	top: 0;
 	bottom: 0;

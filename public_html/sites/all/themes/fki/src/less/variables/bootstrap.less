@@ -14,7 +14,7 @@
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         #01b7f2; // #337ab7
+@brand-primary:         #00406f;
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
@@ -26,9 +26,9 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #f5f5f5;
+@body-bg:               #eeeff4;
 //** Global text color on `<body>`.
-@text-color:            #2d3e52;
+@text-color:            #43698f;
 
 //** Global textual link color.
 @link-color:            @brand-primary;
@@ -42,7 +42,7 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -65,10 +65,10 @@
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
 //** By default, this inherits from the `<body>`.
-@headings-font-family:    "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-@headings-font-weight:    400;
+@headings-font-family:    Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+@headings-font-weight:    700;
 @headings-line-height:    1.1;
-@headings-color:          inherit;
+@headings-color:          @brand-primary;
 
 
 //== Iconography

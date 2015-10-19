@@ -986,7 +986,7 @@
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #f5f5f5;
+    border-bottom-color: #eeeff4;
   }
 }
 
@@ -1010,7 +1010,7 @@
   .nav-tabs-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #f5f5f5;
+    border-bottom-color: #eeeff4;
   }
 }
 
@@ -4461,215 +4461,144 @@
 }
 
 @media screen and (max-width: 767px) {
-  .ha-page-intro .ha-page-intro-title-container .ha-page-intro-title {
+  .fki-list-simple .fki-list-simple-heading .fki-list-simple-title {
+    font-size: 11px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-list-simple .fki-list-simple-heading .fki-list-simple-title {
+    font-size: 11px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-list-simple .fki-list-simple-heading .fki-list-simple-title {
+    font-size: 12px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-list-simple .fki-list-simple-heading .fki-list-simple-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fki-list .fki-list-heading .fki-list-title {
+    font-size: 11px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-list .fki-list-heading .fki-list-title {
+    font-size: 11px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-list .fki-list-heading .fki-list-title {
+    font-size: 12px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-list .fki-list-heading .fki-list-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fki-list-advanced .fki-list-advanced-heading .fki-list-advanced-title {
+    font-size: 11px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-list-advanced .fki-list-advanced-heading .fki-list-advanced-title {
+    font-size: 11px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-list-advanced .fki-list-advanced-heading .fki-list-advanced-title {
+    font-size: 12px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-list-advanced .fki-list-advanced-heading .fki-list-advanced-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fki-includeable .fki-includeable-heading .fki-includeable-title {
+    font-size: 11px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-includeable .fki-includeable-heading .fki-includeable-title {
+    font-size: 11px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-includeable .fki-includeable-heading .fki-includeable-title {
+    font-size: 12px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-includeable .fki-includeable-heading .fki-includeable-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fki-box .fki-box-heading .pane-title,
+  .fki-box .fki-box-heading .fki-box-title {
     font-size: 16px;
     line-height: 22px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .ha-page-intro .ha-page-intro-title-container .ha-page-intro-title {
+  .fki-box .fki-box-heading .pane-title,
+  .fki-box .fki-box-heading .fki-box-title {
     font-size: 17px;
     line-height: 24px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .ha-page-intro .ha-page-intro-title-container .ha-page-intro-title {
+  .fki-box .fki-box-heading .pane-title,
+  .fki-box .fki-box-heading .fki-box-title {
     font-size: 18px;
     line-height: 25px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .ha-page-intro .ha-page-intro-title-container .ha-page-intro-title {
-    font-size: 20px;
-    line-height: 28px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .ha-page-intro {
-    padding: 8px 0;
-  }
-}
-
-@media screen {
-  .footer .footer-upper-content {
-    padding: 18px 0;
-  }
-
-  .footer .footer-lower-content {
-    padding: 8px 0;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .footer .footer-upper-content {
-    padding: 32px 0;
-  }
-
-  .footer .footer-lower-content {
-    padding: 18px 0;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .footer .footer-upper-content {
-    padding-top: 80px;
-    padding-bottom: 65px;
-  }
-
-  .footer .footer-lower-content {
-    padding: 26px 0;
-  }
-}
-
-@media print {
-  .footer {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .ha-list-simple .ha-list-simple-heading .ha-list-simple-title {
-    font-size: 11px;
-    line-height: 15px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .ha-list-simple .ha-list-simple-heading .ha-list-simple-title {
-    font-size: 11px;
-    line-height: 15px;
-  }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-  .ha-list-simple .ha-list-simple-heading .ha-list-simple-title {
-    font-size: 12px;
-    line-height: 17px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .ha-list-simple .ha-list-simple-heading .ha-list-simple-title {
-    font-size: 14px;
-    line-height: 20px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .ha-list .ha-list-heading .ha-list-title {
-    font-size: 11px;
-    line-height: 15px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .ha-list .ha-list-heading .ha-list-title {
-    font-size: 11px;
-    line-height: 15px;
-  }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-  .ha-list .ha-list-heading .ha-list-title {
-    font-size: 12px;
-    line-height: 17px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .ha-list .ha-list-heading .ha-list-title {
-    font-size: 14px;
-    line-height: 20px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .ha-list-advanced .ha-list-advanced-heading .ha-list-advanced-title {
-    font-size: 11px;
-    line-height: 15px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .ha-list-advanced .ha-list-advanced-heading .ha-list-advanced-title {
-    font-size: 11px;
-    line-height: 15px;
-  }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-  .ha-list-advanced .ha-list-advanced-heading .ha-list-advanced-title {
-    font-size: 12px;
-    line-height: 17px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .ha-list-advanced .ha-list-advanced-heading .ha-list-advanced-title {
-    font-size: 14px;
-    line-height: 20px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .ha-includeable .ha-includeable-heading .ha-includeable-title {
-    font-size: 11px;
-    line-height: 15px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .ha-includeable .ha-includeable-heading .ha-includeable-title {
-    font-size: 11px;
-    line-height: 15px;
-  }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-  .ha-includeable .ha-includeable-heading .ha-includeable-title {
-    font-size: 12px;
-    line-height: 17px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .ha-includeable .ha-includeable-heading .ha-includeable-title {
-    font-size: 14px;
-    line-height: 20px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .ha-box .ha-box-heading .pane-title,
-  .ha-box .ha-box-heading .ha-box-title {
-    font-size: 16px;
-    line-height: 22px;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .ha-box .ha-box-heading .pane-title,
-  .ha-box .ha-box-heading .ha-box-title {
-    font-size: 17px;
-    line-height: 24px;
-  }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1199px) {
-  .ha-box .ha-box-heading .pane-title,
-  .ha-box .ha-box-heading .ha-box-title {
-    font-size: 18px;
-    line-height: 25px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .ha-box .ha-box-heading .pane-title,
-  .ha-box .ha-box-heading .ha-box-title {
+  .fki-box .fki-box-heading .pane-title,
+  .fki-box .fki-box-heading .fki-box-title {
     font-size: 20px;
     line-height: 28px;
   }

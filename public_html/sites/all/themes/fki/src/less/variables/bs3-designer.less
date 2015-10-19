@@ -11,9 +11,10 @@
 // --------------------------------------------------
 
 // Brand
-@brand-secondary:		#7db921;
-@brand-tertiary:    #fdb714;
-@brand-quarternary: #2d3e52;
+@brand-secondary:	 #4ec6f8;
+@brand-tertiary:   #67c10e;
+@brand-quaternary: #ff911c;
+@brand-quinary: 	 #ea6060;
 
 // Social
 @social-link-color-facebook:    #3b5998;
@@ -35,12 +36,15 @@
 @state-tertiary-text:   #fff;
 @state-tertiary-bg:     @brand-tertiary;
 
-@state-quarternary-text:   #fff;
-@state-quarternary-bg:     @brand-quarternary;
+@state-quaternary-text:   #fff;
+@state-quaternary-bg:     @brand-quaternary;
+
+@state-quinary-text:   #fff;
+@state-quinary-bg:     @brand-quinary;
 
 // Content
 @content-bg:           #fff;
-@content-border-color: #f5f5f5;
+@content-border-color: @body-bg;
 
 // Button
 @btn-secondary-color:   #fff;
@@ -51,9 +55,13 @@
 @btn-tertiary-bg:       @brand-tertiary;
 @btn-tertiary-border:   darken(@btn-tertiary-bg, 5%);
 
-@btn-quarternary-color:    #fff;
-@btn-quarternary-bg:       @brand-quarternary;
-@btn-quarternary-border:   darken(@btn-quarternary-bg, 5%);
+@btn-quaternary-color:    #fff;
+@btn-quaternary-bg:       @brand-quaternary;
+@btn-quaternary-border:   darken(@btn-quaternary-bg, 5%);
+
+@btn-quinary-color:    #fff;
+@btn-quinary-bg:       @brand-quinary;
+@btn-quinary-border:   darken(@btn-quinary-bg, 5%);
 
 // Paths
 @path-image: 	"../img/";
@@ -152,11 +160,11 @@
 // --------------------------------------------------
 
 // Font weight
-@bs3-designer-headings-font-weight-light: 	    300;
-@bs3-designer-headings-font-weight-semi-light:  300;
-@bs3-designer-headings-font-weight: 		    		400;
-@bs3-designer-headings-font-weight-semi-bold:		500;
-@bs3-designer-headings-font-weight-bold: 	    	700;
+@bs3-designer-headings-font-weight-light: 	    400;
+@bs3-designer-headings-font-weight-semi-light:  400;
+@bs3-designer-headings-font-weight: 		    		700;
+@bs3-designer-headings-font-weight-semi-bold:		@bs3-designer-headings-font-weight;
+@bs3-designer-headings-font-weight-bold: 	    	@bs3-designer-headings-font-weight-semi-bold;
 
 @bs3-designer-font-weight-light: 	    300;
 @bs3-designer-font-weight-semi-light:	@bs3-designer-font-weight-light;

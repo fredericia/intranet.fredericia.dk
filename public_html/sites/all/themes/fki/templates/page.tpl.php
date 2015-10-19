@@ -7,7 +7,7 @@
     <!-- Begin - logo -->
     <div class="sidebar-logo">
       <a href="<?php print $front_page; ?>" class="sidebar-logo-link">
-        <img src="<?php print $path_img . '/logo.png'; ?>" class="sidebar-logo-image" alt="<?php print t('fki.dk logo'); ?>" />
+        <img src="<?php print $path_img . '/logo.png'; ?>" class="sidebar-logo-image" alt="<?php print t('intranet.fredericia.dk logo'); ?>" />
       </a>
     </div>
     <!-- End - logo -->
@@ -96,7 +96,7 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12">
-              <a href="<?php print $front_page; ?>" class="header-logo-link"><img src="<?php print $path_img . '/logo.png'; ?>" class="header-logo-image" alt="<?php print t('fki.dk logo'); ?>" /></a>
+              <a href="<?php print $front_page; ?>" class="header-logo-link"><img src="<?php print $path_img . '/logo.png'; ?>" class="header-logo-image" alt="<?php print t('intranet.fredericia.dk logo'); ?>" /></a>
             </div>
           </div>
         </div>
@@ -161,7 +161,7 @@
 
       <!-- Begin - logo -->
       <a href="<?php print $front_page; ?>" class="simple-navigation-logo-link">
-        <img src="<?php print $path_img . '/logo.png'; ?>" class="simple-navigation-logo-image" alt="<?php print t('fki.dk logo'); ?>" />
+        <img src="<?php print $path_img . '/logo.png'; ?>" class="simple-navigation-logo-image" alt="<?php print t('intranet.fredericia.dk logo'); ?>" />
       </a>
       <!-- End - logo -->
 
@@ -227,7 +227,7 @@
           <div class="row">
             <div class="col-xs-12 text-center">
               <a href="<?php print $front_page; ?>" class="footer-logo-link">
-                <img src="<?php print $path_img . '/logo.png'; ?>" class="footer-logo-image" alt="<?php print t('fki.dk logo'); ?>" />
+                <img src="<?php print $path_img . '/logo.png'; ?>" class="footer-logo-image" alt="<?php print t('intranet.fredericia.dk logo'); ?>" />
               </a>
             </div>
           </div>
