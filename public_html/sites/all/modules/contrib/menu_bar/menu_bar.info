@@ -1,4 +1,0 @@
-name = Menu Bar
-description = Menubar that can fold out
-core = 7.x
-dependencies[] = panels_mini

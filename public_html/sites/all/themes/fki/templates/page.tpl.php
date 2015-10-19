@@ -88,24 +88,6 @@
   <!-- Begin - inner wrapper -->
   <div class="inner-wrapper" role="document">
 
-    <!-- Begin - header -->
-    <header class="header" role="banner">
-
-      <!-- Begin - banner -->
-      <div class="header-banner">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-12">
-              <a href="<?php print $front_page; ?>" class="header-logo-link"><img src="<?php print $path_img . '/logo.png'; ?>" class="header-logo-image" alt="<?php print t('intranet.fredericia.dk logo'); ?>" /></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End - banner -->
-
-    </header>
-    <!-- End - header -->
-
     <!-- Begin - main navigation -->
     <nav class="main-navigation-wrapper">
       <section class="main-navigation-bar">
