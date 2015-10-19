@@ -1,0 +1,160 @@
+// |--------------------------------------------------------------------------
+// | Page intro
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .fki-page-intro
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+@fki-page-intro-background-color: 	@state-quarternary-bg;
+
+// Title
+@fki-page-intro-title-font-color: 	@state-quarternary-text;
+
+// Breadcrumb
+@fki-page-intro-breadcrumb-separator-font-size:	@font-size-small;
+@fki-page-intro-breadcrumb-separator-color:		  #5a7ca3;
+@fki-page-intro-breadcrumb-separator-spacing:	  5px;
+@fki-page-intro-breadcrumb-link-color:			      #fff;
+@fki-page-intro-breadcrumb-link-hover-color:		  @brand-primary;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Page intro
+.fki-page-intro {
+    background-color: @fki-page-intro-background-color;
+    padding: 12px 0;
+
+    .fki-page-intro-title-container {
+
+        .fki-page-intro-title {
+            .heading-h3;
+            margin: 0;
+            padding: 0;
+            color: @fki-page-intro-title-font-color;
+        }
+    }
+
+    .fki-page-intro-breadcrumb-container {
+
+        .breadcrumb {
+            margin: 0;
+            border-radius: 0;
+
+            li {
+                font-size: @fki-page-intro-breadcrumb-separator-font-size;
+                font-weight: bold;
+                text-transform: uppercase;
+
+                a {
+                    color: @fki-page-intro-breadcrumb-link-color;
+
+                    &:hover {
+                        color: @fki-page-intro-breadcrumb-link-hover-color;
+                    }
+                }
+
+                &:before {
+                    color: @fki-page-intro-breadcrumb-separator-color;
+                    padding: 0 @fki-page-intro-breadcrumb-separator-spacing;
+                }
+            }
+        }
+    }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {
+
+    // Page intro
+    .fki-page-intro {}
+}
+
+// Mobile - only
+@media @media-query-mobile-only {
+
+    // Page intro
+    .fki-page-intro {
+        padding: 8px 0;
+    }
+}
+
+// Tablet
+@media @media-query-tablet {
+
+    // Page intro
+    .fki-page-intro {}
+}
+
+// Tablet - only
+@media @media-query-tablet-only {
+
+    // Page intro
+    .fki-page-intro {}
+}
+
+// Desktop
+@media @media-query-desktop {
+
+    // Page intro
+    .fki-page-intro {}
+}
+
+// Desktop - only
+@media @media-query-desktop-only {
+
+    // Page intro
+    .fki-page-intro {}
+}
+
+// Large desktop
+@media @media-query-large-desktop {
+
+    // Page intro
+    .fki-page-intro {}
+}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {
+
+    // Page intro
+    .fki-page-intro {}
+}
+
+// Print
+@media print {
+
+    // Page intro
+    .fki-page-intro {}
+}
+
+// Touch
+.touch {
+
+    // Page intro
+    .fki-page-intro {}
+}
+
+// No touch
+.no-touch {
+
+    // Page intro
+    .fki-page-intro {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Page intro mixin
+.fki-mixin-page-intro() {}

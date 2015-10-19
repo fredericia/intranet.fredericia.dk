@@ -1,0 +1,23 @@
+{
+  "name": "fki.dk",
+  "description": "Website",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "~3.*",
+    "bs3-designer": "~0.*",
+    "bs3-masonry": "~0.*",
+    "fastclick": "~1.*",
+    "fontawesome": "~4.*",
+    "html5shiv": "~3.*",
+    "imagesloaded": "~3.1.*",
+    "masonry": "~3.3.*",
+    "respond": "~1.*",
+    "select2-bootstrap-css": "~1.4.6"
+  },
+  "ignore": [
+    "bower_components"
+  ],
+  "authors": [
+    "Morten Nissen <mn@bellcom.dk> (http://bellcom.dk)"
+  ]
+}

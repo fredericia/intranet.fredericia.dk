@@ -1,0 +1,214 @@
+// |--------------------------------------------------------------------------
+// | Teaser simple
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .fki-teaser-simple
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+//== Colouring
+@fki-teaser-simple-background-color:                     @content-bg;
+@fki-teaser-simple-image-cover-background-color:         @state-quarternary-bg;
+@fki-teaser-simple-image-cover-font-color:               @state-quarternary-text;
+@fki-teaser-simple-image-cover-highlighted-font-color:   @brand-tertiary;
+
+//== Spacing
+@fki-teaser-simple-body-section-inner-top-bottom-padding:    @default-body-top-bottom-spacing;
+@fki-teaser-simple-body-inner-left-right-padding:            @default-body-left-right-spacing;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Teaser simple
+.fki-teaser-simple {
+    background-color: @fki-teaser-simple-background-color;
+
+    h1, h2, h3, h4, h5, h6, .lead, p {
+        margin: 0;
+        padding: 0;
+    }
+
+    // Image cover
+    .fki-image-cover-container {
+
+        // Content
+        .fki-image-cover-content {
+
+            // Breed
+            .fki-teaser-simple-breed-container {
+
+                // Field
+                .fki-teaser-simple-content-field {
+                    color: @fki-teaser-simple-image-cover-font-color;
+                }
+            }
+
+            // Sales date
+            .fki-teaser-simple-sales-date-container {
+
+                // Field
+                .fki-teaser-simple-content-field {
+                    color: @fki-teaser-simple-image-cover-highlighted-font-color;
+                    .small;
+                }
+            }
+        }
+    }
+
+    // Body
+    .fki-teaser-simple-body {
+        padding: 0 @fki-teaser-simple-body-inner-left-right-padding;
+
+        p {
+            margin-bottom: 0;
+        }
+
+        // Section
+        section {
+            padding: @fki-teaser-simple-body-section-inner-top-bottom-padding 0;
+            border-bottom: 1px solid @content-border-color;
+
+            // 2 columns
+            &.fki-teaser-simple-section-2-columns {
+                .make-row();
+
+                .fki-teaser-simple-section-column {
+                    .make-xs-column(6);
+
+                    // Second column
+                    &:nth-child(2) {
+                        .text-right;
+                    }
+                }
+            }
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        // Location
+        .fki-teaser-simple-location-container {
+
+            .fki-teaser-simple-content-label {
+            }
+
+            .fki-teaser-simple-content-field {
+            }
+        }
+
+        // Price per young
+        .fki-teaser-simple-price-per-young-container {
+
+            .fki-teaser-simple-content-label {
+            }
+
+            .fki-teaser-simple-content-field {
+                color: @text-muted;
+                .small;
+            }
+        }
+
+        // Link
+        .fki-teaser-simple-link-container {
+            padding-top: 5px;
+
+            // Button
+            .btn {
+            }
+        }
+    }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {
+
+    // Teaser simple
+    .fki-teaser-simple {}
+}
+
+// Mobile - only
+@media @media-query-mobile-only {
+
+    // Teaser simple
+    .fki-teaser-simple {}
+}
+
+// Tablet
+@media @media-query-tablet {
+
+    // Teaser simple
+    .fki-teaser-simple {}
+}
+
+// Tablet - only
+@media @media-query-tablet-only {
+
+    // Teaser simple
+    .fki-teaser-simple {}
+}
+
+// Desktop
+@media @media-query-desktop {
+
+    // Teaser simple
+    .fki-teaser-simple {}
+}
+
+// Desktop - only
+@media @media-query-desktop-only {
+
+    // Teaser simple
+    .fki-teaser-simple {}
+}
+
+// Large desktop
+@media @media-query-large-desktop {
+
+    // Teaser simple
+    .fki-teaser-simple {}
+}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {
+
+    // Teaser simple
+    .fki-teaser-simple {}
+}
+
+// Print
+@media print {
+
+    // Teaser simple
+    .fki-teaser-simple {}
+}
+
+// Touch
+.touch {
+
+    // Teaser simple
+    .fki-teaser-simple {}
+}
+
+// No touch
+.no-touch {
+
+    // Teaser simple
+    .fki-teaser-simple {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Teaser simple mixin
+.fki-mixin-teaser-simple() {}

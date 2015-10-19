@@ -1,0 +1,155 @@
+// |--------------------------------------------------------------------------
+// | Header
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .header
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+//== General
+@header-background-color: @brand-primary;
+@header-border-color: #40cbf8;
+@header-logo-image-width: 392px;
+@header-logo-image-height: 64px;
+
+//== Responsive
+@header-responsive-xs-only-header-banner-padding: 30px 0;
+@header-responsive-sm-only-header-banner-padding: 50px 0;
+@header-responsive-md-up-header-banner-padding: 75px 0;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Header
+.header {
+    background-color: @header-background-color;
+
+    // Banner
+    .header-banner {
+        text-align: center;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-bottom-color: @header-border-color;
+        background-color: @header-background-color;
+
+        // Logo image
+        .header-logo-image {
+            width: 100%;
+            max-width: floor( (@header-logo-image-width / 2) );
+            border: 0;
+        }
+    }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {
+
+    // Header
+    .header {}
+}
+
+// Mobile - only
+@media @media-query-mobile-only {
+
+    // Header
+    .header {
+        display: none;
+
+        // Banner
+        .header-banner {
+            padding: @header-responsive-xs-only-header-banner-padding;
+        }
+    }
+}
+
+// Tablet
+@media @media-query-tablet {
+
+    // Header
+    .header {}
+}
+
+// Tablet - only
+@media @media-query-tablet-only {
+
+    // Header
+    .header {
+        display: none;
+
+        // Banner
+        .header-banner {
+            padding: @header-responsive-sm-only-header-banner-padding;
+        }
+    }
+}
+
+// Desktop
+@media @media-query-desktop {
+
+    // Header
+    .header {
+
+        // Banner
+        .header-banner {
+            padding: @header-responsive-md-up-header-banner-padding;
+        }
+    }
+}
+
+// Desktop - only
+@media @media-query-desktop-only {
+
+    // Header
+    .header {}
+}
+
+// Large desktop
+@media @media-query-large-desktop {
+
+    // Header
+    .header {}
+}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {
+
+    // Header
+    .header {}
+}
+
+// Print
+@media print {
+
+    // Header
+    .header {}
+}
+
+// Touch
+.touch {
+
+    // Header
+    .header {}
+}
+
+// No touch
+.no-touch {
+
+    // Header
+    .header {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Header mixin
+.mixin-header() {}
