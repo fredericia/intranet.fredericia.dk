@@ -47,6 +47,7 @@ dependencies[] = token
 dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = views_content
+dependencies[] = ckeditor
 dependencies[] = contextual
 dependencies[] = help
 dependencies[] = better_formats
