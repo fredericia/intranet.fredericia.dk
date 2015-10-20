@@ -1,0 +1,431 @@
+// |--------------------------------------------------------------------------
+// | Hidden state
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .sidebar-state-hidden
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {
+
+	// Hidden state
+	.sidebar-state-hidden {}
+}
+
+// Mobile - only
+@media @media-query-mobile-only {
+
+	// Hidden state
+	.csstransforms3d {
+
+		.sidebar-left-enabled-xs,
+		.sidebar-right-enabled-xs {
+
+			&.sidebar-state-hidden-xs {
+
+				.sidebar {
+
+					&.sidebar-left {
+						.translate3d(floor( (0 - @bs3-sidebar-left-width) ), 0, 0);
+					}
+
+					&.sidebar-right {
+						right: 0;
+						.translate3d(@bs3-sidebar-right-width, 0, 0);
+					}
+				}
+
+				&.sidebar-left-open {
+
+					.sidebar {
+
+						&.sidebar-left {
+							.translate3d(0, 0, 0);
+						}
+					}
+				}
+
+				&.sidebar-right-open {
+
+					.sidebar {
+
+						&.sidebar-right {
+							.translate3d(0, 0, 0);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Hidden state
+	.no-csstransforms3d {
+
+		.sidebar-left-enabled-xs,
+		.sidebar-right-enabled-xs {
+
+			&.sidebar-state-hidden-xs {
+
+				.sidebar {
+
+					&.sidebar-left {
+						left: floor((0 - @bs3-sidebar-left-width));
+					}
+
+					&.sidebar-right {
+						right: floor((0 - @bs3-sidebar-right-width));
+					}
+				}
+
+				&.sidebar-left-open {
+
+					.sidebar {
+
+						&.sidebar-left {
+							left: 0;
+						}
+					}
+				}
+
+				&.sidebar-right-open {
+
+					.sidebar {
+
+						&.sidebar-right {
+							right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Tablet
+@media @media-query-tablet {
+
+	// Hidden state
+	.sidebar-state-hidden {}
+}
+
+// Tablet - only
+@media @media-query-tablet-only {
+
+	// Hidden state
+	.csstransforms3d {
+
+		.sidebar-left-enabled-sm,
+		.sidebar-right-enabled-sm {
+
+			&.sidebar-state-hidden-sm {
+
+				.sidebar {
+
+					&.sidebar-left {
+						.translate3d(floor( (0 - @bs3-sidebar-left-width) ), 0, 0);
+					}
+
+					&.sidebar-right {
+						right: 0;
+						.translate3d(@bs3-sidebar-right-width, 0, 0);
+					}
+				}
+
+				&.sidebar-left-open {
+
+					.sidebar {
+
+						&.sidebar-left {
+							.translate3d(0, 0, 0);
+						}
+					}
+				}
+
+				&.sidebar-right-open {
+
+					.sidebar {
+
+						&.sidebar-right {
+							.translate3d(0, 0, 0);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Hidden state
+	.no-csstransforms3d {
+
+		.sidebar-left-enabled-sm,
+		.sidebar-right-enabled-sm {
+
+			&.sidebar-state-hidden-sm {
+
+				.sidebar {
+
+					&.sidebar-left {
+						left: floor((0 - @bs3-sidebar-left-width));
+					}
+
+					&.sidebar-right {
+						right: floor((0 - @bs3-sidebar-right-width));
+					}
+				}
+
+				&.sidebar-left-open {
+
+					.sidebar {
+
+						&.sidebar-left {
+							left: 0;
+						}
+					}
+				}
+
+				&.sidebar-right-open {
+
+					.sidebar {
+
+						&.sidebar-right {
+							right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Desktop
+@media @media-query-desktop {
+
+	// Hidden state
+	.sidebar-state-hidden {}
+}
+
+// Desktop - only
+@media @media-query-desktop-only {
+
+	// Hidden state
+	.csstransforms3d {
+
+		.sidebar-left-enabled-md,
+		.sidebar-right-enabled-md {
+
+			&.sidebar-state-hidden-md {
+
+				.sidebar {
+
+					&.sidebar-left {
+						.translate3d(floor( (0 - @bs3-sidebar-left-width) ), 0, 0);
+					}
+
+					&.sidebar-right {
+						right: 0;
+						.translate3d(@bs3-sidebar-right-width, 0, 0);
+					}
+				}
+
+				&.sidebar-left-open {
+
+					.sidebar {
+
+						&.sidebar-left {
+							.translate3d(0, 0, 0);
+						}
+					}
+				}
+
+				&.sidebar-right-open {
+
+					.sidebar {
+
+						&.sidebar-right {
+							.translate3d(0, 0, 0);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Hidden state
+	.no-csstransforms3d {
+
+		.sidebar-left-enabled-md,
+		.sidebar-right-enabled-md {
+
+			&.sidebar-state-hidden-md {
+
+				.sidebar {
+
+					&.sidebar-left {
+						left: floor((0 - @bs3-sidebar-left-width));
+					}
+
+					&.sidebar-right {
+						right: floor((0 - @bs3-sidebar-right-width));
+					}
+				}
+
+				&.sidebar-left-open {
+
+					.sidebar {
+
+						&.sidebar-left {
+							left: 0;
+						}
+					}
+				}
+
+				&.sidebar-right-open {
+
+					.sidebar {
+
+						&.sidebar-right {
+							right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Large desktop
+@media @media-query-large-desktop {
+
+	// Hidden state
+	.sidebar-state-hidden {}
+}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {
+
+	// Hidden state
+	.csstransforms3d {
+
+		.sidebar-left-enabled-lg,
+		.sidebar-right-enabled-lg {
+
+			&.sidebar-state-hidden-lg {
+
+				.sidebar {
+
+					&.sidebar-left {
+						.translate3d(floor( (0 - @bs3-sidebar-left-width) ), 0, 0);
+					}
+
+					&.sidebar-right {
+						right: 0;
+						.translate3d(@bs3-sidebar-right-width, 0, 0);
+					}
+				}
+
+				&.sidebar-left-open {
+
+					.sidebar {
+
+						&.sidebar-left {
+							.translate3d(0, 0, 0);
+						}
+					}
+				}
+
+				&.sidebar-right-open {
+
+					.sidebar {
+
+						&.sidebar-right {
+							.translate3d(0, 0, 0);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Hidden state
+	.no-csstransforms3d {
+
+		.sidebar-left-enabled-lg,
+		.sidebar-right-enabled-lg {
+
+			&.sidebar-state-hidden-lg {
+
+				.sidebar {
+
+					&.sidebar-left {
+						left: floor((0 - @bs3-sidebar-left-width));
+					}
+
+					&.sidebar-right {
+						right: floor((0 - @bs3-sidebar-right-width));
+					}
+				}
+
+				&.sidebar-left-open {
+
+					.sidebar {
+
+						&.sidebar-left {
+							left: 0;
+						}
+					}
+				}
+
+				&.sidebar-right-open {
+
+					.sidebar {
+
+						&.sidebar-right {
+							right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Print
+@media print {
+
+	// Hidden state
+	.sidebar-state-hidden {}
+}
+
+// Touch
+.touch {
+
+	// Hidden state
+	.sidebar-state-hidden {}
+}
+
+// No touch
+.no-touch {
+
+	// Hidden state
+	.sidebar-state-hidden {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Hidden state mixin
+.sidebar-mixin-state-hidden() {}
