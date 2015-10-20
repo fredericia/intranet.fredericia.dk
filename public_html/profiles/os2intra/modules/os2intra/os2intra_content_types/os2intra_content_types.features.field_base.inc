@@ -98,23 +98,31 @@ function os2intra_content_types_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_os2intra_canteen_canteen',
     'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'taxonomy',
+    'module' => 'entityreference',
     'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'os2intra_canteen',
-          'parent' => 0,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'kantiner' => 'kantiner',
         ),
       ),
-      'options_list_callback' => 'content_taxonomy_allowed_values',
+      'target_type' => 'taxonomy_term',
     ),
     'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_os2intra_canteen_menu_date'.
