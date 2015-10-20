@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Commons install profile.
+ */
+
+/**
+ * Implements hook_requirements().
+ * Set minimum 'max_execution_time' requirement
+ */
+function os2intra_requirements($phase) {
+  $requirements = array();
+  // Ensure translations don't break during installation.
+  $t = get_t();
+  if($phase == 'install') {
+    // Test PHP minimum execution time
+    $requirements['php_max_execution_time'] = array(
+      'title' => $t('PHP Max Execution Time'),
+      'value' => ini_get('max_execution_time'),
+    );
+    $max_execution_time = (int)ini_get('max_execution_time');
+    // Don't set the error when max_execution_time is 0 (Infinite).
+    if ($max_execution_time && $max_execution_time < DRUPAL_MINIMUM_MAX_EXECUTION_TIME) {
+      $requirements['php_max_execution_time']['description'] = $t('Your PHP execution time is too low, please set it greater than or equal to %time seconds.', array('%time' => DRUPAL_MINIMUM_MAX_EXECUTION_TIME));
+      $requirements['php_max_execution_time']['severity'] = REQUIREMENT_ERROR;
+    }
+  }
+  return $requirements;
+}
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function os2intra_install() {
+  // Enable the Origins theme and set it as the default.
+  theme_enable(array('bellcom', 'fki', 'intranet_theme', 'adminimal_theme'));
+
+    // The Bartik theme is automatically enabled during installation. Disable it.
+  db_update('system')
+    ->fields(array('status' => 0))
+    ->condition('type', 'theme')
+    ->condition('name', 'bartik')
+    ->execute();
+
+  // Set the default and administration themes.
+  variable_set('theme_default', 'fki');
+  // Set a default administrative theme:
+  variable_set('admin_theme', 'adminimal_theme');
+  variable_set('node_admin_theme', FALSE);
+
+  // Do not use the administration theme when editing or creating content.
+  variable_set('node_admin_theme', '0');
+
+  // Create a default role for site administrators, with all available permissions assigned.
+  $admin_role = new stdClass();
+  $admin_role->name = 'administrator';
+  $admin_role->weight = 2;
+  user_role_save($admin_role);
+  // Set this as the administrator role.
+  variable_set('user_admin_role', $admin_role->rid);
+
+  // Assign user 1 the "administrator" role.
+  db_insert('users_roles')
+    ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
+    ->execute();
+}

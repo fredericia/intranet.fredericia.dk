@@ -1,0 +1,49 @@
+name = OS2intra
+project = os2intra
+distribution_name = "OS2intra"
+description = Intranet ud af boksen.
+core = 7.x
+php_memory_limit = 128M
+
+; Core modules.
+dependencies[] = block
+dependencies[] = comment
+dependencies[] = field
+dependencies[] = file
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = search
+dependencies[] = taxonomy
+
+; Contributed modules.
+
+dependencies[] = ctools
+dependencies[] = entity
+dependencies[] = entityreference
+dependencies[] = entitycache
+dependencies[] = features
+dependencies[] = flag
+dependencies[] = menu_attributes
+dependencies[] = message
+dependencies[] = message_notify
+dependencies[] = message_subscribe
+dependencies[] = metatag
+dependencies[] = module_filter
+dependencies[] = og
+dependencies[] = panels
+dependencies[] = pathauto
+dependencies[] = r4032login
+dependencies[] = libraries
+dependencies[] = radioactivity
+dependencies[] = realname
+dependencies[] = redirect
+dependencies[] = rules
+dependencies[] = strongarm
+dependencies[] = token
+dependencies[] = views
+dependencies[] = views_bulk_operations
+dependencies[] = ckeditor
