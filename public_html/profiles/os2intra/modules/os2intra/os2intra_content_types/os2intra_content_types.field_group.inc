@@ -23,10 +23,10 @@ function os2intra_content_types_field_group_info() {
     'label' => 'Formular',
     'weight' => '0',
     'children' => array(
-      0 => 'group_meta',
+      0 => 'group_media',
       1 => 'group_meta2',
-      2 => 'group_tekst',
-      3 => 'group_media',
+      2 => 'group_meta',
+      3 => 'group_tekst',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(

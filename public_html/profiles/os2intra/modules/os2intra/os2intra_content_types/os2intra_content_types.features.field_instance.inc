@@ -94,6 +94,86 @@ function os2intra_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-it_vejledning-field_os2intra_base_structure'.
+  $field_instances['node-it_vejledning-field_os2intra_base_structure'] = array(
+    'bundle' => 'it_vejledning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_base_structure',
+    'label' => 'Placering',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 43,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-it_vejledning-field_os2intra_base_vejledning'.
+  $field_instances['node-it_vejledning-field_os2intra_base_vejledning'] = array(
+    'bundle' => 'it_vejledning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'section',
+    'field_name' => 'field_os2intra_base_vejledning',
+    'label' => 'Vejledning',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_hidden',
+      'weight' => 44,
+    ),
+  );
+
   // Exported field_instance: 'node-os2intra_base_page-body'.
   $field_instances['node-os2intra_base_page-body'] = array(
     'bundle' => 'os2intra_base_page',
@@ -339,6 +419,45 @@ function os2intra_content_types_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 19,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2intra_base_page-field_os2intra_base_structure'.
+  $field_instances['node-os2intra_base_page-field_os2intra_base_structure'] = array(
+    'bundle' => 'os2intra_base_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_base_structure',
+    'label' => 'Placering',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 21,
     ),
   );
 
@@ -2013,6 +2132,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Kantine');
   t('Kilde');
   t('Link til side');
+  t('Placering');
   t('Portalkategori');
   t('Radioactivity');
   t('Relaterede sider');
@@ -2028,6 +2148,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Title');
   t('Topics');
   t('Type');
+  t('Vejledning');
   t('Vis på forside');
   t('Vælg de kantiner retten serveres i');
   t('combo');
