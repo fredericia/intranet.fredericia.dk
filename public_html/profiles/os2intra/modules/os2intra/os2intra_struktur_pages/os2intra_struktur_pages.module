@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Overordnet struktur sider feature.
+ */
+
+include_once 'os2intra_struktur_pages.features.inc';
