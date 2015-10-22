@@ -37,24 +37,19 @@ function os2intra_requirements($phase) {
  * @see system_install()
  */
 function os2intra_install() {
-  // Enable the Origins theme and set it as the default.
-  theme_enable(array('bellcom', 'fki', 'intranet_theme', 'adminimal_theme'));
 
-    // The Bartik theme is automatically enabled during installation. Disable it.
-  db_update('system')
-    ->fields(array('status' => 0))
-    ->condition('type', 'theme')
-    ->condition('name', 'bartik')
-    ->execute();
+  // Enable themes
+  theme_enable(array('bellcom', 'fki', 'adminimal_theme'));
 
-  // Set the default and administration themes.
+  // Disable themes
+  theme_disable(array('bartik'));
+
+  // Set default theme
   variable_set('theme_default', 'fki');
-  // Set a default administrative theme:
-  variable_set('admin_theme', 'adminimal_theme');
-  variable_set('node_admin_theme', FALSE);
 
-  // Do not use the administration theme when editing or creating content.
-  variable_set('node_admin_theme', '0');
+  // Set default administrative theme:
+  variable_set('admin_theme', 'adminimal_theme');
+  variable_set('node_admin_theme', 0);
 
   // Create a default role for site administrators, with all available permissions assigned.
   $admin_role = new stdClass();
