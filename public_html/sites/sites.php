@@ -53,3 +53,6 @@
  * @see conf_path()
  * @see http://drupal.org/documentation/install/multi-site
  */
+
+$sites['intranet.fredericia.bellcom.dk'] = 'intranet.fredericia.dk';
+
