@@ -12,6 +12,7 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[page_manager_handlers][] = node_edit__panel_context_05b75a06-455d-4044-97c5-4197f5b8b891
 features[page_manager_handlers][] = node_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518
+features[page_manager_handlers][] = node_view__panel_context_557667a1-460e-4beb-904e-8eb83dabc864
 features[page_manager_pages][] = home
 features[variable][] = page_manager_node_edit_disabled
 features[variable][] = page_manager_node_view_disabled
