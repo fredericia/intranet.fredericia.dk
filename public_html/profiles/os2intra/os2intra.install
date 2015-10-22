@@ -39,7 +39,7 @@ function os2intra_requirements($phase) {
 function os2intra_install() {
 
   // Enable themes
-  theme_enable(array('bellcom', 'fki', 'adminimal_theme'));
+  theme_enable(array('bootstrap', 'bellcom', 'fki', 'adminimal'));
 
   // Disable themes
   theme_disable(array('bartik'));
@@ -48,7 +48,7 @@ function os2intra_install() {
   variable_set('theme_default', 'fki');
 
   // Set default administrative theme:
-  variable_set('admin_theme', 'adminimal_theme');
+  variable_set('admin_theme', 'adminimal');
   variable_set('node_admin_theme', 0);
 
   // Create a default role for site administrators, with all available permissions assigned.
