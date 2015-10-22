@@ -75,8 +75,8 @@ settings[youtube]       = 0
 settings[youtube_url]   = 'http://www.youtube.com/'
 
 ; Layout
-settings[sidebar_show_social_links]   = 0;
-settings[footer_show_social_links]    = 0;
+settings[sidebar_show_social_links] = 0;
+settings[footer_show_social_links]  = 0;
 
 ; Disable BootstrapCDN so the compiled LESS source files can be used.
 settings[bootstrap_cdn] = ''

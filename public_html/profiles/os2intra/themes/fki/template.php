@@ -62,6 +62,9 @@ function fki_preprocess_html(&$variables) {
   $variables['classes_array'][] = 'simple-navigation-enabled-sm';
   $variables['classes_array'][] = 'simple-navigation-enabled-md';
   $variables['classes_array'][] = 'simple-navigation-enabled-lg';
+
+  // Load jQuery UI
+  drupal_add_library('system', 'ui');
 }
 
 /*

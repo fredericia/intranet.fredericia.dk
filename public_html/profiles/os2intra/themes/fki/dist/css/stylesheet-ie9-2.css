@@ -4879,6 +4879,12 @@
 }
 
 @media screen and (max-width: 767px) {
+  .fki-breadcrumb-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .fki-list-simple .fki-list-simple-heading .fki-list-simple-title {
     font-size: 11px;
     line-height: 15px;
