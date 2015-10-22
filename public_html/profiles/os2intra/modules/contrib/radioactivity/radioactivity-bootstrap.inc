@@ -13,7 +13,7 @@ else {
   // We're in drupal, setup necessary vars
   define("VAR_RADIOACTIVITY_CHECKSUM_SALT", variable_get("radioactivity_checksum_salt", "undefined"));
   define("VAR_RADIOACTIVITY_TEMP_DIR", variable_get('radioactivity_temp_dir', sys_get_temp_dir()));
-  if (class_exists('Memcache')) {
+  if (class_exists('Memcache') || class_exists("Memcached")) {
     define("VAR_RADIOACTIVITY_MEMCACHED_HOST", variable_get("radioactivity_memcached_host", "localhost"));
     define("VAR_RADIOACTIVITY_MEMCACHED_PORT", variable_get("radioactivity_memcached_port", "11211"));
   }
@@ -49,7 +49,7 @@ function _radioactivity_light_initialization() {
       define("VAR_RADIOACTIVITY_CHECKSUM_SALT", $var);
       define("VAR_RADIOACTIVITY_TEMP_DIR", variable_get('radioactivity_temp_dir', sys_get_temp_dir()));
       variable_set("radioactivity_config_warning", TRUE);
-      if (class_exists('Memcache')) {
+      if (class_exists('Memcache') || class_exists("Memcached")) {
         define("VAR_RADIOACTIVITY_MEMCACHED_HOST", variable_get("radioactivity_memcached_host", "localhost"));
         define("VAR_RADIOACTIVITY_MEMCACHED_PORT", variable_get("radioactivity_memcached_port", "11211"));
       }
@@ -79,16 +79,24 @@ function _radioactivity_require_bootstrapping() {
     }
 
     require_once './includes/bootstrap.inc';
-    drupal_bootstrap(DRUPAL_BOOTSTRAP_VARIABLES);
+    drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
     variable_set("radioactivity_bootstrap_warning", TRUE);
   }
+}
+
+/**
+ * Internal function to filter nested arrays().
+ * @param type $array
+ */
+function _radioactivity_filter_nested_array($array) {
+  return !is_array($array) ? TRUE : FALSE;
 }
 
 /**
  * Generate a checksum for given data
  */
 function _radioactivity_checksum_generate($data) {
-  $temp = $data;
+  $temp = array_filter($data, "_radioactivity_filter_nested_array");
   unset($temp['checksum']);
   ksort($temp);
   $temp = join(',', $temp);
