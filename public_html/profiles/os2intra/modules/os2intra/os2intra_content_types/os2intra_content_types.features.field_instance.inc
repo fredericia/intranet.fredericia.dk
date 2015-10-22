@@ -10,6 +10,180 @@
 function os2intra_content_types_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance:
+  // 'field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledninger_1'.
+  $field_instances['field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledninger_1'] = array(
+    'bundle' => 'field_os2intra_base_vejledning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'no_wrapper',
+    'field_name' => 'field_os2intra_itvejledninger_1',
+    'label' => 'Spalte 1',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'fuld_html' => 'fuld_html',
+          'indhold' => 'indhold',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'fuld_html' => array(
+              'weight' => 0,
+            ),
+            'indhold' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledninger_2'.
+  $field_instances['field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledninger_2'] = array(
+    'bundle' => 'field_os2intra_base_vejledning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'no_wrapper',
+    'field_name' => 'field_os2intra_itvejledninger_2',
+    'label' => 'Spalte 2',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'fuld_html' => 'fuld_html',
+          'indhold' => 'indhold',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'fuld_html' => array(
+              'weight' => 0,
+            ),
+            'indhold' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledninger_3'.
+  $field_instances['field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledninger_3'] = array(
+    'bundle' => 'field_os2intra_base_vejledning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'no_wrapper',
+    'field_name' => 'field_os2intra_itvejledninger_3',
+    'label' => 'Spalte 3',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'fuld_html' => 'fuld_html',
+          'indhold' => 'indhold',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'fuld_html' => array(
+              'weight' => 0,
+            ),
+            'indhold' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-it_vejledning-body'.
   $field_instances['node-it_vejledning-body'] = array(
     'bundle' => 'it_vejledning',
@@ -145,9 +319,12 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'module' => 'field_collection',
         'settings' => array(
-          'view_mode' => 'full',
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
         ),
-        'type' => 'field_collection_fields',
+        'type' => 'field_collection_list',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -169,7 +346,7 @@ function os2intra_content_types_field_default_field_instances() {
       'active' => 0,
       'module' => 'field_collection',
       'settings' => array(),
-      'type' => 'field_collection_hidden',
+      'type' => 'field_collection_embed',
       'weight' => 44,
     ),
   );
@@ -2138,6 +2315,9 @@ function os2intra_content_types_field_default_field_instances() {
   t('Relaterede sider');
   t('Skal være inkl. <i>http://</i> hvis det er sider uden for sitet. Skal kun bruges til sider ser ikke kan indlejres som indhold via iframe.');
   t('Skjul relaterede links');
+  t('Spalte 1');
+  t('Spalte 2');
+  t('Spalte 3');
   t('Spotbillede');
   t('Spotbokse');
   t('Stikord');
