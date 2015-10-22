@@ -12,9 +12,9 @@
     <?php print render($title_prefix); ?>
     <?php if ($title): ?>
       <div class="fki-box-heading">
-        <?php print $title_heading; ?><?php print $title_attributes; ?>
+        <<?php print $title_heading; ?> <?php print $title_attributes; ?>>
         <?php print $title; ?>
-        <?php print $title_heading; ?>
+        </<?php print $title_heading; ?>>
       </div>
     <?php endif; ?>
     <?php print render($title_suffix); ?>

@@ -10,14 +10,15 @@
 // Variables
 // --------------------------------------------------
 
-@fki-box-background-color: #fff;
+
+@fki-box-background-color: 	#fff;
+@fki-box-border-radius: 	 	@border-radius-base;
 
 @fki-box-heading-top-bottom-spacing: 5px;
 @fki-box-heading-left-right-spacing: @default-left-right-spacing;
 
 @fki-box-body-top-bottom-spacing: 5px;
 @fki-box-body-left-right-spacing: @default-left-right-spacing;
-
 
 // --------------------------------------------------
 // Styling
@@ -26,24 +27,47 @@
 // Box
 .fki-box {
 	background-color: @fki-box-background-color;
+	border-radius: @fki-box-border-radius;
 
 	.fki-box-heading {
 		padding: @fki-box-heading-top-bottom-spacing @fki-box-heading-left-right-spacing;
+		.border-top-radius(@fki-box-border-radius);
 
 		.pane-title,
-		.fki-box-title {
+		.fki-box-heading-title {
 			margin: 0;
-			.heading-h3;
+			.heading-h4;
 		}
 	}
 
 	.fki-box-body {
 		padding: @fki-box-body-top-bottom-spacing @fki-box-body-left-right-spacing;
 	}
+}
 
-	.fki-box-footer {
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
 
-	}
+.fki-box,
+.fki-box-primary {
+	.fki-mixin-box(@state-primary-bg, @state-primary-text);
+}
+
+.fki-box-secondary {
+	.fki-mixin-box(@state-secondary-bg, @state-secondary-text);
+}
+
+.fki-box-tertiary {
+	.fki-mixin-box(@state-tertiary-bg, @state-tertiary-text);
+}
+
+.fki-box-quaternary {
+	.fki-mixin-box(@state-quaternary-bg, @state-quaternary-text);
+}
+
+.fki-box-quinary {
+	.fki-mixin-box(@state-quinary-bg, @state-quinary-text);
 }
 
 // --------------------------------------------------
@@ -104,4 +128,46 @@
 
 	// Box
 	.fki-box {}
+}
+
+// Print
+@media print {
+
+	// Box
+	.fki-box {}
+}
+
+// Touch
+.touch {
+
+	// Box
+	.fki-box {}
+}
+
+// No touch
+.no-touch {
+
+	// Box
+	.fki-box {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Box mixin
+.fki-mixin-box(@heading-background-color, @heading-font-color) {
+
+	&,
+	>	.fki-box {
+
+		.fki-box-heading {
+			background-color: @heading-background-color;
+
+			.pane-title,
+			.fki-box-heading-title {
+				color: @heading-font-color;
+			}
+		}
+	}
 }
