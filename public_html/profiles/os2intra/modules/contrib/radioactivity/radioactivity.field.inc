@@ -12,6 +12,8 @@ function radioactivity_field_info() {
       ),
       'instance_settings' => array(
         'profile' => 'default',
+        'history' => 0,
+        'history_limit' => 8,
       ),
       'default_widget' => RADIOACTIVITY_BASIC_WIDGET,
       'default_formatter' => RADIOACTIVITY_COMBO_FORMATTER,
@@ -45,6 +47,20 @@ function radioactivity_field_instance_settings_form($field, $instance) {
       '#options' => $profiles,
     );
 
+    $form['history'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Enable history'),
+      '#default_value' => isset($settings['history']) ? $settings['history'] : 0,
+      '#description' => t('Enable history tracking for this field instance. You can view the history on the edit page or by changing the fields display type.'),
+    );
+
+    $form['history_limit'] = array(
+      '#type' => 'textfield',
+      '#title' => t('History limit'),
+      '#default_value' => isset($settings['history_limit']) ? $settings['history_limit'] : 8,
+      '#description' => t('For how many hours do you want to store the data for?'),
+    );
+
     if (isset($profiles['none'])) {
       $form['profile']['#disabled'] = TRUE;
       $form['profile']['#description'] = t(
@@ -60,7 +76,7 @@ function radioactivity_field_instance_settings_form($field, $instance) {
 }
 
 /**
- * Implement hook_field_widget_info().
+ * Implements hook_field_widget_info().
  */
 function radioactivity_field_widget_info() {
   return array(
@@ -71,6 +87,9 @@ function radioactivity_field_widget_info() {
   );
 }
 
+/**
+ * Implements hook_field_formatter_info().
+ */
 function radioactivity_field_formatter_info() {
   return array(
     RADIOACTIVITY_COMBO_FORMATTER => array(
@@ -102,6 +121,16 @@ function _radioactivity_register_emitter($storage = NULL, $entity_type = NULL, $
     'language'    => $language,
     'entity_id'   => $entity_id,
   );
+
+  // Remove trash which may be injected by another module.
+
+  $keep = array('accuracy', 'bundle', 'energy', 'entity_id', 'entity_type', 'field_name', 'language', 'storage', 'type');
+  foreach ($incident as $key => $val) {
+    if (!in_array($key, $keep)) {
+      unset($incident[$key]);
+    }
+  }
+
   @$cache['emitDefault'][] = _radioactivity_prepare_incident($incident);
 }
 
@@ -186,6 +215,17 @@ function radioactivity_field_formatter_view($entity_type, $entity, $field, $inst
               );
             }
             break;
+
+          case 'history':
+            $data = _radioactivity_get_history_for_field_and_entity($instance['id'], $entity_id);
+            foreach ($items as $delta => $item) {
+              $energy          = $item[RADIOACTIVITY_FIELD_ENERGY];
+              $element[$delta] = array(
+                '#theme' => 'radioactivity_history',
+                '#dataset' => $data,
+              );
+            }
+            break;
         }
       }
     break; // case RADIOACTIVITY_COMBO_FORMATTER:
@@ -251,6 +291,7 @@ function radioactivity_combo_field_types() {
     'energy' => t('Raw numeric value'),
     'popularity' => t('Percentage'),
     'gauge' => t('Hotness gauge'),
+    'history' => t('History'),
   );
 }
 
@@ -296,18 +337,14 @@ function radioactivity_field_formatter_settings_summary($field, $instance, $view
 }
 
 /**
- * Implements hook_page_alter()
- */
-function radioactivity_page_alter($page) {
-  radioactivity_update_emitters();
-}
-
-/**
  * Update emitters on page
+ * @param $ajax boolean
+ * @return false|array
  */
-function radioactivity_update_emitters() {
+function radioactivity_update_emitters($ajax = FALSE) {
 
-  // foreach emitters emitter->emit();
+  $data = FALSE;
+
   $register = _radioactivity_register_emitter();
   module_load_include("inc", "radioactivity", "radioactivity-bootstrap");
   $path = base_path() . drupal_get_path('module', 'radioactivity') . '/emit.php';
@@ -319,13 +356,24 @@ function radioactivity_update_emitters() {
   );
 
   if (count($register) > 0) {
-    drupal_add_library('system', 'jquery.cookie');
-    drupal_add_js(drupal_get_path('module', 'radioactivity') . '/js/radioactivity.js');
-    drupal_add_js(array('radioactivity' => array('emitters' => $register)), 'setting');
-    drupal_add_js(array('radioactivity' => array('config' => $config)), 'setting');
+    if ($ajax) {
+      $data = array(
+        'emitters' => $register,
+        'config' => $config,
+      );
+    } else {
+      drupal_add_library('system', 'jquery.cookie');
+      drupal_add_js(drupal_get_path('module', 'radioactivity') . '/js/radioactivity.js');
+      drupal_add_js(array('radioactivity' => array('emitters' => $register)), 'setting');
+      drupal_add_js(array('radioactivity' => array('config' => $config)), 'setting');
+    }
   }
 
   _radioactivity_register_emitter('RESET');
+
+  if ($data) {
+    return $data;
+  }
 }
 
 /**
@@ -354,6 +402,18 @@ function radioactivity_field_presave($entity_type, $entity, $field, $instance, $
 
     foreach ($items as $delta => $item) {
 
+      // ensure values
+      $items[$delta][RADIOACTIVITY_FIELD_TIMESTAMP] = time();
+    }
+  }
+}
+
+/**
+ * Implement hook_field_insert().
+ */
+function radioactivity_field_insert($entity_type, $entity, $field, $instance, $langcode, &$items) {
+  if ($field['type'] == RADIOACTIVITY_FIELD_TYPE) {
+    foreach ($items as $delta => $item) {
       // ensure values
       $items[$delta][RADIOACTIVITY_FIELD_TIMESTAMP] = time();
     }
@@ -414,6 +474,27 @@ function radioactivity_field_widget_form(&$form, &$form_state, $field, $instance
       '#default_value' => $timestamp,
     ),
   );
+
+  if ($instance['settings']['history']) {
+
+    drupal_add_js(drupal_get_path('module', 'radioactivity') . '/js/radioactivity-history.js');
+
+    $entity = &$form['#entity'];
+    $info = entity_get_info($instance['entity_type']);
+    $id = $info['entity keys']['id'];
+
+    if (isset($entity->{$id})) {
+      $entity_id = $entity->{$id};
+      $data = _radioactivity_get_history_for_field_and_entity($instance['id'], $entity_id);
+
+      $element += array(
+        RADIOACTIVITY_HISTORY_GRAPH => array(
+          '#theme' => 'radioactivity_history',
+          '#dataset' => $data,
+        ),
+      );
+    }
+  }
 
   return $element;
 }

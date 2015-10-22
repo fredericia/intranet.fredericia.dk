@@ -16,7 +16,9 @@ class RadioactivityLiveIncidentStorage extends RadioactivityIncidentStorage {
   /**
    * Add incident directly to the db
    */
-  public function addIncident(RadioactivityIncident$incident) {
-    $incident->updateEnergy();
+  public function addIncident(RadioactivityIncident $incident) {
+    if ($incident && $incident->floodCheck()) {
+      $incident->updateEnergy();
+    }
   }
 }
