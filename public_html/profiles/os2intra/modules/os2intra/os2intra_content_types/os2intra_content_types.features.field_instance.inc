@@ -94,6 +94,86 @@ function os2intra_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-it_vejledning-field_os2intra_base_structure'.
+  $field_instances['node-it_vejledning-field_os2intra_base_structure'] = array(
+    'bundle' => 'it_vejledning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_base_structure',
+    'label' => 'Placering',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 43,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-it_vejledning-field_os2intra_base_vejledning'.
+  $field_instances['node-it_vejledning-field_os2intra_base_vejledning'] = array(
+    'bundle' => 'it_vejledning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'section',
+    'field_name' => 'field_os2intra_base_vejledning',
+    'label' => 'Vejledning',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_hidden',
+      'weight' => 44,
+    ),
+  );
+
   // Exported field_instance: 'node-os2intra_base_page-body'.
   $field_instances['node-os2intra_base_page-body'] = array(
     'bundle' => 'os2intra_base_page',
@@ -339,6 +419,45 @@ function os2intra_content_types_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 19,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2intra_base_page-field_os2intra_base_structure'.
+  $field_instances['node-os2intra_base_page-field_os2intra_base_structure'] = array(
+    'bundle' => 'os2intra_base_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_base_structure',
+    'label' => 'Placering',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 21,
     ),
   );
 
@@ -811,7 +930,7 @@ function os2intra_content_types_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_popup',
+      'type' => 'date_select',
       'weight' => 1,
     ),
   );
@@ -1389,6 +1508,7 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Link til side',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -1407,6 +1527,7 @@ function os2intra_content_types_field_default_field_instances() {
       ),
       'rel_remove' => 'default',
       'title' => 'required',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 'optional',
@@ -1712,6 +1833,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Radioactivity',
     'required' => 0,
     'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
       'profile' => 'commons_ra_node',
       'user_register_form' => FALSE,
     ),
@@ -1827,79 +1950,6 @@ function os2intra_content_types_field_default_field_instances() {
       'weight' => 16,
     ),
     'widget_type' => 'options_select',
-  );
-
-  // Exported field_instance: 'node-wiki-og_group_ref'.
-  $field_instances['node-wiki-og_group_ref'] = array(
-    'bundle' => 'wiki',
-    'default_value' => NULL,
-    'default_value_function' => 'commons_groups_entityreference_default_value',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'display_in_partial_form' => 0,
-    'entity_type' => 'node',
-    'field_name' => 'og_group_ref',
-    'label' => 'Groups',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'action' => 'none',
-          'action_on_edit' => 0,
-          'fallback' => 'none',
-          'og_context' => 0,
-          'skip_perm' => 0,
-          'status' => 1,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 5,
-    ),
   );
 
   // Exported field_instance: 'node-wiki-title_field'.
@@ -2077,12 +2127,12 @@ function os2intra_content_types_field_default_field_instances() {
   t('Expire date');
   t('Filer');
   t('Group content visibility');
-  t('Groups');
   t('Gruppe ID');
   t('KL Emneord');
   t('Kantine');
   t('Kilde');
   t('Link til side');
+  t('Placering');
   t('Portalkategori');
   t('Radioactivity');
   t('Relaterede sider');
@@ -2098,6 +2148,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Title');
   t('Topics');
   t('Type');
+  t('Vejledning');
   t('Vis på forside');
   t('Vælg de kantiner retten serveres i');
   t('combo');
