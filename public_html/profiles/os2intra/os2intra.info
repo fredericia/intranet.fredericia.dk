@@ -1,11 +1,14 @@
-name = OS2intra
+name = OS2Intra
 project = os2intra
 distribution_name = "OS2intra"
-description = Intranet ud af boksen.
+description = "Intranet ud af boksen."
 core = 7.x
 php_memory_limit = 128M
 
-; Core modules.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Core modules.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 dependencies[] = block
 dependencies[] = comment
 dependencies[] = field
@@ -19,7 +22,9 @@ dependencies[] = path
 dependencies[] = search
 dependencies[] = taxonomy
 
-; Contributed modules.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Contrib modules.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 dependencies[] = ctools
 dependencies[] = entity
@@ -34,7 +39,6 @@ dependencies[] = message_subscribe
 dependencies[] = metatag
 dependencies[] = module_filter
 dependencies[] = og
-dependencies[] = panels
 dependencies[] = pathauto
 dependencies[] = r4032login
 dependencies[] = libraries
@@ -67,7 +71,13 @@ dependencies[] = scheduler
 dependencies[] = admin_menu
 dependencies[] = adminimal_admin_menu
 dependencies[] = fences
-dependencies[] = pps
 dependencies[] = icon
 dependencies[] = icon_menu
 dependencies[] = fontawesome
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Features.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+dependencies[] = os2intra_content_types
+dependencies[] = os2intra_panels

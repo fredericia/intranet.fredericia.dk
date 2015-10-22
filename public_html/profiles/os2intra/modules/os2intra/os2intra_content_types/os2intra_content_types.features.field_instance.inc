@@ -811,7 +811,7 @@ function os2intra_content_types_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_popup',
+      'type' => 'date_select',
       'weight' => 1,
     ),
   );
@@ -1389,6 +1389,7 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Link til side',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -1407,6 +1408,7 @@ function os2intra_content_types_field_default_field_instances() {
       ),
       'rel_remove' => 'default',
       'title' => 'required',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 'optional',
@@ -1712,6 +1714,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Radioactivity',
     'required' => 0,
     'settings' => array(
+      'history' => 0,
+      'history_limit' => 8,
       'profile' => 'commons_ra_node',
       'user_register_form' => FALSE,
     ),
@@ -1827,79 +1831,6 @@ function os2intra_content_types_field_default_field_instances() {
       'weight' => 16,
     ),
     'widget_type' => 'options_select',
-  );
-
-  // Exported field_instance: 'node-wiki-og_group_ref'.
-  $field_instances['node-wiki-og_group_ref'] = array(
-    'bundle' => 'wiki',
-    'default_value' => NULL,
-    'default_value_function' => 'commons_groups_entityreference_default_value',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 11,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'display_in_partial_form' => 0,
-    'entity_type' => 'node',
-    'field_name' => 'og_group_ref',
-    'label' => 'Groups',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'action' => 'none',
-          'action_on_edit' => 0,
-          'fallback' => 'none',
-          'og_context' => 0,
-          'skip_perm' => 0,
-          'status' => 1,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 5,
-    ),
   );
 
   // Exported field_instance: 'node-wiki-title_field'.
@@ -2077,7 +2008,6 @@ function os2intra_content_types_field_default_field_instances() {
   t('Expire date');
   t('Filer');
   t('Group content visibility');
-  t('Groups');
   t('Gruppe ID');
   t('KL Emneord');
   t('Kantine');
