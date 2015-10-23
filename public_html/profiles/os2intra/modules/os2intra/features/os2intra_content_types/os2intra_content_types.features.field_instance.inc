@@ -2343,6 +2343,43 @@ function os2intra_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'taxonomy_term-os2web_base_tax_site_structure-field_os2web_base_icon'.
+  $field_instances['taxonomy_term-os2web_base_tax_site_structure-field_os2web_base_icon'] = array(
+    'bundle' => 'os2web_base_tax_site_structure',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'icon_field',
+        'settings' => array(
+          'link_to_content' => FALSE,
+        ),
+        'type' => 'icon_field_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2web_base_icon',
+    'label' => 'Ikon',
+    'required' => 0,
+    'settings' => array(
+      'bundle' => NULL,
+      'icon' => NULL,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'icon_field',
+      'settings' => array(),
+      'type' => 'icon_field',
+      'weight' => 41,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('At this date, the content will be flagged expired.');
@@ -2357,6 +2394,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Group content visibility');
   t('Groups audience');
   t('Gruppe ID');
+  t('Ikon');
   t('KL Emneord');
   t('Kantine');
   t('Kilde');

@@ -643,6 +643,24 @@ function os2intra_content_types_field_default_field_bases() {
     'type' => 'list_text',
   );
 
+  // Exported field_base: 'field_os2web_base_icon'.
+  $field_bases['field_os2web_base_icon'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_base_icon',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'icon_field',
+    'settings' => array(
+      'bundle' => NULL,
+      'icon' => NULL,
+    ),
+    'translatable' => 0,
+    'type' => 'icon_field',
+  );
+
   // Exported field_base: 'field_radioactivity'.
   $field_bases['field_radioactivity'] = array(
     'active' => 1,

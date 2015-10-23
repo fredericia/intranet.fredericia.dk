@@ -485,6 +485,13 @@ function os2intra_content_types_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_pattern';
+  $strongarm->value = '[term:parents:join-path]/[term:name]';
+  $export['pathauto_taxonomy_term_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_topics_pattern';
   $strongarm->value = '';
   $export['pathauto_taxonomy_term_topics_pattern'] = $strongarm;
@@ -502,6 +509,122 @@ function os2intra_content_types_strongarm() {
   $strongarm->name = 'taxonomy_menu_display_descendants_os2web_base_tax_site_structure';
   $strongarm->value = 0;
   $export['taxonomy_menu_display_descendants_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_display_num_os2web_base_tax_site_structure';
+  $strongarm->value = 0;
+  $export['taxonomy_menu_display_num_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_end_all_os2web_base_tax_site_structure';
+  $strongarm->value = FALSE;
+  $export['taxonomy_menu_end_all_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_expanded_os2web_base_tax_site_structure';
+  $strongarm->value = 1;
+  $export['taxonomy_menu_expanded_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_flat_os2web_base_tax_site_structure';
+  $strongarm->value = 0;
+  $export['taxonomy_menu_flat_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_hide_empty_terms_os2web_base_tax_site_structure';
+  $strongarm->value = 1;
+  $export['taxonomy_menu_hide_empty_terms_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_path_os2web_base_tax_site_structure';
+  $strongarm->value = 'taxonomy_menu_path_default';
+  $export['taxonomy_menu_path_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_rebuild_os2web_base_tax_site_structure';
+  $strongarm->value = 0;
+  $export['taxonomy_menu_rebuild_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_sync_os2web_base_tax_site_structure';
+  $strongarm->value = 1;
+  $export['taxonomy_menu_sync_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_term_item_description_os2web_base_tax_site_structure';
+  $strongarm->value = 0;
+  $export['taxonomy_menu_term_item_description_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_trails_node_it_vejledning';
+  $strongarm->value = array(
+    'selection_method' => 'first',
+    'only_without_menu' => 1,
+    'set_breadcrumb' => 'if_empty',
+    'term_path' => 'tm',
+    'term_path_patterns' => array(),
+    'instances' => array(
+      'field_os2intra_base_structure' => 'field_os2intra_base_structure',
+    ),
+    'paths_ui' => '',
+    'trail_per_menu' => 1,
+  );
+  $export['taxonomy_menu_trails_node_it_vejledning'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_vocab_menu_os2web_base_tax_site_structure';
+  $strongarm->value = 'main-menu';
+  $export['taxonomy_menu_vocab_menu_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_vocab_parent_os2web_base_tax_site_structure';
+  $strongarm->value = '0';
+  $export['taxonomy_menu_vocab_parent_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_voc_item_description_os2web_base_tax_site_structure';
+  $strongarm->value = 0;
+  $export['taxonomy_menu_voc_item_description_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_voc_item_os2web_base_tax_site_structure';
+  $strongarm->value = FALSE;
+  $export['taxonomy_menu_voc_item_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'taxonomy_menu_voc_name_os2web_base_tax_site_structure';
+  $strongarm->value = FALSE;
+  $export['taxonomy_menu_voc_name_os2web_base_tax_site_structure'] = $strongarm;
 
   return $export;
 }
