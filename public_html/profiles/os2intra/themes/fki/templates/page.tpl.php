@@ -63,10 +63,7 @@
 
               <!-- Begin - content -->
               <div class="col-md-8 main-navigation-bar-content">
-<?php
-  $block = module_invoke('search', 'block_view', 'search');
-  print render($block); 
-?>
+
                 <?php if (isset($primary_navigation)): ?>
                   <!-- Begin - navigation -->
                   <?php print render($primary_navigation); ?>
