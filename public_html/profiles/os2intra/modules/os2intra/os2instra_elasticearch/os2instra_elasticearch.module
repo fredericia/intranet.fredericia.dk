@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OS2instra Elasticearch feature.
+ */
+
+include_once 'os2instra_elasticearch.features.inc';
