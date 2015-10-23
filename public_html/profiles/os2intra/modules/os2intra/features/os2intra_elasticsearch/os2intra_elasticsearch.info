@@ -1,4 +1,4 @@
-name = OS2instra Elasticearch
+name = OS2instra Elasticsearch
 core = 7.x
 package = OS2Intra
 version = 7.x-1.0
