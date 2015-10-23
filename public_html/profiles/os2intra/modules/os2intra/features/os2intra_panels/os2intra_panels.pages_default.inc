@@ -220,19 +220,16 @@ function os2intra_panels_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-65d3b586-5a2e-4863-b6a1-bd73675c7682';
+    $pane->pid = 'new-1be22f35-56be-4f8c-8f41-f70eb9c30028';
     $pane->panel = 'content';
-    $pane->type = 'node_title';
-    $pane->subtype = 'node_title';
+    $pane->type = 'entity_view';
+    $pane->subtype = 'node';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'link' => 0,
-      'markup' => 'h1',
-      'id' => '',
-      'class' => '',
+      'view_mode' => 'full',
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -244,110 +241,9 @@ function os2intra_panels_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '65d3b586-5a2e-4863-b6a1-bd73675c7682';
-    $display->content['new-65d3b586-5a2e-4863-b6a1-bd73675c7682'] = $pane;
-    $display->panels['content'][0] = 'new-65d3b586-5a2e-4863-b6a1-bd73675c7682';
-    $pane = new stdClass();
-    $pane->pid = 'new-13aa81dc-7ee7-4e88-b37f-726e0b8b7464';
-    $pane->panel = 'content';
-    $pane->type = 'node_updated';
-    $pane->subtype = 'node_updated';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'format' => 'long',
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '13aa81dc-7ee7-4e88-b37f-726e0b8b7464';
-    $display->content['new-13aa81dc-7ee7-4e88-b37f-726e0b8b7464'] = $pane;
-    $display->panels['content'][1] = 'new-13aa81dc-7ee7-4e88-b37f-726e0b8b7464';
-    $pane = new stdClass();
-    $pane->pid = 'new-7629bbe4-41b0-41dd-9d05-5cd89f962275';
-    $pane->panel = 'content';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:body';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'text_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'fences_wrapper' => 'section',
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '7629bbe4-41b0-41dd-9d05-5cd89f962275';
-    $display->content['new-7629bbe4-41b0-41dd-9d05-5cd89f962275'] = $pane;
-    $display->panels['content'][2] = 'new-7629bbe4-41b0-41dd-9d05-5cd89f962275';
-    $pane = new stdClass();
-    $pane->pid = 'new-d74ac9b6-f0f7-4a86-9d3c-2d1f1f1e36fe';
-    $pane->panel = 'content';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'it_vejledninger-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = 'd74ac9b6-f0f7-4a86-9d3c-2d1f1f1e36fe';
-    $display->content['new-d74ac9b6-f0f7-4a86-9d3c-2d1f1f1e36fe'] = $pane;
-    $display->panels['content'][3] = 'new-d74ac9b6-f0f7-4a86-9d3c-2d1f1f1e36fe';
-    $pane = new stdClass();
-    $pane->pid = 'new-857b4782-490e-4da3-badb-657a3efb4355';
-    $pane->panel = 'content';
-    $pane->type = 'node_comment_wrapper';
-    $pane->subtype = 'node_comment_wrapper';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'mode' => '1',
-      'comments_per_page' => '50',
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = '857b4782-490e-4da3-badb-657a3efb4355';
-    $display->content['new-857b4782-490e-4da3-badb-657a3efb4355'] = $pane;
-    $display->panels['content'][4] = 'new-857b4782-490e-4da3-badb-657a3efb4355';
+    $pane->uuid = '1be22f35-56be-4f8c-8f41-f70eb9c30028';
+    $display->content['new-1be22f35-56be-4f8c-8f41-f70eb9c30028'] = $pane;
+    $display->panels['content'][0] = 'new-1be22f35-56be-4f8c-8f41-f70eb9c30028';
     $pane = new stdClass();
     $pane->pid = 'new-88ba7aa2-dc50-4577-8c33-5689da2bec56';
     $pane->panel = 'sidebar';
@@ -404,9 +300,140 @@ function os2intra_panels_default_page_manager_handlers() {
     $display->content['new-212bf1f0-f087-4005-a0da-14f714097311'] = $pane;
     $display->panels['sidebar'][1] = 'new-212bf1f0-f087-4005-a0da-14f714097311';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-13aa81dc-7ee7-4e88-b37f-726e0b8b7464';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view__panel_context_557667a1-460e-4beb-904e-8eb83dabc864'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -28;
+  $handler->conf = array(
+    'title' => 'Grupper',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'os2intra_group' => 'os2intra_group',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'content-with-right-sidebar';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'sidebar' => NULL,
+      'content' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'da7b3ac8-f3ed-46d0-9a0e-145f5ac8f1ba';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-b3812514-dd4f-4b2e-8deb-ad75274cb60e';
+    $pane->panel = 'content';
+    $pane->type = 'views';
+    $pane->subtype = 'og_nodes';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'default',
+      'context' => array(
+        0 => 'argument_entity_id:node_1.nid',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b3812514-dd4f-4b2e-8deb-ad75274cb60e';
+    $display->content['new-b3812514-dd4f-4b2e-8deb-ad75274cb60e'] = $pane;
+    $display->panels['content'][0] = 'new-b3812514-dd4f-4b2e-8deb-ad75274cb60e';
+    $pane = new stdClass();
+    $pane->pid = 'new-c92d2ccc-2b6a-42f1-869e-5243e72261e8';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views';
+    $pane->subtype = 'og_members';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'default',
+      'context' => array(
+        0 => 'argument_entity_id:node_1.nid',
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'c92d2ccc-2b6a-42f1-869e-5243e72261e8';
+    $display->content['new-c92d2ccc-2b6a-42f1-869e-5243e72261e8'] = $pane;
+    $display->panels['sidebar'][0] = 'new-c92d2ccc-2b6a-42f1-869e-5243e72261e8';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-b3812514-dd4f-4b2e-8deb-ad75274cb60e';
+  $handler->conf['display'] = $display;
+  $export['node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67'] = $handler;
 
   return $export;
 }

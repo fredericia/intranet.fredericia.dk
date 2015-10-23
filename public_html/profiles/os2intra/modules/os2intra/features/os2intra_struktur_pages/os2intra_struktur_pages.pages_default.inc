@@ -68,11 +68,11 @@ function os2intra_struktur_pages_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'link' => 1,
-      'markup' => 'none',
+      'markup' => 'h1',
       'id' => '',
       'class' => '',
       'context' => 'argument_term_1',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );

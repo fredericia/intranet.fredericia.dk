@@ -10,4 +10,4 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[page_manager_handlers][] = term_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba
 features[variable][] = page_manager_term_view_disabled
-project path = profiles/os2intra/modules/os2intra
+project path = profiles/os2intra/modules/os2intra/features
