@@ -88,7 +88,7 @@
 
     <!-- Begin - content -->
     <div class="content">
-      <div class="container">
+      <div class="container container-fluid-lg-only">
 
         <?php print $messages; ?>
 
