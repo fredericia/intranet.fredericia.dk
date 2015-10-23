@@ -1,0 +1,11 @@
+name = OS2Intra Composer
+description = Composer manger that sets vendor dir to ../vendor
+core = 7.x
+package = OS2Intra
+version = 7.x-1.0
+dependencies[] = composer_manager
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = composer_manager_vendor_dir
