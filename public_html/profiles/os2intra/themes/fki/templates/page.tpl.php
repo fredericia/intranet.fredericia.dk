@@ -113,7 +113,6 @@
           </div>
           <!-- End - tabs -->
         <?php endif; ?>
-<?php xdebug_break(); ?>
         <?php if (!empty($page['help'])): ?>
           <?php print render($page['help']); ?>
         <?php endif; ?>
