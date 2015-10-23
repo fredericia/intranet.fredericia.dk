@@ -3,7 +3,7 @@
 /*
 * Implements hook_entity_info_alter().
 */
-function ha_content_types_entity_info_alter(&$entity_info) {
+function os2intra_view_modes_content_types_entity_info_alter(&$entity_info) {
 
   // Includeable
   $entity_info['node']['view modes']['includeable'] = array(
