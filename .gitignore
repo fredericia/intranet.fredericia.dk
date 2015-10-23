@@ -51,3 +51,8 @@ share
 public_html/sites/fredericia-newintra.dd
 public_html/sites/fk-os2intra.dd
 public_html/sites/fkintra22okt.dd
+
+# Composer generated files
+vendor/composer/autoload_classmap.php
+vendor/composer/autoload_namespaces.php
+vendor/composer/autoload_psr4.php

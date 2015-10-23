@@ -4,4 +4,4 @@
  * Code for the OS2instra Elasticearch feature.
  */
 
-include_once 'os2instra_elasticearch.features.inc';
+include_once 'os2intra_elasticsearch.features.inc';
