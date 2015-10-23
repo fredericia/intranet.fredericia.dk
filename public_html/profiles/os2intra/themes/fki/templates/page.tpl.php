@@ -86,20 +86,6 @@
     </nav>
     <!-- End - simple navigation -->
 
-    <?php if (!empty($breadcrumb)): ?>
-    <!-- Begin - breadcrumb -->
-    <section class="fki-breadcrumb-container">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <?php print $breadcrumb; ?>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End - breadcrumb -->
-    <?php endif;?>
-
     <!-- Begin - content -->
     <div class="content">
       <div class="container">
@@ -113,6 +99,7 @@
           </div>
           <!-- End - tabs -->
         <?php endif; ?>
+
         <?php if (!empty($page['help'])): ?>
           <?php print render($page['help']); ?>
         <?php endif; ?>
@@ -120,6 +107,18 @@
         <?php if (!empty($action_links)): ?>
           <ul class="action-links"><?php print render($action_links); ?></ul>
         <?php endif; ?>
+
+        <?php if (!empty($breadcrumb)): ?>
+          <!-- Begin - breadcrumb -->
+          <section class="fki-breadcrumb-container">
+            <div class="row">
+              <div class="col-xs-12">
+                <?php print $breadcrumb; ?>
+              </div>
+            </div>
+          </section>
+          <!-- End - breadcrumb -->
+        <?php endif;?>
 
         <a id="main-content"></a>
         <?php print render($page['content']); ?>
