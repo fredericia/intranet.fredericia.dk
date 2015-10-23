@@ -55,4 +55,6 @@
  */
 
 $sites['intranet.fredericia.bellcom.dk'] = 'intranet.fredericia.dk';
+$sites['test.intranet.fredericia.bellcom.dk'] = 'test.intranet.fredericia.dk';
+$sites['preprod.intranet.fredericia.bellcom.dk'] = 'preprod.intranet.fredericia.dk';
 
