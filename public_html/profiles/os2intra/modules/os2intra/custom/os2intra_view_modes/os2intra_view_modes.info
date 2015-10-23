@@ -1,0 +1,4 @@
+name        = 'View modes'
+description = 'Contains view modes for OS2Intra.'
+core        = 7.x
+package     = 'OS2Intra'

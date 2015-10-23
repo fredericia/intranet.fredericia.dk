@@ -1,0 +1,37 @@
+<?php
+
+/*
+* Implements hook_entity_info_alter().
+*/
+function ha_content_types_entity_info_alter(&$entity_info) {
+
+  // Includeable
+  $entity_info['node']['view modes']['includeable'] = array(
+    'label'           => t('Includeable'),
+    'custom settings' => TRUE,
+  );
+
+  // List - simple
+  $entity_info['node']['view modes']['list_simple'] = array(
+    'label'           => t('List - simple'),
+    'custom settings' => TRUE,
+  );
+
+  // List - advanced
+  $entity_info['node']['view modes']['list_advanced'] = array(
+    'label'           => t('List - advanced'),
+    'custom settings' => TRUE,
+  );
+
+  // Teaser - simple
+  $entity_info['node']['view modes']['teaser_simple'] = array(
+    'label'           => t('Teaser - simple'),
+    'custom settings' => TRUE,
+  );
+
+  // Teaser - advanced
+  $entity_info['node']['view modes']['teaser_advanced'] = array(
+    'label'           => t('Teaser - advanced'),
+    'custom settings' => TRUE,
+  );
+}
