@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * os2instra_elasticearch.strongarm.inc
+ * os2intra_elasticsearch.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function os2instra_elasticearch_strongarm() {
+function os2intra_elasticsearch_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

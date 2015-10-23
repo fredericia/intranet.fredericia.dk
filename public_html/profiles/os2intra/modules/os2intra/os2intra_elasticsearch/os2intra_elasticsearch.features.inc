@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * os2instra_elasticearch.features.inc
+ * os2intra_elasticsearch.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function os2instra_elasticearch_ctools_plugin_api($module = NULL, $api = NULL) {
+function os2intra_elasticsearch_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "elasticsearch_connector" && $api == "elasticsearch_connector_defaults") {
     return array("version" => "1");
   }
@@ -19,26 +19,26 @@ function os2instra_elasticearch_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function os2instra_elasticearch_views_api($module = NULL, $api = NULL) {
+function os2intra_elasticsearch_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_default_search_api_index().
  */
-function os2instra_elasticearch_default_search_api_index() {
+function os2intra_elasticsearch_default_search_api_index() {
   $items = array();
   $items['default_node_index'] = entity_import('search_api_index', '{
     "name" : "Default node index",
     "machine_name" : "default_node_index",
     "description" : "An automatically created search index for indexing node data. Might be configured to specific needs.",
-    "server" : "fredericia_elasticsearch_server",
+    "server" : "elasticsearch_server",
     "item_type" : "node",
     "options" : {
       "datasource" : { "bundles" : [] },
       "index_directly" : 1,
       "cron_limit" : "50",
-      "index_name" : { "index" : "intranet_search", "cluster_id" : "fredericia_elasticsearch" },
+      "index_name" : { "index" : "intranet_search", "cluster_id" : "elasticsearch" },
       "collect_index_statistics" : 0,
       "log_only_not_found" : 0,
       "index_statistics_ttl" : "365d",
@@ -80,7 +80,7 @@ function os2instra_elasticearch_default_search_api_index() {
     "name" : "Default user index",
     "machine_name" : "default_user_index",
     "description" : null,
-    "server" : "fredericia_elasticsearch_server",
+    "server" : "elasticsearch_server",
     "item_type" : "user",
     "options" : {
       "index_directly" : 0,
@@ -104,14 +104,14 @@ function os2instra_elasticearch_default_search_api_index() {
 /**
  * Implements hook_default_search_api_server().
  */
-function os2instra_elasticearch_default_search_api_server() {
+function os2intra_elasticsearch_default_search_api_server() {
   $items = array();
-  $items['fredericia_elasticsearch_server'] = entity_import('search_api_server', '{
+  $items['elasticsearch_server'] = entity_import('search_api_server', '{
     "name" : "Elasticsearch Server",
-    "machine_name" : "fredericia_elasticsearch_server",
+    "machine_name" : "elasticsearch_server",
     "description" : "",
     "class" : "search_api_elasticsearch_connector",
-    "options" : { "cluster" : "elasticsearch_cluster", "facet_limit" : 10 },
+    "options" : { "cluster" : "elasticsearch_cluster", "facet_limit" : "10" },
     "enabled" : "1"
   }');
   return $items;

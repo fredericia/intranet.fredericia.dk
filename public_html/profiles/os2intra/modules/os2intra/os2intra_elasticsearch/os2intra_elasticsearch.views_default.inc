@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * os2instra_elasticearch.views_default.inc
+ * os2intra_elasticsearch.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function os2instra_elasticearch_views_default_views() {
+function os2intra_elasticsearch_views_default_views() {
   $export = array();
 
   $view = new view();

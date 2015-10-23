@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * os2instra_elasticearch.elasticsearch_connector_defaults.inc
+ * os2intra_elasticsearch.elasticsearch_connector_defaults.inc
  */
 
 /**
  * Implements hook_default_elasticsearch_connector_cluster().
  */
-function os2instra_elasticearch_default_elasticsearch_connector_cluster() {
+function os2intra_elasticsearch_default_elasticsearch_connector_cluster() {
   $export = array();
 
   $elasticsearch_connector_cluster = new stdClass();
