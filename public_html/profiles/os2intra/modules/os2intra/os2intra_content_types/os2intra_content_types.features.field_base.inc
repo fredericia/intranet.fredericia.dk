@@ -227,6 +227,28 @@ function os2intra_content_types_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
+  // Exported field_base: 'field_os2intra_itvejledning_img'.
+  $field_bases['field_os2intra_itvejledning_img'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2intra_itvejledning_img',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
   // Exported field_base: 'field_os2intra_itvejledninger_1'.
   $field_bases['field_os2intra_itvejledninger_1'] = array(
     'active' => 1,
@@ -248,13 +270,13 @@ function os2intra_content_types_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_os2intra_itvejledninger_2'.
-  $field_bases['field_os2intra_itvejledninger_2'] = array(
+  // Exported field_base: 'field_os2intra_itvejledninger_4'.
+  $field_bases['field_os2intra_itvejledninger_4'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_os2intra_itvejledninger_2',
+    'field_name' => 'field_os2intra_itvejledninger_4',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -262,32 +284,9 @@ function os2intra_content_types_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_os2intra_itvejledninger_3'.
-  $field_bases['field_os2intra_itvejledninger_3'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_os2intra_itvejledninger_3',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_os2intra_outdated_date'.
