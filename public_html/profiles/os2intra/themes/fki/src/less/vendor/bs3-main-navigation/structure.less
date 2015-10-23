@@ -39,6 +39,7 @@
     line-height: @bs3-main-navigation-height;
     background-color: @bs3-main-navigation-background-color;
     background-color: @bs3-main-navigation-background-color-rgba;
+    border-radius: @bs3-main-navigation-border-radius;
   }
 
   // Let's all elements inherit the height and line height of parent element
@@ -116,6 +117,7 @@
         color: @bs3-main-navigation-nav-link-font-color;
         padding: @bs3-main-navigation-nav-link-top-bottom-padding @bs3-main-navigation-nav-link-left-right-padding;
         text-decoration: @bs3-main-navigation-nav-link-text-decoration;
+        .transition(all @bs3-designer-transition-time);
       }
 
       &:hover {
@@ -164,6 +166,7 @@
         color: @bs3-main-navigation-nav-link-font-color;
         padding: @bs3-main-navigation-nav-link-top-bottom-padding @bs3-main-navigation-nav-link-left-right-padding;
         text-decoration: @bs3-main-navigation-nav-link-text-decoration;
+        .transition(all @bs3-designer-transition-time);
       }
 
       &:hover {

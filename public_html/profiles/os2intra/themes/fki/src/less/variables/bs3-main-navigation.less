@@ -3,9 +3,10 @@
 // |--------------------------------------------------------------------------
 
 // Base
-@bs3-main-navigation-height:                60px;
-@bs3-main-navigation-background-color:     	@state-primary-bg;
+@bs3-main-navigation-height:                56px;
+@bs3-main-navigation-background-color:     	@content-bg;
 @bs3-main-navigation-background-color-rgba: rgba(red(@bs3-main-navigation-background-color), green(@bs3-main-navigation-background-color), blue(@bs3-main-navigation-background-color), 1);
+@bs3-main-navigation-border-radius:         @border-radius-base;
 
 // Sticky
 @bs3-main-navigation-sticky-zindex:  @zindex-navbar-fixed;
@@ -18,17 +19,17 @@
 @bs3-main-navigation-nav-element-spacing:                        20px;
 
 // Link
-@bs3-main-navigation-nav-link-font-family:                       @headings-font-family;
-@bs3-main-navigation-nav-link-font-size:                         16px;
-@bs3-main-navigation-nav-link-font-weight:                       @headings-font-weight;
+@bs3-main-navigation-nav-link-font-family:                       @font-family-base;
+@bs3-main-navigation-nav-link-font-size:                         @font-size-base;
+@bs3-main-navigation-nav-link-font-weight:                       @font-weight-bold;
 @bs3-main-navigation-nav-link-top-bottom-padding:                0;
 @bs3-main-navigation-nav-link-left-right-padding:                @bs3-main-navigation-nav-element-spacing;
 @bs3-main-navigation-nav-link-text-decoration:                   none;
-@bs3-main-navigation-nav-link-font-color:                        @state-primary-text;
+@bs3-main-navigation-nav-link-font-color:                        @brand-primary;
 @bs3-main-navigation-nav-link-background-color:                  transparent;
 
 @bs3-main-navigation-nav-link-hover-text-decoration:             none;
-@bs3-main-navigation-nav-link-hover-font-color:                  @bs3-main-navigation-nav-link-font-color;
+@bs3-main-navigation-nav-link-hover-font-color:                  #fff;
 @bs3-main-navigation-nav-link-hover-background-color:            @header-border-color;
 
 @bs3-main-navigation-nav-link-active-text-decoration:            none;
@@ -44,7 +45,7 @@
 @bs3-main-navigation-nav-dropdown-arrow-size:                   5px;
 @bs3-main-navigation-nav-dropdown-arrow-bottom-start-position:  20%;
 @bs3-main-navigation-nav-dropdown-arrow-bottom-end-position:    0;
-@bs3-main-navigation-nav-dropdown-arrow-color:                  lighten(@bs3-main-navigation-nav-link-font-color, 30% );
+@bs3-main-navigation-nav-dropdown-arrow-color:                  @bs3-main-navigation-nav-link-font-color;
 @bs3-main-navigation-nav-dropdown-hover-arrow-color:            @bs3-main-navigation-nav-link-hover-font-color;
 @bs3-main-navigation-nav-dropdown-active-arrow-color:           @bs3-main-navigation-nav-link-active-font-color;
 @bs3-main-navigation-nav-dropdown-active-hover-arrow-color:     @bs3-main-navigation-nav-link-active-hover-font-color;
@@ -61,29 +62,29 @@
 // Dropdown menu
 @bs3-main-navigation-nav-dropdown-menu-zindex: 								@zindex-navbar-fixed;
 @bs3-main-navigation-nav-dropdown-menu-inner-spacing: 				floor((@bs3-main-navigation-nav-dropdown-menu-link-top-bottom-padding * 1.5));
-@bs3-main-navigation-nav-dropdown-menu-background-color: 			@bs3-main-navigation-background-color;
-@bs3-main-navigation-nav-dropdown-menu-background-color-rgba: @bs3-main-navigation-background-color-rgba;
-@bs3-main-navigation-nav-dropdown-menu-border-radius: 				3px;
-@bs3-main-navigation-nav-dropdown-menu-border-width: 					1px;
+@bs3-main-navigation-nav-dropdown-menu-background-color: 			@state-primary-bg;
+@bs3-main-navigation-nav-dropdown-menu-background-color-rgba: rgba(red(@bs3-main-navigation-nav-dropdown-menu-background-color), green(@bs3-main-navigation-nav-dropdown-menu-background-color), blue(@bs3-main-navigation-nav-dropdown-menu-background-color), 1);
+@bs3-main-navigation-nav-dropdown-menu-border-radius: 				@border-radius-base;
+@bs3-main-navigation-nav-dropdown-menu-border-width: 					0;
 @bs3-main-navigation-nav-dropdown-menu-border-style: 					solid;
 @bs3-main-navigation-nav-dropdown-menu-border-color: 					darken(@bs3-main-navigation-nav-dropdown-menu-background-color, 5%);
 
 // Link
-@bs3-main-navigation-nav-dropdown-menu-link-font-family:        @headings-font-family;
+@bs3-main-navigation-nav-dropdown-menu-link-font-family:        @font-family-base;
 @bs3-main-navigation-nav-dropdown-menu-link-font-size:          @font-size-base;
-@bs3-main-navigation-nav-dropdown-menu-link-font-weight:        @headings-font-weight;
+@bs3-main-navigation-nav-dropdown-menu-link-font-weight:        @font-weight;
 @bs3-main-navigation-nav-dropdown-menu-link-top-bottom-padding: 5px;
 @bs3-main-navigation-nav-dropdown-menu-link-left-right-padding: @bs3-main-navigation-nav-link-left-right-padding;
 @bs3-main-navigation-nav-dropdown-menu-link-text-decoration:    none;
-@bs3-main-navigation-nav-dropdown-menu-link-font-color:         lighten(@state-primary-bg, 40%);
+@bs3-main-navigation-nav-dropdown-menu-link-font-color:         #fff;
 @bs3-main-navigation-nav-dropdown-menu-link-background-color:   transparent;
 @bs3-main-navigation-nav-dropdown-menu-link-border-width:       1px;
 @bs3-main-navigation-nav-dropdown-menu-link-border-style:       solid;
 @bs3-main-navigation-nav-dropdown-menu-link-border-color:       darken(@bs3-main-navigation-nav-dropdown-menu-background-color, 2%);
 
 @bs3-main-navigation-nav-dropdown-menu-link-hover-text-decoration: 				none;
-@bs3-main-navigation-nav-dropdown-menu-link-hover-font-color:          		@state-primary-text;
-@bs3-main-navigation-nav-dropdown-menu-link-hover-background-color:    		darken(@state-primary-bg, 2%);
+@bs3-main-navigation-nav-dropdown-menu-link-hover-font-color:          		@brand-secondary;
+@bs3-main-navigation-nav-dropdown-menu-link-hover-background-color:    		transparent;
 
 @bs3-main-navigation-nav-dropdown-menu-link-active-text-decoration:        	underline;
 @bs3-main-navigation-nav-dropdown-menu-link-active-font-color:          	@bs3-main-navigation-nav-dropdown-menu-link-hover-font-color;

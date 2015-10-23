@@ -24,42 +24,6 @@
   <!-- Begin - inner wrapper -->
   <div class="inner-wrapper" role="document">
 
-    <!-- Begin - main navigation -->
-    <nav class="main-navigation-wrapper">
-      <section class="main-navigation-bar">
-        <div class="container">
-          <div class="row">
-
-            <!-- Begin - content -->
-            <div class="col-md-8 main-navigation-bar-content">
-
-              <?php if (isset($primary_navigation)): ?>
-                <!-- Begin - navigation -->
-                <?php print render($primary_navigation); ?>
-                <!-- End - navigation -->
-              <?php endif; ?>
-
-            </div>
-            <!-- End - content -->
-
-            <!-- Begin - content -->
-            <div class="col-md-4 main-navigation-bar-content">
-
-              <?php if (isset($secondary_navigation)): ?>
-                <!-- Begin - navigation -->
-                <?php print render($secondary_navigation); ?>
-                <!-- End - navigation -->
-              <?php endif; ?>
-
-            </div>
-            <!-- End - content -->
-
-          </div>
-        </div>
-      </section>
-    </nav>
-    <!-- End - main navigation -->
-
     <!-- Begin - simple navigation -->
     <nav class="simple-navigation">
 
@@ -92,13 +56,39 @@
 
         <?php print $messages; ?>
 
-        <?php if (!empty($tabs)): ?>
-          <!-- Begin - tabs -->
-          <div class="content-tabs-container">
-            <?php print render($tabs); ?>
-          </div>
-          <!-- End - tabs -->
-        <?php endif; ?>
+        <!-- Begin - main navigation -->
+        <nav class="main-navigation-wrapper">
+          <section class="main-navigation-bar">
+            <div class="row">
+
+              <!-- Begin - content -->
+              <div class="col-md-8 main-navigation-bar-content">
+
+                <?php if (isset($primary_navigation)): ?>
+                  <!-- Begin - navigation -->
+                  <?php print render($primary_navigation); ?>
+                  <!-- End - navigation -->
+                <?php endif; ?>
+
+              </div>
+              <!-- End - content -->
+
+              <!-- Begin - content -->
+              <div class="col-md-4 main-navigation-bar-content">
+
+                <?php if (isset($secondary_navigation)): ?>
+                  <!-- Begin - navigation -->
+                  <?php print render($secondary_navigation); ?>
+                  <!-- End - navigation -->
+                <?php endif; ?>
+
+              </div>
+              <!-- End - content -->
+
+            </div>
+          </section>
+        </nav>
+        <!-- End - main navigation -->
 
         <?php if (!empty($page['help'])): ?>
           <?php print render($page['help']); ?>
@@ -119,6 +109,14 @@
           </section>
           <!-- End - breadcrumb -->
         <?php endif;?>
+
+        <?php if (!empty($tabs)): ?>
+          <!-- Begin - tabs -->
+          <div class="content-tabs-container">
+            <?php print render($tabs); ?>
+          </div>
+          <!-- End - tabs -->
+        <?php endif; ?>
 
         <a id="main-content"></a>
         <?php print render($page['content']); ?>
