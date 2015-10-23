@@ -7,7 +7,7 @@
     <!-- Begin - logo -->
     <div class="sidebar-logo">
       <a href="<?php print $front_page; ?>" class="sidebar-logo-link">
-        <img src="<?php print $path_img . '/logo.png'; ?>" class="sidebar-logo-image" alt="<?php print t('intranet.fredericia.dk logo'); ?>" />
+        <img src="<?php print $path_img . '/logo.png'; ?>" class="sidebar-logo-image" alt="<?php print $site_name. t(' logo'); ?>" />
       </a>
     </div>
     <!-- End - logo -->
@@ -63,7 +63,10 @@
 
               <!-- Begin - content -->
               <div class="col-md-8 main-navigation-bar-content">
-
+<?php
+  $block = module_invoke('search', 'block_view', 'search');
+  print render($block); 
+?>
                 <?php if (isset($primary_navigation)): ?>
                   <!-- Begin - navigation -->
                   <?php print render($primary_navigation); ?>
