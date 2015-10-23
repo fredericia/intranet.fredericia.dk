@@ -1,7 +1,10 @@
 <?php if ($view_mode == 'full'): ?>
   <!-- node.tpl.php -->
   <!-- Begin - full node -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
+  <!-- Begin - content -->
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
+
+    <?php print render($content['links']); ?>
 
     <?php print render($title_prefix); ?>
     <?php if (!$page): ?>
@@ -11,15 +14,6 @@
     <?php endif; ?>
     <?php print render($title_suffix); ?>
 
-    <?php if ($display_submitted): ?>
-      <div class="posted">
-        <?php if ($user_picture): ?>
-          <?php print $user_picture; ?>
-        <?php endif; ?>
-        <?php print $submitted; ?>
-      </div>
-    <?php endif; ?>
-
     <?php
     // We hide the comments and links now so that we can render them later.
     hide($content['comments']);
@@ -28,14 +22,7 @@
     print render($content);
     ?>
 
-    <?php if (!empty($content['field_tags']) && !$is_front): ?>
-      <?php print render($content['field_tags']) ?>
-    <?php endif; ?>
-
-    <?php print render($content['links']); ?>
-    <?php print render($content['comments']); ?>
-
-  </article>
+  </div>
   <!-- End - full node -->
 
 <?php endif; ?>

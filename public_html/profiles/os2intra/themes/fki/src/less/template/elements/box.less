@@ -20,6 +20,12 @@
 @fki-box-body-top-bottom-spacing: 5px;
 @fki-box-body-left-right-spacing: @default-left-right-spacing;
 
+//== Responsive
+@fki-box-xs-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@fki-box-sm-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@fki-box-md-stacked-spacing: floor( (@grid-gutter-width / 2) );
+@fki-box-lg-stacked-spacing: floor( (@grid-gutter-width / 2) );
+
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
@@ -85,7 +91,9 @@
 @media @media-query-mobile-only {
 
 	// Box
-	.fki-box {}
+	.fki-box {
+		margin-bottom: @fki-box-xs-stacked-spacing;
+	}
 }
 
 // Tablet
@@ -99,7 +107,9 @@
 @media @media-query-tablet-only {
 
 	// Box
-	.fki-box {}
+	.fki-box {
+		margin-bottom: @fki-box-sm-stacked-spacing;
+	}
 }
 
 // Desktop
@@ -113,7 +123,9 @@
 @media @media-query-desktop-only {
 
 	// Box
-	.fki-box {}
+	.fki-box {
+		margin-bottom: @fki-box-md-stacked-spacing;
+	}
 }
 
 // Large desktop
@@ -127,7 +139,9 @@
 @media @media-query-large-desktop-only {
 
 	// Box
-	.fki-box {}
+	.fki-box {
+		margin-bottom: @fki-box-lg-stacked-spacing;
+	}
 }
 
 // Print

@@ -5092,6 +5092,30 @@
   }
 }
 
+@media screen and (max-width: 767px) {
+  .fki-box {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-box {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-box {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-box {
+    margin-bottom: 15px;
+  }
+}
+
 @media screen {
   .social-icon-list {
     margin-top: 20px;

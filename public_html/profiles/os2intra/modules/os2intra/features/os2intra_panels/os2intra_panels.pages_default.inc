@@ -127,13 +127,43 @@ function os2intra_panels_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => '',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '20cb997f-81cd-4d19-be93-4876589b4647';
     $display->content['new-20cb997f-81cd-4d19-be93-4876589b4647'] = $pane;
     $display->panels['content'][0] = 'new-20cb997f-81cd-4d19-be93-4876589b4647';
+    $pane = new stdClass();
+    $pane->pid = 'new-4ff858ac-695f-438c-a009-844c08c0aafb';
+    $pane->panel = 'content';
+    $pane->type = 'node_comment_wrapper';
+    $pane->subtype = 'node_comment_wrapper';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'mode' => '1',
+      'comments_per_page' => '10',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '4ff858ac-695f-438c-a009-844c08c0aafb';
+    $display->content['new-4ff858ac-695f-438c-a009-844c08c0aafb'] = $pane;
+    $display->panels['content'][1] = 'new-4ff858ac-695f-438c-a009-844c08c0aafb';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
