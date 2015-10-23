@@ -15,18 +15,14 @@ class MessageNotifierEmail extends MessageNotifierBase {
     $mail = $options['mail'] ? $options['mail'] : $account->mail;
 
     $languages = language_list();
-error_log(__FILE__);
-error_log(print_r($languages, 1));
     if (!$options['language override']) {
       $lang = !empty($account->language) && $account->language != LANGUAGE_NONE ? $languages[$account->language]: language_default();
     }
     else {
       $lang = $languages[$message->language];
     }
-error_log(print_r($options['language override'], 1));
-error_log(print_r($lang, 1));
-    //r The subject in an email can't be with HTML, so strip it.
 
+    // The subject in an email can't be with HTML, so strip it.
     $output['message_notify_email_subject'] = strip_tags($output['message_notify_email_subject']);
 
     // Pass the message entity along to hook_drupal_mail().
