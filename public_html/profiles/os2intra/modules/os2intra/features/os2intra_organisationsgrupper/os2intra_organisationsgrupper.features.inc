@@ -23,7 +23,7 @@ function os2intra_organisationsgrupper_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
     'os2intra_org_group_unit' => array(
@@ -31,7 +31,7 @@ function os2intra_organisationsgrupper_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
     'post' => array(

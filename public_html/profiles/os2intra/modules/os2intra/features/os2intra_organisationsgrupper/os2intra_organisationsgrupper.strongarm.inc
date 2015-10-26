@@ -98,14 +98,14 @@ function os2intra_organisationsgrupper_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_os2intra_group';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['comment_os2intra_group'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_os2intra_org_group_unit';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['comment_os2intra_org_group_unit'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -133,29 +133,55 @@ function os2intra_organisationsgrupper_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_post';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_post'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_os2intra_group';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_subject_field_os2intra_group'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_os2intra_org_group_unit';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_subject_field_os2intra_org_group_unit'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_post';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_subject_field_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__os2intra_org_group_unit';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__os2intra_org_group_unit'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -294,6 +320,27 @@ function os2intra_organisationsgrupper_strongarm() {
   $strongarm->name = 'node_submitted_post';
   $strongarm->value = 1;
   $export['node_submitted_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_os2intra_group_pattern';
+  $strongarm->value = 'gruppe/[node:title]';
+  $export['pathauto_node_os2intra_group_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_os2intra_org_group_unit_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_os2intra_org_group_unit_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_post_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_post_pattern'] = $strongarm;
 
   return $export;
 }

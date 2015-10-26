@@ -65,7 +65,7 @@ function os2intra_content_types_node_info() {
       'base' => 'node_content',
       'description' => t('Skabelon til brug af vedledninger'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
     'os2intra_base_page' => array(
@@ -89,7 +89,7 @@ function os2intra_content_types_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
     'os2web_base_selfservice_link' => array(
