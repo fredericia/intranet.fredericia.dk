@@ -315,7 +315,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_os2intra_base_page';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['comment_subject_field_os2intra_base_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -706,6 +706,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->name = 'node_options_os2intra_base_page';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'promote',
   );
   $export['node_options_os2intra_base_page'] = $strongarm;
 
@@ -766,7 +767,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_os2intra_base_page';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_os2intra_base_page'] = $strongarm;
 
   $strongarm = new stdClass();
