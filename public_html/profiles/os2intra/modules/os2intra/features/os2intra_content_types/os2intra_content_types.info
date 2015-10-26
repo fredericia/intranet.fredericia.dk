@@ -113,7 +113,6 @@ features[field_instance][] = node-wiki-field_os2web_base_field_media
 features[field_instance][] = node-wiki-field_radioactivity
 features[field_instance][] = node-wiki-field_topics
 features[field_instance][] = node-wiki-group_content_access
-features[field_instance][] = node-wiki-og_group_ref
 features[field_instance][] = node-wiki-title_field
 features[field_instance][] = taxonomy_term-os2web_base_tax_site_structure-field_os2web_base_field_banner
 features[field_instance][] = taxonomy_term-os2web_base_tax_site_structure-field_os2web_base_field_logo
