@@ -39,6 +39,7 @@ dependencies[] = message_subscribe
 dependencies[] = metatag
 dependencies[] = module_filter
 dependencies[] = og
+dependencies[] = logintoboggan
 dependencies[] = pathauto
 dependencies[] = r4032login
 dependencies[] = libraries
