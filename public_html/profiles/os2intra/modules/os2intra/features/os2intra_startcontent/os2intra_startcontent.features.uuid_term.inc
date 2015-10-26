@@ -20,6 +20,7 @@ function os2intra_startcontent_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'os2web_base_tax_site_structure',
     'field_os2web_base_field_banner' => array(),
     'field_os2web_base_field_logo' => array(),
+    'field_os2web_base_icon' => array(),
     'path' => array(
       'pathauto' => 1,
     ),
@@ -36,6 +37,7 @@ function os2intra_startcontent_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'os2web_base_tax_site_structure',
     'field_os2web_base_field_banner' => array(),
     'field_os2web_base_field_logo' => array(),
+    'field_os2web_base_icon' => array(),
     'path' => array(
       'pathauto' => 1,
     ),
@@ -50,6 +52,7 @@ function os2intra_startcontent_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'os2web_base_tax_site_structure',
     'field_os2web_base_field_banner' => array(),
     'field_os2web_base_field_logo' => array(),
+    'field_os2web_base_icon' => array(),
     'path' => array(
       'pathauto' => 1,
     ),
@@ -63,6 +66,7 @@ function os2intra_startcontent_uuid_features_default_terms() {
     'vocabulary_machine_name' => 'os2web_base_tax_site_structure',
     'field_os2web_base_field_banner' => array(),
     'field_os2web_base_field_logo' => array(),
+    'field_os2web_base_icon' => array(),
     'path' => array(
       'pathauto' => 1,
     ),
