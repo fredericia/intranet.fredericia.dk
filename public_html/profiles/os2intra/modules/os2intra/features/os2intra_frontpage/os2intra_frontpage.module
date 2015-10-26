@@ -4,4 +4,4 @@
  * Code for the OS2intra Forside feature.
  */
 
-include_once 'os2intra_frontapge.features.inc';
+include_once 'os2intra_frontpage.features.inc';

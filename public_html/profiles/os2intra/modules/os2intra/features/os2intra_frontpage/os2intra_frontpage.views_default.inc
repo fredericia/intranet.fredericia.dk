@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * os2intra_frontapge.views_default.inc
+ * os2intra_frontpage.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function os2intra_frontapge_views_default_views() {
+function os2intra_frontpage_views_default_views() {
   $export = array();
 
   $view = new view();
@@ -55,7 +55,7 @@ function os2intra_frontapge_views_default_views() {
     'os2intra_organizaiton_tax' => 0,
     'tags' => 0,
   );
-  /* Field: Content: Date */
+  /* Field: Content: Dato */
   $handler->display->display_options['fields']['field_os2intra_canteen_menu_date']['id'] = 'field_os2intra_canteen_menu_date';
   $handler->display->display_options['fields']['field_os2intra_canteen_menu_date']['table'] = 'field_data_field_os2intra_canteen_menu_date';
   $handler->display->display_options['fields']['field_os2intra_canteen_menu_date']['field'] = 'field_os2intra_canteen_menu_date';
@@ -75,7 +75,7 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Date (field_os2intra_canteen_menu_date) */
+  /* Sort criterion: Content: Dato (field_os2intra_canteen_menu_date) */
   $handler->display->display_options['sorts']['field_os2intra_canteen_menu_date_value']['id'] = 'field_os2intra_canteen_menu_date_value';
   $handler->display->display_options['sorts']['field_os2intra_canteen_menu_date_value']['table'] = 'field_data_field_os2intra_canteen_menu_date';
   $handler->display->display_options['sorts']['field_os2intra_canteen_menu_date_value']['field'] = 'field_os2intra_canteen_menu_date_value';
@@ -116,7 +116,7 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth']['type'] = 'select';
   $handler->display->display_options['filters']['term_node_tid_depth']['vocabulary'] = 'os2intra_canteen';
   $handler->display->display_options['filters']['term_node_tid_depth']['depth'] = '0';
-  /* Filter criterion: Content: Date (field_os2intra_canteen_menu_date) */
+  /* Filter criterion: Content: Dato (field_os2intra_canteen_menu_date) */
   $handler->display->display_options['filters']['field_os2intra_canteen_menu_date_value']['id'] = 'field_os2intra_canteen_menu_date_value';
   $handler->display->display_options['filters']['field_os2intra_canteen_menu_date_value']['table'] = 'field_data_field_os2intra_canteen_menu_date';
   $handler->display->display_options['filters']['field_os2intra_canteen_menu_date_value']['field'] = 'field_os2intra_canteen_menu_date_value';
@@ -186,7 +186,7 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['required'] = TRUE;
-  /* Relationship: Entity Reference: Referencing entity */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['reverse_field_target_nodes_message']['id'] = 'reverse_field_target_nodes_message';
   $handler->display->display_options['relationships']['reverse_field_target_nodes_message']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_target_nodes_message']['field'] = 'reverse_field_target_nodes_message';
@@ -196,16 +196,11 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
-  /* Relationship: Content: Vote results */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['votingapi_cache']['id'] = 'votingapi_cache';
   $handler->display->display_options['relationships']['votingapi_cache']['table'] = 'node';
   $handler->display->display_options['relationships']['votingapi_cache']['field'] = 'votingapi_cache';
   $handler->display->display_options['relationships']['votingapi_cache']['label'] = 'Afstemningsresultater';
-  $handler->display->display_options['relationships']['votingapi_cache']['votingapi'] = array(
-    'value_type' => 'points',
-    'tag' => 'commons_like',
-    'function' => 'count',
-  );
   /* Field: Content: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
@@ -223,7 +218,6 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['title_field_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title_field_1']['alter']['text'] = '[type][title_field_1]';
   $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 1;
   /* Field: Content: Billede */
   $handler->display->display_options['fields']['field_os2web_base_field_image']['id'] = 'field_os2web_base_field_image';
   $handler->display->display_options['fields']['field_os2web_base_field_image']['table'] = 'field_data_field_os2web_base_field_image';
@@ -295,7 +289,6 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['title_field']['alter']['text'] = '[realname] [last_updated] i [title_field]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['element_wrapper_class'] = 'group-title';
-  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -458,7 +451,7 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['type']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['type']['alter']['text'] = ' ';
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Vote results: Value */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['value_1']['id'] = 'value_1';
   $handler->display->display_options['fields']['value_1']['table'] = 'votingapi_cache';
   $handler->display->display_options['fields']['value_1']['field'] = 'value';
@@ -466,7 +459,6 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['value_1']['label'] = '';
   $handler->display->display_options['fields']['value_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['value_1']['element_wrapper_class'] = 'voting-count-indicator';
-  $handler->display->display_options['fields']['value_1']['precision'] = '0';
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
@@ -483,7 +475,6 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['title_field_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title_field_1']['alter']['text'] = '[type][title_field_1]';
   $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 1;
   /* Field: Content: Billede */
   $handler->display->display_options['fields']['field_os2web_base_field_image']['id'] = 'field_os2web_base_field_image';
   $handler->display->display_options['fields']['field_os2web_base_field_image']['table'] = 'field_data_field_os2web_base_field_image';
@@ -562,19 +553,14 @@ function os2intra_frontapge_views_default_views() {
     'title_link' => 'content',
     'title_class' => '',
   );
-  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Field: Content: Registration bundle */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_registration']['id'] = 'field_registration';
   $handler->display->display_options['fields']['field_registration']['table'] = 'field_data_field_registration';
   $handler->display->display_options['fields']['field_registration']['field'] = 'field_registration';
   $handler->display->display_options['fields']['field_registration']['label'] = '';
   $handler->display->display_options['fields']['field_registration']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_registration']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_registration']['type'] = 'registration_link';
-  $handler->display->display_options['fields']['field_registration']['settings'] = array(
-    'label' => ' ',
-  );
-  /* Field: Registration Settings: Spaces used */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['capacity_used']['id'] = 'capacity_used';
   $handler->display->display_options['fields']['capacity_used']['table'] = 'node';
   $handler->display->display_options['fields']['capacity_used']['field'] = 'capacity_used';
@@ -582,9 +568,6 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['capacity_used']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['capacity_used']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['capacity_used']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['capacity_used']['format_plural'] = TRUE;
-  $handler->display->display_options['fields']['capacity_used']['format_plural_singular'] = '1 tilmeldt';
-  $handler->display->display_options['fields']['capacity_used']['format_plural_plural'] = '@count tilmeldte';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -871,7 +854,7 @@ function os2intra_frontapge_views_default_views() {
     t('Faldende'),
     t('Der findes ingen aktivitet.'),
     t('Group node from OG membership'),
-    t('Message referencing Content from field_target_nodes'),
+    t('reverse_field_target_nodes_message'),
     t('author'),
     t('Afstemningsresultater'),
     t(' '),
@@ -1142,12 +1125,12 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Du er ikke tilmeldt nogle fremtidige  events.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Relationship: Registration: Node to Registration */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['required'] = TRUE;
-  /* Relationship: Registration: User */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['user_uid']['id'] = 'user_uid';
   $handler->display->display_options['relationships']['user_uid']['table'] = 'registration';
   $handler->display->display_options['relationships']['user_uid']['field'] = 'user_uid';
@@ -1160,20 +1143,13 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Date */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['label'] = 'Dato';
   $handler->display->display_options['fields']['field_date']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_date']['settings'] = array(
-    'format_type' => 'os2web_base_date_only',
-    'fromto' => 'value',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Registration Settings: Spaces used */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['capacity_used']['id'] = 'capacity_used';
   $handler->display->display_options['fields']['capacity_used']['table'] = 'node';
   $handler->display->display_options['fields']['capacity_used']['field'] = 'capacity_used';
@@ -1183,7 +1159,7 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Registration: User */
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['user_uid']['id'] = 'user_uid';
   $handler->display->display_options['arguments']['user_uid']['table'] = 'registration';
   $handler->display->display_options['arguments']['user_uid']['field'] = 'user_uid';
@@ -1233,20 +1209,18 @@ function os2intra_frontapge_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date -  start date (field_date) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['operator'] = '>';
   $handler->display->display_options['filters']['field_date_value']['group'] = 2;
-  $handler->display->display_options['filters']['field_date_value']['default_date'] = 'now';
-  /* Filter criterion: Content: Date - end date (field_date:value2) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_date_value2']['id'] = 'field_date_value2';
   $handler->display->display_options['filters']['field_date_value2']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value2']['field'] = 'field_date_value2';
   $handler->display->display_options['filters']['field_date_value2']['operator'] = '>';
   $handler->display->display_options['filters']['field_date_value2']['group'] = 2;
-  $handler->display->display_options['filters']['field_date_value2']['default_date'] = 'now';
 
   /* Display: You're attending - pane */
   $handler = $view->new_display('panel_pane', 'You\'re attending - pane', 'panel_pane_1');
@@ -1278,7 +1252,7 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['label'] = '';
   $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
-  /* Field: Registration Settings: Spaces used */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['capacity_used']['id'] = 'capacity_used';
   $handler->display->display_options['fields']['capacity_used']['table'] = 'node';
   $handler->display->display_options['fields']['capacity_used']['field'] = 'capacity_used';
@@ -1286,7 +1260,6 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['capacity_used']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['capacity_used']['alter']['text'] = '<strong>[capacity_used]</strong> attendees,';
   $handler->display->display_options['fields']['capacity_used']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['capacity_used']['separator'] = '';
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
@@ -1297,7 +1270,7 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['separator'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Registration: User */
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['user_uid']['id'] = 'user_uid';
   $handler->display->display_options['arguments']['user_uid']['table'] = 'registration';
   $handler->display->display_options['arguments']['user_uid']['field'] = 'user_uid';
@@ -1340,7 +1313,7 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['label'] = '';
   $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
-  /* Field: Registration Settings: Spaces used */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['capacity_used']['id'] = 'capacity_used';
   $handler->display->display_options['fields']['capacity_used']['table'] = 'node';
   $handler->display->display_options['fields']['capacity_used']['field'] = 'capacity_used';
@@ -1348,7 +1321,6 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['capacity_used']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['capacity_used']['alter']['text'] = '<strong>[capacity_used]</strong> attendees,';
   $handler->display->display_options['fields']['capacity_used']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['capacity_used']['separator'] = '';
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
@@ -1406,7 +1378,7 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['label'] = '';
   $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
-  /* Field: Registration Settings: Spaces used */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['capacity_used']['id'] = 'capacity_used';
   $handler->display->display_options['fields']['capacity_used']['table'] = 'node';
   $handler->display->display_options['fields']['capacity_used']['field'] = 'capacity_used';
@@ -1414,7 +1386,6 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['capacity_used']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['capacity_used']['alter']['text'] = '<strong>[capacity_used]</strong> attendees,';
   $handler->display->display_options['fields']['capacity_used']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['capacity_used']['separator'] = '';
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
@@ -1435,12 +1406,10 @@ function os2intra_frontapge_views_default_views() {
     t('Stigende'),
     t('Faldende'),
     t('Du er ikke tilmeldt nogle fremtidige  events.'),
-    t('node being the Registration'),
-    t('User'),
+    t('registration_rel'),
+    t('user_uid'),
     t('Dato'),
     t('Antal tilmeldinger'),
-    t('.'),
-    t(','),
     t('Alle'),
     t('Block'),
     t('more'),
@@ -1448,6 +1417,7 @@ function os2intra_frontapge_views_default_views() {
     t('Begivenheder du deltager i'),
     t('<strong>[capacity_used]</strong> attendees,'),
     t('<strong>[comment_count]</strong> comments'),
+    t('.'),
     t('View panes'),
     t('You created - pane'),
     t('Begivenheder du har oprettet'),
@@ -1532,7 +1502,7 @@ function os2intra_frontapge_views_default_views() {
   $handler->display->display_options['fields']['view_user']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['view_user']['alter']['text'] = '[name]';
   $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
-  /* Field: User: Phone */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_os2intra_phone']['id'] = 'field_os2intra_phone';
   $handler->display->display_options['fields']['field_os2intra_phone']['table'] = 'field_data_field_os2intra_phone';
   $handler->display->display_options['fields']['field_os2intra_phone']['field'] = 'field_os2intra_phone';
