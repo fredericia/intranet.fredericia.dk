@@ -72,6 +72,9 @@ function fki_preprocess_html(&$variables) {
  * Implements theme_preprocess_page().
  */
 function fki_preprocess_page(&$variables) {
+
+  // Search form
+  $variables['main_navigation_search'] = drupal_get_form('search_form');
 }
 
 /**

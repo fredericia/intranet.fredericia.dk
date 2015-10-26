@@ -62,19 +62,13 @@
             <div class="row">
 
               <!-- Begin - content -->
-              <div class="col-md-8 main-navigation-bar-content">
-
-                <?php if (isset($primary_navigation)): ?>
-                  <!-- Begin - navigation -->
-                  <?php print render($primary_navigation); ?>
-                  <!-- End - navigation -->
-                <?php endif; ?>
-
+              <div class="col-md-4 main-navigation-bar-content">
+                <?php print render($main_navigation_search); ?>
               </div>
               <!-- End - content -->
 
               <!-- Begin - content -->
-              <div class="col-md-4 main-navigation-bar-content">
+              <div class="col-md-8 main-navigation-bar-content">
 
                 <?php if (isset($secondary_navigation)): ?>
                   <!-- Begin - navigation -->
