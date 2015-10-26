@@ -53,6 +53,7 @@ dependencies[] = views_bulk_operations
 dependencies[] = views_content
 dependencies[] = ckeditor
 dependencies[] = contextual
+dependencies[] = transliteration
 dependencies[] = help
 dependencies[] = better_formats
 dependencies[] = date
@@ -76,6 +77,12 @@ dependencies[] = icon_menu
 dependencies[] = fontawesome
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; OS2web mdules.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+dependencies[] = os2web_kle_auto_import
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Custom modules.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -85,5 +92,8 @@ dependencies[] = os2intra_view_modes
 ;; Features.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+dependencies[] = os2intra_startcontent
 dependencies[] = os2intra_content_types
+dependencies[] = os2intra_settings
+dependencies[] = os2intra_organisationsgrupper
 dependencies[] = os2intra_panels
