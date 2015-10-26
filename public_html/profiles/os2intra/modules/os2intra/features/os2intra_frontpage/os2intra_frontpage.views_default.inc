@@ -173,7 +173,8 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'clearfix';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -186,21 +187,11 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
   $handler->display->display_options['relationships']['og_membership_related_node_group']['required'] = TRUE;
-  /* Relationship: Broken/missing handler */
-  $handler->display->display_options['relationships']['reverse_field_target_nodes_message']['id'] = 'reverse_field_target_nodes_message';
-  $handler->display->display_options['relationships']['reverse_field_target_nodes_message']['table'] = 'node';
-  $handler->display->display_options['relationships']['reverse_field_target_nodes_message']['field'] = 'reverse_field_target_nodes_message';
-  $handler->display->display_options['relationships']['reverse_field_target_nodes_message']['required'] = TRUE;
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
-  /* Relationship: Broken/missing handler */
-  $handler->display->display_options['relationships']['votingapi_cache']['id'] = 'votingapi_cache';
-  $handler->display->display_options['relationships']['votingapi_cache']['table'] = 'node';
-  $handler->display->display_options['relationships']['votingapi_cache']['field'] = 'votingapi_cache';
-  $handler->display->display_options['relationships']['votingapi_cache']['label'] = 'Afstemningsresultater';
   /* Field: Content: Type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'node';
@@ -370,21 +361,6 @@ function os2intra_frontpage_views_default_views() {
     2 => array(),
     3 => array(),
   );
-  /* Filter criterion: Message: Type */
-  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
-  $handler->display->display_options['filters']['type_1']['table'] = 'message';
-  $handler->display->display_options['filters']['type_1']['field'] = 'type';
-  $handler->display->display_options['filters']['type_1']['relationship'] = 'reverse_field_target_nodes_message';
-  $handler->display->display_options['filters']['type_1']['value'] = array(
-    'commons_notify_comment_created' => 'commons_notify_comment_created',
-    'commons_posts_post_created' => 'commons_posts_post_created',
-    'commons_q_a_question_answered' => 'commons_q_a_question_answered',
-    'commons_q_a_question_asked' => 'commons_q_a_question_asked',
-    'commons_like_user_likes_node' => 'commons_like_user_likes_node',
-    'commons_activity_streams_comment_created' => 'commons_activity_streams_comment_created',
-    'commons_activity_streams_node_created' => 'commons_activity_streams_node_created',
-  );
-  $handler->display->display_options['filters']['type_1']['group'] = 1;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type_2']['id'] = 'type_2';
   $handler->display->display_options['filters']['type_2']['table'] = 'node';
@@ -623,28 +599,11 @@ function os2intra_frontpage_views_default_views() {
     2 => array(),
     3 => array(),
   );
-  /* Filter criterion: Message: Type */
-  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
-  $handler->display->display_options['filters']['type_1']['table'] = 'message';
-  $handler->display->display_options['filters']['type_1']['field'] = 'type';
-  $handler->display->display_options['filters']['type_1']['relationship'] = 'reverse_field_target_nodes_message';
-  $handler->display->display_options['filters']['type_1']['value'] = array(
-    'commons_notify_comment_created' => 'commons_notify_comment_created',
-    'commons_posts_post_created' => 'commons_posts_post_created',
-    'commons_q_a_question_answered' => 'commons_q_a_question_answered',
-    'commons_q_a_question_asked' => 'commons_q_a_question_asked',
-    'commons_like_user_likes_node' => 'commons_like_user_likes_node',
-    'commons_activity_streams_comment_created' => 'commons_activity_streams_comment_created',
-    'commons_activity_streams_node_created' => 'commons_activity_streams_node_created',
-  );
-  $handler->display->display_options['filters']['type_1']['group'] = 1;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type_2']['id'] = 'type_2';
   $handler->display->display_options['filters']['type_2']['table'] = 'node';
   $handler->display->display_options['filters']['type_2']['field'] = 'type';
   $handler->display->display_options['filters']['type_2']['value'] = array(
-    'poll' => 'poll',
-    'event' => 'event',
     'post' => 'post',
     'wiki' => 'wiki',
   );
@@ -854,9 +813,7 @@ function os2intra_frontpage_views_default_views() {
     t('Faldende'),
     t('Der findes ingen aktivitet.'),
     t('Group node from OG membership'),
-    t('reverse_field_target_nodes_message'),
     t('author'),
-    t('Afstemningsresultater'),
     t(' '),
     t('[type][title_field_1]'),
     t('Læs mere'),

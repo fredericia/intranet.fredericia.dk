@@ -17,59 +17,50 @@ function os2intra_frontpage_views_api($module = NULL, $api = NULL) {
 function os2intra_frontpage_homebox() {
   $homeboxes = array();
 
-  $homeboxes['os2intra_homebox_front'] = array (
+  $homeboxes['OS2intra Forside'] = array(
     'regions' => 2,
     'cache' => 0,
     'color' => 0,
-    'colors' => 
-    array (
-      0 => '#ffffff',
-      1 => '#ffffff',
-      2 => '#ffffff',
-      3 => '#ffffff',
-      4 => '#ffffff',
-      5 => '#ffffff',
+    'colors' => array(
+      0 => '#E4F0F8',
+      1 => '#E4F0F8',
+      2 => '#E4F0F8',
+      3 => '#E4F0F8',
+      4 => '#E4F0F8',
+      5 => '#E4F0F8',
     ),
-    'blocks' => 
-    array (
-      'homebox_custom' => 
-      array (
+    'blocks' => array(
+      'homebox_custom' => array(
         'module' => 'homebox',
         'delta' => 'custom',
-        'region' => 1,
-        'movable' => 1,
-        'status' => 1,
-        'open' => 1,
-        'closable' => 1,
-        'title' => 'Mine notater',
-        'weight' => -34,
-      ),
-      'views_os2intra_users_content-block' => 
-      array (
-        'module' => 'views',
-        'delta' => 'os2intra_users_content-block',
         'region' => 2,
         'movable' => 1,
         'status' => 1,
         'open' => 1,
         'closable' => 1,
-        'title' => 'Indlæg du har oprettet',
-        'weight' => -28,
+        'title' => '',
+        'weight' => -14,
+      ),
+      'views_05c9b062e59c366c742de6b83c6f9d33' => array(
+        'module' => 'views',
+        'delta' => '05c9b062e59c366c742de6b83c6f9d33',
+        'region' => 1,
+        'movable' => 0,
+        'status' => 1,
+        'open' => 1,
+        'closable' => 0,
+        'title' => '',
+        'weight' => -14,
       ),
     ),
-    'widths' => 
-    array (
-      1 => 50,
-      2 => 50,
-    ),
-    'title' => 'Din forside',
-    'path' => 'front',
-    'menu' => 0,
+    'widths' => array(),
+    'title' => 'Forside',
+    'path' => 'intranet',
+    'menu' => 1,
     'enabled' => 1,
     'auto_save' => 1,
     'full' => 0,
-    'roles' => 
-    array (
+    'roles' => array(
       0 => 'authenticated user',
     ),
   );
