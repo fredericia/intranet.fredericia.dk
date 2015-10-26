@@ -11,7 +11,7 @@ function os2intra_startcontent_uuid_features_default_content() {
   $nodes = array();
 
   $nodes[] = array(
-  'title' => 'Hjælp mig med noget',
+  'title' => 'TEST: Hjælp mig med noget',
   'log' => '',
   'status' => 1,
   'comment' => 2,
@@ -43,7 +43,7 @@ function os2intra_startcontent_uuid_features_default_content() {
   'user_uuid' => 'cfb3a2d8-52fb-44d2-987f-e53b381013db',
 );
   $nodes[] = array(
-  'title' => 'Hjælp til iPad',
+  'title' => 'TEST: Hjælp til iPad',
   'log' => '',
   'status' => 1,
   'comment' => 2,
