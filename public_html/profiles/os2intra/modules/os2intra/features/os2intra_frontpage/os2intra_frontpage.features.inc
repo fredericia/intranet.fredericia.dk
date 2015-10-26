@@ -17,7 +17,7 @@ function os2intra_frontpage_views_api($module = NULL, $api = NULL) {
 function os2intra_frontpage_homebox() {
   $homeboxes = array();
 
-  $homeboxes['OS2intra Forside'] = array(
+  $homeboxes['os2intra_forside'] = array(
     'regions' => 2,
     'cache' => 0,
     'color' => 0,
@@ -51,6 +51,17 @@ function os2intra_frontpage_homebox() {
         'closable' => 0,
         'title' => '',
         'weight' => -14,
+      ),
+      'views_os2intra_vigtige_beskeder-block' => array(
+        'module' => 'views',
+        'delta' => 'os2intra_vigtige_beskeder-block',
+        'region' => 1,
+        'movable' => 0,
+        'status' => 1,
+        'open' => 1,
+        'closable' => 0,
+        'title' => '',
+        'weight' => -15,
       ),
     ),
     'widths' => array(),

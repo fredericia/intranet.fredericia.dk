@@ -29,6 +29,25 @@ function os2intra_startcontent_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
+    'name' => 'Niveau 3',
+    'description' => '',
+    'format' => 'indhold',
+    'weight' => 0,
+    'uuid' => '1c23be27-70a9-4d13-bc9a-7b434d3019c3',
+    'vocabulary_machine_name' => 'os2web_taxonomies_tax_org',
+    'field_os2web_taxonomies_dis_cont' => array(
+      'und' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+    ),
+    'field_os2web_taxonomies_search' => array(),
+    'path' => array(
+      'pathauto' => 1,
+    ),
+  );
+  $terms[] = array(
     'name' => 'Booking og bestilling',
     'description' => '',
     'format' => 'indhold',
@@ -38,6 +57,25 @@ function os2intra_startcontent_uuid_features_default_terms() {
     'field_os2web_base_field_banner' => array(),
     'field_os2web_base_field_logo' => array(),
     'field_os2web_base_icon' => array(),
+    'path' => array(
+      'pathauto' => 1,
+    ),
+  );
+  $terms[] = array(
+    'name' => 'Niveau 1',
+    'description' => '',
+    'format' => 'indhold',
+    'weight' => 0,
+    'uuid' => '68b24ef9-820c-4770-a38c-355c2340fe0a',
+    'vocabulary_machine_name' => 'os2web_taxonomies_tax_org',
+    'field_os2web_taxonomies_dis_cont' => array(
+      'und' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+    ),
+    'field_os2web_taxonomies_search' => array(),
     'path' => array(
       'pathauto' => 1,
     ),
@@ -55,6 +93,28 @@ function os2intra_startcontent_uuid_features_default_terms() {
     'field_os2web_base_icon' => array(),
     'path' => array(
       'pathauto' => 1,
+    ),
+  );
+  $terms[] = array(
+    'name' => 'Niveau 2',
+    'description' => '',
+    'format' => 'indhold',
+    'weight' => 0,
+    'uuid' => 'f61cd4a7-bce3-4d5c-a6d7-70cabc8907ec',
+    'vocabulary_machine_name' => 'os2web_taxonomies_tax_org',
+    'field_os2web_taxonomies_dis_cont' => array(
+      'und' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+    ),
+    'field_os2web_taxonomies_search' => array(),
+    'path' => array(
+      'pathauto' => 1,
+    ),
+    'parent' => array(
+      0 => '68b24ef9-820c-4770-a38c-355c2340fe0a',
     ),
   );
   $terms[] = array(
