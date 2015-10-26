@@ -241,7 +241,9 @@ function os2intra_content_types_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'body',
-      1 => 'title',
+      1 => 'field_os2intra_base_structure',
+      2 => 'field_os2web_base_field_intro',
+      3 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
