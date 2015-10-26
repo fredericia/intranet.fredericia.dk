@@ -32,7 +32,7 @@ function os2web_taxonomies_enable() {
   //Set default Egenavne/stednavne taxonomy feed url
   $source = feeds_source('os2web_taxonomies_feed_gis');
   $config = $source->getConfig();
-  $config['FeedsFileFetcher']['source'] = drupal_get_path('module', 'os2web_taxonomies') . '/data/kle.xml';
+  $config['FeedsFileFetcher']['source'] = 'public://kle.xml';
   $source->setConfig($config);
   $source->save();
 }

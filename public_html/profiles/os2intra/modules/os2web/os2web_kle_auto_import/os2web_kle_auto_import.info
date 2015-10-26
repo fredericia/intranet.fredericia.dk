@@ -1,0 +1,6 @@
+name = KLE Auto Updater
+description = Automatically updates KLE terms from remote XML file.
+core = 7.x
+
+dependencies[] = feeds_ui
+dependencies[] = os2web_taxonomies
