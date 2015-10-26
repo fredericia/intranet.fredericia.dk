@@ -10,6 +10,7 @@ features[features_api][] = api:2
 features[variable][] = date_api_use_iso8601
 features[variable][] = date_default_timezone
 features[variable][] = date_first_day
+features[variable][] = date_format_os2web_base_date_only
 features[variable][] = node_admin_theme
 features[variable][] = theme_default
 project path = profiles/os2intra/modules/os2intra/features
