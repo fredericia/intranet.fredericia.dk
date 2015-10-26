@@ -22,6 +22,21 @@ function os2intra_content_types_ctools_plugin_api($module = NULL, $api = NULL) {
 function os2intra_content_types_image_default_styles() {
   $styles = array();
 
+  // Exported image style: normal.
+  $styles['normal'] = array(
+    'label' => 'Normal',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 534,
+          'height' => 300,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: teaser_spotbox.
   $styles['teaser_spotbox'] = array(
     'label' => 'Teaser - spotbox',

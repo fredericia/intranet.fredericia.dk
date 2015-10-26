@@ -355,7 +355,7 @@ function os2intra_content_types_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -405,7 +405,7 @@ function os2intra_content_types_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -422,37 +422,7 @@ function os2intra_content_types_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
-          'slideshow_caption' => '',
-          'slideshow_caption_link' => '',
-          'slideshow_carousel_circular' => 0,
-          'slideshow_carousel_follow' => 0,
-          'slideshow_carousel_image_style' => '',
-          'slideshow_carousel_scroll' => 1,
-          'slideshow_carousel_skin' => '',
-          'slideshow_carousel_speed' => 500,
-          'slideshow_carousel_vertical' => 0,
-          'slideshow_carousel_visible' => 3,
-          'slideshow_colorbox_image_style' => '',
-          'slideshow_colorbox_slideshow' => 'automatic',
-          'slideshow_colorbox_slideshow_speed' => 4000,
-          'slideshow_colorbox_speed' => 350,
-          'slideshow_colorbox_transition' => 'elastic',
-          'slideshow_controls' => 0,
-          'slideshow_controls_pause' => 0,
-          'slideshow_controls_position' => 'after',
-          'slideshow_field_collection_image' => '',
-          'slideshow_fx' => 'fade',
-          'slideshow_image_style' => 'os2intra_page',
-          'slideshow_link' => 'colorbox',
-          'slideshow_order' => '',
-          'slideshow_pager' => '',
-          'slideshow_pager_image_style' => '',
-          'slideshow_pager_position' => 'after',
-          'slideshow_pause' => 0,
-          'slideshow_speed' => 1000,
-          'slideshow_start_on_hover' => 0,
-          'slideshow_timeout' => 4000,
+          'image_style' => 'normal',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -551,7 +521,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -587,7 +557,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 19,
+      'weight' => 24,
     ),
   );
 
@@ -600,11 +570,10 @@ function os2intra_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -626,7 +595,7 @@ function os2intra_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 21,
+      'weight' => 2,
     ),
   );
 
@@ -641,7 +610,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'print' => array(
         'label' => 'above',
@@ -694,7 +663,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'print' => array(
         'label' => 'above',
@@ -724,7 +693,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 18,
+      'weight' => 23,
     ),
   );
 
@@ -744,7 +713,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'print' => array(
         'label' => 'above',
@@ -778,6 +747,74 @@ function os2intra_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-os2intra_base_page-field_os2web_base_field_intro'.
+  $field_instances['node-os2intra_base_page-field_os2web_base_field_intro'] = array(
+    'bundle' => 'os2intra_base_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'section',
+    'field_name' => 'field_os2web_base_field_intro',
+    'label' => 'Intro',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'fuld_html' => 'fuld_html',
+          'indhold' => 'indhold',
+          'kommentar' => 'kommentar',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'fuld_html' => array(
+              'weight' => 0,
+            ),
+            'indhold' => array(
+              'weight' => 0,
+            ),
+            'kommentar' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-os2intra_base_page-field_os2web_base_field_kle_ref'.
   $field_instances['node-os2intra_base_page-field_os2web_base_field_kle_ref'] = array(
     'bundle' => 'os2intra_base_page',
@@ -789,7 +826,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'print' => array(
         'label' => 'inline',
@@ -819,7 +856,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 16,
+      'weight' => 22,
     ),
   );
 
@@ -835,7 +872,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 11,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -887,7 +924,7 @@ function os2intra_content_types_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -901,13 +938,10 @@ function os2intra_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 9,
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -957,7 +991,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 6,
       ),
       'print' => array(
         'label' => 'above',
@@ -994,7 +1028,7 @@ function os2intra_content_types_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 20,
+      'weight' => 25,
     ),
   );
 
@@ -2485,6 +2519,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Groups audience');
   t('Gruppe ID');
   t('Ikon');
+  t('Intro');
   t('KL Emneord');
   t('Kantine');
   t('Kilde');

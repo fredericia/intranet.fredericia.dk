@@ -70,6 +70,7 @@ dependencies[] = workbench
 dependencies[] = jquery_update
 dependencies[] = l10n_update
 dependencies[] = link
+dependencies[] = diff
 dependencies[] = page_manager
 dependencies[] = scheduler
 dependencies[] = admin_menu
