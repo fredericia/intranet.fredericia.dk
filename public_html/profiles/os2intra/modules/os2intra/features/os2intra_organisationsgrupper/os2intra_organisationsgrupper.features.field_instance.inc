@@ -156,6 +156,59 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-os2intra_org_group_unit-field_os2intra_afdeling'.
+  $field_instances['node-os2intra_org_group_unit-field_os2intra_afdeling'] = array(
+    'bundle' => 'os2intra_org_group_unit',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_afdeling',
+    'label' => 'Afdeling',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 42,
+    ),
+  );
+
   // Exported field_instance: 'node-os2intra_org_group_unit-group_group'.
   $field_instances['node-os2intra_org_group_unit-group_group'] = array(
     'bundle' => 'os2intra_org_group_unit',
@@ -211,65 +264,6 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 0,
-    ),
-  );
-
-  // Exported field_instance: 'node-os2intra_org_group_unit-og_group_ref'.
-  $field_instances['node-os2intra_org_group_unit-og_group_ref'] = array(
-    'bundle' => 'os2intra_org_group_unit',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'og_ui',
-        'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
-    'required' => FALSE,
-    'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 41,
     ),
   );
 
@@ -339,12 +333,14 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
     'field_name' => 'og_group_ref',
     'label' => 'Groups audience',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
+          'access_override' => 0,
           'admin' => array(
             'widget_type' => 'entityreference_autocomplete',
           ),
@@ -369,6 +365,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
@@ -378,6 +375,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Afdeling');
   t('Body');
   t('Determine if this is an OG group.');
   t('Group');
