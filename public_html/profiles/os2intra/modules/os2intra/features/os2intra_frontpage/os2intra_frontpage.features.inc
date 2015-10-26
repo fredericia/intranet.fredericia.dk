@@ -17,7 +17,7 @@ function os2intra_frontpage_views_api($module = NULL, $api = NULL) {
 function os2intra_frontpage_homebox() {
   $homeboxes = array();
 
-  $homeboxes['OS2intra Forside'] = array(
+  $homeboxes['os2intra_forside'] = array(
     'regions' => 2,
     'cache' => 0,
     'color' => 0,

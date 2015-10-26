@@ -4,6 +4,7 @@ package = OS2Intra
 version = 7.x-1.0
 dependencies[] = entity
 dependencies[] = homebox
+dependencies[] = views
 dependencies[] = views_content
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
