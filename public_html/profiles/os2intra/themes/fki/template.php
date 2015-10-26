@@ -129,3 +129,49 @@ function fki_preprocess_node__sales_ad(&$variables) {
     }
   }
 }
+
+
+function fki_theme(&$existing, $type, $theme, $path) {
+  $hooks = array();
+
+  $hooks['main_navigation_search_form'] = array(
+    'render element' => 'element',
+  );
+
+  return $hooks;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function fki_form_alter(array &$form, array &$form_state = array(), $form_id = NULL) {
+  if ($form_id) {
+    switch ($form_id) {
+
+      case 'search_form':
+        // Add a clearfix class so the results don't overflow onto the form.
+        $form['#attributes']['class'][] = 'clearfix';
+
+        // Remove container-inline from the container classes.
+        $form['basic']['#attributes']['class'] = array();
+
+        // Hide the default button from display.
+        $form['basic']['submit']['#attributes']['class'][] = 'element-invisible';
+
+        // Implement a theme wrapper to add a submit button containing a search
+        // icon directly after the input element.
+        $form['basic']['keys']['#theme_wrappers'] = array('main_navigation_search_form');
+        break;
+    }
+  }
+}
+
+function fki_main_navigation_search_form($variables) {
+  $output = '<div class="input-group">';
+  $output .= $variables['element']['#children'];
+  $output .= '<span class="input-group-btn">';
+  $output .= '<button type="submit" class="btn btn-secondary"><span class="icon"></span></button>';
+  $output .= '</span>';
+  $output .= '</div>';
+  return $output;
+}

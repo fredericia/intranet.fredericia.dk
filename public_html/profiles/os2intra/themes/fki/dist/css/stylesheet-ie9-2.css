@@ -3512,6 +3512,67 @@
   }
 }
 
+@media (min-width: 768px) {
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .form-control-static {
+    display: inline-block;
+  }
+
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .input-group {
+    display: inline-table;
+    vertical-align: middle;
+  }
+
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .input-group .input-group-addon,
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .input-group .input-group-btn,
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .input-group .form-control {
+    width: auto;
+  }
+
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .input-group > .form-control {
+    width: 100%;
+  }
+
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .radio,
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .radio label,
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .checkbox label {
+    padding-left: 0;
+  }
+
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .radio input[type="radio"],
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .checkbox input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
+
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .has-feedback .form-control-feedback {
+    top: 0;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .main-navigation-enabled-xs .main-navigation-wrapper {
     display: block;
@@ -4913,32 +4974,6 @@
 
   .simple-navigation-enabled-lg.simple-navigation-sticky .outer-wrapper .inner-wrapper {
     margin-top: 50px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .header {
-    display: none;
-  }
-
-  .header .header-banner {
-    padding: 30px 0;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .header {
-    display: none;
-  }
-
-  .header .header-banner {
-    padding: 50px 0;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .header .header-banner {
-    padding: 75px 0;
   }
 }
 

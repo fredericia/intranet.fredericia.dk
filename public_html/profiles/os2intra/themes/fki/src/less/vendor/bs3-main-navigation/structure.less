@@ -511,6 +511,25 @@
   }
 }
 
+// Inline form
+.main-navigation-wrapper {
+
+  .main-navigation-bar {
+
+    .main-navigation-bar-inline-form {
+      line-height: @line-height-base;
+
+      // Vertically center in expanded, horizontal navbar
+      .form-inline();
+      .bs3-main-navigation-mixin-vertical-align(@input-height-base);
+
+      .form-group {
+        margin: 0;
+      }
+    }
+  }
+}
+
 // Button
 .main-navigation-wrapper {
 
@@ -619,4 +638,13 @@
       }
     }
   }
+}
+
+
+
+
+
+.bs3-main-navigation-mixin-vertical-align(@element-height) {
+  margin-top: ((@bs3-main-navigation-height - @element-height) / 2);
+  margin-bottom: ((@bs3-main-navigation-height - @element-height) / 2);
 }

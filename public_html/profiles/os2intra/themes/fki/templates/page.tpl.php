@@ -62,7 +62,7 @@
             <div class="row">
 
               <!-- Begin - content -->
-              <div class="col-md-4 main-navigation-bar-content">
+              <div class="col-md-4 main-navigation-bar-inline-form">
                 <?php print render($main_navigation_search); ?>
               </div>
               <!-- End - content -->
