@@ -1618,12 +1618,12 @@ function os2intra_content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
     'field_name' => 'field_spotbox_image',
     'label' => 'Spotbillede',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'alt_field' => 1,
-      'alt_field_required' => 1,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
@@ -1631,20 +1631,14 @@ function os2intra_content_types_field_default_field_instances() {
       'max_resolution' => '1024x1024',
       'min_resolution' => '286x160',
       'title_field' => 1,
-      'title_field_required' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'collapsible' => 2,
-        'croparea' => '500x500',
-        'enforce_minimum' => 1,
-        'enforce_ratio' => 1,
-        'preview_image_style' => 'os2intra_spotbox',
+        'preview_image_style' => '',
         'progress_indicator' => 'throbber',
-        'resolution' => '286x160',
       ),
       'type' => 'image_image',
       'weight' => 2,
@@ -2121,6 +2115,65 @@ function os2intra_content_types_field_default_field_instances() {
     'widget_type' => 'options_select',
   );
 
+  // Exported field_instance: 'node-wiki-og_group_ref'.
+  $field_instances['node-wiki-og_group_ref'] = array(
+    'bundle' => 'wiki',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'og_group_ref',
+    'label' => 'Groups audience',
+    'required' => FALSE,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Smagsprøve',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 45,
+    ),
+  );
+
   // Exported field_instance: 'node-wiki-title_field'.
   $field_instances['node-wiki-title_field'] = array(
     'bundle' => 'wiki',
@@ -2333,6 +2386,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Expire date');
   t('Filer');
   t('Group content visibility');
+  t('Groups audience');
   t('Gruppe ID');
   t('Ikon');
   t('KL Emneord');
