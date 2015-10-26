@@ -4984,6 +4984,90 @@
 }
 
 @media screen and (max-width: 767px) {
+  .fki-teaser .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-teaser .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 15px;
+    line-height: 21px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-teaser .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-teaser .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fki-spotbox-teaser .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 12px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-spotbox-teaser .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-spotbox-teaser .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-spotbox-teaser .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fki-spotbox-teaser.fki-spotbox-teaser-variant-with-image .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-spotbox-teaser.fki-spotbox-teaser-variant-with-image .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 15px;
+    line-height: 21px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-spotbox-teaser.fki-spotbox-teaser-variant-with-image .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-spotbox-teaser.fki-spotbox-teaser-variant-with-image .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .fki-list-simple .fki-list-simple-heading .fki-list-simple-title {
     font-size: 11px;
     line-height: 15px;

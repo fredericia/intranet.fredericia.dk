@@ -17,6 +17,30 @@ function os2intra_content_types_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function os2intra_content_types_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: teaser_spotbox.
+  $styles['teaser_spotbox'] = array(
+    'label' => 'Teaser - spotbox',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 176,
+          'height' => 100,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function os2intra_content_types_node_info() {
