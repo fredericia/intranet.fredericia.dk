@@ -1,0 +1,13 @@
+name = Administration language
+description = Makes sure all administration pages are displayed in the preferred language of the administrator.
+dependencies[] = locale
+package = Multilanguage
+core = 7.x
+configure = admin/config/regional/language/admin_language
+
+; Information added by Drupal.org packaging script on 2015-09-26
+version = "7.x-1.0-beta1+2-dev"
+core = "7.x"
+project = "admin_language"
+datestamp = "1443268740"
+
