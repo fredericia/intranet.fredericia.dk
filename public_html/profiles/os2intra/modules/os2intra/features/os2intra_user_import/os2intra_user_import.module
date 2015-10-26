@@ -14,7 +14,7 @@ include_once 'os2intra_user_import.features.inc';
 /**
  * Implements hook_menu()
  */
-function os2intra_user_import_menu(){
+function os2intra_user_import_menu() {
   $items = array();
 
   $items['admin/config/os2intra/user_import'] = array(
@@ -142,13 +142,13 @@ function os2intra_user_import_activate_form_validate($form, &$form_state){
   if(!valid_email_address($form_state['values']['mail'])){
     form_set_error('mail', t('Invalid email address.'));
   }
+
 }
 
 /**
  * Implements hook_form_submit()
  */
 function os2intra_user_import_activate_form_submit($form, &$form_state){
-
   $password = user_password(8);
 
   $change = array(
@@ -205,6 +205,13 @@ function os2intra_user_import_settings(){
     '#type' => 'textfield',
     '#description' => t('ex. private://user_import'),
     '#default_value' => variable_get('os2intra_user_import_dir', 'private://user_import')
+  );
+
+  $form['os2intra_user_default_groups'] = array(
+    '#title' => t('Node ids (nid) of default OG groups, that should be added to every imported used'),
+    '#type' => 'textfield',
+    '#description' => t('CSV, ex. 1,2,3'),
+    '#default_value' => variable_get('os2intra_user_default_groups')
   );
 
   $form['mapping'] = array(
@@ -273,6 +280,12 @@ function os2intra_user_import_settings(){
     '#options' => $csv_cols,
     '#default_value' => variable_get('os2intra_mapping_birthday'),
   );
+
+  $form['cleanup_help_block'] = array(
+    '#type' => 'item',
+    '#title' => t('Cleanup script'),
+    '#markup' => '<ul><li>Deletes all terms in the vocabulary "os2intra_organization_tax"</li><li>Deletes all users with only one role "authenticated user"</li></ul><br>Run using: Run using drush scr ../scripts/delete_imported_data.php',
+  );
   return system_settings_form($form);
 }
 
@@ -293,6 +306,16 @@ function os2intra_user_import_settings_validate(&$form, &$form_state){
       }
 
       $values[] = $value;
+    }
+  }
+
+  if ($form_state['values']['os2intra_user_default_groups']) {
+    $default_groups = explode(',', $form_state['values']['os2intra_user_default_groups']);
+    foreach ($default_groups as $group) {
+      $node = node_load($group);
+      if (!$node || $node->type != 'os2intra_group') {
+	      form_set_error('os2intra_user_default_groups', t('Must be a valid NID of type organic groups (OG)'));
+      }
     }
   }
 }
@@ -345,7 +368,6 @@ function os2intra_user_import_overview(){
 function os2intra_user_import_run(){
   if(variable_get('os2intra_user_import_enable', FALSE)){
     setlocale(LC_ALL, "en_DK.UTF-8");
-
     variable_get('os2intra_user_import_dir', 'private://user_import');
 
     $realpath = '';
@@ -365,11 +387,11 @@ function os2intra_user_import_run(){
 
       // Check and create groups
       os2intra_user_import_groups($users);
-
       // Check for users that already exist
       $update_users = os2intra_user_import_check_users($users);
 
       os2intra_user_import_save_log('', 'User import');
+
       // Loop over users and create
       foreach($users as $user){
         os2intra_user_import_save_user($user);
@@ -508,6 +530,7 @@ function os2intra_user_import_save_user($user, $uid = ''){
 
   $keep_groups = array();
   $no_import_groups = FALSE;
+
   // Load users values from account
   if(is_object($account)){
     $og_user_node = array();
@@ -548,7 +571,12 @@ function os2intra_user_import_save_user($user, $uid = ''){
   // We rebuild the association completely so we start with an empty
   // array.
   $user_groups = array();
-  $user_groups[LANGUAGE_NONE][]['target_id'] = 2; // Everybody needs to memebers of this group.
+  if (variable_get('os2intra_user_default_groups')) {
+    $def_groups = explode(',', variable_get('os2intra_user_default_groups'));
+    foreach ($def_groups as $def_group) {
+      $user_groups[LANGUAGE_NONE][]['target_id'] = $def_group;
+    }
+  }
   $user_groups[LANGUAGE_NONE][]['target_id'] = $new_group_nid;
 
   // In field_os2intra_import_groups we store the group ids
@@ -609,9 +637,9 @@ function os2intra_user_import_save_user($user, $uid = ''){
     // The organisational ids from this import
     'field_os2intra_import_groups' => $import_groups,
     // First Name
-    'field_name_first' => array(LANGUAGE_NONE => array(0 => array('value' => $user['first_name']))),
+    'field_fornavn' => array(LANGUAGE_NONE => array(0 => array('value' => $user['first_name']))),
     // Last Name
-    'field_name_last' => array(LANGUAGE_NONE => array(0 => array('value' => $user['last_name']))),
+    'field_efternavn' => array(LANGUAGE_NONE => array(0 => array('value' => $user['last_name']))),
     // Job description
     'field_os2intra_user_titles' => array(LANGUAGE_NONE => array(0 => array('tid' => $title_tid))),
     // Termination date
@@ -619,7 +647,7 @@ function os2intra_user_import_save_user($user, $uid = ''){
     // Birthday
     'field_os2intra_birthday' => array(LANGUAGE_NONE => array(0 => array('value' => $birthday))),
     // Activate user
-    'status' => isset($account->status) ? $account->status : 1,
+    'status' => ($account->uid != 0) ? $account->status : 1,
   );
 
   // Handle wether were updating or creating a new user
@@ -653,10 +681,12 @@ function os2intra_user_import_save_user($user, $uid = ''){
 
   // Write log entry
   if($uid){
-    os2intra_user_import_save_log($user['employee_id'], 'update user: ' . $user['employee_id'] . ' ' . $user['first_name'] . ' ' . $user['last_name']);
+    #os2intra_user_import_save_log($user['employee_id'], 'update user: ' . $user['employee_id'] . ' ' . $user['first_name'] . ' ' . $user['last_name']);
+    os2intra_user_import_save_log($user['employee_id'], 'update user: ' . $user['employee_id'] . ' ' . $user['first_name'] . ' ' . $user['last_name']  . 'status: ' . $user['status']);
   }
   else {
-    os2intra_user_import_save_log($user['employee_id'], 'create user: ' . $user['first_name']);
+    os2intra_user_import_save_log($user['employee_id'], 'create user: ' . $user['first_name'] . 'status: ' . $user['status']);
+   # os2intra_user_import_save_log($user['employee_id'], 'create user: ' . $user['first_name']);
   }
 }
 
@@ -668,7 +698,6 @@ function os2intra_user_import_save_user($user, $uid = ''){
  */
 function os2intra_user_import_groups($users){
   os2intra_user_import_save_log('', 'Import groups');
-
   $groups = array();
 
   foreach($users as $user){
@@ -716,10 +745,11 @@ function os2intra_user_import_groups($users){
 
     // Title and type
     $node->title = $group;
-    $node->type = 'group';
+    $node->type = 'os2intra_group';
 
     // Generic node stuff
     node_object_prepare($node);
+
     $node->language = LANGUAGE_NONE;
     $node->uid = 1;
     $node->status = 1;
@@ -740,6 +770,7 @@ function os2intra_user_import_groups($users){
     $node = node_submit($node);
 
     node_save($node);
+
   }
   os2intra_user_import_save_log('', 'Finished importing groups');
 }
