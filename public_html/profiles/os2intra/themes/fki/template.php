@@ -91,40 +91,16 @@ function fki_preprocess_node(&$variables) {
 }
 
 /*
- * Sales ad
+ * Spotbox
  * Implements hook_preprocess_node().
  */
-function fki_preprocess_node__sales_ad(&$variables) {
-  if ($variables['elements']['#view_mode'] != 'page') {
+function fki_preprocess_node__spotbox(&$variables) {
+  if ($variables['elements']['#view_mode'] == 'teaser') {
 
-    // Litter
-    if ($field_litter = field_get_items('node', $variables['node'], 'field_litter_id')) {
-      $node_litter = node_load($field_litter[0]['target_id']);
-
-      // Birthdate
-      if ($field_litter_birthdate = field_get_items('node', $node_litter, 'field_birthdate')) {
-        $variables['litter_birthdate'] = field_view_value('node', $node_litter, 'field_birthdate', $field_litter_birthdate[0], array('settings' => array('format_type' => 'custom_short')));
-      }
-
-      // Animal
-      if ($field_animal = field_get_items('node', $node_litter, 'field_animal_id')) {
-        $node_animal = node_load($field_animal[0]['target_id']);
-
-        // Breed
-        if ($field_breed = field_get_items('node', $node_animal, 'field_breed_id')) {
-          $variables['animal_breed'] = field_view_value('node', $node_animal, 'field_breed_id', $field_breed[0], array(
-            'type' => 'taxonomy_term_reference_plain',
-          ));
-        }
-      }
-    }
-
-    // User
-    if ($node_creator = ha_user_get_raw_information($variables['user']->uid)) {
-
-      // Location
-      if (isset($node_creator['location'])) {
-        $variables['user_location'] = $node_creator['location'];
+    // Image
+    if ($field_image = field_get_items('node', $variables['node'], 'field_spotbox_image')) {
+      if (!empty($field_image)) {
+        $variables['classes_array'][] = 'fki-spotbox-' . $variables['elements']['#view_mode'] . '-variant-with-image';
       }
     }
   }

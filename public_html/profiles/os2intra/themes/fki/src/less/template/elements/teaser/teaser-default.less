@@ -10,6 +10,10 @@
 // Variables
 // --------------------------------------------------
 
+@fki-teaser-inner-heading-top-bottom-spacing: @default-heading-top-bottom-spacing;
+@fki-teaser-inner-body-top-bottom-spacing: @default-body-top-bottom-spacing;
+@fki-teaser-inner-left-right-spacing: @default-left-right-spacing;
+
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
@@ -17,100 +21,18 @@
 // Teaser
 .fki-teaser {
 
+    .fki-teaser-heading {
+        padding: @fki-teaser-inner-heading-top-bottom-spacing @fki-teaser-inner-left-right-spacing;
+
+        .fki-teaser-heading-title {
+            .heading-h4;
+            margin: 0;
+        }
+    }
+
     // Body
     .fki-teaser-body {
-
-        // Paragraph
-        p {
-            margin-bottom: 0;
-        }
-
-        // Section
-        section {
-
-            // 2 columns
-            &.fki-teaser-section-2-columns {
-
-                // Column
-                .fki-teaser-section-column {
-
-                    // Second column
-                    &:nth-child(2) {
-                    }
-                }
-
-                // Bordered
-                &.fki-teaser-section-2-columns-bordered {
-
-                    // Column
-                    .fki-teaser-section-column {
-
-                        // Second column
-                        &:nth-child(2) {
-                        }
-                    }
-                }
-            }
-
-            // Last
-            &:last-child {
-            }
-        }
-
-        // Price per young
-        .fki-teaser-price-per-young-container {
-
-            // Label
-            .fki-teaser-content-label {
-
-            }
-
-            // Field
-            .fki-teaser-content-field {
-            }
-        }
-
-        // Birthdate
-        .fki-teaser-birthdate-container {
-
-            // Icon
-            .fki-teaser-content-icon {
-            }
-
-            // Label
-            .fki-teaser-content-label {
-            }
-
-            // Field
-            .fki-teaser-content-field {
-
-            }
-        }
-
-        // Sales date
-        .fki-teaser-sales-date-container {
-
-            // Icon
-            .fki-teaser-content-icon {
-            }
-
-            // Label
-            .fki-teaser-content-label {
-            }
-
-            // Field
-            .fki-teaser-content-field {
-
-            }
-        }
-
-        // Link
-        .fki-teaser-link-container {
-
-            // Button
-            .button {
-            }
-        }
+        padding: @fki-teaser-inner-body-top-bottom-spacing @fki-teaser-inner-left-right-spacing;
     }
 }
 
