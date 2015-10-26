@@ -214,6 +214,7 @@ features[variable][] = node_submitted_wiki
 features[variable][] = pathauto_node_it_vejledning_pattern
 features[variable][] = pathauto_node_os2intra_base_page_pattern
 features[variable][] = pathauto_node_os2intra_canteen_menu_pattern
+features[variable][] = pathauto_node_os2intra_message_notification_pattern
 features[variable][] = pathauto_node_os2web_base_selfservice_link_pattern
 features[variable][] = pathauto_node_spotbox_pattern
 features[variable][] = pathauto_node_wiki_pattern
