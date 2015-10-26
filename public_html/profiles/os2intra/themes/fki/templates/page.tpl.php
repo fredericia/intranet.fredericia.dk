@@ -115,7 +115,23 @@
         <?php endif; ?>
 
         <a id="main-content"></a>
-        <?php print render($page['content']); ?>
+
+        <?php if (!panels_get_current_page_display()): ?>
+          <div class="fki-box">
+            <?php if ($title): ?>
+            <div class="fki-box-heading">
+              <h2 class="fki-box-heading-title"><?php print $title; ?></h2>
+            </div>
+            <?php endif; ?>
+            <div class="fki-box-body">
+              <?php print render($page['content']); ?>
+            </div>
+          </div>
+
+        <?php else: ?>
+          <?php print render($page['content']); ?>
+        <?php endif; ?>
+
       </div>
     </div>
     <!-- End - content -->
