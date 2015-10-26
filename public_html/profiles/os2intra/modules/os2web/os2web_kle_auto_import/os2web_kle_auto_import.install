@@ -1,6 +1,14 @@
 <?php
 
 /**
+ * Implements hook_install().
+ */
+function os2web_kle_auto_import_install() {
+  // Import the XML file when installing the module
+  os2web_kle_auto_import_run();
+}
+
+/**
  * Implements hook_uninstall().
  */
 function os2web_kle_auto_import_uninstall() {
