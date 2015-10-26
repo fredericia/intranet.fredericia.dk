@@ -96,5 +96,6 @@ dependencies[] = os2intra_view_modes
 dependencies[] = os2intra_startcontent
 dependencies[] = os2intra_content_types
 dependencies[] = os2intra_settings
+dependencies[] = os2intra_struktur_pages
 dependencies[] = os2intra_organisationsgrupper
 dependencies[] = os2intra_panels
