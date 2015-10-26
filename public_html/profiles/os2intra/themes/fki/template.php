@@ -149,17 +149,6 @@ function fki_form_alter(array &$form, array &$form_state = array(), $form_id = N
     switch ($form_id) {
 
       case 'search_form':
-        // Add a clearfix class so the results don't overflow onto the form.
-        $form['#attributes']['class'][] = 'clearfix';
-
-        // Remove container-inline from the container classes.
-        $form['basic']['#attributes']['class'] = array();
-
-        // Hide the default button from display.
-        $form['basic']['submit']['#attributes']['class'][] = 'element-invisible';
-
-        // Implement a theme wrapper to add a submit button containing a search
-        // icon directly after the input element.
         $form['basic']['keys']['#theme_wrappers'] = array('main_navigation_search_form');
         break;
     }

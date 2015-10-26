@@ -3513,62 +3513,62 @@
 }
 
 @media (min-width: 768px) {
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .form-group {
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .form-group {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle;
   }
 
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .form-control {
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .form-control {
     display: inline-block;
     width: auto;
     vertical-align: middle;
   }
 
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .form-control-static {
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .form-control-static {
     display: inline-block;
   }
 
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .input-group {
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .input-group {
     display: inline-table;
     vertical-align: middle;
   }
 
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .input-group .input-group-addon,
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .input-group .input-group-btn,
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .input-group .form-control {
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .input-group .input-group-addon,
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .input-group .input-group-btn,
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .input-group .form-control {
     width: auto;
   }
 
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .input-group > .form-control {
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .input-group > .form-control {
     width: 100%;
   }
 
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .control-label {
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .control-label {
     margin-bottom: 0;
     vertical-align: middle;
   }
 
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .radio,
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .checkbox {
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .radio,
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .checkbox {
     display: inline-block;
     margin-top: 0;
     margin-bottom: 0;
     vertical-align: middle;
   }
 
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .radio label,
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .checkbox label {
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .radio label,
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .checkbox label {
     padding-left: 0;
   }
 
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .radio input[type="radio"],
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .checkbox input[type="checkbox"] {
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .radio input[type="radio"],
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .checkbox input[type="checkbox"] {
     position: relative;
     margin-left: 0;
   }
 
-  .main-navigation-wrapper .main-navigation-bar .main-navigation-bar-inline-form .has-feedback .form-control-feedback {
+  .main-navigation-wrapper .main-navigation-bar .main-navigation-form .has-feedback .form-control-feedback {
     top: 0;
   }
 }

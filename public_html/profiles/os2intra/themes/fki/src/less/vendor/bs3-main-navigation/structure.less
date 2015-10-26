@@ -32,6 +32,7 @@
 
 .main-navigation-wrapper {
   display: none;
+  margin-bottom: @bs3-main-navigation-margin-bottom;
 
   .main-navigation-bar {
     height: @bs3-main-navigation-height;
@@ -46,7 +47,6 @@
   .container,
   .container-fluid,
   .row,
-  .main-navigation-bar-content,
   .main-navigation-list {
     height: inherit;
     min-height: inherit;
@@ -511,12 +511,13 @@
   }
 }
 
-// Inline form
+// Form
 .main-navigation-wrapper {
 
   .main-navigation-bar {
 
-    .main-navigation-bar-inline-form {
+
+    .main-navigation-form {
       line-height: @line-height-base;
 
       // Vertically center in expanded, horizontal navbar
