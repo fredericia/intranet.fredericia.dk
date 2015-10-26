@@ -2,55 +2,24 @@
 // | Structure
 // |--------------------------------------------------------------------------
 // |
-// | Table of contents:
-// |
-// | - Base
-// | -- Toggle (open/close animation)
-// | --- With CSS3 3D transform
-// | --- Without CSS3 3D transform
-// | -- Overlay
-// | -- Transitions
-// |
-// | - Content types
-// | -- Logo
-// | -- Headline
-// | -- Navigation
-// | -- Social links
-// | -- Spacer
-// |
-// | - Content effects
-// | -- Push content
-// | -- Overflow
-// |
-// | - Header attachment
-// | -- Attached
-// | -- Detached
-// |
-// | - Static
-// | -- Phone
-// | -- Tablet
-// | -- Desktop
-// | -- Large desktop
-// |
-// | - Enabled
-// | -- Hidden state
-// | --- Phone
-// | --- Tablet
-// | --- Desktop
-// | --- Large desktop
-// |
-// | - Toggle button
+// | This file contains styles for the following:
+// | - .inner-wrapper
+// | - .sidebar
+// | - .sidebar-left
+// | - .sidebar-right
 // |
 
-.inner-wrapper {
-	position: relative;
-	min-height: 100%;
-	overflow: hidden;
-}
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
 
 .sidebar {
-	position: fixed;
 	display: none;
+	position: fixed;
 	height: 100%;
 	top: 0;
 	bottom: 0;
@@ -77,199 +46,121 @@
 }
 
 // --------------------------------------------------
-// Enabled
+// Responsive
 // --------------------------------------------------
-//
-// Introduction
-// - Defines in which screen sizes the sidebar can
-// - be visible.
-// - If the screen size is altered to a size, which
-// - does not have the visibility class set, the
-// - sidebar automatically closes.
-// - By default the sidebar is always hidden. It's
-// - therefor necessary to add the visibility classes
-// - to display the sidebar at all.
-//
-// Why use this? It's just extra work and creating
-// a uglier code base?
-// - To prevent that the sidebar is being displayed,
-// - in unintended screen sizes which can break the
-// - websites layout.
-// - As mentioned above, the sidebar is always
-// - hidden by default. This has been done, to
-// - enforce this line of thinking.
-//
+
+// Mobile
+@media @media-query-mobile {
+}
+
+// Mobile - only
 @media @media-query-mobile-only {
 
-	.sidebar-left-enabled-xs {
+	// Inner wrapper
+	.bs3-sidebar-mixin-inner-wrapper();
 
-		.sidebar-left {
-			display: block;
-		}
-	}
-
-	.sidebar-right-enabled-xs {
-
-		.sidebar-right {
-			display: block;
-		}
-	}
+	// Enabled
+	.bs3-sidebar-mixin-enabled(xs);
 }
+
+// Tablet
+@media @media-query-tablet {
+}
+
+// Tablet - only
 @media @media-query-tablet-only {
 
-	.sidebar-left-enabled-sm {
+	// Inner wrapper
+	.bs3-sidebar-mixin-inner-wrapper();
 
-		.sidebar-left {
-			display: block;
-		}
-	}
-
-	.sidebar-right-enabled-sm {
-
-		.sidebar-right {
-			display: block;
-		}
-	}
+	// Enabled
+	.bs3-sidebar-mixin-enabled(sm);
 }
+
+// Desktop
+@media @media-query-desktop {
+}
+
+// Desktop - only
 @media @media-query-desktop-only {
 
-	.sidebar-left-enabled-md {
+	// Inner wrapper
+	.bs3-sidebar-mixin-inner-wrapper();
 
-		.sidebar-left {
-			display: block;
-		}
-	}
+	// Enabled
+	.bs3-sidebar-mixin-enabled(md);
+}
 
-	.sidebar-right-enabled-md {
+// Large desktop
+@media @media-query-large-desktop {
+}
 
-		.sidebar-right {
-			display: block;
+// Large desktop - only
+@media @media-query-large-desktop-only {
+
+	// Inner wrapper
+	.bs3-sidebar-mixin-inner-wrapper();
+
+	// Enabled
+	.bs3-sidebar-mixin-enabled(lg);
+}
+
+// Print
+@media print {
+
+	.sidebar-left-enabled-xs,
+	.sidebar-left-enabled-sm,
+	.sidebar-left-enabled-md,
+	.sidebar-left-enabled-lg,
+	.sidebar-right-enabled-xs,
+	.sidebar-right-enabled-sm,
+	.sidebar-right-enabled-md,
+	.sidebar-right-enabled-lg {
+
+		.sidebar {
+			display: none;
 		}
 	}
 }
-@media @media-query-large-desktop-only {
 
-	.sidebar-left-enabled-lg {
+// Touch
+.touch {
+}
 
-		.sidebar-left {
-			display: block;
-		}
-	}
-
-	.sidebar-right-enabled-lg {
-
-		.sidebar-right {
-			display: block;
-		}
-	}
+// No touch
+.no-touch {
 }
 
 // --------------------------------------------------
-// Toggle button
+// Mixins
 // --------------------------------------------------
-//
-// Introduction
-// - The toggles around the website shouldnt be
-// - able (and visible) to toggle the sidebar, if
-// - the sidebar is'nt displayable.
-// - The following makes sure that the sidebar
-// - toggles stays hidden at the same time as the
-// - sidebar.
-//
 
-[data-sidebar-toggle='left'],
-[data-sidebar-toggle='right'] {
-	display: none;
-}
+// Inner wrapper mixin
+.bs3-sidebar-mixin-inner-wrapper() {
 
-@media @media-query-mobile-only {
-
-	.sidebar-left-enabled-xs {
-
-		[data-sidebar-toggle='left'] {
-
-			&.btn {
-				display: inline-block;
-			}
-		}
-	}
-
-	.sidebar-right-enabled-xs {
-
-		[data-sidebar-toggle='right'] {
-
-			&.btn {
-				display: inline-block;
-			}
-		}
+	.inner-wrapper {
+		position: relative;
+		min-height: 100%;
+		overflow: hidden;
 	}
 }
 
-@media @media-query-tablet-only {
+// Enabled mixin
+.bs3-sidebar-mixin-enabled(@size) {
 
-	.sidebar-left-enabled-sm {
+	// Left
+	.sidebar-left-enabled-@{size} {
 
-		[data-sidebar-toggle='left'] {
-
-			&.btn {
-				display: inline-block;
-			}
+		.sidebar-left {
+			display: block;
 		}
 	}
 
-	.sidebar-right-enabled-sm {
+	// Right
+	.sidebar-right-enabled-@{size} {
 
-		[data-sidebar-toggle='right'] {
-
-			&.btn {
-				display: inline-block;
-			}
-		}
-	}
-}
-
-@media @media-query-desktop-only {
-
-	.sidebar-left-enabled-md {
-
-		[data-sidebar-toggle='left'] {
-
-			&.btn {
-				display: inline-block;
-			}
-		}
-	}
-
-	.sidebar-right-enabled-md {
-
-		[data-sidebar-toggle='right'] {
-
-			&.btn {
-				display: inline-block;
-			}
-		}
-	}
-}
-
-@media @media-query-large-desktop-only {
-
-	.sidebar-left-enabled-lg {
-
-		[data-sidebar-toggle='left'] {
-
-			&.btn {
-				display: inline-block;
-			}
-		}
-	}
-
-	.sidebar-right-enabled-lg {
-
-		[data-sidebar-toggle='right'] {
-
-			&.btn {
-				display: inline-block;
-			}
+		.sidebar-right {
+			display: block;
 		}
 	}
 }
