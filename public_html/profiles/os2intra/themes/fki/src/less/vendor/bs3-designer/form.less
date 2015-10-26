@@ -13,5 +13,11 @@
 // Form field
 .form-control {
 	border-width: @bs3-designer-form-control-border-width;
-	.box-shadow(none);
+
+	&,
+	&:hover,
+	&:focus {
+		.box-shadow(none);
+		outline: 0;
+	}
 }
