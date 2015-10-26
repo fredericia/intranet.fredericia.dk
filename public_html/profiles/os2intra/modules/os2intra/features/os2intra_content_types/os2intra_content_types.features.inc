@@ -45,6 +45,14 @@ function os2intra_content_types_node_info() {
       'title_label' => t('Titel'),
       'help' => '',
     ),
+    'os2intra_message_notification' => array(
+      'name' => t('Intranet Vigtig besked'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'os2web_base_selfservice_link' => array(
       'name' => t('Selvbetjeningslinks'),
       'base' => 'node_content',
