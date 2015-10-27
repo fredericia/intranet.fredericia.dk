@@ -25,9 +25,12 @@ function os2intra_settings_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'base',
+      'handler' => 'og',
       'handler_settings' => array(
         'behaviors' => array(
+          'og_behavior' => array(
+            'status' => TRUE,
+          ),
           'views-select-list' => array(
             'status' => 0,
           ),
@@ -35,11 +38,8 @@ function os2intra_settings_field_default_field_bases() {
         'sort' => array(
           'type' => 'none',
         ),
-        'target_bundles' => array(
-          'os2web_taxonomies_tax_org' => 'os2web_taxonomies_tax_org',
-        ),
       ),
-      'target_type' => 'taxonomy_term',
+      'target_type' => 'og_membership',
     ),
     'translatable' => 0,
     'type' => 'entityreference',

@@ -569,16 +569,16 @@ function os2intra_content_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '5',
         ),
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '3',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '4',
         ),
       ),
       'display' => array(),

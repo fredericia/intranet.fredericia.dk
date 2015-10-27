@@ -1603,13 +1603,13 @@ function os2intra_content_types_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 41,
+      'weight' => 2,
     ),
   );
 
   // Exported field_instance:
-  // 'node-os2intra_message_notification-field_os2intra_organisation_ref'.
-  $field_instances['node-os2intra_message_notification-field_os2intra_organisation_ref'] = array(
+  // 'node-os2intra_message_notification-field_os2intra_mess_notifi_ref'.
+  $field_instances['node-os2intra_message_notification-field_os2intra_mess_notifi_ref'] = array(
     'bundle' => 'os2intra_message_notification',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1622,7 +1622,7 @@ function os2intra_content_types_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1633,23 +1633,18 @@ function os2intra_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'fences_wrapper' => 'div_div_div',
-    'field_name' => 'field_os2intra_organisation_ref',
-    'label' => 'Organisation',
+    'field_name' => 'field_os2intra_mess_notifi_ref',
+    'label' => 'Beskedmodtagere',
     'required' => 0,
     'settings' => array(
-      'behaviors' => array(
-        'taxonomy-index' => array(
-          'status' => TRUE,
-        ),
-      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 42,
+      'type' => 'options_select',
+      'weight' => 1,
     ),
   );
 
@@ -2917,6 +2912,7 @@ function os2intra_content_types_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('At this date, the content will be flagged expired.');
+  t('Beskedmodtagere');
   t('Billede');
   t('Billeder');
   t('Body');
@@ -2936,7 +2932,6 @@ function os2intra_content_types_field_default_field_instances() {
   t('Kantine');
   t('Kilde');
   t('Link til side');
-  t('Organisation');
   t('Placering');
   t('Portalkategori');
   t('Radioactivity');
