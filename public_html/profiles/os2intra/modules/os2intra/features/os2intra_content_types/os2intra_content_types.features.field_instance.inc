@@ -75,13 +75,14 @@ function os2intra_content_types_field_default_field_instances() {
     'entity_type' => 'field_collection_item',
     'fences_wrapper' => 'no_wrapper',
     'field_name' => 'field_os2intra_itvejledninger_1',
-    'label' => 'Spalte 1',
+    'label' => 'Handling',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'fuld_html' => 'fuld_html',
           'indhold' => 'indhold',
+          'kommentar' => 0,
           'plain_text' => 'plain_text',
         ),
         'allowed_formats_toggle' => 0,
@@ -94,13 +95,16 @@ function os2intra_content_types_field_default_field_instances() {
             'indhold' => array(
               'weight' => 0,
             ),
+            'kommentar' => array(
+              'weight' => 0,
+            ),
             'plain_text' => array(
               'weight' => 10,
             ),
           ),
         ),
       ),
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -133,13 +137,13 @@ function os2intra_content_types_field_default_field_instances() {
     'entity_type' => 'field_collection_item',
     'fences_wrapper' => 'section',
     'field_name' => 'field_os2intra_itvejledninger_4',
-    'label' => 'Spalte 4',
+    'label' => 'Udfør',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'fuld_html' => 0,
-          'indhold' => 0,
+          'indhold' => 'indhold',
           'kommentar' => 'kommentar',
           'plain_text' => 0,
         ),
@@ -530,7 +534,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -566,11 +570,8 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -613,7 +614,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -648,7 +649,7 @@ function os2intra_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'field_collection',
         'settings' => array(
           'add' => 'Add',
@@ -693,12 +694,9 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 5,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -738,12 +736,9 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 6,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2934,6 +2929,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Group content visibility');
   t('Groups audience');
   t('Gruppe ID');
+  t('Handling');
   t('Ikon');
   t('Intro');
   t('KL Emneord');
@@ -2948,8 +2944,6 @@ function os2intra_content_types_field_default_field_instances() {
   t('Selvbetjening');
   t('Skal være inkl. <i>http://</i> hvis det er sider uden for sitet. Skal kun bruges til sider ser ikke kan indlejres som indhold via iframe.');
   t('Skjul relaterede links');
-  t('Spalte 1');
-  t('Spalte 4');
   t('Spotbillede');
   t('Spotbokse');
   t('Stikord');
@@ -2959,6 +2953,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Tekst');
   t('Topics');
   t('Type');
+  t('Udfør');
   t('Vejledning');
   t('Vis på forside');
   t('Vælg de kantiner retten serveres i');
