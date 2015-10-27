@@ -10,7 +10,7 @@
 function os2intra_content_types_taxonomy_default_vocabularies() {
   return array(
     'os2intra_canteen' => array(
-      'name' => 'os2intra_canteen',
+      'name' => 'Kantine',
       'machine_name' => 'os2intra_canteen',
       'description' => '',
       'hierarchy' => 0,

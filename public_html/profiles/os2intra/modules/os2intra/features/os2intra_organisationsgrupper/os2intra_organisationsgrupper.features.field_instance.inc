@@ -209,6 +209,52 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-os2intra_org_group_unit-field_os2intra_physical_location'.
+  $field_instances['node-os2intra_org_group_unit-field_os2intra_physical_location'] = array(
+    'bundle' => 'os2intra_org_group_unit',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_physical_location',
+    'label' => 'Fysisk lokation',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 44,
+    ),
+  );
+
   // Exported field_instance: 'node-os2intra_org_group_unit-group_group'.
   $field_instances['node-os2intra_org_group_unit-group_group'] = array(
     'bundle' => 'os2intra_org_group_unit',
@@ -378,6 +424,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Afdeling');
   t('Body');
   t('Determine if this is an OG group.');
+  t('Fysisk lokation');
   t('Group');
   t('Groups audience');
 

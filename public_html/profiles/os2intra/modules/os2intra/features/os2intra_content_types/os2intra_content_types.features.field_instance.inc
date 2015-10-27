@@ -2301,53 +2301,38 @@ function os2intra_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-wiki-title_field'.
-  $field_instances['node-wiki-title_field'] = array(
-    'bundle' => 'wiki',
+  // Exported field_instance:
+  // 'taxonomy_term-os2intra_canteen-field_os2intra_physical_location'.
+  $field_instances['taxonomy_term-os2intra_canteen-field_os2intra_physical_location'] = array(
+    'bundle' => 'os2intra_canteen',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 0,
       ),
     ),
-    'display_in_partial_form' => TRUE,
-    'entity_type' => 'node',
-    'field_name' => 'title_field',
-    'label' => 'Title',
-    'required' => 1,
+    'entity_type' => 'taxonomy_term',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_physical_location',
+    'label' => 'Fysisk lokation',
+    'required' => 0,
     'settings' => array(
-      'hide_label' => array(
-        'entity' => 0,
-        'page' => 0,
-      ),
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => -5,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 42,
     ),
   );
 
@@ -2512,6 +2497,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Ekstra tekst');
   t('Expire date');
   t('Filer');
+  t('Fysisk lokation');
   t('Group content visibility');
   t('Groups audience');
   t('Gruppe ID');
@@ -2537,7 +2523,6 @@ function os2intra_content_types_field_default_field_instances() {
   t('Subsite logo');
   t('Synlighed');
   t('Tekst');
-  t('Title');
   t('Topics');
   t('Type');
   t('Vejledning');

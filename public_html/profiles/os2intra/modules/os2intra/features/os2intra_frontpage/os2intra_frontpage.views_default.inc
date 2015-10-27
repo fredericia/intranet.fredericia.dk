@@ -201,7 +201,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['type']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['type']['alter']['text'] = ' ';
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -269,7 +269,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['last_updated']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['last_updated']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['last_updated']['date_format'] = 'time ago';
-  /* Field: Group Title */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -443,7 +443,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['element_type'] = 'span';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['element_wrapper_class'] = 'comment-count-indicator';
-  /* Field: Content: Title */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -512,7 +512,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['realname']['label'] = '';
   $handler->display->display_options['fields']['realname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['realname']['element_label_colon'] = FALSE;
-  /* Field: Group Title */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -523,12 +523,6 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['title_field']['alter']['text'] = '[realname] [last_updated] i [title_field]';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['element_wrapper_class'] = 'group-title';
-  $handler->display->display_options['fields']['title_field']['type'] = 'title_linked';
-  $handler->display->display_options['fields']['title_field']['settings'] = array(
-    'title_style' => 'span',
-    'title_link' => 'content',
-    'title_class' => '',
-  );
   /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_registration']['id'] = 'field_registration';
   $handler->display->display_options['fields']['field_registration']['table'] = 'field_data_field_registration';
