@@ -210,8 +210,8 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2intra_org_group_unit-field_os2intra_physical_location'.
-  $field_instances['node-os2intra_org_group_unit-field_os2intra_physical_location'] = array(
+  // 'node-os2intra_org_group_unit-field_os2intra_base_spotboxes'.
+  $field_instances['node-os2intra_org_group_unit-field_os2intra_base_spotboxes'] = array(
     'bundle' => 'os2intra_org_group_unit',
     'default_value' => NULL,
     'deleted' => 0,
@@ -235,22 +235,21 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'fences_wrapper' => 'div_div_div',
-    'field_name' => 'field_os2intra_physical_location',
-    'label' => 'Fysisk lokation',
+    'field_name' => 'field_os2intra_base_spotboxes',
+    'label' => 'Spotbokse',
     'required' => 0,
     'settings' => array(
-      'behaviors' => array(
-        'taxonomy-index' => array(
-          'status' => TRUE,
-        ),
-      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
       'weight' => 44,
     ),
   );
@@ -424,9 +423,9 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Afdeling');
   t('Body');
   t('Determine if this is an OG group.');
-  t('Fysisk lokation');
   t('Group');
   t('Groups audience');
+  t('Spotbokse');
 
   return $field_instances;
 }
