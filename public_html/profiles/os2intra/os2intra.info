@@ -91,6 +91,7 @@ dependencies[] = os2web_kle_auto_import
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 dependencies[] = os2intra_view_modes
+dependencies[] = bellcom_apps
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Features.

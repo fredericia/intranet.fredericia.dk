@@ -1,0 +1,10 @@
+name = Bellcom Apps 
+description = Tilgå apps fra Bellcom
+package = Apps
+
+version = 7.x-1.0
+core = 7.x
+
+dependencies[] = apps
+files[] = bellcom_apps.module
+

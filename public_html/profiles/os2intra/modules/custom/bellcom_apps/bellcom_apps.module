@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Implements hook_apps_servers_info().
+ *
+ * Register the Bellcom_Apps Server
+ */
+function bellcom_apps_apps_servers_info() {
+  $profile = variable_get('install_profile', 'standard');
+  $info =  drupal_parse_info_file(drupal_get_path('profile', $profile) . '/' . $profile . '.info');
+  return array(
+    'bellcom' => array(
+      'title' => 'Bellcom',
+      'description' => "Apps fra Bellcom",
+      'manifest' => 'http://apps.bellcom.dk/app/query/production',
+      'profile' => $profile,
+      'profile_version' => isset($info['version']) ? $info['version'] : '7.x-1.x',
+      'server_name' => $_SERVER['SERVER_NAME'],
+      'server_ip' => $_SERVER['SERVER_ADDR'],
+    ),
+  );
+}
