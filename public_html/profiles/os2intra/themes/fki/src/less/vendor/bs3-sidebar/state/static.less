@@ -15,12 +15,7 @@
 // --------------------------------------------------
 
 // Static
-.sidebar-state-static {
-
-	.sidebar {
-		display: block;
-	}
-}
+.sidebar-state-static {}
 
 // --------------------------------------------------
 // Responsive
@@ -37,7 +32,7 @@
 @media @media-query-mobile-only {
 
 	// Static
-	.sidebar-state-static {}
+	.bs3-sidebar-mixin-state-static(xs);
 }
 
 // Tablet
@@ -51,7 +46,7 @@
 @media @media-query-tablet-only {
 
 	// Static
-	.sidebar-state-static {}
+	.bs3-sidebar-mixin-state-static(sm);
 }
 
 // Desktop
@@ -65,7 +60,7 @@
 @media @media-query-desktop-only {
 
 	// Static
-	.sidebar-state-static {}
+	.bs3-sidebar-mixin-state-static(md);
 }
 
 // Large desktop
@@ -79,7 +74,7 @@
 @media @media-query-large-desktop-only {
 
 	// Static
-	.sidebar-state-static {}
+	.bs3-sidebar-mixin-state-static(lg);
 }
 
 // Print
@@ -108,4 +103,45 @@
 // --------------------------------------------------
 
 // Static mixin
-.sidebar-mixin-state-static() {}
+.bs3-sidebar-mixin-state-static(@size) {
+
+	.csstransforms3d,
+	.no-csstransforms3d {
+
+		.sidebar-left-static-@{size} {
+
+			&,
+			&.sidebar-left-open {
+
+				.sidebar {
+
+					&.sidebar-left {
+						left: 0;
+					}
+				}
+
+				.inner-wrapper {
+					margin-left: @bs3-sidebar-left-width;
+				}
+			}
+		}
+
+		.sidebar-right-static-@{size} {
+
+			&,
+			&.sidebar-right-open {
+
+				.sidebar {
+
+					&.sidebar-right {
+						right: 0;
+					}
+				}
+
+				.inner-wrapper {
+					margin-right: @bs3-sidebar-right-width;
+				}
+			}
+		}
+	}
+}
