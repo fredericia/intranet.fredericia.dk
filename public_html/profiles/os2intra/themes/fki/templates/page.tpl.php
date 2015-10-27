@@ -56,6 +56,7 @@
 
         <?php print $messages; ?>
 
+        <?php if (user_is_logged_in()): ?>
         <!-- Begin - main navigation -->
         <nav class="main-navigation-wrapper">
           <section class="main-navigation-bar">
@@ -85,6 +86,7 @@
           </section>
         </nav>
         <!-- End - main navigation -->
+        <?php endif; ?>
 
         <?php if (!empty($page['help'])): ?>
           <?php print render($page['help']); ?>
