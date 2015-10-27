@@ -60,6 +60,14 @@ function os2intra_content_types_image_default_styles() {
  */
 function os2intra_content_types_node_info() {
   $items = array(
+    'event' => array(
+      'name' => t('Begivenhed'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'it_vejledning' => array(
       'name' => t('IT-vejledning'),
       'base' => 'node_content',

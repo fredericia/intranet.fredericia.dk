@@ -13,6 +13,54 @@ function os2intra_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'clone_menu_links';
+  $strongarm->value = '0';
+  $export['clone_menu_links'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_method';
+  $strongarm->value = 'prepopulate';
+  $export['clone_method'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_nodes_without_confirm';
+  $strongarm->value = '0';
+  $export['clone_nodes_without_confirm'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_omitted';
+  $strongarm->value = array(
+    'os2intra_org_group_unit' => 0,
+    'event' => 0,
+    'os2intra_canteen_menu' => 0,
+    'os2intra_group' => 0,
+    'it_vejledning' => 0,
+    'post' => 0,
+    'os2intra_message_notification' => 0,
+    'os2intra_base_page' => 0,
+    'os2web_base_selfservice_link' => 0,
+    'webform' => 0,
+    'wiki' => 0,
+    'spotbox' => 0,
+  );
+  $export['clone_omitted'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'clone_use_node_type_name';
+  $strongarm->value = 1;
+  $export['clone_use_node_type_name'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_api_use_iso8601';
   $strongarm->value = 1;
   $export['date_api_use_iso8601'] = $strongarm;

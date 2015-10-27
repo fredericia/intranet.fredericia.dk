@@ -388,6 +388,68 @@ function os2web_taxonomies_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'taxonomy_term-os2web_taxonomies_tax_places-field_os2web_taxonomies_address'.
+  $field_instances['taxonomy_term-os2web_taxonomies_tax_places-field_os2web_taxonomies_address'] = array(
+    'bundle' => 'os2web_taxonomies_tax_places',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2web_taxonomies_address',
+    'label' => 'GIS adresse',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'fuld_html' => 'fuld_html',
+          'indhold' => 'indhold',
+          'kommentar' => 'kommentar',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'fuld_html' => array(
+              'weight' => 0,
+            ),
+            'indhold' => array(
+              'weight' => 0,
+            ),
+            'kommentar' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
   // 'taxonomy_term-os2web_taxonomies_tax_places-field_os2web_taxonomies_city'.
   $field_instances['taxonomy_term-os2web_taxonomies_tax_places-field_os2web_taxonomies_city'] = array(
     'bundle' => 'os2web_taxonomies_tax_places',
@@ -417,7 +479,7 @@ function os2web_taxonomies_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 6,
     ),
   );
 
@@ -451,7 +513,7 @@ function os2web_taxonomies_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 4,
     ),
   );
 
@@ -486,7 +548,7 @@ function os2web_taxonomies_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 7,
+      'weight' => 2,
     ),
   );
 
@@ -520,7 +582,7 @@ function os2web_taxonomies_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 3,
     ),
   );
 
@@ -718,6 +780,7 @@ function os2web_taxonomies_field_default_field_instances() {
   t('Afdelingsid');
   t('Afdelingsnavn');
   t('Dagsordensvisning');
+  t('GIS adresse');
   t('GIS id');
   t('GIS navn');
   t('GIS postby');
