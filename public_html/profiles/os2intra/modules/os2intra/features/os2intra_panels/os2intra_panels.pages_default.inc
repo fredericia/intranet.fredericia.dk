@@ -232,6 +232,36 @@ function os2intra_panels_default_page_manager_handlers() {
     $pane->uuid = '0dc6151e-3bb5-43fd-8bba-a2fbefbd4773';
     $display->content['new-0dc6151e-3bb5-43fd-8bba-a2fbefbd4773'] = $pane;
     $display->panels['sidebar'][1] = 'new-0dc6151e-3bb5-43fd-8bba-a2fbefbd4773';
+    $pane = new stdClass();
+    $pane->pid = 'new-9be1f78d-8ad1-4a23-9efa-9d79cc46c89b';
+    $pane->panel = 'sidebar';
+    $pane->type = 'node_create_links';
+    $pane->subtype = 'node_create_links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'types' => array(
+        'event' => 'event',
+        'wiki' => 'wiki',
+        'post' => 'post',
+      ),
+      'field_name' => 'og_group_ref',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => 'Opret indhold',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '9be1f78d-8ad1-4a23-9efa-9d79cc46c89b';
+    $display->content['new-9be1f78d-8ad1-4a23-9efa-9d79cc46c89b'] = $pane;
+    $display->panels['sidebar'][2] = 'new-9be1f78d-8ad1-4a23-9efa-9d79cc46c89b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-b3812514-dd4f-4b2e-8deb-ad75274cb60e';
   $handler->conf['display'] = $display;
