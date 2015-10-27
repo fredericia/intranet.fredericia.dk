@@ -418,6 +418,40 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_os2intra_canteen_canteen'.
+  $field_instances['user-user-field_os2intra_canteen_canteen'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'user',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_canteen_canteen',
+    'label' => 'Kantine',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 45,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Afdeling');
@@ -425,6 +459,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Determine if this is an OG group.');
   t('Group');
   t('Groups audience');
+  t('Kantine');
   t('Spotbokse');
 
   return $field_instances;

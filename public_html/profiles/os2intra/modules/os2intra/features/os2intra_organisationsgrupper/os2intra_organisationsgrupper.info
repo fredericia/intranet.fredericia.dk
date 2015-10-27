@@ -27,6 +27,7 @@ features[field_instance][] = node-os2intra_org_group_unit-field_os2intra_base_sp
 features[field_instance][] = node-os2intra_org_group_unit-group_group
 features[field_instance][] = node-post-body
 features[field_instance][] = node-post-og_group_ref
+features[field_instance][] = user-user-field_os2intra_canteen_canteen
 features[node][] = os2intra_group
 features[node][] = os2intra_org_group_unit
 features[node][] = post

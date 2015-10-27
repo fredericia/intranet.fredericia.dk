@@ -164,7 +164,7 @@ function os2intra_content_types_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'kantiner' => 'kantiner',
+          'os2intra_canteen' => 'os2intra_canteen',
         ),
       ),
       'target_type' => 'taxonomy_term',

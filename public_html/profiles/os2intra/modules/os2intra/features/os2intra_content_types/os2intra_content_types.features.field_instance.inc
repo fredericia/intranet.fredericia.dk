@@ -1483,14 +1483,12 @@ function os2intra_content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
     'field_name' => 'field_os2intra_canteen_canteen',
     'label' => 'Kantine',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
         'taxonomy-index' => array(
           'status' => TRUE,
         ),
@@ -1558,7 +1556,7 @@ function os2intra_content_types_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_select',
+      'type' => 'date_popup',
       'weight' => 1,
     ),
   );
