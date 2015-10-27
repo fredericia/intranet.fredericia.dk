@@ -140,6 +140,33 @@ function os2intra_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_itvejledning|node|it_vejledning|form';
+  $field_group->group_name = 'group_itvejledning';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'it_vejledning';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'ITVejledning',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_tekst',
+      1 => 'group_meta',
+      2 => 'group_vejledning',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-itvejledning field-group-htabs',
+      ),
+    ),
+  );
+  $export['group_itvejledning|node|it_vejledning|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_media|node|os2intra_base_page|form';
   $field_group->group_name = 'group_media';
   $field_group->entity_type = 'node';
@@ -199,6 +226,38 @@ function os2intra_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_meta|node|it_vejledning|form';
+  $field_group->group_name = 'group_meta';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'it_vejledning';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_itvejledning';
+  $field_group->data = array(
+    'label' => 'Meta',
+    'weight' => '14',
+    'children' => array(
+      0 => 'field_combo',
+      1 => 'field_os2intra_base_spotboxes',
+      2 => 'field_os2intra_related_ref',
+      3 => 'field_os2intra_selvbetjening_ref',
+      4 => 'metatags',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-meta field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_meta|node|it_vejledning|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_meta|node|os2intra_base_page|form';
   $field_group->group_name = 'group_meta';
   $field_group->entity_type = 'node';
@@ -226,6 +285,36 @@ function os2intra_content_types_field_group_info() {
     ),
   );
   $export['group_meta|node|os2intra_base_page|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_tekst|node|it_vejledning|form';
+  $field_group->group_name = 'group_tekst';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'it_vejledning';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_itvejledning';
+  $field_group->data = array(
+    'label' => 'Tekst',
+    'weight' => '12',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_os2intra_base_structure',
+      2 => 'title',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-tekst field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_tekst|node|it_vejledning|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -292,6 +381,34 @@ function os2intra_content_types_field_group_info() {
     ),
   );
   $export['group_vejledning|field_collection_item|field_os2intra_base_vejledning|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_vejledning|node|it_vejledning|form';
+  $field_group->group_name = 'group_vejledning';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'it_vejledning';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_itvejledning';
+  $field_group->data = array(
+    'label' => 'Vejledning',
+    'weight' => '13',
+    'children' => array(
+      0 => 'field_os2intra_base_vejledning',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-vejledning field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_vejledning|node|it_vejledning|form'] = $field_group;
 
   return $export;
 }

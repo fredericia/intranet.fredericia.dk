@@ -469,16 +469,16 @@ function os2intra_content_types_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '12',
         ),
         'title' => array(
-          'weight' => '-5',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '3',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '2',
         ),
       ),
       'display' => array(),
@@ -795,6 +795,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->name = 'node_options_event';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_event'] = $strongarm;
 
@@ -804,7 +805,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->name = 'node_options_it_vejledning';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
+    1 => 'revision',
   );
   $export['node_options_it_vejledning'] = $strongarm;
 
@@ -824,7 +825,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->name = 'node_options_os2intra_canteen_menu';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
+    1 => 'revision',
   );
   $export['node_options_os2intra_canteen_menu'] = $strongarm;
 
@@ -834,6 +835,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->name = 'node_options_os2intra_message_notification';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_os2intra_message_notification'] = $strongarm;
 
@@ -843,6 +845,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->name = 'node_options_os2web_base_selfservice_link';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_os2web_base_selfservice_link'] = $strongarm;
 
@@ -852,6 +855,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->name = 'node_options_spotbox';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_spotbox'] = $strongarm;
 
@@ -861,6 +865,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->name = 'node_options_wiki';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_wiki'] = $strongarm;
 
