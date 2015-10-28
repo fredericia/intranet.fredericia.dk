@@ -1,0 +1,4 @@
+name = OS2web intra user menu
+description = usermenu for OS2web intranet
+core = 7.x
+dependencies[] = menu

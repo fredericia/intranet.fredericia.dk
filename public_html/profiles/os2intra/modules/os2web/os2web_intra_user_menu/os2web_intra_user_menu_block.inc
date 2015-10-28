@@ -43,12 +43,12 @@ function os2web_intra_user_menu_block_view($delta = ''){
 
       // Load organization taxonomy vocabulary
       // get tree
-      $vocab = taxonomy_vocabulary_machine_name_load('os2intra_organizaiton_tax');
+      $vocab = taxonomy_vocabulary_machine_name_load('os2intra_organization_tax');
       $tree = taxonomy_get_tree($vocab->vid);
 
       // Determine parent
       if($user->uid){
-        $vocab = taxonomy_vocabulary_machine_name_load('os2intra_organizaiton_tax');
+        $vocab = taxonomy_vocabulary_machine_name_load('os2intra_organization_tax');
         $tree = taxonomy_get_tree($vocab->vid);
 
         foreach($tree as $term){
@@ -58,15 +58,15 @@ function os2web_intra_user_menu_block_view($delta = ''){
           }
         }
 
-      // Get users OG group memberships
-      // Just get the first one, normal users shouldn't have
-      // more than one
-      $user_groups = og_get_groups_by_user($user);
-      $user_group_id = array_shift(reset($user_groups));
-      $user_group = node_load($user_group_id);
+        // Get users OG group memberships
+        // Just get the first one, normal users shouldn't have
+        // more than one
+        $user_groups = og_get_groups_by_user($user);
+        $user_group_id = array_shift(reset($user_groups));
+        $user_group = node_load($user_group_id);
 
-      // Build list with links
-      $items = array();
+        // Build list with links
+        $items = array();
         $items = array();
 
         $items[] = l($name, 'user');
@@ -97,4 +97,3 @@ function os2web_intra_user_menu_block_view($delta = ''){
 
   return $block;
 }
-
