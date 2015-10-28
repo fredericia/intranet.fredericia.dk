@@ -4,6 +4,7 @@ core = 7.x
 package = OS2Intra
 dependencies[] = ctools
 dependencies[] = entityreference_prepopulate
+dependencies[] = features
 dependencies[] = og_extras
 dependencies[] = page_manager
 dependencies[] = panels
