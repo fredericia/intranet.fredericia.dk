@@ -20,7 +20,10 @@
 @fki-box-body-top-bottom-spacing: 5px;
 @fki-box-body-left-right-spacing: @default-left-right-spacing;
 
-//== Responsive
+@fki-box-footer-top-bottom-spacing: 5px;
+@fki-box-footer-left-right-spacing: @default-left-right-spacing;
+
+// Responsive
 @fki-box-xs-stacked-spacing: floor( (@grid-gutter-width / 3) );
 @fki-box-sm-stacked-spacing: floor( (@grid-gutter-width / 3) );
 @fki-box-md-stacked-spacing: floor( (@grid-gutter-width / 2) );
@@ -43,11 +46,20 @@
 		.fki-box-heading-title {
 			margin: 0;
 			.heading-h4;
+			text-transform: uppercase;
 		}
 	}
 
 	.fki-box-body {
 		padding: @fki-box-body-top-bottom-spacing @fki-box-body-left-right-spacing;
+
+		+ .fki-box-footer {
+			padding-top: 0;
+		}
+	}
+
+	.fki-box-footer {
+		padding: @fki-box-footer-top-bottom-spacing @fki-box-footer-left-right-spacing;
 	}
 }
 
