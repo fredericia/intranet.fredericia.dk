@@ -22,6 +22,7 @@ dependencies[] = libraries
 dependencies[] = link
 dependencies[] = list
 dependencies[] = menu
+dependencies[] = node
 dependencies[] = number
 dependencies[] = og
 dependencies[] = og_ui

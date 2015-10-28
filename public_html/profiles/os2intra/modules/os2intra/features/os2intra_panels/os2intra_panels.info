@@ -25,4 +25,6 @@ features[page_manager_handlers][] = node_view__panel_context_78c36cac-1085-4311-
 features[page_manager_pages][] = home
 features[variable][] = page_manager_node_edit_disabled
 features[variable][] = page_manager_node_view_disabled
+features[views_view][] = os2intra_gruppe_indhold
+features[views_view][] = os2intra_gruppe_medlemmer
 features[views_view][] = os2intra_node_panes

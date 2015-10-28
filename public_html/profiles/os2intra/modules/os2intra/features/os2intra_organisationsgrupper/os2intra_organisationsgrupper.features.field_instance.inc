@@ -327,6 +327,108 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-os2intra_org_group_unit-field_os2intra_dept_tools'.
+  $field_instances['node-os2intra_org_group_unit-field_os2intra_dept_tools'] = array(
+    'bundle' => 'os2intra_org_group_unit',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_dept_tools',
+    'label' => 'Afdelingsværktøjer',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 46,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2intra_org_group_unit-field_os2intra_promoted_content'.
+  $field_instances['node-os2intra_org_group_unit-field_os2intra_promoted_content'] = array(
+    'bundle' => 'os2intra_org_group_unit',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_promoted_content',
+    'label' => 'Forfremmet indhold',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 45,
+    ),
+  );
+
   // Exported field_instance: 'node-os2intra_org_group_unit-group_group'.
   $field_instances['node-os2intra_org_group_unit-group_group'] = array(
     'bundle' => 'os2intra_org_group_unit',
@@ -507,7 +609,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
           'link' => FALSE,
@@ -536,8 +638,10 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Afdeling');
+  t('Afdelingsværktøjer');
   t('Body');
   t('Determine if this is an OG group.');
+  t('Forfremmet indhold');
   t('Formål med gruppe');
   t('Group');
   t('Groups audience');
