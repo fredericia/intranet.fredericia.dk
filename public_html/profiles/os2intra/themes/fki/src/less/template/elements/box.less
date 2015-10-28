@@ -76,6 +76,16 @@
 	.fki-mixin-box(@state-quinary-bg, @state-quinary-text);
 }
 
+.fki-box-watermarked {
+
+	&,
+	>	.fki-box {
+		background-image: url('../img/logo_watermark.png');
+		background-repeat: no-repeat;
+		background-position: bottom right @default-left-right-spacing;
+	}
+}
+
 // --------------------------------------------------
 // Responsive
 // --------------------------------------------------
