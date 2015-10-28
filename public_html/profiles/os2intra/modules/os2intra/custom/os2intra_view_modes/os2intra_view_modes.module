@@ -3,35 +3,17 @@
 /*
 * Implements hook_entity_info_alter().
 */
-function os2intra_view_modes_content_types_entity_info_alter(&$entity_info) {
+function os2intra_view_modes_entity_info_alter(&$entity_info) {
 
-  // Includeable
-  $entity_info['node']['view modes']['includeable'] = array(
-    'label'           => t('Includeable'),
+  // Node view modes
+  $entity_info['node']['view modes']['list'] = array(
+    'label'           => t('List'),
     'custom settings' => TRUE,
   );
 
-  // List - simple
-  $entity_info['node']['view modes']['list_simple'] = array(
-    'label'           => t('List - simple'),
-    'custom settings' => TRUE,
-  );
-
-  // List - advanced
-  $entity_info['node']['view modes']['list_advanced'] = array(
-    'label'           => t('List - advanced'),
-    'custom settings' => TRUE,
-  );
-
-  // Teaser - simple
-  $entity_info['node']['view modes']['teaser_simple'] = array(
-    'label'           => t('Teaser - simple'),
-    'custom settings' => TRUE,
-  );
-
-  // Teaser - advanced
-  $entity_info['node']['view modes']['teaser_advanced'] = array(
-    'label'           => t('Teaser - advanced'),
+  // User view modes
+  $entity_info['user']['view modes']['teaser'] = array(
+    'label' => t('User teaser'),
     'custom settings' => TRUE,
   );
 }
