@@ -220,6 +220,63 @@ function os2intra_panels_views_default_views() {
       'label' => 'Indhold: Nid',
     ),
   );
+
+  /* Display: Filer */
+  $handler = $view->new_display('panel_pane', 'Filer', 'panel_pane_6');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: All taxonomy terms */
+  $handler->display->display_options['fields']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['fields']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['fields']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['fields']['term_node_tid']['label'] = '';
+  $handler->display->display_options['fields']['term_node_tid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['term_node_tid']['alter']['link_class'] = 'btn btn-default btn-xs';
+  $handler->display->display_options['fields']['term_node_tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['term_node_tid']['separator'] = '';
+  $handler->display->display_options['fields']['term_node_tid']['vocabularies'] = array(
+    'os2web_base_tax_site_structure' => 0,
+    'os2web_taxonomies_tax_comittee' => 0,
+    'os2web_taxonomies_tax_places' => 0,
+    'os2intra_canteen' => 0,
+    'os2web_taxonomies_tax_kle' => 0,
+    'os2web_taxonomies_tax_org' => 0,
+    'os2web_taxonomies_tax_politics' => 0,
+    'os2web_taxonomies_tax_portal_cat' => 0,
+    'os2web_taxonomies_tax_editor_tag' => 0,
+    'tags' => 0,
+    'topics' => 0,
+    'os2web_taxonomies_tax_user_pos' => 0,
+  );
+  /* Field: Content: Filer */
+  $handler->display->display_options['fields']['field_os2web_base_field_media']['id'] = 'field_os2web_base_field_media';
+  $handler->display->display_options['fields']['field_os2web_base_field_media']['table'] = 'field_data_field_os2web_base_field_media';
+  $handler->display->display_options['fields']['field_os2web_base_field_media']['field'] = 'field_os2web_base_field_media';
+  $handler->display->display_options['fields']['field_os2web_base_field_media']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_media']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2web_base_field_media']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_media']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_os2web_base_field_media']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_base_field_media']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_os2web_base_field_media']['type'] = 'file_table';
+  $handler->display->display_options['fields']['field_os2web_base_field_media']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_os2web_base_field_media']['field_api_classes'] = TRUE;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Nid',
+    ),
+  );
   $translatables['os2intra_node_panes'] = array(
     t('Master'),
     t('more'),
@@ -243,6 +300,7 @@ function os2intra_panels_views_default_views() {
     t('Gruppe'),
     t('Adresse'),
     t('Ord i ordforråd entity referenced from field_os2intra_physical_location'),
+    t('Filer'),
   );
   $export['os2intra_node_panes'] = $view;
 

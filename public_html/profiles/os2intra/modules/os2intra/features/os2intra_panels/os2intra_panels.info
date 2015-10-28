@@ -9,6 +9,7 @@ dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = pps
 dependencies[] = strongarm
+dependencies[] = taxonomy
 dependencies[] = views
 dependencies[] = views_content
 features[ctools][] = page_manager:pages_default:1
