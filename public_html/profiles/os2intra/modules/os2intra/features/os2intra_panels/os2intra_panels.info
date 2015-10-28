@@ -3,6 +3,7 @@ description = Panel and panel pane
 core = 7.x
 package = OS2Intra
 dependencies[] = ctools
+dependencies[] = entityreference_prepopulate
 dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = pps
