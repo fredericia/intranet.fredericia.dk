@@ -1,8 +1,7 @@
 <?php
 
 /**
- * @file
- * Schema and install hooks for the entitycache module.
+ * @file Schema and install hooks for the entitycache module.
  */
 
 /**
