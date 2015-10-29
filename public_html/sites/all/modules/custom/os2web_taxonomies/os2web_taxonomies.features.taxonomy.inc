@@ -9,6 +9,22 @@
  */
 function os2web_taxonomies_taxonomy_default_vocabularies() {
   return array(
+    'bruger_interesser' => array(
+      'name' => 'Bruger interesser',
+      'machine_name' => 'bruger_interesser',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
+    'bruger_kompetencer' => array(
+      'name' => 'Bruger kompetencer',
+      'machine_name' => 'bruger_kompetencer',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'os2web_taxonomies_tax_comittee' => array(
       'name' => 'AcadreMMComittee',
       'machine_name' => 'os2web_taxonomies_tax_comittee',
