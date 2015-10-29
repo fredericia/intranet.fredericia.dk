@@ -1,0 +1,196 @@
+<?php
+
+require_once('os2web_intra_user_menu_block.inc');
+
+/**
+ * Implements hook_menu().
+ */
+function os2web_intra_user_menu_menu() {
+  $items = array();
+
+  $items['admin/config/os2web_intra_user_menu'] = array(
+    'title' => t('OS2web User Menu Settings'),
+    'description' => t('Administrer indstillinger OS2web brugermenu'),
+    'position' => 'right',
+    'page callback'    => 'system_admin_menu_block_page',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+    'access arguments' => array('access administration pages'),
+  );
+
+  $items['admin/config/os2web_intra_user_menu/settings'] = array(
+    'title' => t('OS2web User Menu Settings'),
+    'description' => t('Administrer indstillinger OS2web brugermenu'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('os2web_intra_user_menu_settings_form'),
+    'access arguments' => array('access administration pages'),
+  );
+
+  // Determine which mode the module is being run in
+  $mode = variable_get('os2web_intra_user_menu_mode');
+
+  if ($mode == 'menu') {
+
+    $items['user-group'] = array(
+      'title' => 'User group title',
+      'access arguments' => array('authenticated user'),
+      'menu_name' => 'user-menu',
+      'page callback' => 'os2web_intra_user_menu_group',
+      'type' => MENU_NORMAL_ITEM,
+      'weight' => -9,
+    );
+
+    $items['node_basket/basket/view'] = array(
+      'title' => 'Basket',
+      'access arguments' => array('use node basket'),
+      'menu_name' => 'user-menu',
+      'type' => MENU_NORMAL_ITEM,
+      'weight' => -8,
+    );
+
+    $items['municipality'] = array(
+      'title' => 'Municipality',
+      'access arguments' => array('authenticated user'),
+      'menu_name' => 'user-menu',
+      'page callback' => 'os2web_intra_user_menu_municipality',
+      'type' => MENU_NORMAL_ITEM,
+      'weight' => -7,
+    );
+
+    $items['all-groups'] = array(
+      'title' => 'Groups',
+      'access arguments' => array('authenticated user'),
+      'menu_name' => 'user-menu',
+      'page callback' => 'os2web_intra_user_menu_all_groups',
+      'type' => MENU_NORMAL_ITEM,
+      'weight' => -6,
+    );
+  }
+  return $items;
+}
+
+/**
+ * System settings form.
+ */
+function os2web_intra_user_menu_settings_form() {
+  $form = array();
+  $form['os2web_intra_user_menu_mode'] = array(
+    '#title' => 'Vælg hvordan brugermenuen skal integreres',
+    '#description' => t("Når du trykker 'Gem indstillinger' kan det tage et øjeblik et genopbygge menustrukturen."),
+    '#type' => 'radios',
+    '#options' => array('block' => t('Block mode (default)'), 'menu' => t('Integrer i user-menu')),
+    '#required' => TRUE,
+    '#default_value' => variable_get('os2web_intra_user_menu_mode', 'block'),
+  );
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function os2web_intra_user_menu_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id == 'os2web_intra_user_menu_settings_form') {
+
+    // Add custom submit function to system settings form.
+    $form['#submit'][] = 'os2web_intra_user_menu_settings_submit';
+  }
+}
+
+/**
+ * Custom submit handler for system settings form.
+ */
+function os2web_intra_user_menu_settings_submit() {
+
+  $mode = variable_get('os2web_intra_user_menu_mode');
+
+  switch ($mode) {
+    case 'block':
+      drupal_set_message(t("OS2web user menu running in 'block' mode"));
+      break;
+    case 'menu':
+      drupal_set_message(t("OS2web user menu running in 'menu' mode"));
+      break;
+  }
+ // cache_clear_all('*', 'cache_menu', TRUE);
+  menu_rebuild();
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function os2web_intra_user_menu_menu_alter(&$items) {
+  $items['user']['title callback'] = 'os2web_intra_user_menu_title_callback';
+  $items['user']['title arguments'] = array('user');
+
+  $items['user-group']['title callback'] = 'os2web_intra_user_menu_title_callback';
+  $items['user-group']['title arguments'] = array('user-group');
+}
+
+/**
+ * Callback for setting the title on the user account link.
+ */
+function os2web_intra_user_menu_title_callback($arg) {
+  global $user;
+  $user_entity = user_load($user->uid);
+
+  // Do nothing if no one is logged in.
+  if ((!$user->uid)) {
+    return;
+  }
+
+  switch ($arg) {
+    case 'user':
+
+      // Get users real name (default to username in case name fields aren't set).
+      $name = $user->name;
+
+      if(!empty($user_entity->field_name_first)){
+        $name = $user_entity->field_name_first[LANGUAGE_NONE][0]['value'];
+      }
+
+      if(!empty($user_entity->field_name_last)){
+        $name .= ' ' . $user_entity->field_name_last[LANGUAGE_NONE][0]['value'];
+      }
+
+      return $name;
+      break;
+
+    case 'user-group':
+      $user_groups = og_get_groups_by_user($user);
+      $first_group = reset($user_groups);
+      $user_group_id = array_shift($first_group);
+      $user_group = node_load($user_group_id);
+      return $user_group->title;
+  }
+}
+
+function os2web_intra_user_menu_group() {
+  global $user;
+
+  // Get users OG group memberships
+  // Just get the first one, normal users shouldn't have
+  // more than one
+  $user_groups = og_get_groups_by_user($user);
+  $first_group = reset($user_groups);
+  $user_group_id = array_shift($first_group);
+  drupal_goto('node/' . $user_group_id);
+}
+
+function os2web_intra_user_menu_municipality() {
+
+  $vocab = taxonomy_vocabulary_machine_name_load('os2intra_organization_tax');
+  $tree = taxonomy_get_tree($vocab->vid);
+
+  foreach($tree as $term){
+    if($term->parents[0] == 0){
+      $top_org_tid = $term->tid;
+      continue;
+    }
+  }
+  drupal_goto('taxonomy/term/' . $top_org_tid);
+}
+
+function os2web_intra_user_menu_all_groups() {
+  drupal_goto('groups');
+}

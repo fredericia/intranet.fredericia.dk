@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function os2web_intra_user_menu_install() {
+  variable_set('os2web_intra_user_menu_mode', 'block');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function os2web_intra_user_menu_uninstall() {
+  variable_del('os2web_intra_user_menu_mode');
+}
