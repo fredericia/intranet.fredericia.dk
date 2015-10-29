@@ -33,28 +33,6 @@ function os2intra_content_types_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_os2intra_base_images'.
-  $field_bases['field_os2intra_base_images'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_os2intra_base_images',
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'image',
-    'settings' => array(
-      'default_image' => 0,
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 0,
-    'type' => 'image',
-  );
-
   // Exported field_base: 'field_os2intra_base_spotboxes'.
   $field_bases['field_os2intra_base_spotboxes'] = array(
     'active' => 1,
@@ -254,6 +232,28 @@ function os2intra_content_types_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_boolean',
+  );
+
+  // Exported field_base: 'field_os2intra_images'.
+  $field_bases['field_os2intra_images'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2intra_images',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_os2intra_itvejledning_img'.
@@ -612,28 +612,6 @@ function os2intra_content_types_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_os2web_base_field_image'.
-  $field_bases['field_os2web_base_field_image'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_os2web_base_field_image',
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'image',
-    'settings' => array(
-      'default_image' => 0,
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 0,
-    'type' => 'image',
-  );
-
   // Exported field_base: 'field_os2web_base_field_intro'.
   $field_bases['field_os2web_base_field_intro'] = array(
     'active' => 1,
@@ -728,7 +706,7 @@ function os2intra_content_types_field_default_field_bases() {
   // Exported field_base: 'field_os2web_base_field_ref'.
   $field_bases['field_os2web_base_field_ref'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_os2web_base_field_ref',
@@ -751,9 +729,14 @@ function os2intra_content_types_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'group' => 'group',
+          'event' => 'event',
+          'it_vejledning' => 'it_vejledning',
           'os2intra_base_page' => 'os2intra_base_page',
+          'os2intra_group' => 'os2intra_group',
+          'os2intra_org_group_unit' => 'os2intra_org_group_unit',
+          'post' => 'post',
           'webform' => 'webform',
+          'wiki' => 'wiki',
         ),
       ),
       'target_type' => 'node',

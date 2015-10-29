@@ -112,6 +112,36 @@ function os2intra_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_content|node|post|form';
+  $field_group->group_name = 'group_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_post';
+  $field_group->data = array(
+    'label' => 'Indhold',
+    'weight' => '13',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_os2web_base_field_kle_ref',
+      2 => 'title',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-content field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_content|node|post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_event|node|event|form';
   $field_group->group_name = 'group_event';
   $field_group->entity_type = 'node';
@@ -301,6 +331,7 @@ function os2intra_content_types_field_group_info() {
     'weight' => '50',
     'children' => array(
       0 => 'field_os2web_base_field_image',
+      1 => 'field_os2intra_image',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -328,8 +359,8 @@ function os2intra_content_types_field_group_info() {
     'label' => 'Media',
     'weight' => '2',
     'children' => array(
-      0 => 'field_os2intra_base_images',
-      1 => 'field_os2web_base_field_media',
+      0 => 'field_os2web_base_field_media',
+      1 => 'field_os2intra_images',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -359,6 +390,7 @@ function os2intra_content_types_field_group_info() {
     'children' => array(
       0 => 'field_os2web_base_field_media',
       1 => 'field_os2intra_base_images',
+      2 => 'field_os2intra_images',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -526,6 +558,33 @@ function os2intra_content_types_field_group_info() {
     ),
   );
   $export['group_meta|node|wiki|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_post|node|post|form';
+  $field_group->group_name = 'group_post';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Post',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_media',
+      1 => 'group_meta',
+      2 => 'group_content',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-post field-group-htabs',
+      ),
+    ),
+  );
+  $export['group_post|node|post|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

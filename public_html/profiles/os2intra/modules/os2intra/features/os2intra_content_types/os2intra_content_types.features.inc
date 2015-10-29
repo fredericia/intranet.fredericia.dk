@@ -22,17 +22,95 @@ function os2intra_content_types_ctools_plugin_api($module = NULL, $api = NULL) {
 function os2intra_content_types_image_default_styles() {
   $styles = array();
 
-  // Exported image style: normal.
-  $styles['normal'] = array(
-    'label' => 'Normal',
+  // Exported image style: 4_col_image_-_520x220.
+  $styles['4_col_image_-_520x220'] = array(
+    'label' => 'Medium billede',
     'effects' => array(
       1 => array(
-        'name' => 'image_scale_and_crop',
+        'name' => 'epsacrop_crop',
         'data' => array(
-          'width' => 534,
-          'height' => 300,
+          'width' => 520,
+          'height' => 220,
+          'anchor' => 'center-center',
+          'disable_scale' => 0,
+          'jcrop_settings' => array(
+            'aspect_ratio' => '',
+            'bgcolor' => '#FFF',
+            'bgopacity' => 0.6,
+            'fallback' => 1,
+          ),
         ),
         'weight' => 1,
+      ),
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 520,
+          'height' => 220,
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  // Exported image style: normal.
+  $styles['normal'] = array(
+    'label' => 'Normal billede',
+    'effects' => array(
+      4 => array(
+        'name' => 'epsacrop_crop',
+        'data' => array(
+          'width' => 1068,
+          'height' => 600,
+          'anchor' => 'center-center',
+          'disable_scale' => 0,
+          'jcrop_settings' => array(
+            'aspect_ratio' => '',
+            'bgcolor' => '#fff',
+            'bgopacity' => 0.6,
+            'fallback' => 1,
+          ),
+        ),
+        'weight' => -10,
+      ),
+      3 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 1068,
+          'height' => 600,
+        ),
+        'weight' => -9,
+      ),
+    ),
+  );
+
+  // Exported image style: spotboks.
+  $styles['spotboks'] = array(
+    'label' => 'Spotboks',
+    'effects' => array(
+      5 => array(
+        'name' => 'epsacrop_crop',
+        'data' => array(
+          'width' => 246,
+          'height' => 140,
+          'anchor' => 'center-center',
+          'disable_scale' => 0,
+          'jcrop_settings' => array(
+            'aspect_ratio' => '',
+            'bgcolor' => 'black',
+            'bgopacity' => 0.6,
+            'fallback' => 1,
+          ),
+        ),
+        'weight' => 1,
+      ),
+      6 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 246,
+          'height' => 140,
+        ),
+        'weight' => 2,
       ),
     ),
   );
