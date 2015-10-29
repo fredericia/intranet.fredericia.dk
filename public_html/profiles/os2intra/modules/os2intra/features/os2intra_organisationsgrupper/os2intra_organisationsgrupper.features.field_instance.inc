@@ -23,6 +23,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -98,6 +104,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'image',
         'weight' => 2,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -153,6 +165,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'og_group_subscribe',
         'weight' => 0,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -205,6 +223,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -231,7 +255,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 3,
     ),
   );
 
@@ -248,6 +272,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -281,7 +311,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 42,
+      'weight' => 5,
     ),
   );
 
@@ -298,6 +328,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -323,7 +359,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 44,
+      'weight' => 7,
     ),
   );
 
@@ -344,6 +380,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 5,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -374,7 +416,79 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 46,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2intra_org_group_unit-field_os2intra_image'.
+  $field_instances['node-os2intra_org_group_unit-field_os2intra_image'] = array(
+    'bundle' => 'os2intra_org_group_unit',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 6,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_image',
+    'label' => 'Billede',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 9,
     ),
   );
 
@@ -395,6 +509,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 4,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -425,7 +545,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 45,
+      'weight' => 6,
     ),
   );
 
@@ -445,6 +565,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 1,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -480,7 +606,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'og_hide' => TRUE,
       ),
       'type' => 'options_onoff',
-      'weight' => 0,
+      'weight' => 6,
     ),
   );
 
@@ -497,6 +623,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -541,6 +673,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -617,6 +755,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 2,
       ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
     ),
     'entity_type' => 'user',
     'fences_wrapper' => 'div_div_div',
@@ -639,6 +783,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Afdeling');
   t('Afdelingsværktøjer');
+  t('Billede');
   t('Body');
   t('Determine if this is an OG group.');
   t('Forfremmet indhold');
