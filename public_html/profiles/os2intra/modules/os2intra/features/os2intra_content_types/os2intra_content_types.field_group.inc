@@ -194,6 +194,102 @@ function os2intra_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_kolonne1|field_collection_item|field_os2intra_base_vejledning|default';
+  $field_group->group_name = 'group_kolonne1';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_os2intra_base_vejledning';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_row';
+  $field_group->data = array(
+    'label' => 'Kolonne 1',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_os2intra_itvejledninger_1',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Kolonne 1',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-kolonne1 field-group-div col-md-4',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_kolonne1|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_kolonne2|field_collection_item|field_os2intra_base_vejledning|default';
+  $field_group->group_name = 'group_kolonne2';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_os2intra_base_vejledning';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_row';
+  $field_group->data = array(
+    'label' => 'Kolonne 2',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_os2intra_itvejledning_img',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Kolonne 2',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-kolonne2 field-group-div col-md-4',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_kolonne2|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_kolonne3|field_collection_item|field_os2intra_base_vejledning|default';
+  $field_group->group_name = 'group_kolonne3';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_os2intra_base_vejledning';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_row';
+  $field_group->data = array(
+    'label' => 'Kolonne 3',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_os2intra_itvejledninger_4',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Kolonne 3',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-kolonne3 field-group-div col-md-4',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_kolonne3|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_media|node|event|form';
   $field_group->group_name = 'group_media';
   $field_group->entity_type = 'node';
@@ -430,6 +526,40 @@ function os2intra_content_types_field_group_info() {
     ),
   );
   $export['group_meta|node|wiki|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_row|field_collection_item|field_os2intra_base_vejledning|default';
+  $field_group->group_name = 'group_row';
+  $field_group->entity_type = 'field_collection_item';
+  $field_group->bundle = 'field_os2intra_base_vejledning';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Row',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_kolonne1',
+      1 => 'group_kolonne2',
+      2 => 'group_kolonne3',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Row',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-row field-group-div row',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_row|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
