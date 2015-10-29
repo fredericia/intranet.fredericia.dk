@@ -29,7 +29,6 @@ dependencies[] = taxonomy
 dependencies[] = ctools
 dependencies[] = entity
 dependencies[] = entityreference
-dependencies[] = entitycache
 dependencies[] = features
 dependencies[] = flag
 dependencies[] = menu_attributes
