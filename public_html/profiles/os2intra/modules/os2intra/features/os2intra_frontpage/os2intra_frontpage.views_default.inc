@@ -209,19 +209,12 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['title_field_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title_field_1']['alter']['text'] = '[type][title_field_1]';
   $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
-  /* Field: Content: Billede */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_os2web_base_field_image']['id'] = 'field_os2web_base_field_image';
   $handler->display->display_options['fields']['field_os2web_base_field_image']['table'] = 'field_data_field_os2web_base_field_image';
   $handler->display->display_options['fields']['field_os2web_base_field_image']['field'] = 'field_os2web_base_field_image';
   $handler->display->display_options['fields']['field_os2web_base_field_image']['label'] = '';
   $handler->display->display_options['fields']['field_os2web_base_field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2web_base_field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_os2web_base_field_image']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_os2web_base_field_image']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_os2web_base_field_image']['delta_offset'] = '0';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -451,19 +444,12 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['title_field_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title_field_1']['alter']['text'] = '[type][title_field_1]';
   $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
-  /* Field: Content: Billede */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_os2web_base_field_image']['id'] = 'field_os2web_base_field_image';
   $handler->display->display_options['fields']['field_os2web_base_field_image']['table'] = 'field_data_field_os2web_base_field_image';
   $handler->display->display_options['fields']['field_os2web_base_field_image']['field'] = 'field_os2web_base_field_image';
   $handler->display->display_options['fields']['field_os2web_base_field_image']['label'] = '';
   $handler->display->display_options['fields']['field_os2web_base_field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2web_base_field_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_os2web_base_field_image']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_os2web_base_field_image']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_os2web_base_field_image']['delta_offset'] = '0';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -1592,7 +1578,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['field_os2intra_organisation_ref_target_id']['id'] = 'field_os2intra_organisation_ref_target_id';
   $handler->display->display_options['relationships']['field_os2intra_organisation_ref_target_id']['table'] = 'field_data_field_os2intra_organisation_ref';
   $handler->display->display_options['relationships']['field_os2intra_organisation_ref_target_id']['field'] = 'field_os2intra_organisation_ref_target_id';

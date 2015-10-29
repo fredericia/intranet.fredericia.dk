@@ -99,6 +99,35 @@ function os2intra_organisationsgrupper_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_media|node|post|form';
+  $field_group->group_name = 'group_media';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_post';
+  $field_group->data = array(
+    'label' => 'Billeder',
+    'weight' => '15',
+    'children' => array(
+      0 => 'field_os2intra_images',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'label' => 'Billeder',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-media field-group-htab',
+        'description' => '',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_media|node|post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_meta|node|os2intra_org_group_unit|form';
   $field_group->group_name = 'group_meta';
   $field_group->entity_type = 'node';
@@ -124,6 +153,37 @@ function os2intra_organisationsgrupper_field_group_info() {
     ),
   );
   $export['group_meta|node|os2intra_org_group_unit|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_meta|node|post|form';
+  $field_group->group_name = 'group_meta';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_post';
+  $field_group->data = array(
+    'label' => 'Meta',
+    'weight' => '16',
+    'children' => array(
+      0 => 'og_group_ref',
+      1 => 'field_os2intra_physical_location',
+      2 => 'field_os2web_base_field_ref',
+      3 => 'field_os2intra_base_spotboxes',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-meta field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_meta|node|post|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
