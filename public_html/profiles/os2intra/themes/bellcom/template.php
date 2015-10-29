@@ -156,6 +156,7 @@ function bellcom_menu_link__sidebar(array $variables) {
       $sub_menu = '<ul class="sidebar-nav-dropdown-menu">' . drupal_render($element['#below']) . '</ul>';
 
       // Generate as dropdown.
+      $element['#title'] .= ' <span class="sidebar-nav-dropdown-toggle"></span>';
       $element['#attributes']['class'][] = 'sidebar-nav-dropdown';
       $element['#localized_options']['html'] = TRUE;
     }

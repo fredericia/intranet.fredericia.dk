@@ -31,108 +31,57 @@
 		.badge {
 			.pull-right;
 		}
+	}
+}
 
-		.sidebar-nav-link,
-		.sidebar-nav-dropdown {
+// Link
+.sidebar {
 
-			> a {
-				position: relative;
-				display: block;
-				padding-top: 12px;
-				padding-bottom: 12px;
+	.sidebar-nav {
 
-				padding-right: @bs3-sidebar-nav-link-indentation;
-
-				font-family: @bs3-sidebar-nav-link-font-family;
-				font-weight: @bs3-sidebar-nav-link-font-weight;
-				font-size: @bs3-sidebar-nav-link-font-size;
-				.line-height(@bs3-sidebar-nav-link-font-size);
-				color: @bs3-sidebar-nav-link-font-color;
-
-				background-color: @bs3-sidebar-nav-link-background-color;
-				background-color: @bs3-sidebar-nav-link-background-color-rgba; // rgba
-
-				border-bottom-width: @bs3-sidebar-nav-link-border-width;
-				border-bottom-style: @bs3-sidebar-nav-link-border-style;
-				border-bottom-color: @bs3-sidebar-nav-link-border-color;
-				border-bottom-color: @bs3-sidebar-nav-link-border-color-rgba; // rgba
-
-				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-				-webkit-tap-highlight-color: transparent;
-
-				.@{bs3-sidebar-icon-identifier-prefix} {
-					float: left;
-					color: @bs3-sidebar-nav-link-icon-color;
-					margin-left: -@bs3-sidebar-nav-link-icon-max-width;
-				}
-
-				&:hover {
-					color: @bs3-sidebar-nav-link-hover-font-color;
-
-					background-color: @bs3-sidebar-nav-link-hover-background-color;
-					background-color: @bs3-sidebar-nav-link-hover-background-color-rgba; // rgba
-
-					border-bottom-color: @bs3-sidebar-nav-link-hover-border-color;
-					border-bottom-color: @bs3-sidebar-nav-link-hover-border-color-rgba; // rgba
-
-					.@{bs3-sidebar-icon-identifier-prefix} {
-						color: @bs3-sidebar-nav-link-hover-icon-color;
-					}
-				}
-
-				// Remove text decoration from :hover, :focus and :active (default in some browsers)
-				&:hover,
-				&:focus,
-				&:active {
-					text-decoration: none;
-				}
-			}
-
-			&.sidebar-nav-active {
-
-				> a {
-
-					&,
-					&:hover {
-						color: @bs3-sidebar-nav-link-active-font-color;
-
-						background-color: @bs3-sidebar-nav-link-active-background-color;
-						background-color: @bs3-sidebar-nav-link-active-background-color-rgba; // rgba
-
-						border-bottom-color: @bs3-sidebar-nav-link-active-border-color;
-						border-bottom-color: @bs3-sidebar-nav-link-active-border-color-rgba; // rgba
-					}
-
-					.@{bs3-sidebar-icon-identifier-prefix} {
-						color: @bs3-sidebar-nav-link-active-icon-color;
-					}
-				}
-			}
+		.sidebar-nav-link {
+			.bs3-sidebar-mixin-link-layout();
 		}
+	}
+}
+
+// Dropdown
+.sidebar {
+
+	.sidebar-nav {
 
 		.sidebar-nav-dropdown {
+			.bs3-sidebar-mixin-link-layout();
 
 			> a {
 				color: @bs3-sidebar-nav-dropdown-font-color;
 
-				&:before {
+				.sidebar-nav-dropdown-toggle {
 					float: right;
 					padding: 0;
-					margin: 0;
+					margin-top: floor( (0 - @bs3-sidebar-nav-link-inner-top-bottom-spacing) );
+					margin-bottom: floor( (0 - @bs3-sidebar-nav-link-inner-top-bottom-spacing) );
+					margin-right: floor( (0 - @bs3-sidebar-nav-link-indentation) );
 					margin-left: 10px;
 					line-height: inherit;
+					background-color: rgba(0, 0, 0, .1);
 
-					font-family: @bs3-sidebar-nav-dropdown-indicator-font-family;
-					font-size: @bs3-sidebar-nav-dropdown-indicator-font-size;
-					color: @bs3-sidebar-nav-dropdown-indicator-color;
-					content: @bs3-sidebar-nav-dropdown-indicator-icon;
+					&:before {
+						font-family: @bs3-sidebar-nav-dropdown-indicator-font-family;
+						font-size: @bs3-sidebar-nav-dropdown-indicator-font-size;
+						color: @bs3-sidebar-nav-dropdown-indicator-color;
+						content: @bs3-sidebar-nav-dropdown-indicator-icon;
+					}
 				}
 
 				&:hover {
 					color: @bs3-sidebar-nav-dropdown-hover-font-color;
 
-					&:before {
-						color: @bs3-sidebar-nav-dropdown-hover-indicator-color;
+					.sidebar-nav-dropdown-toggle {
+
+						&:before {
+							color: @bs3-sidebar-nav-dropdown-hover-indicator-color;
+						}
 					}
 				}
 			}
@@ -145,20 +94,36 @@
 
 				> a {
 
-					&:before {
-						.rotate(90deg);
+					.sidebar-nav-dropdown-toggle {
+
+						&:before {
+							.rotate(90deg);
+						}
 					}
 
 					&,
 					&:hover {
 						color: @bs3-sidebar-nav-dropdown-active-font-color;
 
-						&:before {
-							color: @bs3-sidebar-nav-dropdown-active-indicator-color;
+						.sidebar-nav-dropdown-toggle {
+
+							&:before {
+								color: @bs3-sidebar-nav-dropdown-active-indicator-color;
+							}
 						}
 					}
 				}
 			}
+		}
+	}
+}
+
+// Dropdown menu
+.sidebar {
+
+	.sidebar-nav {
+
+		.sidebar-nav-dropdown {
 
 			.sidebar-nav-dropdown-menu {
 				position: relative;
@@ -222,6 +187,66 @@
 							&:hover {
 								color: @bs3-sidebar-nav-dropdown-menu-dropdown-active-font-color;
 							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Toggle
+.sidebar {
+
+	.sidebar-nav {
+
+		.sidebar-nav-dropdown {
+			.bs3-sidebar-mixin-link-layout();
+
+			.sidebar-nav-dropdown-toggle {
+				float: right;
+				padding: 0;
+				margin-top: floor( (0 - @bs3-sidebar-nav-link-inner-top-bottom-spacing) );
+				margin-bottom: floor( (0 - @bs3-sidebar-nav-link-inner-top-bottom-spacing) );
+				margin-right: floor( (0 - @bs3-sidebar-nav-link-indentation) );
+				margin-left: 10px;
+				line-height: inherit;
+				background-color: rgba(0, 0, 0, .1);
+
+				&:before {
+					font-family: @bs3-sidebar-nav-dropdown-indicator-font-family;
+					font-size: @bs3-sidebar-nav-dropdown-indicator-font-size;
+					color: @bs3-sidebar-nav-dropdown-indicator-color;
+					content: @bs3-sidebar-nav-dropdown-indicator-icon;
+				}
+			}
+
+			&:hover {
+
+				.sidebar-nav-dropdown-toggle {
+
+					&:before {
+						color: @bs3-sidebar-nav-dropdown-hover-indicator-color;
+					}
+				}
+			}
+
+			&.sidebar-nav-active {
+
+				.sidebar-nav-dropdown-toggle {
+
+					&:before {
+						.rotate(90deg);
+					}
+				}
+
+				&,
+				&:hover {
+
+					.sidebar-nav-dropdown-toggle {
+
+						&:before {
+							color: @bs3-sidebar-nav-dropdown-active-indicator-color;
 						}
 					}
 				}
@@ -372,6 +397,75 @@
 
 // Navigation mixin
 .mixin-sidebar-navigation() {}
+
+// Link
+.bs3-sidebar-mixin-link-layout() {
+
+	> a {
+		position: relative;
+		display: block;
+		padding-top: @bs3-sidebar-nav-link-inner-top-bottom-spacing;
+		padding-bottom: @bs3-sidebar-nav-link-inner-top-bottom-spacing;
+		padding-right: @bs3-sidebar-nav-link-indentation;
+		font-family: @bs3-sidebar-nav-link-font-family;
+		font-weight: @bs3-sidebar-nav-link-font-weight;
+		font-size: @bs3-sidebar-nav-link-font-size;
+		.line-height(@bs3-sidebar-nav-link-font-size);
+		color: @bs3-sidebar-nav-link-font-color;
+		background-color: @bs3-sidebar-nav-link-background-color;
+		background-color: @bs3-sidebar-nav-link-background-color-rgba; // rgba
+		border-bottom-width: @bs3-sidebar-nav-link-border-width;
+		border-bottom-style: @bs3-sidebar-nav-link-border-style;
+		border-bottom-color: @bs3-sidebar-nav-link-border-color;
+		border-bottom-color: @bs3-sidebar-nav-link-border-color-rgba; // rgba
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		-webkit-tap-highlight-color: transparent;
+
+		.@{bs3-sidebar-icon-identifier-prefix} {
+			float: left;
+			color: @bs3-sidebar-nav-link-icon-color;
+			margin-left: -@bs3-sidebar-nav-link-icon-max-width;
+		}
+
+		&:hover {
+			color: @bs3-sidebar-nav-link-hover-font-color;
+			background-color: @bs3-sidebar-nav-link-hover-background-color;
+			background-color: @bs3-sidebar-nav-link-hover-background-color-rgba;
+			border-bottom-color: @bs3-sidebar-nav-link-hover-border-color;
+			border-bottom-color: @bs3-sidebar-nav-link-hover-border-color-rgba;
+
+			.@{bs3-sidebar-icon-identifier-prefix} {
+				color: @bs3-sidebar-nav-link-hover-icon-color;
+			}
+		}
+
+		// Remove text decoration from :hover, :focus and :active (default in some browsers)
+		&:hover,
+		&:focus,
+		&:active {
+			text-decoration: none;
+		}
+	}
+
+	&.sidebar-nav-active {
+
+		> a {
+
+			&,
+			&:hover {
+				color: @bs3-sidebar-nav-link-active-font-color;
+				background-color: @bs3-sidebar-nav-link-active-background-color;
+				background-color: @bs3-sidebar-nav-link-active-background-color-rgba; // rgba
+				border-bottom-color: @bs3-sidebar-nav-link-active-border-color;
+				border-bottom-color: @bs3-sidebar-nav-link-active-border-color-rgba; // rgba
+			}
+
+			.@{bs3-sidebar-icon-identifier-prefix} {
+				color: @bs3-sidebar-nav-link-active-icon-color;
+			}
+		}
+	}
+}
 
 // Link indentation
 .bs3-sidebar-link-indentation(@indentation-level: 1;) {
