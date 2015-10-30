@@ -1,0 +1,23 @@
+name = Blame
+description = Captures and stores form submits per user which provides the ability for admins to see a back log of form submits and field changes that specific users have made on the CMS.
+core = 7.x
+
+configure = admin/config/development/blame
+
+dependencies[] = diff
+dependencies[] = entity
+dependencies[] = views
+
+files[] = includes/blame.ui.inc
+files[] = includes/blame.entity.inc
+files[] = includes/blame.metadata.inc
+
+files[] = views/blame_views_handler_field_entity_link.inc
+files[] = views/blame_views_handler_field_submitter_link.inc
+
+; Information added by Drupal.org packaging script on 2014-10-16
+version = "7.x-2.0-alpha2+3-dev"
+core = "7.x"
+project = "blame"
+datestamp = "1413486530"
+
