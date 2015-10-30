@@ -3,6 +3,7 @@ core = 7.x
 package = OS2Intra
 version = 7.x-1.0
 dependencies[] = ctools
+dependencies[] = composer_manager
 dependencies[] = elasticsearch_connector
 dependencies[] = elasticsearch_connector_search_api
 dependencies[] = entity
