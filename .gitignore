@@ -52,10 +52,3 @@ share
 # developer sites
 public_html/sites/*.dd
 
-# Composer generated files
-#vendor/composer/autoload_classmap.php
-#vendor/composer/autoload_namespaces.php
-#vendor/composer/autoload_psr4.php
-
-
-
