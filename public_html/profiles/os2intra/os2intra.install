@@ -64,6 +64,9 @@ function os2intra_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
 
+  // Set temporary path
+  variable_set('file_temporary_path', '../tmp');
+
   // Set OS2web intra user menu to run in 'block' mode
   variable_set('os2web_intra_user_menu_mode', 'menu');
 }
