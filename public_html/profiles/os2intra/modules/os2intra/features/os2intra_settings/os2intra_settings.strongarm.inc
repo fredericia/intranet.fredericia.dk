@@ -139,14 +139,14 @@ function os2intra_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_jquery_version';
-  $strongarm->value = 'default';
+  $strongarm->value = '1.10';
   $export['jquery_update_jquery_version'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update__active_tab';
-  $strongarm->value = 'edit-themes';
+  $strongarm->value = 'edit-jquery-migrate';
   $export['jquery_update__active_tab'] = $strongarm;
 
   $strongarm = new stdClass();
