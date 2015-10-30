@@ -162,6 +162,41 @@ function os2intra_organisationsgrupper_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_os2intra_promoteto'.
+  $field_bases['field_os2intra_promoteto'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2intra_promoteto',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'os2web_base_tax_promoteto' => 'os2web_base_tax_promoteto',
+        ),
+      ),
+      'target_type' => 'taxonomy_term',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'group_group'.
   $field_bases['group_group'] = array(
     'active' => 1,

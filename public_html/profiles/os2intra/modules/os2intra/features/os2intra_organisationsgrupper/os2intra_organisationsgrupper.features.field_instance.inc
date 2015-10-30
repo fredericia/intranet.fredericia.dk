@@ -731,7 +731,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 7,
+      'weight' => 16,
     ),
   );
 
@@ -863,7 +863,63 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-post-field_os2intra_promoteto'.
+  $field_instances['node-post-field_os2intra_promoteto'] = array(
+    'bundle' => 'post',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 9,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'display_label' => '',
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_promoteto',
+    'label' => 'Forfrem til',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 12,
     ),
   );
 
@@ -919,7 +975,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => 15,
     ),
   );
 
@@ -998,7 +1054,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 4,
+      'weight' => 13,
     ),
   );
 
@@ -1050,6 +1106,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Billeder');
   t('Body');
   t('Determine if this is an OG group.');
+  t('Forfrem til');
   t('Forfremmet indhold');
   t('Formål med gruppe');
   t('Fysisk lokation');

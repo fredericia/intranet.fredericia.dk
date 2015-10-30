@@ -10,6 +10,7 @@ features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[homebox][] = intra
 features[views_view][] = os2intra_canteen_menu
+features[views_view][] = os2intra_forside_views
 features[views_view][] = os2intra_group_term_activity
 features[views_view][] = os2intra_user_groups
 features[views_view][] = os2intra_user_upcoming_events
