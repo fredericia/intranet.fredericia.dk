@@ -115,13 +115,13 @@
 
 @media (min-width: 992px) {
   .container {
-    width: 690px;
+    width: 700px;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
-    width: 890px;
+    width: 900px;
   }
 }
 
@@ -4563,332 +4563,148 @@
 }
 
 @media screen and (max-width: 767px) {
-  .csstransforms3d .sidebar-left-static-xs .sidebar.sidebar-left,
-  .no-csstransforms3d .sidebar-left-static-xs .sidebar.sidebar-left,
-  .csstransforms3d .sidebar-left-static-xs.sidebar-left-open .sidebar.sidebar-left,
-  .no-csstransforms3d .sidebar-left-static-xs.sidebar-left-open .sidebar.sidebar-left {
-    left: 0;
-  }
-
   .csstransforms3d .sidebar-left-static-xs .inner-wrapper,
   .no-csstransforms3d .sidebar-left-static-xs .inner-wrapper,
   .csstransforms3d .sidebar-left-static-xs.sidebar-left-open .inner-wrapper,
   .no-csstransforms3d .sidebar-left-static-xs.sidebar-left-open .inner-wrapper {
-    margin-left: 280px;
-  }
-
-  .csstransforms3d .sidebar-right-static-xs .sidebar.sidebar-right,
-  .no-csstransforms3d .sidebar-right-static-xs .sidebar.sidebar-right,
-  .csstransforms3d .sidebar-right-static-xs.sidebar-right-open .sidebar.sidebar-right,
-  .no-csstransforms3d .sidebar-right-static-xs.sidebar-right-open .sidebar.sidebar-right {
-    right: 0;
+    margin-left: 270px;
   }
 
   .csstransforms3d .sidebar-right-static-xs .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-xs .inner-wrapper,
   .csstransforms3d .sidebar-right-static-xs.sidebar-right-open .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-xs.sidebar-right-open .inner-wrapper {
-    margin-right: 320px;
+    margin-right: 310px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .csstransforms3d .sidebar-left-static-sm .sidebar.sidebar-left,
-  .no-csstransforms3d .sidebar-left-static-sm .sidebar.sidebar-left,
-  .csstransforms3d .sidebar-left-static-sm.sidebar-left-open .sidebar.sidebar-left,
-  .no-csstransforms3d .sidebar-left-static-sm.sidebar-left-open .sidebar.sidebar-left {
-    left: 0;
-  }
-
   .csstransforms3d .sidebar-left-static-sm .inner-wrapper,
   .no-csstransforms3d .sidebar-left-static-sm .inner-wrapper,
   .csstransforms3d .sidebar-left-static-sm.sidebar-left-open .inner-wrapper,
   .no-csstransforms3d .sidebar-left-static-sm.sidebar-left-open .inner-wrapper {
-    margin-left: 280px;
-  }
-
-  .csstransforms3d .sidebar-right-static-sm .sidebar.sidebar-right,
-  .no-csstransforms3d .sidebar-right-static-sm .sidebar.sidebar-right,
-  .csstransforms3d .sidebar-right-static-sm.sidebar-right-open .sidebar.sidebar-right,
-  .no-csstransforms3d .sidebar-right-static-sm.sidebar-right-open .sidebar.sidebar-right {
-    right: 0;
+    margin-left: 270px;
   }
 
   .csstransforms3d .sidebar-right-static-sm .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-sm .inner-wrapper,
   .csstransforms3d .sidebar-right-static-sm.sidebar-right-open .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-sm.sidebar-right-open .inner-wrapper {
-    margin-right: 320px;
+    margin-right: 310px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .csstransforms3d .sidebar-left-static-md .sidebar.sidebar-left,
-  .no-csstransforms3d .sidebar-left-static-md .sidebar.sidebar-left,
-  .csstransforms3d .sidebar-left-static-md.sidebar-left-open .sidebar.sidebar-left,
-  .no-csstransforms3d .sidebar-left-static-md.sidebar-left-open .sidebar.sidebar-left {
-    left: 0;
-  }
-
   .csstransforms3d .sidebar-left-static-md .inner-wrapper,
   .no-csstransforms3d .sidebar-left-static-md .inner-wrapper,
   .csstransforms3d .sidebar-left-static-md.sidebar-left-open .inner-wrapper,
   .no-csstransforms3d .sidebar-left-static-md.sidebar-left-open .inner-wrapper {
-    margin-left: 280px;
-  }
-
-  .csstransforms3d .sidebar-right-static-md .sidebar.sidebar-right,
-  .no-csstransforms3d .sidebar-right-static-md .sidebar.sidebar-right,
-  .csstransforms3d .sidebar-right-static-md.sidebar-right-open .sidebar.sidebar-right,
-  .no-csstransforms3d .sidebar-right-static-md.sidebar-right-open .sidebar.sidebar-right {
-    right: 0;
+    margin-left: 270px;
   }
 
   .csstransforms3d .sidebar-right-static-md .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-md .inner-wrapper,
   .csstransforms3d .sidebar-right-static-md.sidebar-right-open .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-md.sidebar-right-open .inner-wrapper {
-    margin-right: 320px;
+    margin-right: 310px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .csstransforms3d .sidebar-left-static-lg .sidebar.sidebar-left,
-  .no-csstransforms3d .sidebar-left-static-lg .sidebar.sidebar-left,
-  .csstransforms3d .sidebar-left-static-lg.sidebar-left-open .sidebar.sidebar-left,
-  .no-csstransforms3d .sidebar-left-static-lg.sidebar-left-open .sidebar.sidebar-left {
-    left: 0;
-  }
-
   .csstransforms3d .sidebar-left-static-lg .inner-wrapper,
   .no-csstransforms3d .sidebar-left-static-lg .inner-wrapper,
   .csstransforms3d .sidebar-left-static-lg.sidebar-left-open .inner-wrapper,
   .no-csstransforms3d .sidebar-left-static-lg.sidebar-left-open .inner-wrapper {
-    margin-left: 280px;
-  }
-
-  .csstransforms3d .sidebar-right-static-lg .sidebar.sidebar-right,
-  .no-csstransforms3d .sidebar-right-static-lg .sidebar.sidebar-right,
-  .csstransforms3d .sidebar-right-static-lg.sidebar-right-open .sidebar.sidebar-right,
-  .no-csstransforms3d .sidebar-right-static-lg.sidebar-right-open .sidebar.sidebar-right {
-    right: 0;
+    margin-left: 270px;
   }
 
   .csstransforms3d .sidebar-right-static-lg .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-lg .inner-wrapper,
   .csstransforms3d .sidebar-right-static-lg.sidebar-right-open .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-lg.sidebar-right-open .inner-wrapper {
-    margin-right: 320px;
+    margin-right: 310px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .csstransforms3d .sidebar-left-hidden-xs.sidebar-left-enabled-xs .sidebar.sidebar-left {
-    transform: translate3d(-280px, 0, 0);
-  }
-
-  .csstransforms3d .sidebar-left-hidden-xs.sidebar-left-enabled-xs.sidebar-left-open .sidebar.sidebar-left {
-    transform: translate3d(0, 0, 0);
-  }
-
   .csstransforms3d .sidebar-left-hidden-xs.sidebar-left-enabled-xs.sidebar-left-open .inner-wrapper {
-    transform: translate3d(280px, 0, 0);
-  }
-
-  .csstransforms3d .sidebar-right-hidden-xs.sidebar-right-enabled-xs .sidebar.sidebar-right {
-    transform: translate3d(0, 0, 0);
-  }
-
-  .csstransforms3d .sidebar-right-hidden-xs.sidebar-right-enabled-xs.sidebar-right-open .sidebar.sidebar-right {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(270px, 0, 0);
   }
 
   .csstransforms3d .sidebar-right-hidden-xs.sidebar-right-enabled-xs.sidebar-right-open .inner-wrapper {
-    transform: translate3d(-320px, 0, 0);
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-xs.sidebar-left-enabled-xs .sidebar.sidebar-left {
-    left: -280px;
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-xs.sidebar-left-enabled-xs.sidebar-left-open .sidebar.sidebar-left {
-    left: 0;
+    transform: translate3d(-310px, 0, 0);
   }
 
   .no-csstransforms3d .sidebar-state-hidden-xs.sidebar-left-enabled-xs.sidebar-left-open .inner-wrapper {
-    margin-left: 280px;
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-xs.sidebar-right-enabled-xs .sidebar.sidebar-right {
-    right: -320px;
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-xs.sidebar-right-enabled-xs.sidebar-right-open .sidebar.sidebar-right {
-    right: 0;
+    margin-left: 270px;
   }
 
   .no-csstransforms3d .sidebar-state-hidden-xs.sidebar-right-enabled-xs.sidebar-right-open .inner-wrapper {
-    margin-right: 320px;
+    margin-right: 310px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .csstransforms3d .sidebar-left-hidden-sm.sidebar-left-enabled-sm .sidebar.sidebar-left {
-    transform: translate3d(-280px, 0, 0);
-  }
-
-  .csstransforms3d .sidebar-left-hidden-sm.sidebar-left-enabled-sm.sidebar-left-open .sidebar.sidebar-left {
-    transform: translate3d(0, 0, 0);
-  }
-
   .csstransforms3d .sidebar-left-hidden-sm.sidebar-left-enabled-sm.sidebar-left-open .inner-wrapper {
-    transform: translate3d(280px, 0, 0);
-  }
-
-  .csstransforms3d .sidebar-right-hidden-sm.sidebar-right-enabled-sm .sidebar.sidebar-right {
-    transform: translate3d(0, 0, 0);
-  }
-
-  .csstransforms3d .sidebar-right-hidden-sm.sidebar-right-enabled-sm.sidebar-right-open .sidebar.sidebar-right {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(270px, 0, 0);
   }
 
   .csstransforms3d .sidebar-right-hidden-sm.sidebar-right-enabled-sm.sidebar-right-open .inner-wrapper {
-    transform: translate3d(-320px, 0, 0);
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-sm.sidebar-left-enabled-sm .sidebar.sidebar-left {
-    left: -280px;
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-sm.sidebar-left-enabled-sm.sidebar-left-open .sidebar.sidebar-left {
-    left: 0;
+    transform: translate3d(-310px, 0, 0);
   }
 
   .no-csstransforms3d .sidebar-state-hidden-sm.sidebar-left-enabled-sm.sidebar-left-open .inner-wrapper {
-    margin-left: 280px;
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-sm.sidebar-right-enabled-sm .sidebar.sidebar-right {
-    right: -320px;
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-sm.sidebar-right-enabled-sm.sidebar-right-open .sidebar.sidebar-right {
-    right: 0;
+    margin-left: 270px;
   }
 
   .no-csstransforms3d .sidebar-state-hidden-sm.sidebar-right-enabled-sm.sidebar-right-open .inner-wrapper {
-    margin-right: 320px;
+    margin-right: 310px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .csstransforms3d .sidebar-left-hidden-md.sidebar-left-enabled-md .sidebar.sidebar-left {
-    transform: translate3d(-280px, 0, 0);
-  }
-
-  .csstransforms3d .sidebar-left-hidden-md.sidebar-left-enabled-md.sidebar-left-open .sidebar.sidebar-left {
-    transform: translate3d(0, 0, 0);
-  }
-
   .csstransforms3d .sidebar-left-hidden-md.sidebar-left-enabled-md.sidebar-left-open .inner-wrapper {
-    transform: translate3d(280px, 0, 0);
-  }
-
-  .csstransforms3d .sidebar-right-hidden-md.sidebar-right-enabled-md .sidebar.sidebar-right {
-    transform: translate3d(0, 0, 0);
-  }
-
-  .csstransforms3d .sidebar-right-hidden-md.sidebar-right-enabled-md.sidebar-right-open .sidebar.sidebar-right {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(270px, 0, 0);
   }
 
   .csstransforms3d .sidebar-right-hidden-md.sidebar-right-enabled-md.sidebar-right-open .inner-wrapper {
-    transform: translate3d(-320px, 0, 0);
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-md.sidebar-left-enabled-md .sidebar.sidebar-left {
-    left: -280px;
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-md.sidebar-left-enabled-md.sidebar-left-open .sidebar.sidebar-left {
-    left: 0;
+    transform: translate3d(-310px, 0, 0);
   }
 
   .no-csstransforms3d .sidebar-state-hidden-md.sidebar-left-enabled-md.sidebar-left-open .inner-wrapper {
-    margin-left: 280px;
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-md.sidebar-right-enabled-md .sidebar.sidebar-right {
-    right: -320px;
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-md.sidebar-right-enabled-md.sidebar-right-open .sidebar.sidebar-right {
-    right: 0;
+    margin-left: 270px;
   }
 
   .no-csstransforms3d .sidebar-state-hidden-md.sidebar-right-enabled-md.sidebar-right-open .inner-wrapper {
-    margin-right: 320px;
+    margin-right: 310px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .csstransforms3d .sidebar-left-hidden-lg.sidebar-left-enabled-lg .sidebar.sidebar-left {
-    transform: translate3d(-280px, 0, 0);
-  }
-
-  .csstransforms3d .sidebar-left-hidden-lg.sidebar-left-enabled-lg.sidebar-left-open .sidebar.sidebar-left {
-    transform: translate3d(0, 0, 0);
-  }
-
   .csstransforms3d .sidebar-left-hidden-lg.sidebar-left-enabled-lg.sidebar-left-open .inner-wrapper {
-    transform: translate3d(280px, 0, 0);
-  }
-
-  .csstransforms3d .sidebar-right-hidden-lg.sidebar-right-enabled-lg .sidebar.sidebar-right {
-    transform: translate3d(0, 0, 0);
-  }
-
-  .csstransforms3d .sidebar-right-hidden-lg.sidebar-right-enabled-lg.sidebar-right-open .sidebar.sidebar-right {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(270px, 0, 0);
   }
 
   .csstransforms3d .sidebar-right-hidden-lg.sidebar-right-enabled-lg.sidebar-right-open .inner-wrapper {
-    transform: translate3d(-320px, 0, 0);
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-lg.sidebar-left-enabled-lg .sidebar.sidebar-left {
-    left: -280px;
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-lg.sidebar-left-enabled-lg.sidebar-left-open .sidebar.sidebar-left {
-    left: 0;
+    transform: translate3d(-310px, 0, 0);
   }
 
   .no-csstransforms3d .sidebar-state-hidden-lg.sidebar-left-enabled-lg.sidebar-left-open .inner-wrapper {
-    margin-left: 280px;
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-lg.sidebar-right-enabled-lg .sidebar.sidebar-right {
-    right: -320px;
-  }
-
-  .no-csstransforms3d .sidebar-state-hidden-lg.sidebar-right-enabled-lg.sidebar-right-open .sidebar.sidebar-right {
-    right: 0;
+    margin-left: 270px;
   }
 
   .no-csstransforms3d .sidebar-state-hidden-lg.sidebar-right-enabled-lg.sidebar-right-open .inner-wrapper {
-    margin-right: 320px;
+    margin-right: 310px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .no-csstransforms3d .sidebar-content-off-canvas-xs.sidebar-left-hidden-xs.sidebar-left-open .inner-wrapper {
-    margin-right: -280px;
+    margin-right: -270px;
   }
 
   .no-csstransforms3d .sidebar-content-off-canvas-xs.sidebar-right-hidden-xs.sidebar-right-open .inner-wrapper {
-    margin-left: -320px;
+    margin-left: -310px;
     margin-right: auto;
   }
 
@@ -4896,25 +4712,25 @@
   .no-csstransforms3d .sidebar-content-off-canvas-xs.sidebar-left-static-xs .inner-wrapper,
   .csstransforms3d .sidebar-content-off-canvas-xs.sidebar-left-static-xs.sidebar-left-open .inner-wrapper,
   .no-csstransforms3d .sidebar-content-off-canvas-xs.sidebar-left-static-xs.sidebar-left-open .inner-wrapper {
-    margin-right: -280px;
+    margin-right: -270px;
   }
 
   .csstransforms3d .sidebar-content-off-canvas-xs.sidebar-right-static-xs .inner-wrapper,
   .no-csstransforms3d .sidebar-content-off-canvas-xs.sidebar-right-static-xs .inner-wrapper,
   .csstransforms3d .sidebar-content-off-canvas-xs.sidebar-right-static-xs.sidebar-right-open .inner-wrapper,
   .no-csstransforms3d .sidebar-content-off-canvas-xs.sidebar-right-static-xs.sidebar-right-open .inner-wrapper {
-    margin-left: -320px;
+    margin-left: -310px;
     margin-right: auto;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .no-csstransforms3d .sidebar-content-off-canvas-sm.sidebar-left-hidden-sm.sidebar-left-open .inner-wrapper {
-    margin-right: -280px;
+    margin-right: -270px;
   }
 
   .no-csstransforms3d .sidebar-content-off-canvas-sm.sidebar-right-hidden-sm.sidebar-right-open .inner-wrapper {
-    margin-left: -320px;
+    margin-left: -310px;
     margin-right: auto;
   }
 
@@ -4922,25 +4738,25 @@
   .no-csstransforms3d .sidebar-content-off-canvas-sm.sidebar-left-static-sm .inner-wrapper,
   .csstransforms3d .sidebar-content-off-canvas-sm.sidebar-left-static-sm.sidebar-left-open .inner-wrapper,
   .no-csstransforms3d .sidebar-content-off-canvas-sm.sidebar-left-static-sm.sidebar-left-open .inner-wrapper {
-    margin-right: -280px;
+    margin-right: -270px;
   }
 
   .csstransforms3d .sidebar-content-off-canvas-sm.sidebar-right-static-sm .inner-wrapper,
   .no-csstransforms3d .sidebar-content-off-canvas-sm.sidebar-right-static-sm .inner-wrapper,
   .csstransforms3d .sidebar-content-off-canvas-sm.sidebar-right-static-sm.sidebar-right-open .inner-wrapper,
   .no-csstransforms3d .sidebar-content-off-canvas-sm.sidebar-right-static-sm.sidebar-right-open .inner-wrapper {
-    margin-left: -320px;
+    margin-left: -310px;
     margin-right: auto;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   .no-csstransforms3d .sidebar-content-off-canvas-md.sidebar-left-hidden-md.sidebar-left-open .inner-wrapper {
-    margin-right: -280px;
+    margin-right: -270px;
   }
 
   .no-csstransforms3d .sidebar-content-off-canvas-md.sidebar-right-hidden-md.sidebar-right-open .inner-wrapper {
-    margin-left: -320px;
+    margin-left: -310px;
     margin-right: auto;
   }
 
@@ -4948,25 +4764,25 @@
   .no-csstransforms3d .sidebar-content-off-canvas-md.sidebar-left-static-md .inner-wrapper,
   .csstransforms3d .sidebar-content-off-canvas-md.sidebar-left-static-md.sidebar-left-open .inner-wrapper,
   .no-csstransforms3d .sidebar-content-off-canvas-md.sidebar-left-static-md.sidebar-left-open .inner-wrapper {
-    margin-right: -280px;
+    margin-right: -270px;
   }
 
   .csstransforms3d .sidebar-content-off-canvas-md.sidebar-right-static-md .inner-wrapper,
   .no-csstransforms3d .sidebar-content-off-canvas-md.sidebar-right-static-md .inner-wrapper,
   .csstransforms3d .sidebar-content-off-canvas-md.sidebar-right-static-md.sidebar-right-open .inner-wrapper,
   .no-csstransforms3d .sidebar-content-off-canvas-md.sidebar-right-static-md.sidebar-right-open .inner-wrapper {
-    margin-left: -320px;
+    margin-left: -310px;
     margin-right: auto;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .no-csstransforms3d .sidebar-content-off-canvas-lg.sidebar-left-hidden-lg.sidebar-left-open .inner-wrapper {
-    margin-right: -280px;
+    margin-right: -270px;
   }
 
   .no-csstransforms3d .sidebar-content-off-canvas-lg.sidebar-right-hidden-lg.sidebar-right-open .inner-wrapper {
-    margin-left: -320px;
+    margin-left: -310px;
     margin-right: auto;
   }
 
@@ -4974,87 +4790,87 @@
   .no-csstransforms3d .sidebar-content-off-canvas-lg.sidebar-left-static-lg .inner-wrapper,
   .csstransforms3d .sidebar-content-off-canvas-lg.sidebar-left-static-lg.sidebar-left-open .inner-wrapper,
   .no-csstransforms3d .sidebar-content-off-canvas-lg.sidebar-left-static-lg.sidebar-left-open .inner-wrapper {
-    margin-right: -280px;
+    margin-right: -270px;
   }
 
   .csstransforms3d .sidebar-content-off-canvas-lg.sidebar-right-static-lg .inner-wrapper,
   .no-csstransforms3d .sidebar-content-off-canvas-lg.sidebar-right-static-lg .inner-wrapper,
   .csstransforms3d .sidebar-content-off-canvas-lg.sidebar-right-static-lg.sidebar-right-open .inner-wrapper,
   .no-csstransforms3d .sidebar-content-off-canvas-lg.sidebar-right-static-lg.sidebar-right-open .inner-wrapper {
-    margin-left: -320px;
+    margin-left: -310px;
     margin-right: auto;
   }
 }
 
 @media screen and (max-width: 767px) {
   .csstransforms3d .sidebar-content-shrink-xs.sidebar-left-enabled-xs.sidebar-left-hidden-xs.sidebar-left-open .inner-wrapper {
-    margin-right: 280px;
+    margin-right: 270px;
   }
 
   .csstransforms3d .sidebar-content-shrink-xs .sidebar-right-enabled-xs.sidebar-right-hidden-xs.sidebar-right-open .inner-wrapper {
-    margin-left: 320px;
+    margin-left: 310px;
   }
 
   .no-csstransforms3d .sidebar-left-enabled-xs.sidebar-content-shrink-xs.sidebar-left-hidden-xs.sidebar-left-open .inner-wrapper {
-    margin-right: 280px;
+    margin-right: 270px;
   }
 
   .no-csstransforms3d .sidebar-right-enabled-xs.sidebar-content-shrink-xs.sidebar-right-hidden-xs.sidebar-right-open .inner-wrapper {
-    margin-left: 320px;
+    margin-left: 310px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .csstransforms3d .sidebar-content-shrink-sm.sidebar-left-enabled-sm.sidebar-left-hidden-sm.sidebar-left-open .inner-wrapper {
-    margin-right: 280px;
+    margin-right: 270px;
   }
 
   .csstransforms3d .sidebar-content-shrink-sm .sidebar-right-enabled-sm.sidebar-right-hidden-sm.sidebar-right-open .inner-wrapper {
-    margin-left: 320px;
+    margin-left: 310px;
   }
 
   .no-csstransforms3d .sidebar-left-enabled-sm.sidebar-content-shrink-sm.sidebar-left-hidden-sm.sidebar-left-open .inner-wrapper {
-    margin-right: 280px;
+    margin-right: 270px;
   }
 
   .no-csstransforms3d .sidebar-right-enabled-sm.sidebar-content-shrink-sm.sidebar-right-hidden-sm.sidebar-right-open .inner-wrapper {
-    margin-left: 320px;
+    margin-left: 310px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   .csstransforms3d .sidebar-content-shrink-md.sidebar-left-enabled-md.sidebar-left-hidden-md.sidebar-left-open .inner-wrapper {
-    margin-right: 280px;
+    margin-right: 270px;
   }
 
   .csstransforms3d .sidebar-content-shrink-md .sidebar-right-enabled-md.sidebar-right-hidden-md.sidebar-right-open .inner-wrapper {
-    margin-left: 320px;
+    margin-left: 310px;
   }
 
   .no-csstransforms3d .sidebar-left-enabled-md.sidebar-content-shrink-md.sidebar-left-hidden-md.sidebar-left-open .inner-wrapper {
-    margin-right: 280px;
+    margin-right: 270px;
   }
 
   .no-csstransforms3d .sidebar-right-enabled-md.sidebar-content-shrink-md.sidebar-right-hidden-md.sidebar-right-open .inner-wrapper {
-    margin-left: 320px;
+    margin-left: 310px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .csstransforms3d .sidebar-content-shrink-lg.sidebar-left-enabled-lg.sidebar-left-hidden-lg.sidebar-left-open .inner-wrapper {
-    margin-right: 280px;
+    margin-right: 270px;
   }
 
   .csstransforms3d .sidebar-content-shrink-lg .sidebar-right-enabled-lg.sidebar-right-hidden-lg.sidebar-right-open .inner-wrapper {
-    margin-left: 320px;
+    margin-left: 310px;
   }
 
   .no-csstransforms3d .sidebar-left-enabled-lg.sidebar-content-shrink-lg.sidebar-left-hidden-lg.sidebar-left-open .inner-wrapper {
-    margin-right: 280px;
+    margin-right: 270px;
   }
 
   .no-csstransforms3d .sidebar-right-enabled-lg.sidebar-content-shrink-lg.sidebar-right-hidden-lg.sidebar-right-open .inner-wrapper {
-    margin-left: 320px;
+    margin-left: 310px;
   }
 }
 

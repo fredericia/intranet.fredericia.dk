@@ -19,10 +19,12 @@
 
 .sidebar {
 	display: none;
-	position: fixed;
+	position: absolute;
 	height: 100%;
 	top: 0;
 	bottom: 0;
+	left: auto;
+	right: auto;
 	z-index: 0;
 	background-color: @bs3-sidebar-background-color;
 	overflow-y: scroll;
@@ -35,12 +37,16 @@
 	}
 
 	&.sidebar-left {
-		width: @bs3-sidebar-left-width;
+		width: floor( (@bs3-sidebar-left-width + @bs3-sidebar-extra-width) );
+		padding-right: @bs3-sidebar-extra-width;
+		left: 0;
 		.box-shadow(@bs3-sidebar-left-box-shadow);
 	}
 
 	&.sidebar-right {
-		width: @bs3-sidebar-right-width;
+		width: floor( (@bs3-sidebar-right-width + @bs3-sidebar-extra-width) );
+		padding-left: @bs3-sidebar-extra-width;
+		right: 0;
 		.box-shadow(@bs3-sidebar-right-box-shadow);
 	}
 }
