@@ -1,0 +1,387 @@
+<?php
+/**
+ * @file
+ * The blame.module is a tracking module that captures every single form
+ * submit that happens in the CMS. It can be configured through the modules
+ * admin settings to only track specific roles AND / OR accounts as desired.
+ */
+
+define('BLAME_INCLUDE', 1);
+define('BLAME_EXCLUDE', 0);
+
+/**
+ * Implements hook_views_api().
+ */
+function blame_views_api() {
+  return array(
+    'version' => '3.0',
+    'path' => drupal_get_path('module', 'blame') . '/views',
+  );
+}
+
+/**
+ * Implements hook_entity_info().
+ */
+function blame_entity_info() {
+  $entities['blame'] = array(
+    'label' => t('Blame'),
+    'plural label' => t('Blame'),
+    'entity class' => 'BlameEntity',
+    'metadata controller class' => 'BlameMetadataController',
+    'controller class' => 'EntityAPIController',
+    'extra fields controller class' => 'EntityDefaultExtraFieldsController',
+    'label callback' => 'blame_label',
+    'uri callback' => 'blame_uri',
+    'base table' => 'blame',
+    'fieldable' => TRUE,
+    'entity keys' => array(
+      'id' => 'bid',
+    ),
+    'module' => 'blame',
+    'view modes' => array(
+      'default' => array(
+        'label' => t('Default'),
+        'custom settings' => FALSE,
+      ),
+    ),
+    'access callback' => 'blame_access',
+    'bundles' => array(
+      'blame' => array(
+        'label' => t('Blame'),
+      ),
+    ),
+    'admin ui' => array(
+      'path' => 'blame',
+      'file path' => drupal_get_path('module', 'blame') . '/includes',
+      'file' => 'blame.admin.inc',
+      'controller class' => 'BlameContentUIController',
+      'menu wildcard' => '%blame',
+    ),
+  );
+
+  return $entities;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function blame_menu() {
+  $items = array();
+
+  $items['admin/config/development/blame'] = array(
+    'title' => 'Blame Settings',
+    'description' => 'Blame module settings and configuration.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('blame_settings_form'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer blame'),
+    'file' => 'blame.admin.inc',
+    'file path' => drupal_get_path('module', 'blame') . '/includes',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['blame/autocomplete'] = array(
+    'title' => 'Blame user autocomplete',
+    'page callback' => 'blame_user_autocomplete',
+    'access arguments' => array('administer blame'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Autocomplete username search.
+ */
+function blame_user_autocomplete($string = '') {
+  $matches = array();
+
+  $string = array_map('trim', explode(',', $string));
+  $search = array_pop($string);
+
+  $query = new EntityFieldQuery();
+  $uids = $query->entityCondition('entity_type', 'user')
+    ->propertyCondition('name', $search, 'CONTAINS')
+    ->range(0, 5)
+    ->execute();
+
+  if (count($uids['user'])) {
+    $users = user_load_multiple(array_keys($uids['user']));
+    foreach ($users as $user) {
+      $value = t('@name (@uid)', array('@name' => $user->name, '@uid' => $user->uid));
+      $string[] = $value;
+      $matches[implode(', ', $string)] = $value;
+    }
+  }
+
+  print drupal_json_output($matches);
+  drupal_exit();
+}
+
+/**
+ * Blame loader.
+ */
+function blame_load($bid) {
+  return entity_load_single('blame', $bid);
+}
+
+/**
+ * Access control callback.
+ */
+function blame_access($op, $entity, $account, $entity_type) {
+  switch ($op) {
+    case 'create':
+      return user_access('track blame', $account);
+
+    case 'view':
+      return user_access('view blame', $account);
+
+    // Blame records should never be changed. It's a log!
+    case 'update':
+      return FALSE;
+
+    case 'delete':
+      return user_access('administer blame', $account);
+
+  }
+}
+
+/**
+ * Blame label callback.
+ */
+function blame_label($blame, $entity_type = 'blame') {
+  return t('@form blame', array('@form' => $blame->form_id));
+}
+
+/**
+ * Blame uri callback.
+ */
+function blame_uri($entity) {
+  return array(
+    'path' => 'blame/' . $entity->bid,
+  );
+}
+
+/**
+ * Implements hook_permission().
+ */
+function blame_permission() {
+  return array(
+    'administer blame' => array(
+      'title' => t('Administer Blame'),
+      'restrict access' => TRUE,
+    ),
+    'clear blame log' => array(
+      'title' => t('Clear Blame log'),
+      'restrict access' => TRUE,
+    ),
+    'view blame' => array(
+      'title' => t('View Blame records'),
+      'warning' => t('Warning: Submitted form data may contain sensitive information; this permission may have security implications.'),
+    ),
+    'track blame' => array(
+      'title' => t('Track with Blame'),
+    ),
+  );
+}
+
+/**
+ * Determine user tracking.
+ */
+function blame_track_user($user) {
+  // Don't process excluded users.
+  if (in_array($user->uid, variable_get('blame_ignore_uids', array()))) {
+    return FALSE;
+  }
+
+  // Track blame for included users and roles.
+  if (in_array($user->uid, variable_get('blame_track_uids', array())) || user_access('track blame', $user)) {
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
+/**
+ * Determine if the page should be tracked.
+ */
+function blame_track_path($query) {
+  $path = drupal_strtolower(drupal_get_path_alias($query));
+  $in_ex = variable_get('blame_pages_in_ex', BLAME_EXCLUDE);
+  $pages = drupal_strtolower(variable_get('blame_pages', ''));
+
+  $page_match = drupal_match_path($path, $pages);
+  if ($path != $query) {
+    $page_match = $page_match || drupal_match_path($query, $pages);
+  }
+  if ($in_ex xor $page_match) {
+    return FALSE;
+  }
+
+  return TRUE;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function blame_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+
+  // Don't process excluded forms.
+  if (in_array($form_id, variable_get('blame_exclude_form_ids', array()))) {
+    return;
+  }
+
+  // Track blame for included users and roles.
+  if (blame_track_path($_GET['q']) && blame_track_user($GLOBALS['user'])) {
+    array_unshift($form['#submit'], 'blame_form_submit');
+  }
+
+  // Notify user if an existing blame log for this form has been captured and provide
+  // some metadata to the user if they have permissions to view.
+  if (user_access("view blame", $user)) {
+    $latest_blame_copy = "";
+    $existing_records = blame_get_blame_by_location();
+    $count = count($existing_records);
+    if ($count) {
+      $latest_blame = array_shift($existing_records);
+      $created = date('m/d/y - g:ia e', $latest_blame['created']);
+      $latest_blame_copy = l("See the latest blame record created on {$created}", "blame/{$latest_blame['bid']}");
+    }
+    drupal_set_message("There are {$count} Blame records on this form. {$latest_blame_copy}", "notice");
+  }
+}
+
+/**
+ * Helper function to retrieve blame records from the DB by location. This is useful
+ * when trying to get a record or set of records based on the current path.
+ *
+ * @param $path - The path for blame to search its location values against. Defaults to current_path().
+ *
+ * @return array $existing_records - All the existing records if found, or array() if non
+ */
+function blame_get_blame_by_location($path = FALSE) {
+  // Use the current path if no path has been provided.
+  if (!$path) {
+    $path = current_path();
+  }
+
+  // Retrieve all records from the path value.
+  $existing_records = array();
+  $query = db_select("blame", "b");
+  $query->fields("b", array("bid", "uid", "form_id", "location", "created", "data", "changes"));
+  $query->condition("b.location", $path, "=");
+  $query->orderBy("b.created", "DESC");
+  $executed = $query->execute();
+
+  while ($results = $executed->fetchAssoc()) {
+    $existing_records[$results['bid']] = $results;
+  }
+
+  // Return existing records
+  return $existing_records;
+}
+
+/**
+ * Implements hook_submit().
+ */
+function blame_form_submit($form, &$form_state) {
+  // Some forms don't properly give a #name to form elements, like views
+  // exposed filters, this can cause errors for storage engines. Remove
+  // any malformed values.
+  $values = $form_state['values'];
+  _blame_remove_null_keys($values);
+
+  blame_create_blame($form['#form_id'], $values);
+}
+
+/**
+ * Helper function to remove null keys.
+ */
+function _blame_remove_null_keys(&$array) {
+  unset($array[NULL]);
+  foreach ($array as &$item) {
+    // Objects with private/protected attributes can cause field storage
+    // issues. Convert objects to arrays of their accessible properties.
+    if (is_object($item)) {
+      $class = get_class($item);
+      $item = get_object_vars($item);
+      $item['original object class'] = $class;
+    }
+
+    // recurse through arrays.
+    if (is_array($item)) {
+      _blame_remove_null_keys($item);
+    }
+  }
+}
+
+/**
+ * Create blame.
+ */
+function blame_create_blame($form_id, $data, $user = NULL) {
+  if (!isset($user->uid)) {
+    $user = $GLOBALS['user'];
+  }
+
+  if (blame_track_user($user)) {
+    // Never store user passwords!
+    $user_forms = array(
+      'user_login',
+      'user_login_block',
+      'user_profile_form',
+      'user_register_form',
+    );
+    if (in_array($form_id, $user_forms)) {
+      $blank = '********';
+      if (isset($data['pass'])) {
+        $data['pass'] = $blank;
+      }
+      if (isset($data['current_pass'])) {
+        $data['current_pass'] = $blank;
+      }
+    }
+
+    // Create the blame entity.
+    $values = array(
+      'uid' => $user->uid,
+      'form_id' => $form_id,
+      'location' => current_path(),
+      'created' => REQUEST_TIME,
+      'data' => $data,
+    );
+    $blame = entity_create('blame', $values);
+
+    // Generate changes and save.
+    $blame->changes = $blame->diff();
+    $blame->save();
+  }
+}
+
+/**
+ * Blame entity property getter.
+ */
+function blame_property_get(BlameEntity $blame, array $options, $property_name, $entity_type) {
+  switch ($property_name) {
+    case 'uid':
+      $user = entity_load_single('user', $blame->uid);
+      return entity_metadata_wrapper('user', $user);
+
+    case 'created':
+      return format_date($blame->created);
+
+    default:
+      return entity_property_verbatim_get($blame, $options, $property_name, $entity_type, array());
+  }
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function blame_entity_view($entity, $type, $view_mode, $langcode) {
+  if ($type == 'blame') {
+    $entity->content['changes'] = array(
+      '#markup' => $entity->changes,
+    );
+  }
+}

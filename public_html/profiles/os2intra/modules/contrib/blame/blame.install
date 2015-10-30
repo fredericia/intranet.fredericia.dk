@@ -1,0 +1,114 @@
+<?php
+/**
+ * @file
+ * Blame install file.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function blame_schema() {
+  $schema['blame'] = array(
+    'description' => 'Stores the form submitted data for each user for each form.',
+    'fields' => array(
+      'bid' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'The auto incremented blame record ID.',
+      ),
+      'uid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'The user ID of the user who submitted the form.',
+      ),
+      'form_id' => array(
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+        'description' => 'The form id of the form submitted.',
+      ),
+      'location' => array(
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'The path where the form was submitted',
+      ),
+      'created' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'The timestamp of when the form was submitted',
+      ),
+      'data' => array(
+        'type' => 'blob',
+        'not null' => TRUE,
+        'size' => 'big',
+        'serialize' => TRUE,
+        'description' => 'The serialized form data that was submitted with the form.',
+      ),
+      'changes' => array(
+        'type' => 'blob',
+        'not null' => TRUE,
+        'size' => 'big',
+        'description' => 'The serialized changes from the previous submission.',
+      ),
+    ),
+    'indexes' => array(
+      'bid' => array('bid'),
+      'uid' => array('uid'),
+      'form_loc_bid' => array('form_id', 'location', 'bid'),
+    ),
+    'primary key' => array('bid'),
+  );
+
+  return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function blame_install() {
+  variable_set('blame_ignore_uids', array(1));
+  variable_set('blame_track_uids', array());
+  variable_set('blame_exclude_form_ids', array('blame_settings_form'));
+  variable_set('blame_pages_in_ex', BLAME_EXCLUDE);
+  variable_set('blame_pages', '');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function blame_uninstall() {
+  variable_del('blame_ignore_uids');
+  variable_del('blame_track_uids');
+  variable_del('blame_exclude_form_ids');
+  variable_del('blame_pages_in_ex');
+  variable_del('blame_pages');
+}
+
+/**
+ * Add the location field to the DB.
+ */
+function blame_update_7201(&$sandbox) {
+  // Drop old form_id index.
+  db_drop_index('blame', 'form_id');
+
+  // Add the location field and a new index.
+  db_add_field('blame', 'location',
+    array(
+      'type' => 'varchar',
+      'length' => '255',
+      'not null' => TRUE,
+      'default' => '',
+      'description' => 'The path where the form was submitted',
+    ),
+    array(
+      'indexes' => array(
+        'form_loc_bid' => array('form_id', 'location', 'bid'),
+      ),
+    )
+  );
+}
