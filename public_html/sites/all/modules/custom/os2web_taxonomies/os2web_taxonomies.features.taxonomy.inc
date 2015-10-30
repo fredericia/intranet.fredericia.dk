@@ -25,6 +25,14 @@ function os2web_taxonomies_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
+    'os2web_base_tax_promoteto' => array(
+      'name' => 'OS2web Forfrem indhold',
+      'machine_name' => 'os2web_base_tax_promoteto',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'os2web_taxonomies_tax_comittee' => array(
       'name' => 'AcadreMMComittee',
       'machine_name' => 'os2web_taxonomies_tax_comittee',

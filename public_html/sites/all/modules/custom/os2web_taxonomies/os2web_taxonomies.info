@@ -57,6 +57,7 @@ features[field_instance][] = taxonomy_term-os2web_taxonomies_tax_politics-field_
 features[field_instance][] = taxonomy_term-os2web_taxonomies_tax_user_pos-field_os2web_taxonomies_priority
 features[taxonomy][] = bruger_interesser
 features[taxonomy][] = bruger_kompetencer
+features[taxonomy][] = os2web_base_tax_promoteto
 features[taxonomy][] = os2web_taxonomies_tax_comittee
 features[taxonomy][] = os2web_taxonomies_tax_editor_tag
 features[taxonomy][] = os2web_taxonomies_tax_kle
