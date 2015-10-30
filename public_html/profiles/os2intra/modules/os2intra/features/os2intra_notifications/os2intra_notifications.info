@@ -1,0 +1,12 @@
+name = OS2intra Notifications
+core = 7.x
+package = OS2Intra
+version = 7.x-1.0
+dependencies[] = flag
+dependencies[] = message
+dependencies[] = message_notify
+dependencies[] = message_subscribe
+features[features_api][] = api:2
+features[flag][] = os2intra_flag_node_follow
+features[flag][] = os2intra_flag_node_like
+project path = profiles/os2intra/modules/os2intra/features
