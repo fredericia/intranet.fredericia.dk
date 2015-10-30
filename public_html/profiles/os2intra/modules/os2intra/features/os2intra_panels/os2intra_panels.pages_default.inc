@@ -214,7 +214,9 @@ function os2intra_panels_default_page_manager_handlers() {
     $pane->type = 'views_panes';
     $pane->subtype = 'os2intra_node_panes-panel_pane_3';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(),
+    );
     $pane->configuration = array(
       'context' => array(
         0 => 'argument_entity_id:node_1',
@@ -1164,7 +1166,10 @@ function os2intra_panels_default_page_manager_pages() {
   $page->admin_title = 'Startside';
   $page->admin_description = '';
   $page->path = 'startside';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
