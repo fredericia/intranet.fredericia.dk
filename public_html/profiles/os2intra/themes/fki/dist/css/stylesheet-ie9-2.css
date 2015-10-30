@@ -4567,14 +4567,14 @@
   .no-csstransforms3d .sidebar-left-static-xs .inner-wrapper,
   .csstransforms3d .sidebar-left-static-xs.sidebar-left-open .inner-wrapper,
   .no-csstransforms3d .sidebar-left-static-xs.sidebar-left-open .inner-wrapper {
-    margin-left: 270px;
+    left: 270px;
   }
 
   .csstransforms3d .sidebar-right-static-xs .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-xs .inner-wrapper,
   .csstransforms3d .sidebar-right-static-xs.sidebar-right-open .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-xs.sidebar-right-open .inner-wrapper {
-    margin-right: 310px;
+    right: 310px;
   }
 }
 
@@ -4583,14 +4583,14 @@
   .no-csstransforms3d .sidebar-left-static-sm .inner-wrapper,
   .csstransforms3d .sidebar-left-static-sm.sidebar-left-open .inner-wrapper,
   .no-csstransforms3d .sidebar-left-static-sm.sidebar-left-open .inner-wrapper {
-    margin-left: 270px;
+    left: 270px;
   }
 
   .csstransforms3d .sidebar-right-static-sm .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-sm .inner-wrapper,
   .csstransforms3d .sidebar-right-static-sm.sidebar-right-open .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-sm.sidebar-right-open .inner-wrapper {
-    margin-right: 310px;
+    right: 310px;
   }
 }
 
@@ -4599,14 +4599,14 @@
   .no-csstransforms3d .sidebar-left-static-md .inner-wrapper,
   .csstransforms3d .sidebar-left-static-md.sidebar-left-open .inner-wrapper,
   .no-csstransforms3d .sidebar-left-static-md.sidebar-left-open .inner-wrapper {
-    margin-left: 270px;
+    left: 270px;
   }
 
   .csstransforms3d .sidebar-right-static-md .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-md .inner-wrapper,
   .csstransforms3d .sidebar-right-static-md.sidebar-right-open .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-md.sidebar-right-open .inner-wrapper {
-    margin-right: 310px;
+    right: 310px;
   }
 }
 
@@ -4615,14 +4615,14 @@
   .no-csstransforms3d .sidebar-left-static-lg .inner-wrapper,
   .csstransforms3d .sidebar-left-static-lg.sidebar-left-open .inner-wrapper,
   .no-csstransforms3d .sidebar-left-static-lg.sidebar-left-open .inner-wrapper {
-    margin-left: 270px;
+    left: 270px;
   }
 
   .csstransforms3d .sidebar-right-static-lg .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-lg .inner-wrapper,
   .csstransforms3d .sidebar-right-static-lg.sidebar-right-open .inner-wrapper,
   .no-csstransforms3d .sidebar-right-static-lg.sidebar-right-open .inner-wrapper {
-    margin-right: 310px;
+    right: 310px;
   }
 }
 
@@ -4636,11 +4636,11 @@
   }
 
   .no-csstransforms3d .sidebar-state-hidden-xs.sidebar-left-enabled-xs.sidebar-left-open .inner-wrapper {
-    margin-left: 270px;
+    left: 270px;
   }
 
   .no-csstransforms3d .sidebar-state-hidden-xs.sidebar-right-enabled-xs.sidebar-right-open .inner-wrapper {
-    margin-right: 310px;
+    right: 310px;
   }
 }
 
@@ -4654,11 +4654,11 @@
   }
 
   .no-csstransforms3d .sidebar-state-hidden-sm.sidebar-left-enabled-sm.sidebar-left-open .inner-wrapper {
-    margin-left: 270px;
+    left: 270px;
   }
 
   .no-csstransforms3d .sidebar-state-hidden-sm.sidebar-right-enabled-sm.sidebar-right-open .inner-wrapper {
-    margin-right: 310px;
+    right: 310px;
   }
 }
 
@@ -4672,11 +4672,11 @@
   }
 
   .no-csstransforms3d .sidebar-state-hidden-md.sidebar-left-enabled-md.sidebar-left-open .inner-wrapper {
-    margin-left: 270px;
+    left: 270px;
   }
 
   .no-csstransforms3d .sidebar-state-hidden-md.sidebar-right-enabled-md.sidebar-right-open .inner-wrapper {
-    margin-right: 310px;
+    right: 310px;
   }
 }
 
@@ -4690,11 +4690,11 @@
   }
 
   .no-csstransforms3d .sidebar-state-hidden-lg.sidebar-left-enabled-lg.sidebar-left-open .inner-wrapper {
-    margin-left: 270px;
+    left: 270px;
   }
 
   .no-csstransforms3d .sidebar-state-hidden-lg.sidebar-right-enabled-lg.sidebar-right-open .inner-wrapper {
-    margin-right: 310px;
+    right: 310px;
   }
 }
 

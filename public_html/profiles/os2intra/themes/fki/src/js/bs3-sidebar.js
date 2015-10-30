@@ -162,5 +162,12 @@ var bs3Sidebar = (function ($) {
     });
   }
 
+  /**
+   * Sidebar height
+   */
+  function setSidebarHeight() {
+
+  }
+
   return pub;
 })(jQuery);
