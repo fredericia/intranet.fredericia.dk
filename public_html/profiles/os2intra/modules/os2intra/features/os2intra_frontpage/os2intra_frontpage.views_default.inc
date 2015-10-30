@@ -1051,10 +1051,11 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '2';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -1067,12 +1068,6 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['required'] = TRUE;
-  /* Relationship: Broken/missing handler */
-  $handler->display->display_options['relationships']['user_uid']['id'] = 'user_uid';
-  $handler->display->display_options['relationships']['user_uid']['table'] = 'registration';
-  $handler->display->display_options['relationships']['user_uid']['field'] = 'user_uid';
-  $handler->display->display_options['relationships']['user_uid']['relationship'] = 'registration_rel';
-  $handler->display->display_options['relationships']['user_uid']['required'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1081,32 +1076,15 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
-  $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['label'] = 'Dato';
-  $handler->display->display_options['fields']['field_date']['element_type'] = 'span';
-  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['capacity_used']['id'] = 'capacity_used';
   $handler->display->display_options['fields']['capacity_used']['table'] = 'node';
   $handler->display->display_options['fields']['capacity_used']['field'] = 'capacity_used';
   $handler->display->display_options['fields']['capacity_used']['label'] = 'Antal tilmeldinger';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Broken/missing handler */
-  $handler->display->display_options['arguments']['user_uid']['id'] = 'user_uid';
-  $handler->display->display_options['arguments']['user_uid']['table'] = 'registration';
-  $handler->display->display_options['arguments']['user_uid']['field'] = 'user_uid';
-  $handler->display->display_options['arguments']['user_uid']['relationship'] = 'registration_rel';
-  $handler->display->display_options['arguments']['user_uid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['user_uid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['user_uid']['default_argument_type'] = 'current_user';
-  $handler->display->display_options['arguments']['user_uid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['user_uid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['user_uid']['summary_options']['items_per_page'] = '25';
+  /* Sort criterion: Content: Dato -  start date (field_os2intra_date) */
+  $handler->display->display_options['sorts']['field_os2intra_date_value']['id'] = 'field_os2intra_date_value';
+  $handler->display->display_options['sorts']['field_os2intra_date_value']['table'] = 'field_data_field_os2intra_date';
+  $handler->display->display_options['sorts']['field_os2intra_date_value']['field'] = 'field_os2intra_date_value';
+  $handler->display->display_options['sorts']['field_os2intra_date_value']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1125,6 +1103,7 @@ function os2intra_frontpage_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
@@ -1146,35 +1125,30 @@ function os2intra_frontpage_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
-  $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
-  $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
-  $handler->display->display_options['filters']['field_date_value']['operator'] = '>';
-  $handler->display->display_options['filters']['field_date_value']['group'] = 2;
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_date_value2']['id'] = 'field_date_value2';
-  $handler->display->display_options['filters']['field_date_value2']['table'] = 'field_data_field_date';
-  $handler->display->display_options['filters']['field_date_value2']['field'] = 'field_date_value2';
-  $handler->display->display_options['filters']['field_date_value2']['operator'] = '>';
-  $handler->display->display_options['filters']['field_date_value2']['group'] = 2;
 
   /* Display: You're attending - pane */
   $handler = $view->new_display('panel_pane', 'You\'re attending - pane', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Begivenheder du deltager i';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'capacity_used' => 'capacity_used',
-    'comment_count' => 'comment_count',
-  );
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Flags: os2intra_flag_node_follow */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'os2intra_flag_node_follow';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1183,20 +1157,6 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
-  $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['label'] = '';
-  $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['capacity_used']['id'] = 'capacity_used';
-  $handler->display->display_options['fields']['capacity_used']['table'] = 'node';
-  $handler->display->display_options['fields']['capacity_used']['field'] = 'capacity_used';
-  $handler->display->display_options['fields']['capacity_used']['label'] = '';
-  $handler->display->display_options['fields']['capacity_used']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['capacity_used']['alter']['text'] = '<strong>[capacity_used]</strong> attendees,';
-  $handler->display->display_options['fields']['capacity_used']['element_label_colon'] = FALSE;
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
@@ -1206,18 +1166,50 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['alter']['text'] = '<strong>[comment_count]</strong> comments';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['separator'] = '';
+  /* Field: Flags: Flag link */
+  $handler->display->display_options['fields']['ops']['id'] = 'ops';
+  $handler->display->display_options['fields']['ops']['table'] = 'flagging';
+  $handler->display->display_options['fields']['ops']['field'] = 'ops';
+  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['ops']['label'] = '';
+  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
+  /* Field: Field: Fysisk lokation */
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['id'] = 'field_os2intra_physical_location';
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['table'] = 'field_data_field_os2intra_physical_location';
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['field'] = 'field_os2intra_physical_location';
+  /* Field: Content: Billede */
+  $handler->display->display_options['fields']['field_os2intra_image']['id'] = 'field_os2intra_image';
+  $handler->display->display_options['fields']['field_os2intra_image']['table'] = 'field_data_field_os2intra_image';
+  $handler->display->display_options['fields']['field_os2intra_image']['field'] = 'field_os2intra_image';
+  /* Field: Content: Dato */
+  $handler->display->display_options['fields']['field_os2intra_date']['id'] = 'field_os2intra_date';
+  $handler->display->display_options['fields']['field_os2intra_date']['table'] = 'field_data_field_os2intra_date';
+  $handler->display->display_options['fields']['field_os2intra_date']['field'] = 'field_os2intra_date';
+  /* Field: Content: Groups audience */
+  $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
+  $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Broken/missing handler */
-  $handler->display->display_options['arguments']['user_uid']['id'] = 'user_uid';
-  $handler->display->display_options['arguments']['user_uid']['table'] = 'registration';
-  $handler->display->display_options['arguments']['user_uid']['field'] = 'user_uid';
-  $handler->display->display_options['arguments']['user_uid']['relationship'] = 'registration_rel';
-  $handler->display->display_options['arguments']['user_uid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['user_uid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['user_uid']['default_argument_type'] = 'current_user';
-  $handler->display->display_options['arguments']['user_uid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['user_uid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['user_uid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Flags: User uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'flagging';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'context',
+      'context' => 'entity:user.uid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Flags: User uid',
+    ),
+  );
 
   /* Display: You created - pane */
   $handler = $view->new_display('panel_pane', 'You created - pane', 'panel_pane_2');
@@ -1228,11 +1220,8 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'capacity_used' => 'capacity_used',
-    'comment_count' => 'comment_count',
-  );
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -1278,6 +1267,16 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'context',
+      'context' => 'entity:user.uid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Author uid',
+    ),
+  );
 
   /* Display: You follow - pane */
   $handler = $view->new_display('panel_pane', 'You follow - pane', 'panel_pane_3');
@@ -1288,19 +1287,16 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'capacity_used' => 'capacity_used',
-    'comment_count' => 'comment_count',
-  );
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: commons_follow_node */
+  /* Relationship: Flags: os2intra_flag_node_follow */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
-  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'commons_follow_node';
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'os2intra_flag_node_follow';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1309,12 +1305,6 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
-  $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['label'] = '';
-  $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
   /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['capacity_used']['id'] = 'capacity_used';
   $handler->display->display_options['fields']['capacity_used']['table'] = 'node';
@@ -1333,6 +1323,16 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['separator'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Flags: User uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'flagging';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
   $translatables['os2intra_user_upcoming_events'] = array(
     t('Master'),
     t('Begivenheder'),
@@ -1344,23 +1344,25 @@ function os2intra_frontpage_views_default_views() {
     t('Faldende'),
     t('Du er ikke tilmeldt nogle fremtidige  events.'),
     t('registration_rel'),
-    t('user_uid'),
-    t('Dato'),
     t('Antal tilmeldinger'),
-    t('Alle'),
     t('Block'),
     t('more'),
     t('You\'re attending - pane'),
     t('Begivenheder du deltager i'),
-    t('<strong>[capacity_used]</strong> attendees,'),
+    t('flag'),
     t('<strong>[comment_count]</strong> comments'),
     t('.'),
+    t('Fysisk lokation'),
+    t('Billede'),
+    t('Dato'),
+    t('Groups audience'),
+    t('Alle'),
     t('View panes'),
     t('You created - pane'),
     t('Begivenheder du har oprettet'),
+    t('<strong>[capacity_used]</strong> attendees,'),
     t('You follow - pane'),
     t('Begivenheder du følger'),
-    t('flag'),
   );
   $export['os2intra_user_upcoming_events'] = $view;
 
