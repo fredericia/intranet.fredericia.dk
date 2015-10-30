@@ -1,14 +1,5 @@
 <?php
 /**
  * @file
- * Code for the OS2intra Users feature.
+ * Drupal needs this blank file.
  */
-
-include_once 'os2intra_users.features.inc';
-
-/**
- * Implements hook_admin_paths_alter().
- */
-function os2intra_users_admin_paths_alter(&$paths) {
-  $paths['user/*/edit'] = FALSE;
-}
