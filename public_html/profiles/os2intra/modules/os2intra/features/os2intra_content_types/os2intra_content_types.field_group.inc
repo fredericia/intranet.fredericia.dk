@@ -152,9 +152,9 @@ function os2intra_content_types_field_group_info() {
     'label' => 'Begivenhed',
     'weight' => '0',
     'children' => array(
-      0 => 'group_tekst',
-      1 => 'group_media',
-      2 => 'group_meta',
+      0 => 'group_media',
+      1 => 'group_meta',
+      2 => 'group_tekst',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -330,8 +330,7 @@ function os2intra_content_types_field_group_info() {
     'label' => 'Media',
     'weight' => '50',
     'children' => array(
-      0 => 'field_os2web_base_field_image',
-      1 => 'field_os2intra_image',
+      0 => 'field_os2intra_image',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -448,8 +447,10 @@ function os2intra_content_types_field_group_info() {
     'label' => 'Meta',
     'weight' => '51',
     'children' => array(
-      0 => 'og_group_ref',
-      1 => 'field_os2intra_base_spotboxes',
+      0 => 'field_os2intra_base_spotboxes',
+      1 => 'og_group_ref',
+      2 => 'field_os2intra_related_ref',
+      3 => 'field_os2intra_selvbetjening_ref',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
