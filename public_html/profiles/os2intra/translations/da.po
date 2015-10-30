@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-10-30 08:34+0100\n"
-"PO-Revision-Date: 2015-10-30 08:34+0100\n"
+"POT-Creation-Date: 2015-10-30 11:05+0100\n"
+"PO-Revision-Date: 2015-10-30 11:05+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -21429,10 +21429,6 @@ msgid "Timestamp when the form was submitted as complete (not draft)."
 msgstr ""
 
 #: /
-msgid "Modified"
-msgstr ""
-
-#: /
 msgid "Timestamp when the form was last saved (complete or draft)."
 msgstr ""
 
@@ -21622,10 +21618,6 @@ msgstr ""
 
 #: /node/add/os2intra-org-group-unit
 msgid "The date the webform was first completed (not draft)."
-msgstr ""
-
-#: /node/add/os2intra-org-group-unit
-msgid "Date modified"
 msgstr ""
 
 #: /node/add/os2intra-org-group-unit
@@ -21965,6 +21957,219 @@ msgstr ""
 
 #: sites/all/modules/contrib/file_entity/file_entity.js
 msgid "Associated with @name"
+msgstr ""
+
+#: /admin/content/file
+msgid "scheme"
+msgstr ""
+
+#: /admin/content/file
+msgid ""
+"Indicate that the selected files are permanent and should not be "
+"deleted"
+msgstr ""
+
+#: /admin/content/file
+msgid ""
+"Indicate that the selected files are temporary and should be removed "
+"during cron runs"
+msgstr ""
+
+#: /admin/content/file
+msgid "Refresh YouTube information from source"
+msgstr ""
+
+#: /admin/content/file
+msgid "@count places"
+msgstr ""
+
+#: /admin/content/file
+msgid "1 place"
+msgstr ""
+
+#: /media/browser?render=media-popup&types%5Bimage%5D=image&types%5Bvideo%5D=video&enabledPlugins%5Bmedia_default--media_browser_1%5D=media_default--media_browser_1&enabledPlugins%5Bmedia_internet%5D=media_internet&enabledPlugins%5Bupload%5D=upload&schemes%5Bpublic%5D=public&schemes%5Byoutube%5D=youtube&file_directory=&file_extensions=png+gif+jpg+jpeg&max_filesize=&uri_scheme=public&plugins=
+msgid "Lyd"
+msgstr ""
+
+#: /media/browser?render=media-popup&types%5Bimage%5D=image&types%5Bvideo%5D=video&enabledPlugins%5Bmedia_default--media_browser_1%5D=media_default--media_browser_1&enabledPlugins%5Bmedia_internet%5D=media_internet&enabledPlugins%5Bupload%5D=upload&schemes%5Bpublic%5D=public&schemes%5Byoutube%5D=youtube&file_directory=&file_extensions=png+gif+jpg+jpeg&max_filesize=&uri_scheme=public&plugins=
+msgid "Dokument"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Captures and stores form submits per user which provides the ability "
+"for admins to see a back log of form submits and field changes that "
+"specific users have made on the CMS."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Defines a label for fields that is used for displaying content which "
+"can be different than the form label."
+msgstr ""
+
+#: /admin/reports/status
+msgid "Plupload library"
+msgstr ""
+
+#: /file/add/upload/archive
+msgid "Upload an archive file"
+msgstr ""
+
+#: /file/add/upload/archive
+msgid ""
+"Only files matching this pattern will be imported. For example, to "
+"import all jpg and gif files, the pattern would be "
+"<em>*.jpg|*.gif</em>. Use <em>.*</em> to extract all files in the "
+"archive."
+msgstr ""
+
+#: /
+msgid "Equivalent to --format=!default."
+msgstr ""
+
+#: /
+msgid ""
+"Perform package management and dependency tracking of your projects "
+"and libraries."
+msgstr ""
+
+#: /
+msgid "Run \"drush composer\" for a list of available commands."
+msgstr ""
+
+#: /
+msgid "Display available commands available with Composer."
+msgstr ""
+
+#: /
+msgid "Parses composer.json in the current directory."
+msgstr ""
+
+#: /
+msgid "Updates dependencies to the latest version."
+msgstr ""
+
+#: /
+msgid "Displays a liste of installed packages."
+msgstr ""
+
+#: /
+msgid "Downloads and installs Twig."
+msgstr ""
+
+#: /
+msgid "(new variable)"
+msgstr ""
+
+#: /
+msgid "!name was set to !value."
+msgstr ""
+
+#: /file/add
+msgid "Import files"
+msgstr ""
+
+#: /file/add
+msgid "Allowed files"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Select files"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Add files to the upload queue and click the start button."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Stop current upload"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Start uploading queue"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Uploaded %d/%d files"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "File extension error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "File size error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Init error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "HTTP Error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Security error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Generic error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "IO error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Stop upload"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "%d files queued"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "File: %s"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Using runtime: "
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "File: %f, size: %s, max file size: %m"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid ""
+"Upload element accepts only %d file(s) at a time. Extra files were "
+"stripped."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Upload URL might be wrong or doesn\\\"t exist"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Error: File too large: "
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Error: Invalid file extension: "
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "File count error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/plupload.js
+msgid "Please wait while your files are being uploaded."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/plupload.js
+msgid "@index: You must upload at least one file.\\n"
 msgstr ""
 
 #: ; misc/drupal.js
@@ -22568,6 +22773,7 @@ msgstr "Oprette forrige/næste navigation."
 msgid "Webform"
 msgstr "Webformular"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Status"
 msgstr "Status"
 
@@ -23757,6 +23963,7 @@ msgstr "Udvidelse"
 msgid "The extension of the file."
 msgstr "Filens endelse."
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Size"
 msgstr "Størrelse"
 
@@ -25184,6 +25391,7 @@ msgstr "Indtast adgangskoden der hører til dit brugernavn."
 msgid "Manage"
 msgstr "Håndtér"
 
+#: ; modules/contextual/contextual.js
 msgid "Configure"
 msgstr "Konfigurér"
 
@@ -25706,7 +25914,6 @@ msgstr "En dato i 'mellem' format (%date)"
 msgid "Long format"
 msgstr "Langt format"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Monday"
 msgstr "Mandag"
 
@@ -26162,6 +26369,7 @@ msgstr "Gå til hovedindhold"
 msgid "User interface"
 msgstr "Brugergrænseflade"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Next"
 msgstr "Næste"
 
@@ -26416,27 +26624,21 @@ msgstr "Session åbnet for %name."
 msgid "Open"
 msgstr "Åben"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Sunday"
 msgstr "Søndag"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Tuesday"
 msgstr "Tirsdag"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Wednesday"
 msgstr "Onsdag"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Thursday"
 msgstr "Torsdag"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Friday"
 msgstr "Fredag"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Saturday"
 msgstr "Lørdag"
 
@@ -26446,6 +26648,7 @@ msgstr "Format"
 msgid "History"
 msgstr "Historik"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Filename"
 msgstr "Filnavn"
 
@@ -26830,9 +27033,11 @@ msgstr "Advarsel"
 msgid "blocked"
 msgstr "blokeret"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "N/A"
 msgstr "N/A"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.popups.js
 msgid "OK"
 msgstr "O.k."
 
@@ -47374,6 +47579,7 @@ msgstr "Tilføj en boks"
 msgid "Maximize"
 msgstr "Maksimér"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Close"
 msgstr "Luk"
 
@@ -48509,6 +48715,7 @@ msgstr "TIlgængelige knapper"
 msgid "\"@s\" created date"
 msgstr "\"@s\" oprettelsesdato"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "all"
 msgstr "alle"
 
@@ -48560,6 +48767,7 @@ msgstr "Datofelt"
 msgid "Interval"
 msgstr "Interval"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "Select"
 msgstr "Vælg"
 
@@ -59661,6 +59869,7 @@ msgstr "Medie-browser til valg og upload af mediefiler"
 msgid "Upload a new file"
 msgstr "Upload en ny fil"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.browser.js
 msgid "Cannot continue, nothing selected"
 msgstr "Kan ikke fortsætte, intet valgt"
 
@@ -59718,6 +59927,12 @@ msgstr ""
 msgid "Basket"
 msgstr "Værktøjer"
 
+msgid "Modified"
+msgstr "Ændret"
+
+msgid "Date modified"
+msgstr "Ændringsdato"
+
 msgid "admin theme"
 msgstr "admin theme"
 
@@ -59764,6 +59979,7 @@ msgstr "Filen findes ikke."
 msgid "An error occurred and no file was uploaded."
 msgstr "Der opstod en fejl og der blev ikke uploadet en fil."
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Start upload"
 msgstr "Start upload"
 
@@ -59880,6 +60096,7 @@ msgstr "Media Internet Sources"
 msgid "Media browser theme"
 msgstr "Mediebrowser theme"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "If you switch views, you will lose your selection."
 msgstr "Hvis du skifter views mister du dine valg."
 
@@ -59919,4 +60136,75 @@ msgstr "Redigér valgte filer"
 
 msgid "Edit multiple files"
 msgstr "Redigér flere filer"
+
+msgid "Allows displaying and submitting multiple forms in one form"
+msgstr "Gør det muligt at vise og sende flere formularer i en formular"
+
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Add files"
+msgstr "Tilføj filer"
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Drag files here."
+msgstr "Træk filer hertil"
+
+msgid "Multiple forms"
+msgstr "Flere formularer"
+
+msgid "required"
+msgstr "obligatorisk"
+
+msgid "-"
+msgstr "-"
+
+msgid "Preview message"
+msgstr "Gennemse besked"
+
+msgid "Start"
+msgstr "Start"
+
+msgid "Argument"
+msgstr "Argument"
+
+msgid "Option"
+msgstr "Valgmulighed"
+
+msgid "Untitled"
+msgstr "Uden titel"
+
+msgid "is equal to"
+msgstr "er lig med"
+
+msgid "is not equal to"
+msgstr "er ikke lig med"
+
+msgid "Complete"
+msgstr "Komplet"
+
+msgid "is"
+msgstr "er"
+
+msgid "begins with"
+msgstr "starter med"
+
+msgid "shown"
+msgstr "Vist"
+
+msgid "Start time"
+msgstr "Start tid"
+
+msgid "is less than"
+msgstr "er mindre end"
+
+msgid "Placeholder"
+msgstr "Placeholder"
+
+msgid "Checkboxes"
+msgstr "Afkrydsningsfelter"
+
+msgid "Custom label"
+msgstr "Tilpasset etiket"
+
+msgid "End time"
+msgstr "Slut tid"
 
