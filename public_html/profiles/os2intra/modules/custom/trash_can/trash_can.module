@@ -1,0 +1,73 @@
+<?php
+/**
+ * @file
+ * Code for the Trash Can feature.
+ */
+
+include_once 'trash_can.features.inc';
+
+define('TRASH_CAN_DEFAULT_EXPIRE', 30);
+
+/**
+ * Implements hook_menu().
+ */
+function trash_can_menu() {
+  $items = array();
+  $items['admin/config/trashcan'] = array(
+    'title' => t('Papirkurv'),
+    'description' => t('Administrer indstillinger til papirkurven.'),
+    'position' => 'right',
+    'page callback'    => 'system_admin_menu_block_page',
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+    'access arguments' => array('access administration pages'),
+  );
+
+  $items['admin/config/trashcan/settings'] = array(
+    'title' => t('Papirkurvsindstillinger'),
+    'description' => t('Administrer indstillinger papirkurven.'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('trash_can_settings_form'),
+    'access arguments' => array('access administration pages'),
+  );
+
+  return $items;
+}
+
+/**
+ * System settings form.
+ */
+function trash_can_settings_form() {
+  $form = array();
+
+  $form['trash_can_days_expire'] = array(
+    '#title' => 'Antal dage før indhold i papirkurven slettes permanent.',
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#default_value' => variable_get('trash_can_days_expire', TRASH_CAN_DEFAULT_EXPIRE),
+  );
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * Delete expired content in the trash can. *
+ */
+function trash_can_cron() {
+
+  $days_to_keep = variable_get('trash_can_days_expire', TRASH_CAN_DEFAULT_EXPIRE);
+
+  // Find content from the trash can which is older than $days_to_keep
+  $entities = flag_get_flag_flagging_data('papirkurv');
+
+  foreach ($entities as $entity) {
+    // Check if entity is expired.
+    if ($entity->timestamp < strtotime($days_to_keep . ' days ago')) {
+
+      // Entity is expired. Delete it
+      watchdog('trash_can', 'Entity '. $entity->entity_id . ' expired. Deleting');
+      entity_delete('node', $entity->entity_id);
+    }
+  }
+}
