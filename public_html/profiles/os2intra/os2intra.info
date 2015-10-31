@@ -86,6 +86,7 @@ dependencies[] = fontawesome
 dependencies[] = os2web_kle_auto_import
 dependencies[] = os2web_intra_user_menu
 dependencies[] = os2web_audit
+dependencies[] = os2web_habitat
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Custom modules.
