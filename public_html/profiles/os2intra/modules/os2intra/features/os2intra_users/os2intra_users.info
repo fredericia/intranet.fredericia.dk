@@ -38,5 +38,6 @@ features[field_instance][] = user-user-field_os2intra_user_titles
 features[image][] = profilbillede
 features[page_manager_handlers][] = user_view__panel_context_02fd0cfe-abfa-4afa-9a3a-2bc9d2049494
 features[views_view][] = forfatters_indhold
+features[views_view][] = os2intra_brugervisning
 features_exclude[dependencies][ctools] = ctools
 project path = profiles/os2intra/modules/os2intra/features

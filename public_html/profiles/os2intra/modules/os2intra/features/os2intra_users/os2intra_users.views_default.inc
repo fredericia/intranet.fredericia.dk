@@ -471,5 +471,203 @@ function os2intra_users_views_default_views() {
   );
   $export['forfatters_indhold'] = $view;
 
+  $view = new view();
+  $view->name = 'os2intra_brugervisning';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'users';
+  $view->human_name = 'OS2intra Brugervisning';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Realname: Real name */
+  $handler->display->display_options['fields']['realname']['id'] = 'realname';
+  $handler->display->display_options['fields']['realname']['table'] = 'realname';
+  $handler->display->display_options['fields']['realname']['field'] = 'realname';
+  /* Field: User: Efternavn */
+  $handler->display->display_options['fields']['field_name_last']['id'] = 'field_name_last';
+  $handler->display->display_options['fields']['field_name_last']['table'] = 'field_data_field_name_last';
+  $handler->display->display_options['fields']['field_name_last']['field'] = 'field_name_last';
+  $handler->display->display_options['fields']['field_name_last']['label'] = '';
+  $handler->display->display_options['fields']['field_name_last']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_name_last']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_name_last']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_last']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_name_last']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_last']['field_api_classes'] = TRUE;
+  /* Field: User: Fornavn */
+  $handler->display->display_options['fields']['field_name_first']['id'] = 'field_name_first';
+  $handler->display->display_options['fields']['field_name_first']['table'] = 'field_data_field_name_first';
+  $handler->display->display_options['fields']['field_name_first']['field'] = 'field_name_first';
+  $handler->display->display_options['fields']['field_name_first']['label'] = '';
+  $handler->display->display_options['fields']['field_name_first']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_name_first']['alter']['text'] = '[field_name_first] [field_name_last]';
+  $handler->display->display_options['fields']['field_name_first']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['field_name_first']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_name_first']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_name_first']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_name_first']['field_api_classes'] = TRUE;
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  /* Field: User: Interesser */
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['id'] = 'field_os2intra_user_inter';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['table'] = 'field_data_field_os2intra_user_inter';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['field'] = 'field_os2intra_user_inter';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['field_api_classes'] = TRUE;
+  /* Field: User: Jobtitel */
+  $handler->display->display_options['fields']['field_os2intra_user_titles']['id'] = 'field_os2intra_user_titles';
+  $handler->display->display_options['fields']['field_os2intra_user_titles']['table'] = 'field_data_field_os2intra_user_titles';
+  $handler->display->display_options['fields']['field_os2intra_user_titles']['field'] = 'field_os2intra_user_titles';
+  $handler->display->display_options['fields']['field_os2intra_user_titles']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_user_titles']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_titles']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_titles']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_titles']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_titles']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_os2intra_user_titles']['field_api_classes'] = TRUE;
+  /* Field: User: Bio */
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['id'] = 'field_os2intra_user_bio';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['table'] = 'field_data_field_os2intra_user_bio';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['field'] = 'field_os2intra_user_bio';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['field_api_classes'] = TRUE;
+  /* Field: User: Kompetencer */
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['id'] = 'field_os2intra_user_competences';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['table'] = 'field_data_field_os2intra_user_competences';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['field'] = 'field_os2intra_user_competences';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['field_api_classes'] = TRUE;
+  /* Field: User: Organisation */
+  $handler->display->display_options['fields']['field_os2intra_organisation_ref']['id'] = 'field_os2intra_organisation_ref';
+  $handler->display->display_options['fields']['field_os2intra_organisation_ref']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['field_os2intra_organisation_ref']['field'] = 'field_os2intra_organisation_ref';
+  $handler->display->display_options['fields']['field_os2intra_organisation_ref']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: User: Last access */
+  $handler->display->display_options['fields']['access']['id'] = 'access';
+  $handler->display->display_options['fields']['access']['table'] = 'users';
+  $handler->display->display_options['fields']['access']['field'] = 'access';
+  $handler->display->display_options['fields']['access']['label'] = 'Seneste tilgang';
+  $handler->display->display_options['fields']['access']['date_format'] = 'long';
+  $handler->display->display_options['fields']['access']['second_date_format'] = 'long';
+  /* Field: Field: Kantine */
+  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['id'] = 'field_os2intra_canteen_canteen';
+  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['table'] = 'field_data_field_os2intra_canteen_canteen';
+  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['field'] = 'field_os2intra_canteen_canteen';
+  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['field_api_classes'] = TRUE;
+  /* Sort criterion: User: Created date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: User: Uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'users';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'context',
+      'context' => 'entity:user.uid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Bruger: Uid',
+    ),
+  );
+  $translatables['os2intra_brugervisning'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Real name'),
+    t('[field_name_first] [field_name_last]'),
+    t('E-mail'),
+    t('Kompetencer'),
+    t('Organisation'),
+    t('Seneste tilgang'),
+    t('Alle'),
+    t('Content pane'),
+    t('View panes'),
+  );
+  $export['os2intra_brugervisning'] = $view;
+
   return $export;
 }
