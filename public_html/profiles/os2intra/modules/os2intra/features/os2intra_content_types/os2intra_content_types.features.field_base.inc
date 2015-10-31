@@ -839,25 +839,6 @@ function os2intra_content_types_field_default_field_bases() {
     'type' => 'icon_field',
   );
 
-  // Exported field_base: 'field_radioactivity'.
-  $field_bases['field_radioactivity'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_radioactivity',
-    'indexes' => array(
-      'energy' => array(
-        0 => 'radioactivity_energy',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'radioactivity',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'radioactivity',
-  );
-
   // Exported field_base: 'field_spotbox_image'.
   $field_bases['field_spotbox_image'] = array(
     'active' => 1,

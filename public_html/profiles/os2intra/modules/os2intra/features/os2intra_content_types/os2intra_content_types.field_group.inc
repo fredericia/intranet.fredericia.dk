@@ -573,9 +573,9 @@ function os2intra_content_types_field_group_info() {
     'label' => 'Post',
     'weight' => '0',
     'children' => array(
-      0 => 'group_media',
-      1 => 'group_meta',
-      2 => 'group_content',
+      0 => 'group_content',
+      1 => 'group_media',
+      2 => 'group_meta',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(

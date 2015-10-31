@@ -1453,6 +1453,7 @@ function os2intra_content_types_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'display_label' => '',
     'entity_type' => 'node',
     'fences_wrapper' => 'section',
     'field_name' => 'field_os2web_base_field_intro',
@@ -2960,66 +2961,6 @@ function os2intra_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-wiki-field_radioactivity'.
-  $field_instances['node-wiki-field_radioactivity'] = array(
-    'bundle' => 'wiki',
-    'default_value' => array(
-      0 => array(
-        'radioactivity_energy' => 8,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'module' => 'radioactivity',
-        'settings' => array(
-          'accuracy' => 100,
-          'energy' => 10,
-          'type' => 'none',
-        ),
-        'type' => 'radioactivity_combo_formatter',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_radioactivity',
-    'label' => 'Radioactivity',
-    'required' => 0,
-    'settings' => array(
-      'history' => 0,
-      'history_limit' => 8,
-      'profile' => 'commons_ra_node',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'radioactivity',
-      'settings' => array(),
-      'type' => 'radioactivity_basic_widget',
-      'weight' => 9,
-    ),
-  );
-
   // Exported field_instance: 'node-wiki-field_topics'.
   $field_instances['node-wiki-field_topics'] = array(
     'bundle' => 'wiki',
@@ -3425,7 +3366,6 @@ function os2intra_content_types_field_default_field_instances() {
   t('Link til side');
   t('Placering');
   t('Portalkategori');
-  t('Radioactivity');
   t('Relaterede sider');
   t('Selvbetjening');
   t('Skal være inkl. <i>http://</i> hvis det er sider uden for sitet. Skal kun bruges til sider ser ikke kan indlejres som indhold via iframe.');
