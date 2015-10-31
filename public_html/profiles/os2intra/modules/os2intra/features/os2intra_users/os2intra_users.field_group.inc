@@ -13,6 +13,63 @@ function os2intra_users_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_account|user|user|form';
+  $field_group->group_name = 'group_account';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_user';
+  $field_group->data = array(
+    'label' => 'Brugerkonto',
+    'weight' => '8',
+    'children' => array(
+      0 => 'account',
+      1 => 'locale',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-account field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_account|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_billede|user|user|form';
+  $field_group->group_name = 'group_billede';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_user';
+  $field_group->data = array(
+    'label' => 'Billede',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_os2intra_image',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-billede field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_billede|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_name|user|user|form';
   $field_group->group_name = 'group_name';
   $field_group->entity_type = 'user';
@@ -26,8 +83,8 @@ function os2intra_users_field_group_info() {
       0 => 'field_name_first',
       1 => 'field_name_last',
       2 => 'field_os2intra_user_titles',
-      3 => 'field_os2intra_image',
-      4 => 'account',
+      3 => 'field_os2intra_medarbejder_mobil',
+      4 => 'field_os2intra_medarbejder_tel',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -53,11 +110,12 @@ function os2intra_users_field_group_info() {
   $field_group->parent_name = 'group_user';
   $field_group->data = array(
     'label' => 'Profil info',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
-      0 => 'field_os2intra_user_bio',
-      1 => 'field_os2intra_user_competences',
-      2 => 'field_os2intra_user_inter',
+      0 => 'og_user_node',
+      1 => 'field_os2intra_user_bio',
+      2 => 'field_os2intra_user_competences',
+      3 => 'field_os2intra_user_inter',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -83,13 +141,12 @@ function os2intra_users_field_group_info() {
   $field_group->parent_name = 'group_user';
   $field_group->data = array(
     'label' => 'System',
-    'weight' => '7',
+    'weight' => '9',
     'children' => array(
-      0 => 'og_user_node',
-      1 => 'field_os2intra_organisation_ref',
-      2 => 'field_os2intra_canteen_canteen',
+      0 => 'field_os2intra_organisation_ref',
+      1 => 'field_os2intra_canteen_canteen',
+      2 => 'field_os2intra_medarbejder_nr',
       3 => 'timezone',
-      4 => 'locale',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -120,6 +177,8 @@ function os2intra_users_field_group_info() {
       0 => 'group_system',
       1 => 'group_name',
       2 => 'group_profile',
+      3 => 'group_account',
+      4 => 'group_billede',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(

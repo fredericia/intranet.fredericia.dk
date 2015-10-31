@@ -52,6 +52,51 @@ function os2intra_users_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_os2intra_medarbejder_mobil'.
+  $field_bases['field_os2intra_medarbejder_mobil'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2intra_medarbejder_mobil',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_os2intra_medarbejder_nr'.
+  $field_bases['field_os2intra_medarbejder_nr'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2intra_medarbejder_nr',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_os2intra_medarbejder_tel'.
+  $field_bases['field_os2intra_medarbejder_tel'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2intra_medarbejder_tel',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_os2intra_user_bio'.
   $field_bases['field_os2intra_user_bio'] = array(
     'active' => 1,
