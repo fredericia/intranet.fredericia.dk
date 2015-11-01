@@ -13,6 +13,9 @@ function bellcom_preprocess_html(&$variables) {
   $variables['path_img']  = base_path() . drupal_get_path('theme', $current_theme) . '/dist/img';
   $variables['path_css']  = base_path() . drupal_get_path('theme', $current_theme) . '/dist/css';
   $variables['path_font'] = base_path() . drupal_get_path('theme', $current_theme) . '/dist/font';
+
+  // Load jQuery UI
+  drupal_add_library('system', 'ui');
 }
 
 /*
@@ -127,12 +130,24 @@ function bellcom_menu_link__main_navigation(array $variables) {
   else {
     $element['#attributes']['class'][] = 'main-navigation-list-link';
   }
+
   // On primary navigation menu, class 'active' is not set on active menu item.
   // @see https://drupal.org/node/1896674
   if (($element['#href'] == $_GET['q'] || ($element['#href'] == '<front>' && drupal_is_front_page())) && (empty($element['#localized_options']['language']))) {
     $element['#attributes']['class'][] = 'active';
   }
+
+  // If this item is active and/or in the active trail, add necessary classes.
+  $active_classes = _bellcom_in_active_trail($element['#href']);
+  if (isset($element['#attributes']['class'])) {
+    $element['#attributes']['class'] = array_merge($element['#attributes']['class'], $active_classes);
+  }
+  else {
+    $element['#attributes']['class'] = $active_classes;
+  }
+
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
 
@@ -153,10 +168,10 @@ function bellcom_menu_link__sidebar(array $variables) {
 
       // Add our own wrapper.
       unset($element['#below']['#theme_wrappers']);
-      $sub_menu = '<ul class="sidebar-nav-dropdown-menu">' . drupal_render($element['#below']) . '</ul>';
+      $sub_menu = ' <span class="sidebar-nav-dropdown-toggle"></span> <ul class="sidebar-nav-dropdown-menu">' . drupal_render($element['#below']) . '</ul>';
 
       // Generate as dropdown.
-      $element['#title'] .= ' <span class="sidebar-nav-dropdown-toggle"></span>';
+      $element['#title'] .= '';
       $element['#attributes']['class'][] = 'sidebar-nav-dropdown';
       $element['#localized_options']['html'] = TRUE;
     }
@@ -164,12 +179,23 @@ function bellcom_menu_link__sidebar(array $variables) {
   else {
     $element['#attributes']['class'][] = 'sidebar-nav-link';
   }
+
   // On primary navigation menu, class 'active' is not set on active menu item.
   // @see https://drupal.org/node/1896674
   if (($element['#href'] == $_GET['q'] || ($element['#href'] == '<front>' && drupal_is_front_page())) && (empty($element['#localized_options']['language']))) {
-    $element['#attributes']['class'][] = 'sidebar-nav-active';
     $element['#attributes']['class'][] = 'active';
   }
+
+  // If this item is active and/or in the active trail, add necessary classes.
+  $active_classes = _bellcom_in_active_trail($element['#href']);
+  if (isset($element['#attributes']['class'])) {
+    $element['#attributes']['class'] = array_merge($element['#attributes']['class'], $active_classes);
+  }
+  else {
+    $element['#attributes']['class'] = $active_classes;
+  }
+
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
