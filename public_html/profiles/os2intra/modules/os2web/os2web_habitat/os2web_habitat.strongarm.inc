@@ -47,9 +47,7 @@ function os2web_habitat_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'habitat_disable_test';
   $strongarm->value = array(
-    0 => 'views_ui',
-    1 => 'devel',
-    2 => 'piwik',
+    0 => 'piwik',
   );
   $export['habitat_disable_test'] = $strongarm;
 
@@ -58,9 +56,7 @@ function os2web_habitat_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'habitat_enable_dev';
   $strongarm->value = array(
-    0 => 'habitat_ui',
-    1 => 'views_ui',
-    2 => 'devel',
+    0 => '',
   );
   $export['habitat_enable_dev'] = $strongarm;
 
