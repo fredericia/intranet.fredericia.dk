@@ -81,7 +81,7 @@ function os2web_habitat_strongarm() {
   $strongarm->name = 'habitat_enable_prod';
   $strongarm->value = array(
     0 => 'syslog',
-    1 => 'piwik',
+    1 => 'piwik_fredericia_prod_settings',
   );
   $export['habitat_enable_prod'] = $strongarm;
 
