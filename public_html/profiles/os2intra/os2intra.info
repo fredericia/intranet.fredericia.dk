@@ -94,6 +94,8 @@ dependencies[] = os2web_habitat
 
 dependencies[] = os2intra_view_modes
 dependencies[] = bellcom_apps
+dependencies[] = trash_can
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Features.
