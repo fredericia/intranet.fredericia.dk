@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function trash_can_install() {
+  variable_set('trash_can_days_expire', 30);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function trash_can_uninstall() {
+  variable_delete('trash_can_days_expire');
+}
