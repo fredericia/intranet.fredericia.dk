@@ -1,66 +1,35 @@
 // |--------------------------------------------------------------------------
-// | Structure
+// | Sidebar
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .inner-wrapper
 // | - .sidebar
-// | - .sidebar-left
-// | - .sidebar-right
 // |
 
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
 
+@bs3-sidebar-background-color: @sidebar-background-color;
+@bs3-sidebar-transition-time: @sidebar-transition-time;
+@bs3-sidebar-scrollbar-width: 20px;
+@bs3-sidebar-box-shadow: 0 0 7px 5px rgba(0, 0, 0, 0.2);
+
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
+// Sidebar
 .sidebar {
 	display: none;
 	position: absolute;
-	height: auto;
 	top: 0;
 	bottom: 0;
-	left: auto;
-	right: auto;
-	z-index: 0;
+	padding-right: @bs3-sidebar-scrollbar-width;
 	background-color: @bs3-sidebar-background-color;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	overflow-scrolling: touch;
-	-webkit-overflow-scrolling: touch;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
 
 	&.sidebar-left {
-		width: floor( (@bs3-sidebar-left-width + @bs3-sidebar-extra-width) );
-		padding-right: @bs3-sidebar-extra-width;
 		left: 0;
-	}
-
-	&.sidebar-right {
-		width: floor( (@bs3-sidebar-right-width + @bs3-sidebar-extra-width) );
-		padding-left: @bs3-sidebar-extra-width;
-		right: 0;
-	}
-}
-
-body {
-
-	.inner-wrapper {
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		overflow: auto;
-		min-height: unset;
-
-		.box-shadow(@bs3-sidebar-content-box-shadow);
 	}
 }
 
@@ -70,116 +39,129 @@ body {
 
 // Mobile
 @media @media-query-mobile {
+
+	// Sidebar
+	.sidebar {}
 }
 
 // Mobile - only
 @media @media-query-mobile-only {
 
-	// Inner wrapper
-	.bs3-sidebar-mixin-inner-wrapper();
+	.sidebar-left-mixin-enabled(xs);
+	.sidebar-mixin-inner-wrapper(xs);
 
-	// Enabled
-	.bs3-sidebar-mixin-enabled(xs);
+	// Sidebar
+	.sidebar {}
 }
 
 // Tablet
 @media @media-query-tablet {
+
+	// Sidebar
+	.sidebar {}
 }
 
 // Tablet - only
 @media @media-query-tablet-only {
 
-	// Inner wrapper
-	.bs3-sidebar-mixin-inner-wrapper();
+	.sidebar-left-mixin-enabled(sm);
+	.sidebar-mixin-inner-wrapper(sm);
 
-	// Enabled
-	.bs3-sidebar-mixin-enabled(sm);
+	// Sidebar
+	.sidebar {}
 }
 
 // Desktop
 @media @media-query-desktop {
+
+	// Sidebar
+	.sidebar {}
 }
 
 // Desktop - only
 @media @media-query-desktop-only {
 
-	// Inner wrapper
-	.bs3-sidebar-mixin-inner-wrapper();
+	.sidebar-left-mixin-enabled(md);
+	.sidebar-mixin-inner-wrapper(md);
 
-	// Enabled
-	.bs3-sidebar-mixin-enabled(md);
+	// Sidebar
+	.sidebar {}
 }
 
 // Large desktop
 @media @media-query-large-desktop {
+
+	// Sidebar
+	.sidebar {}
 }
 
 // Large desktop - only
 @media @media-query-large-desktop-only {
 
-	// Inner wrapper
-	.bs3-sidebar-mixin-inner-wrapper();
+	.sidebar-left-mixin-enabled(lg);
+	.sidebar-mixin-inner-wrapper(lg);
 
-	// Enabled
-	.bs3-sidebar-mixin-enabled(lg);
+	// Sidebar
+	.sidebar {}
 }
 
 // Print
 @media print {
 
-	.sidebar-left-enabled-xs,
-	.sidebar-left-enabled-sm,
-	.sidebar-left-enabled-md,
-	.sidebar-left-enabled-lg,
-	.sidebar-right-enabled-xs,
-	.sidebar-right-enabled-sm,
-	.sidebar-right-enabled-md,
-	.sidebar-right-enabled-lg {
+	// Sidebar
+	.sidebar {
+		display: none;
+	}
 
-		.sidebar {
-			display: none;
-		}
+	.inner-wrapper {
+		left: 0;
+		right: 0;
 	}
 }
 
 // Touch
 .touch {
+
+	// Sidebar
+	.sidebar {}
 }
 
 // No touch
 .no-touch {
+
+	// Sidebar
+	.sidebar {}
 }
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-// Inner wrapper mixin
-.bs3-sidebar-mixin-inner-wrapper() {
-
-	.inner-wrapper {
-		position: relative;
-		min-height: 100%;
-		overflow: hidden;
-	}
-}
-
 // Enabled mixin
-.bs3-sidebar-mixin-enabled(@size) {
+.sidebar-left-mixin-enabled(@view-mode) {
 
-	// Left
-	.sidebar-left-enabled-@{size} {
+	.sidebar-left-enabled-@{view-mode} {
 
 		.sidebar-left {
 			display: block;
 		}
 	}
+}
 
-	// Right
-	.sidebar-right-enabled-@{size} {
+// Inner wrapper mixin
+.sidebar-mixin-inner-wrapper(@view-mode) {
 
-		.sidebar-right {
-			display: block;
+	.sidebar-left-enabled-@{view-mode} {
+
+		.inner-wrapper {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			overflow-x: hidden;
+			overflow-y: auto;
+			.box-shadow(@bs3-sidebar-box-shadow);
 		}
 	}
 }

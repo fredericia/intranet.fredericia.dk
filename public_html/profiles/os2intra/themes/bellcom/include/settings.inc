@@ -1,4 +1,5 @@
 <?php
+
 function _theme_settings_form(&$form, $form_state) {
 
   // Vertical tabs
@@ -9,21 +10,6 @@ function _theme_settings_form(&$form, $form_state) {
     '#prefix'      => '<h2><small>' . t('Bellcom settings') . '</small></h2>',
     '#title'       => t('Bellcom settings'),
   );
-
-  /*
-  |--------------------------------------------------------------------------
-  | Main settings
-  |--------------------------------------------------------------------------
-  |
-  | Sets all necessary options to save data.
-  |
-  */
-
-  // Fieldset
-//  $form['options']['main'] = array(
-//    '#type'  => 'fieldset',
-//    '#title' => t('Main settings'),
-//  );
 
   /*
   |--------------------------------------------------------------------------
@@ -79,8 +65,6 @@ function _theme_settings_form(&$form, $form_state) {
     '#collapsible' => TRUE,
     '#collapsed'   => TRUE,
   );
-
-  // Navigation - login account links
   $form['options']['layout']['navigation']['login_account_links'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Show login and user account links'),
@@ -96,12 +80,179 @@ function _theme_settings_form(&$form, $form_state) {
     '#collapsed'   => TRUE,
   );
 
-  // Sidebar- show social links
-  $form['options']['layout']['sidebar']['sidebar_show_social_links'] = array(
+  // Sidebar left
+  $form['options']['layout']['sidebar']['left'] = array(
+    '#type'        => 'fieldset',
+    '#title'       => 'Sidebar left',
+    '#collapsible' => TRUE,
+    '#collapsed'   => TRUE,
+  );
+  $form['options']['layout']['sidebar']['left']['xs'] = array(
+    '#type'        => 'fieldset',
+    '#title'       => 'XS viewmode',
+    '#collapsible' => TRUE,
+    '#collapsed'   => FALSE,
+  );
+  $form['options']['layout']['sidebar']['left']['xs']['sidebar_left_xs_enabled'] = array(
     '#type'          => 'checkbox',
-    '#title'         => t('Show social links'),
-    '#default_value' => theme_get_setting('sidebar_show_social_links'),
-    '#description'   => t("Should social links be displayed inside the sidebar?"),
+    '#title'         => t('Enabled'),
+    '#default_value' => theme_get_setting('sidebar_left_xs_enabled'),
+  );
+  $form['options']['layout']['sidebar']['left']['xs']['sidebar_left_xs_state'] = array(
+    '#type'          => 'radios',
+    '#title'         => t('State'),
+    '#default_value' => theme_get_setting('sidebar_left_xs_state'),
+    '#options'       => array(
+      'expanded'  => 'Expanded',
+      'collapsed' => 'Collapsed',
+      'hidden'    => 'Hidden',
+    ),
+    '#states'        => array(
+      'visible' => array(
+        ':input[name="sidebar_left_xs_enabled"]' => array('checked' => TRUE),
+      ),
+    ),
+  );
+  $form['options']['layout']['sidebar']['left']['xs']['sidebar_left_xs_content_effect'] = array(
+    '#type'          => 'radios',
+    '#title'         => t('Content effect'),
+    '#default_value' => theme_get_setting('sidebar_left_xs_content_effect'),
+    '#options'       => array(
+      'shrink' => 'Shrink content',
+      'push'   => 'Push content (off-canvas)',
+    ),
+    '#states'        => array(
+      'visible' => array(
+        ':input[name="sidebar_left_xs_enabled"]' => array('checked' => TRUE),
+        ':input[name="sidebar_left_xs_state"]'   => array('value' => 'hidden'),
+      ),
+    ),
+  );
+
+  $form['options']['layout']['sidebar']['left']['sm'] = array(
+    '#type'        => 'fieldset',
+    '#title'       => 'SM viewmode',
+    '#collapsible' => TRUE,
+    '#collapsed'   => FALSE,
+  );
+  $form['options']['layout']['sidebar']['left']['sm']['sidebar_left_sm_enabled'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Enabled'),
+    '#default_value' => theme_get_setting('sidebar_left_sm_enabled'),
+  );
+  $form['options']['layout']['sidebar']['left']['sm']['sidebar_left_sm_state'] = array(
+    '#type'          => 'radios',
+    '#title'         => t('State'),
+    '#default_value' => theme_get_setting('sidebar_left_sm_state'),
+    '#options'       => array(
+      'expanded'  => 'Expanded',
+      'collapsed' => 'Collapsed',
+      'hidden'    => 'Hidden',
+    ),
+    '#states'        => array(
+      'visible' => array(
+        ':input[name="sidebar_left_sm_enabled"]' => array('checked' => TRUE),
+      ),
+    ),
+  );
+  $form['options']['layout']['sidebar']['left']['sm']['sidebar_left_sm_content_effect'] = array(
+    '#type'          => 'radios',
+    '#title'         => t('Content effect'),
+    '#default_value' => theme_get_setting('sidebar_left_sm_content_effect'),
+    '#options'       => array(
+      'shrink' => 'Shrink content',
+      'push'   => 'Push content (off-canvas)',
+    ),
+    '#states'        => array(
+      'visible' => array(
+        ':input[name="sidebar_left_sm_enabled"]' => array('checked' => TRUE),
+        ':input[name="sidebar_left_sm_state"]'   => array('value' => 'hidden'),
+      ),
+    ),
+  );
+
+  $form['options']['layout']['sidebar']['left']['md'] = array(
+    '#type'        => 'fieldset',
+    '#title'       => 'MD viewmode',
+    '#collapsible' => TRUE,
+    '#collapsed'   => FALSE,
+  );
+  $form['options']['layout']['sidebar']['left']['md']['sidebar_left_md_enabled'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Enabled'),
+    '#default_value' => theme_get_setting('sidebar_left_md_enabled'),
+  );
+  $form['options']['layout']['sidebar']['left']['md']['sidebar_left_md_state'] = array(
+    '#type'          => 'radios',
+    '#title'         => t('State'),
+    '#default_value' => theme_get_setting('sidebar_left_md_state'),
+    '#options'       => array(
+      'expanded'  => 'Expanded',
+      'collapsed' => 'Collapsed',
+      'hidden'    => 'Hidden',
+    ),
+    '#states'        => array(
+      'visible' => array(
+        ':input[name="sidebar_left_md_enabled"]' => array('checked' => TRUE),
+      ),
+    ),
+  );
+  $form['options']['layout']['sidebar']['left']['md']['sidebar_left_md_content_effect'] = array(
+    '#type'          => 'radios',
+    '#title'         => t('Content effect'),
+    '#default_value' => theme_get_setting('sidebar_left_md_content_effect'),
+    '#options'       => array(
+      'shrink' => 'Shrink content',
+      'push'   => 'Push content (off-canvas)',
+    ),
+    '#states'        => array(
+      'visible' => array(
+        ':input[name="sidebar_left_md_enabled"]' => array('checked' => TRUE),
+        ':input[name="sidebar_left_md_state"]'   => array('value' => 'hidden'),
+      ),
+    ),
+  );
+
+  $form['options']['layout']['sidebar']['left']['lg'] = array(
+    '#type'        => 'fieldset',
+    '#title'       => 'LG viewmode',
+    '#collapsible' => TRUE,
+    '#collapsed'   => FALSE,
+  );
+  $form['options']['layout']['sidebar']['left']['lg']['sidebar_left_lg_enabled'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Enabled'),
+    '#default_value' => theme_get_setting('sidebar_left_lg_enabled'),
+  );
+  $form['options']['layout']['sidebar']['left']['lg']['sidebar_left_lg_state'] = array(
+    '#type'          => 'radios',
+    '#title'         => t('State'),
+    '#default_value' => theme_get_setting('sidebar_left_lg_state'),
+    '#options'       => array(
+      'expanded'  => 'Expanded',
+      'collapsed' => 'Collapsed',
+      'hidden'    => 'Hidden',
+    ),
+    '#states'        => array(
+      'visible' => array(
+        ':input[name="sidebar_left_lg_enabled"]' => array('checked' => TRUE),
+      ),
+    ),
+  );
+  $form['options']['layout']['sidebar']['left']['lg']['sidebar_left_lg_content_effect'] = array(
+    '#type'          => 'radios',
+    '#title'         => t('Content effect'),
+    '#default_value' => theme_get_setting('sidebar_left_lg_content_effect'),
+    '#options'       => array(
+      'shrink' => 'Shrink content',
+      'push'   => 'Push content (off-canvas)',
+    ),
+    '#states'        => array(
+      'visible' => array(
+        ':input[name="sidebar_left_lg_enabled"]' => array('checked' => TRUE),
+        ':input[name="sidebar_left_lg_state"]'   => array('value' => 'hidden'),
+      ),
+    ),
   );
 
   // Footer
@@ -111,8 +262,6 @@ function _theme_settings_form(&$form, $form_state) {
     '#collapsible' => TRUE,
     '#collapsed'   => TRUE,
   );
-
-  // Footer - show social links
   $form['options']['layout']['footer']['footer_show_social_links'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Show social links'),
@@ -530,4 +679,44 @@ function _bellcom_collect_theme_settings() {
   $settings['layout']['sidebar']['show_social_links'] = theme_get_setting('sidebar_show_social_links');
 
   return $settings;
+}
+
+/*
+ * Sidebar classes
+ */
+function _bellcom_sidebar_classes($viewmode) {
+  $classes = array();
+
+  // Settings
+  $enabled = theme_get_setting('sidebar_left_' . $viewmode . '_enabled');
+  $state = theme_get_setting('sidebar_left_' . $viewmode . '_state');
+  $content_effect = theme_get_setting('sidebar_left_' . $viewmode . '_content_effect');
+
+  // Enabled
+  if (!isset($enabled) or !$enabled or $enabled == 0) {
+    return array();
+  }
+
+  $classes[] = 'sidebar-left-enabled-' . $viewmode;
+
+  // State
+  if ($state == 'expanded') {
+    $classes[] = 'sidebar-left-expanded-' . $viewmode;
+  }
+  elseif ($state == 'collapsed') {
+    $classes[] = 'sidebar-left-collapsed-' . $viewmode;
+  }
+  elseif ($state == 'hidden') {
+    $classes[] = 'sidebar-left-hidden-' . $viewmode;
+  }
+
+  // Content effect
+  if ($content_effect == 'shrink' && $state == 'hidden') {
+    $classes[] = 'sidebar-left-content-shrink-' . $viewmode;
+  }
+  elseif ($content_effect == 'push') {
+    $classes[] = 'sidebar-left-content-push-' . $viewmode;
+  }
+
+  return $classes;
 }

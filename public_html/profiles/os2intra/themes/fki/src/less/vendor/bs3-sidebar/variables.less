@@ -1,147 +1,108 @@
-// |--------------------------------------------------------------------------
-// | Variables
-// |--------------------------------------------------------------------------
+// --------------------------------------------------
+// Global
+// --------------------------------------------------
 
-//== Base
-@bs3-sidebar-left-width:	280px;
-@bs3-sidebar-right-width:	320px;
+@sidebar-background-color: #323641;
 
-@bs3-sidebar-extra-width: 20px;
+@sidebar-background-color-light: lighten(@sidebar-background-color, 5%);
+@sidebar-background-color-light-rgba: rgba(255, 255, 255, 0.10);
+@sidebar-background-color-dark: darken(@sidebar-background-color, 5%);
+@sidebar-background-color-dark-rgba: rgba(0, 0, 0, 0.10);
 
-//== Logo
-@bs3-sidebar-logo-spacing:  	30px; // Top/bottom
-@bs3-sidebar-logo-border-width: 1px;
-@bs3-sidebar-logo-border-style: solid;
+@sidebar-border-color-light: lighten(@sidebar-background-color, 5%);
+@sidebar-border-color-light-rgba: rgba(255, 255, 255, 0.10);
+@sidebar-border-color-dark: darken(@sidebar-background-color, 5%);
+@sidebar-border-color-dark-rgba: rgba(0, 0, 0, 0.10);
 
-@bs3-sidebar-logo-image-height:     64px;
-@bs3-sidebar-logo-image-width:      392px;
+@sidebar-font-color-light: #aaabae;
+@sidebar-font-color-dark: #000;
+@sidebar-font-color-active: @brand-primary;
 
-@bs3-sidebar-logo-textual-font-family: 	@headings-font-family;
-@bs3-sidebar-logo-textual-font-size:    @font-size-h2;
-@bs3-sidebar-logo-textual-font-weight:  @bs3-designer-headings-font-weight-semi-bold;
+@sidebar-transition-time: @bs3-designer-transition-time;
 
-@bs3-sidebar-logo-slogan-font-family:   @font-family-sans-serif;
-@bs3-sidebar-logo-slogan-font-size:     @font-size-small;
-@bs3-sidebar-logo-slogan-font-weight:   @bs3-designer-font-weight;
+@sidebar-element-indent: 20px;
 
-//== Headline
-@bs3-sidebar-nav-headline-indentation:  20px;
+// --------------------------------------------------
+// Hidden
+// --------------------------------------------------
 
-@bs3-sidebar-nav-headline-font-family:  @font-family-sans-serif;
-@bs3-sidebar-nav-headline-font-size:    @font-size-small;
-@bs3-sidebar-nav-headline-font-weight:  @bs3-designer-font-weight-bold;
+@sidebar-hidden-width: 280px;
 
-@bs3-sidebar-nav-headline-border-width: 1px;
-@bs3-sidebar-nav-headline-border-style:	solid;
+// --------------------------------------------------
+// Collapsed
+// --------------------------------------------------
 
-//== Content effects
-@bs3-sidebar-content-effect-overflow-zindex:	floor((@zindex-navbar-fixed + 10));
+@sidebar-collapsed-width: 50px;
 
-//== Navigation
-@bs3-sidebar-nav-link-indentation:	20px;
+// --------------------------------------------------
+// Expanded
+// --------------------------------------------------
 
-@bs3-sidebar-nav-link-font-family:  @font-family-sans-serif;
-@bs3-sidebar-nav-link-font-size:    @font-size-base;
-@bs3-sidebar-nav-link-font-weight:  @bs3-designer-font-weight;
+@sidebar-expanded-width: 280px;
 
-@bs3-sidebar-nav-link-border-width: 1px;
-@bs3-sidebar-nav-link-border-style: solid;
+// --------------------------------------------------
+// Logo
+// --------------------------------------------------
 
-@bs3-sidebar-nav-link-icon-max-width:	25px; // Set to 0 if not using icons
+@sidebar-logo-width: 392px;
+@sidebar-logo-background-color: transparent;
+@sidebar-logo-background-color-rgba: transparent;
+@sidebar-logo-top-bottom-spacing: 30px;
+@sidebar-logo-border-width: 1px;
+@sidebar-logo-border-color: @sidebar-border-color-light;
+@sidebar-logo-border-color-rgba: @sidebar-border-color-dark-rgba;
 
-@bs3-sidebar-nav-dropdown-indicator-font-family:	"FontAwesome";
-@bs3-sidebar-nav-dropdown-indicator-font-size:		14px;
-@bs3-sidebar-nav-dropdown-indicator-icon:			"\f105"; // .fa-angle-right
+// --------------------------------------------------
+// Heading
+// --------------------------------------------------
 
-@bs3-sidebar-nav-dropdown-menu-link-font-family:	@bs3-sidebar-nav-link-font-family;
-@bs3-sidebar-nav-dropdown-menu-link-font-size:      @font-size-small;
-@bs3-sidebar-nav-dropdown-menu-link-font-weight:    @bs3-designer-font-weight;
+@sidebar-heading-background-color: @sidebar-background-color-dark;
+@sidebar-heading-background-color-rgba: @sidebar-background-color-dark-rgba;
+@sidebar-heading-border-width: 1px;
+@sidebar-heading-border-color: @sidebar-border-color-light;
+@sidebar-heading-border-color-rgba: @sidebar-border-color-dark-rgba;
 
-//== Social links
-@bs3-sidebar-social-link-width:             40px;
-@bs3-sidebar-social-link-height:            40px;
-@bs3-sidebar-social-link-icon-font-size:	20px;
-@bs3-sidebar-social-link-border-radius:     100%;
+@sidebar-heading-font-family: @font-family-sans-serif;
+@sidebar-heading-font-size: @font-size-small;
+@sidebar-heading-font-weight: @font-weight-bold;
+@sidebar-heading-font-color: @sidebar-font-color-light;
 
-//== Spacer
-@bs3-sidebar-spacer-height:	25px;
+// --------------------------------------------------
+// Spacer
+// --------------------------------------------------
 
-// |--------------------------------------------------------------------------
-// | Theme
-// |--------------------------------------------------------------------------
+@sidebar-spacer-height: 25px;
 
-//== Base
-@bs3-sidebar-background-color:                                          #323641;
+// --------------------------------------------------
+// Navigation
+// --------------------------------------------------
 
-@bs3-sidebar-left-box-shadow: 											inset -15px 0 15px -15px rgba(0, 0, 0, .6);
-@bs3-sidebar-right-box-shadow: 											inset -15px 0 -15px -15px rgba(0, 0, 0, 1);
+// Icon
 
-//== Logo
-@bs3-sidebar-logo-background-color:                                     transparent;
-@bs3-sidebar-logo-background-color-rgba:                                transparent;
+// Link
+@sidebar-navigation-link-font-color: @sidebar-font-color-light;
+@sidebar-navigation-link-hover-font-color: lighten(@sidebar-navigation-link-font-color, 20%);
+@sidebar-navigation-link-active-font-color: @sidebar-font-color-active;
+@sidebar-navigation-link-active-trail-font-color: @sidebar-navigation-link-hover-font-color;
 
-@bs3-sidebar-logo-border-color:                                         #41444e;
-@bs3-sidebar-logo-border-color-rgba:                                    rgba(255, 255, 255, .08);
+@sidebar-navigation-link-background-color: transparent;
+@sidebar-navigation-link-background-color-rgba: transparent;
+@sidebar-navigation-link-hover-background-color: @sidebar-background-color-light;
+@sidebar-navigation-link-hover-background-color-rgba: @sidebar-background-color-light-rgba;
+@sidebar-navigation-link-active-background-color: @sidebar-background-color-dark;
+@sidebar-navigation-link-active-background-color-rgba: @sidebar-background-color-dark-rgba;
 
-@bs3-sidebar-logo-textual-font-color:                                   #fff;
+@sidebar-navigation-link-border-width: 1px;
+@sidebar-navigation-link-border-color: @sidebar-border-color-light;
+@sidebar-navigation-link-border-color-rgba: @sidebar-border-color-light-rgba;
 
-@bs3-sidebar-logo-slogan-font-color:                                    #fff;
+// Toggle
+@sidebar-navigation-dropdown-toggle-width: 34px;
 
-//== Headline
-@bs3-sidebar-nav-headline-font-color:                                   #aaabae;
+@sidebar-navigation-dropdown-toggle-icon-font-family: FontAwesome;
+@sidebar-navigation-dropdown-toggle-icon-font-size: @font-size-base;
+@sidebar-navigation-dropdown-toggle-icon-color: @sidebar-font-color-light;
+@sidebar-navigation-dropdown-toggle-icon-content: @fa-var-angle-right;
 
-@bs3-sidebar-nav-headline-background-color:                             #2d303a;
-@bs3-sidebar-nav-headline-background-color-rgba:                        rgba(0, 0, 0, 0.10);
-
-@bs3-sidebar-nav-headline-border-color:                                 #41444e;
-@bs3-sidebar-nav-headline-border-color-rgba:                            rgba(255, 255, 255, .08);
-
-//== Link
-@bs3-sidebar-nav-link-background-color:                                 transparent;
-@bs3-sidebar-nav-link-background-color-rgba:                            rgba(255, 255, 255, 0);
-
-@bs3-sidebar-nav-link-hover-background-color:                           #383c47;
-@bs3-sidebar-nav-link-hover-background-color-rgba:                      rgba(255, 255, 255, 0.03);
-
-@bs3-sidebar-nav-link-active-background-color:                          @bs3-sidebar-nav-link-background-color;
-@bs3-sidebar-nav-link-active-background-color-rgba:                     @bs3-sidebar-nav-link-background-color-rgba;
-
-@bs3-sidebar-nav-link-font-color:                                       #aaabae;
-@bs3-sidebar-nav-link-hover-font-color:                                 #fff;
-@bs3-sidebar-nav-link-active-font-color:                                @bs3-sidebar-nav-link-hover-font-color;
-
-@bs3-sidebar-nav-link-border-color:                                     #41444e;
-@bs3-sidebar-nav-link-border-color-rgba:                                rgba(255, 255, 255, .08);
-
-@bs3-sidebar-nav-link-hover-border-color:                               @bs3-sidebar-nav-link-border-color;
-@bs3-sidebar-nav-link-hover-border-color-rgba:                          @bs3-sidebar-nav-link-border-color-rgba;
-
-@bs3-sidebar-nav-link-active-border-color:                              @bs3-sidebar-nav-link-hover-border-color;
-@bs3-sidebar-nav-link-active-border-color-rgba:                         @bs3-sidebar-nav-link-hover-border-color-rgba;
-
-@bs3-sidebar-nav-link-icon-color:                                       @bs3-sidebar-nav-link-font-color;
-@bs3-sidebar-nav-link-hover-icon-color:                                 @bs3-sidebar-nav-link-hover-font-color;
-@bs3-sidebar-nav-link-active-icon-color:                                @bs3-sidebar-nav-link-active-font-color;
-
-@bs3-sidebar-nav-dropdown-font-color:                                   #aaabae;
-@bs3-sidebar-nav-dropdown-hover-font-color:                             #fff;
-@bs3-sidebar-nav-dropdown-active-font-color:                            @bs3-sidebar-nav-dropdown-hover-font-color;
-
-@bs3-sidebar-nav-dropdown-indicator-color:                              #fff;
-@bs3-sidebar-nav-dropdown-hover-indicator-color:                        #fff;
-@bs3-sidebar-nav-dropdown-active-indicator-color:                       #fff;
-
-@bs3-sidebar-nav-dropdown-menu-background-color:                        #2d303a;
-@bs3-sidebar-nav-dropdown-menu-background-color-rgba:                   rgba(0, 0, 0, .10);
-
-@bs3-sidebar-nav-dropdown-menu-link-font-color:                         @bs3-sidebar-nav-link-font-color;
-@bs3-sidebar-nav-dropdown-menu-link-hover-font-color:                   @bs3-sidebar-nav-link-hover-font-color;
-@bs3-sidebar-nav-dropdown-menu-link-active-font-color:                  @bs3-sidebar-nav-link-active-font-color;
-
-@bs3-sidebar-nav-dropdown-menu-dropdown-font-color:                     @bs3-sidebar-nav-dropdown-font-color;
-@bs3-sidebar-nav-dropdown-menu-dropdown-hover-font-color:               @bs3-sidebar-nav-dropdown-hover-font-color;
-@bs3-sidebar-nav-dropdown-menu-dropdown-active-font-color:              @bs3-sidebar-nav-dropdown-active-font-color;
-
-//== Social links
-@bs3-sidebar-social-link-icon-color:                                    @bs3-sidebar-nav-link-font-color;
-@bs3-sidebar-social-link-icon-hover-color:                              #fff;
+@sidebar-navigation-dropdown-toggle-background-color: @sidebar-background-color-dark;
+@sidebar-navigation-dropdown-toggle-background-color-rgba: @sidebar-background-color-dark-rgba;

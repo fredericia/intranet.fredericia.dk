@@ -7527,7 +7527,7 @@ var bs3Sidebar = (function ($) {
     });
 
     // Toggle dropdown
-    $('.sidebar .sidebar-nav-dropdown > a').on('click', function (event) {
+    $('.sidebar .sidebar-navigation-dropdown > a > .sidebar-navigation-dropdown-toggle').on('click', function (event) {
       event.preventDefault();
 
       var $element = $(this);
@@ -7568,8 +7568,8 @@ var bs3Sidebar = (function ($) {
    * Toggle dropdown
    */
   function toggleDropdown($element) {
-    var $parent = $element.parent();
-    var parentIsActive = $parent.hasClass('sidebar-nav-active') ? true : false;
+    var $parent = $element.parent().parent();
+    var parentIsActive = $parent.hasClass('active') || $parent.hasClass('active-trail') ? true : false;
 
     if (parentIsActive) {
       closeDropdown($parent);
@@ -7584,7 +7584,7 @@ var bs3Sidebar = (function ($) {
    * Open dropdown
    */
   function openDropdown($parent) {
-    var $dropdownMenu = $parent.find('> .sidebar-nav-dropdown-menu');
+    var $dropdownMenu = $parent.find('> .sidebar-navigation-dropdown-menu');
     var dropdownMenuHeight = $dropdownMenu.outerHeight(true);
     var preAnimationCSS = { opacity: 0.1, height: 0, top: -20 };
     var animationCSS = { opacity: 1, height: dropdownMenuHeight, top: 0 };
@@ -7594,11 +7594,11 @@ var bs3Sidebar = (function ($) {
 
     closeAllDropdownMenus($parent);
 
-    $parent.addClass('sidebar-nav-active');
+    $parent.addClass('active');
 
     $dropdownMenu
-        .addClass('sidebar-nav-active')
-        .css(preAnimationCSS);
+      .addClass('active')
+      .css(preAnimationCSS);
 
     dropdownMenuAnimatedToggle($dropdownMenu, animationCSS, callbackFunction);
   }
@@ -7607,22 +7607,29 @@ var bs3Sidebar = (function ($) {
    * Close dropdown
    */
   function closeDropdown($parent) {
-    var $dropdownMenu = $parent.find('> .sidebar-nav-dropdown-menu');
+    var $dropdownMenu = $parent.find('> .sidebar-navigation-dropdown-menu');
     var animationCSS = { height: 0, opacity: 0.1 };
     var callbackFunction = function () {
 
-      // Remove all active class' from
-      // dropdown menu and all child elements
-      // with active states
+      // Remove all active class' from dropdown menu and all child elements with active states
       $dropdownMenu
-          .removeClass('sidebar-nav-active')
-          .attr('style', '')
-          .find('.sidebar-nav-active')
-          .removeClass('sidebar-nav-active')
-          .attr('style', '');
+        .removeClass('active')
+        .attr('style', '')
+        .find('.active')
+        .removeClass('active')
+        .attr('style', '');
+
+      $dropdownMenu
+        .removeClass('active-trail')
+        .attr('style', '')
+        .find('.active-trail')
+        .removeClass('active-trail')
+        .attr('style', '');
     };
 
-    $parent.removeClass('sidebar-nav-active');
+    $parent
+      .removeClass('active')
+      .removeClass('active-trail');
 
     dropdownMenuAnimatedToggle($dropdownMenu, animationCSS, callbackFunction);
   }
@@ -7632,12 +7639,12 @@ var bs3Sidebar = (function ($) {
    */
   function closeAllDropdownMenus($parent) {
     $parent
-        .siblings('.sidebar-nav-dropdown.sidebar-nav-active')
-        .each(function () {
-          var $element = $(this);
+      .siblings('.sidebar-navigation-dropdown.active, .sidebar-navigation-dropdown.active-trail')
+      .each(function () {
+        var $element = $(this);
 
-          closeDropdown($element);
-        });
+        closeDropdown($element);
+      });
   }
 
   /**
@@ -7646,18 +7653,11 @@ var bs3Sidebar = (function ($) {
   function dropdownMenuAnimatedToggle($dropdownMenu, animationCSS, callbackFunction) {
     $dropdownMenu.animate(
       animationCSS,
-    {
-      duration: 400,
-      easing  : 'easeOutSine',
-      complete: callbackFunction
-    });
-  }
-
-  /**
-   * Sidebar height
-   */
-  function setSidebarHeight() {
-
+      {
+        duration: 400,
+        easing  : 'easeOutSine',
+        complete: callbackFunction
+      });
   }
 
   return pub;

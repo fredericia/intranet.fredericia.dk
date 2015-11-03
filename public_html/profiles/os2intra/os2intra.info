@@ -107,3 +107,5 @@ dependencies[] = os2intra_settings
 dependencies[] = os2intra_struktur_pages
 dependencies[] = os2intra_organisationsgrupper
 dependencies[] = os2intra_panels
+
+dependencies[] = fredericia_theme_settings

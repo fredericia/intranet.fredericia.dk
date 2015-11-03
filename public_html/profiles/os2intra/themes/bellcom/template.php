@@ -6,6 +6,7 @@ include( dirname(__FILE__) . '/include/settings.inc');
  * Implements theme_preprocess_html().
  */
 function bellcom_preprocess_html(&$variables) {
+  $view_modes = array('xs', 'sm', 'md', 'lg');
   $current_theme = variable_get('theme_default','none');
 
   // Paths
@@ -14,8 +15,10 @@ function bellcom_preprocess_html(&$variables) {
   $variables['path_css']  = base_path() . drupal_get_path('theme', $current_theme) . '/dist/css';
   $variables['path_font'] = base_path() . drupal_get_path('theme', $current_theme) . '/dist/font';
 
-  // Load jQuery UI
-  drupal_add_library('system', 'ui');
+  // Sidebar
+  foreach($view_modes as $view_mode) {
+    $variables['classes_array'] = array_merge($variables['classes_array'], _bellcom_sidebar_classes($view_mode));
+  }
 }
 
 /*
@@ -97,10 +100,10 @@ function bellcom_menu_tree__user_menu__main_navigation(&$variables) {
   return '<ul class="main-navigation-list main-navigation-right">' . $variables['tree'] . '</ul>';
 }
 function bellcom_menu_tree__main_menu__sidebar(&$variables) {
-  return '<ul class="sidebar-nav">' . $variables['tree'] . '</ul>';
+  return '<ul class="sidebar-navigation">' . $variables['tree'] . '</ul>';
 }
 function bellcom_menu_tree__user_menu__sidebar(&$variables) {
-  return '<ul class="sidebar-nav">' . $variables['tree'] . '</ul>';
+  return '<ul class="sidebar-navigation">' . $variables['tree'] . '</ul>';
 }
 
 /*
@@ -158,6 +161,15 @@ function bellcom_menu_link__sidebar(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
 
+  // If this item is active and/or in the active trail, add necessary classes.
+  $active_classes = _bellcom_in_active_trail($element['#href']);
+  if (isset($element['#attributes']['class'])) {
+    $element['#attributes']['class'] = array_merge($element['#attributes']['class'], $active_classes);
+  }
+  else {
+    $element['#attributes']['class'] = $active_classes;
+  }
+
   if ($element['#below']) {
     // Prevent dropdown functions from being added to management menu so it
     // does not affect the navbar module.
@@ -168,31 +180,25 @@ function bellcom_menu_link__sidebar(array $variables) {
 
       // Add our own wrapper.
       unset($element['#below']['#theme_wrappers']);
-      $sub_menu = ' <span class="sidebar-nav-dropdown-toggle"></span> <ul class="sidebar-nav-dropdown-menu">' . drupal_render($element['#below']) . '</ul>';
+      $sub_menu_attributes['element']['class'] = array();
+      $sub_menu_attributes['element']['class'][] = 'sidebar-navigation-dropdown-menu';
+      $sub_menu_attributes['element']['class'] = array_merge($sub_menu_attributes['element']['class'], $active_classes);
+      $sub_menu = ' <ul' . drupal_attributes($sub_menu_attributes['element']) . '>' . drupal_render($element['#below']) . '</ul>';
 
       // Generate as dropdown.
-      $element['#title'] .= '';
-      $element['#attributes']['class'][] = 'sidebar-nav-dropdown';
+      $element['#title'] .= ' <span class="sidebar-navigation-dropdown-toggle"></span>';
+      $element['#attributes']['class'][] = 'sidebar-navigation-dropdown';
       $element['#localized_options']['html'] = TRUE;
     }
   }
   else {
-    $element['#attributes']['class'][] = 'sidebar-nav-link';
+    $element['#attributes']['class'][] = 'sidebar-navigation-link';
   }
 
   // On primary navigation menu, class 'active' is not set on active menu item.
   // @see https://drupal.org/node/1896674
   if (($element['#href'] == $_GET['q'] || ($element['#href'] == '<front>' && drupal_is_front_page())) && (empty($element['#localized_options']['language']))) {
-    $element['#attributes']['class'][] = 'active';
-  }
-
-  // If this item is active and/or in the active trail, add necessary classes.
-  $active_classes = _bellcom_in_active_trail($element['#href']);
-  if (isset($element['#attributes']['class'])) {
-    $element['#attributes']['class'] = array_merge($element['#attributes']['class'], $active_classes);
-  }
-  else {
-    $element['#attributes']['class'] = $active_classes;
+//    $element['#attributes']['class'][] = 'active';
   }
 
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
