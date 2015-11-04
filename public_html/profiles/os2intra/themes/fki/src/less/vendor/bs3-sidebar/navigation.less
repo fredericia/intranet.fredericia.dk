@@ -60,7 +60,8 @@
 @bs3-sidebar-navigation-dropdown-toggle-icon-icon: @sidebar-navigation-dropdown-toggle-icon-content;
 
 @bs3-sidebar-navigation-dropdown-toggle-icon-font-size: @bs3-sidebar-navigation-parent-level-link-font-size;
-@bs3-sidebar-navigation-dropdown-toggle-icon-top-bottom-spacing: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+@bs3-sidebar-navigation-parent-level-dropdown-toggle-icon-top-bottom-spacing: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+@bs3-sidebar-navigation-child-level-dropdown-toggle-icon-top-bottom-spacing: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
 
 // Dropdown menu
 @bs3-sidebar-navigation-dropdown-menu-background-color: @sidebar-navigation-dropdown-menu-background-color;
@@ -188,6 +189,14 @@
 				font-size: @bs3-sidebar-navigation-child-level-link-icon-font-size;
 				line-height: inherit;
 			}
+
+			.sidebar-navigation-dropdown-toggle {
+
+				&:before {
+					padding-top: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
+					padding-bottom: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
+				}
+			}
 		}
 	}
 
@@ -207,7 +216,8 @@
 			.line-height(@bs3-sidebar-navigation-dropdown-toggle-icon-font-size);
 			color: @bs3-sidebar-navigation-dropdown-toggle-icon-color;
 			content: @bs3-sidebar-navigation-dropdown-toggle-icon-icon;
-			padding: @bs3-sidebar-navigation-dropdown-toggle-icon-top-bottom-spacing 0;
+			padding-top: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+			padding-bottom: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
 			min-width: @bs3-sidebar-navigation-dropdown-toggle-width;
 			.transition(all @bs3-sidebar-transition-time ease-in-out);
 		}
