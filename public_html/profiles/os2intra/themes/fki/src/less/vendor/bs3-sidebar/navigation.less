@@ -82,6 +82,10 @@
 		padding: 0;
 	}
 
+	li {
+		.transition(all @bs3-sidebar-transition-time ease-in-out);
+	}
+
 	a {
 		display: block;
 		color: @bs3-sidebar-navigation-link-font-color;
@@ -156,6 +160,11 @@
 			background-color: @bs3-sidebar-navigation-dropdown-active-background-color-rgba;
 
 			> a {
+
+				&,
+				&.active {
+					background-color: transparent;
+				}
 
 				.sidebar-navigation-dropdown-toggle {
 
