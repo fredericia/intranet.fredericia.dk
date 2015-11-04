@@ -4,7 +4,7 @@ include( dirname(__FILE__) . '/include/settings.inc');
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function hundeavl_form_system_theme_settings_alter(&$form, $form_state, $form_id = NULL) {
+function bellcom_form_system_theme_settings_alter(&$form, $form_state, $form_id = NULL) {
   if (isset($form_id)) {
     return;
   }

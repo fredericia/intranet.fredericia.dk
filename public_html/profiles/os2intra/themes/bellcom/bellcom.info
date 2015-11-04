@@ -39,9 +39,22 @@ regions[page_bottom]    = 'Page bottom'
 ;; Theme settings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Settings
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Sidebar
+settings[sidebar_left_xs_enabled]         = 0
+settings[sidebar_left_xs_state]           = 'hidden'
+settings[sidebar_left_xs_content_effect]  = 'push'
+
+settings[sidebar_left_sm_enabled]         = 0
+settings[sidebar_left_sm_state]           = 'collapsed'
+settings[sidebar_left_sm_content_effect]  = 'shrink'
+
+settings[sidebar_left_md_enabled]         = 0
+settings[sidebar_left_md_state]           = 'expanded'
+settings[sidebar_left_md_content_effect]  = 'shrink'
+
+settings[sidebar_left_lg_enabled]         = 0
+settings[sidebar_left_lg_state]           = 'expanded'
+settings[sidebar_left_lg_content_effect]  = 'shrink'
 
 ; Contact information
 settings[business_owner_name] = ''
@@ -75,6 +88,10 @@ settings[youtube_url]   = 'http://www.youtube.com/'
 ; Layout
 settings[sidebar_show_social_links] = 0;
 settings[footer_show_social_links]  = 0;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Settings
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; Disable BootstrapCDN so the compiled LESS source files can be used.
 settings[bootstrap_cdn] = ''

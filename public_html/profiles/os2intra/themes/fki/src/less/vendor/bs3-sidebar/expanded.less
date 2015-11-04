@@ -1,0 +1,131 @@
+// |--------------------------------------------------------------------------
+// | Expanded
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .sidebar-left-expanded
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+@bs3-sidebar-left-expanded-width: @sidebar-expanded-width;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Expanded
+.sidebar-left-expanded {}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Mobile - only
+@media @media-query-mobile-only {
+
+	.sidebar-mixin-left-expanded(xs);
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Tablet
+@media @media-query-tablet {
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Tablet - only
+@media @media-query-tablet-only {
+
+	.sidebar-mixin-left-expanded(sm);
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Desktop
+@media @media-query-desktop {
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Desktop - only
+@media @media-query-desktop-only {
+
+	.sidebar-mixin-left-expanded(md);
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Large desktop
+@media @media-query-large-desktop {
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {
+
+	.sidebar-mixin-left-expanded(lg);
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Print
+@media print {
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// Touch
+.touch {
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// No touch
+.no-touch {
+
+	// Expanded
+	.sidebar-left-expanded {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Expanded mixin
+.sidebar-mixin-left-expanded(@view-mode) {
+
+	.sidebar-left-enabled-@{view-mode} {
+
+		&.sidebar-left-expanded-@{view-mode} {
+
+			.sidebar-left {
+				width: (@bs3-sidebar-left-expanded-width + @bs3-sidebar-scrollbar-width);
+			}
+
+			.inner-wrapper {
+				left: @bs3-sidebar-left-expanded-width;
+			}
+		}
+	}
+}
