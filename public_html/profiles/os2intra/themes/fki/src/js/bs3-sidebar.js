@@ -124,14 +124,14 @@ var bs3Sidebar = (function ($) {
       $dropdownMenu
         .removeClass('active')
         .attr('style', '')
-        .find('.active')
+        .find('.active:not(a)')
         .removeClass('active')
         .attr('style', '');
 
       $dropdownMenu
         .removeClass('active-trail')
         .attr('style', '')
-        .find('.active-trail')
+        .find('.active-trail:not(a)')
         .removeClass('active-trail')
         .attr('style', '');
     };

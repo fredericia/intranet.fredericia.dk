@@ -12,7 +12,14 @@
 
 // Icon
 @bs3-sidebar-navigation-link-icon-max-width: 25px;
-@bs3-sidebar-navigation-link-indentation: 20px;
+@bs3-sidebar-navigation-link-icon-identifier: @sidebar-navigation-link-icon-identifier;
+
+@bs3-sidebar-navigation-parent-level-link-icon-font-size: @sidebar-navigation-parent-level-link-icon-font-size;
+@bs3-sidebar-navigation-child-level-link-icon-font-size: @sidebar-navigation-child-level-link-icon-font-size;
+
+@bs3-sidebar-navigation-link-icon-font-color: @sidebar-navigation-link-icon-font-color;
+@bs3-sidebar-navigation-link-hover-icon-font-color: @sidebar-navigation-link-hover-icon-font-color;
+@bs3-sidebar-navigation-link-active-icon-font-color: @sidebar-navigation-link-active-icon-font-color;
 
 // Link
 @bs3-sidebar-navigation-link-border-color: @sidebar-navigation-link-border-color;
@@ -22,7 +29,6 @@
 @bs3-sidebar-navigation-link-font-color: @sidebar-navigation-link-font-color;
 @bs3-sidebar-navigation-link-hover-font-color: @sidebar-navigation-link-hover-font-color;
 @bs3-sidebar-navigation-link-active-font-color: @sidebar-navigation-link-active-font-color;
-@bs3-sidebar-navigation-link-active-trail-font-color: @sidebar-navigation-link-active-trail-font-color;
 
 @bs3-sidebar-navigation-link-background-color: @sidebar-navigation-link-background-color;
 @bs3-sidebar-navigation-link-background-color-rgba: @sidebar-navigation-link-background-color-rgba;
@@ -31,10 +37,17 @@
 @bs3-sidebar-navigation-link-active-background-color: @sidebar-navigation-link-active-background-color;
 @bs3-sidebar-navigation-link-active-background-color-rgba: @sidebar-navigation-link-active-background-color-rgba;
 
-@bs3-sidebar-navigation-link-font-family: @font-family-sans-serif;
-@bs3-sidebar-navigation-link-font-weight: @font-weight;
-@bs3-sidebar-navigation-link-font-size: @font-size-base;
-@bs3-sidebar-navigation-link-top-bottom-spacing: 12px;
+@bs3-sidebar-navigation-parent-level-link-font-family: @font-family-sans-serif;
+@bs3-sidebar-navigation-parent-level-link-font-weight: @font-weight;
+@bs3-sidebar-navigation-parent-level-link-font-size: @font-size-base;
+@bs3-sidebar-navigation-parent-level-link-top-bottom-spacing: 12px;
+@bs3-sidebar-navigation-parent-level-link-indentation: 20px;
+
+@bs3-sidebar-navigation-child-level-link-font-family: @font-family-sans-serif;
+@bs3-sidebar-navigation-child-level-link-font-weight: @font-weight;
+@bs3-sidebar-navigation-child-level-link-font-size: @font-size-small;
+@bs3-sidebar-navigation-child-level-link-top-bottom-spacing: 6px;
+@bs3-sidebar-navigation-child-level-link-indentation: 10px;
 
 // Dropdown toggle
 @bs3-sidebar-navigation-dropdown-toggle-width: @sidebar-navigation-dropdown-toggle-width;
@@ -43,10 +56,15 @@
 @bs3-sidebar-navigation-dropdown-toggle-background-color-rgba: @sidebar-navigation-dropdown-toggle-background-color-rgba;
 
 @bs3-sidebar-navigation-dropdown-toggle-icon-font-family: @sidebar-navigation-dropdown-toggle-icon-font-family;
-@bs3-sidebar-navigation-dropdown-toggle-icon-font-size: @bs3-sidebar-navigation-link-font-size;
 @bs3-sidebar-navigation-dropdown-toggle-icon-color: @sidebar-navigation-dropdown-toggle-icon-color;
 @bs3-sidebar-navigation-dropdown-toggle-icon-icon: @sidebar-navigation-dropdown-toggle-icon-content;
-@bs3-sidebar-navigation-dropdown-toggle-icon-top-bottom-spacing: @bs3-sidebar-navigation-link-top-bottom-spacing;
+
+@bs3-sidebar-navigation-dropdown-toggle-icon-font-size: @bs3-sidebar-navigation-parent-level-link-font-size;
+@bs3-sidebar-navigation-dropdown-toggle-icon-top-bottom-spacing: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+
+// Dropdown menu
+@bs3-sidebar-navigation-dropdown-menu-background-color: @sidebar-navigation-dropdown-menu-background-color;
+@bs3-sidebar-navigation-dropdown-menu-background-color-rgba: @sidebar-navigation-dropdown-menu-background-color-rgba;
 
 // --------------------------------------------------
 // Styling
@@ -65,22 +83,28 @@
 
 	a {
 		display: block;
-		font-family: @bs3-sidebar-navigation-link-font-family;
-		font-weight: @bs3-sidebar-navigation-link-font-weight;
-		font-size: @bs3-sidebar-navigation-link-font-size;
 		color: @bs3-sidebar-navigation-link-font-color;
 		background-color: @bs3-sidebar-navigation-link-background-color;
 		background-color: @bs3-sidebar-navigation-link-background-color-rgba;
-		padding: @bs3-sidebar-navigation-link-top-bottom-spacing 0;
 		border-bottom-style: solid;
 		border-bottom-width: @bs3-sidebar-navigation-link-border-width;
 		border-bottom-color: @bs3-sidebar-navigation-link-border-color;
 		border-bottom-color: @bs3-sidebar-navigation-link-border-color-rgba;
 
+		@{bs3-sidebar-navigation-link-icon-identifier} {
+			float: left;
+			color: @bs3-sidebar-navigation-link-icon-font-color;
+			margin-left: floor( (0 - @bs3-sidebar-navigation-link-icon-max-width) );
+		}
+
 		&:hover {
 			color: @bs3-sidebar-navigation-link-hover-font-color;
 			background-color: @bs3-sidebar-navigation-link-hover-background-color;
 			background-color: @bs3-sidebar-navigation-link-hover-background-color-rgba;
+
+			@{bs3-sidebar-navigation-link-icon-identifier} {
+				color: @bs3-sidebar-navigation-link-hover-icon-font-color;
+			}
 		}
 
 		&,
@@ -95,11 +119,37 @@
 			color: @bs3-sidebar-navigation-link-active-font-color;
 			background-color: @bs3-sidebar-navigation-link-active-background-color;
 			background-color: @bs3-sidebar-navigation-link-active-background-color-rgba;
+
+			@{bs3-sidebar-navigation-link-icon-identifier} {
+				color: @bs3-sidebar-navigation-link-active-icon-font-color;
+			}
+		}
+	}
+
+	> li {
+
+		> a {
+			font-family: @bs3-sidebar-navigation-parent-level-link-font-family;
+			font-weight: @bs3-sidebar-navigation-parent-level-link-font-weight;
+			font-size: @bs3-sidebar-navigation-parent-level-link-font-size;
+			.line-height(@bs3-sidebar-navigation-parent-level-link-font-size);
+			padding-left: floor( (@bs3-sidebar-navigation-link-icon-max-width + @bs3-sidebar-navigation-parent-level-link-indentation) );
+			padding-top: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+			padding-bottom: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+
+			@{bs3-sidebar-navigation-link-icon-identifier} {
+				font-size: @bs3-sidebar-navigation-parent-level-link-icon-font-size;
+				line-height: inherit;
+			}
 		}
 	}
 
 	.sidebar-navigation-dropdown {
-		position: relative;
+
+		> a {
+			position: relative;
+			padding-right: @bs3-sidebar-navigation-dropdown-toggle-width;
+		}
 
 		&.active,
 		&.active-trail {
@@ -118,10 +168,26 @@
 
 	.sidebar-navigation-dropdown-menu {
 		display: none;
+		background-color: @bs3-sidebar-navigation-dropdown-menu-background-color;
+		background-color: @bs3-sidebar-navigation-dropdown-menu-background-color-rgba;
 
 		&.active,
 		&.active-trail {
 			display: block;
+		}
+
+		a {
+			font-family: @bs3-sidebar-navigation-child-level-link-font-family;
+			font-weight: @bs3-sidebar-navigation-child-level-link-font-weight;
+			font-size: @bs3-sidebar-navigation-child-level-link-font-size;
+			.line-height(@bs3-sidebar-navigation-child-level-link-font-size);
+			padding-top: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
+			padding-bottom: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
+
+			@{bs3-sidebar-navigation-link-icon-identifier} {
+				font-size: @bs3-sidebar-navigation-child-level-link-icon-font-size;
+				line-height: inherit;
+			}
 		}
 	}
 
@@ -264,7 +330,11 @@
 	.sidebar-navigation {
 
 		a {
-			.transition(all @bs3-sidebar-transition-time ease-in-out);
+
+			&,
+			@{bs3-sidebar-navigation-link-icon-identifier} {
+				.transition(all @bs3-sidebar-transition-time ease-in-out);
+			}
 		}
 	}
 }
@@ -278,5 +348,5 @@
 
 // Link indentation
 .sidebar-mixin-link-indentation(@indentation-level: 1;) {
-	padding-left: floor((@bs3-sidebar-navigation-link-icon-max-width + (@bs3-sidebar-navigation-link-indentation * @indentation-level)));
+	padding-left: floor((@bs3-sidebar-navigation-link-icon-max-width + (@bs3-sidebar-navigation-child-level-link-indentation * @indentation-level)));
 }
