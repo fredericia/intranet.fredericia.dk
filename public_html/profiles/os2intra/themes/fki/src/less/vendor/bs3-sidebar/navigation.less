@@ -46,7 +46,7 @@
 @bs3-sidebar-navigation-child-level-link-font-family: @font-family-sans-serif;
 @bs3-sidebar-navigation-child-level-link-font-weight: @font-weight;
 @bs3-sidebar-navigation-child-level-link-font-size: @font-size-small;
-@bs3-sidebar-navigation-child-level-link-top-bottom-spacing: 6px;
+@bs3-sidebar-navigation-child-level-link-top-bottom-spacing: 8px;
 @bs3-sidebar-navigation-child-level-link-indentation: 10px;
 
 // Dropdown toggle
@@ -63,9 +63,9 @@
 @bs3-sidebar-navigation-parent-level-dropdown-toggle-icon-top-bottom-spacing: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
 @bs3-sidebar-navigation-child-level-dropdown-toggle-icon-top-bottom-spacing: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
 
-// Dropdown menu
-@bs3-sidebar-navigation-dropdown-menu-background-color: @sidebar-navigation-dropdown-menu-background-color;
-@bs3-sidebar-navigation-dropdown-menu-background-color-rgba: @sidebar-navigation-dropdown-menu-background-color-rgba;
+// Dropdown
+@bs3-sidebar-navigation-dropdown-active-background-color: @sidebar-navigation-dropdown-active-background-color;
+@bs3-sidebar-navigation-dropdown-active-background-color-rgba: @sidebar-navigation-dropdown-active-background-color-rgba;
 
 // --------------------------------------------------
 // Styling
@@ -85,8 +85,6 @@
 	a {
 		display: block;
 		color: @bs3-sidebar-navigation-link-font-color;
-		background-color: @bs3-sidebar-navigation-link-background-color;
-		background-color: @bs3-sidebar-navigation-link-background-color-rgba;
 		border-bottom-style: solid;
 		border-bottom-width: @bs3-sidebar-navigation-link-border-width;
 		border-bottom-color: @bs3-sidebar-navigation-link-border-color;
@@ -154,6 +152,8 @@
 
 		&.active,
 		&.active-trail {
+			background-color: @bs3-sidebar-navigation-dropdown-active-background-color;
+			background-color: @bs3-sidebar-navigation-dropdown-active-background-color-rgba;
 
 			> a {
 
@@ -169,8 +169,6 @@
 
 	.sidebar-navigation-dropdown-menu {
 		display: none;
-		background-color: @bs3-sidebar-navigation-dropdown-menu-background-color;
-		background-color: @bs3-sidebar-navigation-dropdown-menu-background-color-rgba;
 
 		&.active,
 		&.active-trail {
