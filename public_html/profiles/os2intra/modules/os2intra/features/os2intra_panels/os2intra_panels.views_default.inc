@@ -533,15 +533,17 @@ function os2intra_panels_views_default_views() {
 
   /* Display: Spotbokse */
   $handler = $view->new_display('panel_pane', 'Spotbokse', 'panel_pane_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'row';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'col-xs-12 col-sm-6';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Spotbokse */
@@ -550,6 +552,7 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['field'] = 'field_os2intra_base_spotboxes';
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['label'] = '';
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['element_label_type'] = '0';
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['element_default_classes'] = FALSE;
@@ -561,6 +564,22 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['separator'] = '';
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['field_api_classes'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'spotbox' => 'spotbox',
+  );
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'context',
@@ -598,6 +617,15 @@ function os2intra_panels_views_default_views() {
     'topics' => 0,
     'os2web_taxonomies_tax_user_pos' => 0,
   );
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'context',
