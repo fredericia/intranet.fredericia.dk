@@ -57,6 +57,8 @@
 
 @bs3-sidebar-navigation-dropdown-toggle-icon-font-family: @sidebar-navigation-dropdown-toggle-icon-font-family;
 @bs3-sidebar-navigation-dropdown-toggle-icon-color: @sidebar-navigation-dropdown-toggle-icon-color;
+@bs3-sidebar-navigation-dropdown-toggle-hover-icon-color: @sidebar-navigation-dropdown-toggle-hover-icon-color;
+@bs3-sidebar-navigation-dropdown-toggle-active-icon-color: @sidebar-navigation-dropdown-toggle-active-icon-color;
 @bs3-sidebar-navigation-dropdown-toggle-icon-icon: @sidebar-navigation-dropdown-toggle-icon-content;
 
 @bs3-sidebar-navigation-dropdown-toggle-icon-font-size: @bs3-sidebar-navigation-parent-level-link-font-size;
@@ -314,6 +316,30 @@
 			> a {
 				position: relative;
 				padding-right: @bs3-sidebar-navigation-dropdown-toggle-width;
+
+				&:hover {
+
+					.sidebar-navigation-dropdown-toggle {
+
+						&:before {
+							color: @bs3-sidebar-navigation-dropdown-toggle-hover-icon-color;
+						}
+					}
+				}
+
+				&.active {
+
+					&,
+					&:hover {
+
+						.sidebar-navigation-dropdown-toggle {
+
+							&:before {
+								color: @bs3-sidebar-navigation-dropdown-toggle-active-icon-color;
+							}
+						}
+					}
+				}
 			}
 
 			&.active,

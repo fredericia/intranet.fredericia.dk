@@ -4593,6 +4593,15 @@
     padding-right: 40px;
   }
 
+  .sidebar-left-enabled-xs.sidebar-left-hidden-xs .sidebar-navigation .sidebar-navigation-dropdown > a:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
+  }
+
+  .sidebar-left-enabled-xs.sidebar-left-hidden-xs .sidebar-navigation .sidebar-navigation-dropdown > a.active .sidebar-navigation-dropdown-toggle:before,
+  .sidebar-left-enabled-xs.sidebar-left-hidden-xs .sidebar-navigation .sidebar-navigation-dropdown > a.active:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
+  }
+
   .sidebar-left-enabled-xs.sidebar-left-hidden-xs .sidebar-navigation .sidebar-navigation-dropdown.active,
   .sidebar-left-enabled-xs.sidebar-left-hidden-xs .sidebar-navigation .sidebar-navigation-dropdown.active-trail {
     background-color: #003760;
@@ -4655,7 +4664,7 @@
     font-family: FontAwesome;
     font-size: 14px;
     line-height: 20px;
-    color: #ffffff;
+    color: #8b9eb8;
     content: "\f105";
     padding-top: 12px;
     padding-bottom: 12px;
@@ -4737,6 +4746,15 @@
     padding-right: 40px;
   }
 
+  .sidebar-left-enabled-sm.sidebar-left-hidden-sm .sidebar-navigation .sidebar-navigation-dropdown > a:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
+  }
+
+  .sidebar-left-enabled-sm.sidebar-left-hidden-sm .sidebar-navigation .sidebar-navigation-dropdown > a.active .sidebar-navigation-dropdown-toggle:before,
+  .sidebar-left-enabled-sm.sidebar-left-hidden-sm .sidebar-navigation .sidebar-navigation-dropdown > a.active:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
+  }
+
   .sidebar-left-enabled-sm.sidebar-left-hidden-sm .sidebar-navigation .sidebar-navigation-dropdown.active,
   .sidebar-left-enabled-sm.sidebar-left-hidden-sm .sidebar-navigation .sidebar-navigation-dropdown.active-trail {
     background-color: #003760;
@@ -4799,7 +4817,7 @@
     font-family: FontAwesome;
     font-size: 14px;
     line-height: 20px;
-    color: #ffffff;
+    color: #8b9eb8;
     content: "\f105";
     padding-top: 12px;
     padding-bottom: 12px;
@@ -4881,6 +4899,15 @@
     padding-right: 40px;
   }
 
+  .sidebar-left-enabled-md.sidebar-left-hidden-md .sidebar-navigation .sidebar-navigation-dropdown > a:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
+  }
+
+  .sidebar-left-enabled-md.sidebar-left-hidden-md .sidebar-navigation .sidebar-navigation-dropdown > a.active .sidebar-navigation-dropdown-toggle:before,
+  .sidebar-left-enabled-md.sidebar-left-hidden-md .sidebar-navigation .sidebar-navigation-dropdown > a.active:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
+  }
+
   .sidebar-left-enabled-md.sidebar-left-hidden-md .sidebar-navigation .sidebar-navigation-dropdown.active,
   .sidebar-left-enabled-md.sidebar-left-hidden-md .sidebar-navigation .sidebar-navigation-dropdown.active-trail {
     background-color: #003760;
@@ -4943,7 +4970,7 @@
     font-family: FontAwesome;
     font-size: 14px;
     line-height: 20px;
-    color: #ffffff;
+    color: #8b9eb8;
     content: "\f105";
     padding-top: 12px;
     padding-bottom: 12px;
@@ -5025,6 +5052,15 @@
     padding-right: 40px;
   }
 
+  .sidebar-left-enabled-lg.sidebar-left-hidden-lg .sidebar-navigation .sidebar-navigation-dropdown > a:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
+  }
+
+  .sidebar-left-enabled-lg.sidebar-left-hidden-lg .sidebar-navigation .sidebar-navigation-dropdown > a.active .sidebar-navigation-dropdown-toggle:before,
+  .sidebar-left-enabled-lg.sidebar-left-hidden-lg .sidebar-navigation .sidebar-navigation-dropdown > a.active:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
+  }
+
   .sidebar-left-enabled-lg.sidebar-left-hidden-lg .sidebar-navigation .sidebar-navigation-dropdown.active,
   .sidebar-left-enabled-lg.sidebar-left-hidden-lg .sidebar-navigation .sidebar-navigation-dropdown.active-trail {
     background-color: #003760;
@@ -5087,7 +5123,7 @@
     font-family: FontAwesome;
     font-size: 14px;
     line-height: 20px;
-    color: #ffffff;
+    color: #8b9eb8;
     content: "\f105";
     padding-top: 12px;
     padding-bottom: 12px;
@@ -5144,6 +5180,15 @@
   .sidebar-left-enabled-xs.sidebar-left-expanded-xs .sidebar-navigation .sidebar-navigation-dropdown > a {
     position: relative;
     padding-right: 40px;
+  }
+
+  .sidebar-left-enabled-xs.sidebar-left-expanded-xs .sidebar-navigation .sidebar-navigation-dropdown > a:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
+  }
+
+  .sidebar-left-enabled-xs.sidebar-left-expanded-xs .sidebar-navigation .sidebar-navigation-dropdown > a.active .sidebar-navigation-dropdown-toggle:before,
+  .sidebar-left-enabled-xs.sidebar-left-expanded-xs .sidebar-navigation .sidebar-navigation-dropdown > a.active:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
   }
 
   .sidebar-left-enabled-xs.sidebar-left-expanded-xs .sidebar-navigation .sidebar-navigation-dropdown.active,
@@ -5208,7 +5253,7 @@
     font-family: FontAwesome;
     font-size: 14px;
     line-height: 20px;
-    color: #ffffff;
+    color: #8b9eb8;
     content: "\f105";
     padding-top: 12px;
     padding-bottom: 12px;
@@ -5265,6 +5310,15 @@
   .sidebar-left-enabled-sm.sidebar-left-expanded-sm .sidebar-navigation .sidebar-navigation-dropdown > a {
     position: relative;
     padding-right: 40px;
+  }
+
+  .sidebar-left-enabled-sm.sidebar-left-expanded-sm .sidebar-navigation .sidebar-navigation-dropdown > a:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
+  }
+
+  .sidebar-left-enabled-sm.sidebar-left-expanded-sm .sidebar-navigation .sidebar-navigation-dropdown > a.active .sidebar-navigation-dropdown-toggle:before,
+  .sidebar-left-enabled-sm.sidebar-left-expanded-sm .sidebar-navigation .sidebar-navigation-dropdown > a.active:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
   }
 
   .sidebar-left-enabled-sm.sidebar-left-expanded-sm .sidebar-navigation .sidebar-navigation-dropdown.active,
@@ -5329,7 +5383,7 @@
     font-family: FontAwesome;
     font-size: 14px;
     line-height: 20px;
-    color: #ffffff;
+    color: #8b9eb8;
     content: "\f105";
     padding-top: 12px;
     padding-bottom: 12px;
@@ -5386,6 +5440,15 @@
   .sidebar-left-enabled-md.sidebar-left-expanded-md .sidebar-navigation .sidebar-navigation-dropdown > a {
     position: relative;
     padding-right: 40px;
+  }
+
+  .sidebar-left-enabled-md.sidebar-left-expanded-md .sidebar-navigation .sidebar-navigation-dropdown > a:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
+  }
+
+  .sidebar-left-enabled-md.sidebar-left-expanded-md .sidebar-navigation .sidebar-navigation-dropdown > a.active .sidebar-navigation-dropdown-toggle:before,
+  .sidebar-left-enabled-md.sidebar-left-expanded-md .sidebar-navigation .sidebar-navigation-dropdown > a.active:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
   }
 
   .sidebar-left-enabled-md.sidebar-left-expanded-md .sidebar-navigation .sidebar-navigation-dropdown.active,
@@ -5450,7 +5513,7 @@
     font-family: FontAwesome;
     font-size: 14px;
     line-height: 20px;
-    color: #ffffff;
+    color: #8b9eb8;
     content: "\f105";
     padding-top: 12px;
     padding-bottom: 12px;
@@ -5507,6 +5570,15 @@
   .sidebar-left-enabled-lg.sidebar-left-expanded-lg .sidebar-navigation .sidebar-navigation-dropdown > a {
     position: relative;
     padding-right: 40px;
+  }
+
+  .sidebar-left-enabled-lg.sidebar-left-expanded-lg .sidebar-navigation .sidebar-navigation-dropdown > a:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
+  }
+
+  .sidebar-left-enabled-lg.sidebar-left-expanded-lg .sidebar-navigation .sidebar-navigation-dropdown > a.active .sidebar-navigation-dropdown-toggle:before,
+  .sidebar-left-enabled-lg.sidebar-left-expanded-lg .sidebar-navigation .sidebar-navigation-dropdown > a.active:hover .sidebar-navigation-dropdown-toggle:before {
+    color: #ffffff;
   }
 
   .sidebar-left-enabled-lg.sidebar-left-expanded-lg .sidebar-navigation .sidebar-navigation-dropdown.active,
@@ -5571,7 +5643,7 @@
     font-family: FontAwesome;
     font-size: 14px;
     line-height: 20px;
-    color: #ffffff;
+    color: #8b9eb8;
     content: "\f105";
     padding-top: 12px;
     padding-bottom: 12px;
