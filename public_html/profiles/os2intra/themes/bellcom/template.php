@@ -30,10 +30,10 @@ function bellcom_preprocess_page(&$variables) {
   $secondary_navigation_name = variable_get('menu_secondary_links_source', 'user-menu');
 
   // Navigation
-  $variables['primary_navigation'] = _bellcom_generate_menu($primary_navigation_name, 'full', 'main-navigation');
-  $variables['secondary_navigation'] = _bellcom_generate_menu($secondary_navigation_name, 'full', 'main-navigation');
-  $variables['sidebar_primary_navigation'] = _bellcom_generate_menu($primary_navigation_name, 'full', 'sidebar');
-  $variables['sidebar_secondary_navigation'] = _bellcom_generate_menu($secondary_navigation_name, 'full', 'sidebar');
+  $variables['primary_navigation'] = _bellcom_generate_menu($primary_navigation_name, 'main-navigation');
+  $variables['secondary_navigation'] = _bellcom_generate_menu($secondary_navigation_name, 'main-navigation');
+  $variables['sidebar_primary_navigation'] = _bellcom_generate_menu($primary_navigation_name, 'sidebar');
+  $variables['sidebar_secondary_navigation'] = _bellcom_generate_menu($secondary_navigation_name, 'sidebar');
 
   // Paths
   $variables['path_js']   = base_path() . drupal_get_path('theme', $current_theme) . '/dist/js';
@@ -161,28 +161,26 @@ function bellcom_menu_link__sidebar(array $variables) {
   $element = $variables['element'];
   $sub_menu = '';
 
-  // If this item is active and/or in the active trail, add necessary classes.
-  $active_classes = _bellcom_in_active_trail($element['#href']);
-  if (isset($element['#attributes']['class'])) {
-    $element['#attributes']['class'] = array_merge($element['#attributes']['class'], $active_classes);
-  }
-  else {
-    $element['#attributes']['class'] = $active_classes;
-  }
-
   if ($element['#below']) {
+
     // Prevent dropdown functions from being added to management menu so it
     // does not affect the navbar module.
     if (($element['#original_link']['menu_name'] == 'management') && (module_exists('navbar'))) {
       $sub_menu = drupal_render($element['#below']);
     }
+
     elseif ((!empty($element['#original_link']['depth']))) {
 
       // Add our own wrapper.
       unset($element['#below']['#theme_wrappers']);
+
+      // Submenu classes
       $sub_menu_attributes['element']['class'] = array();
       $sub_menu_attributes['element']['class'][] = 'sidebar-navigation-dropdown-menu';
-      $sub_menu_attributes['element']['class'] = array_merge($sub_menu_attributes['element']['class'], $active_classes);
+      if (in_array('active', $element['#attributes']['class']) or in_array('active-trail', $element['#attributes']['class'])) {
+        $sub_menu_attributes['element']['class'][] = 'active';
+      }
+
       $sub_menu = ' <ul' . drupal_attributes($sub_menu_attributes['element']) . '>' . drupal_render($element['#below']) . '</ul>';
 
       // Generate as dropdown.
@@ -198,10 +196,48 @@ function bellcom_menu_link__sidebar(array $variables) {
   // On primary navigation menu, class 'active' is not set on active menu item.
   // @see https://drupal.org/node/1896674
   if (($element['#href'] == $_GET['q'] || ($element['#href'] == '<front>' && drupal_is_front_page())) && (empty($element['#localized_options']['language']))) {
-//    $element['#attributes']['class'][] = 'active';
+    $element['#attributes']['class'][] = 'active';
   }
 
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
 
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
+
+
+
+
+//function bellcom_menu_link__sidebar(array $variables) {
+//  $element = $variables['element'];
+//  $sub_menu = '';
+//
+//  if ($element['#below']) {
+//    // Prevent dropdown functions from being added to management menu so it
+//    // does not affect the navbar module.
+//    if (($element['#original_link']['menu_name'] == 'management') && (module_exists('navbar'))) {
+//      $sub_menu = drupal_render($element['#below']);
+//    }
+//    elseif ((!empty($element['#original_link']['depth'])) && ($element['#original_link']['depth'] == 1)) {
+//      // Add our own wrapper.
+//      unset($element['#below']['#theme_wrappers']);
+//      $sub_menu = '<ul class="dropdown-menu">' . drupal_render($element['#below']) . '</ul>';
+//      // Generate as standard dropdown.
+//      $element['#title'] .= ' <span class="caret"></span>';
+//      $element['#attributes']['class'][] = 'dropdown';
+//      $element['#localized_options']['html'] = TRUE;
+//
+//      // Set dropdown trigger element to # to prevent inadvertant page loading
+//      // when a submenu link is clicked.
+//      $element['#localized_options']['attributes']['data-target'] = '#';
+//      $element['#localized_options']['attributes']['class'][] = 'dropdown-toggle';
+//      $element['#localized_options']['attributes']['data-toggle'] = 'dropdown';
+//    }
+//  }
+//  // On primary navigation menu, class 'active' is not set on active menu item.
+//  // @see https://drupal.org/node/1896674
+//  if (($element['#href'] == $_GET['q'] || ($element['#href'] == '<front>' && drupal_is_front_page())) && (empty($element['#localized_options']['language']))) {
+//    $element['#attributes']['class'][] = 'active';
+//  }
+//  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+//  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+//}

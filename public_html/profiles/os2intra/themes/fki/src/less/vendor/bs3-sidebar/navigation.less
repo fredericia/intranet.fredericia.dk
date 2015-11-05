@@ -41,7 +41,7 @@
 @bs3-sidebar-navigation-parent-level-link-font-weight: @font-weight;
 @bs3-sidebar-navigation-parent-level-link-font-size: @font-size-base;
 @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing: 12px;
-@bs3-sidebar-navigation-parent-level-link-indentation: 20px;
+@bs3-sidebar-navigation-parent-level-link-indentation: 10px;
 
 @bs3-sidebar-navigation-child-level-link-font-family: @font-family-sans-serif;
 @bs3-sidebar-navigation-child-level-link-font-weight: @font-weight;
@@ -87,41 +87,6 @@
 	}
 }
 
-// Indentation
-.sidebar {
-
-	.sidebar-navigation {
-
-		> li {
-
-			> a {
-				.sidebar-mixin-link-indentation(1);
-			}
-
-			> ul > li {
-
-				> a {
-					.sidebar-mixin-link-indentation(2);
-				}
-
-				> ul > li {
-
-					> a {
-						.sidebar-mixin-link-indentation(3);
-					}
-
-					> ul > li {
-
-						> a {
-							.sidebar-mixin-link-indentation(4);
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
 // --------------------------------------------------
 // Responsive
 // --------------------------------------------------
@@ -135,8 +100,6 @@
 
 // Mobile - only
 @media @media-query-mobile-only {
-
-	.sidebar-mixin-wide-content-navigation(xs);
 
 	// Navigation
 	.sidebar-navigation {}
@@ -152,8 +115,6 @@
 // Tablet - only
 @media @media-query-tablet-only {
 
-	.sidebar-mixin-wide-content-navigation(sm);
-
 	// Navigation
 	.sidebar-navigation {}
 }
@@ -168,8 +129,6 @@
 // Desktop - only
 @media @media-query-desktop-only {
 
-	.sidebar-mixin-wide-content-navigation(md);
-
 	// Navigation
 	.sidebar-navigation {}
 }
@@ -183,8 +142,6 @@
 
 // Large desktop - only
 @media @media-query-large-desktop-only {
-
-	.sidebar-mixin-wide-content-navigation(lg);
 
 	// Navigation
 	.sidebar-navigation {}
@@ -228,166 +185,183 @@
 .sidebar-mixin-navigation() {}
 
 // Link indentation
-.sidebar-mixin-link-indentation(@indentation-level: 1;) {
-	padding-left: floor((@bs3-sidebar-navigation-link-icon-max-width + (@bs3-sidebar-navigation-child-level-link-indentation * @indentation-level)));
+.sidebar-mixin-dropdown-link-indentation(@indentation-level: 1;) {
+	padding-left: floor(( (@bs3-sidebar-navigation-link-icon-max-width + @bs3-sidebar-navigation-parent-level-link-indentation) + (@bs3-sidebar-navigation-child-level-link-indentation * @indentation-level)));
+}
+
+// Navigation - narrow
+.sidebar-mixin-navigation-narrow(@view-mode) {
+
 }
 
 // Navigation - wide
-.sidebar-mixin-wide-content-navigation(@view-mode) {
+.sidebar-mixin-navigation-wide(@view-mode) {
 
-	.sidebar-left-enabled-@{view-mode} {
+	.sidebar-navigation {
 
-		&.sidebar-left-hidden-@{view-mode},
-		&.sidebar-left-expanded-@{view-mode} {
+		a {
+			display: block;
+			color: @bs3-sidebar-navigation-link-font-color;
+			border-bottom-style: solid;
+			border-bottom-width: @bs3-sidebar-navigation-link-border-width;
+			border-bottom-color: @bs3-sidebar-navigation-link-border-color;
+			border-bottom-color: @bs3-sidebar-navigation-link-border-color-rgba;
 
-			.sidebar-left {
+			@{bs3-sidebar-navigation-link-icon-identifier} {
+				float: left;
+				color: @bs3-sidebar-navigation-link-icon-font-color;
+				margin-left: floor((0 - @bs3-sidebar-navigation-link-icon-max-width));
+			}
 
-				.sidebar-navigation {
+			&:hover {
+				color: @bs3-sidebar-navigation-link-hover-font-color;
+				background-color: @bs3-sidebar-navigation-link-hover-background-color;
+				background-color: @bs3-sidebar-navigation-link-hover-background-color-rgba;
 
-					a {
-						display: block;
-						color: @bs3-sidebar-navigation-link-font-color;
-						border-bottom-style: solid;
-						border-bottom-width: @bs3-sidebar-navigation-link-border-width;
-						border-bottom-color: @bs3-sidebar-navigation-link-border-color;
-						border-bottom-color: @bs3-sidebar-navigation-link-border-color-rgba;
+				@{bs3-sidebar-navigation-link-icon-identifier} {
+					color: @bs3-sidebar-navigation-link-hover-icon-font-color;
+				}
+			}
 
-						@{bs3-sidebar-navigation-link-icon-identifier} {
-							float: left;
-							color: @bs3-sidebar-navigation-link-icon-font-color;
-							margin-left: floor((0 - @bs3-sidebar-navigation-link-icon-max-width));
-						}
+			&,
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: none;
+				outline: 0;
+			}
 
-						&:hover {
-							color: @bs3-sidebar-navigation-link-hover-font-color;
-							background-color: @bs3-sidebar-navigation-link-hover-background-color;
-							background-color: @bs3-sidebar-navigation-link-hover-background-color-rgba;
+			&.active {
+				color: @bs3-sidebar-navigation-link-active-font-color;
+				background-color: @bs3-sidebar-navigation-link-active-background-color;
+				background-color: @bs3-sidebar-navigation-link-active-background-color-rgba;
 
-							@{bs3-sidebar-navigation-link-icon-identifier} {
-								color: @bs3-sidebar-navigation-link-hover-icon-font-color;
-							}
-						}
+				@{bs3-sidebar-navigation-link-icon-identifier} {
+					color: @bs3-sidebar-navigation-link-active-icon-font-color;
+				}
+			}
+		}
 
-						&,
-						&:hover,
-						&:focus,
-						&:active {
-							text-decoration: none;
-							outline: 0;
-						}
+		> li {
 
-						&.active {
-							color: @bs3-sidebar-navigation-link-active-font-color;
-							background-color: @bs3-sidebar-navigation-link-active-background-color;
-							background-color: @bs3-sidebar-navigation-link-active-background-color-rgba;
+			> a {
+				font-family: @bs3-sidebar-navigation-parent-level-link-font-family;
+				font-weight: @bs3-sidebar-navigation-parent-level-link-font-weight;
+				font-size: @bs3-sidebar-navigation-parent-level-link-font-size;
+				.line-height(@bs3-sidebar-navigation-parent-level-link-font-size);
+				padding-left: floor((@bs3-sidebar-navigation-link-icon-max-width + @bs3-sidebar-navigation-parent-level-link-indentation));
+				padding-top: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+				padding-bottom: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
 
-							@{bs3-sidebar-navigation-link-icon-identifier} {
-								color: @bs3-sidebar-navigation-link-active-icon-font-color;
-							}
-						}
+				@{bs3-sidebar-navigation-link-icon-identifier} {
+					font-size: @bs3-sidebar-navigation-parent-level-link-icon-font-size;
+					line-height: inherit;
+				}
+			}
+
+			// Indentation
+			> ul > li {
+
+				> a {
+					.sidebar-mixin-dropdown-link-indentation(1);
+				}
+
+				> ul > li {
+
+					> a {
+						.sidebar-mixin-dropdown-link-indentation(2);
 					}
 
-					> li {
+					> ul > li {
 
 						> a {
-							font-family: @bs3-sidebar-navigation-parent-level-link-font-family;
-							font-weight: @bs3-sidebar-navigation-parent-level-link-font-weight;
-							font-size: @bs3-sidebar-navigation-parent-level-link-font-size;
-							.line-height(@bs3-sidebar-navigation-parent-level-link-font-size);
-							padding-left: floor((@bs3-sidebar-navigation-link-icon-max-width + @bs3-sidebar-navigation-parent-level-link-indentation));
-							padding-top: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
-							padding-bottom: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
-
-							@{bs3-sidebar-navigation-link-icon-identifier} {
-								font-size: @bs3-sidebar-navigation-parent-level-link-icon-font-size;
-								line-height: inherit;
-							}
-						}
-					}
-
-					.sidebar-navigation-dropdown {
-
-						> a {
-							position: relative;
-							padding-right: @bs3-sidebar-navigation-dropdown-toggle-width;
-						}
-
-						&.active,
-						&.active-trail {
-							background-color: @bs3-sidebar-navigation-dropdown-active-background-color;
-							background-color: @bs3-sidebar-navigation-dropdown-active-background-color-rgba;
-
-							> a {
-
-								&,
-								&.active {
-									background-color: transparent;
-								}
-
-								.sidebar-navigation-dropdown-toggle {
-
-									&:before {
-										.rotate(90deg);
-									}
-								}
-							}
-						}
-					}
-
-					.sidebar-navigation-dropdown-menu {
-						display: none;
-
-						&.active,
-						&.active-trail {
-							display: block;
-						}
-
-						a {
-							font-family: @bs3-sidebar-navigation-child-level-link-font-family;
-							font-weight: @bs3-sidebar-navigation-child-level-link-font-weight;
-							font-size: @bs3-sidebar-navigation-child-level-link-font-size;
-							.line-height(@bs3-sidebar-navigation-child-level-link-font-size);
-							padding-top: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
-							padding-bottom: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
-
-							@{bs3-sidebar-navigation-link-icon-identifier} {
-								font-size: @bs3-sidebar-navigation-child-level-link-icon-font-size;
-								line-height: inherit;
-							}
-
-							.sidebar-navigation-dropdown-toggle {
-
-								&:before {
-									padding-top: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
-									padding-bottom: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
-								}
-							}
-						}
-					}
-
-					.sidebar-navigation-dropdown-toggle {
-						position: absolute;
-						top: 0;
-						bottom: 0;
-						right: 0;
-						background-color: @bs3-sidebar-navigation-dropdown-toggle-background-color;
-						background-color: @bs3-sidebar-navigation-dropdown-toggle-background-color-rgba;
-						text-align: center;
-
-						&:before {
-							display: block;
-							font-family: @bs3-sidebar-navigation-dropdown-toggle-icon-font-family;
-							font-size: @bs3-sidebar-navigation-dropdown-toggle-icon-font-size;
-							.line-height(@bs3-sidebar-navigation-dropdown-toggle-icon-font-size);
-							color: @bs3-sidebar-navigation-dropdown-toggle-icon-color;
-							content: @bs3-sidebar-navigation-dropdown-toggle-icon-icon;
-							padding-top: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
-							padding-bottom: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
-							min-width: @bs3-sidebar-navigation-dropdown-toggle-width;
-							.transition(all @bs3-sidebar-transition-time ease-in-out);
+							.sidebar-mixin-dropdown-link-indentation(3);
 						}
 					}
 				}
+			}
+		}
+
+		.sidebar-navigation-dropdown {
+
+			> a {
+				position: relative;
+				padding-right: @bs3-sidebar-navigation-dropdown-toggle-width;
+			}
+
+			&.active,
+			&.active-trail {
+				background-color: @bs3-sidebar-navigation-dropdown-active-background-color;
+				background-color: @bs3-sidebar-navigation-dropdown-active-background-color-rgba;
+
+				> a {
+
+					&,
+					&.active {
+						background-color: transparent;
+					}
+
+					.sidebar-navigation-dropdown-toggle {
+
+						&:before {
+							.rotate(90deg);
+						}
+					}
+				}
+			}
+		}
+
+		.sidebar-navigation-dropdown-menu {
+			display: none;
+
+			&.active,
+			&.active-trail {
+				display: block;
+			}
+
+			a {
+				font-family: @bs3-sidebar-navigation-child-level-link-font-family;
+				font-weight: @bs3-sidebar-navigation-child-level-link-font-weight;
+				font-size: @bs3-sidebar-navigation-child-level-link-font-size;
+				.line-height(@bs3-sidebar-navigation-child-level-link-font-size);
+				padding-top: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
+				padding-bottom: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
+
+				@{bs3-sidebar-navigation-link-icon-identifier} {
+					font-size: @bs3-sidebar-navigation-child-level-link-icon-font-size;
+					line-height: inherit;
+				}
+
+				.sidebar-navigation-dropdown-toggle {
+
+					&:before {
+						padding-top: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
+						padding-bottom: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
+					}
+				}
+			}
+		}
+
+		.sidebar-navigation-dropdown-toggle {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			background-color: @bs3-sidebar-navigation-dropdown-toggle-background-color;
+			background-color: @bs3-sidebar-navigation-dropdown-toggle-background-color-rgba;
+			text-align: center;
+
+			&:before {
+				display: block;
+				font-family: @bs3-sidebar-navigation-dropdown-toggle-icon-font-family;
+				font-size: @bs3-sidebar-navigation-dropdown-toggle-icon-font-size;
+				.line-height(@bs3-sidebar-navigation-dropdown-toggle-icon-font-size);
+				color: @bs3-sidebar-navigation-dropdown-toggle-icon-color;
+				content: @bs3-sidebar-navigation-dropdown-toggle-icon-icon;
+				padding-top: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+				padding-bottom: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
+				min-width: @bs3-sidebar-navigation-dropdown-toggle-width;
+				.transition(all @bs3-sidebar-transition-time ease-in-out);
 			}
 		}
 	}
