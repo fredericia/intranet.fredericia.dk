@@ -53,7 +53,7 @@
 
     <!-- Begin - content -->
     <div class="content">
-      <div class="container container-fluid-lg-only">
+      <div class="container container-fluid-lg-only container-fluid-md-only">
 
         <?php print $messages; ?>
 

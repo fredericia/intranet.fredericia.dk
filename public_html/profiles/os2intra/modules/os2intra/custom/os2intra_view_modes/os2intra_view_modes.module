@@ -16,6 +16,4 @@ function os2intra_view_modes_entity_info_alter(&$entity_info) {
     'label' => t('User teaser'),
     'custom settings' => TRUE,
   );
-
-  xdebug_break();
 }
