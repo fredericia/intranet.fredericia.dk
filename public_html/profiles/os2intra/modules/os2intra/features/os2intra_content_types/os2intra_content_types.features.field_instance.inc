@@ -200,6 +200,130 @@ function os2intra_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'field_collection_item-field_os2intra_paragraph-field_os2intra_paragraph_text'.
+  $field_instances['field_collection_item-field_os2intra_paragraph-field_os2intra_paragraph_text'] = array(
+    'bundle' => 'field_os2intra_paragraph',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_paragraph_text',
+    'label' => 'Afsnit',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'fuld_html' => 0,
+          'indhold' => 0,
+          'kommentar' => 'kommentar',
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'fuld_html' => array(
+              'weight' => 0,
+            ),
+            'indhold' => array(
+              'weight' => 0,
+            ),
+            'kommentar' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_os2intra_paragraph-field_os2intra_paragraph_title'.
+  $field_instances['field_collection_item-field_os2intra_paragraph-field_os2intra_paragraph_title'] = array(
+    'bundle' => 'field_os2intra_paragraph',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_paragraph_title',
+    'label' => 'Overskrift',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'fuld_html' => 'fuld_html',
+          'indhold' => 'indhold',
+          'kommentar' => 'kommentar',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'fuld_html' => array(
+              'weight' => 0,
+            ),
+            'indhold' => array(
+              'weight' => 0,
+            ),
+            'kommentar' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-event-body'.
   $field_instances['node-event-body'] = array(
     'bundle' => 'event',
@@ -595,78 +719,6 @@ function os2intra_content_types_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 17,
-    ),
-  );
-
-  // Exported field_instance: 'node-event-field_tilmelding'.
-  $field_instances['node-event-field_tilmelding'] = array(
-    'bundle' => 'event',
-    'default_value' => array(
-      0 => array(
-        'registration_type' => 'tilmelding',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'registration',
-        'settings' => array(
-          'label' => ' Tilmeld mig',
-        ),
-        'type' => 'registration_link',
-        'weight' => 9,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div_div_div',
-    'field_name' => 'field_tilmelding',
-    'label' => 'Tilmelding',
-    'required' => 0,
-    'settings' => array(
-      'default_registration_settings' => array(
-        'capacity' => 0,
-        'reminder' => array(
-          'reminder_settings' => array(
-            'reminder_date' => NULL,
-            'reminder_template' => '',
-          ),
-          'send_reminder' => 0,
-        ),
-        'scheduling' => array(
-          'close' => NULL,
-          'open' => NULL,
-        ),
-        'settings' => array(
-          'from_address' => 'drupal@bellcom.dk',
-          'maximum_spaces' => 1,
-          'multiple_registrations' => 0,
-          'registration_waitlist_capacity' => 0,
-          'registration_waitlist_enable' => 1,
-        ),
-        'status' => 1,
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'registration',
-      'settings' => array(),
-      'type' => 'registration_select',
-      'weight' => 5,
     ),
   );
 
@@ -1387,6 +1439,50 @@ function os2intra_content_types_field_default_field_instances() {
       ),
       'type' => 'date_select',
       'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2intra_base_page-field_os2intra_paragraph'.
+  $field_instances['node-os2intra_base_page-field_os2intra_paragraph'] = array(
+    'bundle' => 'os2intra_base_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_paragraph',
+    'label' => 'Afsnit',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 30,
     ),
   );
 
@@ -3415,6 +3511,7 @@ function os2intra_content_types_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Afsnit');
   t('At this date, the content will be flagged expired.');
   t('Beskedmodtagere');
   t('Billede');
@@ -3436,6 +3533,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Kantine');
   t('Kilde');
   t('Link til side');
+  t('Overskrift');
   t('Placering');
   t('Portalkategori');
   t('Relaterede sider');
@@ -3449,7 +3547,6 @@ function os2intra_content_types_field_default_field_instances() {
   t('Subsite logo');
   t('Synlighed');
   t('Tekst');
-  t('Tilmelding');
   t('Topics');
   t('Type');
   t('Udfør');

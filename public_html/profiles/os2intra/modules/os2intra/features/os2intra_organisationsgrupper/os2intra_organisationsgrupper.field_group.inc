@@ -23,10 +23,10 @@ function os2intra_organisationsgrupper_field_group_info() {
     'label' => 'Afdeling',
     'weight' => '0',
     'children' => array(
-      0 => 'group_info',
-      1 => 'group_system',
+      0 => 'group_billede',
+      1 => 'group_info',
       2 => 'group_meta',
-      3 => 'group_billede',
+      3 => 'group_system',
       4 => 'group_tools',
     ),
     'format_type' => 'htabs',
@@ -50,7 +50,7 @@ function os2intra_organisationsgrupper_field_group_info() {
   $field_group->parent_name = 'group_afdeling';
   $field_group->data = array(
     'label' => 'Billede',
-    'weight' => '15',
+    'weight' => '14',
     'children' => array(
       0 => 'field_os2intra_image',
     ),
@@ -135,21 +135,21 @@ function os2intra_organisationsgrupper_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_afdeling';
   $field_group->data = array(
-    'label' => 'Meta',
+    'label' => 'Forfremmet',
     'weight' => '16',
     'children' => array(
-      0 => 'field_os2intra_base_spotboxes',
-      1 => 'field_os2intra_promoted_content',
+      0 => 'field_os2intra_promoted_content',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Forfremmet',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-meta field-group-htab',
         'required_fields' => 1,
         'id' => '',
+        'classes' => 'group-meta field-group-htab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_meta|node|os2intra_org_group_unit|form'] = $field_group;
@@ -164,24 +164,22 @@ function os2intra_organisationsgrupper_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_post';
   $field_group->data = array(
-    'label' => 'Meta',
+    'label' => 'Relationer',
     'weight' => '16',
     'children' => array(
-      0 => 'og_group_ref',
-      1 => 'field_os2intra_base_spotboxes',
-      2 => 'field_os2intra_physical_location',
-      3 => 'field_os2web_base_field_ref',
-      4 => 'field_os2intra_promoteto',
+      0 => 'field_os2intra_promoteto',
+      1 => 'og_group_ref',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Relationer',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-meta field-group-htab',
         'required_fields' => 1,
         'id' => '',
+        'classes' => 'group-meta field-group-htab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_meta|node|post|form'] = $field_group;
@@ -201,6 +199,8 @@ function os2intra_organisationsgrupper_field_group_info() {
     'children' => array(
       0 => 'field_os2intra_afdeling',
       1 => 'group_group',
+      2 => 'field_os2intra_base_spotboxes',
+      3 => 'field_os2intra_organisation',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -226,7 +226,7 @@ function os2intra_organisationsgrupper_field_group_info() {
   $field_group->parent_name = 'group_afdeling';
   $field_group->data = array(
     'label' => 'Værktøjer',
-    'weight' => '14',
+    'weight' => '15',
     'children' => array(
       0 => 'field_os2intra_dept_tools',
     ),
