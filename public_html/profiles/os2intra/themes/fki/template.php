@@ -85,7 +85,10 @@ function fki_preprocess_node__full(&$variables) {
 
   // Author
   if ($author_information = bellcom_user_get_raw_information($variables['uid'])) {
-    $variables['author_full_name'] = $author_information['full_name'];
+
+    if (isset($author_information['full_name'])) {
+      $variables['author_full_name'] = $author_information['full_name'];
+    }
   }
 }
 
@@ -104,7 +107,6 @@ function fki_preprocess_node__spotbox(&$variables) {
     }
   }
 }
-
 
 function fki_theme(&$existing, $type, $theme, $path) {
   $hooks = array();

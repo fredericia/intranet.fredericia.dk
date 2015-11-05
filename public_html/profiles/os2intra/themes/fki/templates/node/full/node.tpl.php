@@ -11,7 +11,7 @@
       <!-- End - image -->
     <?php endif; ?>
 
-    <?php if ($author_full_name and $updated_at_short): ?>
+    <?php if (isset($author_full_name) and $updated_at_short): ?>
       <ul class="fki-full-info">
         <li><?php print l($author_full_name, 'user/' . $node->uid); ?></li>
         <li><span><?php print t('Sidst opdateret d.'); ?> <?php print $updated_at_short; ?></span></li>
