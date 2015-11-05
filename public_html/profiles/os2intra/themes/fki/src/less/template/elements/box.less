@@ -116,6 +116,22 @@
 	.fki-box {
 		margin-bottom: @fki-box-xs-stacked-spacing;
 	}
+
+	.fki-box-small-spacing {
+
+		&.fki-box,
+		> .fki-box {
+			margin-bottom: floor( (@fki-box-xs-stacked-spacing / 3) );
+		}
+	}
+
+	.fki-box-large-spacing {
+
+		&.fki-box,
+		> .fki-box {
+			margin-bottom: floor( (@fki-box-xs-stacked-spacing * 2) );
+		}
+	}
 }
 
 // Tablet
@@ -131,6 +147,22 @@
 	// Box
 	.fki-box {
 		margin-bottom: @fki-box-sm-stacked-spacing;
+	}
+
+	.fki-box-small-spacing {
+
+		&.fki-box,
+		> .fki-box {
+			margin-bottom: floor( (@fki-box-sm-stacked-spacing / 3) );
+		}
+	}
+
+	.fki-box-large-spacing {
+
+		&.fki-box,
+		> .fki-box {
+			margin-bottom: floor( (@fki-box-sm-stacked-spacing * 2) );
+		}
 	}
 }
 
@@ -148,6 +180,22 @@
 	.fki-box {
 		margin-bottom: @fki-box-md-stacked-spacing;
 	}
+
+	.fki-box-small-spacing {
+
+		&.fki-box,
+		> .fki-box {
+			margin-bottom: floor( (@fki-box-md-stacked-spacing / 3) );
+		}
+	}
+
+	.fki-box-large-spacing {
+
+		&.fki-box,
+		> .fki-box {
+			margin-bottom: floor( (@fki-box-md-stacked-spacing * 2) );
+		}
+	}
 }
 
 // Large desktop
@@ -163,6 +211,22 @@
 	// Box
 	.fki-box {
 		margin-bottom: @fki-box-lg-stacked-spacing;
+	}
+
+	.fki-box-small-spacing {
+
+		&.fki-box,
+		> .fki-box {
+			margin-bottom: floor( (@fki-box-lg-stacked-spacing / 3) );
+		}
+	}
+
+	.fki-box-large-spacing {
+
+		&.fki-box,
+		> .fki-box {
+			margin-bottom: floor( (@fki-box-lg-stacked-spacing * 2) );
+		}
 	}
 }
 

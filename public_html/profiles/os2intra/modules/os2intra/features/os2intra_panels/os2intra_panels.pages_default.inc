@@ -424,8 +424,8 @@ function os2intra_panels_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
-      'template_suggestion' => '',
+      'css_class' => 'fki-box-large-spacing',
+      'template_suggestion' => 'entity_view',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -444,7 +444,7 @@ function os2intra_panels_default_page_manager_handlers() {
       'mode' => '1',
       'comments_per_page' => '10',
       'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
@@ -452,7 +452,11 @@ function os2intra_panels_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'plain',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
