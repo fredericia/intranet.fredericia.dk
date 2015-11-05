@@ -52,3 +52,4 @@ share
 # developer sites
 public_html/sites/*.dd
 
+public_html/sites/sites.php
