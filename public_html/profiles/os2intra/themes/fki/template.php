@@ -42,22 +42,6 @@ function fki_preprocess_html(&$variables) {
   // Body classes
   $variables['classes_array'][] = 'footer-attached';
 
-  $variables['classes_array'][] = 'sidebar-content-off-canvas-xs';
-  $variables['classes_array'][] = 'sidebar-left-hidden-xs';
-  $variables['classes_array'][] = 'sidebar-left-enabled-xs';
-
-  $variables['classes_array'][] = 'sidebar-content-off-canvas-sm';
-  $variables['classes_array'][] = 'sidebar-left-hidden-sm';
-  $variables['classes_array'][] = 'sidebar-left-enabled-sm';
-
-  $variables['classes_array'][] = 'sidebar-content-shrink-md';
-  $variables['classes_array'][] = 'sidebar-left-static-md';
-  $variables['classes_array'][] = 'sidebar-left-enabled-md';
-
-  $variables['classes_array'][] = 'sidebar-content-shrink-lg';
-  $variables['classes_array'][] = 'sidebar-left-static-lg';
-  $variables['classes_array'][] = 'sidebar-left-enabled-lg';
-
   $variables['classes_array'][] = 'simple-navigation-enabled-xs';
   $variables['classes_array'][] = 'simple-navigation-enabled-sm';
 
