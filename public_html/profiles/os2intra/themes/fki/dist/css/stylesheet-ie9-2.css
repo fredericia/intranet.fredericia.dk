@@ -5954,6 +5954,62 @@
 }
 
 @media screen and (max-width: 767px) {
+  .fki-full .fki-full-heading .fki-full-heading-title {
+    font-size: 16px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-full .fki-full-heading .fki-full-heading-title {
+    font-size: 17px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-full .fki-full-heading .fki-full-heading-title {
+    font-size: 18px;
+    line-height: 19px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-full .fki-full-heading .fki-full-heading-title {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fki-full .fki-full-intro {
+    font-size: 12px;
+    line-height: 13px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-full .fki-full-intro {
+    font-size: 13px;
+    line-height: 14px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-full .fki-full-intro {
+    font-size: 14px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-full .fki-full-intro {
+    font-size: 16px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .fki-teaser .fki-teaser-heading .fki-teaser-heading-title {
     font-size: 14px;
     line-height: 15px;
