@@ -155,6 +155,7 @@ function os2intra_content_types_field_group_info() {
       0 => 'group_media',
       1 => 'group_meta',
       2 => 'group_tekst',
+      3 => 'group_tilmelding',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -328,7 +329,7 @@ function os2intra_content_types_field_group_info() {
   $field_group->parent_name = 'group_event';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '50',
+    'weight' => '51',
     'children' => array(
       0 => 'field_os2intra_image',
     ),
@@ -445,12 +446,12 @@ function os2intra_content_types_field_group_info() {
   $field_group->parent_name = 'group_event';
   $field_group->data = array(
     'label' => 'Meta',
-    'weight' => '51',
+    'weight' => '52',
     'children' => array(
       0 => 'field_os2intra_base_spotboxes',
-      1 => 'og_group_ref',
-      2 => 'field_os2intra_related_ref',
-      3 => 'field_os2intra_selvbetjening_ref',
+      1 => 'field_os2intra_related_ref',
+      2 => 'field_os2intra_selvbetjening_ref',
+      3 => 'og_group_ref',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -741,6 +742,34 @@ function os2intra_content_types_field_group_info() {
     ),
   );
   $export['group_tekst|node|wiki|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_tilmelding|node|event|form';
+  $field_group->group_name = 'group_tilmelding';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_event';
+  $field_group->data = array(
+    'label' => 'Tilmelding',
+    'weight' => '50',
+    'children' => array(
+      0 => 'field_tilmelding',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-tilmelding field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_tilmelding|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

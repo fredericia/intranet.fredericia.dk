@@ -29,20 +29,6 @@ function os2intra_content_types_uuid_features_default_terms() {
     ),
   );
   $terms[] = array(
-    'name' => 'Booking og bestilling',
-    'description' => '',
-    'format' => 'indhold',
-    'weight' => 0,
-    'uuid' => '675f0b2d-f778-442f-8a8e-e15593b71283',
-    'vocabulary_machine_name' => 'os2web_base_tax_site_structure',
-    'field_os2web_base_field_banner' => array(),
-    'field_os2web_base_field_logo' => array(),
-    'field_os2web_base_icon' => array(),
-    'path' => array(
-      'pathauto' => 1,
-    ),
-  );
-  $terms[] = array(
     'name' => 'Hjælp og værktøjer',
     'description' => '<p>asdaSD</p>
 ',

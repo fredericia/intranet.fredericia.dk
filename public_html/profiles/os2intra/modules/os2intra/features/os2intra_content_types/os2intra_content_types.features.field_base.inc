@@ -946,6 +946,25 @@ function os2intra_content_types_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_tilmelding'.
+  $field_bases['field_tilmelding'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_tilmelding',
+    'indexes' => array(
+      'registration_type' => array(
+        0 => 'registration_type',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'registration',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'registration',
+  );
+
   // Exported field_base: 'field_topics'.
   $field_bases['field_topics'] = array(
     'active' => 1,
