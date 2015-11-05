@@ -11,6 +11,15 @@
 
     <!-- Begin - body -->
     <div class="fki-list-body">
+
+      <?php if (isset($content['body'])): ?>
+        <!-- Begin - body -->
+        <div class="fki-list-body-content">
+          <?php print render($content['body']); ?>
+        </div>
+        <!-- End - body -->
+      <?php endif; ?>
+
     </div>
     <!-- End - body -->
 
