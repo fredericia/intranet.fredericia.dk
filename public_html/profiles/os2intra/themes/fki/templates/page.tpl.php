@@ -4,13 +4,14 @@
   <!-- Begin - sidebar left -->
   <div class="sidebar sidebar-left">
 
-    <!-- Begin - logo -->
+    <!-- Begin - logo - wide -->
     <div class="sidebar-logo">
       <a href="<?php print $front_page; ?>" class="sidebar-logo-link">
-        <img src="<?php print $path_img . '/logo.png'; ?>" class="sidebar-logo-image" alt="<?php print $site_name. t(' logo'); ?>" />
+        <img src="<?php print $path_img . '/logo-sidebar-wide.png'; ?>" class="sidebar-logo-image sidebar-logo-image-wide" alt="<?php print $site_name. t(' logo'); ?>" />
+        <img src="<?php print $path_img . '/logo-sidebar-narrow.png'; ?>" class="sidebar-logo-image sidebar-logo-image-narrow" alt="<?php print $site_name. t(' logo'); ?>" />
       </a>
     </div>
-    <!-- End - logo -->
+    <!-- End - logo - wide -->
 
     <?php if (isset($sidebar_primary_navigation)): ?>
       <!-- Begin - navigation -->

@@ -34,6 +34,7 @@
 @media @media-query-mobile-only {
 
 	.sidebar-mixin-left-expanded(xs);
+	.sidebar-mixin-logo-image-expanded(xs);
 	.sidebar-mixin-navigation-expanded(xs);
 
 	// Expanded
@@ -51,6 +52,7 @@
 @media @media-query-tablet-only {
 
 	.sidebar-mixin-left-expanded(sm);
+	.sidebar-mixin-logo-image-expanded(sm);
 	.sidebar-mixin-navigation-expanded(sm);
 
 	// Expanded
@@ -68,6 +70,7 @@
 @media @media-query-desktop-only {
 
 	.sidebar-mixin-left-expanded(md);
+	.sidebar-mixin-logo-image-expanded(md);
 	.sidebar-mixin-navigation-expanded(md);
 
 	// Expanded
@@ -85,6 +88,7 @@
 @media @media-query-large-desktop-only {
 
 	.sidebar-mixin-left-expanded(lg);
+	.sidebar-mixin-logo-image-expanded(lg);
 	.sidebar-mixin-navigation-expanded(lg);
 
 	// Expanded
@@ -142,6 +146,18 @@
 		&.sidebar-left-expanded-@{view-mode} {
 
 			.sidebar-mixin-navigation-wide(@view-mode);
+		}
+	}
+}
+
+// Logo mixin
+.sidebar-mixin-logo-image-expanded(@view-mode) {
+
+	.sidebar-left-enabled-@{view-mode} {
+
+		&.sidebar-left-expanded-@{view-mode} {
+
+			.sidebar-mixin-logo-image-wide();
 		}
 	}
 }

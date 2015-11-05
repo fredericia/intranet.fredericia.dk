@@ -17,7 +17,8 @@
 @bs3-sidebar-logo-border-color: @sidebar-logo-border-color;
 @bs3-sidebar-logo-border-color-rgba: @sidebar-logo-border-color-rgba;
 
-@bs3-sidebar-logo-width: @sidebar-logo-width;
+@bs3-sidebar-logo-narrow-width: @sidebar-logo-narrow-width;
+@bs3-sidebar-logo-wide-width: @sidebar-logo-wide-width;
 @bs3-sidebar-logo-top-bottom-spacing: @sidebar-logo-top-bottom-spacing;
 
 // --------------------------------------------------
@@ -44,9 +45,20 @@
 		img {
 			display: block;
 			max-width: 100%;
-			width: floor( (@bs3-sidebar-logo-width / 2) );
 			border: 0;
 			margin: auto;
+		}
+	}
+
+	.sidebar-logo-image {
+		display: none;
+
+		&.sidebar-logo-image-narrow {
+			width: floor( (@bs3-sidebar-logo-narrow-width / 2) );
+		}
+
+		&.sidebar-logo-image-wide {
+			width: floor( (@bs3-sidebar-logo-wide-width / 2) );
 		}
 	}
 }
@@ -138,3 +150,25 @@
 
 // Logo mixin
 .sidebar-mixin-logo() {}
+
+// Logo image - narrow mixin
+.sidebar-mixin-logo-image-narrow() {
+
+	.sidebar-logo-image {
+
+		&.sidebar-logo-image-narrow {
+			display: block;
+		}
+	}
+}
+
+// Logo image - wide mixin
+.sidebar-mixin-logo-image-wide() {
+
+	.sidebar-logo-image {
+
+		&.sidebar-logo-image-wide {
+			display: block;
+		}
+	}
+}
