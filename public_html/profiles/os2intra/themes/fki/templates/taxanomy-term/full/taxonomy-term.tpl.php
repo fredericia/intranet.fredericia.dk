@@ -1,7 +1,7 @@
 <?php if ($view_mode == 'full'): ?>
   <!-- taxonomy-term.tpl.php -->
   <!-- Begin - full -->
-  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> fki-full"<?php print $attributes; ?>>
+  <div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> fki-full">
 
     <?php if (isset($content['field_os2intra_images'])): ?>
       <!-- Begin - image -->
@@ -19,9 +19,7 @@
     <?php endif ?>
 
     <div class="fki-full-heading">
-      <?php print render($title_prefix); ?>
-      <h2<?php print $title_attributes; ?> class="fki-full-heading-title"><?php print $title; ?></h2>
-      <?php print render($title_suffix); ?>
+      <h2 class="fki-full-heading-title"><?php print $term_name; ?></h2>
     </div>
 
     <?php if (isset($content['field_os2web_base_field_intro'])): ?>
