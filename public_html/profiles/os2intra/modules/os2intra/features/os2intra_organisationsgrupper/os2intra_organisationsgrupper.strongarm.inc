@@ -280,6 +280,9 @@ function os2intra_organisationsgrupper_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'list' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -384,7 +387,6 @@ function os2intra_organisationsgrupper_strongarm() {
   $strongarm->name = 'node_options_os2intra_org_group_unit';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
   );
   $export['node_options_os2intra_org_group_unit'] = $strongarm;
 
@@ -430,7 +432,7 @@ function os2intra_organisationsgrupper_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_os2intra_org_group_unit';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_os2intra_org_group_unit'] = $strongarm;
 
   $strongarm = new stdClass();

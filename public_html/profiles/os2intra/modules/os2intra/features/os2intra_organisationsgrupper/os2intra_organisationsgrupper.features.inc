@@ -17,6 +17,13 @@ function os2intra_organisationsgrupper_ctools_plugin_api($module = NULL, $api = 
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function os2intra_organisationsgrupper_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function os2intra_organisationsgrupper_node_info() {
@@ -34,7 +41,7 @@ function os2intra_organisationsgrupper_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Titel'),
+      'title_label' => t('Navn'),
       'help' => '',
     ),
     'post' => array(
