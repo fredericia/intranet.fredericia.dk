@@ -1,6 +1,6 @@
 name = Bellcom Apps 
 description = Tilgå apps fra Bellcom
-package = Apps
+package = Bellcom
 
 version = 7.x-1.0
 core = 7.x

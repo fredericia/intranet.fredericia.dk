@@ -67,9 +67,25 @@ function fki_preprocess_node(&$variables) {
 
   // Optionally, run node-type-specific preprocess functions, like
   // foo_preprocess_node_page() or foo_preprocess_node_story().
-  $function = __FUNCTION__ . '__' . $variables['node']->type;
-  if (function_exists($function)) {
-    $function($variables);
+  $function_node_type = __FUNCTION__ . '__' . $variables['node']->type;
+  $function_view_mode = __FUNCTION__ . '__' . $variables['view_mode'];
+  if (function_exists($function_node_type)) {
+    $function_node_type($variables);
+  }
+  if (function_exists($function_view_mode)) {
+    $function_view_mode($variables);
+  }
+}
+
+/*
+ * Full node
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__full(&$variables) {
+
+  // Author
+  if ($author_information = bellcom_user_get_raw_information($variables['uid'])) {
+    $variables['author_full_name'] = $author_information['full_name'];
   }
 }
 
@@ -78,7 +94,7 @@ function fki_preprocess_node(&$variables) {
  * Implements hook_preprocess_node().
  */
 function fki_preprocess_node__spotbox(&$variables) {
-  if ($variables['elements']['#view_mode'] == 'teaser') {
+  if ($variables['view_mode'] == 'teaser') {
 
     // Image
     if ($field_image = field_get_items('node', $variables['node'], 'field_spotbox_image')) {

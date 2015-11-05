@@ -1,7 +1,7 @@
-<?php if ($view_mode == 'list_simple'): ?>
-  <!-- node--list_simple.tpl.php -->
+<?php if ($view_mode == 'list'): ?>
+  <!-- node--list.tpl.php -->
   <!-- Begin - list -->
-  <section id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> fki-list-simple"<?php print $attributes; ?>>
+  <section id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> fki-list"<?php print $attributes; ?>>
 
     <!-- Begin - heading -->
     <div class="fki-list-heading">

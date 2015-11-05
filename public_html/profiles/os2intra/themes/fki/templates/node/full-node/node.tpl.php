@@ -1,26 +1,20 @@
 <?php if ($view_mode == 'full'): ?>
   <!-- node.tpl.php -->
   <!-- Begin - full node -->
-  <!-- Begin - content -->
-  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> fki-full"<?php print $attributes; ?>>
 
-    <?php print render($content['links']); ?>
+    <?php if ($author_full_name and $updated_at_short): ?>
+      <ul class="fki-full-node-info">
+        <li><?php print l($author_full_name, 'user/' . $node->uid); ?></li>
+        <li><span><?php print t('Sidst opdateret d.'); ?> <?php print $updated_at_short; ?></span></li>
+      </ul>
+    <?php endif ?>
 
     <?php print render($title_prefix); ?>
-    <?php if (!$page): ?>
-      <h2<?php print $title_attributes; ?>>
-        <a href="<?php print $node_url; ?>"><?php print $title; ?></a>
-      </h2>
-    <?php endif; ?>
+    <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
     <?php print render($title_suffix); ?>
 
-    <?php
-    // We hide the comments and links now so that we can render them later.
-    hide($content['comments']);
-    hide($content['links']);
-    hide($content['field_tags']);
-    print render($content);
-    ?>
+    <?php print render($content['links']); ?>
 
   </div>
   <!-- End - full node -->
