@@ -38,7 +38,7 @@ function os2intra_elasticsearch_default_search_api_index() {
       "datasource" : { "bundles" : [] },
       "index_directly" : 1,
       "cron_limit" : "50",
-      "index_name" : { "index" : "intranet_search", "cluster_id" : "elasticsearch" },
+      "index_name" : { "index" : "intranet_search", "cluster_id" : "elasticsearch_cluster" },
       "collect_index_statistics" : 0,
       "log_only_not_found" : 0,
       "index_statistics_ttl" : "365d",
