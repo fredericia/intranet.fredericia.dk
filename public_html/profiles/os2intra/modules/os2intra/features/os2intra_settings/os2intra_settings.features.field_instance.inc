@@ -46,7 +46,7 @@ function os2intra_settings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 43,
+      'weight' => 7,
     ),
   );
 
