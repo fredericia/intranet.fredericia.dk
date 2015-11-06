@@ -264,6 +264,7 @@ features[variable][] = comment_subject_field_os2web_base_selfservice_link
 features[variable][] = comment_subject_field_spotbox
 features[variable][] = comment_subject_field_wiki
 features[variable][] = comment_wiki
+features[variable][] = field_bundle_settings_field_collection_item__field_os2intra_paragraph
 features[variable][] = field_bundle_settings_node__event
 features[variable][] = field_bundle_settings_node__it_vejledning
 features[variable][] = field_bundle_settings_node__os2intra_base_page
