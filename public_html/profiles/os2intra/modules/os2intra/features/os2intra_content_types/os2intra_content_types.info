@@ -29,6 +29,7 @@ dependencies[] = media_ckeditor
 dependencies[] = media_internet
 dependencies[] = media_youtube
 dependencies[] = menu
+dependencies[] = node
 dependencies[] = node_clone_tab
 dependencies[] = number
 dependencies[] = og
