@@ -158,7 +158,7 @@ function os2intra_users_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 9,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -167,7 +167,6 @@ function os2intra_users_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
-    'display_label' => '',
     'entity_type' => 'user',
     'fences_wrapper' => 'div_div_div',
     'field_name' => 'field_os2intra_image',
@@ -210,11 +209,11 @@ function os2intra_users_field_default_field_instances() {
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
-          'upload' => 'upload',
+          'upload' => 0,
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 10,
+      'weight' => 52,
     ),
   );
 

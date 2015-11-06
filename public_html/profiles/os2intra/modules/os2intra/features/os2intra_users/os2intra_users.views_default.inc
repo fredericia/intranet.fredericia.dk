@@ -582,7 +582,7 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['access']['element_type'] = 'em';
   $handler->display->display_options['fields']['access']['date_format'] = 'long';
   $handler->display->display_options['fields']['access']['second_date_format'] = 'long';
-  /* Field: Field: Kantine */
+  /* Field: Content: Kantine */
   $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['id'] = 'field_os2intra_canteen_canteen';
   $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['table'] = 'field_data_field_os2intra_canteen_canteen';
   $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['field'] = 'field_os2intra_canteen_canteen';
