@@ -75,13 +75,6 @@ function fki_preprocess_node(&$variables) {
   if (function_exists($function_view_mode)) {
     $function_view_mode($variables);
   }
-}
-
-/*
- * Full node
- * Implements hook_preprocess_node().
- */
-function fki_preprocess_node__full(&$variables) {
 
   // Author
   if ($author_information = bellcom_user_get_raw_information($variables['uid'])) {
@@ -90,6 +83,13 @@ function fki_preprocess_node__full(&$variables) {
       $variables['author_full_name'] = $author_information['full_name'];
     }
   }
+}
+
+/*
+ * Full node
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__full(&$variables) {
 }
 
 /*

@@ -3,6 +3,15 @@
   <!-- Begin - list -->
   <section id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> fki-list"<?php print $attributes; ?>>
 
+    <?php if (isset($author_full_name) and $updated_at_short): ?>
+      <!-- Begin - entity info -->
+      <ul class="fki-list-info fki-entity-info">
+        <li><?php print l($author_full_name, 'user/' . $node->uid); ?></li>
+        <li><span><?php print t('Sidst opdateret d.'); ?> <?php print $updated_at_short; ?></span></li>
+      </ul>
+      <!-- End - entity info -->
+    <?php endif ?>
+
     <!-- Begin - heading -->
     <div class="fki-list-heading">
       <h3 class="fki-list-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
