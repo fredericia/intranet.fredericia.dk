@@ -722,6 +722,79 @@ function os2intra_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_tilmelding'.
+  $field_instances['node-event-field_tilmelding'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'registration_type' => 'tilmelding',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'registration',
+        'settings' => array(
+          'i18n_string_key' => NULL,
+          'label' => ' Tilmeld mig',
+        ),
+        'type' => 'registration_link',
+        'weight' => 9,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_tilmelding',
+    'label' => 'Tilmelding',
+    'required' => 0,
+    'settings' => array(
+      'default_registration_settings' => array(
+        'capacity' => 0,
+        'reminder' => array(
+          'reminder_settings' => array(
+            'reminder_date' => NULL,
+            'reminder_template' => '',
+          ),
+          'send_reminder' => 0,
+        ),
+        'scheduling' => array(
+          'close' => NULL,
+          'open' => NULL,
+        ),
+        'settings' => array(
+          'from_address' => 'drupal@bellcom.dk',
+          'maximum_spaces' => 1,
+          'multiple_registrations' => 0,
+          'registration_waitlist_capacity' => 0,
+          'registration_waitlist_enable' => 1,
+        ),
+        'status' => 1,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'registration',
+      'settings' => array(),
+      'type' => 'registration_select',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-event-og_group_ref'.
   $field_instances['node-event-og_group_ref'] = array(
     'bundle' => 'event',
@@ -3341,6 +3414,18 @@ function os2intra_content_types_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 0,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'taxonomy_term',
     'fences_wrapper' => 'div_div_div',
@@ -3371,6 +3456,18 @@ function os2intra_content_types_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -3425,6 +3522,18 @@ function os2intra_content_types_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -3489,6 +3598,18 @@ function os2intra_content_types_field_default_field_instances() {
         'type' => 'icon_field_default',
         'weight' => 4,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'taxonomy_term',
     'fences_wrapper' => 'div_div_div',
@@ -3547,6 +3668,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Subsite logo');
   t('Synlighed');
   t('Tekst');
+  t('Tilmelding');
   t('Topics');
   t('Type');
   t('Udfør');
