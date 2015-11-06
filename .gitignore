@@ -44,6 +44,7 @@ logs
 sessions
 tmp
 share
+import
 
 # Files that might appear on external disks
 .Spotlight-V100
