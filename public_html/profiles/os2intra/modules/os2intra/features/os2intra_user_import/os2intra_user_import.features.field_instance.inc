@@ -10,55 +10,7 @@
 function os2intra_user_import_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'user-user-field_import_groups'
-  $field_instances['user-user-field_os2intra_import_groups'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 20,
-      ),
-      'search_results' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'display_in_partial_form' => 0,
-    'entity_type' => 'user',
-    'field_name' => 'field_os2intra_import_groups',
-    'label' => 'import groups',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => 0,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 23,
-    ),
-  );
-
-  // Exported field_instance: 'user-user-field_os2intra_employee_id'
+  // Exported field_instance: 'user-user-field_os2intra_employee_id'.
   $field_instances['user-user-field_os2intra_employee_id'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -76,6 +28,12 @@ function os2intra_user_import_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'display_in_partial_form' => 0,
@@ -137,7 +95,61 @@ function os2intra_user_import_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_os2intra_termination_date'
+  // Exported field_instance: 'user-user-field_os2intra_import_groups'.
+  $field_instances['user-user-field_os2intra_import_groups'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 20,
+      ),
+      'search_results' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'display_in_partial_form' => 0,
+    'entity_type' => 'user',
+    'field_name' => 'field_os2intra_import_groups',
+    'label' => 'import groups',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 23,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_os2intra_termination_date'.
   $field_instances['user-user-field_os2intra_termination_date'] = array(
     'bundle' => 'user',
     'deleted' => 0,
@@ -154,6 +166,12 @@ function os2intra_user_import_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'display_in_partial_form' => 0,

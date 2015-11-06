@@ -83,8 +83,6 @@ function os2intra_users_field_group_info() {
       0 => 'field_name_first',
       1 => 'field_name_last',
       2 => 'field_os2intra_user_titles',
-      3 => 'field_os2intra_medarbejder_mobil',
-      4 => 'field_os2intra_medarbejder_tel',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -112,10 +110,10 @@ function os2intra_users_field_group_info() {
     'label' => 'Profil info',
     'weight' => '7',
     'children' => array(
-      0 => 'og_user_node',
-      1 => 'field_os2intra_user_bio',
-      2 => 'field_os2intra_user_competences',
-      3 => 'field_os2intra_user_inter',
+      0 => 'field_os2intra_user_bio',
+      1 => 'field_os2intra_user_competences',
+      2 => 'field_os2intra_user_inter',
+      3 => 'og_user_node',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -144,9 +142,12 @@ function os2intra_users_field_group_info() {
     'weight' => '9',
     'children' => array(
       0 => 'field_os2intra_organisation_ref',
-      1 => 'field_os2intra_canteen_canteen',
-      2 => 'field_os2intra_medarbejder_nr',
-      3 => 'timezone',
+      1 => 'field_os2intra_import_groups',
+      2 => 'field_os2intra_employee_id',
+      3 => 'field_os2intra_termination_date',
+      4 => 'ckeditor',
+      5 => 'piwik',
+      6 => 'timezone',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -174,11 +175,11 @@ function os2intra_users_field_group_info() {
     'label' => 'Bruger',
     'weight' => '0',
     'children' => array(
-      0 => 'group_system',
-      1 => 'group_name',
-      2 => 'group_profile',
-      3 => 'group_account',
-      4 => 'group_billede',
+      0 => 'group_account',
+      1 => 'group_billede',
+      2 => 'group_name',
+      3 => 'group_profile',
+      4 => 'group_system',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(

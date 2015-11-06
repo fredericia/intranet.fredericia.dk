@@ -120,7 +120,7 @@ function os2intra_user_import_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Felt: Masse-handlinger: Bruger */
+  /* Field: Bulk operations: User */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
@@ -129,20 +129,6 @@ function os2intra_user_import_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::user_block_user_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 1,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_user_roles_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
     'action::views_bulk_operations_modify_action' => array(
       'selected' => 1,
       'postpone_processing' => 0,
@@ -156,92 +142,32 @@ function os2intra_user_import_views_default_views() {
         ),
       ),
     ),
-    'action::pathauto_user_update_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_argument_selector_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'url' => '',
-      ),
-    ),
-    'action::system_send_email_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::panelizer_set_status_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_delete_item' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::flag_user_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_script_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::realname_action_realname_update' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
   );
-  /* Felt: Bruger: MedarbejderID */
+  /* Field: User: MedarbejderID */
   $handler->display->display_options['fields']['field_os2intra_employee_id']['id'] = 'field_os2intra_employee_id';
   $handler->display->display_options['fields']['field_os2intra_employee_id']['table'] = 'field_data_field_os2intra_employee_id';
   $handler->display->display_options['fields']['field_os2intra_employee_id']['field'] = 'field_os2intra_employee_id';
   $handler->display->display_options['fields']['field_os2intra_employee_id']['label'] = 'Medarbejder nr.';
-  /* Felt: Bruger: First Name */
+  /* Field: User: Fornavn */
   $handler->display->display_options['fields']['field_name_first']['id'] = 'field_name_first';
   $handler->display->display_options['fields']['field_name_first']['table'] = 'field_data_field_name_first';
   $handler->display->display_options['fields']['field_name_first']['field'] = 'field_name_first';
-  $handler->display->display_options['fields']['field_name_first']['label'] = 'Fornavn';
-  /* Felt: Bruger: Last Name */
+  /* Field: User: Efternavn */
   $handler->display->display_options['fields']['field_name_last']['id'] = 'field_name_last';
   $handler->display->display_options['fields']['field_name_last']['table'] = 'field_data_field_name_last';
   $handler->display->display_options['fields']['field_name_last']['field'] = 'field_name_last';
-  $handler->display->display_options['fields']['field_name_last']['label'] = 'Efternavn';
-  /* Felt: Bruger: Navn */
+  /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Felt: Bruger: E-mail */
+  /* Field: User: E-mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  /* Felt: Bruger: os2intra_termination_date */
+  /* Field: User: os2intra_termination_date */
   $handler->display->display_options['fields']['field_os2intra_termination_date']['id'] = 'field_os2intra_termination_date';
   $handler->display->display_options['fields']['field_os2intra_termination_date']['table'] = 'field_data_field_os2intra_termination_date';
   $handler->display->display_options['fields']['field_os2intra_termination_date']['field'] = 'field_os2intra_termination_date';
@@ -253,29 +179,29 @@ function os2intra_user_import_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Felt: Bruger: Seneste login */
+  /* Field: User: Last login */
   $handler->display->display_options['fields']['login']['id'] = 'login';
   $handler->display->display_options['fields']['login']['table'] = 'users';
   $handler->display->display_options['fields']['login']['field'] = 'login';
   $handler->display->display_options['fields']['login']['empty'] = 'aldrig';
   $handler->display->display_options['fields']['login']['date_format'] = 'os2web_base_date_only';
-  /* Felt: Bruger: Aktiv */
+  /* Field: User: Active */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'users';
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['not'] = 0;
-  /* Sorteringskriterie: Bruger: Oprettelsesdato */
+  /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filterkriterie: Bruger: MedarbejderID (field_os2intra_employee_id) */
+  /* Filter criterion: User: MedarbejderID (field_os2intra_employee_id) */
   $handler->display->display_options['filters']['field_os2intra_employee_id_value']['id'] = 'field_os2intra_employee_id_value';
   $handler->display->display_options['filters']['field_os2intra_employee_id_value']['table'] = 'field_data_field_os2intra_employee_id';
   $handler->display->display_options['filters']['field_os2intra_employee_id_value']['field'] = 'field_os2intra_employee_id_value';
   $handler->display->display_options['filters']['field_os2intra_employee_id_value']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_os2intra_employee_id_value']['group'] = 1;
-  /* Filterkriterie: Realname: Navn */
+  /* Filter criterion: Realname: Name */
   $handler->display->display_options['filters']['realname']['id'] = 'realname';
   $handler->display->display_options['filters']['realname']['table'] = 'realname';
   $handler->display->display_options['filters']['realname']['field'] = 'realname';
@@ -300,7 +226,7 @@ function os2intra_user_import_views_default_views() {
     11 => 0,
     12 => 0,
   );
-  /* Filterkriterie: Bruger: MedarbejderID (field_os2intra_employee_id) */
+  /* Filter criterion: User: MedarbejderID (field_os2intra_employee_id) */
   $handler->display->display_options['filters']['field_os2intra_employee_id_value_1']['id'] = 'field_os2intra_employee_id_value_1';
   $handler->display->display_options['filters']['field_os2intra_employee_id_value_1']['table'] = 'field_data_field_os2intra_employee_id';
   $handler->display->display_options['filters']['field_os2intra_employee_id_value_1']['field'] = 'field_os2intra_employee_id_value';
@@ -344,17 +270,20 @@ function os2intra_user_import_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
-    t('Bruger'),
+    t('User'),
+    t('- Choose an operation -'),
+    t('Aktiver/Bloker'),
     t('Medarbejder nr.'),
     t('Fornavn'),
     t('Efternavn'),
     t('E-mail'),
     t('Fratrædelsesdato'),
-    t('Seneste login'),
+    t('Last login'),
     t('aldrig'),
-    t('Aktiv'),
+    t('Active'),
     t('Navn'),
     t('Over overview'),
+    t('more'),
   );
   $export['os2intra_user_import'] = $view;
 
