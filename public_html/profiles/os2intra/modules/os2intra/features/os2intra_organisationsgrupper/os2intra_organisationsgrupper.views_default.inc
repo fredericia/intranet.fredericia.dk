@@ -28,6 +28,9 @@ function os2intra_organisationsgrupper_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_accordion_plugin_style';
+  $handler->display->display_options['style_options']['title_field'] = 'field_os2intra_paragraph_title';
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Field collection item: Entity with the Afsnit (field_os2intra_paragraph) */
   $handler->display->display_options['relationships']['field_os2intra_paragraph_node']['id'] = 'field_os2intra_paragraph_node';
   $handler->display->display_options['relationships']['field_os2intra_paragraph_node']['table'] = 'field_collection_item';
