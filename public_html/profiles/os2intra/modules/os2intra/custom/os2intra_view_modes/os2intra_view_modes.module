@@ -16,4 +16,14 @@ function os2intra_view_modes_entity_info_alter(&$entity_info) {
     'label' => t('User teaser'),
     'custom settings' => TRUE,
   );
+
+  // Taxonomy term view modes
+  $entity_info['taxonomy_term']['view modes']['teaser'] = array(
+    'label'           => t('Teaser'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['taxonomy_term']['view modes']['list'] = array(
+    'label'           => t('List'),
+    'custom settings' => TRUE,
+  );
 }

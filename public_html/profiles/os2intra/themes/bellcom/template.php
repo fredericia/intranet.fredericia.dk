@@ -77,6 +77,18 @@ function bellcom_preprocess_node(&$variables) {
 }
 
 /*
+ * Implements template_preprocess_taxonomy_term().
+ */
+function bellcom_preprocess_taxonomy_term(&$variables) {
+
+  // Add node--view_mode.tpl.php suggestions.
+  $variables['theme_hook_suggestions'][] = 'taxonomy-term__' . $variables['view_mode'];
+
+  // Add a class for the view mode.
+  $variables['classes_array'][] = 'view-mode-' . $variables['view_mode'];
+}
+
+/*
  * Implements template_preprocess_field().
  */
 function bellcom_preprocess_field(&$variables, $hook) {
