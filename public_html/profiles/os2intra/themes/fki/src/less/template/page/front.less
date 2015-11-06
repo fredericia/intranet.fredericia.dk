@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Homebox
+// | Front
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .fki-box-homebox
+// | - .front
 // |
 
 // --------------------------------------------------
@@ -14,58 +14,23 @@
 // Styling
 // --------------------------------------------------
 
-// Homebox
-#homebox {
+// Front
+.front {
 
-	// Column
-	.homebox-column {
-		margin: 0;
-		padding: 0;
-		background: none;
-	}
+	#homebox {
+		.make-row();
 
-	.fki-box-homebox {
-		.fki-box;
+		.homebox-column-wrapper {
+			.make-xs-column(12);
 
-		// Icons
-		.portlet-icon {
-			background: none;
-
-			&:before {
-				display: inline-block;
-				font-family: FontAwesome;
-				font-size: @font-size-base;
-				color: #fff;
+			// Left
+			&.homebox-column-wrapper-1 {
+				.make-sm-column(8);
 			}
 
-			&.portlet-plus {
-
-				&:before {
-					content: @fa-var-plus;
-				}
-			}
-
-			&.portlet-minus {
-
-				&:before {
-					content: @fa-var-minus;
-				}
-			}
-
-			&.portlet-maximize {}
-
-			&.portlet-settings {
-
-				&:before {
-					content: @fa-var-cog;
-				}
-			}
-
-			&.portlet-close {
-
-				&:before {
-					content: @fa-var-times;
-				}
+			// Right
+			&.homebox-column-wrapper-2 {
+				.make-sm-column(4);
 			}
 		}
 	}
@@ -78,83 +43,83 @@
 // Mobile
 @media @media-query-mobile {
 
-	// Homebox
-	.fki-box-homebox {}
+	// Front
+	.front {}
 }
 
 // Mobile - only
 @media @media-query-mobile-only {
 
-	// Homebox
-	.fki-box-homebox {}
+	// Front
+	.front {}
 }
 
 // Tablet
 @media @media-query-tablet {
 
-	// Homebox
-	.fki-box-homebox {}
+	// Front
+	.front {}
 }
 
 // Tablet - only
 @media @media-query-tablet-only {
 
-	// Homebox
-	.fki-box-homebox {}
+	// Front
+	.front {}
 }
 
 // Desktop
 @media @media-query-desktop {
 
-	// Homebox
-	.fki-box-homebox {}
+	// Front
+	.front {}
 }
 
 // Desktop - only
 @media @media-query-desktop-only {
 
-	// Homebox
-	.fki-box-homebox {}
+	// Front
+	.front {}
 }
 
 // Large desktop
 @media @media-query-large-desktop {
 
-	// Homebox
-	.fki-box-homebox {}
+	// Front
+	.front {}
 }
 
 // Large desktop - only
 @media @media-query-large-desktop-only {
 
-	// Homebox
-	.fki-box-homebox {}
+	// Front
+	.front {}
 }
 
 // Print
 @media print {
 
-	// Homebox
-	.fki-box-homebox {}
+	// Front
+	.front {}
 }
 
 // Touch
 .touch {
 
-	// Homebox
-	.fki-box-homebox {}
+	// Front
+	.front {}
 }
 
 // No touch
 .no-touch {
 
-	// Homebox
-	.fki-box-homebox {}
+	// Front
+	.front {}
 }
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-// Homebox mixin
-.fki-mixin-box-homebox() {}
+// Front mixin
+.mixin-front() {}

@@ -5986,6 +5986,20 @@
   }
 }
 
+@media (min-width: 768px) {
+  .front #homebox .homebox-column-wrapper.homebox-column-wrapper-1 {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+
+@media (min-width: 768px) {
+  .front #homebox .homebox-column-wrapper.homebox-column-wrapper-2 {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .fki-box .fki-box-heading .pane-title,
   .fki-box .fki-box-heading .fki-box-heading-title {
