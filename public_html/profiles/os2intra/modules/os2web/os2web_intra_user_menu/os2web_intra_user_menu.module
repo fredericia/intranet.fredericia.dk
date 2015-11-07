@@ -26,18 +26,39 @@ function os2web_intra_user_menu_menu() {
     'access arguments' => array('access administration pages'),
   );
 
+  $items['admin/config/os2web_intra_user_menu/settings'] = array(
+    'title' => t('OS2web User Menu Settings'),
+    'description' => t('Administrer indstillinger OS2web brugermenu'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('os2web_intra_user_menu_settings_form'),
+    'access arguments' => array('access administration pages'),
+  );
+
+  $items['user-menu/ajax'] = array(
+    'title' => 'User menu ajax functions',
+    'description' => 'Ajax',
+    'page callback' => '_os2web_intra_user_menu_groups',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_CALLBACK,
+  );
+
   // Determine which mode the module is being run in
   $mode = variable_get('os2web_intra_user_menu_mode');
 
   if ($mode == 'menu') {
 
     $items['user-group'] = array(
-      'title' => 'User group title',
+      'title' => 'Mine grupper',
       'access arguments' => array('authenticated user'),
       'menu_name' => 'user-menu',
       'page callback' => 'os2web_intra_user_menu_group',
       'type' => MENU_NORMAL_ITEM,
       'weight' => -9,
+      'options' => array(
+        'attributes' => array(
+          'class' => 'group-menu-item'
+        )
+      )
     );
 
     $items['node_basket/basket/view'] = array(
@@ -46,24 +67,6 @@ function os2web_intra_user_menu_menu() {
       'menu_name' => 'user-menu',
       'type' => MENU_NORMAL_ITEM,
       'weight' => -8,
-    );
-
-    $items['municipality'] = array(
-      'title' => 'Municipality',
-      'access arguments' => array('authenticated user'),
-      'menu_name' => 'user-menu',
-      'page callback' => 'os2web_intra_user_menu_municipality',
-      'type' => MENU_NORMAL_ITEM,
-      'weight' => -7,
-    );
-
-    $items['all-groups'] = array(
-      'title' => 'Groups',
-      'access arguments' => array('authenticated user'),
-      'menu_name' => 'user-menu',
-      'page callback' => 'os2web_intra_user_menu_all_groups',
-      'type' => MENU_NORMAL_ITEM,
-      'weight' => -6,
     );
   }
   return $items;
@@ -112,7 +115,6 @@ function os2web_intra_user_menu_settings_submit() {
       drupal_set_message(t("OS2web user menu running in 'menu' mode"));
       break;
   }
- // cache_clear_all('*', 'cache_menu', TRUE);
   menu_rebuild();
 }
 
@@ -122,9 +124,6 @@ function os2web_intra_user_menu_settings_submit() {
 function os2web_intra_user_menu_menu_alter(&$items) {
   $items['user']['title callback'] = 'os2web_intra_user_menu_title_callback';
   $items['user']['title arguments'] = array('user');
-
-  $items['user-group']['title callback'] = 'os2web_intra_user_menu_title_callback';
-  $items['user-group']['title arguments'] = array('user-group');
 }
 
 /**
@@ -155,42 +154,30 @@ function os2web_intra_user_menu_title_callback($arg) {
 
       return $name;
       break;
-
-    case 'user-group':
-      $user_groups = og_get_groups_by_user($user);
-      $first_group = reset($user_groups);
-      $user_group_id = array_shift($first_group);
-      $user_group = node_load($user_group_id);
-      return $user_group->title;
   }
 }
 
 function os2web_intra_user_menu_group() {
+
+  drupal_goto('groups');
+}
+
+/* Callback for getting users group memberships for submenu */
+function _os2web_intra_user_menu_groups() {
   global $user;
 
-  // Get users OG group memberships
-  // Just get the first one, normal users shouldn't have
-  // more than one
-  $user_groups = og_get_groups_by_user($user);
-  $first_group = reset($user_groups);
-  $user_group_id = array_shift($first_group);
-  drupal_goto('node/' . $user_group_id);
-}
+  $response_data = array();
+  $groups = og_get_groups_by_user($user);
 
-function os2web_intra_user_menu_municipality() {
+  if (count($groups) > 0) {
+    $nodes = node_load_multiple(array_keys($groups['node']));
 
-  $vocab = taxonomy_vocabulary_machine_name_load('os2intra_organization_tax');
-  $tree = taxonomy_get_tree($vocab->vid);
-
-  foreach($tree as $term){
-    if($term->parents[0] == 0){
-      $top_org_tid = $term->tid;
-      continue;
+    foreach ($nodes as $node) {
+      $response_data[] = array(
+        'nid' => $node->nid,
+        'title' => $node->title,
+      );
     }
   }
-  drupal_goto('taxonomy/term/' . $top_org_tid);
-}
-
-function os2web_intra_user_menu_all_groups() {
-  drupal_goto('groups');
+  drupal_json_output($response_data);
 }

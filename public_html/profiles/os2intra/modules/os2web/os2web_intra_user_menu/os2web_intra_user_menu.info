@@ -2,3 +2,5 @@ name = OS2web intra user menu
 description = usermenu for OS2web intranet
 core = 7.x
 dependencies[] = menu
+
+scripts[] = js/os2web_intra_user_menu.js
