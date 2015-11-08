@@ -60208,3 +60208,5 @@ msgstr "Tilpasset etiket"
 msgid "End time"
 msgstr "Slut tid"
 
+msgid "ago"
+msgstr "siden"
