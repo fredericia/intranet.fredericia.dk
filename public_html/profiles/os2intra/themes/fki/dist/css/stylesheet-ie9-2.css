@@ -5989,14 +5989,14 @@
 @media (min-width: 768px) {
   .front #homebox .homebox-column-wrapper.homebox-column-wrapper-1 {
     float: left;
-    width: 66.66666667%;
+    width: 58.33333333%;
   }
 }
 
 @media (min-width: 768px) {
   .front #homebox .homebox-column-wrapper.homebox-column-wrapper-2 {
     float: left;
-    width: 33.33333333%;
+    width: 41.66666667%;
   }
 }
 
