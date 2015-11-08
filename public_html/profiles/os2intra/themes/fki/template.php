@@ -77,7 +77,7 @@ function fki_preprocess_node(&$variables) {
   }
 
   // Author
-  if ($author_information = bellcom_user_get_raw_information($variables['uid'])) {
+  if ($author_information = bellcom_user_get_raw_information($variables['node']->uid)) {
 
     if (isset($author_information['full_name'])) {
       $variables['author_full_name'] = $author_information['full_name'];

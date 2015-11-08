@@ -713,9 +713,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'weight' => 0,
       ),
       'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 150,
+        ),
+        'type' => 'text_trimmed',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -768,7 +771,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -845,7 +848,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -898,7 +901,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',

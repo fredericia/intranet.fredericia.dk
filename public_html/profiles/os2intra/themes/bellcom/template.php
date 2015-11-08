@@ -69,10 +69,11 @@ function bellcom_preprocess_node(&$variables) {
     $function($variables);
   }
 
-  if ($updated_at = $variables['changed']) {
-    $variables['updated_at_short'] = format_date($updated_at, 'short');;
-    $variables['updated_at_medium'] = format_date($updated_at, 'medium');;
-    $variables['updated_at_long'] = format_date($updated_at, 'long');;
+  if ($updated_at = $variables['node']->changed) {
+    $variables['updated_at_short'] = format_date($updated_at, 'short');
+    $variables['updated_at_medium'] = format_date($updated_at, 'medium');
+    $variables['updated_at_long'] = format_date($updated_at, 'long');
+    $variables['updated_at_ago'] = date_format_interval($updated_at);
   }
 }
 
