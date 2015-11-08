@@ -7,7 +7,7 @@
       <!-- Begin - entity info -->
       <ul class="fki-list-info fki-entity-info">
         <li><?php print l($author_full_name, 'user/' . $node->uid); ?></li>
-        <li><span><?php print t('Sidst opdateret d.'); ?> <?php print $updated_at_short; ?></span></li>
+        <li><span><?php print $updated_at_ago; ?></span></li>
       </ul>
       <!-- End - entity info -->
     <?php endif ?>
