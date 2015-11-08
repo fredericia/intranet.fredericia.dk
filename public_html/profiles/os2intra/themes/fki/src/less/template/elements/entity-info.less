@@ -35,6 +35,31 @@
 }
 
 // --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+.fki-box,
+.fki-box-primary {
+	.fki-mixin-entity-info-variant(@brand-primary);
+}
+
+.fki-box-secondary {
+	.fki-mixin-entity-info-variant(@brand-secondary);
+}
+
+.fki-box-tertiary {
+	.fki-mixin-entity-info-variant(@brand-tertiary);
+}
+
+.fki-box-quaternary {
+	.fki-mixin-entity-info-variant(@brand-quaternary);
+}
+
+.fki-box-quinary {
+	.fki-mixin-entity-info-variant(@brand-quinary);
+}
+
+// --------------------------------------------------
 // Responsive
 // --------------------------------------------------
 
@@ -120,4 +145,19 @@
 // --------------------------------------------------
 
 // Entity info mixin
-.fki-mixin-entity-info() {}
+.fki-mixin-entity-info-variant(@font-color) {
+
+	&,
+	>	.fki-box {
+
+		.fki-entity-info {
+
+			&,
+			a,
+			.fa,
+			span {
+				color: @font-color;
+			}
+		}
+	}
+}

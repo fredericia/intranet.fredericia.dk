@@ -2,13 +2,7 @@ name = OS2Web Audit
 core = 7.x
 package = OS2Web - Backend
 version = 7.x-1.0
-dependencies[] = blame (>=7.x-2.x)
 dependencies[] = ctools
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
-features[variable][] = blame_exclude_form_ids
-features[variable][] = blame_ignore_uids
-features[variable][] = blame_pages
-features[variable][] = blame_pages_in_ex
-features[variable][] = blame_track_uids
