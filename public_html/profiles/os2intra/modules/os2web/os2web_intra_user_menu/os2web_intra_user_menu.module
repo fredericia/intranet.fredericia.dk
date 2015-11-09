@@ -60,14 +60,6 @@ function os2web_intra_user_menu_menu() {
         )
       )
     );
-
-    $items['node_basket/basket/view'] = array(
-      'title' => 'Basket',
-      'access arguments' => array('use node basket'),
-      'menu_name' => 'user-menu',
-      'type' => MENU_NORMAL_ITEM,
-      'weight' => -8,
-    );
   }
   return $items;
 }
