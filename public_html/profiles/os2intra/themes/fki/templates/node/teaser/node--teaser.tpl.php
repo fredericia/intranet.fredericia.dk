@@ -35,13 +35,13 @@
     <!-- Begin - footer -->
     <div class="fki-teaser-footer">
 
-      <!-- Begin - number of comments -->
-      <span class="fki-teaser-footer-element fki-teaser-footer-element-number-of-comments"><?php print $number_of_comments; ?></span>
-      <!-- End - number of comments -->
-
       <!-- Begin - number of hits -->
       <span class="fki-teaser-footer-element fki-teaser-footer-element-number-of-hits"><?php print $number_of_hits; ?></span>
       <!-- End - number of hits -->
+
+      <!-- Begin - number of comments -->
+      <span class="fki-teaser-footer-element fki-teaser-footer-element-number-of-comments"><?php print $number_of_comments; ?></span>
+      <!-- End - number of comments -->
 
     </div>
     <!-- End - footer -->

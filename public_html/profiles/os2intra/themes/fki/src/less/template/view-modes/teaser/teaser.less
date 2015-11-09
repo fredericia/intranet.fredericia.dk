@@ -10,6 +10,7 @@
 // Variables
 // --------------------------------------------------
 
+@fki-teaser-inner-top-bottom-spacing: 10px;
 @fki-teaser-inner-entity-info-top-spacing: @default-heading-top-bottom-spacing;
 @fki-teaser-inner-heading-top-bottom-spacing: @default-heading-top-bottom-spacing;
 @fki-teaser-inner-body-top-bottom-spacing: @default-body-top-bottom-spacing;
@@ -22,6 +23,7 @@
 
 // Teaser
 .fki-teaser {
+    padding: @fki-teaser-inner-top-bottom-spacing 0;
 
     .fki-teaser-info {
         padding: @fki-teaser-inner-entity-info-top-spacing @fki-teaser-inner-left-right-spacing;
@@ -51,10 +53,13 @@
 
         .fki-teaser-footer-element {
             display: inline-block;
+            font-size: @font-size-small;
 
             &:before {
                 font-family: FontAwesome;
+                font-size: @font-size-base;
                 margin-right: 4px;
+                color: @brand-secondary;
             }
 
             &.fki-teaser-footer-element-number-of-comments {
