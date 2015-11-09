@@ -1,0 +1,162 @@
+// |--------------------------------------------------------------------------
+// | Popover button
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .popover-button
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Popover button
+.popover-button-wrapper {
+	position: absolute;
+	left: 100%;
+	width: 100%;
+	z-index: 2000;
+	list-style: none;
+	margin: 0;
+	.rotate(90deg);
+	.transform-origin(left top);
+
+	li {
+		display: inline-block;
+
+		+ li {
+			margin-left: 10px;
+		}
+	}
+
+	.popover-button {
+
+		> a {
+			display: block;
+			.border-bottom-radius(@border-radius-base);
+			font-weight: bold;
+			padding: 8px 15px;
+			text-transform: uppercase;
+			text-decoration: none;
+		}
+	}
+}
+
+.inner-wrapper {
+	position: relative;
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+.popover-button-colleague {
+	.fki-mixin-popover-button(@state-primary-bg, @state-primary-text);
+	top: 100px;
+}
+
+.popover-button-dish-of-the-day {
+	.fki-mixin-popover-button(@state-secondary-bg, @state-secondary-text);
+	top: 300px;
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {
+
+	// Popover button
+	.popover-button {}
+}
+
+// Mobile - only
+@media @media-query-mobile-only {
+
+	// Popover button
+	.popover-button {}
+}
+
+// Tablet
+@media @media-query-tablet {
+
+	// Popover button
+	.popover-button {}
+}
+
+// Tablet - only
+@media @media-query-tablet-only {
+
+	// Popover button
+	.popover-button {}
+}
+
+// Desktop
+@media @media-query-desktop {
+
+	// Popover button
+	.popover-button {}
+}
+
+// Desktop - only
+@media @media-query-desktop-only {
+
+	// Popover button
+	.popover-button {}
+}
+
+// Large desktop
+@media @media-query-large-desktop {
+
+	// Popover button
+	.popover-button {}
+}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {
+
+	// Popover button
+	.popover-button {}
+}
+
+// Print
+@media print {
+
+	// Popover button
+	.popover-button {}
+}
+
+// Touch
+.touch {
+
+	// Popover button
+	.popover-button {}
+}
+
+// No touch
+.no-touch {
+
+	// Popover button
+	.popover-button {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Popover button mixin
+.fki-mixin-popover-button(@background-color, @font-color) {
+
+	&.popover-button {
+
+		> a {
+			color: @font-color;
+			background-color: @background-color;
+		}
+	}
+}

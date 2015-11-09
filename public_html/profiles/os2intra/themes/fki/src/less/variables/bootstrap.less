@@ -342,12 +342,12 @@
 @container-sm:                 @container-tablet;
 
 // Medium screen / desktop
-@container-desktop:            ((940px + @grid-gutter-width) - @sidebar-expanded-width);
+@container-desktop:            ((940px + @grid-gutter-width) - @sidebar-expanded-width - 36px); // 36px = popover button height
 //** For `@screen-md-min` and up.
 @container-md:                 @container-desktop;
 
 // Large screen / wide desktop
-@container-large-desktop:      ((1140px + @grid-gutter-width) - @sidebar-expanded-width);
+@container-large-desktop:      ((1140px + @grid-gutter-width) - @sidebar-expanded-width - 36px); // 36px = popover button height
 //** For `@screen-lg-min` and up.
 @container-lg:                 @container-large-desktop;
 
