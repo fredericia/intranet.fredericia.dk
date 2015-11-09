@@ -1,13 +1,16 @@
 <?php
 
-/**
- * @file
- * homebox-block.tpl.php
- * Default theme implementation each homebox block.
- */
-?>
-<div id="homebox-block-<?php print $block->key; ?>" class="<?php print $block->homebox_classes ?> fki-box fki-box-homebox block block-<?php print $block->module ?>">
+// As we have no preprocess function for each homebox block, we add PHP here.
+$box_class = strtolower('fki-box-homebox-' . drupal_clean_css_identifier($block->subject));
+$newest_content_box = $box_class == 'fki-box-homebox-nyeste-indhold-fra-dine-grupper' ? true : false;
 
+?>
+
+<!-- homebox-block.tpl.php -->
+<!-- Begin - homebox block -->
+<div id="homebox-block-<?php print $block->key; ?>" class="<?php print $block->homebox_classes ?> <?php print $box_class; ?> <?php if ( ! $newest_content_box) print  'fki-box fki-box-homebox'; ?> block block-<?php print $block->module ?>">
+
+  <?php if ( ! $newest_content_box): ?>
   <div class="fki-box-heading portlet-header">
 
     <h4 class="fki-box-heading-title">
@@ -27,6 +30,7 @@
     </h4>
 
   </div>
+  <?php endif; ?>
 
   <div class="fki-box-body">
 
@@ -46,3 +50,4 @@
   </div>
 
 </div>
+<!-- End - homebox block -->

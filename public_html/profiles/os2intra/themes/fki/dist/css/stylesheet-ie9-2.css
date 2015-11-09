@@ -6097,32 +6097,32 @@
 }
 
 @media screen and (max-width: 767px) {
-  #homebox .fki-box-homebox .fki-box-heading .pane-title,
-  #homebox .fki-box-homebox .fki-box-heading .fki-box-heading-title {
+  #homebox .homebox-portlet.fki-box .fki-box-heading .pane-title,
+  #homebox .homebox-portlet.fki-box .fki-box-heading .fki-box-heading-title {
     font-size: 14px;
     line-height: 15px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  #homebox .fki-box-homebox .fki-box-heading .pane-title,
-  #homebox .fki-box-homebox .fki-box-heading .fki-box-heading-title {
+  #homebox .homebox-portlet.fki-box .fki-box-heading .pane-title,
+  #homebox .homebox-portlet.fki-box .fki-box-heading .fki-box-heading-title {
     font-size: 15px;
     line-height: 16px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  #homebox .fki-box-homebox .fki-box-heading .pane-title,
-  #homebox .fki-box-homebox .fki-box-heading .fki-box-heading-title {
+  #homebox .homebox-portlet.fki-box .fki-box-heading .pane-title,
+  #homebox .homebox-portlet.fki-box .fki-box-heading .fki-box-heading-title {
     font-size: 16px;
     line-height: 17px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  #homebox .fki-box-homebox .fki-box-heading .pane-title,
-  #homebox .fki-box-homebox .fki-box-heading .fki-box-heading-title {
+  #homebox .homebox-portlet.fki-box .fki-box-heading .pane-title,
+  #homebox .homebox-portlet.fki-box .fki-box-heading .fki-box-heading-title {
     font-size: 18px;
     line-height: 19px;
   }

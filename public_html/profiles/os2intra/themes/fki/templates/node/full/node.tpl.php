@@ -1,4 +1,17 @@
 <?php if ($view_mode == 'full'): ?>
+  <?php
+    hide($content['comments']);
+    hide($content['links']);
+    hide($content['field_tags']);
+
+    if (isset($content['field_tags'])) {
+      hide($content['field_tags']);
+    }
+
+    if (isset($content['field_os2intra_images'])) {
+      hide($content['field_os2intra_images']);
+    }
+  ?>
   <!-- node.tpl.php -->
   <!-- Begin - full node -->
   <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> fki-full"<?php print $attributes; ?>>
@@ -34,10 +47,10 @@
       <!-- End - intro -->
     <?php endif; ?>
 
-    <?php if (isset($content['body'])): ?>
+    <?php if (isset($content)): ?>
       <!-- Begin - body -->
       <div class="fki-full-body">
-        <?php print render($content['body']); ?>
+        <?php print render($content); ?>
       </div>
       <!-- End - body -->
     <?php endif; ?>
