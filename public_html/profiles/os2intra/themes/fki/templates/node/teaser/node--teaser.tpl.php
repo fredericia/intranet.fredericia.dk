@@ -14,7 +14,7 @@
 
     <!-- Begin - heading -->
     <div class="fki-teaser-heading">
-      <h3 class="fki-teaser-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+      <h3 class="fki-teaser-heading-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
     </div>
     <!-- End - heading -->
 
@@ -34,6 +34,15 @@
 
     <!-- Begin - footer -->
     <div class="fki-teaser-footer">
+
+      <!-- Begin - number of comments -->
+      <span class="fki-teaser-footer-element fki-teaser-footer-element-number-of-comments"><?php print $number_of_comments; ?></span>
+      <!-- End - number of comments -->
+
+      <!-- Begin - number of hits -->
+      <span class="fki-teaser-footer-element fki-teaser-footer-element-number-of-hits"><?php print $number_of_hits; ?></span>
+      <!-- End - number of hits -->
+
     </div>
     <!-- End - footer -->
 

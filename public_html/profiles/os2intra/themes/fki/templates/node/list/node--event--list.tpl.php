@@ -5,7 +5,7 @@
 
     <!-- Begin - heading -->
     <div class="fki-list-heading">
-      <h3 class="fki-list-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+      <h3 class="fki-list-heading-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
     </div>
     <!-- End - heading -->
 

@@ -13,6 +13,7 @@
 @fki-teaser-inner-entity-info-top-spacing: @default-heading-top-bottom-spacing;
 @fki-teaser-inner-heading-top-bottom-spacing: @default-heading-top-bottom-spacing;
 @fki-teaser-inner-body-top-bottom-spacing: @default-body-top-bottom-spacing;
+@fki-teaser-inner-footer-top-bottom-spacing: @default-footer-top-bottom-spacing;
 @fki-teaser-inner-left-right-spacing: @default-left-right-spacing;
 
 // --------------------------------------------------
@@ -24,7 +25,6 @@
 
     .fki-teaser-info {
         padding: @fki-teaser-inner-entity-info-top-spacing @fki-teaser-inner-left-right-spacing;
-        padding-bottom: 0;
     }
 
     .fki-teaser-heading {
@@ -39,6 +39,42 @@
     // Body
     .fki-teaser-body {
         padding: @fki-teaser-inner-body-top-bottom-spacing @fki-teaser-inner-left-right-spacing;
+
+        + .fki-teaser-footer {
+            padding-top: 0;
+        }
+    }
+
+    // Footer
+    .fki-teaser-footer {
+        padding: @fki-teaser-inner-footer-top-bottom-spacing @fki-teaser-inner-left-right-spacing;
+
+        .fki-teaser-footer-element {
+            display: inline-block;
+
+            &:before {
+                font-family: FontAwesome;
+                margin-right: 4px;
+            }
+
+            &.fki-teaser-footer-element-number-of-comments {
+
+                &:before {
+                    content: @fa-var-comment;
+                }
+            }
+
+            &.fki-teaser-footer-element-number-of-hits {
+
+                &:before {
+                    content: @fa-var-eye;
+                }
+            }
+
+            + .fki-teaser-footer-element {
+                margin-left: 15px;
+            }
+        }
     }
 }
 
