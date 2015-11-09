@@ -96,7 +96,7 @@ dependencies[] = os2intra_view_modes
 dependencies[] = bellcom_user
 dependencies[] = bellcom_apps
 dependencies[] = trash_can
-
+dependencies[] = node_basket
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Features.
