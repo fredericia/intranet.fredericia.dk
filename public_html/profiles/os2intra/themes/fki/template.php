@@ -83,6 +83,32 @@ function fki_preprocess_node(&$variables) {
       $variables['author_full_name'] = $author_information['full_name'];
     }
   }
+
+  // Number of comments
+  $variables['number_of_comments'] = t('@comment_count comments', array('@comment_count' => 0));
+  if ($number_of_comments = db_query("SELECT COUNT(cid) AS count FROM {comment} WHERE nid = :nid", array(":nid" => $variables['nid']))->fetchField()) {
+
+    // 1
+    if ($number_of_comments == 1) {
+      $variables['number_of_comments'] = t('@comment_count comment', array('@comment_count' => $number_of_comments));
+    }
+    else {
+      $variables['number_of_comments'] = t('@comment_count comments', array('@comment_count' => $number_of_comments));
+    }
+  }
+
+  // Number of hits
+  $variables['number_of_hits'] = t('Seen by @hits persons', array('@hits' => 0));
+  if ($statistics = statistics_get($variables['node']->nid)) {
+
+    // 1
+    if ($statistics['totalcount'] == 1) {
+      $variables['number_of_hits'] = t('Seen by @hits person', array('@hits' => $statistics['totalcount']));
+    }
+    else {
+      $variables['number_of_hits'] = t('Seen by @hits persons', array('@hits' => $statistics['totalcount']));
+    }
+  }
 }
 
 /*
