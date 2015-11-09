@@ -7,12 +7,12 @@
       <h2 class="fki-full-heading-title"><?php print $term_name; ?></h2>
     </div>
 
-    <?php if (isset($content['body'])): ?>
-      <!-- Begin - body -->
-      <div class="fki-full-body">
-        <?php print render($content['body']); ?>
+    <?php if (isset($content['description'])): ?>
+      <!-- Begin - description -->
+      <div class="fki-full-description">
+        <?php print render($content['description']); ?>
       </div>
-      <!-- End - body -->
+      <!-- End - description -->
     <?php endif; ?>
 
     <?php print render($content['links']); ?>
