@@ -266,7 +266,17 @@
 
 			.pane-title,
 			.fki-box-heading-title {
-				color: @heading-font-color;
+
+				&,
+				> a {
+
+					&,
+					&:hover,
+					&:focus,
+					&:active {
+						color: @heading-font-color;
+					}
+				}
 			}
 		}
 	}

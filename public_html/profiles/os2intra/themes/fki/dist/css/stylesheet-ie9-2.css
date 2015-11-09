@@ -5959,6 +5959,34 @@
 }
 
 @media screen and (max-width: 767px) {
+  .fki-message-notification-teaser.fki-message-notification-teaser-variant-with-image .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 14px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-message-notification-teaser.fki-message-notification-teaser-variant-with-image .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 15px;
+    line-height: 16px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-message-notification-teaser.fki-message-notification-teaser-variant-with-image .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 16px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-message-notification-teaser.fki-message-notification-teaser-variant-with-image .fki-teaser-heading .fki-teaser-heading-title {
+    font-size: 18px;
+    line-height: 19px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .fki-list .fki-list-heading .fki-list-heading-title {
     font-size: 12px;
     line-height: 13px;
