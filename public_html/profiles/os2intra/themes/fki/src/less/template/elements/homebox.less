@@ -26,10 +26,10 @@
 
 	.homebox-portlet {
 		background-color: transparent;
-		margin: 0;
 		padding: 0;
 		border: 0;
 		background: none;
+		margin-top: 0;
 
 		&.fki-box {
 			.fki-box;
@@ -86,25 +86,23 @@
 // Watermark
 #homebox {
 
-	#homebox-block-views_os2intra_forside_views-block-1,
-	#homebox-block-views_os2intra_forside_views-block_1 {
-		.fki-box-watermarked;
-	}
-}
+	.fki-box {
 
-// Quinary (info til alle)
-#homebox {
+		&.fki-box-homebox {
 
-	#homebox-block-views_os2intra_forside_views-block_1 {
-		.fki-box-quinary;
-	}
-}
+			&.fki-box-homebox-info-til-alle,
+			&.fki-box-homebox-kommmende-aktiviteter {
+				.fki-box-watermarked;
+			}
+		}
 
-// Tertiary (kommende aktiviteter)
-#homebox {
+		&.fki-box-homebox-info-til-alle {
+			.fki-box-quinary;
+		}
 
-	#homebox-block-views_os2intra_forside_views-block-1 {
-		.fki-box-tertiary;
+		&.fki-box-homebox-kommmende-aktiviteter {
+			.fki-box-tertiary;
+		}
 	}
 }
 

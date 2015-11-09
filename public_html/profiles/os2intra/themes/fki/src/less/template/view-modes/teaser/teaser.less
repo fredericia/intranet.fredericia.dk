@@ -10,6 +10,7 @@
 // Variables
 // --------------------------------------------------
 
+@fki-teaser-inner-entity-info-top-spacing: @default-heading-top-bottom-spacing;
 @fki-teaser-inner-heading-top-bottom-spacing: @default-heading-top-bottom-spacing;
 @fki-teaser-inner-body-top-bottom-spacing: @default-body-top-bottom-spacing;
 @fki-teaser-inner-left-right-spacing: @default-left-right-spacing;
@@ -20,6 +21,11 @@
 
 // Teaser
 .fki-teaser {
+
+    .fki-teaser-info {
+        padding: @fki-teaser-inner-entity-info-top-spacing @fki-teaser-inner-left-right-spacing;
+        padding-bottom: 0;
+    }
 
     .fki-teaser-heading {
         padding: @fki-teaser-inner-heading-top-bottom-spacing @fki-teaser-inner-left-right-spacing;
