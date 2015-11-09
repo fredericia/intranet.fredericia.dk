@@ -4,6 +4,7 @@ core = 7.x
 package = Fredericia
 dependencies[] = bellcom_user
 dependencies[] = ctools
+dependencies[] = statistics
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
