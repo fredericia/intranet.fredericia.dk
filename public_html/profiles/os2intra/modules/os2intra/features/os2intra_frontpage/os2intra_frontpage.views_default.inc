@@ -575,7 +575,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['realname']['label'] = '';
   $handler->display->display_options['fields']['realname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['realname']['element_label_colon'] = FALSE;
-  /* Field: Registration Settings: Spaces used */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['capacity_used']['id'] = 'capacity_used';
   $handler->display->display_options['fields']['capacity_used']['table'] = 'node';
   $handler->display->display_options['fields']['capacity_used']['field'] = 'capacity_used';
@@ -1236,7 +1236,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Du er ikke tilmeldt nogle fremtidige  events.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Relationship: Registration: Node to Registration */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['registration_rel']['id'] = 'registration_rel';
   $handler->display->display_options['relationships']['registration_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['registration_rel']['field'] = 'registration_rel';
@@ -1248,7 +1248,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Registration Settings: Spaces used */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['capacity_used']['id'] = 'capacity_used';
   $handler->display->display_options['fields']['capacity_used']['table'] = 'node';
   $handler->display->display_options['fields']['capacity_used']['field'] = 'capacity_used';
@@ -1412,7 +1412,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['label'] = '';
   $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
-  /* Field: Registration Settings: Spaces used */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['capacity_used']['id'] = 'capacity_used';
   $handler->display->display_options['fields']['capacity_used']['table'] = 'node';
   $handler->display->display_options['fields']['capacity_used']['field'] = 'capacity_used';
@@ -1478,7 +1478,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Registration Settings: Spaces used */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['capacity_used']['id'] = 'capacity_used';
   $handler->display->display_options['fields']['capacity_used']['table'] = 'node';
   $handler->display->display_options['fields']['capacity_used']['field'] = 'capacity_used';
@@ -1516,16 +1516,15 @@ function os2intra_frontpage_views_default_views() {
     t('Stigende'),
     t('Faldende'),
     t('Du er ikke tilmeldt nogle fremtidige  events.'),
-    t('node being the Registration'),
+    t('registration_rel'),
     t('Antal tilmeldinger'),
-    t('.'),
-    t(','),
     t('Block'),
     t('more'),
     t('You\'re attending - pane'),
     t('Begivenheder du deltager i'),
     t('flag'),
     t('<strong>[comment_count]</strong> comments'),
+    t('.'),
     t('Fysisk lokation'),
     t('Billede'),
     t('Dato'),
@@ -1754,11 +1753,6 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
-  /* Relationship: Broken/missing handler */
-  $handler->display->display_options['relationships']['field_os2intra_organisation_ref_target_id']['id'] = 'field_os2intra_organisation_ref_target_id';
-  $handler->display->display_options['relationships']['field_os2intra_organisation_ref_target_id']['table'] = 'field_data_field_os2intra_organisation_ref';
-  $handler->display->display_options['relationships']['field_os2intra_organisation_ref_target_id']['field'] = 'field_os2intra_organisation_ref_target_id';
-  $handler->display->display_options['relationships']['field_os2intra_organisation_ref_target_id']['label'] = 'Ord i ordforråd entity referenced from field_os2intra_organisation_ref';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1771,17 +1765,6 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
-  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'og_user_groups';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '-3';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1808,8 +1791,6 @@ function os2intra_frontpage_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Ord i ordforråd entity referenced from field_os2intra_organisation_ref'),
-    t('Alle'),
     t('Block'),
   );
   $export['os2intra_vigtige_beskeder'] = $view;
