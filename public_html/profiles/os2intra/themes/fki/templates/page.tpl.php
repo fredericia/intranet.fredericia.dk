@@ -25,13 +25,6 @@
   <!-- Begin - inner wrapper -->
   <div class="inner-wrapper" role="document">
 
-    <!-- Begin - popover button -->
-    <ul class="popover-button-wrapper">
-      <li class="popover-button popover-button-colleague"><a href="#">Find kollega</a></li>
-      <li class="popover-button popover-button-dish-of-the-day"><a href="#">Dagens ret</a></li>
-    </ul>
-    <!-- End - popover button -->
-
     <!-- Begin - simple navigation -->
     <nav class="simple-navigation">
 
@@ -61,6 +54,15 @@
     <!-- Begin - content -->
     <div class="content">
       <div class="container container-fluid-lg-only container-fluid-md-only">
+
+        <?php if (user_is_logged_in()): ?>
+          <!-- Begin - popover button -->
+          <ul class="popover-button-wrapper">
+            <li class="popover-button popover-button-colleague"><a href="#">Find kollega</a></li>
+            <li class="popover-button popover-button-dish-of-the-day"><a href="#">Dagens ret</a></li>
+          </ul>
+          <!-- End - popover button -->
+        <?php endif ?>
 
         <?php print $messages; ?>
 

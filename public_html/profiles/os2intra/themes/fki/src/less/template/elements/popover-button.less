@@ -17,11 +17,13 @@
 // Popover button
 .popover-button-wrapper {
 	position: absolute;
+	top: (@grid-gutter-width + 100px);
 	left: 100%;
-	width: 100%;
+	min-width: 50%;
 	z-index: 2000;
 	list-style: none;
 	margin: 0;
+	padding: 0;
 	.rotate(90deg);
 	.transform-origin(left top);
 
@@ -46,7 +48,7 @@
 	}
 }
 
-.inner-wrapper {
+.content {
 	position: relative;
 }
 
@@ -56,12 +58,10 @@
 
 .popover-button-colleague {
 	.fki-mixin-popover-button(@state-primary-bg, @state-primary-text);
-	top: 100px;
 }
 
 .popover-button-dish-of-the-day {
 	.fki-mixin-popover-button(@state-secondary-bg, @state-secondary-text);
-	top: 300px;
 }
 
 // --------------------------------------------------
