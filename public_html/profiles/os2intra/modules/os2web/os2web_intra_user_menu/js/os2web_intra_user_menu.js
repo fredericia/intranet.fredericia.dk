@@ -11,7 +11,7 @@
    */
   function os2web_intra_user_menu_groups() {
 
-    $.getJSON('user-menu/ajax', function(data) {
+    $.getJSON('/user-menu/ajax', function(data) {
 
       var ul = $('<ul class="main-navigation-list-dropdown-menu">');
 
