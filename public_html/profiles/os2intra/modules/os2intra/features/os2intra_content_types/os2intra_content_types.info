@@ -193,6 +193,7 @@ features[filter][] = kommentar
 features[image][] = 4_col_image_-_520x220
 features[image][] = normal
 features[image][] = spotboks
+features[image][] = teaser_image
 features[image][] = teaser_spotbox
 features[node][] = event
 features[node][] = it_vejledning

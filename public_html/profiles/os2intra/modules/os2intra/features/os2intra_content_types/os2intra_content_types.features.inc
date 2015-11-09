@@ -115,6 +115,21 @@ function os2intra_content_types_image_default_styles() {
     ),
   );
 
+  // Exported image style: teaser_image.
+  $styles['teaser_image'] = array(
+    'label' => 'Teaser image',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 150,
+          'height' => 120,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: teaser_spotbox.
   $styles['teaser_spotbox'] = array(
     'label' => 'Teaser - spotbox',

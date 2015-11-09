@@ -27,8 +27,10 @@
 
     .fki-teaser-info {
         padding: @fki-teaser-inner-entity-info-top-spacing @fki-teaser-inner-left-right-spacing;
+        padding-top: 0;
     }
 
+    // Heading
     .fki-teaser-heading {
         padding: @fki-teaser-inner-heading-top-bottom-spacing @fki-teaser-inner-left-right-spacing;
 
@@ -38,9 +40,18 @@
         }
     }
 
+    // Image
+    .fki-teaser-image-container {
+        max-width: 80px;
+    }
+    .fki-teaser-image {
+        padding-left: @fki-teaser-inner-left-right-spacing;
+    }
+
     // Body
     .fki-teaser-body {
         padding: @fki-teaser-inner-body-top-bottom-spacing @fki-teaser-inner-left-right-spacing;
+        padding-bottom: 0;
 
         + .fki-teaser-footer {
             padding-top: 0;
@@ -50,10 +61,12 @@
     // Footer
     .fki-teaser-footer {
         padding: @fki-teaser-inner-footer-top-bottom-spacing @fki-teaser-inner-left-right-spacing;
+        padding-bottom: 0;
 
         .fki-teaser-footer-element {
             display: inline-block;
             font-size: @font-size-small;
+            font-weight: bold;
 
             &:before {
                 font-family: FontAwesome;
