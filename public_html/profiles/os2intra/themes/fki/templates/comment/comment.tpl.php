@@ -8,16 +8,16 @@
       </div>
       <div class="table-column">
 
-        <?php if (isset($author_full_name) and $updated_at_short): ?>
-          <!-- Begin - entity info -->
-          <ul class="fki-comment-info fki-entity-info">
-            <li><?php print l($author_full_name, 'user/' . $node->uid); ?></li>
-            <li><span><?php print $created_at_ago; ?></span></li>
-          </ul>
-          <!-- End - entity info -->
-        <?php endif ?>
-
         <div class="fki-box-body">
+
+          <?php if (isset($author_full_name) and $updated_at_short): ?>
+            <!-- Begin - entity info -->
+            <ul class="fki-comment-info fki-entity-info">
+              <li><?php print l($author_full_name, 'user/' . $node->uid); ?></li>
+              <li><span><?php print $created_at_ago; ?></span></li>
+            </ul>
+            <!-- End - entity info -->
+          <?php endif ?>
 
           <?php if (isset($content['comment_body'])): ?>
             <!-- Begin - comment body -->
