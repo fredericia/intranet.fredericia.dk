@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-11-09 11:27+0100\n"
-"PO-Revision-Date: 2015-11-09 11:27+0100\n"
+"POT-Creation-Date: 2015-11-10 12:36+0100\n"
+"PO-Revision-Date: 2015-11-10 12:36+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -24979,132 +24979,1138 @@ msgid ""
 "href=\"!settings_url\">settings page</a>."
 msgstr ""
 
-#: /admin/structure/pages/nojs/operation/term_view/handlers/term_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba/content?destination=taxonomy/term/10
-msgid "\"@s\" name"
-msgstr ""
-
-#: /admin/structure/pages/nojs/operation/term_view/handlers/term_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba/content?destination=taxonomy/term/10
-msgid "\"@s\" @type"
-msgstr ""
-
-#: /admin/structure/pages/nojs/operation/term_view/handlers/term_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba/content?destination=taxonomy/term/10
-msgid "Reuse layout"
-msgstr ""
-
-#: /admin/structure/pages/nojs/operation/term_view/handlers/term_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba/content?destination=taxonomy/term/10
-msgid "Canvas"
-msgstr ""
-
-#: /admin/structure/pages/nojs/operation/term_view/handlers/term_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba/content?destination=taxonomy/term/10
-msgid "Canvas settings"
-msgstr ""
-
-#: /panels/ajax/editor/edit-pane/panel_context%3Aterm_view%3A%3Aterm_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba%3A%3A%3A%3A/new-ec46137a-871c-4e25-a81c-51a65b1d15bc
-msgid "Title tag"
-msgstr ""
-
-#: /panels/ajax/editor/edit-pane/panel_context%3Aterm_view%3A%3Aterm_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba%3A%3A%3A%3A/new-ec46137a-871c-4e25-a81c-51a65b1d15bc
-msgid "- No tag -"
-msgstr ""
-
-#: /panels/ajax/editor/edit-pane/panel_context%3Aterm_view%3A%3Aterm_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba%3A%3A%3A%3A/new-ec46137a-871c-4e25-a81c-51a65b1d15bc
-msgid "CSS id to use"
-msgstr ""
-
-#: /panels/ajax/editor/edit-pane/panel_context%3Aterm_view%3A%3Aterm_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba%3A%3A%3A%3A/new-ec46137a-871c-4e25-a81c-51a65b1d15bc
-msgid "CSS class to use"
-msgstr ""
-
-#: /panels/ajax/editor/edit-pane/panel_context%3Aterm_view%3A%3Aterm_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba%3A%3A%3A%3A/new-ec46137a-871c-4e25-a81c-51a65b1d15bc
-msgid "Link to term"
-msgstr ""
-
-#: /panels/ajax/editor/edit-pane/panel_context%3Aterm_view%3A%3Aterm_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba%3A%3A%3A%3A/new-ec46137a-871c-4e25-a81c-51a65b1d15bc
-msgid "Check here to make the name link to the term page."
-msgstr ""
-
-#: /panels/ajax/editor/select-content/panel_context%3Aterm_view%3A%3Aterm_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba%3A%3A%3A%3A/center
-msgid ""
-"Content options are divided by category. Please select a category from "
-"the left to proceed."
-msgstr ""
-
-#: /panels/ajax/editor/add-pane/panel_context%3Aterm_view%3A%3Aterm_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba%3A%3A%3A%3A/center/entity_view/taxonomy_term
-msgid "Configure new !subtype_title"
-msgstr ""
-
-#: /booking-og-bestilling/grafisk-materiale
+#: /
 msgid "node being the Registration"
 msgstr ""
 
-#: /6-ferieuge
-msgid "Sidst opdateret d."
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_node_panes/edit
+#: /admin/people/permissions
 msgid "Administer Media WYSIWYG View Mode"
 msgstr ""
 
-#: /admin/structure/views/view/os2intra_node_panes/edit
+#: /admin/people/permissions
 msgid "%type_name: Register self"
 msgstr ""
 
-#: /admin/structure/views/view/os2intra_node_panes/edit
+#: /admin/people/permissions
 msgid ""
 "Register other users by username. Note that giving this permission to "
 "Anonymous is not recommended, as it can expose a user's registration "
 "status to a site visitor who knows their username."
 msgstr ""
 
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Pane settings"
+#: /admin/people
+msgid "administer media wysiwyg view mode"
 msgstr ""
 
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Use view name"
+#: /admin/people
+msgid "create tilmelding registration"
 msgstr ""
 
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Admin title"
+#: /admin/people
+msgid "delete any tilmelding registration"
 msgstr ""
 
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Use view description"
+#: /admin/people
+msgid "delete own tilmelding registration"
 msgstr ""
 
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Admin desc"
+#: /admin/people
+msgid "update any tilmelding registration"
 msgstr ""
 
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Link to view"
+#: /admin/people
+msgid "update own tilmelding registration"
 msgstr ""
 
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Use Panel path"
+#: /admin/people
+msgid "edit tilmelding registration state"
 msgstr ""
 
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Argument input"
+#: /admin/people
+msgid "create tilmelding registration other anonymous"
 msgstr ""
 
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Allow settings"
+#: /admin/people
+msgid "create tilmelding registration self"
 msgstr ""
 
-#: /admin/structure/views/ajax/add-item/os2intra_node_panes/panel_pane_5/argument
-msgid "Select the group type."
+#: /admin/people
+msgid "view tilmelding registration"
 msgstr ""
 
-#: /admin/structure/views/ajax/add-item/os2intra_node_panes/panel_pane_5/argument
+#: /admin/people
+msgid "view own tilmelding registration"
+msgstr ""
+
+#: /admin/people
+msgid "administer own tilmelding registration"
+msgstr ""
+
+#: /admin/people
+msgid "administer tilmelding registration"
+msgstr ""
+
+#: /admin/people
+msgid "create tilmelding registration other users"
+msgstr ""
+
+#: /admin/people
+msgid "administer registration states"
+msgstr ""
+
+#: /admin/people
+msgid "administer registration"
+msgstr ""
+
+#: /admin/people
+msgid "administer registration types"
+msgstr ""
+
+#: /admin/people
+msgid "show format selection for registration"
+msgstr ""
+
+#: /admin/config/media/icon
+msgid "View Path"
+msgstr ""
+
+#: /admin/config/media/icon
 msgid ""
-"Select the concatenator used to merge multiple group IDs. Remember to "
-"turn on the \"Allow multiple values\" option in the \"more\" settings "
-"for this contextual filter."
+"If provided, users with the \"view icons\" permission will be able to "
+"view enabled icons at this URL (defaults to: <code>!path</code>. "
+"Change this url if it conflicts with other paths on your site. Leave "
+"empty to disable."
 msgstr ""
 
-#: /admin/structure/views/ajax/add-item/os2intra_node_panes/panel_pane_5/argument
-msgid "Determine what entity type that group should be of."
+#: /admin/config/media/icon
+msgid ""
+"<strong>WARNING:</strong> Apache installations are typically "
+"configured with a server level alias that redirects \"/icons\" to an "
+"internal directory on the server. It is highly recommended that this "
+"be removed from the configuration file for the view path to work "
+"properly. If this modification has been made to the server, you may "
+"surpress this messages in the global settings below. The only "
+"alternative is to change the view path in the global settings below. "
+"See: <a href=\"!link\">!link</a>."
+msgstr ""
+
+#: /admin/config/media/icon
+msgid "Suppress the Apache server alias warning"
+msgstr ""
+
+#: /admin/config/media/icon
+msgid "No bundles are currently installed."
+msgstr ""
+
+#: /admin/structure/menu/item/834/edit
+msgid "Choose where to position the icon in the menu item."
+msgstr ""
+
+#: /admin/structure/menu/item/834/edit
+msgid "Before title"
+msgstr ""
+
+#: /admin/structure/menu/item/834/edit
+msgid "After title"
+msgstr ""
+
+#: /admin/structure/menu/item/834/edit
+msgid "Show in breadcrumbs"
+msgstr ""
+
+#: /admin/structure/menu/item/834/edit
+msgid "Choose whether to show the icon in breadcrumb links."
+msgstr ""
+
+#: /admin/structure/menu/item/834/edit
+msgid "Title Wrapper"
+msgstr ""
+
+#: /admin/structure/menu/item/834/edit
+msgid "Choose whether to wrap the title in a element tag or not."
+msgstr ""
+
+#: /admin/structure/menu/item/834/edit
+msgid "Title Wrapper Element"
+msgstr ""
+
+#: /admin/structure/menu/item/834/edit
+msgid "The type of element to use for the title wrapper."
+msgstr ""
+
+#: /admin/structure/menu/item/834/edit
+msgid "Title Wrapper Class"
+msgstr ""
+
+#: /admin/structure/menu/item/834/edit
+msgid "The classes to apply to the title wrapper"
+msgstr ""
+
+#: /
+msgid "The following modules will be reverted: !modules"
+msgstr ""
+
+#: /
+msgid ""
+"Skal være inkl. <i>http://</i> hvis det er sider uden for sitet. Skal "
+"kun bruges til sider ser ikke kan indlejres som indhold via iframe."
+msgstr ""
+
+#: /
+msgid "Vælg de kantiner retten serveres i"
+msgstr ""
+
+#: /
+msgid "GIS id"
+msgstr ""
+
+#: /
+msgid "Current state already matches defaults, aborting."
+msgstr ""
+
+#: /
+msgid ""
+"The following views were using the index %name: @views. You should "
+"disable or delete them."
+msgstr ""
+
+#: /
+msgid "No database updates required"
+msgstr ""
+
+#: /
+msgid "Owl Carousel"
+msgstr ""
+
+#: /
+msgid "Displays the view output in an Owl Carousel"
+msgstr ""
+
+#: /
+msgid "Paged output, carousel"
+msgstr ""
+
+#: /
+msgid "Provides a carousel pager for view output."
+msgstr ""
+
+#: /
+msgid "Instance ID"
+msgstr ""
+
+#: /
+msgid "Browser Items"
+msgstr ""
+
+#: /
+msgid "Formatted text"
+msgstr ""
+
+#: /
+msgid "WYSIWYG Title"
+msgstr ""
+
+#: /
+msgid "The WYSIWYG media plugin title."
+msgstr ""
+
+#: /
+msgid "WYSIWYG Icon Title"
+msgstr ""
+
+#: /
+msgid "Add media"
+msgstr ""
+
+#: /
+msgid "The WYSIWYG media button title to display on hover."
+msgstr ""
+
+#: /
+msgid "Menu parent"
+msgstr ""
+
+#: /
+msgid "Select the menu parent"
+msgstr ""
+
+#: /
+msgid "Select the available menus"
+msgstr ""
+
+#: /
+msgid ""
+"This variable allows you to set the maximum amount of items displayed "
+"at a time with the widest browser width"
+msgstr ""
+
+#: /
+msgid "Items Desktop"
+msgstr ""
+
+#: /
+msgid ""
+"This allows you to preset the number of slides visible with a "
+"particular browser width."
+msgstr ""
+
+#: /
+msgid "1199"
+msgstr ""
+
+#: /
+msgid "4"
+msgstr ""
+
+#: /
+msgid "Items Desktop Small"
+msgstr ""
+
+#: /
+msgid "979"
+msgstr ""
+
+#: /
+msgid "Items Desktop Tablet"
+msgstr ""
+
+#: /
+msgid "768"
+msgstr ""
+
+#: /
+msgid "2"
+msgstr ""
+
+#: /
+msgid "Items Desktop Tablet Small"
+msgstr ""
+
+#: /
+msgid "0"
+msgstr ""
+
+#: /
+msgid "Items Desktop Mobile"
+msgstr ""
+
+#: /
+msgid "479"
+msgstr ""
+
+#: /
+msgid "1"
+msgstr ""
+
+#: /
+msgid "Single Item"
+msgstr ""
+
+#: /
+msgid "Display only one item."
+msgstr ""
+
+#: /
+msgid "Items Scale Up"
+msgstr ""
+
+#: /
+msgid "Option to not stretch items when it is less than the supplied items."
+msgstr ""
+
+#: /
+msgid "Slide Speed"
+msgstr ""
+
+#: /
+msgid "Slide speed in milliseconds."
+msgstr ""
+
+#: /
+msgid "Pagination Speed"
+msgstr ""
+
+#: /
+msgid "Pagination speed in milliseconds."
+msgstr ""
+
+#: /
+msgid "Rewind Speed"
+msgstr ""
+
+#: /
+msgid "Rewind speed in milliseconds."
+msgstr ""
+
+#: /
+msgid "Auto Play"
+msgstr ""
+
+#: /
+msgid "Change to any integrer for example 5000 to play every 5 seconds."
+msgstr ""
+
+#: /
+msgid "Stop on Hover"
+msgstr ""
+
+#: /
+msgid "Stop autoplay on mouse hover."
+msgstr ""
+
+#: /
+msgid "Display \"next\" and \"prev\" buttons."
+msgstr ""
+
+#: /
+msgid "Navigation Text"
+msgstr ""
+
+#: /
+msgid "You can customize your own text for navigation."
+msgstr ""
+
+#: /
+msgid "Rewind Nav"
+msgstr ""
+
+#: /
+msgid "Slide to first item. Use rewindSpeed to change animation speed."
+msgstr ""
+
+#: /
+msgid "Scroll Per Page"
+msgstr ""
+
+#: /
+msgid "Scroll per page not per item."
+msgstr ""
+
+#: /
+msgid "Show pagination."
+msgstr ""
+
+#: /
+msgid "Pagination Numbers"
+msgstr ""
+
+#: /
+msgid "Show numbers inside pagination buttons"
+msgstr ""
+
+#: /
+msgid ""
+"You can use Owl Carousel on desktop-only websites too! Just change "
+"this to \"false\" to disable resposive capabilities."
+msgstr ""
+
+#: /
+msgid "Responsive Refresh Rate"
+msgstr ""
+
+#: /
+msgid "Check window width changes every 200ms for responsive actions."
+msgstr ""
+
+#: /
+msgid "Responsive Base Width"
+msgstr ""
+
+#: /
+msgid "Owl Carousel check window for browser width changes."
+msgstr ""
+
+#: /
+msgid "Base Class"
+msgstr ""
+
+#: /
+msgid ""
+"Automaticly added class for base CSS styles. Best not to change it if "
+"you don't need to."
+msgstr ""
+
+#: /
+msgid ""
+"Default Owl CSS styles for navigation and buttons. Change it to match "
+"your own theme."
+msgstr ""
+
+#: /
+msgid "Lazy Load"
+msgstr ""
+
+#: /
+msgid ""
+"Delays loading of images. Images outside of viewport won't be loaded "
+"before user scrolls to them."
+msgstr ""
+
+#: /
+msgid "Lazy Follow"
+msgstr ""
+
+#: /
+msgid ""
+"When pagination used, it skips loading the images from pages that got "
+"skipped. It only loads the images that get displayed in viewport."
+msgstr ""
+
+#: /
+msgid "Lazy Effect"
+msgstr ""
+
+#: /
+msgid "Default is fadeIn on 400ms speed. Use false to remove that effect."
+msgstr ""
+
+#: /
+msgid "Auto Height"
+msgstr ""
+
+#: /
+msgid ""
+"Add height to owl-wrapper-outer so you can use diffrent heights on "
+"slides. Use it only for one item per page setting."
+msgstr ""
+
+#: /
+msgid "JSON Path"
+msgstr ""
+
+#: /
+msgid ""
+"Allows you to load directly from a jSon file. The JSON structure you "
+"use needs to match the owl JSON structure used here. To use custom "
+"JSON structure see jsonSuccess option."
+msgstr ""
+
+#: /
+msgid "JSON Success"
+msgstr ""
+
+#: /
+msgid "Success callback for $.getJSON build in into carousel."
+msgstr ""
+
+#: /
+msgid "Drag before animation finish"
+msgstr ""
+
+#: /
+msgid "Ignore whether a transition is done or not (only dragging)."
+msgstr ""
+
+#: /
+msgid "Mouse Drag"
+msgstr ""
+
+#: /
+msgid "Turn off/on mouse events."
+msgstr ""
+
+#: /
+msgid "Touch Drag"
+msgstr ""
+
+#: /
+msgid "Turn off/on touch events."
+msgstr ""
+
+#: /
+msgid "Add Class Active"
+msgstr ""
+
+#: /
+msgid ""
+"Add \"active\" classes on visible items. Works with any numbers of "
+"items on screen."
+msgstr ""
+
+#: /
+msgid "Transition Style"
+msgstr ""
+
+#: /
+msgid "Add CSS3 transition style. Works only with one item on screen."
+msgstr ""
+
+#: /
+msgid "Override Views AJAX Pagination"
+msgstr ""
+
+#: /
+msgid ""
+"Override views default pagination; appends new slide (row) by AJAX. "
+"Please note, this option requires a view with AJAX enabled & the "
+"carousel pager selected. (Experimental feature)"
+msgstr ""
+
+#: /
+msgid "Displays an access denied message on the user login page."
+msgstr ""
+
+#: /
+msgid "The message text displayed to users who are denied access to the page."
+msgstr ""
+
+#: /
+msgid "HTTP default redirect code"
+msgstr ""
+
+#: /
+msgid ""
+"The redirect code to send by default. 301 responses may be cached by "
+"browsers and proxies."
+msgstr ""
+
+#: /
+msgid "HTTP redirect code to use for matching pages"
+msgstr ""
+
+#: /
+msgid ""
+"The redirect code to send for paths that match. 301 responses may be "
+"cached by browsers and proxies."
+msgstr ""
+
+#: /
+msgid "Specify matching pages by using their paths."
+msgstr ""
+
+#: /
+msgid ""
+"Block caching is inactive if you have enabled modules defining content "
+"access restrictions."
+msgstr ""
+
+#: /
+msgid "Owlcarousel instance settings list."
+msgstr ""
+
+#: /
+msgid "Import Settings"
+msgstr ""
+
+#: /admin/content/file/import
+msgid "The provided directory is not readable."
+msgstr ""
+
+#: /admin/content/file/import
+msgid ""
+"No files were found in %directory matching the regular expression "
+"%pattern"
+msgstr ""
+
+#: /admin/structure/homebox/edit/intra
+msgid "Save page"
+msgstr ""
+
+#: /admin/structure/homebox/edit/intra
+msgid "Revert page"
+msgstr ""
+
+#: /admin/structure/flags
+msgid "Save flag order"
+msgstr ""
+
+#: /admin/structure/flags
+msgid "Entity bundles"
+msgstr ""
+
+#: /admin/structure/flags
+msgid ""
+"Flagging an item may trigger <em>rules</em>. However, you don't have "
+"the <a href=\"@rules-url\">Rules</a> module enabled, so you won't be "
+"able to enjoy this feature. The Rules module is a more extensive "
+"solution than Flag actions."
+msgstr ""
+
+#: /admin/structure/flags
+msgid ""
+"This page lists all the <em>flags</em> that are currently defined on "
+"this system."
+msgstr ""
+
+#: /
+msgid "Indholdskurv"
+msgstr ""
+
+#: /
+msgid "Indholdskurv, bruges af systemet til at oprette værktøjskasser med"
+msgstr ""
+
+#: /
+msgid "Kurv"
+msgstr ""
+
+#: /
+msgid "Toolboxes search"
+msgstr ""
+
+#: /
+msgid "S"
+msgstr ""
+
+#: /
+msgid "Tilføj/Fjern"
+msgstr ""
+
+#: /
+msgid "Toolbox menu view"
+msgstr ""
+
+#: /
+msgid "<a href=\"/node_basket/basket/view\">Alle</a>"
+msgstr ""
+
+#: /
+msgid ""
+"<span class=\"icon-toolbox-menu-icon\"></span><span "
+"data-toolbox-id=\"[nid]\" class=\"toolbox-title\">[title]</span>"
+msgstr ""
+
+#: /
+msgid "<span data-toolbox-id=\"[nid]\">[field_node_basket_references] </span>"
+msgstr ""
+
+#: /
+msgid ""
+"[field_node_basket_references] \n"
+"[field_node_basket_links] "
+msgstr ""
+
+#: /
+msgid "Toolboxes own"
+msgstr ""
+
+#: /user-menu/ajax
+msgid "User menu ajax functions"
+msgstr ""
+
+#: /user-menu/ajax
+msgid "Ajax"
+msgstr ""
+
+#: /
+msgid "Beskrivelse"
+msgstr ""
+
+#: /
+msgid "Mine grupper"
+msgstr ""
+
+#: /admin/config
+msgid "Owl Carousel library not found; the correct path should be @path."
+msgstr ""
+
+#: /admin/structure/menu/settings
+msgid "Menu item attribute options"
+msgstr ""
+
+#: /admin/structure/menu/settings
+msgid "Enable the @attribute attribute."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/menu_attributes/menu_attributes.js
+msgid "No ID"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/menu_attributes/menu_attributes.js
+msgid "No relationship"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/menu_attributes/menu_attributes.js
+msgid "No classes"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/menu_attributes/menu_attributes.js
+msgid "No access key"
+msgstr ""
+
+#: /admin/content/file
+msgid "scheme"
+msgstr ""
+
+#: /admin/content/file
+msgid ""
+"Indicate that the selected files are permanent and should not be "
+"deleted"
+msgstr ""
+
+#: /admin/content/file
+msgid ""
+"Indicate that the selected files are temporary and should be removed "
+"during cron runs"
+msgstr ""
+
+#: /admin/content/file
+msgid "Refresh YouTube information from source"
+msgstr ""
+
+#: /admin/content/file
+msgid "1 place"
+msgstr ""
+
+#: /admin/content/file
+msgid "@count places"
+msgstr ""
+
+#: /admin/structure/taxonomy_manager/voc/os2web_base_tax_site_structure
+msgid "Deleting a term will delete all its children if there are any."
+msgstr ""
+
+#: /admin/structure/taxonomy_manager/voc/os2web_base_tax_site_structure
+msgid "Are you sure you want to delete the following terms:"
+msgstr ""
+
+#: /grafisk-materiale/visitkort
+msgid "Sidst opdateret d."
+msgstr ""
+
+#: /admin/modules
+msgid "Provides Owl Carousel integration into Drupal."
+msgstr ""
+
+#: /admin/modules
+msgid "Provides Owl Carousel field formatter."
+msgstr ""
+
+#: /admin/modules
+msgid "Provides user interface for Owl Carousel variable management."
+msgstr ""
+
+#: /admin/modules
+msgid "Provides Owl Carousel integration into Drupal Views."
+msgstr ""
+
+#: /admin/modules?filter=trash&enabled=1&disabled=1&required=1&unavailable=1
+msgid "Papirkurv"
+msgstr ""
+
+#: /admin/modules?filter=trash&enabled=1&disabled=1&required=1&unavailable=1
+msgid "Whether the entity is flagged with flag @flag"
+msgstr ""
+
+#: /admin/modules?filter=trash&enabled=1&disabled=1&required=1&unavailable=1
+msgid "Whether the entity is flagged with flag @flag."
+msgstr ""
+
+#: /admin/user-menu/ajax
+msgid "Administrer indstillinger til papirkurven."
+msgstr ""
+
+#: /admin/user-menu/ajax
+msgid "Papirkurvsindstillinger"
+msgstr ""
+
+#: /admin/user-menu/ajax
+msgid "Administrer indstillinger papirkurven."
+msgstr ""
+
+#: /admin/content
+msgid "Flyt til papirkurv"
+msgstr ""
+
+#: /admin/content
+msgid "Gendan fra papirkurv"
+msgstr ""
+
+#: /grafisk-materiale/visitkort
+msgid "Intet indhold i papirkurv"
+msgstr ""
+
+#: /grafisk-materiale/visitkort
+msgid "<p>Papirkurven er tom</p>"
+msgstr ""
+
+#: /grafisk-materiale/visitkort
+msgid "Flyttet i papirkurv"
+msgstr ""
+
+#: /grafisk-materiale/visitkort
+msgid "Admin page"
+msgstr ""
+
+#: /grafisk-materiale/visitkort
+msgid "User page"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Administer node basket module"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Change settings for node basket module"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Use the nodebasket module"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Lets the user save nodes to the node basket"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Administer nodebasket toolboxes"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Let the user save nodes to other toolboxes"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Administer Owl Carousel settings"
+msgstr ""
+
+#: /admin/people/user-menu/ajax
+msgid "flag papirkurv"
+msgstr ""
+
+#: /admin/people/user-menu/ajax
+msgid "unflag papirkurv"
+msgstr ""
+
+#: /admin/people/user-menu/ajax
+msgid "create node_basket content"
+msgstr ""
+
+#: /admin/people/user-menu/ajax
+msgid "edit any node_basket content"
+msgstr ""
+
+#: /admin/people/user-menu/ajax
+msgid "edit own node_basket content"
+msgstr ""
+
+#: /admin/people/user-menu/ajax
+msgid "delete any node_basket content"
+msgstr ""
+
+#: /admin/people/user-menu/ajax
+msgid "delete own node_basket content"
+msgstr ""
+
+#: /admin/people/user-menu/ajax
+msgid "administer node basket"
+msgstr ""
+
+#: /admin/people/user-menu/ajax
+msgid "administer node basket toolboxs"
+msgstr ""
+
+#: /admin/people/user-menu/ajax
+msgid "use node basket"
+msgstr ""
+
+#: /admin/people/user-menu/ajax
+msgid "administer owlcarousel settings"
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid ""
+"The machine-name for this flag. It may be up to 32 characters long and "
+"may only contain lowercase letters, underscores, and numbers. It will "
+"be used in URLs and in all API calls."
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid ""
+"If checked, flag is considered \"global\" and each entity is either "
+"flagged or not. If unchecked, each user has individual flags on "
+"entities."
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid ""
+"The above six texts may contain any of the tokens listed below. For "
+"example, <em>\"Flag link text\"</em> could be entered as:"
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid ""
+"These tokens will be replaced with the appropriate fields from the "
+"node (or user, or comment)."
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid "Flaggable types"
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid "Check any sub-types that this flag may be used on."
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid ""
+"Users may only unflag content if they have access to flag the content "
+"initially. Checking <em>authenticated user</em> will allow access for "
+"all logged-in users."
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid ""
+"Anonymous users may flag content if the <a "
+"href=\"http://drupal.org/project/session_api\">Session API</a> module "
+"is installed."
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid ""
+"If a user is allowed to flag but not unflag, this text will be "
+"displayed after flagging. Often this is the past-tense of the link "
+"text, such as \"flagged\"."
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid "The selected link type may require these additional settings:"
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid "Options for the \"Confirmation form\" link type"
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid "Save flag"
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid ""
+"Select the bundles that this flag may be used on. Leave blank to allow "
+"on all bundles for the entity type."
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid "Display on @name view mode"
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid "Display in entity links"
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid "Show the flag link with the other links on the entity."
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid "Display link as field"
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid ""
+"Show the flag link as a pseudofield, which can be ordered among other "
+"entity elements in the \"Manage display\" settings for the entity "
+"type."
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid "Display checkbox on entity edit form"
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid "Display in contextual links"
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid "Note that not all entity types support contextual links."
+msgstr ""
+
+#: /admin/structure/flags/manage/papirkurv
+msgid ""
+"Restrict access to this flag based on the user's ownership of the "
+"content. Users must also have access to the flag through the role "
+"settings."
+msgstr ""
+
+#: /flag/confirm/flag/papirkurv/32?destination=node/32
+msgid "Er du sikker på du vil flytte [node:title] til papirkurven?"
+msgstr ""
+
+#: /admin/config/development/performance
+msgid "Flagtidspunkt"
+msgstr ""
+
+#: /flag/confirm/unflag/papirkurv/32?destination=node/32
+msgid "Er du sikker på du til gendanne[node:title]?"
+msgstr ""
+
+#: /system/ajax
+msgid "Updated term data"
+msgstr ""
+
+#: /admin/apps/user-menu/ajax
+msgid "@title Details"
+msgstr ""
+
+#: /admin/apps/user-menu/ajax
+msgid "App Details"
+msgstr ""
+
+#: /admin/apps/user-menu/ajax
+msgid "Depends on"
+msgstr ""
+
+#: /admin/apps/bellcom/os2forms_backend_app/details
+msgid "Install App"
+msgstr ""
+
+#: /group/node/43/admin/people/add-user
+msgid "Add a group member to %group"
+msgstr ""
+
+#: /group/node/43/admin/people/user-menu/ajax
+msgid "Member since"
+msgstr ""
+
+#: /group/node/43/admin/people/user-menu/ajax
+msgid "Slet-link"
+msgstr ""
+
+#: /group/node/43/admin/people/user-menu/ajax
+msgid "No people found matching the search criteria."
+msgstr ""
+
+#: /group/node/43/admin/people/user-menu/ajax
+msgid "Group content state"
+msgstr ""
+
+#: /group/node/43/admin/people/user-menu/ajax
+msgid "Group manager: !manager"
+msgstr ""
+
+#: /group/node/43/admin/people/user-menu/ajax
+msgid "Total members: @count"
+msgstr ""
+
+#: /group/node/43/admin/people/user-menu/ajax
+msgid "Total content: @count"
+msgstr ""
+
+#: /group/node/43/admin/people/user-menu/ajax
+msgid "Group overview"
+msgstr ""
+
+#: /test-mn
+msgid "@count members"
+msgstr ""
+
+#: /test-mn
+msgid "Managers"
+msgstr ""
+
+#: /admin/structure/pages/wizard
+msgid "Landing page"
+msgstr ""
+
+#: /admin/structure/pages/wizard
+msgid "Landing page wizard"
+msgstr ""
+
+#: /admin/structure/pages/wizard
+msgid ""
+"Landing pages are simple pages that have a path, possibly a visible "
+"menu entry, and a panel layout with simple content."
 msgstr ""
 
 #: /admin/structure/homebox/settings/intra
@@ -25180,621 +26186,287 @@ msgid ""
 "could choose colors more easily."
 msgstr ""
 
-#: /admin/structure/homebox/edit/intra
-msgid "Save page"
-msgstr ""
-
-#: /admin/structure/homebox/edit/intra
-msgid "Revert page"
-msgstr ""
-
-#: /admin/modules
-msgid "Provides Owl Carousel integration into Drupal."
-msgstr ""
-
-#: /admin/modules
-msgid "Provides Owl Carousel field formatter."
-msgstr ""
-
-#: /admin/modules
-msgid "Provides user interface for Owl Carousel variable management."
-msgstr ""
-
-#: /admin/modules
-msgid "Provides Owl Carousel integration into Drupal Views."
-msgstr ""
-
-#: /admin/modules
-msgid "Owl Carousel"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Administer Owl Carousel settings"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Instance ID"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Browser Items"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Formatted text"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "WYSIWYG Title"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "The WYSIWYG media plugin title."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "WYSIWYG Icon Title"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Add media"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "The WYSIWYG media button title to display on hover."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Menu parent"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Select the menu parent"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Select the available menus"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"This variable allows you to set the maximum amount of items displayed "
-"at a time with the widest browser width"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Items Desktop"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"This allows you to preset the number of slides visible with a "
-"particular browser width."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "1199"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "4"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Items Desktop Small"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "979"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Items Desktop Tablet"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "768"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "2"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Items Desktop Tablet Small"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "0"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Items Desktop Mobile"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "479"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "1"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Single Item"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Display only one item."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Items Scale Up"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Option to not stretch items when it is less than the supplied items."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Slide Speed"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Slide speed in milliseconds."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Pagination Speed"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Pagination speed in milliseconds."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Rewind Speed"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Rewind speed in milliseconds."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Auto Play"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Change to any integrer for example 5000 to play every 5 seconds."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Stop on Hover"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Stop autoplay on mouse hover."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Display \"next\" and \"prev\" buttons."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Navigation Text"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "You can customize your own text for navigation."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Rewind Nav"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Slide to first item. Use rewindSpeed to change animation speed."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Scroll Per Page"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Scroll per page not per item."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Show pagination."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Pagination Numbers"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Show numbers inside pagination buttons"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"You can use Owl Carousel on desktop-only websites too! Just change "
-"this to \"false\" to disable resposive capabilities."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Responsive Refresh Rate"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Check window width changes every 200ms for responsive actions."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Responsive Base Width"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Owl Carousel check window for browser width changes."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Base Class"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"Automaticly added class for base CSS styles. Best not to change it if "
-"you don't need to."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"Default Owl CSS styles for navigation and buttons. Change it to match "
-"your own theme."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Lazy Load"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"Delays loading of images. Images outside of viewport won't be loaded "
-"before user scrolls to them."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Lazy Follow"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"When pagination used, it skips loading the images from pages that got "
-"skipped. It only loads the images that get displayed in viewport."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Lazy Effect"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Default is fadeIn on 400ms speed. Use false to remove that effect."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Auto Height"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"Add height to owl-wrapper-outer so you can use diffrent heights on "
-"slides. Use it only for one item per page setting."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "JSON Path"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"Allows you to load directly from a jSon file. The JSON structure you "
-"use needs to match the owl JSON structure used here. To use custom "
-"JSON structure see jsonSuccess option."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "JSON Success"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Success callback for $.getJSON build in into carousel."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Drag before animation finish"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Ignore whether a transition is done or not (only dragging)."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Mouse Drag"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Turn off/on mouse events."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Touch Drag"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Turn off/on touch events."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Add Class Active"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"Add \"active\" classes on visible items. Works with any numbers of "
-"items on screen."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Transition Style"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Add CSS3 transition style. Works only with one item on screen."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Override Views AJAX Pagination"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"Override views default pagination; appends new slide (row) by AJAX. "
-"Please note, this option requires a view with AJAX enabled & the "
-"carousel pager selected. (Experimental feature)"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Displays an access denied message on the user login page."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "The message text displayed to users who are denied access to the page."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "HTTP default redirect code"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"The redirect code to send by default. 301 responses may be cached by "
-"browsers and proxies."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "HTTP redirect code to use for matching pages"
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"The redirect code to send for paths that match. 301 responses may be "
-"cached by browsers and proxies."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid "Specify matching pages by using their paths."
-msgstr ""
-
-#: /admin/modules/list/confirm
-msgid ""
-"Block caching is inactive if you have enabled modules defining content "
-"access restrictions."
-msgstr ""
-
-#: /batch?op=start&id=16
-msgid "Displays the view output in an Owl Carousel"
-msgstr ""
-
-#: /batch?op=start&id=16
-msgid "Paged output, carousel"
-msgstr ""
-
-#: /batch?op=start&id=16
-msgid "Provides a carousel pager for view output."
-msgstr ""
-
-#: /batch?op=start&id=16
-msgid "Owlcarousel instance settings list."
-msgstr ""
-
-#: /batch?op=start&id=16
-msgid "Import Settings"
-msgstr ""
-
-#: /system/ajax
-msgid "@settings applied to carousel instance."
-msgstr ""
-
-#: /admin/people
-msgid "administer media wysiwyg view mode"
-msgstr ""
-
-#: /admin/people
-msgid "administer owlcarousel settings"
-msgstr ""
-
-#: /admin/people
-msgid "create tilmelding registration"
-msgstr ""
-
-#: /admin/people
-msgid "delete any tilmelding registration"
-msgstr ""
-
-#: /admin/people
-msgid "delete own tilmelding registration"
-msgstr ""
-
-#: /admin/people
-msgid "update any tilmelding registration"
-msgstr ""
-
-#: /admin/people
-msgid "update own tilmelding registration"
-msgstr ""
-
-#: /admin/people
-msgid "edit tilmelding registration state"
-msgstr ""
-
-#: /admin/people
-msgid "create tilmelding registration other anonymous"
-msgstr ""
-
-#: /admin/people
-msgid "create tilmelding registration self"
-msgstr ""
-
-#: /admin/people
-msgid "view tilmelding registration"
-msgstr ""
-
-#: /admin/people
-msgid "view own tilmelding registration"
-msgstr ""
-
-#: /admin/people
-msgid "administer own tilmelding registration"
-msgstr ""
-
-#: /admin/people
-msgid "administer tilmelding registration"
-msgstr ""
-
-#: /admin/people
-msgid "create tilmelding registration other users"
-msgstr ""
-
-#: /admin/people
-msgid "administer registration states"
-msgstr ""
-
-#: /admin/people
-msgid "administer registration"
-msgstr ""
-
-#: /admin/people
-msgid "administer registration types"
-msgstr ""
-
-#: /admin/people
-msgid "show format selection for registration"
-msgstr ""
-
 #: /
-msgid "@interval ago."
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_group_term_activity/edit
-msgid "Handler i stykker field_data_title_field.title_field"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_group_term_activity/edit
-msgid ""
-"Handler i stykker "
-"field_data_field_os2web_base_field_image.field_os2web_base_field_image"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_group_term_activity/edit
-msgid "Handler i stykker votingapi_cache.value"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_group_term_activity/edit
-msgid "Rigtigt navn"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_group_term_activity/edit
-msgid "Handler i stykker field_data_field_registration.field_registration"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_group_term_activity/edit
-msgid "Some"
-msgstr ""
-
-#: /admin/structure/views/ajax/config-item/os2intra_group_term_activity/block/filter/type
-msgid "Operator label"
-msgstr ""
-
-#: /admin/structure/views/ajax/config-item/os2intra_group_term_activity/block/filter/type
-msgid "This will appear before your operator select field."
-msgstr ""
-
-#: /
-msgid "@time ago."
-msgstr ""
-
-#: /system/ajax
-msgid "Show remaining days"
-msgstr ""
-
-#: /admin/structure/features/fredericia_theme_settings/recreate
-msgid ""
-"File path for feature module.  For Example: sites/all/modules/features "
-"or /tmp.  Leave blank for "
-"<strong>profiles/os2intra/modules/custom</strong>"
-msgstr ""
-
-#: /
-msgid ""
-"The generator version number to store in the MANIFEST file. The "
-"default is 7.0.0."
-msgstr ""
-
-#: /intra
-msgid "Mine grupper"
-msgstr ""
-
-#: /user-menu/ajax
-msgid "User menu ajax functions"
-msgstr ""
-
-#: /user-menu/ajax
-msgid "Ajax"
-msgstr ""
-
-#: /admin/user-menu/ajax
 msgid "statistics"
 msgstr ""
 
-#: /
-msgid "Update information last refreshed: "
+#: /file/add
+msgid "Allowed files"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Select files"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Add files to the upload queue and click the start button."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Stop current upload"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Start uploading queue"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Uploaded %d/%d files"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "File extension error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "File size error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Init error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "HTTP Error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Security error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Generic error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "IO error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Stop upload"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "%d files queued"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "File: %s"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Using runtime: "
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "File: %f, size: %s, max file size: %m"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid ""
+"Upload element accepts only %d file(s) at a time. Extra files were "
+"stripped."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Upload URL might be wrong or doesn\\\"t exist"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Error: File too large: "
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "Error: Invalid file extension: "
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/js/i18n.js
+msgid "File count error."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/plupload.js
+msgid "Please wait while your files are being uploaded."
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/plupload/plupload.js
+msgid "@index: You must upload at least one file.\\n"
+msgstr ""
+
+#: /plupload-handle-uploads?plupload_token=DA6EZOriIb3pZGn3-a8uHBSkZNcpqA4yNn7A4uyDKC4
+msgid "Handles uploads"
+msgstr ""
+
+#: /admin/content/file/edit-multiple/6?destination=admin/content/file
+msgid "Additional settings"
+msgstr ""
+
+#: /file/6/delete?destination=admin/content/file
+msgid "Are you sure you want to delete the file %title?"
+msgstr ""
+
+#: /admin/people
+msgid "administer statistics"
+msgstr ""
+
+#: /admin/people
+msgid "view post access counter"
+msgstr ""
+
+#: /admin/people
+msgid "access statistics"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518/user-menu/ajax
+msgid "This operation trail does not exist."
+msgstr ""
+
+#: /panels/ajax/editor/select-content/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/sidebar
+msgid ""
+"Content options are divided by category. Please select a category from "
+"the left to proceed."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/content
+msgid "\"@s\" @field"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/content
+msgid "View: @name"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/content
+msgid "View information"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/content
+msgid "Using display @display."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/content
+msgid "Argument @arg using context @context converted into @converter"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/content
+msgid "@count items displayed."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/content
+msgid "Without pager."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/content
+msgid "With pager."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/content
+msgid "\"@s\" type description"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/content
+msgid "\"@s\" @field form"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/handlers/node_edit__panel_context_05b75a06-455d-4044-97c5-4197f5b8b891/content?destination=node/add/os2intra-group
+msgid "A node object."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/handlers/node_edit__panel_context_05b75a06-455d-4044-97c5-4197f5b8b891/content?destination=node/add/os2intra-group
+msgid "Enter the node ID of a node for this context."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/handlers/node_edit__panel_context_05b75a06-455d-4044-97c5-4197f5b8b891/content?destination=node/add/os2intra-group
+msgid "\"@s\" base form"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/handlers/node_edit__panel_context_05b75a06-455d-4044-97c5-4197f5b8b891/content?destination=node/add/os2intra-group
+msgid "Reuse layout"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/handlers/node_edit__panel_context_05b75a06-455d-4044-97c5-4197f5b8b891/content?destination=node/add/os2intra-group
+msgid "Canvas"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/handlers/node_edit__panel_context_05b75a06-455d-4044-97c5-4197f5b8b891/content?destination=node/add/os2intra-group
+msgid "Canvas settings"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/actions/disable
+msgid ""
+"Disabling this page will immediately make it unavailable in your "
+"system (there is no need to wait for a save.)"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/actions/enable
+msgid "Activate this page so that it will be in use in your system."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/actions/enable
+msgid ""
+"Enabling this page will immediately make it available in your system "
+"(there is no need to wait for a save.)"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra_group
+msgid ""
+"To unset the group definition you should delete the \"Group type\" "
+"field via !url."
+msgstr ""
+
+#: /admin/modules
+msgid "Related links"
 msgstr ""
 
 #: /
-msgid "No code updates available."
+msgid "'!name' cache was cleared."
 msgstr ""
 
-#: /admin/config/system/statistics
-msgid "Unknown variable @name"
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/sidebar/block/node_basket-node_basket
+msgid "Configure new !subtype_title"
+msgstr ""
+
+#: /panels/ajax/editor/pane-css/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/new-c129c74f-8ccc-44fb-bdf0-e1e8e9dc1b06
+msgid "Configure CSS on !subtype_title"
+msgstr ""
+
+#: /panels/ajax/editor/pane-css/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/new-c129c74f-8ccc-44fb-bdf0-e1e8e9dc1b06
+msgid "CSS ID to apply to this pane. This may be blank."
+msgstr ""
+
+#: /panels/ajax/editor/pane-css/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/new-c129c74f-8ccc-44fb-bdf0-e1e8e9dc1b06
+msgid "CSS class to apply to this pane. This may be blank."
+msgstr ""
+
+#: /panels/ajax/editor/pane-css/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/new-c129c74f-8ccc-44fb-bdf0-e1e8e9dc1b06
+msgid "Template suggestion"
+msgstr ""
+
+#: /panels/ajax/editor/pane-css/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/new-c129c74f-8ccc-44fb-bdf0-e1e8e9dc1b06
+msgid ""
+"Name of template to use for this pane as additional template "
+"suggestion."
 msgstr ""
 
 #: /
-msgid "Antal kommentarer"
+msgid ""
+"!host does not appear to be a resolvable hostname or IP, not starting "
+"browser. You may need to use the --uri option in your command or site "
+"alias to indicate the correct URL of this site."
 msgstr ""
 
-#: /
-msgid "Antal visninger"
+#: /node_basket/basket/add/52
+msgid "!user basket"
+msgstr ""
+
+#: /node_basket/basket/add/52
+msgid "saved to basket"
+msgstr ""
+
+#: /node_basket/basket/status/52
+msgid "node already saved"
+msgstr ""
+
+#: /node_basket/basket/remove/52
+msgid "removed node"
 msgstr ""
 
 msgid "Public files"
@@ -26401,6 +27073,7 @@ msgstr "Oprette forrige/næste navigation."
 msgid "Webform"
 msgstr "Webformular"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Status"
 msgstr "Status"
 
@@ -27349,7 +28022,7 @@ msgstr "Udgivet"
 msgid "Whether or not the content is published."
 msgstr "Hvorvidt indholdet er udgivet eller ej."
 
-#: ; modules/node/content_types.js
+#: ; modules/node/content_types.js; modules/node/node.js
 msgid "Not published"
 msgstr "Ikke udgivet"
 
@@ -27637,6 +28310,7 @@ msgstr "Udvidelse"
 msgid "The extension of the file."
 msgstr "Filens endelse."
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Size"
 msgstr "Størrelse"
 
@@ -29262,6 +29936,7 @@ msgstr "Gem"
 msgid "Update"
 msgstr "Opdatér"
 
+#: ; profiles/os2intra/modules/contrib/epsacrop/js/epsacrop.js
 msgid "Cancel"
 msgstr "Annullér"
 
@@ -30096,7 +30771,7 @@ msgstr "Genopbyg"
 msgid "Primary tabs"
 msgstr "Primære faneblade"
 
-#: ; misc/vertical-tabs.js
+#: ; misc/vertical-tabs.js; sites/all/modules/contrib/field_group/horizontal-tabs/horizontal-tabs.js
 msgid "(active tab)"
 msgstr "(aktiv fane)"
 
@@ -30314,6 +30989,7 @@ msgstr ""
 "Sider på et givet niveau sorteres først efter vægt og dernæst "
 "efter titel."
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "none"
 msgstr "ingen"
 
@@ -30392,6 +31068,7 @@ msgstr "Format"
 msgid "History"
 msgstr "Historik"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Filename"
 msgstr "Filnavn"
 
@@ -30776,6 +31453,7 @@ msgstr "Advarsel"
 msgid "blocked"
 msgstr "blokeret"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "N/A"
 msgstr "N/A"
 
@@ -32023,9 +32701,11 @@ msgstr "Ingen brugere valgt."
 msgid "Detected malicious attempt to alter protected user fields."
 msgstr "Opdaget forsøg på at ændre beskyttede felter."
 
+#: ; misc/tableselect.js
 msgid "Select all rows in this table"
 msgstr "Vælg alle rækker i tabellen"
 
+#: ; misc/tableselect.js
 msgid "Deselect all rows in this table"
 msgstr "Fravælg alle rækker i tabellen"
 
@@ -34853,18 +35533,23 @@ msgstr "Ikke i bog"
 msgid "New book"
 msgstr "Ny bog"
 
+#: ; modules/node/node.js
 msgid "By @name on @date"
 msgstr "Af @name, @date"
 
+#: ; modules/node/node.js
 msgid "By @name"
 msgstr "Af @name"
 
+#: ; modules/menu/menu.js
 msgid "Not in menu"
 msgstr "Ikke i menu"
 
+#: ; modules/path/path.js; sites/all/modules/contrib/pathauto/pathauto.js
 msgid "Alias: @alias"
 msgstr "Alias: @alias"
 
+#: ; modules/path/path.js; sites/all/modules/contrib/pathauto/pathauto.js
 msgid "No alias"
 msgstr "Intet alias"
 
@@ -34904,6 +35589,7 @@ msgstr "Filtrér meddelelser"
 msgid "You must select something to filter by."
 msgstr "Du skal vælge, hvad du vil filtrere efter."
 
+#: ; modules/node/node.js
 msgid "New revision"
 msgstr "Ny version"
 
@@ -36083,6 +36769,7 @@ msgstr ""
 "Blokken %info blev knyttet til den ugyldig region %region og er blevet "
 "deaktiveret."
 
+#: ; modules/block/block.js
 msgid ""
 "The changes to these blocks will not be saved until the <em>Save "
 "blocks</em> button is clicked."
@@ -38522,6 +39209,7 @@ msgstr "Sekundær menu"
 msgid "Administrator role"
 msgstr "Administratorrolle"
 
+#: ; modules/node/node.js
 msgid "No revision"
 msgstr "Ingen version"
 
@@ -38536,6 +39224,7 @@ msgstr "Kræver en titel"
 msgid "Private files"
 msgstr "Private filer"
 
+#: ; modules/block/block.js
 msgid "Not restricted"
 msgstr "Ikke begrænset"
 
@@ -39233,6 +39922,7 @@ msgstr ""
 msgid "Customizable per user"
 msgstr "Tilpasset pr. bruger"
 
+#: ; modules/block/block.js
 msgid "Not customizable"
 msgstr "Kan ikke tilpasses"
 
@@ -39381,9 +40071,11 @@ msgstr ""
 "kasser med indhold som renderes i et bestemt område eller en bestemt "
 "region på en webside."
 
+#: ; modules/block/block.js
 msgid "Restricted to certain pages"
 msgstr "Begrænset til bestemte sider"
 
+#: ; modules/block/block.js
 msgid "The block cannot be placed in this region."
 msgstr "Blokken kan ikke placeres i denne region."
 
@@ -40352,9 +41044,11 @@ msgstr ""
 "Lad stå tomt for at bruge den beskårne udgave af brødteksten som "
 "resumé."
 
+#: ; modules/field/modules/text/text.js
 msgid "Hide summary"
 msgstr "Skjul resumé"
 
+#: ; modules/field/modules/text/text.js
 msgid "Edit summary"
 msgstr "Redigér resumé"
 
@@ -46801,6 +47495,7 @@ msgstr "Schweitzertysk"
 msgid "Scots"
 msgstr "Skotsk"
 
+#: ; modules/file/file.js
 msgid ""
 "The selected file %filename cannot be uploaded. Only files with the "
 "following extensions are allowed: %extensions."
@@ -50438,15 +51133,19 @@ msgstr "Mønster for brugerstier"
 msgid "Browse available tokens."
 msgstr "Gennemse tilgængelige tokens."
 
+#: ; sites/all/modules/contrib/token/token.js
 msgid "Loading token browser..."
 msgstr "Indlæser token-browser..."
 
+#: ; sites/all/modules/contrib/token/token.js
 msgid "Available tokens"
 msgstr "Tilgængelige symboler"
 
+#: ; sites/all/modules/contrib/token/token.js
 msgid "Insert this token into your form"
 msgstr "Indsæt dette token i din formular"
 
+#: ; sites/all/modules/contrib/token/token.js
 msgid "First click a text field to insert your tokens into."
 msgstr "Klik på et tekstfelt som tokens skal sættes ind i."
 
@@ -51294,6 +51993,7 @@ msgstr "Tilføj en boks"
 msgid "Maximize"
 msgstr "Maksimér"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Close"
 msgstr "Luk"
 
@@ -51319,9 +52019,11 @@ msgstr "Typografi"
 msgid "Target"
 msgstr "Mål"
 
+#: ; sites/all/modules/contrib/pathauto/pathauto.js
 msgid "Automatic alias"
 msgstr "Automatisk alias"
 
+#: ; profiles/os2intra/modules/contrib/metatag/metatag.vertical-tabs.js
 msgid "Using defaults"
 msgstr "Bruger standardindstillinger"
 
@@ -51387,6 +52089,7 @@ msgstr "Vis ændringer"
 msgid "Entity Reference Autocomplete"
 msgstr "Entity Reference Autocomplete"
 
+#: ; profiles/os2intra/modules/contrib/redirect/redirect.js
 msgid "No redirects"
 msgstr "Ingen omdirigeringer"
 
@@ -52396,6 +53099,7 @@ msgstr "TIlgængelige knapper"
 msgid "\"@s\" created date"
 msgstr "\"@s\" oprettelsesdato"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "all"
 msgstr "alle"
 
@@ -52447,6 +53151,7 @@ msgstr "Datofelt"
 msgid "Interval"
 msgstr "Interval"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "Select"
 msgstr "Vælg"
 
@@ -55755,6 +56460,7 @@ msgstr "Minipanel: \"@title\""
 msgid "A panel layout broken up into rows and columns."
 msgstr "Et panel-layout opdelt i rækker og kolonner."
 
+#: ; profiles/os2intra/modules/contrib/panels/plugins/layouts/flexible/flexible-admin.js
 msgid "Show layout designer"
 msgstr "Vis layout-designer"
 
@@ -55803,6 +56509,7 @@ msgstr "Tilpas region"
 msgid "Region title"
 msgstr "Titel på region"
 
+#: ; profiles/os2intra/modules/contrib/panels/plugins/layouts/flexible/flexible-admin.js
 msgid "Hide layout designer"
 msgstr "Skjul layout-designer"
 
@@ -63479,6 +64186,7 @@ msgstr "Medie-browser til valg og upload af mediefiler"
 msgid "Upload a new file"
 msgstr "Upload en ny fil"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.browser.js
 msgid "Cannot continue, nothing selected"
 msgstr "Kan ikke fortsætte, intet valgt"
 
@@ -63585,6 +64293,7 @@ msgstr "Filen findes ikke."
 msgid "An error occurred and no file was uploaded."
 msgstr "Der opstod en fejl og der blev ikke uploadet en fil."
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Start upload"
 msgstr "Start upload"
 
@@ -63701,6 +64410,7 @@ msgstr "Media Internet Sources"
 msgid "Media browser theme"
 msgstr "Mediebrowser theme"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "If you switch views, you will lose your selection."
 msgstr "Hvis du skifter views mister du dine valg."
 
@@ -63744,6 +64454,7 @@ msgstr "Redigér flere filer"
 msgid "Allows displaying and submitting multiple forms in one form"
 msgstr "Gør det muligt at vise og sende flere formularer i en formular"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Add files"
 msgstr "Tilføj filer"
 
@@ -64561,6 +65272,9 @@ msgstr ""
 msgid "Successfully updated Taxonomy Manager settings."
 msgstr "Indstillingerne for Taxonomistyring blev gemt."
 
+msgid "Tokens for variable values."
+msgstr "Tokens til variabelværdier."
+
 msgid "Site default language"
 msgstr "Standard site-sprog"
 
@@ -64779,6 +65493,30 @@ msgstr "Filstørrelse"
 msgid "Maximum file size for pictures, in kB."
 msgstr "Maksimal filstørrelse for billeder, i kB."
 
+#: /
+msgid "Node basket"
+msgstr "Kurv"
+
+#: sites/all/modules/custom/node_basket/js/node_basket.js; profiles/os2intra/modules/custom/node_basket/js/node_basket.js
+msgid "Save to basket"
+msgstr "Gem i kurv"
+
+#: sites/all/modules/custom/node_basket/js/node_basket.js; profiles/os2intra/modules/custom/node_basket/js/node_basket.js
+msgid "Remove from basket"
+msgstr "Fjern fra kurv"
+
+#: sites/all/modules/custom/node_basket/js/node_basket.js; profiles/os2intra/modules/custom/node_basket/js/node_basket.js
+msgid "Add to toolbox"
+msgstr "Tilføj til værktøjskasse"
+
+#: /
+msgid "@comment_count comments"
+msgstr "@comment_count kommentarer"
+
+#: /
+msgid "Seen by @hits persons"
+msgstr "Set af @hits personer"
+
 msgid "Node type settings"
 msgstr "Indstillinger for indholdstype"
 
@@ -64821,9 +65559,6 @@ msgstr "Indstillinger for forum"
 
 msgid "Edit variable"
 msgstr "Redigér variabel"
-
-msgid "Tokens for variable values."
-msgstr "Tokens til variabelværdier."
 
 msgid "Settings for each node type."
 msgstr "Indstillinger for hver indholdstype."
@@ -65114,15 +65849,37 @@ msgstr "Billedfelt"
 msgid "Seen by @hits person"
 msgstr "Set af @hits person"
 
-#: /
-msgid "Seen by @hits persons"
-msgstr "Set af @hits personer"
-
-#: /
-msgid "@comment_count comments"
-msgstr "@comment_count kommentarer"
-
 #: /min-afdeling/begivenhed/ledelsesting-1
 msgid "@comment_count comment"
 msgstr "@comment_count kommentar"
+
+#: /node_basket/basket/view
+msgid "You do not have a node basket, add nodes to create one."
+msgstr "Du har ikke en kurv. Tilføj sider til din kurv for at oprette den."
+
+#: /node_basket/basket/view
+msgid "Own toolboxes"
+msgstr "Dine værktøjskasser"
+
+#: /node_basket/basket/view
+msgid "Other toolboxes"
+msgstr "Andre værktøjskasser"
+
+#: /node_basket/basket/view
+msgid "Edit basket"
+msgstr "Rediger kurv"
+
+#: /node_basket/basket/view
+msgid "Convert to toolbox"
+msgstr "Konverter til værktøjskasse"
+
+#: /node_basket/basket/view
+msgid ""
+"The following basket includes links to different tools/sites which you "
+"have added. You can convert this basket to a toolbox, you can save for "
+"later use."
+msgstr ""
+"Denne kurv indeholder links og værktøjer du har selv har tilføjet. "
+"Du kan konvertere denne kurv til en værktøjskasse. Dine "
+"værktøjskasser kan du senere bruge fra den venstre menu."
 

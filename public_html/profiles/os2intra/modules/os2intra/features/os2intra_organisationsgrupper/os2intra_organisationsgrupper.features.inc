@@ -56,3 +56,16 @@ function os2intra_organisationsgrupper_node_info() {
   drupal_alter('node_info', $items);
   return $items;
 }
+
+/**
+ * Implements hook_default_og_membership_type().
+ */
+function os2intra_organisationsgrupper_default_og_membership_type() {
+  $items = array();
+  $items['organisatorisk'] = entity_import('og_membership_type', '{
+    "name" : "organisatorisk",
+    "description" : "organisatorisk",
+    "language" : ""
+  }');
+  return $items;
+}

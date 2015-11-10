@@ -66,37 +66,6 @@
     .fki-teaser-footer {
         padding: @fki-teaser-inner-footer-top-bottom-spacing @fki-teaser-inner-left-right-spacing;
         padding-bottom: 0;
-
-        .fki-teaser-footer-element {
-            display: inline-block;
-            font-size: @font-size-small;
-            font-weight: bold;
-
-            &:before {
-                font-family: FontAwesome;
-                font-size: @font-size-base;
-                margin-right: 4px;
-                color: @brand-secondary;
-            }
-
-            &.fki-teaser-footer-element-number-of-comments {
-
-                &:before {
-                    content: @fa-var-comment;
-                }
-            }
-
-            &.fki-teaser-footer-element-number-of-hits {
-
-                &:before {
-                    content: @fa-var-eye;
-                }
-            }
-
-            + .fki-teaser-footer-element {
-                margin-left: 15px;
-            }
-        }
     }
 }
 

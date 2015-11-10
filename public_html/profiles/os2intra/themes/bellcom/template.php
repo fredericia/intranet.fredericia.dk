@@ -75,6 +75,33 @@ function bellcom_preprocess_node(&$variables) {
     $variables['updated_at_long'] = format_date($updated_at, 'long');
     $variables['updated_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $updated_at))));;
   }
+
+  if ($created_at = $variables['node']->created) {
+    $variables['created_at_short'] = format_date($created_at, 'short');
+    $variables['created_at_medium'] = format_date($created_at, 'medium');
+    $variables['created_at_long'] = format_date($created_at, 'long');
+    $variables['created_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $created_at))));
+  }
+}
+
+/*
+ * Implements template_preprocess_comment().
+ */
+function bellcom_preprocess_comment(&$variables) {
+
+  if ($updated_at = $variables['comment']->changed) {
+    $variables['updated_at_short'] = format_date($updated_at, 'short');
+    $variables['updated_at_medium'] = format_date($updated_at, 'medium');
+    $variables['updated_at_long'] = format_date($updated_at, 'long');
+    $variables['updated_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $updated_at))));
+  }
+
+  if ($created_at = $variables['comment']->created) {
+    $variables['created_at_short'] = format_date($created_at, 'short');
+    $variables['created_at_medium'] = format_date($created_at, 'medium');
+    $variables['created_at_long'] = format_date($created_at, 'long');
+    $variables['created_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $created_at))));
+  }
 }
 
 /*

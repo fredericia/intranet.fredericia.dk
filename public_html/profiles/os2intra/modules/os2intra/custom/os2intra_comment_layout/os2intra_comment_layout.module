@@ -1,0 +1,14 @@
+<?php
+
+/*
+ * Implements hook_form_comment_form_alter().
+ */
+function os2intra_comment_layout_form_comment_form_alter(&$form, &$form_state) {
+
+  // Hide author details
+  $form['author']['#access'] = FALSE;
+
+  // Submit
+  $form['actions']['submit']['#value'] = t('Send kommentar');
+  $form['actions']['submit']['#attributes']['class'][] = 'btn-primary';
+};

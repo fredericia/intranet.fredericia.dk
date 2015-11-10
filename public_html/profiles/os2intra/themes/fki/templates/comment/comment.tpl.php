@@ -1,32 +1,35 @@
 <!-- comment.tpl.php -->
 <!-- Begin - comment -->
 <div class="<?php print $classes; ?> fki-box fki-box-small-spacing"<?php print $attributes; ?>>
-  <div class="fki-box-body">
+  <div class="table">
+    <div class="table-row">
+      <div class="table-cell comment-user-picture-wrapper">
+        <?php print $picture ?>
+      </div>
+      <div class="table-cell comment-body-wrapper">
 
-    <?php print $picture ?>
+        <div class="fki-box-body">
 
-    <?php if ($new): ?>
-      <span class="new"><?php print $new ?></span>
-    <?php endif; ?>
+          <?php if (isset($author_full_name) and $updated_at_short): ?>
+            <!-- Begin - entity info -->
+            <ul class="fki-comment-info fki-entity-info">
+              <li><?php print l($author_full_name, 'user/' . $node->uid); ?></li>
+              <li><span><?php print $created_at_ago; ?></span></li>
+            </ul>
+            <!-- End - entity info -->
+          <?php endif ?>
 
-    <div class="submitted">
-      <?php print $permalink; ?>
-      <?php print $submitted; ?>
-    </div>
+          <?php if (isset($content['comment_body'])): ?>
+            <!-- Begin - comment body -->
+            <div class="fki-comment-body">
+              <?php print render($content['comment_body']); ?>
+            </div>
+            <!-- End - comment body -->
+          <?php endif; ?>
 
-    <div class="content"<?php print $content_attributes; ?>>
-      <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['links']);
-      print render($content);
-      ?>
-      <?php if ($signature): ?>
-        <div class="user-signature clearfix">
-          <?php print $signature ?>
         </div>
-      <?php endif; ?>
+      </div>
     </div>
-
   </div>
 </div>
 <!-- End - comment -->

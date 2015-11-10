@@ -116,6 +116,38 @@ function fki_preprocess_node(&$variables) {
 }
 
 /*
+ * Implements template_preprocess_comment().
+ */
+function fki_preprocess_comment(&$variables) {
+
+  // Author
+  if ($author_information = bellcom_user_get_raw_information($variables['comment']->uid)) {
+
+    if (isset($author_information['full_name'])) {
+      $variables['author_full_name'] = $author_information['full_name'];
+    }
+  }
+}
+
+/*
+ * Implements hook_node_view_alter().
+ */
+function fki_node_view_alter(&$build) {
+
+  // Full
+  if ($build['#view_mode'] == 'full') {
+    unset($build['links']['statistics']);
+    unset($build['links']['comment']);
+  }
+}
+
+/*
+ * Implements template_preprocess_flag().
+ */
+function fki_preprocess_flag(&$variables) {
+}
+
+/*
  * Full node
  * Implements hook_preprocess_node().
  */

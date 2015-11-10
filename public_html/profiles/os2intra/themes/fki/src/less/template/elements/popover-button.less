@@ -15,41 +15,32 @@
 // --------------------------------------------------
 
 // Popover button
-.popover-button-wrapper {
+
+.popover-button {
 	position: absolute;
-	top: (@grid-gutter-width + 100px);
-	left: 100%;
-	min-width: 50%;
+	right: 0;
 	z-index: 2000;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	.rotate(90deg);
-	.transform-origin(left top);
 
-	li {
-		display: inline-block;
-
-		+ li {
-			margin-left: 10px;
-		}
+	> a {
+		.border-bottom-radius(@border-radius-base);
+		font-weight: bold;
+		padding: 0 15px;
+		text-transform: uppercase;
+		text-decoration: none;
 	}
 
-	.popover-button {
+	&.open {
 
-		> a {
+		.popover-button-content {
 			display: block;
-			.border-bottom-radius(@border-radius-base);
-			font-weight: bold;
-			padding: 8px 15px;
-			text-transform: uppercase;
-			text-decoration: none;
 		}
 	}
-}
 
-.content {
-	position: relative;
+	.popover-button-content {
+		display: none;
+	}
+
+	&:extend(.clearfix all);
 }
 
 // --------------------------------------------------
@@ -57,10 +48,12 @@
 // --------------------------------------------------
 
 .popover-button-colleague {
+	top: (@grid-gutter-width + 100px);
 	.fki-mixin-popover-button(@state-primary-bg, @state-primary-text);
 }
 
 .popover-button-dish-of-the-day {
+	top: (@grid-gutter-width + 100px + 200px);
 	.fki-mixin-popover-button(@state-secondary-bg, @state-secondary-text);
 }
 

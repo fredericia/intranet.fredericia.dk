@@ -58,20 +58,13 @@
         <?php if (user_is_logged_in()): ?>
           <!-- Begin - popover button -->
           <ul class="popover-button-wrapper">
-
-            <?php if ($find_colleague_block): ?>
-            <li class="popover-button popover-button-colleague">
+            <li class="popover-button popover-button-colleague open">
               <a href="#">Find kollega</a>
-              <?php print render($find_colleague_block['content']); ?>
+              <div class="popover-button-content">
+                Dette er mit indhold
+              </div>
             </li>
-            <?php endif ?>
-
-            <?php if ($dish_of_the_day_block): ?>
-            <li class="popover-button popover-button-dish-of-the-day">
-              <a href="#">Dagens ret</a>
-            </li>
-            <?php endif ?>
-
+            <li class="popover-button popover-button-dish-of-the-day"><a href="#">Dagens ret</a></li>
           </ul>
           <!-- End - popover button -->
         <?php endif ?>
