@@ -132,8 +132,8 @@ function fki_node_view_alter(&$build) {
 
   // Full
   if ($build['#view_mode'] == 'full') {
-
     unset($build['links']['statistics']);
+    unset($build['links']['comment']);
   }
 }
 
@@ -141,7 +141,6 @@ function fki_node_view_alter(&$build) {
  * Implements template_preprocess_flag().
  */
 function fki_preprocess_flag(&$variables) {
-//  xdebug_break();
 }
 
 /*
