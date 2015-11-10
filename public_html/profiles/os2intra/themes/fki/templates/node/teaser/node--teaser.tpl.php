@@ -53,14 +53,20 @@
     </div>
 
     <!-- Begin - footer -->
-    <div class="fki-teaser-footer">
+    <div class="fki-teaser-footer fki-footer-elements">
 
       <!-- Begin - number of hits -->
-      <span class="fki-teaser-footer-element fki-teaser-footer-element-number-of-hits"><?php print $number_of_hits; ?></span>
+      <span class="fki-footer-element">
+        <span class="icon fa fa-eye"></span>
+        <?php print $number_of_hits; ?>
+      </span>
       <!-- End - number of hits -->
 
       <!-- Begin - number of comments -->
-      <span class="fki-teaser-footer-element fki-teaser-footer-element-number-of-comments"><?php print $number_of_comments; ?></span>
+      <span class="fki-footer-element">
+        <span class="icon fa fa-comment"></span>
+        <?php print $number_of_comments; ?>
+      </span>
       <!-- End - number of comments -->
 
     </div>
