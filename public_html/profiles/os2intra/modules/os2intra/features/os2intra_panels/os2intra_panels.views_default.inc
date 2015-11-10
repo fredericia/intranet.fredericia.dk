@@ -542,8 +542,7 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'entity';
-  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Spotbokse */
@@ -573,13 +572,6 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'spotbox' => 'spotbox',
-  );
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'context',
@@ -652,7 +644,7 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Afdeling */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
@@ -660,11 +652,6 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_afdeling']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_os2intra_afdeling']['alter']['link_class'] = 'btn btn-quinary btn-lg';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_afdeling']['type'] = 'entityreference_entity_view';
-  $handler->display->display_options['fields']['field_os2intra_afdeling']['settings'] = array(
-    'view_mode' => 'teaser',
-    'links' => 0,
-  );
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'context',
