@@ -5,10 +5,8 @@
   <?php print render($content['comments']); ?>
 
   <?php if ($content['comment_form']): ?>
-    <div class="fki-box">
-      <div class="fki-box-body">
-        <?php print render($content['comment_form']); ?>
-      </div>
+    <div>
+      <?php print render($content['comment_form']); ?>
     </div>
   <?php endif; ?>
 
