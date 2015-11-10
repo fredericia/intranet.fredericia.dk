@@ -83,7 +83,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -164,6 +164,120 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-os2intra_group-group_access'.
+  $field_instances['node-os2intra_group-group_access'] = array(
+    'bundle' => 'os2intra_group',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 5,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_access',
+    'label' => 'Group visibility',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'options_onoff',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'options_onoff',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 8,
+    ),
+    'widget_type' => 'options_select',
+  );
+
+  // Exported field_instance: 'node-os2intra_group-group_content_access'.
+  $field_instances['node-os2intra_group-group_content_access'] = array(
+    'bundle' => 'os2intra_group',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Group content visibility',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+    'widget_type' => 'options_select',
+  );
+
   // Exported field_instance: 'node-os2intra_group-group_group'.
   $field_instances['node-os2intra_group-group_group'] = array(
     'bundle' => 'os2intra_group',
@@ -224,7 +338,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'og_hide' => TRUE,
       ),
       'type' => 'options_onoff',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -275,66 +389,6 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-os2intra_org_group_unit-field_os2intra_afdeling'.
-  $field_instances['node-os2intra_org_group_unit-field_os2intra_afdeling'] = array(
-    'bundle' => 'os2intra_org_group_unit',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div_div_div',
-    'field_name' => 'field_os2intra_afdeling',
-    'label' => 'Afdeling',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'access_override' => 0,
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 8,
     ),
   );
 
@@ -391,7 +445,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 7,
+      'weight' => 14,
     ),
   );
 
@@ -576,7 +630,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 16,
     ),
   );
 
@@ -637,6 +691,64 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-os2intra_org_group_unit-group_content_access'.
+  $field_instances['node-os2intra_org_group_unit-group_content_access'] = array(
+    'bundle' => 'os2intra_org_group_unit',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 10,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Group content visibility',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 12,
+    ),
+    'widget_type' => 'options_select',
+  );
+
   // Exported field_instance: 'node-os2intra_org_group_unit-group_group'.
   $field_instances['node-os2intra_org_group_unit-group_group'] = array(
     'bundle' => 'os2intra_org_group_unit',
@@ -694,7 +806,137 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'og_hide' => TRUE,
       ),
       'type' => 'options_onoff',
-      'weight' => 10,
+      'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance: 'node-os2intra_org_group_unit-og_group_org_ref'.
+  $field_instances['node-os2intra_org_group_unit-og_group_org_ref'] = array(
+    'bundle' => 'os2intra_org_group_unit',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 9,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'og_group_org_ref',
+    'label' => 'Groups audience',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'options_select',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Fuld',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Smagsprøve',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2intra_org_group_unit-og_roles_permissions'.
+  $field_instances['node-os2intra_org_group_unit-og_roles_permissions'] = array(
+    'bundle' => 'os2intra_org_group_unit',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 11,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'og_roles_permissions',
+    'label' => 'Group roles and permissions',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Fuld',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Smagsprøve',
+        'type' => 'list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 18,
     ),
   );
 
@@ -962,9 +1204,47 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'og_membership-organisatorisk-field_os2intra_orgleder'.
+  $field_instances['og_membership-organisatorisk-field_os2intra_orgleder'] = array(
+    'bundle' => 'organisatorisk',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'og_membership',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_orgleder',
+    'label' => 'Leder',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 1,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
-  t('Afdeling');
   t('Afdelingsværktøjer');
   t('Billede');
   t('Billeder');
@@ -974,8 +1254,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Forfremmet indhold');
   t('Formål med gruppe');
   t('Group');
+  t('Group content visibility');
+  t('Group roles and permissions');
+  t('Group visibility');
   t('Groups audience');
   t('Gruppelogo');
+  t('Leder');
   t('Organisation');
   t('Spotbokse');
 
