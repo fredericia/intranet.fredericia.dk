@@ -192,6 +192,7 @@ features[filter][] = indhold
 features[filter][] = kommentar
 features[image][] = 4_col_image_-_520x220
 features[image][] = normal
+features[image][] = profile_image_default
 features[image][] = spotboks
 features[image][] = teaser_image
 features[image][] = teaser_spotbox

@@ -84,6 +84,29 @@ function os2intra_content_types_image_default_styles() {
     ),
   );
 
+  // Exported image style: profile_image_default.
+  $styles['profile_image_default'] = array(
+    'label' => 'Profile image default',
+    'effects' => array(
+      1 => array(
+        'name' => 'epsacrop_crop',
+        'data' => array(
+          'width' => 58,
+          'height' => 58,
+          'anchor' => 'center-center',
+          'disable_scale' => 0,
+          'jcrop_settings' => array(
+            'aspect_ratio' => '',
+            'bgcolor' => 'black',
+            'bgopacity' => 0.6,
+            'fallback' => 0,
+          ),
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: spotboks.
   $styles['spotboks'] = array(
     'label' => 'Spotboks',

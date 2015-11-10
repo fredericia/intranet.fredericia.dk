@@ -3,10 +3,10 @@
 <div class="<?php print $classes; ?> fki-box fki-box-small-spacing"<?php print $attributes; ?>>
   <div class="table">
     <div class="table-row">
-      <div class="table-column">
+      <div class="table-cell comment-user-picture-wrapper">
         <?php print $picture ?>
       </div>
-      <div class="table-column">
+      <div class="table-cell comment-body-wrapper">
 
         <div class="fki-box-body">
 
