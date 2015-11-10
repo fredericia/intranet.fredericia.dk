@@ -56,27 +56,29 @@
       <div class="container container-fluid-lg-only container-fluid-md-only">
 
         <?php if (user_is_logged_in()): ?>
-          <!-- Begin - popover button -->
-          <div class="popover-button popover-button-colleague open">
+          <?php if (isset($find_colleague_block)): ?>
+            <!-- Begin - find colleague -->
+            <div class="popover-button popover-button-find-colleague">
+              <a href="#" class="popover-button-toggle"><?php print t('Find colleague'); ?></a>
 
-            <a href="#">Find kollega</a>
-
-            <div class="popover-button-content">
-              Dette er mit indhold
+              <div class="popover-button-content">
+                <?php print render($find_colleague_block['content']); ?>
+              </div>
             </div>
-          </div>
-          <!-- End - popover button -->
+            <!-- End - find colleague -->
+          <?php endif ?>
 
-          <!-- Begin - popover button -->
-          <div class="popover-button popover-button-dish-of-the-day">
+          <?php if (isset($dish_of_the_day_block)): ?>
+            <!-- Begin - dish of the day -->
+            <div class="popover-button popover-button-dish-of-the-day">
+              <a href="#" class="popover-button-toggle"><?php print t('Dish of the day'); ?></a>
 
-            <a href="#">Dagens ret</a>
-
-            <div class="popover-button-content">
-              Dette er mit indhold
+              <div class="popover-button-content">
+                <?php print $dish_of_the_day_block; ?>
+              </div>
             </div>
-          </div>
-          <!-- End - popover button -->
+            <!-- End - dish of the day -->
+          <?php endif ?>
         <?php endif ?>
 
         <?php print $messages; ?>

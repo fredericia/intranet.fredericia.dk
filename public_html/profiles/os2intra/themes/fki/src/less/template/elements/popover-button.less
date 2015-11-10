@@ -18,26 +18,41 @@
 
 .popover-button {
 	position: absolute;
-	right: 0;
+	left: 100%;
+	right: auto;
+	width: 200px;
 	z-index: 2000;
+	border: 3px dotted red;
+	background-color: @content-bg;
 
-	> a {
+	.popover-button-toggle {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 100%;
 		.border-bottom-radius(@border-radius-base);
 		font-weight: bold;
-		padding: 0 15px;
+		padding: 5px 15px;
 		text-transform: uppercase;
 		text-decoration: none;
-	}
-
-	&.open {
-
-		.popover-button-content {
-			display: block;
-		}
+		.transform-origin(left top);
+		.rotate(90deg);
+		width: 100%;
+		text-align: center;
 	}
 
 	.popover-button-content {
 		display: none;
+	}
+
+	&.popover-button-open {
+		left: auto;
+		right: 0;
+
+		.popover-button-content {
+			display: block;
+		}
 	}
 
 	&:extend(.clearfix all);
@@ -48,12 +63,10 @@
 // --------------------------------------------------
 
 .popover-button-colleague {
-	top: (@grid-gutter-width + 100px);
 	.fki-mixin-popover-button(@state-primary-bg, @state-primary-text);
 }
 
 .popover-button-dish-of-the-day {
-	top: (@grid-gutter-width + 100px + 200px);
 	.fki-mixin-popover-button(@state-secondary-bg, @state-secondary-text);
 }
 
@@ -147,7 +160,7 @@
 
 	&.popover-button {
 
-		> a {
+		.popover-button-toggle {
 			color: @font-color;
 			background-color: @background-color;
 		}
