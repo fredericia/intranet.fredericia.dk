@@ -56,12 +56,27 @@
       <div class="container container-fluid-lg-only container-fluid-md-only">
 
         <?php if (user_is_logged_in()): ?>
-        <!-- Begin - popover button -->
-        <ul class="popover-button-wrapper">
-          <li class="popover-button popover-button-colleague"><a href="#">Find kollega</a></li>
-          <li class="popover-button popover-button-dish-of-the-day"><a href="#">Dagens ret</a></li>
-        </ul>
-        <!-- End - popover button -->
+          <!-- Begin - popover button -->
+          <div class="popover-button popover-button-colleague open">
+
+            <a href="#">Find kollega</a>
+
+            <div class="popover-button-content">
+              Dette er mit indhold
+            </div>
+          </div>
+          <!-- End - popover button -->
+
+          <!-- Begin - popover button -->
+          <div class="popover-button popover-button-dish-of-the-day">
+
+            <a href="#">Dagens ret</a>
+
+            <div class="popover-button-content">
+              Dette er mit indhold
+            </div>
+          </div>
+          <!-- End - popover button -->
         <?php endif ?>
 
         <?php print $messages; ?>
