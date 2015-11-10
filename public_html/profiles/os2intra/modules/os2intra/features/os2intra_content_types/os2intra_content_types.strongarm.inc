@@ -294,14 +294,14 @@ function os2intra_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_it_vejledning';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_it_vejledning'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_os2intra_base_page';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_os2intra_base_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -322,21 +322,21 @@ function os2intra_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_os2web_base_selfservice_link';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_os2web_base_selfservice_link'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_spotbox';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_spotbox'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_wiki';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['comment_preview_wiki'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -392,7 +392,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_spotbox';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_subject_field_spotbox'] = $strongarm;
 
   $strongarm = new stdClass();
