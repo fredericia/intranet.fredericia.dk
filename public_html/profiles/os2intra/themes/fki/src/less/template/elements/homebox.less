@@ -19,8 +19,25 @@
 
 	#homebox-add {
 
+		li {
+			margin: 0;
+
+			a {
+				margin-right: 10px;
+			}
+
+			a {
+
+				&:not('.used') {
+					.btn;
+					.btn-default;
+				}
+			}
+		}
+
 		.used {
 			display: none;
+			margin: 0;
 		}
 	}
 
