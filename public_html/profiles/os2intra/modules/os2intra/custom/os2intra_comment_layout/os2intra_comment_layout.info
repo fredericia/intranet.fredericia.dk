@@ -1,0 +1,4 @@
+name        = 'OS2Intra comment layout'
+description = 'Settings for comment layout.'
+core        = 7.x
+package     = 'OS2Intra custom'

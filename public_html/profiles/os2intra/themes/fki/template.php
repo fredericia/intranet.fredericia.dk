@@ -112,6 +112,20 @@ function fki_preprocess_node(&$variables) {
 }
 
 /*
+ * Implements template_preprocess_comment().
+ */
+function fki_preprocess_comment(&$variables) {
+
+  // Author
+  if ($author_information = bellcom_user_get_raw_information($variables['comment']->uid)) {
+
+    if (isset($author_information['full_name'])) {
+      $variables['author_full_name'] = $author_information['full_name'];
+    }
+  }
+}
+
+/*
  * Full node
  * Implements hook_preprocess_node().
  */
