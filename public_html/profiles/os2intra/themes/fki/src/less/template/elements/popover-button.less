@@ -10,20 +10,24 @@
 // Variables
 // --------------------------------------------------
 
+@popover-button-top-spacing: 100px;
+@popover-button-stacked-spacing: @grid-gutter-width;
+@popover-button-width: 250px;
+@popover-button-min-height: 150px;
+@popover-button-toggle-width: @popover-button-min-height;
+
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
 // Popover button
-
 .popover-button {
 	position: absolute;
-	left: 100%;
-	right: auto;
-	width: 200px;
-	z-index: 2000;
-	border: 3px dotted red;
+	right: floor( (0 - @popover-button-width) );
+	width: 250px;
 	background-color: @content-bg;
+	min-height: @popover-button-min-height;
+	.transition(all @bs3-designer-transition-time ease-in-out);
 
 	.popover-button-toggle {
 		display: block;
@@ -38,21 +42,21 @@
 		text-decoration: none;
 		.transform-origin(left top);
 		.rotate(90deg);
-		width: 100%;
+		width: @popover-button-toggle-width;
 		text-align: center;
 	}
 
 	.popover-button-content {
-		display: none;
+		padding: @default-body-top-bottom-spacing @default-left-right-spacing;
+
+		.form-submit {
+
+			.btn-primary;
+		}
 	}
 
 	&.popover-button-open {
-		left: auto;
 		right: 0;
-
-		.popover-button-content {
-			display: block;
-		}
 	}
 
 	&:extend(.clearfix all);
@@ -62,11 +66,15 @@
 // Variants
 // --------------------------------------------------
 
-.popover-button-colleague {
+.popover-button-find-colleague {
+	top: (@popover-button-top-spacing);
+	z-index: 2005;
 	.fki-mixin-popover-button(@state-primary-bg, @state-primary-text);
 }
 
 .popover-button-dish-of-the-day {
+	top: (@popover-button-top-spacing + @popover-button-toggle-width + @popover-button-stacked-spacing);
+	z-index: 2000;
 	.fki-mixin-popover-button(@state-secondary-bg, @state-secondary-text);
 }
 

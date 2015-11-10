@@ -70,7 +70,7 @@
 
           <?php if (isset($dish_of_the_day_block)): ?>
             <!-- Begin - dish of the day -->
-            <div class="popover-button popover-button-dish-of-the-day popover-button-open">
+            <div class="popover-button popover-button-dish-of-the-day">
               <a href="#" class="popover-button-toggle"><?php print t('Dish of the day'); ?></a>
 
               <div class="popover-button-content">

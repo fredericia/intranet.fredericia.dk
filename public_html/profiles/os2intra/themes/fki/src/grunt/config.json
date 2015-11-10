@@ -28,6 +28,7 @@
       "src/vendor/imagesloaded/imagesloaded.pkgd.js",
       "src/vendor/masonry/dist/masonry.pkgd.js",
       "src/js/bs3-sidebar.js",
+      "src/js/popover-button.js",
       "src/js/init.js"
     ],
     "jsIe9": [

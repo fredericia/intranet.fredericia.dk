@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-11-10 12:36+0100\n"
-"PO-Revision-Date: 2015-11-10 12:36+0100\n"
+"POT-Creation-Date: 2015-11-10 23:30+0100\n"
+"PO-Revision-Date: 2015-11-10 23:30+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -877,10 +877,6 @@ msgstr ""
 
 #: /install.php?profile=os2intra&locale=da&op=start&id=2
 msgid "The date the form was submitted."
-msgstr ""
-
-#: /install.php?profile=os2intra&locale=da&op=start&id=2
-msgid "Form ID"
 msgstr ""
 
 #: /install.php?profile=os2intra&locale=da&op=start&id=2
@@ -16027,10 +16023,6 @@ msgid "Dato"
 msgstr ""
 
 #: /batch?op=start&id=3
-msgid "Groups audience"
-msgstr ""
-
-#: /batch?op=start&id=3
 msgid "You created - pane"
 msgstr ""
 
@@ -17959,10 +17951,6 @@ msgstr ""
 
 #: /hjaelp-og-vaerktoejer/it-vejledninger/kommer-den-saa-frem-automatisk
 msgid "Portalkategori"
-msgstr ""
-
-#: /hjaelp-og-vaerktoejer/it-vejledninger/kommer-den-saa-frem-automatisk
-msgid "Group content visibility"
 msgstr ""
 
 #: /hjaelp-og-vaerktoejer/it-vejledninger/kommer-den-saa-frem-automatisk
@@ -21983,10 +21971,6 @@ msgstr ""
 
 #: /admin/config/development/blame
 msgid "Click below to clear the Blame log. This action cannot be undone."
-msgstr ""
-
-#: /admin/config/development/blame
-msgid "Clear log"
 msgstr ""
 
 #: /admin/config/development/blame
@@ -26446,27 +26430,439 @@ msgid ""
 "suggestion."
 msgstr ""
 
-#: /
+#: /admin/config/os2web_intra_user_menu/settings
 msgid ""
-"!host does not appear to be a resolvable hostname or IP, not starting "
-"browser. You may need to use the --uri option in your command or site "
-"alias to indicate the correct URL of this site."
+"Når du trykker 'Gem indstillinger' kan det tage et øjeblik et "
+"genopbygge menustrukturen."
 msgstr ""
 
-#: /node_basket/basket/add/52
+#: /admin/config/os2web_intra_user_menu/settings
+msgid "Block mode (default)"
+msgstr ""
+
+#: /admin/config/os2web_intra_user_menu/settings
+msgid "Integrer i user-menu"
+msgstr ""
+
+#: /
+msgid "Telefonbogen"
+msgstr ""
+
+#: /node_basket/basket/add/29
 msgid "!user basket"
 msgstr ""
 
-#: /node_basket/basket/add/52
+#: /node_basket/basket/add/29
 msgid "saved to basket"
 msgstr ""
 
-#: /node_basket/basket/status/52
+#: /node_basket/basket/status/29
 msgid "node already saved"
 msgstr ""
 
-#: /node_basket/basket/remove/52
+#: /node_basket/basket/remove/29
 msgid "removed node"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-base-page/comment/fields/comment_body
+msgid "Limit allowed text formats"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-base-page/comment/fields/comment_body
+msgid ""
+"Check the allowed formats below. If checked available text formats can "
+"be chosen."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-base-page/comment/fields/comment_body
+msgid ""
+"Select the text formats allowed for this field. Note that not all of "
+"these may appear on the form if a user does not have permission to use "
+"them. <strong>Warning:</strong> This affects existing content which "
+"may leave you unable to edit some fields. If that happens you must "
+"allow the format that field was saved in here."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-base-page/comment/fields/comment_body
+msgid "Override default order"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-base-page/comment/fields/comment_body
+msgid ""
+"Override the global order that will determine the default text format "
+"a user will get <strong>only on entity creation</strong>."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra_org_group_unit
+msgid "Determine if this should be a group."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra_org_group_unit
+msgid "Determine if group should use default roles and permissions."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra_org_group_unit
+msgid "Group roles and permissions"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra_org_group_unit
+msgid "Determine to which groups this group content is assigned to."
+msgstr ""
+
+#: /admin/modules
+msgid "Settings for comment layout."
+msgstr ""
+
+#: /intranetdokumentation/indholdstyper-begivenhed
+msgid "Send kommentar"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit
+msgid "Pane settings"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit
+msgid "Use view name"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit
+msgid "Admin title"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit
+msgid "Use view description"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit
+msgid "Admin desc"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit
+msgid "Link to view"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit
+msgid "Use Panel path"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit
+msgid "Argument input"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit
+msgid "Allow settings"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/os2intra_node_panes/panel_pane_1/argument/null
+msgid "Select the group type."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/os2intra_node_panes/panel_pane_1/argument/null
+msgid ""
+"Select the concatenator used to merge multiple group IDs. Remember to "
+"turn on the \"Allow multiple values\" option in the \"more\" settings "
+"for this contextual filter."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/os2intra_node_panes/panel_pane_1/argument/null
+msgid "Determine what entity type that group should be of."
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_2
+msgid "Some"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_5
+msgid "Formular ID"
+msgstr ""
+
+#: /node/2
+msgid "Group visibility"
+msgstr ""
+
+#: /node/2
+msgid "Leder"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Choose the data source for view arguments"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Multiple taxonomy terms, as a group."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Term ID of first term"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Term ID of all term, separated by + or ,"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Term name of first term"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Term name of first term, lowercased and spaces converted to dashes"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Term name of all terms, separated by + or ,"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid ""
+"Term name of all terms, separated by + or , and lowercased and spaces "
+"converted to dashes"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Vocabulary ID of first term"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "A single taxonomy vocabulary object."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "User edit form"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "A user edit form."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Enter the user ID of a user for this argument:"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Node add form"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "A node add form."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Enter the node type this context."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "A context that contains token replacements from token.module."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "A single taxonomy term object."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Term name, lowercased and spaces converted to dashes"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Term Description"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid ""
+"Loads a view result into a context that can then be displayed across a "
+"panel or turned into other contexts."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "No argument"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Argument wildcard"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "From context"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "From panel argument"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Input on pane config"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "@arg source"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Required context"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "If \"From context\" is selected, which type of context to use."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Context is optional"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid ""
+"This context need not be present for the pane to function. If you plan "
+"to use this, ensure that the argument handler can handle empty values "
+"gracefully."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Panel argument"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "If \"From panel argument\" is selected, which panel argument to use."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Third"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Fourth"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Fifth"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Sixth"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "Fixed argument"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid "If \"Fixed\" is selected, what to use as an argument."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+msgid ""
+"If this argument is presented to the panels user, what label to apply "
+"to it."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/allow
+msgid ""
+"Checked settings will be available in the panel pane config dialog for "
+"modification by the panels user. Unchecked settings will not be "
+"available and will only use the settings in this display."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/allow
+msgid "Pager offset"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/allow
+msgid "Path override"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/allow
+msgid "Title override"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/allow
+msgid "Use exposed widgets form as pane configuration"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/allow
+msgid "Fields override"
+msgstr ""
+
+#: /barns-1-og-2-sygedag
+msgid "Test link"
+msgstr ""
+
+#: /admin/config/people/accounts
+msgid ""
+"The %element-title does not contain the <code>[user:name-raw]</code> "
+"token, which is necessary when using username for login."
+msgstr ""
+
+#: /admin/config/people/accounts
+msgid "Unknown variable @name"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__intranetside/content?destination=node/28
+msgid "\"@s\" terms"
+msgstr ""
+
+#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
+msgid ""
+"The part of the image that will be retained during the crop if no "
+"coordinates are set."
+msgstr ""
+
+#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
+msgid "Disable image scaling"
+msgstr ""
+
+#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
+msgid ""
+"Only crop the image to the selected area and don't scale it. When "
+"enabled the above dimensions are used only when the cropping area is "
+"not selected."
+msgstr ""
+
+#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
+msgid "Aspect Ratio"
+msgstr ""
+
+#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
+msgid "Aspect ratio of w/h (e.g. 1 for square)"
+msgstr ""
+
+#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
+msgid "Set color of background container"
+msgstr ""
+
+#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
+msgid "Background opacity"
+msgstr ""
+
+#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
+msgid "Opacity of outer image when cropping"
+msgstr ""
+
+#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
+msgid "Ignore if not manually set"
+msgstr ""
+
+#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
+msgid ""
+"If a user does not manually set the crop, ignore these settings.  This "
+"is useful if you want to use other effects to set a default crop, "
+"which may then be overridden manually using EPSA Crop.  When this is "
+"checked, make sure the EPSA Crop effect is above any default cropping "
+"effects."
+msgstr ""
+
+#: /user/1/edit
+msgid "America/Fort Nelson"
+msgstr ""
+
+#: /
+msgid ""
+"Leave blank for all. Otherwise, the first selected term will be the "
+"default instead of \"Any\"."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/os2intra_canteen_menu/block/empty/area
+msgid ""
+"The following tokens are available. If you would like to have the "
+"characters '[' and ']' please use the html entity codes '%5B' or  "
+"'%5D' or they will get replaced with empty space.</p>"
 msgstr ""
 
 msgid "Public files"
@@ -27073,7 +27469,6 @@ msgstr "Oprette forrige/næste navigation."
 msgid "Webform"
 msgstr "Webformular"
 
-#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Status"
 msgstr "Status"
 
@@ -27403,6 +27798,9 @@ msgstr "Filtrér ethvert Views !base_table datofelt."
 
 msgid "URL"
 msgstr "URL"
+
+msgid "Form ID"
+msgstr "Formular ID"
 
 msgid "Field name"
 msgstr "Feltnavn"
@@ -28022,7 +28420,7 @@ msgstr "Udgivet"
 msgid "Whether or not the content is published."
 msgstr "Hvorvidt indholdet er udgivet eller ej."
 
-#: ; modules/node/content_types.js; modules/node/node.js
+#: ; modules/node/node.js; modules/node/content_types.js
 msgid "Not published"
 msgstr "Ikke udgivet"
 
@@ -28310,7 +28708,6 @@ msgstr "Udvidelse"
 msgid "The extension of the file."
 msgstr "Filens endelse."
 
-#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Size"
 msgstr "Størrelse"
 
@@ -30771,7 +31168,7 @@ msgstr "Genopbyg"
 msgid "Primary tabs"
 msgstr "Primære faneblade"
 
-#: ; misc/vertical-tabs.js; sites/all/modules/contrib/field_group/horizontal-tabs/horizontal-tabs.js
+#: ; sites/all/modules/contrib/field_group/horizontal-tabs/horizontal-tabs.js; misc/vertical-tabs.js
 msgid "(active tab)"
 msgstr "(aktiv fane)"
 
@@ -30989,7 +31386,6 @@ msgstr ""
 "Sider på et givet niveau sorteres først efter vægt og dernæst "
 "efter titel."
 
-#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "none"
 msgstr "ingen"
 
@@ -31068,7 +31464,6 @@ msgstr "Format"
 msgid "History"
 msgstr "Historik"
 
-#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Filename"
 msgstr "Filnavn"
 
@@ -31453,7 +31848,6 @@ msgstr "Advarsel"
 msgid "blocked"
 msgstr "blokeret"
 
-#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "N/A"
 msgstr "N/A"
 
@@ -35545,11 +35939,11 @@ msgstr "Af @name"
 msgid "Not in menu"
 msgstr "Ikke i menu"
 
-#: ; modules/path/path.js; sites/all/modules/contrib/pathauto/pathauto.js
+#: ; sites/all/modules/contrib/pathauto/pathauto.js
 msgid "Alias: @alias"
 msgstr "Alias: @alias"
 
-#: ; modules/path/path.js; sites/all/modules/contrib/pathauto/pathauto.js
+#: ; sites/all/modules/contrib/pathauto/pathauto.js
 msgid "No alias"
 msgstr "Intet alias"
 
@@ -51245,6 +51639,7 @@ msgstr "Thumbnail"
 msgid "Tables"
 msgstr "Tabeller"
 
+#: ; profiles/os2intra/themes/contrib/bootstrap/js/bootstrap.admin.js
 msgid "Breadcrumbs"
 msgstr "Brødkrummer"
 
@@ -51993,7 +52388,6 @@ msgstr "Tilføj en boks"
 msgid "Maximize"
 msgstr "Maksimér"
 
-#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Close"
 msgstr "Luk"
 
@@ -53099,7 +53493,6 @@ msgstr "TIlgængelige knapper"
 msgid "\"@s\" created date"
 msgstr "\"@s\" oprettelsesdato"
 
-#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "all"
 msgstr "alle"
 
@@ -53151,7 +53544,6 @@ msgstr "Datofelt"
 msgid "Interval"
 msgstr "Interval"
 
-#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "Select"
 msgstr "Vælg"
 
@@ -56460,7 +56852,6 @@ msgstr "Minipanel: \"@title\""
 msgid "A panel layout broken up into rows and columns."
 msgstr "Et panel-layout opdelt i rækker og kolonner."
 
-#: ; profiles/os2intra/modules/contrib/panels/plugins/layouts/flexible/flexible-admin.js
 msgid "Show layout designer"
 msgstr "Vis layout-designer"
 
@@ -56509,7 +56900,6 @@ msgstr "Tilpas region"
 msgid "Region title"
 msgstr "Titel på region"
 
-#: ; profiles/os2intra/modules/contrib/panels/plugins/layouts/flexible/flexible-admin.js
 msgid "Hide layout designer"
 msgstr "Skjul layout-designer"
 
@@ -64186,7 +64576,6 @@ msgstr "Medie-browser til valg og upload af mediefiler"
 msgid "Upload a new file"
 msgstr "Upload en ny fil"
 
-#: ; profiles/os2intra/modules/contrib/media/js/media.browser.js
 msgid "Cannot continue, nothing selected"
 msgstr "Kan ikke fortsætte, intet valgt"
 
@@ -64293,7 +64682,6 @@ msgstr "Filen findes ikke."
 msgid "An error occurred and no file was uploaded."
 msgstr "Der opstod en fejl og der blev ikke uploadet en fil."
 
-#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Start upload"
 msgstr "Start upload"
 
@@ -64410,7 +64798,6 @@ msgstr "Media Internet Sources"
 msgid "Media browser theme"
 msgstr "Mediebrowser theme"
 
-#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "If you switch views, you will lose your selection."
 msgstr "Hvis du skifter views mister du dine valg."
 
@@ -64454,7 +64841,6 @@ msgstr "Redigér flere filer"
 msgid "Allows displaying and submitting multiple forms in one form"
 msgstr "Gør det muligt at vise og sende flere formularer i en formular"
 
-#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Add files"
 msgstr "Tilføj filer"
 
@@ -64735,6 +65121,10 @@ msgstr "Ingen beskyttelse af personlige oplysninger"
 msgid "Administer OS2Intra User import"
 msgstr "Administrer OS2Intra bruger import"
 
+#: /batch?op=start&id=3
+msgid "Groups audience"
+msgstr "Tilknyttet gruppe/afdeling"
+
 #: os2intra_user_import.module:40
 msgid "View user import log"
 msgstr "Se import log"
@@ -64826,6 +65216,10 @@ msgstr "Få et overblik over importerede brugere"
 #: os2intra_user_import.module:53
 msgid "User activation"
 msgstr "Bruger aktivering"
+
+#: /hjaelp-og-vaerktoejer/it-vejledninger/kommer-den-saa-frem-automatisk
+msgid "Group content visibility"
+msgstr "Synlighed for indhold"
 
 msgid "Parent term(s)"
 msgstr "Overord"
@@ -65271,6 +65665,9 @@ msgstr ""
 
 msgid "Successfully updated Taxonomy Manager settings."
 msgstr "Indstillingerne for Taxonomistyring blev gemt."
+
+msgid "Clear log"
+msgstr "Ryd log"
 
 msgid "Tokens for variable values."
 msgstr "Tokens til variabelværdier."
@@ -65882,4 +66279,12 @@ msgstr ""
 "Denne kurv indeholder links og værktøjer du har selv har tilføjet. "
 "Du kan konvertere denne kurv til en værktøjskasse. Dine "
 "værktøjskasser kan du senere bruge fra den venstre menu."
+
+#: /mig-som-ansat
+msgid "Dish of the day"
+msgstr "Dagens ret"
+
+#: /mig-som-ansat
+msgid "Find colleague"
+msgstr "Find kollega"
 
