@@ -126,6 +126,25 @@ function fki_preprocess_comment(&$variables) {
 }
 
 /*
+ * Implements hook_node_view_alter().
+ */
+function fki_node_view_alter(&$build) {
+
+  // Full
+  if ($build['#view_mode'] == 'full') {
+
+    unset($build['links']['statistics']);
+  }
+}
+
+/*
+ * Implements template_preprocess_flag().
+ */
+function fki_preprocess_flag(&$variables) {
+//  xdebug_break();
+}
+
+/*
  * Full node
  * Implements hook_preprocess_node().
  */

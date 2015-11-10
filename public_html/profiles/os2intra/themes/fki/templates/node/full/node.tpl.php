@@ -55,7 +55,11 @@
       <!-- End - body -->
     <?php endif; ?>
 
-    <?php print render($content['links']); ?>
+    <!-- Begin - footer -->
+    <div class="fki-full-footer fki-links">
+      <?php print render($content['links']); ?>
+    </div>
+    <!-- End - footer -->
 
   </div>
   <!-- End - full node -->
