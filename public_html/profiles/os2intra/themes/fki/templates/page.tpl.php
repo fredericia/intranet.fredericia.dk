@@ -58,8 +58,20 @@
         <?php if (user_is_logged_in()): ?>
           <!-- Begin - popover button -->
           <ul class="popover-button-wrapper">
-            <li class="popover-button popover-button-colleague"><a href="#">Find kollega</a></li>
-            <li class="popover-button popover-button-dish-of-the-day"><a href="#">Dagens ret</a></li>
+
+            <?php if ($find_colleague_block): ?>
+            <li class="popover-button popover-button-colleague">
+              <a href="#">Find kollega</a>
+              <?php print render($find_colleague_block['content']); ?>
+            </li>
+            <?php endif ?>
+
+            <?php if ($dish_of_the_day_block): ?>
+            <li class="popover-button popover-button-dish-of-the-day">
+              <a href="#">Dagens ret</a>
+            </li>
+            <?php endif ?>
+
           </ul>
           <!-- End - popover button -->
         <?php endif ?>

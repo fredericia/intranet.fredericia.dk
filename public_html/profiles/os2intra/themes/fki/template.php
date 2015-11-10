@@ -58,6 +58,10 @@ function fki_preprocess_page(&$variables) {
 
   // Search form
   $variables['main_navigation_search'] = drupal_get_form('search_form');
+
+  // Find colleague
+  //$variables['find_colleague_block'] = views_embed_view('telefonbogen', array('block'));
+  $variables['find_colleague_block'] = module_invoke('views', 'block_view', '-exp-telefonbogen-page');
 }
 
 /**
