@@ -23,7 +23,7 @@ function os2intra_content_types_field_group_info() {
     'label' => '1',
     'weight' => '7',
     'children' => array(
-      0 => 'field_os2intra_itvejledninger_1',
+      0 => 'field_os2intra_itvejledning_hand',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -264,21 +264,20 @@ function os2intra_content_types_field_group_info() {
     'label' => 'Kolonne 1',
     'weight' => '6',
     'children' => array(
-      0 => 'field_os2intra_itvejledninger_1',
+      0 => 'field_os2intra_itvejledning_hand',
     ),
-    'format_type' => 'div',
+    'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Kolonne 1',
       'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-kolonne1 field-group-div col-md-4',
-        'description' => '',
+        'classes' => 'col-md-4',
+        'element' => 'div',
         'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
+        'label_element' => 'div',
+        'attributes' => '',
+        'required_fields' => 1,
       ),
-      'formatter' => 'collapsible',
+      'formatter' => '',
     ),
   );
   $export['group_kolonne1|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
@@ -298,19 +297,18 @@ function os2intra_content_types_field_group_info() {
     'children' => array(
       0 => 'field_os2intra_itvejledning_img',
     ),
-    'format_type' => 'div',
+    'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Kolonne 2',
       'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-kolonne2 field-group-div col-md-4',
-        'description' => '',
+        'classes' => 'col-md-4',
+        'element' => 'div',
         'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
+        'label_element' => 'div',
+        'attributes' => '',
+        'required_fields' => 1,
       ),
-      'formatter' => 'collapsible',
+      'formatter' => '',
     ),
   );
   $export['group_kolonne2|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
@@ -330,19 +328,18 @@ function os2intra_content_types_field_group_info() {
     'children' => array(
       0 => 'field_os2intra_itvejledninger_4',
     ),
-    'format_type' => 'div',
+    'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Kolonne 3',
       'instance_settings' => array(
-        'id' => '',
-        'classes' => 'group-kolonne3 field-group-div col-md-4',
-        'description' => '',
+        'classes' => 'col-md-4',
+        'element' => 'div',
         'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
+        'label_element' => 'div',
+        'attributes' => '',
+        'required_fields' => 1,
       ),
-      'formatter' => 'collapsible',
+      'formatter' => '',
     ),
   );
   $export['group_kolonne3|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;

@@ -277,6 +277,25 @@ function os2intra_content_types_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_os2intra_itvejledning_hand'.
+  $field_bases['field_os2intra_itvejledning_hand'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2intra_itvejledning_hand',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_os2intra_itvejledning_img'.
   $field_bases['field_os2intra_itvejledning_img'] = array(
     'active' => 1,
@@ -297,27 +316,6 @@ function os2intra_content_types_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'image',
-  );
-
-  // Exported field_base: 'field_os2intra_itvejledninger_1'.
-  $field_bases['field_os2intra_itvejledninger_1'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_os2intra_itvejledninger_1',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
   );
 
   // Exported field_base: 'field_os2intra_itvejledninger_4'.
