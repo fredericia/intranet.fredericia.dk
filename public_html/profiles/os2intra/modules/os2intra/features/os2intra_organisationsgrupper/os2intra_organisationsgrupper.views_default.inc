@@ -96,6 +96,7 @@ function os2intra_organisationsgrupper_views_default_views() {
   $handler->display->display_options['arguments']['gid']['id'] = 'gid';
   $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['gid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
