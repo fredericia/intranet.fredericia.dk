@@ -56,7 +56,7 @@ function os2intra_content_types_field_group_info() {
     'label' => '2',
     'weight' => '8',
     'children' => array(
-      0 => 'field_os2intra_itvejledning_img',
+      0 => 'field_os2intra_itvejledninger_4',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -89,7 +89,7 @@ function os2intra_content_types_field_group_info() {
     'label' => '3',
     'weight' => '9',
     'children' => array(
-      0 => 'field_os2intra_itvejledninger_4',
+      0 => 'field_os2intra_itvejledning_img',
     ),
     'format_type' => 'div',
     'format_settings' => array(
