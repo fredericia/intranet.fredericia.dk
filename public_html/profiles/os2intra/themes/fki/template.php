@@ -129,9 +129,6 @@ function fki_preprocess_comment(&$variables) {
   }
 }
 
-/*
- * Implements hook_node_view_alter().
- */
 function fki_node_view_alter(&$build) {
 
   // Full
@@ -139,12 +136,6 @@ function fki_node_view_alter(&$build) {
     unset($build['links']['statistics']);
     unset($build['links']['comment']);
   }
-}
-
-/*
- * Implements template_preprocess_flag().
- */
-function fki_preprocess_flag(&$variables) {
 }
 
 /*
