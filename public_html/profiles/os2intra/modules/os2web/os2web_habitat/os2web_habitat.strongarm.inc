@@ -39,6 +39,7 @@ function os2web_habitat_strongarm() {
     3 => 'stage_file_proxy',
     4 => 'reroute_email',
     5 => 'dblog',
+    6 => 'field_ui',
   );
   $export['habitat_disable_prod'] = $strongarm;
 
