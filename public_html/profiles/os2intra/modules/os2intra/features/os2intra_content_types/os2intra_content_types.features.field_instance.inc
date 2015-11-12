@@ -312,6 +312,67 @@ function os2intra_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledning_hand'.
+  $field_instances['field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledning_hand'] = array(
+    'bundle' => 'field_os2intra_base_vejledning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_os2intra_itvejledning_hand',
+    'label' => 'Handling',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'fuld_html' => 0,
+          'indhold' => 'indhold',
+          'kommentar' => 0,
+          'plain_text' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'fuld_html' => array(
+              'weight' => 0,
+            ),
+            'indhold' => array(
+              'weight' => 0,
+            ),
+            'kommentar' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
   // 'field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledning_img'.
   $field_instances['field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledning_img'] = array(
     'bundle' => 'field_os2intra_base_vejledning',
@@ -378,68 +439,6 @@ function os2intra_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledninger_1'.
-  $field_instances['field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledninger_1'] = array(
-    'bundle' => 'field_os2intra_base_vejledning',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'fences_wrapper' => 'no_wrapper',
-    'field_name' => 'field_os2intra_itvejledninger_1',
-    'label' => 'Handling',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'fuld_html' => 0,
-          'indhold' => 'indhold',
-          'kommentar' => 0,
-          'plain_text' => 0,
-        ),
-        'allowed_formats_toggle' => 1,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'fuld_html' => array(
-              'weight' => 0,
-            ),
-            'indhold' => array(
-              'weight' => 0,
-            ),
-            'kommentar' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-          ),
-        ),
-      ),
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance:
   // 'field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledninger_4'.
   $field_instances['field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledninger_4'] = array(
     'bundle' => 'field_os2intra_base_vejledning',
@@ -465,7 +464,7 @@ function os2intra_content_types_field_default_field_instances() {
         'allowed_formats' => array(
           'fuld_html' => 0,
           'indhold' => 'indhold',
-          'kommentar' => 'kommentar',
+          'kommentar' => 0,
           'plain_text' => 0,
         ),
         'allowed_formats_toggle' => 1,

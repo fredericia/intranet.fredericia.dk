@@ -10,21 +10,13 @@
 function node_basket_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_node_basket_description'
+  // Exported field_base: 'field_node_basket_description'.
   $field_bases['field_node_basket_description'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_node_basket_description',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -39,14 +31,13 @@ function node_basket_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_node_basket_links'
+  // Exported field_base: 'field_node_basket_links'.
   $field_bases['field_node_basket_links'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_node_basket_links',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -69,21 +60,13 @@ function node_basket_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_node_basket_references'
+  // Exported field_base: 'field_node_basket_references'.
   $field_bases['field_node_basket_references'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_node_basket_references',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -132,21 +115,13 @@ function node_basket_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_node_basket_toolboxes'
+  // Exported field_base: 'field_node_basket_toolboxes'.
   $field_bases['field_node_basket_toolboxes'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_node_basket_toolboxes',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -175,14 +150,13 @@ function node_basket_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_node_basket_type'
+  // Exported field_base: 'field_node_basket_type'.
   $field_bases['field_node_basket_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_node_basket_type',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',

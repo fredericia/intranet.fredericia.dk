@@ -10,7 +10,7 @@
 function node_basket_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-node_basket-body'
+  // Exported field_instance: 'node-node_basket-body'.
   $field_instances['node-node_basket-body'] = array(
     'bundle' => 'node_basket',
     'default_value' => NULL,
@@ -22,6 +22,12 @@ function node_basket_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -54,7 +60,7 @@ function node_basket_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-node_basket-field_node_basket_description'
+  // Exported field_instance: 'node-node_basket-field_node_basket_description'.
   $field_instances['node-node_basket-field_node_basket_description'] = array(
     'bundle' => 'node_basket',
     'default_value' => NULL,
@@ -67,6 +73,12 @@ function node_basket_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -93,7 +105,7 @@ function node_basket_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-node_basket-field_node_basket_links'
+  // Exported field_instance: 'node-node_basket-field_node_basket_links'.
   $field_instances['node-node_basket-field_node_basket_links'] = array(
     'bundle' => 'node_basket',
     'default_value' => NULL,
@@ -107,6 +119,12 @@ function node_basket_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 2,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -119,6 +137,7 @@ function node_basket_field_default_field_instances() {
     'label' => 'Links',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -132,6 +151,7 @@ function node_basket_field_default_field_instances() {
       'enable_tokens' => 1,
       'rel_remove' => 'default',
       'title' => 'optional',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -147,7 +167,7 @@ function node_basket_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-node_basket-field_node_basket_references'
+  // Exported field_instance: 'node-node_basket-field_node_basket_references'.
   $field_instances['node-node_basket-field_node_basket_references'] = array(
     'bundle' => 'node_basket',
     'default_value' => NULL,
@@ -163,6 +183,12 @@ function node_basket_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 1,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -196,7 +222,7 @@ function node_basket_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-node_basket-field_node_basket_type'
+  // Exported field_instance: 'node-node_basket-field_node_basket_type'.
   $field_instances['node-node_basket-field_node_basket_type'] = array(
     'bundle' => 'node_basket',
     'default_value' => NULL,
@@ -208,6 +234,12 @@ function node_basket_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
