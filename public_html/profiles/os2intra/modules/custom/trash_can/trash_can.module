@@ -29,30 +29,36 @@ function trash_can_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('trash_can_settings_form'),
     'access arguments' => array('access administration pages'),
+    'file' => 'trash_can.admin.inc',
   );
 
   return $items;
 }
 
 /**
- * System settings form.
+ * Implements hook_form_alter().
  */
-function trash_can_settings_form() {
-  $form = array();
+function trash_can_form_os2intra_settings_settings_form_alter(&$form, &$form_state, $form_id) {
 
-  $form['trash_can_days_expire'] = array(
-    '#title' => 'Antal dage før indhold i papirkurven slettes permanent.',
+  $form['trash_can'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Trash Can'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+
+  $form['trash_can']['trash_can_days_expire'] = array(
+    '#title' => t('Number of days before the content of the trash can will be deleted permanently'),
     '#type' => 'textfield',
     '#required' => TRUE,
     '#default_value' => variable_get('trash_can_days_expire', TRASH_CAN_DEFAULT_EXPIRE),
   );
-  return system_settings_form($form);
 }
 
 /**
  * Implements hook_cron().
  *
- * Delete expired content in the trash can. *
+ * Delete expired content in the trash can.
  */
 function trash_can_cron() {
 
