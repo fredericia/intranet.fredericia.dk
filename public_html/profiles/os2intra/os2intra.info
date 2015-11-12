@@ -93,6 +93,7 @@ dependencies[] = os2web_habitat
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 dependencies[] = os2intra_view_modes
+depencencies[] = os2intra_settings
 dependencies[] = bellcom_user
 dependencies[] = bellcom_apps
 dependencies[] = trash_can
