@@ -1,0 +1,166 @@
+<?php
+
+/**
+ * @file
+ * Tests for the Word filter module administration interface.
+ */
+
+/**
+ * The WordfilterAdminTestCase tests the Word filter module
+ * administration interface.
+ *
+ * @see DrupalWebTestCase
+ */
+class WordfilterAdminTestCase extends DrupalWebTestCase {
+
+  protected $privilegedUser;
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Wordfilter administration functionality tests',
+      'description' => 'Test the administrative interface of the Wordfilter module.',
+      'group' => 'Wordfilter',
+    );
+  }
+
+  public function setUp() {
+    parent::setUp('wordfilter');
+
+    $this->adminUser = $this->drupalCreateUser(array('administer words filtered'));
+    $this->drupalLogin($this->adminUser);
+  }
+
+  public function testWordfilterAdmin() {
+    $this->drupalGet('admin/config/content/wordfilter/add');
+
+    // Single search term with default replacement
+    $words = $this->randomName();
+    $replacement = $this->randomName();
+
+    $edit = array(
+      'words' => $words,
+      'replacement' => $replacement,
+    );
+
+    $this->drupalPost(NULL, $edit, t('Save word filter'));
+    $results = db_query('SELECT * FROM {wordfilter} WHERE words = :words', array(':words' => $words));
+    foreach ($results as $result) {
+      $this->assertEqual($result->words, $words, t('Wordfilter search word added correctly.'));
+      $this->assertEqual($result->replacement, $replacement, t('Wordfilter replacement word added correctly.'));
+    }
+
+    $this->drupalGet('admin/config/content/wordfilter/add');
+
+    // Single search term with replacement defined
+    $words = $this->randomName();
+    $replacement = $this->randomName();
+
+    $edit = array(
+      'words' => $words . '|' . $replacement,
+      'replacement' => '',
+    );
+
+    $this->drupalPost(NULL, $edit, t('Save word filter'));
+    $results = db_query('SELECT * FROM {wordfilter} WHERE words = :words', array(':words' => $words));
+    foreach ($results as $result) {
+      $this->assertEqual($result->words, $words, t('Wordfilter search word added correctly.'));
+      $this->assertEqual($result->replacement, $replacement, t('Wordfilter replacement word added correctly.'));
+    }
+
+    $this->drupalGet('admin/config/content/wordfilter/add');
+
+    // Single search term with replacement and language defined
+    $words = $this->randomName();
+    $replacement = $this->randomName();
+    $language = 'en';
+
+    $edit = array(
+      'words' => $words . '|' . $replacement . '|' . $language,
+      'replacement' => '',
+    );
+
+    $this->drupalPost(NULL, $edit, t('Save word filter'));
+    $results = db_query('SELECT * FROM {wordfilter} WHERE words = :words', array(':words' => $words));
+    foreach ($results as $result) {
+      $this->assertEqual($result->words, $words, t('Wordfilter search word added correctly.'));
+      $this->assertEqual($result->replacement, $replacement, t('Wordfilter replacement word added correctly.'));
+      $this->assertEqual($result->language, $language, t('Wordfilter search word language set correctly.'));
+    }
+
+    $this->drupalGet('admin/config/content/wordfilter/add');
+
+    // Multiple search term with default replacement
+    $words = array();
+    $words[] = $this->randomName();
+    $words[] = $this->randomName();
+    $words[] = $this->randomName();
+    $replacement = $this->randomName();
+
+    $edit = array(
+      'words' => implode("\n", $words),
+      'replacement' => $replacement,
+    );
+
+    $this->drupalPost(NULL, $edit, t('Save word filter'));
+    foreach ($words as $word) {
+      $results = db_query('SELECT * FROM {wordfilter} WHERE words = :words', array(':words' => $word));
+      foreach ($results as $result) {
+        $this->assertEqual($result->words, $word, t('Wordfilter search word added correctly.'));
+        $this->assertEqual($result->replacement, $replacement, t('Wordfilter replacement word added correctly.'));
+      }
+    }
+
+    $this->drupalGet('admin/config/content/wordfilter/add');
+
+    // Multiple search term with specified replacements
+    $words = array();
+    $words[] = $this->randomName() . '|' . $this->randomName();
+    $words[] = $this->randomName() . '|' . $this->randomName();
+    $words[] = $this->randomName() . '|' . $this->randomName();
+
+    $edit = array(
+      'words' => implode("\n", $words),
+    );
+
+    $this->drupalPost(NULL, $edit, t('Save word filter'));
+    foreach ($words as $word) {
+      $filter = explode('|', $word);
+      $results = db_query('SELECT * FROM {wordfilter} WHERE words = :words', array(':words' => $filter[0]));
+      foreach ($results as $result) {
+        $this->assertEqual($result->words, $filter[0], t('Wordfilter search word added correctly.'));
+        $this->assertEqual($result->replacement, $filter[1], t('Wordfilter replacement word added correctly.'));
+      }
+    }
+
+    $this->drupalGet('admin/config/content/wordfilter/add');
+
+    // Multiple search term with specified replacements, empty string replacement, and default replacement.
+    $words = array();
+    $words[] = $this->randomName() . '|' . $this->randomName();
+    $words[] = $this->randomName();
+    $words[] = $this->randomName() . '|<none>';
+    $replacement = $this->randomName();
+
+    $edit = array(
+      'words' => implode("\n", $words),
+      'replacement' => $replacement,
+    );
+
+    $this->drupalPost(NULL, $edit, t('Save word filter'));
+    foreach ($words as $word) {
+      if (strpos($word, '|') !== FALSE) {
+        $filter = explode('|', $word);
+      }
+      else {
+        $filter = array($word, $replacement);
+      }
+      $results = db_query('SELECT * FROM {wordfilter} WHERE words = :words', array(':words' => $filter[0]));
+      foreach ($results as $result) {
+        $this->assertEqual($result->words, $filter[0], t('Wordfilter search word added correctly.'));
+        $this->assertEqual($result->replacement, $filter[1], t('Wordfilter replacement word added correctly.'));
+      }
+    }
+
+  }
+
+}
