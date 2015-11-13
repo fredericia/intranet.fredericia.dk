@@ -34,7 +34,7 @@ function os2intra_startcontent_uuid_features_default_terms() {
     'format' => 'indhold',
     'weight' => 0,
     'uuid' => '1c23be27-70a9-4d13-bc9a-7b434d3019c3',
-    'vocabulary_machine_name' => 'os2web_taxonomies_tax_org',
+    'vocabulary_machine_name' => 'os2intra_organisation_tax',
     'field_os2web_taxonomies_dis_cont' => array(
       'und' => array(
         0 => array(
@@ -67,7 +67,7 @@ function os2intra_startcontent_uuid_features_default_terms() {
     'format' => 'indhold',
     'weight' => 0,
     'uuid' => '68b24ef9-820c-4770-a38c-355c2340fe0a',
-    'vocabulary_machine_name' => 'os2web_taxonomies_tax_org',
+    'vocabulary_machine_name' => 'os2intra_organisation_tax',
     'field_os2web_taxonomies_dis_cont' => array(
       'und' => array(
         0 => array(
@@ -101,7 +101,7 @@ function os2intra_startcontent_uuid_features_default_terms() {
     'format' => 'indhold',
     'weight' => 0,
     'uuid' => 'f61cd4a7-bce3-4d5c-a6d7-70cabc8907ec',
-    'vocabulary_machine_name' => 'os2web_taxonomies_tax_org',
+    'vocabulary_machine_name' => 'os2intra_organisation_tax',
     'field_os2web_taxonomies_dis_cont' => array(
       'und' => array(
         0 => array(

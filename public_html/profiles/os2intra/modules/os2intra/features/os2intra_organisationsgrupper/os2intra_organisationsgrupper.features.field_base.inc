@@ -112,7 +112,7 @@ function os2intra_organisationsgrupper_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'os2web_taxonomies_tax_org' => 'os2web_taxonomies_tax_org',
+          'os2intra_organisation_tax' => 'os2intra_organisation_tax',
         ),
       ),
       'target_type' => 'taxonomy_term',
