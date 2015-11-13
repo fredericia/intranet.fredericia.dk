@@ -24,7 +24,6 @@ function os2intra_users_field_group_info() {
     'weight' => '8',
     'children' => array(
       0 => 'account',
-      1 => 'locale',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -66,6 +65,34 @@ function os2intra_users_field_group_info() {
     ),
   );
   $export['group_billede|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_grupper|user|user|form';
+  $field_group->group_name = 'group_grupper';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_user';
+  $field_group->data = array(
+    'label' => 'Grupper',
+    'weight' => '9',
+    'children' => array(
+      0 => 'og_user_node',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-grupper field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_grupper|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -113,7 +140,6 @@ function os2intra_users_field_group_info() {
       0 => 'field_os2intra_user_bio',
       1 => 'field_os2intra_user_competences',
       2 => 'field_os2intra_user_inter',
-      3 => 'og_user_node',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -139,15 +165,16 @@ function os2intra_users_field_group_info() {
   $field_group->parent_name = 'group_user';
   $field_group->data = array(
     'label' => 'System',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_os2intra_organisation_ref',
       1 => 'field_os2intra_import_groups',
       2 => 'field_os2intra_employee_id',
       3 => 'field_os2intra_termination_date',
-      4 => 'ckeditor',
-      5 => 'piwik',
+      4 => 'field_os2intra_department_ref',
+      5 => 'ckeditor',
       6 => 'timezone',
+      7 => 'locale',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -175,11 +202,12 @@ function os2intra_users_field_group_info() {
     'label' => 'Bruger',
     'weight' => '0',
     'children' => array(
-      0 => 'group_account',
-      1 => 'group_billede',
-      2 => 'group_name',
-      3 => 'group_profile',
-      4 => 'group_system',
+      0 => 'group_grupper',
+      1 => 'group_account',
+      2 => 'group_billede',
+      3 => 'group_name',
+      4 => 'group_profile',
+      5 => 'group_system',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
