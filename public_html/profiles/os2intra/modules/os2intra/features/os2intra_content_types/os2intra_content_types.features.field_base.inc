@@ -784,6 +784,41 @@ function os2intra_content_types_field_default_field_bases() {
     'type' => 'file',
   );
 
+  // Exported field_base: 'field_os2web_base_field_promote'.
+  $field_bases['field_os2web_base_field_promote'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_base_field_promote',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'os2web_base_tax_promoteto' => 'os2web_base_tax_promoteto',
+        ),
+      ),
+      'target_type' => 'taxonomy_term',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_os2web_base_field_ref'.
   $field_bases['field_os2web_base_field_ref'] = array(
     'active' => 1,
@@ -920,6 +955,41 @@ function os2intra_content_types_field_default_field_bases() {
     'type' => 'icon_field',
   );
 
+  // Exported field_base: 'field_os2web_webform_ref'.
+  $field_bases['field_os2web_webform_ref'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_os2web_webform_ref',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'webform' => 'webform',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_spotbox_image'.
   $field_bases['field_spotbox_image'] = array(
     'active' => 1,
@@ -1027,25 +1097,6 @@ function os2intra_content_types_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_tilmelding'.
-  $field_bases['field_tilmelding'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_tilmelding',
-    'indexes' => array(
-      'registration_type' => array(
-        0 => 'registration_type',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'registration',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'registration',
-  );
-
   // Exported field_base: 'field_topics'.
   $field_bases['field_topics'] = array(
     'active' => 1,
@@ -1090,9 +1141,9 @@ function os2intra_content_types_field_default_field_bases() {
     'no_ui' => TRUE,
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Use group defaults',
-        1 => 'Public - accessible to all site users',
-        2 => 'Private - accessible only to group members',
+        0 => 'Gruppens / Afdelingens standardindstilling',
+        1 => 'Synlig for alle',
+        2 => 'Skjult for andre',
       ),
       'allowed_values_function' => '',
     ),

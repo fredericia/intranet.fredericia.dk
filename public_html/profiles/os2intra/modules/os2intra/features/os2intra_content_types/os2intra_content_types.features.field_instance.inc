@@ -717,7 +717,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 16,
+      'weight' => 21,
     ),
   );
 
@@ -973,7 +973,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 15,
+      'weight' => 19,
     ),
   );
 
@@ -1030,80 +1030,247 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 17,
+      'weight' => 20,
     ),
   );
 
-  // Exported field_instance: 'node-event-field_tilmelding'.
-  $field_instances['node-event-field_tilmelding'] = array(
+  // Exported field_instance: 'node-event-field_os2web_base_field_edi_tags'.
+  $field_instances['node-event-field_os2web_base_field_edi_tags'] = array(
     'bundle' => 'event',
-    'default_value' => array(
-      0 => array(
-        'registration_type' => 'tilmelding',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'registration',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 13,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_edi_tags',
+    'label' => 'Stikord',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 22,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_os2web_base_field_kle_ref'.
+  $field_instances['node-event-field_os2web_base_field_kle_ref'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 11,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_kle_ref',
+    'label' => 'KL Emneord',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_os2web_base_field_promote'.
+  $field_instances['node-event-field_os2web_base_field_promote'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
         'settings' => array(
-          'i18n_string_key' => NULL,
-          'label' => ' Tilmeld mig',
+          'link' => FALSE,
         ),
-        'type' => 'registration_link',
+        'type' => 'entityreference_label',
         'weight' => 9,
       ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'fences_wrapper' => 'div_div_div',
-    'field_name' => 'field_tilmelding',
-    'label' => 'Tilmelding',
+    'field_name' => 'field_os2web_base_field_promote',
+    'label' => 'Fremhæv indhold',
     'required' => 0,
     'settings' => array(
-      'default_registration_settings' => array(
-        'capacity' => 0,
-        'reminder' => array(
-          'reminder_settings' => array(
-            'reminder_date' => NULL,
-            'reminder_template' => '',
-          ),
-          'send_reminder' => 0,
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
         ),
-        'scheduling' => array(
-          'close' => NULL,
-          'open' => NULL,
+        'taxonomy-index' => array(
+          'status' => TRUE,
         ),
-        'settings' => array(
-          'from_address' => 'drupal@bellcom.dk',
-          'maximum_spaces' => 1,
-          'multiple_registrations' => 0,
-          'registration_waitlist_capacity' => 0,
-          'registration_waitlist_enable' => 1,
-        ),
-        'status' => 1,
       ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'registration',
+      'active' => 1,
+      'module' => 'options',
       'settings' => array(),
-      'type' => 'registration_select',
+      'type' => 'options_buttons',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_os2web_webform_ref'.
+  $field_instances['node-event-field_os2web_webform_ref'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_webform_ref',
+    'label' => 'Indlejr webform',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
       'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-group_content_access'.
+  $field_instances['node-event-group_content_access'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 12,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Synlighed',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 1,
     ),
   );
 
@@ -1137,7 +1304,7 @@ function os2intra_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div_div_div',
     'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
+    'label' => 'Gruppe / Afdeling',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -1156,7 +1323,7 @@ function os2intra_content_types_field_default_field_instances() {
           'action_on_edit' => 1,
           'fallback' => 'hide',
           'providers' => array(
-            'og_context' => FALSE,
+            'og_context' => 0,
             'url' => 1,
           ),
           'skip_perm' => 0,
@@ -2909,6 +3076,271 @@ function os2intra_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-post-field_os2intra_base_spotboxes'.
+  $field_instances['node-post-field_os2intra_base_spotboxes'] = array(
+    'bundle' => 'post',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 5,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2intra_base_spotboxes',
+    'label' => 'Spotbokse',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance: 'node-post-field_os2intra_physical_location'.
+  $field_instances['node-post-field_os2intra_physical_location'] = array(
+    'bundle' => 'post',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 8,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2intra_physical_location',
+    'label' => 'Fysisk lokation',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 26,
+    ),
+  );
+
+  // Exported field_instance: 'node-post-field_os2intra_related_ref'.
+  $field_instances['node-post-field_os2intra_related_ref'] = array(
+    'bundle' => 'post',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 6,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2intra_related_ref',
+    'label' => 'Relaterede sider',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 24,
+    ),
+  );
+
+  // Exported field_instance: 'node-post-field_os2intra_selvbetjening_ref'.
+  $field_instances['node-post-field_os2intra_selvbetjening_ref'] = array(
+    'bundle' => 'post',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 7,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2intra_selvbetjening_ref',
+    'label' => 'Selvbetjening',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 23,
+    ),
+  );
+
+  // Exported field_instance: 'node-post-field_os2web_base_field_edi_tags'.
+  $field_instances['node-post-field_os2web_base_field_edi_tags'] = array(
+    'bundle' => 'post',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 11,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_edi_tags',
+    'label' => 'Stikord',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 25,
+    ),
+  );
+
   // Exported field_instance: 'node-post-field_os2web_base_field_kle_ref'.
   $field_instances['node-post-field_os2web_base_field_kle_ref'] = array(
     'bundle' => 'post',
@@ -2958,6 +3390,154 @@ function os2intra_content_types_field_default_field_instances() {
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-post-field_os2web_base_field_promote'.
+  $field_instances['node-post-field_os2web_base_field_promote'] = array(
+    'bundle' => 'post',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 9,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_promote',
+    'label' => 'Fremhæv indhold',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 20,
+    ),
+  );
+
+  // Exported field_instance: 'node-post-field_os2web_webform_ref'.
+  $field_instances['node-post-field_os2web_webform_ref'] = array(
+    'bundle' => 'post',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_webform_ref',
+    'label' => 'Indlejr webform',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 19,
+    ),
+  );
+
+  // Exported field_instance: 'node-post-group_content_access'.
+  $field_instances['node-post-group_content_access'] = array(
+    'bundle' => 'post',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 12,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Synlighed',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 19,
     ),
   );
 
@@ -3257,34 +3837,26 @@ function os2intra_content_types_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
-          'blokindhold' => 0,
-          'filtered_html' => 'filtered_html',
-          'full_html' => 0,
-          'php_code' => 0,
+          'fuld_html' => 'fuld_html',
+          'indhold' => 'indhold',
+          'kommentar' => 0,
           'plain_text' => 0,
-          'raw' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
         'default_order_wrapper' => array(
           'formats' => array(
-            'blokindhold' => array(
-              'weight' => -7,
-            ),
-            'filtered_html' => array(
+            'fuld_html' => array(
               'weight' => 0,
             ),
-            'full_html' => array(
-              'weight' => 1,
+            'indhold' => array(
+              'weight' => 0,
             ),
-            'php_code' => array(
-              'weight' => -7,
+            'kommentar' => array(
+              'weight' => 0,
             ),
             'plain_text' => array(
               'weight' => -8,
-            ),
-            'raw' => array(
-              'weight' => 0,
             ),
           ),
         ),
@@ -3302,6 +3874,61 @@ function os2intra_content_types_field_default_field_instances() {
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-wiki-field_os2intra_base_spotboxes'.
+  $field_instances['node-wiki-field_os2intra_base_spotboxes'] = array(
+    'bundle' => 'wiki',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2intra_base_spotboxes',
+    'label' => 'Spotbokse',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 21,
     ),
   );
 
@@ -3383,25 +4010,24 @@ function os2intra_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-wiki-field_os2intra_outdated_date'.
-  $field_instances['node-wiki-field_os2intra_outdated_date'] = array(
+  // Exported field_instance: 'node-wiki-field_os2intra_physical_location'.
+  $field_instances['node-wiki-field_os2intra_physical_location'] = array(
     'bundle' => 'wiki',
+    'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
-    'description' => 'At this date, the content will be flagged expired.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 11,
       ),
       'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3415,28 +4041,127 @@ function os2intra_content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_os2intra_outdated_date',
-    'label' => 'Expire date',
-    'required' => FALSE,
+    'field_name' => 'field_os2intra_physical_location',
+    'label' => 'Fysisk lokation',
+    'required' => 0,
     'settings' => array(
-      'default_value' => 'blank',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'date',
-      'settings' => array(
-        'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'text_parts' => array(),
-        'year_range' => '-3:+3',
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 37,
+    ),
+  );
+
+  // Exported field_instance: 'node-wiki-field_os2intra_selvbetjening_ref'.
+  $field_instances['node-wiki-field_os2intra_selvbetjening_ref'] = array(
+    'bundle' => 'wiki',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 13,
       ),
-      'type' => 'date_select',
-      'weight' => 10,
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2intra_selvbetjening_ref',
+    'label' => 'Selvbetjening',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 34,
+    ),
+  );
+
+  // Exported field_instance: 'node-wiki-field_os2web_base_field_kle_ref'.
+  $field_instances['node-wiki-field_os2web_base_field_kle_ref'] = array(
+    'bundle' => 'wiki',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 9,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_kle_ref',
+    'label' => 'KL Emneord',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 3,
     ),
   );
 
@@ -3514,6 +4239,166 @@ function os2intra_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-wiki-field_os2web_base_field_promote'.
+  $field_instances['node-wiki-field_os2web_base_field_promote'] = array(
+    'bundle' => 'wiki',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 14,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_promote',
+    'label' => 'Fremhæv indhold',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 41,
+    ),
+  );
+
+  // Exported field_instance: 'node-wiki-field_os2web_base_field_ref'.
+  $field_instances['node-wiki-field_os2web_base_field_ref'] = array(
+    'bundle' => 'wiki',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 12,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_ref',
+    'label' => 'Relaterede sider',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 35,
+    ),
+  );
+
+  // Exported field_instance: 'node-wiki-field_os2web_webform_ref'.
+  $field_instances['node-wiki-field_os2web_webform_ref'] = array(
+    'bundle' => 'wiki',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 15,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_webform_ref',
+    'label' => 'Indlejr webform',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 22,
+    ),
+  );
+
   // Exported field_instance: 'node-wiki-field_topics'.
   $field_instances['node-wiki-field_topics'] = array(
     'bundle' => 'wiki',
@@ -3562,7 +4447,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 8,
+      'weight' => 36,
     ),
   );
 
@@ -3604,8 +4489,8 @@ function os2intra_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'group_content_access',
-    'label' => 'Group content visibility',
-    'required' => TRUE,
+    'label' => 'Synlighed',
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -3620,12 +4505,11 @@ function os2intra_content_types_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
+      'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 40,
     ),
     'widget_type' => 'options_select',
   );
@@ -3660,7 +4544,7 @@ function os2intra_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div_div_div',
     'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
+    'label' => 'Gruppe / Afdeling',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -3679,7 +4563,7 @@ function os2intra_content_types_field_default_field_instances() {
           'action_on_edit' => 0,
           'fallback' => 'none',
           'providers' => array(
-            'og_context' => FALSE,
+            'og_context' => 0,
             'url' => 1,
           ),
           'skip_perm' => 0,
@@ -3705,7 +4589,7 @@ function os2intra_content_types_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 6,
+      'weight' => 33,
     ),
   );
 
@@ -3956,12 +4840,13 @@ function os2intra_content_types_field_default_field_instances() {
   t('Ekstra tekst');
   t('Expire date');
   t('Filer');
+  t('Fremhæv indhold');
   t('Fysisk lokation');
-  t('Group content visibility');
-  t('Groups audience');
+  t('Gruppe / Afdeling');
   t('Gruppe ID');
   t('Handling');
   t('Ikon');
+  t('Indlejr webform');
   t('Intro');
   t('KL Emneord');
   t('Kantine');
@@ -3981,7 +4866,6 @@ function os2intra_content_types_field_default_field_instances() {
   t('Subsite logo');
   t('Synlighed');
   t('Tekst');
-  t('Tilmelding');
   t('Topics');
   t('Type');
   t('Udfør');

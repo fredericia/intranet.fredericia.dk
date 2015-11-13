@@ -181,9 +181,11 @@ function os2intra_content_types_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'group_media',
-      1 => 'group_meta',
-      2 => 'group_tekst',
-      3 => 'group_tilmelding',
+      1 => 'group_tekst',
+      2 => 'group_tilmelding',
+      3 => 'group_indstillinger',
+      4 => 'group_relationer',
+      5 => 'group_spots',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -223,6 +225,96 @@ function os2intra_content_types_field_group_info() {
     ),
   );
   $export['group_form|node|os2intra_base_page|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_indstillinger|node|event|form';
+  $field_group->group_name = 'group_indstillinger';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_event';
+  $field_group->data = array(
+    'label' => 'Indstillinger',
+    'weight' => '54',
+    'children' => array(
+      0 => 'field_os2web_base_field_promote',
+      1 => 'group_content_access',
+      2 => 'scheduler_settings',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-indstillinger field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_indstillinger|node|event|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_indstillinger|node|post|form';
+  $field_group->group_name = 'group_indstillinger';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_post';
+  $field_group->data = array(
+    'label' => 'Indstillinger',
+    'weight' => '17',
+    'children' => array(
+      0 => 'field_os2web_base_field_promote',
+      1 => 'group_content_access',
+      2 => 'scheduler_settings',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-indstillinger field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_indstillinger|node|post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_indstillinger|node|wiki|form';
+  $field_group->group_name = 'group_indstillinger';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'wiki';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_wiki';
+  $field_group->data = array(
+    'label' => 'Indstillinger',
+    'weight' => '20',
+    'children' => array(
+      0 => 'group_content_access',
+      1 => 'field_os2web_base_field_promote',
+      2 => 'scheduler_settings',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-indstillinger field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_indstillinger|node|wiki|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -414,9 +506,8 @@ function os2intra_content_types_field_group_info() {
     'label' => 'Media',
     'weight' => '16',
     'children' => array(
-      0 => 'field_os2web_base_field_media',
-      1 => 'field_os2intra_base_images',
-      2 => 'field_os2intra_images',
+      0 => 'field_os2intra_images',
+      1 => 'field_os2web_base_field_media',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -605,6 +696,8 @@ function os2intra_content_types_field_group_info() {
       0 => 'group_content',
       1 => 'group_media',
       2 => 'group_meta',
+      3 => 'group_spotsnforms',
+      4 => 'group_indstillinger',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -615,6 +708,69 @@ function os2intra_content_types_field_group_info() {
     ),
   );
   $export['group_post|node|post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_relationer|node|event|form';
+  $field_group->group_name = 'group_relationer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_event';
+  $field_group->data = array(
+    'label' => 'Relationer',
+    'weight' => '53',
+    'children' => array(
+      0 => 'field_os2intra_related_ref',
+      1 => 'field_os2intra_selvbetjening_ref',
+      2 => 'og_group_ref',
+      3 => 'field_os2web_base_field_edi_tags',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-relationer field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_relationer|node|event|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_relationer|node|wiki|form';
+  $field_group->group_name = 'group_relationer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'wiki';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_wiki';
+  $field_group->data = array(
+    'label' => 'Relationer',
+    'weight' => '18',
+    'children' => array(
+      0 => 'field_topics',
+      1 => 'og_group_ref',
+      2 => 'field_os2intra_physical_location',
+      3 => 'field_os2web_base_field_ref',
+      4 => 'field_os2intra_selvbetjening_ref',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-relationer field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_relationer|node|wiki|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -653,6 +809,91 @@ function os2intra_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_spotsnforms|node|post|form';
+  $field_group->group_name = 'group_spotsnforms';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'post';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_post';
+  $field_group->data = array(
+    'label' => 'Spotbokse / webform',
+    'weight' => '15',
+    'children' => array(
+      0 => 'field_os2intra_base_spotboxes',
+      1 => 'field_os2web_webform_ref',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-spotsnforms field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_spotsnforms|node|post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_spotsnforms|node|wiki|form';
+  $field_group->group_name = 'group_spotsnforms';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'wiki';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_wiki';
+  $field_group->data = array(
+    'label' => 'Spotbokse / webform',
+    'weight' => '17',
+    'children' => array(
+      0 => 'field_os2intra_base_spotboxes',
+      1 => 'field_os2web_webform_ref',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-spotsnforms field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_spotsnforms|node|wiki|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_spots|node|event|form';
+  $field_group->group_name = 'group_spots';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'event';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_event';
+  $field_group->data = array(
+    'label' => 'Spotbokse',
+    'weight' => '52',
+    'children' => array(
+      0 => 'field_os2intra_base_spotboxes',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-spots field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_spots|node|event|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_tekst|node|event|form';
   $field_group->group_name = 'group_tekst';
   $field_group->entity_type = 'node';
@@ -666,7 +907,8 @@ function os2intra_content_types_field_group_info() {
       0 => 'body',
       1 => 'field_os2intra_date',
       2 => 'field_os2intra_physical_location',
-      3 => 'title',
+      3 => 'field_os2web_base_field_kle_ref',
+      4 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -756,7 +998,8 @@ function os2intra_content_types_field_group_info() {
     'weight' => '15',
     'children' => array(
       0 => 'body',
-      1 => 'title',
+      1 => 'field_os2web_base_field_kle_ref',
+      2 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -784,7 +1027,7 @@ function os2intra_content_types_field_group_info() {
     'label' => 'Tilmelding',
     'weight' => '50',
     'children' => array(
-      0 => 'field_tilmelding',
+      0 => 'field_os2web_webform_ref',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -875,9 +1118,11 @@ function os2intra_content_types_field_group_info() {
     'label' => 'wiki',
     'weight' => '0',
     'children' => array(
-      0 => 'group_tekst',
-      1 => 'group_meta',
-      2 => 'group_media',
+      0 => 'group_media',
+      1 => 'group_tekst',
+      2 => 'group_spotsnforms',
+      3 => 'group_relationer',
+      4 => 'group_indstillinger',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(

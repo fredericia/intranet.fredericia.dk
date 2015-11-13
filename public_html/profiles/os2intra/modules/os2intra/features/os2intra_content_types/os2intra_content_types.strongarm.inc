@@ -748,6 +748,9 @@ function os2intra_content_types_strongarm() {
         'redirect' => array(
           'weight' => '1',
         ),
+        'scheduler_settings' => array(
+          'weight' => '39',
+        ),
       ),
       'display' => array(),
     ),
@@ -1061,7 +1064,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_wiki';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_wiki'] = $strongarm;
 
   $strongarm = new stdClass();

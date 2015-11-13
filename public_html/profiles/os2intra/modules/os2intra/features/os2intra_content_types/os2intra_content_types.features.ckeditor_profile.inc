@@ -15,18 +15,14 @@ function os2intra_content_types_ckeditor_profile_defaults() {
         'ss' => 2,
         'toolbar' => '[
     [\'Source\'],
-    [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'PasteFromWord\',\'-\',\'SpellChecker\', \'Scayt\'],
-    [\'Undo\',\'Redo\',\'Find\',\'Replace\',\'-\',\'SelectAll\'],
-    [\'Image\',\'Media\',\'Flash\',\'Table\',\'HorizontalRule\',\'Smiley\',\'SpecialChar\'],
-    [\'Maximize\', \'ShowBlocks\'],
+    [\'Cut\',\'Copy\',\'PasteFromWord\',\'-\',\'Scayt\'],
+    [\'Media\',\'Smiley\',\'SpecialChar\'],
+    [\'ShowBlocks\'],
     \'/\',
-    [\'Format\'],
-    [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Subscript\',\'Superscript\',\'-\',\'RemoveFormat\'],
-    [\'NumberedList\',\'BulletedList\',\'-\',\'Outdent\',\'Indent\',\'Blockquote\'],
-    [\'JustifyLeft\',\'JustifyCenter\',\'JustifyRight\',\'JustifyBlock\',\'-\',\'BidiLtr\',\'BidiRtl\'],
-    [\'Link\',\'Unlink\',\'Anchor\',\'Linkit\']
-]
-    ',
+    [\'Styles\'],
+    [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'NumberedList\',\'BulletedList\',\'-\',\'Blockquote\'],
+    [\'Link\',\'Unlink\',\'Anchor\']
+]',
         'expand' => 't',
         'default' => 't',
         'show_toggle' => 't',
@@ -37,7 +33,7 @@ function os2intra_content_types_ckeditor_profile_defaults() {
         'auto_lang' => 't',
         'language_direction' => 'default',
         'allowed_content' => 't',
-        'extraAllowedContent' => '',
+        'extraAllowedContent' => 'div[class,id];p[class,id];',
         'enter_mode' => 'p',
         'shift_enter_mode' => 'br',
         'font_format' => 'p;div;pre;address;h1;h2;h3;h4;h5;h6',
@@ -67,17 +63,17 @@ function os2intra_content_types_ckeditor_profile_defaults() {
         'theme_config_js' => 'f',
         'js_conf' => '',
         'loadPlugins' => array(
-          'drupalbreaks' => array(
-            'name' => 'drupalbreaks',
-            'desc' => 'Plugin for inserting Drupal teaser and page breaks.',
-            'path' => '%plugin_dir%drupalbreaks/',
+          'media' => array(
+            'name' => 'media',
+            'desc' => 'Plugin for inserting images from Drupal media module',
+            'path' => '%plugin_dir%media/',
             'buttons' => array(
-              'DrupalBreak' => array(
-                'label' => 'DrupalBreak',
-                'icon' => 'images/drupalbreak.png',
+              'Media' => array(
+                'label' => 'Media',
+                'icon' => 'images/icon.gif',
               ),
             ),
-            'default' => 't',
+            'default' => 'f',
           ),
         ),
       ),
