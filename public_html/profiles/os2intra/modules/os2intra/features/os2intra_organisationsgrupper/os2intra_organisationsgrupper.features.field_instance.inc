@@ -393,6 +393,66 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-os2intra_org_group_unit-field_os2intra_afdeling'.
+  $field_instances['node-os2intra_org_group_unit-field_os2intra_afdeling'] = array(
+    'bundle' => 'os2intra_org_group_unit',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_afdeling',
+    'label' => 'Afdeling',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-os2intra_org_group_unit-field_os2intra_base_spotboxes'.
   $field_instances['node-os2intra_org_group_unit-field_os2intra_base_spotboxes'] = array(
     'bundle' => 'os2intra_org_group_unit',
@@ -970,7 +1030,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
           'trim_length' => 600,
         ),
         'type' => 'text_summary_or_trimmed',
-        'weight' => 5,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -1000,11 +1060,11 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'normal',
         ),
         'type' => 'image',
         'weight' => 4,
@@ -1016,9 +1076,13 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'teaser_image',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
@@ -1096,7 +1160,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'display_label' => '',
@@ -1149,7 +1213,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -1245,6 +1309,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Afdeling');
   t('Afdelingsværktøjer');
   t('Billede');
   t('Billeder');

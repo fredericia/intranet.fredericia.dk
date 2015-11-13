@@ -17,6 +17,18 @@
           </div>
         <?php endif; ?>
 
+        <?php if (isset($content['field_os2intra_images'])): ?>
+          <div class="table-cell fki-teaser-image-container">
+
+            <!-- Begin - images -->
+            <div class="fki-teaser-image">
+              <?php print render($content['field_os2intra_images']); ?>
+            </div>
+            <!-- End - images -->
+
+          </div>
+        <?php endif; ?>
+
         <div class="table-cell">
 
           <?php if (isset($author_full_name) and $updated_at_short): ?>
