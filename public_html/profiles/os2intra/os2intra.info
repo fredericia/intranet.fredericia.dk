@@ -75,7 +75,6 @@ dependencies[] = page_manager
 dependencies[] = scheduler
 dependencies[] = admin_menu
 dependencies[] = adminimal_admin_menu
-dependencies[] = fences
 dependencies[] = icon
 dependencies[] = icon_menu
 dependencies[] = fontawesome
