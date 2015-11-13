@@ -58,10 +58,6 @@ function fki_preprocess_page(&$variables) {
 
   // Search form
   $variables['main_navigation_search'] = drupal_get_form('search_form');
-
-  // Find colleague
-  $variables['dish_of_the_day_block'] = views_embed_view('os2intra_canteen_menu', array('block'));
-  $variables['find_colleague_block'] = module_invoke('views', 'block_view', '-exp-telefonbogen-page');
 }
 
 /**
