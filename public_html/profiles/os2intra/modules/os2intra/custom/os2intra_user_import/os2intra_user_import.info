@@ -1,0 +1,4 @@
+name = OS2Intra User import
+description = Import users to the system
+core = 7.x
+package = OS2Intra
