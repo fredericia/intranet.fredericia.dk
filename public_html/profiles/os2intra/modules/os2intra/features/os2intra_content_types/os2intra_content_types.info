@@ -16,6 +16,7 @@ dependencies[] = field_collection
 dependencies[] = field_group
 dependencies[] = file
 dependencies[] = filter
+dependencies[] = hs_taxonomy
 dependencies[] = icon
 dependencies[] = icon_field
 dependencies[] = image
