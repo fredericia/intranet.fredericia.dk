@@ -9,33 +9,6 @@ include_once 'trash_can.features.inc';
 define('TRASH_CAN_DEFAULT_EXPIRE', 30);
 
 /**
- * Implements hook_menu().
- */
-function trash_can_menu() {
-  $items = array();
-  $items['admin/config/trashcan'] = array(
-    'title' => t('Papirkurv'),
-    'description' => t('Administrer indstillinger til papirkurven.'),
-    'position' => 'right',
-    'page callback'    => 'system_admin_menu_block_page',
-    'file' => 'system.admin.inc',
-    'file path' => drupal_get_path('module', 'system'),
-    'access arguments' => array('access administration pages'),
-  );
-
-  $items['admin/config/trashcan/settings'] = array(
-    'title' => t('Papirkurvsindstillinger'),
-    'description' => t('Administrer indstillinger papirkurven.'),
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('trash_can_settings_form'),
-    'access arguments' => array('access administration pages'),
-    'file' => 'trash_can.admin.inc',
-  );
-
-  return $items;
-}
-
-/**
  * Implements hook_form_alter().
  */
 function trash_can_form_os2intra_settings_settings_form_alter(&$form, &$form_state, $form_id) {
