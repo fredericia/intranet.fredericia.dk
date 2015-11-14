@@ -11,6 +11,9 @@
     if (isset($content['field_os2intra_images'])) {
       hide($content['field_os2intra_images']);
     }
+    if (isset($content['field_os2intra_image'])) {
+      hide($content['field_os2intra_image']);
+    }
   ?>
   <!-- node.tpl.php -->
   <!-- Begin - full node -->
@@ -20,6 +23,13 @@
       <!-- Begin - image -->
       <div class="fki-full-image">
         <?php print render($content['field_os2intra_images']); ?>
+      </div>
+      <!-- End - image -->
+    <?php endif; ?>
+        <?php if (isset($content['field_os2intra_image'])): ?>
+      <!-- Begin - image -->
+      <div class="fki-full-image">
+        <?php print render($content['field_os2intra_image']); ?>
       </div>
       <!-- End - image -->
     <?php endif; ?>
