@@ -229,6 +229,34 @@ function os2intra_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_indstilliger|node|os2web_base_selfservice_link|form';
+  $field_group->group_name = 'group_indstilliger';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2web_base_selfservice_link';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_link';
+  $field_group->data = array(
+    'label' => 'Indstillinger',
+    'weight' => '12',
+    'children' => array(
+      0 => 'scheduler_settings',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-indstilliger field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_indstilliger|node|os2web_base_selfservice_link|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_indstillinger|node|event|form';
   $field_group->group_name = 'group_indstillinger';
   $field_group->entity_type = 'node';
@@ -435,6 +463,65 @@ function os2intra_content_types_field_group_info() {
     ),
   );
   $export['group_kolonne3|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_linkset|node|os2web_base_selfservice_link|form';
+  $field_group->group_name = 'group_linkset';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2web_base_selfservice_link';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_link';
+  $field_group->data = array(
+    'label' => 'Selvbetjeningslink',
+    'weight' => '10',
+    'children' => array(
+      0 => 'field_os2web_base_field_kle_ref',
+      1 => 'field_os2web_base_field_source',
+      2 => 'field_os2web_base_field_type',
+      3 => 'field_urlos2intra_selvbetje_link',
+      4 => 'field_urlos2intra_selvbetje_int',
+      5 => 'title',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-linkset field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_linkset|node|os2web_base_selfservice_link|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_link|node|os2web_base_selfservice_link|form';
+  $field_group->group_name = 'group_link';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2web_base_selfservice_link';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Selvbetjeningslink',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_indstilliger',
+      1 => 'group_linkset',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-link field-group-htabs',
+      ),
+    ),
+  );
+  $export['group_link|node|os2web_base_selfservice_link|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
