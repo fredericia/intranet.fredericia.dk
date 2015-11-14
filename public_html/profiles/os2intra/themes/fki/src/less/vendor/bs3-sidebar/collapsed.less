@@ -148,6 +148,28 @@
 			.sidebar-mixin-navigation-narrow(@view-mode);
 		}
 	}
+
+	.no-touch {
+
+		.sidebar-left-enabled-@{view-mode} {
+
+			&.sidebar-left-collapsed-@{view-mode} {
+
+				.sidebar-mixin-navigation-narrow-no-touch(@view-mode);
+			}
+		}
+	}
+
+	.touch {
+
+		.sidebar-left-enabled-@{view-mode} {
+
+			&.sidebar-left-collapsed-@{view-mode} {
+
+				.sidebar-mixin-navigation-narrow-touch(@view-mode);
+			}
+		}
+	}
 }
 
 // Logo mixin
