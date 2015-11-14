@@ -21,7 +21,7 @@
       <?php endif; ?>
       <?php print render($title_suffix); ?>
 
-      <div class="form pane-content">
+      <div class="pane-content">
         <?php print render($content); ?>
       </div>
 
