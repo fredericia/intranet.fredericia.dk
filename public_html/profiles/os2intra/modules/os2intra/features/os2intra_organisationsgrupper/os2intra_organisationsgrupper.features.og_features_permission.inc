@@ -211,11 +211,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:os2intra_group:update field_os2intra_outdated_date field'
-  $permissions['node:os2intra_group:update field_os2intra_outdated_date field'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:os2intra_group:update field_os2intra_physical_location field'
   $permissions['node:os2intra_group:update field_os2intra_physical_location field'] = array(
     'roles' => array(),
@@ -273,11 +268,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_group:update field_os2web_base_field_media field'
   $permissions['node:os2intra_group:update field_os2web_base_field_media field'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:os2intra_group:update field_tilmelding field'
-  $permissions['node:os2intra_group:update field_tilmelding field'] = array(
     'roles' => array(),
   );
 
@@ -408,11 +398,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:os2intra_group:view field_os2intra_outdated_date field'
-  $permissions['node:os2intra_group:view field_os2intra_outdated_date field'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:os2intra_group:view field_os2intra_physical_location field'
   $permissions['node:os2intra_group:view field_os2intra_physical_location field'] = array(
     'roles' => array(),
@@ -470,11 +455,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_group:view field_os2web_base_field_media field'
   $permissions['node:os2intra_group:view field_os2web_base_field_media field'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:os2intra_group:view field_tilmelding field'
-  $permissions['node:os2intra_group:view field_tilmelding field'] = array(
     'roles' => array(),
   );
 
@@ -735,11 +715,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:os2intra_org_group_unit:update field_os2intra_outdated_date field'
-  $permissions['node:os2intra_org_group_unit:update field_os2intra_outdated_date field'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:os2intra_org_group_unit:update field_os2intra_physical_location field'
   $permissions['node:os2intra_org_group_unit:update field_os2intra_physical_location field'] = array(
     'roles' => array(
@@ -805,11 +780,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_org_group_unit:update field_os2web_base_field_media field'
   $permissions['node:os2intra_org_group_unit:update field_os2web_base_field_media field'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:os2intra_org_group_unit:update field_tilmelding field'
-  $permissions['node:os2intra_org_group_unit:update field_tilmelding field'] = array(
     'roles' => array(),
   );
 
@@ -947,11 +917,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:os2intra_org_group_unit:view field_os2intra_outdated_date field'
-  $permissions['node:os2intra_org_group_unit:view field_os2intra_outdated_date field'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:os2intra_org_group_unit:view field_os2intra_physical_location field'
   $permissions['node:os2intra_org_group_unit:view field_os2intra_physical_location field'] = array(
     'roles' => array(),
@@ -1009,11 +974,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_org_group_unit:view field_os2web_base_field_media field'
   $permissions['node:os2intra_org_group_unit:view field_os2web_base_field_media field'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:os2intra_org_group_unit:view field_tilmelding field'
-  $permissions['node:os2intra_org_group_unit:view field_tilmelding field'] = array(
     'roles' => array(),
   );
 

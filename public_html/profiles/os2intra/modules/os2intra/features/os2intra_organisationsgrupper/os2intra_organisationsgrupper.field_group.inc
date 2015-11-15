@@ -197,11 +197,13 @@ function os2intra_organisationsgrupper_field_group_info() {
     'label' => 'System',
     'weight' => '17',
     'children' => array(
-      0 => 'group_group',
-      1 => 'field_os2intra_base_spotboxes',
-      2 => 'field_os2intra_organisation',
-      3 => 'og_group_org_ref',
+      0 => 'field_os2intra_afdeling',
+      1 => 'group_group',
+      2 => 'field_os2intra_base_spotboxes',
+      3 => 'field_os2intra_organisation',
       4 => 'group_content_access',
+      5 => 'og_group_org_ref',
+      6 => 'og_roles_permissions',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

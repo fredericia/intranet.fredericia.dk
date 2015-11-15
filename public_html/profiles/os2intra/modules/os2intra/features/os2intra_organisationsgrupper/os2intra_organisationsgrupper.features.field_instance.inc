@@ -423,7 +423,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div_div_div',
     'field_name' => 'field_os2intra_afdeling',
-    'label' => 'Afdeling',
+    'label' => 'Ovenstående Afdeling',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -448,7 +448,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 8,
+      'weight' => 17,
     ),
   );
 
@@ -690,7 +690,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 16,
+      'weight' => 15,
     ),
   );
 
@@ -866,7 +866,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'og_hide' => TRUE,
       ),
       'type' => 'options_onoff',
-      'weight' => 17,
+      'weight' => 16,
     ),
   );
 
@@ -1309,7 +1309,6 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Afdeling');
   t('Afdelingsværktøjer');
   t('Billede');
   t('Billeder');
@@ -1326,6 +1325,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Gruppelogo');
   t('Leder');
   t('Organisation');
+  t('Ovenstående Afdeling');
   t('Spotbokse');
 
   return $field_instances;
