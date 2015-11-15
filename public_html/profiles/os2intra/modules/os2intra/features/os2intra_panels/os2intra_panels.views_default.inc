@@ -638,7 +638,7 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Afdeling */
+  /* Field: Content: Ovenstående Afdeling */
   $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
@@ -660,7 +660,7 @@ function os2intra_panels_views_default_views() {
   /* Display: Gruppe */
   $handler = $view->new_display('panel_pane', 'Gruppe', 'panel_pane_4');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Groups audience */
+  /* Field: Content: Gruppe / Afdeling */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
