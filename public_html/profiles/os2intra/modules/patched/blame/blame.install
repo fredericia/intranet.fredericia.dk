@@ -76,6 +76,7 @@ function blame_install() {
   variable_set('blame_exclude_form_ids', array('blame_settings_form'));
   variable_set('blame_pages_in_ex', BLAME_EXCLUDE);
   variable_set('blame_pages', '');
+  variable_set('blame_show_output', 0);
 }
 
 /**
@@ -87,6 +88,7 @@ function blame_uninstall() {
   variable_del('blame_exclude_form_ids');
   variable_del('blame_pages_in_ex');
   variable_del('blame_pages');
+  variable_del('blame_show_output');
 }
 
 /**

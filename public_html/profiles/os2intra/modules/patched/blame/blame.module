@@ -179,6 +179,9 @@ function blame_permission() {
       'title' => t('View Blame records'),
       'warning' => t('Warning: Submitted form data may contain sensitive information; this permission may have security implications.'),
     ),
+    'blame output to screen' => array(
+      'title' => t('View Blame output'),
+    ),
     'track blame' => array(
       'title' => t('Track with Blame'),
     ),
@@ -239,7 +242,7 @@ function blame_form_alter(&$form, &$form_state, $form_id) {
 
   // Notify user if an existing blame log for this form has been captured and provide
   // some metadata to the user if they have permissions to view.
-  if (user_access("view blame", $user)) {
+  if (variable_get('blame_show_output', 0)) {
     $latest_blame_copy = "";
     $existing_records = blame_get_blame_by_location();
     $count = count($existing_records);

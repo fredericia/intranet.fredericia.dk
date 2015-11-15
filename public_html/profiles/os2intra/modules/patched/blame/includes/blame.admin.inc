@@ -40,6 +40,12 @@ function blame_settings_form() {
     '#default_value' => implode("\n", variable_get('blame_exclude_form_ids', array())),
   );
 
+  $form['blame_show_output'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Show output alert notices on screen'),
+    '#default_value' => variable_get('blame_show_output', FALSE),
+  );
+
   $form['blame_pages_set'] = array(
     '#type' => 'fieldset',
     '#title' => t('Track forms on specific pages'),
@@ -102,6 +108,7 @@ function blame_settings_form_submit($form, &$form_state) {
   variable_set('blame_exclude_form_ids', array_map('trim', explode("\n", $form_state['values']['blame_exclude_form_ids'])));
   variable_set('blame_pages_in_ex', $form_state['values']['blame_pages_in_ex']);
   variable_set('blame_pages', trim($form_state['values']['blame_pages']));
+  variable_set('blame_show_output', $form_state['values']['blame_show_output']);
 }
 
 /**
