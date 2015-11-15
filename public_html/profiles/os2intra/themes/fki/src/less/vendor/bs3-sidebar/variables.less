@@ -18,6 +18,10 @@
 @sidebar-font-color-dark: #000; // Default: #000
 @sidebar-font-color-active: @brand-secondary;
 
+@sidebar-font-size-small: @font-size-small;
+@sidebar-font-size-default: @font-size-base;
+@sidebar-font-size-large: @font-size-large;
+
 @sidebar-transition-time: @bs3-designer-transition-time;
 
 @sidebar-element-indent: 20px;
@@ -77,6 +81,48 @@
 // --------------------------------------------------
 // Navigation
 // --------------------------------------------------
+
+// ------------------------
+// Global
+// ------------------------
+
+// ------------------------
+// Narrow
+// ------------------------
+
+// Dropdown menu
+@sidebar-narrow-navigation-dropdown-menu-min-width: 180px;
+@sidebar-narrow-navigation-dropdown-menu-max-width: 250px;
+@sidebar-narrow-navigation-dropdown-menu-inner-spacing: floor((@bs3-main-navigation-nav-dropdown-menu-link-top-bottom-padding * 1.5));
+@sidebar-narrow-navigation-dropdown-menu-background-color: @sidebar-background-color;
+@sidebar-narrow-navigation-dropdown-menu-border-width: 1px;
+@sidebar-narrow-navigation-dropdown-menu-border-color: @sidebar-border-color-dark;
+
+// Link
+@sidebar-narrow-navigation-dropdown-menu-link-top-bottom-padding: 6px;
+@sidebar-narrow-navigation-dropdown-menu-link-left-right-padding: 20px;
+@sidebar-narrow-navigation-dropdown-menu-link-font-size: @sidebar-font-size-default;
+@sidebar-narrow-navigation-dropdown-menu-link-font-color: @sidebar-font-color-light;
+@sidebar-narrow-navigation-dropdown-menu-link-background-color: transparent;
+@sidebar-narrow-navigation-dropdown-menu-link-border-width: @sidebar-border-color-light;
+@sidebar-narrow-navigation-dropdown-menu-link-border-color: @sidebar-border-color-light;
+@sidebar-narrow-navigation-dropdown-menu-link-border-color-rgba: @sidebar-border-color-light-rgba;
+
+@sidebar-narrow-navigation-dropdown-menu-link-hover-font-color: @sidebar-narrow-navigation-dropdown-menu-link-font-color;
+@sidebar-narrow-navigation-dropdown-menu-link-hover-background-color: @sidebar-background-color-light;
+@sidebar-narrow-navigation-dropdown-menu-link-hover-background-color-rgba: @sidebar-background-color-light-rgba;
+
+@sidebar-narrow-navigation-dropdown-menu-link-active-font-color: @sidebar-font-color-active;
+@sidebar-narrow-navigation-dropdown-menu-link-active-background-color: @sidebar-background-color-light;
+@sidebar-narrow-navigation-dropdown-menu-link-active-background-color-rgba: @sidebar-background-color-light-rgba;
+
+@sidebar-narrow-navigation-dropdown-menu-link-active-trail-font-color: @sidebar-narrow-navigation-dropdown-menu-link-active-font-color;
+@sidebar-narrow-navigation-dropdown-menu-link-active-trail-background-color: @sidebar-narrow-navigation-dropdown-menu-link-background-color;
+@sidebar-narrow-navigation-dropdown-menu-link-active-trail-background-color-rgba: @sidebar-narrow-navigation-dropdown-menu-link-active-trail-background-color;
+
+// ------------------------
+// Wide
+// ------------------------
 
 // Icon
 @sidebar-navigation-link-icon-identifier: .fa;
