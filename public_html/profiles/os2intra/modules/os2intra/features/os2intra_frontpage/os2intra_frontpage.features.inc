@@ -39,7 +39,7 @@ function os2intra_frontpage_homebox() {
         'open' => 1,
         'closable' => 0,
         'title' => '',
-        'weight' => -19,
+        'weight' => -23,
       ),
       'views_os2intra_forside_views-block' => array(
         'module' => 'views',
@@ -50,7 +50,7 @@ function os2intra_frontpage_homebox() {
         'open' => 1,
         'closable' => 1,
         'title' => '',
-        'weight' => -18,
+        'weight' => -22,
       ),
       'homebox_custom' => array(
         'module' => 'homebox',
@@ -61,7 +61,7 @@ function os2intra_frontpage_homebox() {
         'open' => 1,
         'closable' => 1,
         'title' => '',
-        'weight' => -17,
+        'weight' => -20,
       ),
       'views_os2intra_vigtige_beskeder-block' => array(
         'module' => 'views',
@@ -88,13 +88,13 @@ function os2intra_frontpage_homebox() {
       'views_os2intra_markedspladsen-block' => array(
         'module' => 'views',
         'delta' => 'os2intra_markedspladsen-block',
-        'region' => 1,
+        'region' => 2,
         'movable' => 1,
         'status' => 1,
         'open' => 1,
         'closable' => 1,
         'title' => '',
-        'weight' => 99,
+        'weight' => -21,
       ),
     ),
     'widths' => array(),
