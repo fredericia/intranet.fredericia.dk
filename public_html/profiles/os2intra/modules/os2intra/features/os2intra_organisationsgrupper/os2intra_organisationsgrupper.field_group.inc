@@ -70,6 +70,91 @@ function os2intra_organisationsgrupper_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_group|node|os2intra_group|form';
+  $field_group->group_name = 'group_group';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_group';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Group',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_gruppe',
+      1 => 'group_logo',
+      2 => 'group_indstillinger',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-group field-group-htabs',
+      ),
+    ),
+  );
+  $export['group_group|node|os2intra_group|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_gruppe|node|os2intra_group|form';
+  $field_group->group_name = 'group_gruppe';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_group';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_group';
+  $field_group->data = array(
+    'label' => 'Gruppe',
+    'weight' => '8',
+    'children' => array(
+      0 => 'body',
+      1 => 'title',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_gruppe|node|os2intra_group|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_indstillinger|node|os2intra_group|form';
+  $field_group->group_name = 'group_indstillinger';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_group';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_group';
+  $field_group->data = array(
+    'label' => 'Indstillinger',
+    'weight' => '10',
+    'children' => array(
+      0 => 'group_access',
+      1 => 'group_content_access',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-indstillinger field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_indstillinger|node|os2intra_group|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_info|node|os2intra_org_group_unit|form';
   $field_group->group_name = 'group_info';
   $field_group->entity_type = 'node';
@@ -95,6 +180,34 @@ function os2intra_organisationsgrupper_field_group_info() {
     ),
   );
   $export['group_info|node|os2intra_org_group_unit|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_logo|node|os2intra_group|form';
+  $field_group->group_name = 'group_logo';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_group';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_group';
+  $field_group->data = array(
+    'label' => 'Logo',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_os2intra_image',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-logo field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_logo|node|os2intra_group|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
