@@ -1760,7 +1760,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'list' => array(
         'label' => 'above',
@@ -1818,7 +1818,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'list' => array(
         'label' => 'above',
@@ -1938,7 +1938,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'list' => array(
         'label' => 'above',
@@ -1995,8 +1995,15 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Tilføj',
+          'delete' => 'Slet',
+          'description' => 1,
+          'edit' => 'Redigér',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
         'weight' => 4,
       ),
       'list' => array(
@@ -2041,7 +2048,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'list' => array(
         'label' => 'above',
@@ -2097,7 +2104,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'list' => array(
         'label' => 'above',
@@ -2223,7 +2230,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'list' => array(
         'label' => 'above',
@@ -2275,7 +2282,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'list' => array(
         'label' => 'above',
@@ -2350,7 +2357,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'list' => array(
         'label' => 'above',
@@ -2390,6 +2397,59 @@ function os2intra_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-os2intra_base_page-field_os2web_webform_ref'.
+  $field_instances['node-os2intra_base_page-field_os2web_webform_ref'] = array(
+    'bundle' => 'os2intra_base_page',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'default',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 3,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_webform_ref',
+    'label' => 'Indlejr webform',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 25,
+    ),
+  );
+
   // Exported field_instance: 'node-os2intra_base_page-field_synlighed'.
   $field_instances['node-os2intra_base_page-field_synlighed'] = array(
     'bundle' => 'os2intra_base_page',
@@ -2406,7 +2466,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'list' => array(
         'label' => 'above',
