@@ -1136,59 +1136,6 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-post-field_os2intra_promoteto'.
-  $field_instances['node-post-field_os2intra_promoteto'] = array(
-    'bundle' => 'post',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-    ),
-    'display_label' => '',
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div_div_div',
-    'field_name' => 'field_os2intra_promoteto',
-    'label' => 'Forfrem til',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-        'taxonomy-index' => array(
-          'status' => TRUE,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 12,
-    ),
-  );
-
   // Exported field_instance: 'node-post-og_group_ref'.
   $field_instances['node-post-og_group_ref'] = array(
     'bundle' => 'post',
@@ -1264,7 +1211,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 13,
+      'weight' => 25,
     ),
   );
 
@@ -1314,7 +1261,6 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Billeder');
   t('Body');
   t('Determine if this is an OG group.');
-  t('Forfrem til');
   t('Forfremmet indhold');
   t('Formål med gruppe');
   t('Group');

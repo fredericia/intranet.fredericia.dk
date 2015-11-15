@@ -295,7 +295,7 @@ function os2intra_content_types_field_group_info() {
   $field_group->parent_name = 'group_post';
   $field_group->data = array(
     'label' => 'Indstillinger',
-    'weight' => '17',
+    'weight' => '18',
     'children' => array(
       0 => 'field_os2web_base_field_promote',
       1 => 'group_content_access',
@@ -781,10 +781,10 @@ function os2intra_content_types_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'group_content',
-      1 => 'group_media',
-      2 => 'group_meta',
-      3 => 'group_spotsnforms',
-      4 => 'group_indstillinger',
+      1 => 'group_indstillinger',
+      2 => 'group_spotsnforms',
+      3 => 'group_media',
+      4 => 'group_meta',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -904,7 +904,7 @@ function os2intra_content_types_field_group_info() {
   $field_group->parent_name = 'group_post';
   $field_group->data = array(
     'label' => 'Spotbokse / webform',
-    'weight' => '15',
+    'weight' => '14',
     'children' => array(
       0 => 'field_os2intra_base_spotboxes',
       1 => 'field_os2web_webform_ref',

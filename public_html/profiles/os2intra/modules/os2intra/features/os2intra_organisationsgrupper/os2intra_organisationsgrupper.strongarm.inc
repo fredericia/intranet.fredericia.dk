@@ -298,6 +298,9 @@ function os2intra_organisationsgrupper_strongarm() {
         'redirect' => array(
           'weight' => '6',
         ),
+        'scheduler_settings' => array(
+          'weight' => '0',
+        ),
       ),
       'display' => array(),
     ),

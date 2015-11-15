@@ -253,6 +253,11 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'post' => 'post',
   );
+  /* Filter criterion: Content: Fremhæv indhold (field_os2web_base_field_promote) */
+  $handler->display->display_options['filters']['field_os2web_base_field_promote_target_id']['id'] = 'field_os2web_base_field_promote_target_id';
+  $handler->display->display_options['filters']['field_os2web_base_field_promote_target_id']['table'] = 'field_data_field_os2web_base_field_promote';
+  $handler->display->display_options['filters']['field_os2web_base_field_promote_target_id']['field'] = 'field_os2web_base_field_promote_target_id';
+  $handler->display->display_options['filters']['field_os2web_base_field_promote_target_id']['value']['value'] = '6851';
   $translatables['os2intra_forside_views'] = array(
     t('Master'),
     t('OS2intra Forside views'),

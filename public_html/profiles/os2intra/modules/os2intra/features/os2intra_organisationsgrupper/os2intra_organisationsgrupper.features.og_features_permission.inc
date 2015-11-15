@@ -221,11 +221,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:os2intra_group:update field_os2intra_promoteto field'
-  $permissions['node:os2intra_group:update field_os2intra_promoteto field'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:os2intra_group:update field_os2intra_related_ref field'
   $permissions['node:os2intra_group:update field_os2intra_related_ref field'] = array(
     'roles' => array(),
@@ -405,11 +400,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_group:view field_os2intra_promoted_content field'
   $permissions['node:os2intra_group:view field_os2intra_promoted_content field'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:os2intra_group:view field_os2intra_promoteto field'
-  $permissions['node:os2intra_group:view field_os2intra_promoteto field'] = array(
     'roles' => array(),
   );
 
@@ -729,11 +719,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
     ),
   );
 
-  // Exported og permission: 'node:os2intra_org_group_unit:update field_os2intra_promoteto field'
-  $permissions['node:os2intra_org_group_unit:update field_os2intra_promoteto field'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:os2intra_org_group_unit:update field_os2intra_related_ref field'
   $permissions['node:os2intra_org_group_unit:update field_os2intra_related_ref field'] = array(
     'roles' => array(
@@ -924,11 +909,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_org_group_unit:view field_os2intra_promoted_content field'
   $permissions['node:os2intra_org_group_unit:view field_os2intra_promoted_content field'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:os2intra_org_group_unit:view field_os2intra_promoteto field'
-  $permissions['node:os2intra_org_group_unit:view field_os2intra_promoteto field'] = array(
     'roles' => array(),
   );
 
