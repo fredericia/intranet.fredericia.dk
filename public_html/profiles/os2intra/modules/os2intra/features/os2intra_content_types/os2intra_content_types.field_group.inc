@@ -358,9 +358,12 @@ function os2intra_content_types_field_group_info() {
     'label' => 'ITVejledning',
     'weight' => '0',
     'children' => array(
-      0 => 'group_tekst',
+      0 => 'group_indstillinger',
       1 => 'group_meta',
-      2 => 'group_vejledning',
+      2 => 'group_tekst',
+      3 => 'group_vejledning',
+      4 => 'group_spotsnforms',
+      5 => 'group_media',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -555,6 +558,35 @@ function os2intra_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_media|node|it_vejledning|form';
+  $field_group->group_name = 'group_media';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'it_vejledning';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_itvejledning';
+  $field_group->data = array(
+    'label' => 'Media',
+    'weight' => '14',
+    'children' => array(
+      0 => 'field_os2intra_images',
+      1 => 'field_os2web_base_field_media',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-media field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_media|node|it_vejledning|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_media|node|os2intra_base_page|form';
   $field_group->group_name = 'group_media';
   $field_group->entity_type = 'node';
@@ -681,24 +713,23 @@ function os2intra_content_types_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_itvejledning';
   $field_group->data = array(
-    'label' => 'Meta',
-    'weight' => '14',
+    'label' => 'Referencer',
+    'weight' => '16',
     'children' => array(
       0 => 'field_combo',
-      1 => 'field_os2intra_base_spotboxes',
-      2 => 'field_os2intra_related_ref',
-      3 => 'field_os2intra_selvbetjening_ref',
-      4 => 'metatags',
+      1 => 'field_os2intra_related_ref',
+      2 => 'field_os2intra_selvbetjening_ref',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Referencer',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-meta field-group-htab',
         'required_fields' => 1,
         'id' => '',
+        'classes' => 'group-meta field-group-htab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_meta|node|it_vejledning|form'] = $field_group;
@@ -895,6 +926,35 @@ function os2intra_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_spotsnforms|node|it_vejledning|form';
+  $field_group->group_name = 'group_spotsnforms';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'it_vejledning';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_itvejledning';
+  $field_group->data = array(
+    'label' => 'Spotbokse / webform',
+    'weight' => '15',
+    'children' => array(
+      0 => 'field_os2intra_base_spotboxes',
+      1 => 'field_os2web_webform_ref',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-spotsnforms field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_spotsnforms|node|it_vejledning|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_spotsnforms|node|os2intra_base_page|form';
   $field_group->group_name = 'group_spotsnforms';
   $field_group->entity_type = 'node';
@@ -1053,7 +1113,10 @@ function os2intra_content_types_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_os2intra_base_structure',
-      2 => 'title',
+      2 => 'field_os2web_base_field_edi_tags',
+      3 => 'field_os2web_base_field_kle_ref',
+      4 => 'field_os2web_base_field_intro',
+      5 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

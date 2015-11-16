@@ -552,6 +552,9 @@ function os2intra_content_types_strongarm() {
         'redirect' => array(
           'weight' => '2',
         ),
+        'scheduler_settings' => array(
+          'weight' => '0',
+        ),
       ),
       'display' => array(),
     ),
