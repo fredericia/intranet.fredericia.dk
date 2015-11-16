@@ -10,7 +10,7 @@
 // Variables
 // --------------------------------------------------
 
-@fki-list-stacked-spacing: 5px;
+@fki-list-stacked-spacing: 3px;
 @fki-list-border-color: @border-color;
 
 @fki-list-heading-font-color: @brand-primary;
@@ -96,6 +96,19 @@
 
 	.fki-list {
 		.fki-mixin-list-box-variant(@brand-quinary);
+	}
+}
+
+.views-row {
+
+	&:last-child {
+
+		.fki-list {
+
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
 	}
 }
 
