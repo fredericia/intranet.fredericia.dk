@@ -669,7 +669,7 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
-    'view_mode' => 'teaser',
+    'view_mode' => 'list',
     'links' => 0,
   );
   $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';

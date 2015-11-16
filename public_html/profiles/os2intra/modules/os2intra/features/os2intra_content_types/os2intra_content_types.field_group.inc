@@ -621,11 +621,10 @@ function os2intra_content_types_field_group_info() {
   $field_group->parent_name = 'group_form';
   $field_group->data = array(
     'label' => 'Indstillinger',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
-      0 => 'field_os2intra_outdated_date',
-      1 => 'field_os2web_base_field_hidlinks',
-      2 => 'field_os2web_base_field_ref',
+      0 => 'field_synlighed',
+      1 => 'scheduler_settings',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -717,9 +716,9 @@ function os2intra_content_types_field_group_info() {
     'label' => 'Referencer',
     'weight' => '5',
     'children' => array(
-      0 => 'field_os2web_base_field_edi_tags',
-      1 => 'field_os2web_base_field_kle_ref',
-      2 => 'field_synlighed',
+      0 => 'field_os2web_base_field_hidlinks',
+      1 => 'field_os2web_base_field_ref',
+      2 => 'field_os2intra_selvbetjening_ref',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -1084,8 +1083,10 @@ function os2intra_content_types_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_os2intra_base_structure',
-      2 => 'field_os2web_base_field_intro',
-      3 => 'title',
+      2 => 'field_os2web_base_field_edi_tags',
+      3 => 'field_os2web_base_field_intro',
+      4 => 'field_os2web_base_field_kle_ref',
+      5 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

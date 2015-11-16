@@ -509,7 +509,7 @@ function os2intra_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -525,8 +525,8 @@ function os2intra_content_types_field_default_field_instances() {
       'better_formats' => array(
         'allowed_formats' => array(
           'fuld_html' => 0,
-          'indhold' => 0,
-          'kommentar' => 'kommentar',
+          'indhold' => 'indhold',
+          'kommentar' => 0,
           'plain_text' => 0,
         ),
         'allowed_formats_toggle' => 1,
@@ -571,7 +571,7 @@ function os2intra_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -1928,64 +1928,6 @@ function os2intra_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2intra_base_page-field_os2intra_outdated_date'.
-  $field_instances['node-os2intra_base_page-field_os2intra_outdated_date'] = array(
-    'bundle' => 'os2intra_base_page',
-    'deleted' => 0,
-    'description' => 'At this date, the content will be flagged expired.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_os2intra_outdated_date',
-    'label' => 'Expire date',
-    'required' => FALSE,
-    'settings' => array(
-      'default_value' => 'blank',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'date',
-      'settings' => array(
-        'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'text_parts' => array(),
-        'year_range' => '-3:+3',
-      ),
-      'type' => 'date_select',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance:
   // 'node-os2intra_base_page-field_os2intra_paragraph'.
   $field_instances['node-os2intra_base_page-field_os2intra_paragraph'] = array(
     'bundle' => 'os2intra_base_page',
@@ -2037,6 +1979,62 @@ function os2intra_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-os2intra_base_page-field_os2intra_selvbetjening_ref'.
+  $field_instances['node-os2intra_base_page-field_os2intra_selvbetjening_ref'] = array(
+    'bundle' => 'os2intra_base_page',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 14,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2intra_selvbetjening_ref',
+    'label' => 'Selvbetjening',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 25,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-os2intra_base_page-field_os2web_base_field_edi_tags'.
   $field_instances['node-os2intra_base_page-field_os2web_base_field_edi_tags'] = array(
     'bundle' => 'os2intra_base_page',
@@ -2084,7 +2082,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 23,
+      'weight' => 5,
     ),
   );
 
@@ -2127,7 +2125,7 @@ function os2intra_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_hidlinks',
-    'label' => 'Skjul relaterede links',
+    'label' => 'Skjul automatisk relaterede links',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -2139,7 +2137,7 @@ function os2intra_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 6,
+      'weight' => 26,
     ),
   );
 
@@ -2266,7 +2264,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 22,
+      'weight' => 6,
     ),
   );
 
@@ -2393,7 +2391,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 7,
+      'weight' => 27,
     ),
   );
 
@@ -2445,69 +2443,6 @@ function os2intra_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 25,
-    ),
-  );
-
-  // Exported field_instance: 'node-os2intra_base_page-field_synlighed'.
-  $field_instances['node-os2intra_base_page-field_synlighed'] = array(
-    'bundle' => 'os2intra_base_page',
-    'default_value' => array(
-      0 => array(
-        'target_id' => 2644,
-      ),
-    ),
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_synlighed',
-    'label' => 'Synlighed',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-        'taxonomy-index' => array(
-          'status' => TRUE,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
       'type' => 'options_select',
       'weight' => 25,
     ),
@@ -4843,7 +4778,6 @@ function os2intra_content_types_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Afsnit');
-  t('At this date, the content will be flagged expired.');
   t('Beskedmodtagere');
   t('Billede');
   t('Billeder');
@@ -4852,7 +4786,6 @@ function os2intra_content_types_field_default_field_instances() {
   t('Dato');
   t('Ekstern URL');
   t('Ekstra tekst');
-  t('Expire date');
   t('Filer');
   t('Fremhæv indhold');
   t('Fysisk lokation');
@@ -4870,7 +4803,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Placering');
   t('Relaterede sider');
   t('Selvbetjening');
-  t('Skjul relaterede links');
+  t('Skjul automatisk relaterede links');
   t('Spotbillede');
   t('Spotbokse');
   t('Stikord');

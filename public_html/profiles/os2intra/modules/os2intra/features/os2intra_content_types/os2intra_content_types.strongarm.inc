@@ -435,7 +435,17 @@ function os2intra_content_types_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_field_collection_item__field_os2intra_paragraph';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(),
       'display' => array(),
@@ -594,7 +604,7 @@ function os2intra_content_types_strongarm() {
           'weight' => '6',
         ),
         'scheduler_settings' => array(
-          'weight' => '0',
+          'weight' => '25',
         ),
       ),
       'display' => array(),

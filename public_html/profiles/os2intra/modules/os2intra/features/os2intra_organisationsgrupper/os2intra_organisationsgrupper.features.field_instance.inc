@@ -1167,7 +1167,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div_div_div',
     'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
+    'label' => 'Gruppe / Afdeling',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -1182,11 +1182,11 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'action' => 'hide',
+          'action' => 'none',
           'action_on_edit' => 0,
           'fallback' => 'none',
           'providers' => array(
-            'og_context' => FALSE,
+            'og_context' => 0,
             'url' => 1,
           ),
           'skip_perm' => 0,
@@ -1269,6 +1269,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Group roles and permissions');
   t('Group visibility');
   t('Groups audience');
+  t('Gruppe / Afdeling');
   t('Gruppelogo');
   t('Leder');
   t('Organisation');
