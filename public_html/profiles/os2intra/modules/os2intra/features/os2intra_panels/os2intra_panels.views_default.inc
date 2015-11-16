@@ -536,7 +536,8 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Spotbokse */
@@ -569,7 +570,7 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'context',
-      'context' => 'entity:node.nid',
+      'context' => 'entity:node.field-os2intra-base-spotboxes',
       'context_optional' => 0,
       'panel' => '0',
       'fixed' => '',
