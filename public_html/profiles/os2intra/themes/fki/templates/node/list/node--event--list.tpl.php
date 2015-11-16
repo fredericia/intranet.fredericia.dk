@@ -11,7 +11,7 @@
             <div class="fki-list-heading-calendar-date fki-calendar"><span class="fki-calendar-date-month fki-calendar-month"><?php print $created_at_seperated['month']['short']; ?></span><span class="fki-calendar-date-day fki-calendar-day"><?php print $created_at_seperated['day']['integer']; ?></span></div>
           </div>
           <div class="table-cell">
-            <h3 class="fki-list-heading-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+            <h3 class="fki-list-heading-title"><a href="<?php print $node_url; ?>"><?php print $title_shortened; ?></a></h3>
           </div>
         </div>
       </div>

@@ -69,6 +69,10 @@ function bellcom_preprocess_node(&$variables) {
     $function($variables);
   }
 
+  // Title (shortened)
+  $variables['title_shortened'] = _bellcom_text_shortener($variables['title'], 50);
+
+  // Updated at
   if ($updated_at = $variables['node']->changed) {
     $variables['updated_at_short'] = format_date($updated_at, 'short');
     $variables['updated_at_medium'] = format_date($updated_at, 'medium');
@@ -77,6 +81,7 @@ function bellcom_preprocess_node(&$variables) {
     $variables['updated_at_seperated'] = _bellcom_seperated_dates($updated_at);
   }
 
+  // Created at
   if ($created_at = $variables['node']->created) {
     $variables['created_at_short'] = format_date($created_at, 'short');
     $variables['created_at_medium'] = format_date($created_at, 'medium');
@@ -91,18 +96,22 @@ function bellcom_preprocess_node(&$variables) {
  */
 function bellcom_preprocess_comment(&$variables) {
 
+  // Updated at
   if ($updated_at = $variables['comment']->changed) {
     $variables['updated_at_short'] = format_date($updated_at, 'short');
     $variables['updated_at_medium'] = format_date($updated_at, 'medium');
     $variables['updated_at_long'] = format_date($updated_at, 'long');
     $variables['updated_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $updated_at))));
+    $variables['updated_at_seperated'] = _bellcom_seperated_dates($updated_at);
   }
 
+  // Created at
   if ($created_at = $variables['comment']->created) {
     $variables['created_at_short'] = format_date($created_at, 'short');
     $variables['created_at_medium'] = format_date($created_at, 'medium');
     $variables['created_at_long'] = format_date($created_at, 'long');
     $variables['created_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $created_at))));
+    $variables['created_at_seperated'] = _bellcom_seperated_dates($created_at);
   }
 }
 
@@ -310,4 +319,20 @@ function _bellcom_seperated_dates($timestamp) {
   );
 
   return $seperated_dates;
+}
+
+/*
+ * Text shortener
+ */
+function _bellcom_text_shortener($text_string, $max_length) {
+  $alter = array(
+    'max_length'    => $max_length,
+    'ellipsis'      => TRUE,
+    'word_boundary' => TRUE,
+    'html'          => TRUE,
+  );
+
+  $shortened_string = views_trim_text($alter, $text_string);
+
+  return $shortened_string;
 }
