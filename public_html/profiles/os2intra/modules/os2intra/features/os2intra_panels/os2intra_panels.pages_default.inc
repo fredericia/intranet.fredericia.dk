@@ -1207,6 +1207,7 @@ function os2intra_panels_default_page_manager_handlers() {
         'event' => 'event',
         'wiki' => 'wiki',
         'post' => 'post',
+        'os2intra_referat' => 'os2intra_referat',
       ),
       'field_name' => 'og_group_ref',
       'context' => 'argument_entity_id:node_1',

@@ -9,6 +9,22 @@
  */
 function os2intra_content_types_taxonomy_default_vocabularies() {
   return array(
+    'begivenhedstyper' => array(
+      'name' => 'Begivenhedstyper',
+      'machine_name' => 'begivenhedstyper',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
+    'indlaegstyper' => array(
+      'name' => 'Indlægstyper',
+      'machine_name' => 'indlaegstyper',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'os2intra_canteen' => array(
       'name' => 'Kantine',
       'machine_name' => 'os2intra_canteen',
