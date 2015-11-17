@@ -13,6 +13,7 @@ dependencies[] = node_reference
 dependencies[] = number
 dependencies[] = options
 dependencies[] = os2intra_content_types
+dependencies[] = simple_gmap
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
