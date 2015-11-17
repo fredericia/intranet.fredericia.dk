@@ -150,17 +150,17 @@ function fki_node_view_alter(&$build) {
     if ($number_of_files = field_get_items('node', $build['#node'], 'field_os2web_base_field_media')) {
       $number_of_files = count($number_of_files);
 
-      $build['links']['node']['#links']['number_of_files'] = array(
-        'href' => 'foo',
+      $build['links']['node']['#links']['number-of-files'] = array(
+        'href' => '#',
         'html' => TRUE,
       );
 
       // 1
       if ($number_of_files == 1) {
-        $build['links']['node']['#links']['number_of_files']['title'] = t('@files downloadable file', array('@files' => $number_of_files));
+        $build['links']['node']['#links']['number-of-files']['title'] = t('@files downloadable file', array('@files' => $number_of_files));
       }
       else {
-        $build['links']['node']['#links']['number_of_files']['title'] = t('@files downloadable files', array('@files' => $number_of_files));
+        $build['links']['node']['#links']['number-of-files']['title'] = t('@files downloadable files', array('@files' => $number_of_files));
       }
     }
   }

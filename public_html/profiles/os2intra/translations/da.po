@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-11-10 23:30+0100\n"
-"PO-Revision-Date: 2015-11-10 23:30+0100\n"
+"POT-Creation-Date: 2015-11-17 14:32+0100\n"
+"PO-Revision-Date: 2015-11-17 14:32+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -1528,10 +1528,6 @@ msgstr ""
 
 #: /install.php?profile=os2intra&locale=da&op=start&id=2
 msgid "The time a piece of content was most recently flagged by any user."
-msgstr ""
-
-#: /install.php?profile=os2intra&locale=da&op=start&id=2
-msgid "Group membership overview"
 msgstr ""
 
 #: /install.php?profile=os2intra&locale=da&op=start&id=2
@@ -16235,10 +16231,6 @@ msgid "View: OS2intra Forside views: Info til alle"
 msgstr ""
 
 #: /
-msgid "Restore to defaults"
-msgstr ""
-
-#: /
 msgid "Minimize to save"
 msgstr ""
 
@@ -17474,12 +17466,6 @@ msgstr ""
 
 #: /admin/people/create
 msgid ""
-"As groups administrator, associate this user with groups you do "
-"<em>not</em> belong to."
-msgstr ""
-
-#: /admin/people/create
-msgid ""
 "Configure the meta tags below. Tokens, e.g. \"[node:summary]\", "
 "automatically insert the corresponding information from that field or "
 "value, which helps to avoid redundant meta data and possible search "
@@ -18082,10 +18068,6 @@ msgid "Jobtitel"
 msgstr ""
 
 #: /hjaelp-og-vaerktoejer/it-vejledninger/kommer-den-saa-frem-automatisk
-msgid "Group membership"
-msgstr ""
-
-#: /hjaelp-og-vaerktoejer/it-vejledninger/kommer-den-saa-frem-automatisk
 msgid "Rules_config"
 msgstr ""
 
@@ -18203,10 +18185,6 @@ msgstr ""
 
 #: profiles/os2intra/modules/contrib/redirect/redirect.js
 msgid "@count disabled redirects"
-msgstr ""
-
-#: /node/add/os2intra-base-page
-msgid "Attach media"
 msgstr ""
 
 #: /node/add/os2intra-base-page
@@ -20092,10 +20070,6 @@ msgstr ""
 
 #: /node/add/event
 msgid "Field @label must be populated via URL."
-msgstr ""
-
-#: /node/add/event
-msgid "to:"
 msgstr ""
 
 #: /node/add/event
@@ -26517,271 +26491,173 @@ msgstr ""
 msgid "Send kommentar"
 msgstr ""
 
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Pane settings"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Use view name"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Admin title"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Use view description"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Admin desc"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Link to view"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Use Panel path"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Argument input"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_node_panes/edit
-msgid "Allow settings"
-msgstr ""
-
-#: /admin/structure/views/ajax/config-item/os2intra_node_panes/panel_pane_1/argument/null
-msgid "Select the group type."
-msgstr ""
-
-#: /admin/structure/views/ajax/config-item/os2intra_node_panes/panel_pane_1/argument/null
-msgid ""
-"Select the concatenator used to merge multiple group IDs. Remember to "
-"turn on the \"Allow multiple values\" option in the \"more\" settings "
-"for this contextual filter."
-msgstr ""
-
-#: /admin/structure/views/ajax/config-item/os2intra_node_panes/panel_pane_1/argument/null
-msgid "Determine what entity type that group should be of."
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_2
-msgid "Some"
-msgstr ""
-
-#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_5
+#: /
 msgid "Formular ID"
 msgstr ""
 
-#: /node/2
+#: /
 msgid "Group visibility"
 msgstr ""
 
-#: /node/2
+#: /
 msgid "Leder"
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Choose the data source for view arguments"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Multiple taxonomy terms, as a group."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Term ID of first term"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Term ID of all term, separated by + or ,"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Term name of first term"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Term name of first term, lowercased and spaces converted to dashes"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Term name of all terms, separated by + or ,"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+#: /
 msgid ""
-"Term name of all terms, separated by + or , and lowercased and spaces "
-"converted to dashes"
+"Edit the group. Note: This permission controls only node entity type "
+"groups."
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Vocabulary ID of first term"
+#: /
+msgid "Administer group"
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "A single taxonomy vocabulary object."
+#: /
+msgid "Manage group members and content in the group."
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "User edit form"
+#: /
+msgid "Create %type_name content"
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "A user edit form."
+#: /
+msgid "View @label field"
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Enter the user ID of a user for this argument:"
+#: /
+msgid "View the %fieldname field for existing groups."
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Node add form"
+#: /
+msgid "Edit @label field"
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "A node add form."
+#: /
+msgid "Edit the %fieldname field for existing groups."
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Enter the node type this context."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "A context that contains token replacements from token.module."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "A single taxonomy term object."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Term name, lowercased and spaces converted to dashes"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Term Description"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+#: /
 msgid ""
-"Loads a view result into a context that can then be displayed across a "
-"panel or turned into other contexts."
+"Allow non-members to request membership to a group (approval "
+"required)."
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "No argument"
+#: /
+msgid "Subscribe to group (no approval required)"
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Argument wildcard"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "From context"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "From panel argument"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Input on pane config"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "@arg source"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Required context"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "If \"From context\" is selected, which type of context to use."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Context is optional"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+#: /
 msgid ""
-"This context need not be present for the pane to function. If you plan "
-"to use this, ensure that the argument handler can handle empty values "
-"gracefully."
+"Allow non-members to join a group without an approval from group "
+"administrators."
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Panel argument"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "If \"From panel argument\" is selected, which panel argument to use."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Third"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Fourth"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Fifth"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Sixth"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "Fixed argument"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
-msgid "If \"Fixed\" is selected, what to use as an argument."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_2/argument_input
+#: /
 msgid ""
-"If this argument is presented to the panels user, what label to apply "
-"to it."
+"Allow members to unsubscribe themselves from a group, removing their "
+"membership."
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/allow
+#: /
+msgid "Approve and deny subscription"
+msgstr ""
+
+#: /
+msgid "Users may allow or deny another user's subscription request."
+msgstr ""
+
+#: /
+msgid "Users may add other users to the group without approval."
+msgstr ""
+
+#: /
+msgid "Manage members"
+msgstr ""
+
+#: /
+msgid "Users may remove group members and alter member status and roles."
+msgstr ""
+
+#: /
 msgid ""
-"Checked settings will be available in the panel pane config dialog for "
-"modification by the panels user. Unchecked settings will not be "
-"available and will only use the settings in this display."
+"Users may view group roles and add new roles if group default roles "
+"are overriden."
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/allow
-msgid "Pager offset"
+#: /
+msgid "Manage permissions"
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/allow
-msgid "Path override"
+#: /
+msgid ""
+"Users may view the group permissions page and change permsissions if "
+"group default roles are overriden."
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/allow
-msgid "Title override"
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_557667a1-460e-4beb-904e-8eb83dabc864/content
+msgid "\"@s\" terms"
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/allow
-msgid "Use exposed widgets form as pane configuration"
+#: /admin/structure/pages/ajax/operation/node_view/handlers/node_view__panel_context_557667a1-460e-4beb-904e-8eb83dabc864/actions/clone
+msgid "Variant name"
 msgstr ""
 
-#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/allow
-msgid "Fields override"
+#: /admin/structure/pages/ajax/operation/node_view/handlers/node_view__panel_context_557667a1-460e-4beb-904e-8eb83dabc864/actions/clone
+msgid "Enter the name of the new variant."
 msgstr ""
 
-#: /barns-1-og-2-sygedag
-msgid "Test link"
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__intranetside/settings
+msgid "Remove this variant from the page completely."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__intranetside/settings
+msgid "Delete and save"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__intranetside/settings
+msgid ""
+"Check this to have the page disable all regions displayed in the "
+"theme. Note that some themes support this setting better than others. "
+"If in doubt, try with stock themes to see."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__intranetside/settings
+msgid "Remove body CSS classes"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__intranetside/settings
+msgid ""
+"The CSS classes to remove from the body element of this page. "
+"Separated by a space. For example: no-sidebars one-sidebar "
+"sidebar-first sidebar-second two-sidebars."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__intranetside/settings
+msgid "Add body CSS classes"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__intranetside/settings
+msgid ""
+"The CSS classes to add to the body element of this page. Separated by "
+"a space. For example: no-sidebars one-sidebar sidebar-first "
+"sidebar-second two-sidebars."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/actions/rearrange
+msgid "Variant"
+msgstr ""
+
+#: /ctools/context/ajax/access/configure/page_manager_task_handler-node_view%2Anode_view__intranetside/0
+msgid "Edit criteria"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__intranetside%3A%3A%3A%3A/21
+msgid "Pane title"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__intranetside%3A%3A%3A%3A/21
+msgid "Select a formatter"
 msgstr ""
 
 #: /admin/config/people/accounts
@@ -26794,62 +26670,35 @@ msgstr ""
 msgid "Unknown variable @name"
 msgstr ""
 
-#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__intranetside/content?destination=node/28
-msgid "\"@s\" terms"
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/new-4ff858ac-695f-438c-a009-844c08c0aafb
+msgid "!a comments per page"
 msgstr ""
 
-#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518/content?destination=node/49
 msgid ""
-"The part of the image that will be retained during the crop if no "
-"coordinates are set."
+"You have unsaved changes to this page. You must select Save to write "
+"them to the database, or Cancel to discard these changes. Please note "
+"that if you have changed any form, you must submit that form before "
+"saving."
 msgstr ""
 
-#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
-msgid "Disable image scaling"
-msgstr ""
-
-#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518/content?destination=node/49
 msgid ""
-"Only crop the image to the selected area and don't scale it. When "
-"enabled the above dimensions are used only when the cropping area is "
-"not selected."
+"This page has been modified, but these modifications are not yet live. "
+"While modifying this page, it is locked from modification by other "
+"users."
 msgstr ""
 
-#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
-msgid "Aspect Ratio"
+#: /admin/structure/pages/edit/node_view
+msgid "All pending changes have been discarded, and the page is now unlocked."
 msgstr ""
 
-#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
-msgid "Aspect ratio of w/h (e.g. 1 for square)"
+#: /admin/structure/pages/edit/node_view
+msgid ", and "
 msgstr ""
 
-#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
-msgid "Set color of background container"
-msgstr ""
-
-#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
-msgid "Background opacity"
-msgstr ""
-
-#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
-msgid "Opacity of outer image when cropping"
-msgstr ""
-
-#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
-msgid "Ignore if not manually set"
-msgstr ""
-
-#: /admin/config/media/image-styles/edit/profile_image_default/add/epsacrop_crop?weight=1
-msgid ""
-"If a user does not manually set the crop, ignore these settings.  This "
-"is useful if you want to use other effects to set a default crop, "
-"which may then be overridden manually using EPSA Crop.  When this is "
-"checked, make sure the EPSA Crop effect is above any default cropping "
-"effects."
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Fort Nelson"
+#: /admin/structure/pages/edit/node_view
+msgid "Add a new variant"
 msgstr ""
 
 #: /
@@ -26858,11 +26707,2387 @@ msgid ""
 "default instead of \"Any\"."
 msgstr ""
 
-#: /admin/structure/views/ajax/config-item/os2intra_canteen_menu/block/empty/area
+#: /content/min-afdeling
+msgid "Afdelingsindhold"
+msgstr ""
+
+#: /node/5/members
+msgid "Indhold fra %1"
+msgstr ""
+
+#: /node/5/members
+msgid "%1 værktøjer"
+msgstr ""
+
+#: /user/register
+msgid ""
+"Thank you for applying for an account. Your account is currently "
+"pending approval by the site administrator.<br />Once it has been "
+"approved, you will receive an e-mail containing further instructions."
+msgstr ""
+
+#: /admin/structure/features/node_basket/recreate
+msgid ""
+"File path for feature module.  For Example: sites/all/modules/features "
+"or /tmp.  Leave blank for "
+"<strong>profiles/os2intra/modules/custom</strong>"
+msgstr ""
+
+#: /node/61/edit
+msgid "!diff_entity_label"
+msgstr ""
+
+#: /node/61/edit
+msgid "Image: !filename"
+msgstr ""
+
+#: /node/add/os2intra-org-group-unit
+msgid "You must select one or more groups for this content."
+msgstr ""
+
+#: /admin/structure/field-collections/field_os2intra_base_vejledning
+msgid "Please enter a label for collapsible elements"
+msgstr ""
+
+#: /
+msgid "OS2Intra Setup"
+msgstr ""
+
+#: /
+msgid "Manage OSIntra settings"
+msgstr ""
+
+#: /
+msgid "OS2Intra Settings"
+msgstr ""
+
+#: /
+msgid "General settings for the OS2Intra project"
+msgstr ""
+
+#: /admin/config/os2intra/settings
+msgid "Trash Can"
+msgstr ""
+
+#: /admin/config/os2intra/settings
+msgid ""
+"Number of days before the content of the trash can will be deleted "
+"permanently"
+msgstr ""
+
+#: /admin/people/homebox
+msgid ""
+"\n"
+"      The permissions set in the chosen Homeboxes will be still be "
+"checked.\n"
+"      Make sure that users who can view their own profiles can also "
+"view the selected Homebox.\n"
+"      The tab will only be presented if the current user is viewing "
+"their own profile."
+msgstr ""
+
+#: /admin/people/homebox
+msgid "Add a profile tab"
+msgstr ""
+
+#: /admin/people/homebox
+msgid "Optionally add a Homebox as a tab to a user profile."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Provides a trash can for user to add nodes to, instead of deleting "
+"them. The trash can will be emptied after an expiration time"
+msgstr ""
+
+#: /
+msgid ""
+"To filter text with Word filter you will need to enable the Word "
+"filter in one or more of your <a href=\"@text_formats\">Text "
+"formats</a>. To add words or phrases to filter, <a "
+"href=\"@configure\">configure Word Filter module</a>."
+msgstr ""
+
+#: /
+msgid "Administer Words Filtered"
+msgstr ""
+
+#: /
+msgid ""
+"Allow adminstrators to configure the list of words which need to be "
+"filtered."
+msgstr ""
+
+#: /
+msgid "Administer OS2Intra"
+msgstr ""
+
+#: /
+msgid "Access settings and administration pages for OS2Intra"
+msgstr ""
+
+#: /
+msgid "Filtered word lists on submission pages"
+msgstr ""
+
+#: /
+msgid "Word filter"
+msgstr ""
+
+#: /
+msgid ""
+"Replaces words inside posts with filtered versions. You can configure "
+"the list of words or phrases to be filtered on the <a "
+"href=\"@configure\">Word filter configuration page</a>."
+msgstr ""
+
+#: /
+msgid "Replaces words or phrases inside posts with filtered versions."
+msgstr ""
+
+#: /
+msgid "Add filtered word"
+msgstr ""
+
+#: /
+msgid "List filtered words"
+msgstr ""
+
+#: /
+msgid "Test filtered words"
+msgstr ""
+
+#: /
+msgid "wordfilter"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"<p>The wordfilter module allows you to filter words or phrases in site "
+"content and replace the filtered words or phrases with specified "
+"replacement words or phrases. The text body of node and comments are "
+"filtered and optionally the title of nodes and subject of comments are "
+"filtered. The filters are applied on content viewing so the original "
+"text of your content is not altered.</p>"
+msgstr ""
+
+#: /admin/modules
+msgid "Replaces words inside posts with filtered versions."
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid "Word to filter"
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid "Replacement text"
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid "Standalone"
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid "General options"
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid "Enable word filtering on node titles"
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid ""
+"If checked, node titles will be filtered on node load but the original "
+"node title will not be changed."
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid "Enable word filtering on comment titles"
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid ""
+"If checked, comment titles will be filtered on comment load but the "
+"original comment title will not be changed."
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid "Process word filters using case sensitivity"
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid ""
+"If checked, case sensitivity is used when checking text against the "
+"list of words to replace. For example searching for 'foo' and 'Foo' "
+"will only match once for the string 'foo and bar'."
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid "Use Perl UTF8 Regular Expression Modifier"
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid ""
+"Enabling this option adds the PCRE_UTF8 flag to the PHP "
+"Perl-Compatible Regular Expression used for filtering. "
+"<strong>WARNING</strong>: The PHP manual says: &ldquo;<em><u>Matching "
+"characters by Unicode property is not fast, because PCRE has to search "
+"a structure that contains data for over fifteen thousand "
+"characters.</u></em>&rdquo; If you suffer poor performance consider "
+"disabling this option."
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid "Default word replacement"
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid ""
+"Enter the default replacement text here. If you do not enter "
+"replacement text for an individual filtered word, the replacement text "
+"entered here will be used as the replacement text. If you would like "
+"to replace the filtered word with an empty string, set the replacement "
+"word to <em>&lt;none&gt;</em>."
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid ""
+"In order for filtering to work on the body text of a node or comment, "
+"you must activate the wordfilter filter for the input formats you wish "
+"to enable filtering for. Check your filter settings at <a "
+"href=\"@filter\">Text formats</a>."
+msgstr ""
+
+#: /admin/config/content/wordfilter/add
+msgid "Words"
+msgstr ""
+
+#: /admin/config/content/wordfilter/add
+msgid ""
+"Enter a word or phrase you want to filter followed by '|' and the "
+"replacement word or phrase if any. You can enter multiple word and "
+"replacement pairs by hitting return adding more word pairs on a new "
+"line. Any word or phrases that do not have a replacement word or "
+"phrase will use the default replacement word below. If you would like "
+"to replace the filtered word with an empty string, set the replacement "
+"word to <em>&lt;none&gt;</em>."
+msgstr ""
+
+#: /admin/config/content/wordfilter/add
+msgid "Replacement"
+msgstr ""
+
+#: /admin/config/content/wordfilter/add
+msgid ""
+"Enter the filtered version of the word to replace the original words "
+"with. If no replacement word or phrase is specified for a word or "
+"phrase in the list above, the word or phrase entered here will be used "
+"as the replacement for that word or phrase. If you would like to "
+"replace the filtered word with an empty string, set the replacement "
+"word to <em>&lt;none&gt;</em>."
+msgstr ""
+
+#: /admin/config/content/wordfilter/add
+msgid "Stand-alone"
+msgstr ""
+
+#: /admin/config/content/wordfilter/add
+msgid ""
+"When checked, the word or phrase will only be filtered when found as a "
+"separate word or phrase (i.e. prefixed and suffixed by spaces or "
+"\"whitespace\"). A period one character after a word or phrase will "
+"exclude the words from replacement in stand-alone mode. This is useful "
+"for preventing accidental word or phrase filtering with short or "
+"common words and phrases."
+msgstr ""
+
+#: /admin/config/content/wordfilter/add
+msgid "Save word filter"
+msgstr ""
+
+#: /admin/config/content/wordfilter/add
+msgid "Added filter for: %word"
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid "Edit word"
+msgstr ""
+
+#: /admin/config/content/wordfilter
+msgid "Delete word"
+msgstr ""
+
+#: /search?search_api_views_fulltext=h%C3%A6st
+msgid "Direct query"
+msgstr ""
+
+#: /search?search_api_views_fulltext=h%C3%A6st
+msgid ""
+"Don't parse the query, just hand it to the search server unaltered. "
+"Might fail if the query contains syntax errors in regard to the "
+"specific server's query syntax."
+msgstr ""
+
+#: /search?search_api_views_fulltext=h%C3%A6st
+msgid ""
+"The query is interpreted as a single keyword, maybe containing spaces "
+"or special characters."
+msgstr ""
+
+#: /search?search_api_views_fulltext=h%C3%A6st
+msgid ""
+"The query is interpreted as multiple keywords seperated by spaces. "
+"Keywords containing spaces may be \"quoted\". Quoted keywords must "
+"still be seperated by spaces."
+msgstr ""
+
+#: /search?search_api_views_fulltext=h%C3%A6st
+msgid "Standard URL processors"
+msgstr ""
+
+#: /
+msgid "Metatag support has been enabled for the @label vocabulary."
+msgstr ""
+
+#: /admin/people
+msgid "administer os2intra"
+msgstr ""
+
+#: /admin/people
+msgid "edit terms in 17"
+msgstr ""
+
+#: /admin/people
+msgid "edit terms in 18"
+msgstr ""
+
+#: /admin/people
+msgid "edit terms in 19"
+msgstr ""
+
+#: /admin/people
+msgid "edit terms in 16"
+msgstr ""
+
+#: /admin/people
+msgid "delete terms in 17"
+msgstr ""
+
+#: /admin/people
+msgid "delete terms in 18"
+msgstr ""
+
+#: /admin/people
+msgid "delete terms in 19"
+msgstr ""
+
+#: /admin/people
+msgid "delete terms in 16"
+msgstr ""
+
+#: /admin/people
+msgid "administer words filtered"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Module that add special functionality and configuration to default "
+"elastic search"
+msgstr ""
+
+#: /admin/modules
+msgid "Allows the usage of PHP to construct a view."
+msgstr ""
+
+#: /admin/config/os2intra/user_import
+msgid "View imported users"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "ex. private://user_import"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid ""
+"Node ids (nid) of default OG groups, that should be added to every "
+"imported used"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "CSV, ex. 1,2,3"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "Centre"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "Birthday"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "Cleanup script"
+msgstr ""
+
+#: /admin/structure/taxonomy/os2intra_organisation_tax/add
+msgid "Filtered words will be replaced with the filtered version of the word."
+msgstr ""
+
+#: /user/1/edit
+msgid "Grupper"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "Hierarchical Select"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "Hierarchical text"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "Hierarchical links"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "Hierarchical links last text"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "Hierarchical text last link"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "Last link only"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "Last text only"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "All selections"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid ""
+"<span class=\"highlight\">enable Javascript</span> in your browser and "
+"then refresh this page, for a much enhanced experience."
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid ""
+"<span class=\"highlight\">click the <em>Update</em> button</span> "
+"every time you want to update the selection"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "You don't have Javascript enabled."
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "Hover for more information!"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid ""
+"But don't worry: you can still use this web site! You have two "
+"options:"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "Configure site-wide settings for the Hierarchical Select form element."
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "Configurations"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "All available Hierarchical Select configurations."
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "Implementations"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "Features of each Hierarchical Select implementation."
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "Site-wide settings"
+msgstr ""
+
+#: sites/all/modules/contrib/hierarchical_select/hierarchical_select.js
+msgid "Received an invalid response from the server."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/handlers/node_edit__panel_context_05b75a06-455d-4044-97c5-4197f5b8b891/content?destination=node/add/os2intra-base-page
+msgid "Gruppe / Afdeling"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/handlers/node_edit__panel_context_05b75a06-455d-4044-97c5-4197f5b8b891/content?destination=node/add/os2intra-base-page
+msgid "Fremhæv indhold"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/handlers/node_edit__panel_context_05b75a06-455d-4044-97c5-4197f5b8b891/content?destination=node/add/os2intra-base-page
+msgid "Indlejr webform"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/handlers/node_edit__panel_context_05b75a06-455d-4044-97c5-4197f5b8b891/content?destination=node/add/os2intra-base-page
+msgid "Afdelings Reference"
+msgstr ""
+
+#: /admin/structure/pages/ajax/operation/node_edit/handlers/node_edit__panel_context_05b75a06-455d-4044-97c5-4197f5b8b891/actions/delete
+msgid ""
+"Reverting the variant will delete the variant that is in the database, "
+"reverting it to the original default variant. This deletion will not "
+"be made permanent until you click Save."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_edit/handlers/node_edit__panel_context_05b75a06-455d-4044-97c5-4197f5b8b891/actions/delete/form
+msgid ""
+"The page has been updated. Changes will not be permanent until you "
+"save."
+msgstr ""
+
+#: /admin/structure/pages/edit/node_edit
+msgid "No variants"
+msgstr ""
+
+#: /
+msgid "Hierarchical select configs"
+msgstr ""
+
+#: /node/add/wiki?og_group_ref=5&destination=node/5
+msgid "Spotbokse / webform"
+msgstr ""
+
+#: /admin/structure/types/manage/wiki/fields
+msgid "Liste (heltal)"
+msgstr ""
+
+#: /admin/structure/types/manage/wiki/fields
+msgid "Disabled fieldgroups"
+msgstr ""
+
+#: /node/add/post
+msgid "Format: %standard_format."
+msgstr ""
+
+#: /node/add/post
+msgid "Leave the date blank for no scheduled publishing."
+msgstr ""
+
+#: /node/add/post
+msgid "Leave the date blank for no scheduled unpublishing."
+msgstr ""
+
+#: /node/add/post
+msgid "Fieldset containing scheduling settings"
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Do nothing"
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Hide field"
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Disable field"
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Action to take when prepopulating field with values via URL."
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Apply action on edit"
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Apply action when editing an existing entity."
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Fallback behaviour"
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Determine what should happen if no values are provided via URL."
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Set form error"
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Skip access permission"
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Set a permission that will not be affected by the fallback behavior."
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Default widget type"
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "The widget type of the field as it will appear to the user."
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Administrator widget type"
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid ""
+"The widget type of the field that will appear only to a user with "
+"\"Administer group\" permission."
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Allow entity access to control field access"
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid ""
+"By default, the <em>administer group</em> permission is required to "
+"directly edit this field. Selecting this option will allow access to "
+"anybody with access to edit the entity."
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Additional behaviors"
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "The entity type that can be referenced through this field."
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Entity selection"
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid ""
+"The bundles of the entity type acting as group, that can be "
+"referenced. Optional, leave empty for all bundles."
+msgstr ""
+
+#: /admin/structure/types/manage/post/fields/og_group_ref
+msgid "Select the membership type that will be used for a subscribing user."
+msgstr ""
+
+#: /admin/config/regional/date-time/date-views
+msgid "Date views month format with year"
+msgstr ""
+
+#: /admin/config/regional/date-time/date-views
+msgid "Date views month format with year, default value : F Y"
+msgstr ""
+
+#: /admin/config/regional/date-time/date-views
+msgid "Date views month format without year"
+msgstr ""
+
+#: /admin/config/regional/date-time/date-views
+msgid "Date views month format without year, default value : F"
+msgstr ""
+
+#: /admin/config/regional/date-time/date-views
+msgid "Date views day format with year"
+msgstr ""
+
+#: /admin/config/regional/date-time/date-views
+msgid "Date views day format with year, default value : l, F j, Y"
+msgstr ""
+
+#: /admin/config/regional/date-time/date-views
+msgid "Date views day format without year"
+msgstr ""
+
+#: /admin/config/regional/date-time/date-views
+msgid "Date views day format without year, default value : l, F j"
+msgstr ""
+
+#: /admin/config/regional/date-time/date-views
+msgid "Date views week format with year"
+msgstr ""
+
+#: /admin/config/regional/date-time/date-views
+msgid "Date views week format with year, default value : F j, Y"
+msgstr ""
+
+#: /admin/config/regional/date-time/date-views
+msgid "Date views week format without year"
+msgstr ""
+
+#: /admin/config/regional/date-time/date-views
+msgid "Date views week format without year, default value : F j"
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid "Example: %date"
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid "the PHP date() function"
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid ""
+"The format for entering scheduled dates and times. For the date use "
+"the letters !date_letters and for the time use !time_letters. See !url "
+"for more details."
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid "Standard text field"
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid "Date Popup calendar"
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid "configuration page"
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid "Date Popup is enabled. See the !date_popup_config for details."
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid "Restrict the time entry to specific minute increments."
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid ""
+"The timepicker type can be selected via the <a "
+"href=\"@date_popup_config\">Date Popup configuration page</a>."
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid "Date Popup minute increment"
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid "Allow users to enter only a date and provide a default time."
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid ""
+"When only a date is entered the time will default to a specified "
+"value, but the user can change this if required."
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid "Default time"
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid ""
+"This is the time that will be used if the user does not enter a value. "
+"Format: HH:MM:SS."
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid "Extra Info"
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid ""
+"The text entered into this field will be displayed above the "
+"scheduling fields in the node edit form."
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid ""
+"Some Scheduler options are set for each different content type, and "
+"are accessed via the <a href=\"@link\">admin content type</a> list."
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid "The options and settings below are common to all content types."
+msgstr ""
+
+#: /admin/config/content/scheduler
+msgid ""
+"The date part of the Scheduler format is %date_part and the time part "
+"is %time_part."
+msgstr ""
+
+#: /admin/structure/types/manage/os2web-base-selfservice-link/fields/field_urlos2intra_selvbetje_link?destinations[0]=admin/structure/types/manage/os2web-base-selfservice-link/fields
+msgid "If checked, the URL will always render as an absolute URL."
+msgstr ""
+
+#: /admin/structure/types/manage/os2web-base-selfservice-link/fields/field_urlos2intra_selvbetje_link?destinations[0]=admin/structure/types/manage/os2web-base-selfservice-link/fields
+msgid ""
+"If the link title is optional or required, a field will be displayed "
+"to the end user. If the link title is static, the link will always use "
+"the same title. If <a href=\"http://drupal.org/project/token\">token "
+"module</a> is installed, the static title value may use any other "
+"entity field as its value. Static and token-based titles may include "
+"most inline XHTML tags such as <em>strong</em>, <em>em</em>, "
+"<em>img</em>, <em>span</em>, etc."
+msgstr ""
+
+#: /admin/structure/types/manage/os2web-base-selfservice-link/fields/field_urlos2intra_selvbetje_link?destinations[0]=admin/structure/types/manage/os2web-base-selfservice-link/fields
+msgid "Use field label as the label for the title field"
+msgstr ""
+
+#: /admin/structure/types/manage/os2web-base-selfservice-link/fields/field_urlos2intra_selvbetje_link?destinations[0]=admin/structure/types/manage/os2web-base-selfservice-link/fields
+msgid "If this is checked the field label will be hidden."
+msgstr ""
+
+#: /admin/structure/types/manage/os2web-base-selfservice-link/fields/field_urlos2intra_selvbetje_link?destinations[0]=admin/structure/types/manage/os2web-base-selfservice-link/fields
+msgid ""
+"Checking will allow users to enter tokens in URLs and Titles on the "
+"entity edit form. This does not affect the field settings on this "
+"page."
+msgstr ""
+
+#: /admin/structure/types/manage/os2web-base-selfservice-link/fields/field_urlos2intra_selvbetje_link?destinations[0]=admin/structure/types/manage/os2web-base-selfservice-link/fields
+msgid "Keep rel as set up above (untouched/default)"
+msgstr ""
+
+#: /admin/structure/types/manage/os2web-base-selfservice-link/fields/field_urlos2intra_selvbetje_link?destinations[0]=admin/structure/types/manage/os2web-base-selfservice-link/fields
+msgid "Remove rel if given link is external"
+msgstr ""
+
+#: /admin/structure/types/manage/os2web-base-selfservice-link/fields/field_urlos2intra_selvbetje_link?destinations[0]=admin/structure/types/manage/os2web-base-selfservice-link/fields
+msgid "Remove rel if given link is internal"
+msgstr ""
+
+#: /admin/structure/types/manage/os2web-base-selfservice-link/fields/field_urlos2intra_selvbetje_link?destinations[0]=admin/structure/types/manage/os2web-base-selfservice-link/fields
+msgid "Remove rel attribute automatically"
+msgstr ""
+
+#: /admin/structure/types/manage/os2web-base-selfservice-link/fields/field_urlos2intra_selvbetje_link?destinations[0]=admin/structure/types/manage/os2web-base-selfservice-link/fields
+msgid ""
+"Turn on/off if rel attribute should be removed automatically, if user "
+"given link is internal/external"
+msgstr ""
+
+#: /admin/structure/types/manage/os2web-base-selfservice-link/fields/field_urlos2intra_selvbetje_link?destinations[0]=admin/structure/types/manage/os2web-base-selfservice-link/fields
+msgid "Allow the user to enter a custom link class per link"
+msgstr ""
+
+#: /admin/structure/types/manage/os2web-base-selfservice-link/fields
+msgid "Selvbetjeningslink"
+msgstr ""
+
+#: /gruppe/markedspladsen
+msgid "Ekstern URL"
+msgstr ""
+
+#: /gruppe/markedspladsen
+msgid "Intern"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/os2intra_afdelingsindhold/page/field
+msgid ""
+"Time ago (with \"ago\" appended) for today's date, but not for other "
+"dates"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/os2intra_afdelingsindhold/page/field
+msgid "Second date format"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/os2intra_afdelingsindhold/page/field
+msgid ""
+"The date format which will be used for rendering dates other than "
+"today."
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/os2intra_afdelingsindhold/page/field
+msgid "Custom date format of second date"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/os2intra_afdelingsindhold/page/field
+msgid ""
+"If \"Custom\" is selected in \"Second date format\", see the <a "
+"href=\"@url\" target=\"_blank\">PHP manual</a> for date formats. "
+"Otherwise, enter the number of different time units to display, which "
+"defaults to 2."
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/os2intra_afdelingsindhold/page/field
+msgid "Rigtigt navn"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_afdelingsindhold/edit
+msgid "Opdateret"
+msgstr ""
+
+#: /gruppe/test-gruppe-2
+msgid "Arkiv"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/os2intra_afdelingsindhold/page/filter/type
+msgid "Operator label"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/os2intra_afdelingsindhold/page/filter/type
+msgid "This will appear before your operator select field."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/os2intra_afdelingsindhold/page/argument/gid
+msgid "Select the group type."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/os2intra_afdelingsindhold/page/argument/gid
+msgid ""
+"Select the concatenator used to merge multiple group IDs. Remember to "
+"turn on the \"Allow multiple values\" option in the \"more\" settings "
+"for this contextual filter."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/os2intra_afdelingsindhold/page/argument/gid
+msgid "Determine what entity type that group should be of."
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/os2intra_afdelingsindhold/page_1/empty
 msgid ""
 "The following tokens are available. If you would like to have the "
 "characters '[' and ']' please use the html entity codes '%5B' or  "
 "'%5D' or they will get replaced with empty space.</p>"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_afdelingsindhold/edit/page_1
+msgid "Der er ikke valgt nogen værktøjer"
+msgstr ""
+
+#: /content/hr-fredericia-medi-test
+msgid "Ovenstående Afdeling"
+msgstr ""
+
+#: /node/92/edit
+msgid "Udgiv den"
+msgstr ""
+
+#: /node/92/edit
+msgid "Afpublicér den"
+msgstr ""
+
+#: /file/28
+msgid "Video of @title"
+msgstr ""
+
+#: /media/28/format-form?render=media-popup&fields=undefined
+msgid "Display as"
+msgstr ""
+
+#: /media/28/format-form?render=media-popup&fields=undefined
+msgid ""
+"Choose the type of display you would like for this\n"
+"      file. Please be aware that files may display differently than "
+"they do when\n"
+"      they are inserted into an editor."
+msgstr ""
+
+#: /admin/structure/pages/wizard/landing_page
+msgid "Wizard"
+msgstr ""
+
+#: /admin/structure/pages/wizard/landing_page
+msgid "Add a visible menu entry for this page"
+msgstr ""
+
+#: /admin/structure/pages/wizard/landing_page
+msgid "Menu title"
+msgstr ""
+
+#: /admin/structure/views/add
+msgid "Markedspladsen"
+msgstr ""
+
+#: /admin/structure/homebox/layout/intra
+msgid "Layout settings have been updated for @page_title."
+msgstr ""
+
+#: /
+msgid "View: Markedspladsen: Block"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_forside_views/edit
+msgid "View Blame output"
+msgstr ""
+
+#: /
+msgid "Forfrem til (field_os2intra_promoteto)"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_4?destination=node/95
+msgid "Pane settings"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_4?destination=node/95
+msgid "Use view name"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_4?destination=node/95
+msgid "Admin title"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_4?destination=node/95
+msgid "Use view description"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_4?destination=node/95
+msgid "Admin desc"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_4?destination=node/95
+msgid "Link to view"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_4?destination=node/95
+msgid "Use Panel path"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_4?destination=node/95
+msgid "Argument input"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_4?destination=node/95
+msgid "Allow settings"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/layout/move
+msgid "Panes"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/layout/move
+msgid "@type:@subtype will not display due to missing context"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/layout/move
+msgid "@type will not display due to missing context"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67/layout/move
+msgid "Custom: @title"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67%3A%3A%3A%3A/3
+msgid "The group audience field to prepopulate."
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67%3A%3A%3A%3A/3
+msgid "Restrict to content types"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67%3A%3A%3A%3A/3
+msgid "If left empty, all possible content types are shown."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra_group/display
+msgid "No field selected (best matching)"
+msgstr ""
+
+#: /admin/config
+msgid ""
+"All updates installed. HS API implementation modules correctly "
+"installed."
+msgstr ""
+
+#: /admin/config/content/clone
+msgid "Method to use when cloning a node"
+msgstr ""
+
+#: /admin/config/content/clone
+msgid "Pre-populate the node form fields"
+msgstr ""
+
+#: /admin/config/content/clone
+msgid "Save as a new node then edit"
+msgstr ""
+
+#: /admin/config/content/clone
+msgid ""
+"Confirmation mode when using the \"Save as a new node then edit\" "
+"method"
+msgstr ""
+
+#: /admin/config/content/clone
+msgid "Require confirmation (recommended)"
+msgstr ""
+
+#: /admin/config/content/clone
+msgid "Bypass confirmation"
+msgstr ""
+
+#: /admin/config/content/clone
+msgid ""
+"A new node may be saved immediately upon clicking the \"clone\" link "
+"when viewing a node, bypassing the normal confirmation form."
+msgstr ""
+
+#: /admin/config/content/clone
+msgid "Should any menu link for a node also be cloned?"
+msgstr ""
+
+#: /admin/config/content/clone
+msgid "Use node type name in clone link"
+msgstr ""
+
+#: /admin/config/content/clone
+msgid ""
+"If checked, the link to clone the node will contain the node type "
+"name, for example, \"Clone this article\", otherwise it will read "
+"\"Clone content\"."
+msgstr ""
+
+#: /admin/config/content/clone
+msgid ""
+"Should the publishing options ( e.g. published, promoted, etc) be "
+"reset to the defaults?"
+msgstr ""
+
+#: /admin/config/content/clone
+msgid "@s: reset publishing options when cloned"
+msgstr ""
+
+#: /admin/config/content/clone
+msgid ""
+"Content types that are not to be cloned - omitted due to "
+"incompatibility"
+msgstr ""
+
+#: /admin/config/content/clone
+msgid ""
+"Select any node types which should <em>never</em> be cloned. Typically "
+"you should will want to select here all node types for which cloning "
+"fails (e.g. image nodes)."
+msgstr ""
+
+#: /system/ajax
+msgid "Links: @links"
+msgstr ""
+
+#: /system/ajax
+msgid "View mode: @mode"
+msgstr ""
+
+#: /system/ajax
+msgid "Edit link title"
+msgstr ""
+
+#: /system/ajax
+msgid "Leave the title empty, to hide the link."
+msgstr ""
+
+#: /system/ajax
+msgid "Delete link title"
+msgstr ""
+
+#: /system/ajax
+msgid "Add link title"
+msgstr ""
+
+#: /system/ajax
+msgid "Show the field description beside the add link."
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"If enabled and the add link is shown, the field description is shown "
+"in front of the add link."
+msgstr ""
+
+#: /system/ajax
+msgid "Select the view mode"
+msgstr ""
+
+#: /batch?op=start&id=25
+msgid "Extended path aliases"
+msgstr ""
+
+#: /batch?op=start&id=25
+msgid "Advanced settings."
+msgstr ""
+
+#: /batch?op=start&id=25
+msgid "Menu trail by path"
+msgstr ""
+
+#: /batch?op=start&id=25
+msgid "Configure menu trail by path module."
+msgstr ""
+
+#: /batch?op=start&id=25
+msgid "path_alias_xt"
+msgstr ""
+
+#: /admin/modules?filter=path&enabled=1&disabled=1&required=1&unavailable=1
+msgid ""
+"Installation instructions are in the README.txt file. Further "
+"documentation is on the <a href=\"@path_alias_xt\">Extended Path "
+"Aliases</a> project page."
+msgstr ""
+
+#: /admin/config/search/path/patterns
+msgid ""
+"Default path pattern (applies to all file types with blank patterns "
+"below)"
+msgstr ""
+
+#: /admin/config/search/path/patterns
+msgid "Pattern for all @file_type paths."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/facets
+msgid ""
+"For performance reasons, you should only enable facets that you intend "
+"to have available to users on the search page."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/facets
+msgid "Local"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/facets
+msgid "Configure display"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/facets
+msgid "Configure dependencies"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/facets
+msgid "Do not display active items"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/facets
+msgid "Only show items in the current level of the hierarchy"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/facets
+msgid "Configure filters"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/facets
+msgid "Configure the appropriate cache setting for facet blocks."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/facets
+msgid "Block cache settings"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Data alterations"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"Select the alterations that will be executed on indexed items, and "
+"their order."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Enabled data alterations"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Data alteration processing order"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Callback settings"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Which items should be indexed?"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "All but those from one of the selected bundles"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Only those from the selected bundles"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "First letter"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"The Fulltext aggregation concatenates the text data of all contained "
+"fields."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"The Sum aggregation adds the values of all contained fields "
+"numerically."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"The Count aggregation takes the total number of contained field values "
+"as the aggregated field value."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"The Maximum aggregation computes the numerically largest contained "
+"field value."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"The Minimum aggregation computes the numerically smallest contained "
+"field value."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"The First aggregation will simply keep the first encountered field "
+"value. This is helpful foremost when you know that a list field will "
+"only have a single value."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"The \"First letter\" aggregation uses just the first letter of the "
+"first encountered field value as the aggregated value. This can, for "
+"example, be used to build a Glossary view."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"The List aggregation collects all field values into a multi-valued "
+"field containing all values."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"<p>This data alteration lets you define additional fields that will be "
+"added to this index. Each of these new fields will be an aggregation "
+"of one or more existing fields.</p><p>To add a new aggregated field, "
+"click the \"Add new field\" button and then fill out the "
+"form.</p><p>To remove a previously defined field, click the \"Remove "
+"field\" button.</p><p>You can also change the names or contained "
+"fields of existing aggregated fields.</p>"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Hierarchical fields"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"Select the fields which should be supplemented with their ancestors. "
+"Each field is listed along with its children of the same type. When "
+"selecting several child properties of a field, all those properties "
+"will be recursively added to that field. Please note that you should "
+"de-select all fields before disabling this data alteration."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"Select processors which will pre- and post-process data at index and "
+"search time, and their order. Most processors will only influence "
+"fulltext fields, but refer to their individual descriptions for "
+"details regarding their effect."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Enabled processors"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Processor processing order"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"Set the order in which preprocessing will be done at index and search "
+"time. Postprocessing of search results will be in the exact opposite "
+"direction."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Highlighting prefix"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"Text/HTML that will be prepended to all occurrences of search keywords "
+"in highlighted text."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Highlighting suffix"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"Text/HTML that will be appended to all occurrences of search keywords "
+"in highlighted text."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Create excerpt"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"When enabled, an excerpt will be created for searches with keywords, "
+"containing all occurrences of keywords in a fulltext field."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Excerpt length"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"The requested length of the excerpt, in characters. This is equivalent "
+"of Elasticsearch's fragment_size option."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Excerpt fragments"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "The number of highlighted excerpt fragments."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"The concatenator between different excerpt fragments used for both the "
+"excerpt and fields highlighting."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Highlight returned field data"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Select whether returned fields should be highlighted."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "If the server returns fields"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Fields to run on"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Index title attribute"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "If set, the contents of title attributes will be indexed."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Index alt attribute"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "If set, the alternative text of images will be indexed."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Tag boosts"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"Specify special boost values for certain HTML elements, in <a "
+"href=\"@link\">INI file format</a>. The boost values of nested "
+"elements are multiplied, elements not mentioned will have the default "
+"boost value of 1. Assign a boost of 0 to ignore the text content of "
+"that HTML element."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Whitespace characters"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"Specify the characters that should be regarded as whitespace and "
+"therefore used as word-delimiters. Specify the characters as a <a "
+"href=\"@link\">PCRE character class</a>. Note: For non-English "
+"content, the default setting might not be suitable."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Ignorable characters"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"Specify characters which should be removed from fulltext fields and "
+"search strings (e.g., \"-\"). The same format as above is used."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "stop words"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"Provide a stopwords file or enter the words in this form. If you do "
+"both, both will be used. Read about !stopwords."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Stopwords file"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"This must be a stream-type description like "
+"<code>public://stopwords/stopwords.txt</code> or "
+"<code>http://example.com/stopwords.txt</code> or "
+"<code>private://stopwords.txt</code>."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"Enter a space and/or linebreak separated list of stopwords that will "
+"be removed from content before it is indexed and from search terms "
+"before searching."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid ""
+"but\n"
+"did\n"
+"the this that those\n"
+"etc"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "The requested length of the excerpt, in characters."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Exclude fields from excerpt"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/workflow
+msgid "Exclude certain fulltext fields from being displayed in the excerpt."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/fields
+msgid "Select fields to index"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/fields
+msgid ""
+"<p>The datatype of a field determines how it can be used for searching "
+"and filtering. Fields indexed with type \"Fulltext\" and multi-valued "
+"fields (marked with <sup>1</sup>) cannot be used for sorting. The "
+"boost is used to give additional weight to certain fields, e.g. titles "
+"or tags. It only takes effect for fulltext fields.</p><p>Whether "
+"detailed field types are supported depends on the type of server this "
+"index resides on. In any case, fields of type \"Fulltext\" will always "
+"be fulltext-searchable.</p>"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/fields
+msgid ""
+"Check the <a href=\"@server-url\">server's</a> service class "
+"description for details."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/fields
+msgid ""
+"Note that indexing an entity-valued field (like %field, which has type "
+"%type) directly will only index the entity ID. This will be used for "
+"filtering and also sorting (which might not be what you expect). The "
+"entity label will usually be used when displaying the field, though. "
+"Use the \"Add related fields\" option at the bottom for indexing other "
+"fields of related entities."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/fields
+msgid "Multi-valued field"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/fields
+msgid "Add related fields"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/fields
+msgid ""
+"There are entities related to entities of this type. You can add their "
+"fields to the list above so they can be indexed too."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/fields
+msgid "Add fields"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/fields
+msgid "Indexed"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/fields
+msgid ""
+"The indexed fields were successfully changed. The index was cleared "
+"and will have to be re-indexed with the new settings."
+msgstr ""
+
+#: /admin/people
+msgid "blame output to screen"
+msgstr ""
+
+#: /admin/people
+msgid "Administer Menu Trail By Path settings"
+msgstr ""
+
+#: /admin/people
+msgid "administer menu_trail_by_path"
+msgstr ""
+
+#: /admin/config
+msgid "PECL runkit (for Extended Path Aliases)"
+msgstr ""
+
+#: /admin/config
+msgid ""
+"Reminder: the PECL runkit is not installed. If, in addition to the "
+"already enabled basic functions, you want this module's advanced "
+"features to be operational, please edit file %path-inc, if you have "
+"not done so already. See the <a href=\"!README\">README</a> file for "
+"details."
+msgstr ""
+
+#: /user/register
+msgid "- Restricted access -"
+msgstr ""
+
+#: /file/22/usage
+msgid "This table lists all of the places where @filename is used."
+msgstr ""
+
+#: /file/22/usage
+msgid "This file is not currently used."
+msgstr ""
+
+#: /afdelinger/test-administration2
+msgid "Skjul automatisk relaterede links"
+msgstr ""
+
+#: /admin/people
+msgid "edit terms in 20"
+msgstr ""
+
+#: /admin/people
+msgid "delete terms in 20"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_557667a1-460e-4beb-904e-8eb83dabc864%3A%3A%3A%3A/new-86a3f1fc-debe-4af6-a2bb-fbc68b0f388c/step1
+msgid "Skip the first @count item(s)"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_557667a1-460e-4beb-904e-8eb83dabc864%3A%3A%3A%3A/new-86a3f1fc-debe-4af6-a2bb-fbc68b0f388c/step1
+msgid "Then display at most @count item(s)"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_557667a1-460e-4beb-904e-8eb83dabc864%3A%3A%3A%3A/new-86a3f1fc-debe-4af6-a2bb-fbc68b0f388c/step1
+msgid "Enter 0 to display all items."
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_557667a1-460e-4beb-904e-8eb83dabc864%3A%3A%3A%3A/new-86a3f1fc-debe-4af6-a2bb-fbc68b0f388c/step1
+msgid "Display in reverse order"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/sidebar/node/node
+msgid "Leave node title"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/sidebar/node/node
+msgid ""
+"Advanced: if checked, do not touch the node title; this can cause the "
+"node title to appear twice unless your theme is aware of this."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/sidebar/node/node
+msgid "Link the node title to the node"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/sidebar/node/node
+msgid "Check this box if you would like your pane title to link to the node."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/sidebar/node/node
+msgid "Enter the title or NID of a node"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/sidebar/node/node
+msgid ""
+"To use a NID from the URL, you may use %0, %1, ..., %N to get URL "
+"arguments. Or use @0, @1, @2, ..., @N to use arguments passed into the "
+"panel."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/sidebar/node/node
+msgid "Include node links for \"add comment\", \"read more\" etc."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/sidebar/node/node
+msgid "Template identifier"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/sidebar/node/node
+msgid ""
+"This identifier will be added as a template suggestion to display this "
+"node: node--panel--IDENTIFIER.tpl.php. Please see the Drupal theming "
+"guide for information about template suggestions."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/sidebar/node/node
+msgid "Build mode"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3Anode_view__panel_context_07196789-365f-4d6d-a4dd-99ecc5077518%3A%3A%3A%3A/sidebar/node/node
+msgid "Select a build mode for this node."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Choose the data source for view arguments"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "A context that contains token replacements from token.module."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Multiple taxonomy terms, as a group."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Term ID of first term"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Term ID of all term, separated by + or ,"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Term name of first term"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Term name of first term, lowercased and spaces converted to dashes"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Term name of all terms, separated by + or ,"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid ""
+"Term name of all terms, separated by + or , and lowercased and spaces "
+"converted to dashes"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Vocabulary ID of first term"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "A single taxonomy term object."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Term name, lowercased and spaces converted to dashes"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Term Description"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Node add form"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "A node add form."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Enter the node type this context."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "A single taxonomy vocabulary object."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "User edit form"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "A user edit form."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Enter the user ID of a user for this argument:"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid ""
+"Loads a view result into a context that can then be displayed across a "
+"panel or turned into other contexts."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "No argument"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Argument wildcard"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "From context"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "From panel argument"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Input on pane config"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "@arg source"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Required context"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "If \"From context\" is selected, which type of context to use."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Context is optional"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid ""
+"This context need not be present for the pane to function. If you plan "
+"to use this, ensure that the argument handler can handle empty values "
+"gracefully."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Panel argument"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "If \"From panel argument\" is selected, which panel argument to use."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Third"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Fourth"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Fifth"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Sixth"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "Fixed argument"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid "If \"Fixed\" is selected, what to use as an argument."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_5/argument_input
+msgid ""
+"If this argument is presented to the panels user, what label to apply "
+"to it."
+msgstr ""
+
+#: /system/ajax
+msgid "@settings applied to carousel instance."
+msgstr ""
+
+#: /user/login?destination=admin/content
+msgid "View larger map"
+msgstr ""
+
+#: /user/login?destination=admin/content
+msgid "Google Map from one-line address"
+msgstr ""
+
+#: /system/ajax
+msgid "Terrain"
+msgstr ""
+
+#: /system/ajax
+msgid "Embedded map: @width x @height"
+msgstr ""
+
+#: /system/ajax
+msgid "Map Type: @map_type"
+msgstr ""
+
+#: /system/ajax
+msgid "Zoom Level: @zoom_level"
+msgstr ""
+
+#: /system/ajax
+msgid "Information Bubble: @information_bubble"
+msgstr ""
+
+#: /system/ajax
+msgid "Language: @language"
+msgstr ""
+
+#: /system/ajax
+msgid "Embedded map"
+msgstr ""
+
+#: /system/ajax
+msgid "Include embedded dynamic map"
+msgstr ""
+
+#: /system/ajax
+msgid "Include embedded static map"
+msgstr ""
+
+#: /system/ajax
+msgid "Width of embedded map"
+msgstr ""
+
+#: /system/ajax
+msgid "Note that static maps only accept sizes in pixels"
+msgstr ""
+
+#: /system/ajax
+msgid "Height of embedded map"
+msgstr ""
+
+#: /system/ajax
+msgid "Link to map"
+msgstr ""
+
+#: /system/ajax
+msgid "Include link to map"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"Enter the text to use for the link to the map, or enter 'use_address' "
+"(without the quotes) to use the entered address text as the link text"
+msgstr ""
+
+#: /system/ajax
+msgid "Choose a default zoom level for embedded and linked maps"
+msgstr ""
+
+#: /system/ajax
+msgid "1 - Minimum"
+msgstr ""
+
+#: /system/ajax
+msgid "14 - Default"
+msgstr ""
+
+#: /system/ajax
+msgid "20 - Maximum"
+msgstr ""
+
+#: /system/ajax
+msgid "Show information bubble"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"If checked, the information bubble for the marker will be displayed "
+"when the embedded or linked map loads."
+msgstr ""
+
+#: /system/ajax
+msgid "Include original address text"
+msgstr ""
+
+#: /system/ajax
+msgid "Choose a default map type for embedded and linked maps"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"Enter a two-letter language code that Google Maps can recognize, or "
+"enter 'page' (without the quotes) to use the current page's language "
+"code"
+msgstr ""
+
+#: /admin/config/development/blame
+msgid "Show output alert notices on screen"
+msgstr ""
+
+#: /admin/structure/taxonomy/os2web_taxonomies_tax_places/display/teaser
+msgid "Static map: @width x @height"
+msgstr ""
+
+#: /system/ajax
+msgid "taxonomy_vocabulary"
+msgstr ""
+
+#: /system/ajax
+msgid "vocabularies"
+msgstr ""
+
+#: /system/ajax
+msgid "terms"
+msgstr ""
+
+#: /system/ajax
+msgid "term type"
+msgstr ""
+
+#: /system/ajax
+msgid "Hierarchical Select configuration"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"This is what the Hierarchical Select will look like with your current "
+"configuration."
+msgstr ""
+
+#: /system/ajax
+msgid "The description."
+msgstr ""
+
+#: /system/ajax
+msgid "Save lineage"
+msgstr ""
+
+#: /system/ajax
+msgid "Save !item lineage"
+msgstr ""
+
+#: /system/ajax
+msgid "Save only the deepest !item"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"Saving the !item lineage means saving the <em>the !item itself and "
+"all\n"
+"      its ancestors</em>."
+msgstr ""
+
+#: /system/ajax
+msgid "Level choice"
+msgstr ""
+
+#: /system/ajax
+msgid "Force the user to choose a !item from a <em>deepest level</em>"
+msgstr ""
+
+#: /system/ajax
+msgid "Allow the user to choose a !item from <em>any level</em>"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"This setting determines from which level in the !hierarchy tree a\n"
+"      user can select a !item."
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"When enabled, a handle appears below the Hierarchical Select to "
+"allow\n"
+"      the user to dynamically resize it. Double clicking will toggle "
+"between\n"
+"      the smallest and a sane 'big size'."
+msgstr ""
+
+#: /system/ajax
+msgid "Level labels"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"When the user is allowed to choose a !item from any level in the\n"
+"      <em>Level choice</em> setting, you can enter a label for "
+"<em>each</em>\n"
+"      level.<br />\n"
+"      However, when the user is only allowed to choose a !item from "
+"the\n"
+"      deepest level, then you can only enter a label for the "
+"<em>root</em>\n"
+"      level."
+msgstr ""
+
+#: /system/ajax
+msgid "Enable level labels"
+msgstr ""
+
+#: /system/ajax
+msgid "Dropbox settings"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"The dropbox allows the user to <strong>make multiple "
+"selections</strong>."
+msgstr ""
+
+#: /system/ajax
+msgid "Enable the dropbox"
+msgstr ""
+
+#: /system/ajax
+msgid "The title you enter here appears above the dropbox."
+msgstr ""
+
+#: /system/ajax
+msgid "Limit the number of selections"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"Limits the number of selections that can be added to the dropbox.\n"
+"      0 means no limit.\n"
+"      <br />\n"
+"      Note: the \"Save !item lineage\" option has no effect on this, "
+"even if\n"
+"      a lineage consists of 3 !items, this will count as only one "
+"selection\n"
+"      in the dropbox."
+msgstr ""
+
+#: /system/ajax
+msgid "Reset selection of hierarchical select"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"This setting determines what will happen to the hierarchical select\n"
+"      when the user has added a selection to the dropbox."
+msgstr ""
+
+#: /system/ajax
+msgid "Editability settings"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"You can allow the user to <strong>add new !items to this\n"
+"        !hierarchy</strong> <em>through</em> Hierarchical Select."
+msgstr ""
+
+#: /system/ajax
+msgid "Allow creation of new !items"
+msgstr ""
+
+#: /system/ajax
+msgid "Allow creation of new levels"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"Allow the user to create child !items for !items that do not yet "
+"have\n"
+"        children."
+msgstr ""
+
+#: /system/ajax
+msgid "Maximum number of levels allowed"
+msgstr ""
+
+#: /system/ajax
+msgid "0 (no limit)"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"When the user is allowed to create new levels, this option prevents\n"
+"        the user from creating extremely deep !hierarchies."
+msgstr ""
+
+#: /system/ajax
+msgid "Level"
+msgstr ""
+
+#: /system/ajax
+msgid "Root level"
+msgstr ""
+
+#: /system/ajax
+msgid "Sublevel !depth"
+msgstr ""
+
+#: /system/ajax
+msgid "Allow"
+msgstr ""
+
+#: /system/ajax
+msgid "!item_type"
+msgstr ""
+
+#: /system/ajax
+msgid "Per-level settings for creating new !items."
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"The %item_type you enter for each level is what will be used in\n"
+"      each level to replace a \"&lt;create new item&gt;\" option with "
+"a\n"
+"      \"&lt;create new %item_type&gt;\" option, which is often more\n"
+"      intuitive."
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/os2intra_node_panes/panel_pane_7/relationship
+msgid "field collection item from field_os2intra_paragraph"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/os2intra_node_panes/panel_pane_7/style_plugin
+msgid "Select the field that will be used as the title."
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_node_panes/edit/panel_pane_7
+msgid "Content pane 7"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/os2intra_node_panes/panel_pane_1/relationship
+msgid "Indhold entity refereret fra field_os2intra_base_spotboxes"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/os2intra_node_panes/panel_pane_1/relationship
+msgid "Indhold refererer til Indhold fra field_os2intra_base_spotboxes"
+msgstr ""
+
+#: /admin/structure/types/manage/it-vejledning/fields/field_os2web_base_field_edi_tags/edit?destinations[0]=admin/structure/types/manage/it_vejledning/fields
+msgid "Use this term reference to set active trail"
+msgstr ""
+
+#: /admin/config/search/settings
+msgid "Transliterate search index and searched strings."
+msgstr ""
+
+#: /admin/config/search/settings
+msgid ""
+"Enable to allow searching and indexing using US-ASCII character set, "
+"i.e. to treat accented and unaccented letters the same."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/clear
+msgid "Clear index @name"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/clear
+msgid "Do you really want to clear the indexed data of this index?"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/clear
+msgid ""
+"This will remove all data currently indexed for this index. Before the "
+"data is reindexed, searches on the index will not return any results. "
+"This action cannot be undone."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/clear
+msgid "The index was successfully cleared."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index
+msgid "Indexing items"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index
+msgid "Completed about @percentage% of the indexing operation."
+msgstr ""
+
+#: /batch?id=29&op=do
+msgid "Successfully indexed @count items."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/Search/page/filter/search_api_views_fulltext
+msgid "Contains all of these words"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/Search/page/filter/search_api_views_fulltext
+msgid "Contains any of these words"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/Search/page/filter/search_api_views_fulltext
+msgid "Contains none of these words"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/Search/page/filter/search_api_views_fulltext
+msgid "This operator is only useful when using 'Search keys'."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/Search/page/filter/search_api_views_fulltext
+msgid "Use as"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/Search/page/filter/search_api_views_fulltext
+msgid ""
+"Search keys – multiple words will be split and the filter will "
+"influence relevance. You can change how search keys are parsed under "
+"\"Advanced\" > \"Query settings\"."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/Search/page/filter/search_api_views_fulltext
+msgid ""
+"Search filter – use as a single phrase that restricts the result set "
+"but doesn't influence relevance."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/Search/page/filter/search_api_views_fulltext
+msgid "Searched fields"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/Search/page/filter/search_api_views_fulltext
+msgid ""
+"Select the fields that will be searched. If no fields are selected, "
+"all available fulltext fields will be searched."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/Search/page/filter/search_api_views_fulltext
+msgid "Minimum keyword length"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/Search/page/filter/search_api_views_fulltext
+msgid ""
+"Minimum length of each word in the search keys. Leave empty to allow "
+"all words."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/fields
+msgid "The available fields were successfully changed."
 msgstr ""
 
 msgid "Public files"
@@ -27469,6 +29694,7 @@ msgstr "Oprette forrige/næste navigation."
 msgid "Webform"
 msgstr "Webformular"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Status"
 msgstr "Status"
 
@@ -28570,6 +30796,10 @@ msgstr "Vis en markør hvis indholdet er nyt eller opdateret."
 msgid "Show only content that is new or updated."
 msgstr "Vis kun indhold som er nyt eller opdateret."
 
+#: /install.php?profile=os2intra&locale=da&op=start&id=2
+msgid "Group membership overview"
+msgstr "Overblik over gruppemedlemskaber"
+
 msgid "Real name"
 msgstr "Rigtigt navn"
 
@@ -28708,6 +30938,7 @@ msgstr "Udvidelse"
 msgid "The extension of the file."
 msgstr "Filens endelse."
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Size"
 msgstr "Størrelse"
 
@@ -29932,10 +32163,11 @@ msgstr "Tilsluttet"
 msgid "Off"
 msgstr "Afbrudt"
 
+#: ; modules/filter/filter.admin.js; profiles/os2intra/modules/contrib/search_api/search_api.admin.js
 msgid "Enabled"
 msgstr "Aktiveret"
 
-#: ; profiles/os2intra/modules/contrib/taxonomy_menu_trails/js/node-type-form.js
+#: ; profiles/os2intra/modules/contrib/taxonomy_menu_trails/js/node-type-form.js; modules/filter/filter.admin.js; profiles/os2intra/modules/contrib/search_api/search_api.admin.js
 msgid "Disabled"
 msgstr "Deaktiveret"
 
@@ -31153,6 +33385,7 @@ msgstr "Opdatér stil"
 msgid "Confirm"
 msgstr "Bekræft"
 
+#: ; profiles/os2intra/modules/contrib/media/modules/media_wysiwyg/js/media_wysiwyg.format_form.js
 msgid "Submit"
 msgstr "Indsend"
 
@@ -31386,6 +33619,7 @@ msgstr ""
 "Sider på et givet niveau sorteres først efter vægt og dernæst "
 "efter titel."
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "none"
 msgstr "ingen"
 
@@ -31464,6 +33698,7 @@ msgstr "Format"
 msgid "History"
 msgstr "Historik"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Filename"
 msgstr "Filnavn"
 
@@ -31848,6 +34083,7 @@ msgstr "Advarsel"
 msgid "blocked"
 msgstr "blokeret"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "N/A"
 msgstr "N/A"
 
@@ -35939,11 +38175,11 @@ msgstr "Af @name"
 msgid "Not in menu"
 msgstr "Ikke i menu"
 
-#: ; sites/all/modules/contrib/pathauto/pathauto.js
+#: ; sites/all/modules/contrib/pathauto/pathauto.js; modules/path/path.js
 msgid "Alias: @alias"
 msgstr "Alias: @alias"
 
-#: ; sites/all/modules/contrib/pathauto/pathauto.js
+#: ; sites/all/modules/contrib/pathauto/pathauto.js; modules/path/path.js
 msgid "No alias"
 msgstr "Intet alias"
 
@@ -39579,6 +41815,7 @@ msgstr "Søg efter opdateringer til deaktiverede moduler og temaer"
 msgid "Fetcher"
 msgstr "Fetcher"
 
+#: ; modules/user/user.permissions.js
 msgid "This permission is inherited from the authenticated user role."
 msgstr "Denne tilladelse er arvet fra den godkendte brugerrolle."
 
@@ -39618,7 +41855,7 @@ msgstr "Kræver en titel"
 msgid "Private files"
 msgstr "Private filer"
 
-#: ; modules/block/block.js
+#: ; modules/block/block.js; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Not restricted"
 msgstr "Ikke begrænset"
 
@@ -40316,7 +42553,7 @@ msgstr ""
 msgid "Customizable per user"
 msgstr "Tilpasset pr. bruger"
 
-#: ; modules/block/block.js
+#: ; modules/block/block.js; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Not customizable"
 msgstr "Kan ikke tilpasses"
 
@@ -40465,7 +42702,7 @@ msgstr ""
 "kasser med indhold som renderes i et bestemt område eller en bestemt "
 "region på en webside."
 
-#: ; modules/block/block.js
+#: ; modules/block/block.js; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Restricted to certain pages"
 msgstr "Begrænset til bestemte sider"
 
@@ -52283,6 +54520,7 @@ msgstr "Formularelement til datovalg"
 msgid "Bypass access checks"
 msgstr "Tilsidesæt adgangskontrol"
 
+#: ; profiles/os2intra/modules/contrib/search_api/search_api.admin.js
 msgid "List additional actions"
 msgstr "Vis yderligere handlinger"
 
@@ -52388,6 +54626,7 @@ msgstr "Tilføj en boks"
 msgid "Maximize"
 msgstr "Maksimér"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js; sites/all/modules/contrib/taxonomy_manager/js/tree.js
 msgid "Close"
 msgstr "Luk"
 
@@ -52868,6 +55107,7 @@ msgstr ""
 "Indtast brugernavne på konti (adskilt med komma) der skal vises som "
 "hurtigskift-links i 'Skift bruger'-blokken."
 
+#: ; sites/all/modules/contrib/admin_menu/admin_menu.admin.js
 msgid "Also allow !name role to !permission?"
 msgstr "Giv tilladelsen !permission til rollen !name?"
 
@@ -53493,6 +55733,7 @@ msgstr "TIlgængelige knapper"
 msgid "\"@s\" created date"
 msgstr "\"@s\" oprettelsesdato"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "all"
 msgstr "alle"
 
@@ -53544,6 +55785,7 @@ msgstr "Datofelt"
 msgid "Interval"
 msgstr "Interval"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "Select"
 msgstr "Vælg"
 
@@ -56852,6 +59094,7 @@ msgstr "Minipanel: \"@title\""
 msgid "A panel layout broken up into rows and columns."
 msgstr "Et panel-layout opdelt i rækker og kolonner."
 
+#: ; profiles/os2intra/modules/contrib/panels/plugins/layouts/flexible/flexible-admin.js
 msgid "Show layout designer"
 msgstr "Vis layout-designer"
 
@@ -56900,6 +59143,7 @@ msgstr "Tilpas region"
 msgid "Region title"
 msgstr "Titel på region"
 
+#: ; profiles/os2intra/modules/contrib/panels/plugins/layouts/flexible/flexible-admin.js
 msgid "Hide layout designer"
 msgstr "Skjul layout-designer"
 
@@ -64576,6 +66820,7 @@ msgstr "Medie-browser til valg og upload af mediefiler"
 msgid "Upload a new file"
 msgstr "Upload en ny fil"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.browser.js
 msgid "Cannot continue, nothing selected"
 msgstr "Kan ikke fortsætte, intet valgt"
 
@@ -64682,6 +66927,7 @@ msgstr "Filen findes ikke."
 msgid "An error occurred and no file was uploaded."
 msgstr "Der opstod en fejl og der blev ikke uploadet en fil."
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Start upload"
 msgstr "Start upload"
 
@@ -64798,6 +67044,7 @@ msgstr "Media Internet Sources"
 msgid "Media browser theme"
 msgstr "Mediebrowser theme"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "If you switch views, you will lose your selection."
 msgstr "Hvis du skifter views mister du dine valg."
 
@@ -64841,6 +67088,7 @@ msgstr "Redigér flere filer"
 msgid "Allows displaying and submitting multiple forms in one form"
 msgstr "Gør det muligt at vise og sende flere formularer i en formular"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Add files"
 msgstr "Tilføj filer"
 
@@ -64975,6 +67223,7 @@ msgstr "Et enkelt domæne (standard)"
 msgid "Domain: @domain"
 msgstr "Domæne: @domain"
 
+#: ; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "One domain with multiple subdomains"
 msgstr "Ét domæne med flere subdomæner"
 
@@ -65042,6 +67291,7 @@ msgstr "Spor intern søgning"
 msgid "Privacy"
 msgstr "Privatliv"
 
+#: ; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Universal web tracking opt-out"
 msgstr "Universel afmelding af web tracking"
 
@@ -65090,30 +67340,39 @@ msgstr "Slot"
 msgid "Scope"
 msgstr "Dækning"
 
+#: ; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "A single domain"
 msgstr "Et enkelt domæne"
 
+#: ; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "All pages with exceptions"
 msgstr "Alle sider med undtagelser"
 
+#: ; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Excepted: @roles"
 msgstr "Undtaget: @roles"
 
+#: ; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "On by default with opt out"
 msgstr "Slået til som standard med opt out."
 
+#: ; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Off by default with opt in"
 msgstr "Slået fra som standard med opt in."
 
+#: ; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Downloads"
 msgstr "Downloads"
 
+#: ; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Not tracked"
 msgstr "Ikke sporet"
 
+#: ; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "@items enabled"
 msgstr "@items aktiveret"
 
+#: ; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "No privacy"
 msgstr "Ingen beskyttelse af personlige oplysninger"
 
@@ -65217,12 +67476,32 @@ msgstr "Få et overblik over importerede brugere"
 msgid "User activation"
 msgstr "Bruger aktivering"
 
+#: /
+msgid "Restore to defaults"
+msgstr "Gendan til standard"
+
+#: /admin/people/create
+msgid ""
+"As groups administrator, associate this user with groups you do "
+"<em>not</em> belong to."
+msgstr ""
+"Som gruppeadministrator, associer dette indhold med grupper, som du "
+"<em>ikke</em> tilhører."
+
 #: /hjaelp-og-vaerktoejer/it-vejledninger/kommer-den-saa-frem-automatisk
 msgid "Group content visibility"
 msgstr "Synlighed for indhold"
 
+#: /hjaelp-og-vaerktoejer/it-vejledninger/kommer-den-saa-frem-automatisk
+msgid "Group membership"
+msgstr "Gruppemedlemskab"
+
 msgid "Parent term(s)"
 msgstr "Overord"
+
+#: /node/add/os2intra-base-page
+msgid "Attach media"
+msgstr "Mediavælger"
 
 msgid "Previous state"
 msgstr "Forrige tilstand"
@@ -65250,6 +67529,10 @@ msgstr "Gul"
 
 msgid "Node type"
 msgstr "Indholdstype"
+
+#: /node/add/event
+msgid "to:"
+msgstr "til:"
 
 msgid "Registrations"
 msgstr "Tilmeldinger"
@@ -66287,4 +68570,27 @@ msgstr "Dagens ret"
 #: /mig-som-ansat
 msgid "Find colleague"
 msgstr "Find kollega"
+
+msgid "Map"
+msgstr "Knyt"
+
+msgid "Satellite"
+msgstr "Satellit"
+
+msgid "Hybrid"
+msgstr "Hybrid"
+
+msgid "Map type"
+msgstr "Korttype"
+
+msgid "Zoom level"
+msgstr "Zoomniveau"
+
+#: /intra
+msgid "@files downloadable files"
+msgstr "@files filer til download"
+
+#: /projekter/test-projektdefinition-af-testindhold
+msgid "@files downloadable file"
+msgstr "@files fil til download"
 

@@ -27,6 +27,7 @@
 // Links
 .fki-links {
 
+	.number-of-files a,
 	.flag {
 		font-size: @fki-links-font-size;
 		font-weight: @fki-links-font-weight;
@@ -47,6 +48,16 @@
 
 			&:before {
 				color: @fki-links-icon-hover-color;
+			}
+		}
+	}
+
+	.number-of-files {
+
+		a {
+
+			&:before {
+				content: @fa-var-cloud-download;
 			}
 		}
 	}
