@@ -27,6 +27,7 @@
             <!-- End - comment body -->
           <?php endif; ?>
 
+          <?php print render($content['links']) ?>
         </div>
       </div>
     </div>
