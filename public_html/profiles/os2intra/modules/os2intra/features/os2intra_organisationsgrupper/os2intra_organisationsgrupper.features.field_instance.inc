@@ -1021,14 +1021,14 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(
           'trim_length' => 150,
         ),
-        'type' => 'text_trimmed',
+        'type' => 'text_summary_or_trimmed',
         'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'trim_length' => 600,
+          'trim_length' => 400,
         ),
         'type' => 'text_summary_or_trimmed',
         'weight' => 1,
