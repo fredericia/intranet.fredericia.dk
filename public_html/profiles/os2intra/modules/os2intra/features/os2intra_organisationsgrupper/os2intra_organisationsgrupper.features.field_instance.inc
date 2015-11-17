@@ -31,11 +31,8 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 1,
       ),
     ),
@@ -110,9 +107,13 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'teaser_image',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
@@ -160,7 +161,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -192,7 +193,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -216,7 +217,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 8,
+      'weight' => 4,
     ),
     'widget_type' => 'options_select',
   );
@@ -249,7 +250,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -273,7 +274,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 3,
     ),
     'widget_type' => 'options_select',
   );
@@ -308,7 +309,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
     ),
     'display_label' => 1,
@@ -338,7 +339,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'og_hide' => TRUE,
       ),
       'type' => 'options_onoff',
-      'weight' => 3,
+      'weight' => 0,
     ),
   );
 
@@ -1020,14 +1021,14 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(
           'trim_length' => 150,
         ),
-        'type' => 'text_trimmed',
+        'type' => 'text_summary_or_trimmed',
         'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(
-          'trim_length' => 600,
+          'trim_length' => 400,
         ),
         'type' => 'text_summary_or_trimmed',
         'weight' => 1,
@@ -1136,59 +1137,6 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-post-field_os2intra_promoteto'.
-  $field_instances['node-post-field_os2intra_promoteto'] = array(
-    'bundle' => 'post',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-    ),
-    'display_label' => '',
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div_div_div',
-    'field_name' => 'field_os2intra_promoteto',
-    'label' => 'Forfrem til',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-        'taxonomy-index' => array(
-          'status' => TRUE,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 12,
-    ),
-  );
-
   // Exported field_instance: 'node-post-og_group_ref'.
   $field_instances['node-post-og_group_ref'] = array(
     'bundle' => 'post',
@@ -1219,7 +1167,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'entity_type' => 'node',
     'fences_wrapper' => 'div_div_div',
     'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
+    'label' => 'Gruppe / Afdeling',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -1234,11 +1182,11 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'action' => 'hide',
+          'action' => 'none',
           'action_on_edit' => 0,
           'fallback' => 'none',
           'providers' => array(
-            'og_context' => FALSE,
+            'og_context' => 0,
             'url' => 1,
           ),
           'skip_perm' => 0,
@@ -1264,7 +1212,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 13,
+      'weight' => 25,
     ),
   );
 
@@ -1314,7 +1262,6 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Billeder');
   t('Body');
   t('Determine if this is an OG group.');
-  t('Forfrem til');
   t('Forfremmet indhold');
   t('Formål med gruppe');
   t('Group');
@@ -1322,6 +1269,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Group roles and permissions');
   t('Group visibility');
   t('Groups audience');
+  t('Gruppe / Afdeling');
   t('Gruppelogo');
   t('Leder');
   t('Organisation');

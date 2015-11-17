@@ -509,7 +509,7 @@ function os2intra_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -525,8 +525,8 @@ function os2intra_content_types_field_default_field_instances() {
       'better_formats' => array(
         'allowed_formats' => array(
           'fuld_html' => 0,
-          'indhold' => 0,
-          'kommentar' => 'kommentar',
+          'indhold' => 'indhold',
+          'kommentar' => 0,
           'plain_text' => 0,
         ),
         'allowed_formats_toggle' => 1,
@@ -571,7 +571,7 @@ function os2intra_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -697,7 +697,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'node',
@@ -759,7 +759,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 11,
       ),
     ),
     'entity_type' => 'node',
@@ -892,10 +892,14 @@ function os2intra_content_types_field_default_field_instances() {
         'weight' => 5,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'default',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -944,7 +948,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 10,
       ),
     ),
     'display_label' => '',
@@ -998,7 +1002,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 8,
       ),
     ),
     'display_label' => '',
@@ -1051,7 +1055,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -1097,7 +1101,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -1143,7 +1147,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -1198,7 +1202,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -1245,7 +1249,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'node',
@@ -1289,7 +1293,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -1376,21 +1380,48 @@ function os2intra_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
+    'label' => 'Tekst',
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'fuld_html' => 'fuld_html',
+          'indhold' => 'indhold',
+          'kommentar' => 'kommentar',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'fuld_html' => array(
+              'weight' => 0,
+            ),
+            'indhold' => array(
+              'weight' => 0,
+            ),
+            'kommentar' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -1580,6 +1611,85 @@ function os2intra_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-it_vejledning-field_os2intra_images'.
+  $field_instances['node-it_vejledning-field_os2intra_images'] = array(
+    'bundle' => 'it_vejledning',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 7,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2intra_images',
+    'label' => 'Billeder',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          '4_col_image_-_520x220' => 0,
+          'normal' => 'normal',
+          'profilbillede' => 0,
+          'profile_image_default' => 0,
+          'spotboks' => 0,
+        ),
+      ),
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 'video',
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 16,
+    ),
+  );
+
   // Exported field_instance: 'node-it_vejledning-field_os2intra_related_ref'.
   $field_instances['node-it_vejledning-field_os2intra_related_ref'] = array(
     'bundle' => 'it_vejledning',
@@ -1672,6 +1782,273 @@ function os2intra_content_types_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-it_vejledning-field_os2web_base_field_edi_tags'.
+  $field_instances['node-it_vejledning-field_os2web_base_field_edi_tags'] = array(
+    'bundle' => 'it_vejledning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 9,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_edi_tags',
+    'label' => 'Stikord',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-it_vejledning-field_os2web_base_field_intro'.
+  $field_instances['node-it_vejledning-field_os2web_base_field_intro'] = array(
+    'bundle' => 'it_vejledning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_intro',
+    'label' => 'Intro',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'fuld_html' => 'fuld_html',
+          'indhold' => 'indhold',
+          'kommentar' => 'kommentar',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'fuld_html' => array(
+              'weight' => 0,
+            ),
+            'indhold' => array(
+              'weight' => 0,
+            ),
+            'kommentar' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-it_vejledning-field_os2web_base_field_kle_ref'.
+  $field_instances['node-it_vejledning-field_os2web_base_field_kle_ref'] = array(
+    'bundle' => 'it_vejledning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 11,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_kle_ref',
+    'label' => 'KL Emneord',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-it_vejledning-field_os2web_base_field_media'.
+  $field_instances['node-it_vejledning-field_os2web_base_field_media'] = array(
+    'bundle' => 'it_vejledning',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 8,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_media',
+    'label' => 'Filer',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'pdf doc docx xls xlsx ppt pptx',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance: 'node-it_vejledning-field_os2web_webform_ref'.
+  $field_instances['node-it_vejledning-field_os2web_webform_ref'] = array(
+    'bundle' => 'it_vejledning',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_webform_ref',
+    'label' => 'Indlejr webform',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 12,
     ),
   );
 
@@ -1818,7 +2195,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 6,
       ),
       'list' => array(
         'label' => 'above',
@@ -1928,64 +2305,6 @@ function os2intra_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2intra_base_page-field_os2intra_outdated_date'.
-  $field_instances['node-os2intra_base_page-field_os2intra_outdated_date'] = array(
-    'bundle' => 'os2intra_base_page',
-    'deleted' => 0,
-    'description' => 'At this date, the content will be flagged expired.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_os2intra_outdated_date',
-    'label' => 'Expire date',
-    'required' => FALSE,
-    'settings' => array(
-      'default_value' => 'blank',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'date',
-      'settings' => array(
-        'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
-        'input_format_custom' => '',
-        'label_position' => 'above',
-        'text_parts' => array(),
-        'year_range' => '-3:+3',
-      ),
-      'type' => 'date_select',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance:
   // 'node-os2intra_base_page-field_os2intra_paragraph'.
   $field_instances['node-os2intra_base_page-field_os2intra_paragraph'] = array(
     'bundle' => 'os2intra_base_page',
@@ -2030,6 +2349,59 @@ function os2intra_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-os2intra_base_page-field_os2intra_selvbetjening_ref'.
+  $field_instances['node-os2intra_base_page-field_os2intra_selvbetjening_ref'] = array(
+    'bundle' => 'os2intra_base_page',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2intra_selvbetjening_ref',
+    'label' => 'Selvbetjening',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 25,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-os2intra_base_page-field_os2web_base_field_edi_tags'.
   $field_instances['node-os2intra_base_page-field_os2web_base_field_edi_tags'] = array(
     'bundle' => 'os2intra_base_page',
@@ -2041,7 +2413,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'list' => array(
         'label' => 'above',
@@ -2077,7 +2449,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 23,
+      'weight' => 5,
     ),
   );
 
@@ -2120,7 +2492,7 @@ function os2intra_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_hidlinks',
-    'label' => 'Skjul relaterede links',
+    'label' => 'Skjul automatisk relaterede links',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -2132,7 +2504,7 @@ function os2intra_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 6,
+      'weight' => 26,
     ),
   );
 
@@ -2259,7 +2631,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 22,
+      'weight' => 6,
     ),
   );
 
@@ -2350,7 +2722,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 7,
       ),
       'list' => array(
         'label' => 'above',
@@ -2386,35 +2758,30 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 7,
+      'weight' => 27,
     ),
   );
 
-  // Exported field_instance: 'node-os2intra_base_page-field_synlighed'.
-  $field_instances['node-os2intra_base_page-field_synlighed'] = array(
+  // Exported field_instance:
+  // 'node-os2intra_base_page-field_os2web_webform_ref'.
+  $field_instances['node-os2intra_base_page-field_os2web_webform_ref'] = array(
     'bundle' => 'os2intra_base_page',
-    'default_value' => array(
-      0 => array(
-        'target_id' => 2644,
-      ),
-    ),
+    'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'default',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 3,
       ),
       'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'print' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2428,16 +2795,13 @@ function os2intra_content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_synlighed',
-    'label' => 'Synlighed',
+    'field_name' => 'field_os2web_webform_ref',
+    'label' => 'Indlejr webform',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
           'status' => 0,
-        ),
-        'taxonomy-index' => array(
-          'status' => TRUE,
         ),
       ),
       'user_register_form' => FALSE,
@@ -2445,9 +2809,7 @@ function os2intra_content_types_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 25,
     ),
@@ -3135,7 +3497,7 @@ function os2intra_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 26,
+      'weight' => 28,
     ),
   );
 
@@ -3190,7 +3552,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 24,
+      'weight' => 26,
     ),
   );
 
@@ -3291,7 +3653,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 25,
+      'weight' => 27,
     ),
   );
 
@@ -3337,12 +3699,12 @@ function os2intra_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'hs_taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'taxonomy_hs',
       'weight' => 3,
     ),
   );
@@ -4783,7 +5145,6 @@ function os2intra_content_types_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Afsnit');
-  t('At this date, the content will be flagged expired.');
   t('Beskedmodtagere');
   t('Billede');
   t('Billeder');
@@ -4792,7 +5153,6 @@ function os2intra_content_types_field_default_field_instances() {
   t('Dato');
   t('Ekstern URL');
   t('Ekstra tekst');
-  t('Expire date');
   t('Filer');
   t('Fremhæv indhold');
   t('Fysisk lokation');
@@ -4810,7 +5170,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Placering');
   t('Relaterede sider');
   t('Selvbetjening');
-  t('Skjul relaterede links');
+  t('Skjul automatisk relaterede links');
   t('Spotbillede');
   t('Spotbokse');
   t('Stikord');

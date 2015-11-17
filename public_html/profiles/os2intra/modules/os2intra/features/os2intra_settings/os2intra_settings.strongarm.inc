@@ -36,10 +36,11 @@ function os2intra_settings_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'clone_omitted';
   $strongarm->value = array(
-    'os2intra_org_group_unit' => 0,
+    'os2intra_org_group_unit' => 'os2intra_org_group_unit',
+    'os2intra_group' => 'os2intra_group',
+    'node_basket' => 'node_basket',
     'event' => 0,
     'os2intra_canteen_menu' => 0,
-    'os2intra_group' => 0,
     'it_vejledning' => 0,
     'post' => 0,
     'os2intra_message_notification' => 0,

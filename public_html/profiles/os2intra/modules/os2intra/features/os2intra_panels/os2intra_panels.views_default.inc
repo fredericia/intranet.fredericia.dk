@@ -536,8 +536,15 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_os2intra_base_spotboxes_node']['id'] = 'reverse_field_os2intra_base_spotboxes_node';
+  $handler->display->display_options['relationships']['reverse_field_os2intra_base_spotboxes_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_os2intra_base_spotboxes_node']['field'] = 'reverse_field_os2intra_base_spotboxes_node';
+  $handler->display->display_options['relationships']['reverse_field_os2intra_base_spotboxes_node']['label'] = 'Indhold refererer til Indhold fra field_os2intra_base_spotboxes';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Spotbokse */
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['id'] = 'field_os2intra_base_spotboxes';
@@ -557,6 +564,18 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['separator'] = '';
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['field_api_classes'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_os2intra_base_spotboxes_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -638,7 +657,7 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Afdeling */
+  /* Field: Content: Ovenstående Afdeling */
   $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
@@ -660,7 +679,7 @@ function os2intra_panels_views_default_views() {
   /* Display: Gruppe */
   $handler = $view->new_display('panel_pane', 'Gruppe', 'panel_pane_4');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Groups audience */
+  /* Field: Content: Gruppe / Afdeling */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -668,7 +687,7 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['og_group_ref']['type'] = 'entityreference_entity_view';
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
-    'view_mode' => 'teaser',
+    'view_mode' => 'list',
     'links' => 0,
   );
   $handler->display->display_options['fields']['og_group_ref']['delta_offset'] = '0';
@@ -694,17 +713,17 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['relationships']['field_os2intra_physical_location_target_id']['field'] = 'field_os2intra_physical_location_target_id';
   $handler->display->display_options['relationships']['field_os2intra_physical_location_target_id']['label'] = 'Ord i ordforråd entity referenced from field_os2intra_physical_location';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: GIS adresse */
-  $handler->display->display_options['fields']['field_os2web_taxonomies_address']['id'] = 'field_os2web_taxonomies_address';
-  $handler->display->display_options['fields']['field_os2web_taxonomies_address']['table'] = 'field_data_field_os2web_taxonomies_address';
-  $handler->display->display_options['fields']['field_os2web_taxonomies_address']['field'] = 'field_os2web_taxonomies_address';
-  $handler->display->display_options['fields']['field_os2web_taxonomies_address']['relationship'] = 'field_os2intra_physical_location_target_id';
-  $handler->display->display_options['fields']['field_os2web_taxonomies_address']['label'] = '';
-  $handler->display->display_options['fields']['field_os2web_taxonomies_address']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_os2web_taxonomies_address']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2web_taxonomies_address']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_os2web_taxonomies_address']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_os2web_taxonomies_address']['field_api_classes'] = TRUE;
+  /* Field: Field: Fysisk lokation */
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['id'] = 'field_os2intra_physical_location';
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['table'] = 'field_data_field_os2intra_physical_location';
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['field'] = 'field_os2intra_physical_location';
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['settings'] = array(
+    'view_mode' => 'teaser',
+    'links' => 0,
+  );
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'context',
@@ -772,6 +791,66 @@ function os2intra_panels_views_default_views() {
       'label' => 'Indhold: Nid',
     ),
   );
+
+  /* Display: Afsnit */
+  $handler = $view->new_display('panel_pane', 'Afsnit', 'panel_pane_7');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_accordion_plugin_style';
+  $handler->display->display_options['style_options']['title_field'] = 'field_os2intra_paragraph_title';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Afsnit (field_os2intra_paragraph) */
+  $handler->display->display_options['relationships']['field_os2intra_paragraph_value']['id'] = 'field_os2intra_paragraph_value';
+  $handler->display->display_options['relationships']['field_os2intra_paragraph_value']['table'] = 'field_data_field_os2intra_paragraph';
+  $handler->display->display_options['relationships']['field_os2intra_paragraph_value']['field'] = 'field_os2intra_paragraph_value';
+  $handler->display->display_options['relationships']['field_os2intra_paragraph_value']['delta'] = '-1';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Afsnit */
+  $handler->display->display_options['fields']['field_os2intra_paragraph']['id'] = 'field_os2intra_paragraph';
+  $handler->display->display_options['fields']['field_os2intra_paragraph']['table'] = 'field_data_field_os2intra_paragraph';
+  $handler->display->display_options['fields']['field_os2intra_paragraph']['field'] = 'field_os2intra_paragraph';
+  $handler->display->display_options['fields']['field_os2intra_paragraph']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_paragraph']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_paragraph']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_paragraph']['settings'] = array(
+    'edit' => 'Redigér',
+    'delete' => 'Slet',
+    'add' => 'Tilføj',
+    'description' => 1,
+    'view_mode' => 'full',
+  );
+  $handler->display->display_options['fields']['field_os2intra_paragraph']['delta_offset'] = '0';
+  /* Field: Field collection item: Afsnit */
+  $handler->display->display_options['fields']['field_os2intra_paragraph_text']['id'] = 'field_os2intra_paragraph_text';
+  $handler->display->display_options['fields']['field_os2intra_paragraph_text']['table'] = 'field_data_field_os2intra_paragraph_text';
+  $handler->display->display_options['fields']['field_os2intra_paragraph_text']['field'] = 'field_os2intra_paragraph_text';
+  $handler->display->display_options['fields']['field_os2intra_paragraph_text']['relationship'] = 'field_os2intra_paragraph_value';
+  $handler->display->display_options['fields']['field_os2intra_paragraph_text']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_paragraph_text']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Overskrift */
+  $handler->display->display_options['fields']['field_os2intra_paragraph_title']['id'] = 'field_os2intra_paragraph_title';
+  $handler->display->display_options['fields']['field_os2intra_paragraph_title']['table'] = 'field_data_field_os2intra_paragraph_title';
+  $handler->display->display_options['fields']['field_os2intra_paragraph_title']['field'] = 'field_os2intra_paragraph_title';
+  $handler->display->display_options['fields']['field_os2intra_paragraph_title']['relationship'] = 'field_os2intra_paragraph_value';
+  $handler->display->display_options['fields']['field_os2intra_paragraph_title']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_paragraph_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_paragraph_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $translatables['os2intra_node_panes'] = array(
     t('Master'),
     t('more'),
@@ -789,6 +868,7 @@ function os2intra_panels_views_default_views() {
     t('last »'),
     t('Alle'),
     t('Spotbokse'),
+    t('Indhold refererer til Indhold fra field_os2intra_base_spotboxes'),
     t('View panes'),
     t('Kategorier'),
     t('Afdeling'),
@@ -797,6 +877,8 @@ function os2intra_panels_views_default_views() {
     t('Adresse'),
     t('Ord i ordforråd entity referenced from field_os2intra_physical_location'),
     t('Filer'),
+    t('Afsnit'),
+    t('field collection item from field_os2intra_paragraph'),
   );
   $export['os2intra_node_panes'] = $view;
 

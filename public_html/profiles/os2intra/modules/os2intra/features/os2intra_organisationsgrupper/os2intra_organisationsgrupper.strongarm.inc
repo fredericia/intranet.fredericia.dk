@@ -191,13 +191,13 @@ function os2intra_organisationsgrupper_strongarm() {
           'weight' => '7',
         ),
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '4',
         ),
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '5',
         ),
       ),
       'display' => array(),
@@ -297,6 +297,9 @@ function os2intra_organisationsgrupper_strongarm() {
         ),
         'redirect' => array(
           'weight' => '6',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '0',
         ),
       ),
       'display' => array(),

@@ -253,6 +253,11 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'post' => 'post',
   );
+  /* Filter criterion: Content: Fremhæv indhold (field_os2web_base_field_promote) */
+  $handler->display->display_options['filters']['field_os2web_base_field_promote_target_id']['id'] = 'field_os2web_base_field_promote_target_id';
+  $handler->display->display_options['filters']['field_os2web_base_field_promote_target_id']['table'] = 'field_data_field_os2web_base_field_promote';
+  $handler->display->display_options['filters']['field_os2web_base_field_promote_target_id']['field'] = 'field_os2web_base_field_promote_target_id';
+  $handler->display->display_options['filters']['field_os2web_base_field_promote_target_id']['value']['value'] = '6851';
   $translatables['os2intra_forside_views'] = array(
     t('Master'),
     t('OS2intra Forside views'),
@@ -996,6 +1001,84 @@ function os2intra_frontpage_views_default_views() {
   $export['os2intra_group_term_activity'] = $view;
 
   $view = new view();
+  $view->name = 'os2intra_markedspladsen';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Markedspladsen';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Markedspladsen';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'list';
+  /* Relationship: OG membership: OG membership from Node */
+  $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
+  $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: OG membership: Group ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['gid']['default_argument_options']['argument'] = '93';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['os2intra_markedspladsen'] = array(
+    t('Master'),
+    t('Markedspladsen'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('OG membership from node'),
+    t('Alle'),
+    t('Block'),
+  );
+  $export['os2intra_markedspladsen'] = $view;
+
+  $view = new view();
   $view->name = 'os2intra_user_groups';
   $view->description = 'Show groups of a user.';
   $view->tag = 'og';
@@ -1358,7 +1441,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_date']['id'] = 'field_os2intra_date';
   $handler->display->display_options['fields']['field_os2intra_date']['table'] = 'field_data_field_os2intra_date';
   $handler->display->display_options['fields']['field_os2intra_date']['field'] = 'field_os2intra_date';
-  /* Field: Content: Groups audience */
+  /* Field: Content: Gruppe / Afdeling */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -1528,7 +1611,7 @@ function os2intra_frontpage_views_default_views() {
     t('Fysisk lokation'),
     t('Billede'),
     t('Dato'),
-    t('Groups audience'),
+    t('Gruppe / Afdeling'),
     t('Alle'),
     t('View panes'),
     t('You created - pane'),

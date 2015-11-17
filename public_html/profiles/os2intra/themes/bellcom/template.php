@@ -69,18 +69,25 @@ function bellcom_preprocess_node(&$variables) {
     $function($variables);
   }
 
+  // Title (shortened)
+  $variables['title_shortened'] = _bellcom_text_shortener($variables['title'], 50);
+
+  // Updated at
   if ($updated_at = $variables['node']->changed) {
     $variables['updated_at_short'] = format_date($updated_at, 'short');
     $variables['updated_at_medium'] = format_date($updated_at, 'medium');
     $variables['updated_at_long'] = format_date($updated_at, 'long');
     $variables['updated_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $updated_at))));;
+    $variables['updated_at_seperated'] = _bellcom_seperated_dates($updated_at);
   }
 
+  // Created at
   if ($created_at = $variables['node']->created) {
     $variables['created_at_short'] = format_date($created_at, 'short');
     $variables['created_at_medium'] = format_date($created_at, 'medium');
     $variables['created_at_long'] = format_date($created_at, 'long');
     $variables['created_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $created_at))));
+    $variables['created_at_seperated'] = _bellcom_seperated_dates($created_at);
   }
 }
 
@@ -89,18 +96,22 @@ function bellcom_preprocess_node(&$variables) {
  */
 function bellcom_preprocess_comment(&$variables) {
 
+  // Updated at
   if ($updated_at = $variables['comment']->changed) {
     $variables['updated_at_short'] = format_date($updated_at, 'short');
     $variables['updated_at_medium'] = format_date($updated_at, 'medium');
     $variables['updated_at_long'] = format_date($updated_at, 'long');
     $variables['updated_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $updated_at))));
+    $variables['updated_at_seperated'] = _bellcom_seperated_dates($updated_at);
   }
 
+  // Created at
   if ($created_at = $variables['comment']->created) {
     $variables['created_at_short'] = format_date($created_at, 'short');
     $variables['created_at_medium'] = format_date($created_at, 'medium');
     $variables['created_at_long'] = format_date($created_at, 'long');
     $variables['created_at_ago'] = t('@time ago', array('@time' => format_interval((REQUEST_TIME - $created_at))));
+    $variables['created_at_seperated'] = _bellcom_seperated_dates($created_at);
   }
 }
 
@@ -252,4 +263,76 @@ function bellcom_menu_link__sidebar(array $variables) {
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
 
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+}
+
+/*
+ * Seperated dates
+ * Heavily inspired by drupals format_date() function.
+ */
+function _bellcom_seperated_dates($timestamp) {
+  $seperated_dates = array();
+
+  // Use the advanced drupal_static() pattern, since this is called very often.
+  static $drupal_static_fast;
+  if (!isset($drupal_static_fast)) {
+    $drupal_static_fast['timezones'] = &drupal_static(__FUNCTION__);
+  }
+  $timezones = &$drupal_static_fast['timezones'];
+
+  if (!isset($timezone)) {
+    $timezone = date_default_timezone_get();
+  }
+  // Store DateTimeZone objects in an array rather than repeatedly
+  // constructing identical objects over the life of a request.
+  if (!isset($timezones[$timezone])) {
+    $timezones[$timezone] = timezone_open($timezone);
+  }
+
+  // Use the default langcode if none is set.
+  global $language;
+  if (empty($langcode)) {
+    $langcode = isset($language->language) ? $language->language : 'en';
+  }
+
+  // Create a DateTime object from the timestamp.
+  $date_time = date_create('@' . $timestamp);
+  // Set the time zone for the DateTime object.
+  date_timezone_set($date_time, $timezones[$timezone]);
+
+  // Seperated dates
+  $seperated_dates = array(
+    'day' => array(
+      'integer' => date_format($date_time, 'd'),
+      'short' => t(date_format($date_time, 'D')),
+      'full' => t(date_format($date_time, 'l')),
+    ),
+    'month' => array(
+      'integer' => date_format($date_time, 'm'),
+      'short' => t(date_format($date_time, 'M')),
+      'full' => t(date_format($date_time, 'F')),
+    ),
+    'year' => array(
+      'short' => date_format($date_time, 'y'),
+      'full' => date_format($date_time, 'Y'),
+    ),
+    'week' => date_format($date_time, 'W'),
+  );
+
+  return $seperated_dates;
+}
+
+/*
+ * Text shortener
+ */
+function _bellcom_text_shortener($text_string, $max_length) {
+  $alter = array(
+    'max_length'    => $max_length,
+    'ellipsis'      => TRUE,
+    'word_boundary' => TRUE,
+    'html'          => TRUE,
+  );
+
+  $shortened_string = views_trim_text($alter, $text_string);
+
+  return $shortened_string;
 }
