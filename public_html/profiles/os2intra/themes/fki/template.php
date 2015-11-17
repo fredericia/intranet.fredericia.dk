@@ -189,6 +189,26 @@ function fki_preprocess_node__spotbox(&$variables) {
   }
 }
 
+/*
+ * OS2Intra base page
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__os2intra_base_page(&$variables) {
+  if ($variables['view_mode'] == 'full') {
+    $variables['sections'] = views_embed_view('os2intra_node_panes', array('panel_pane_7'));
+  }
+}
+
+/*
+ * IT vejledning
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__it_vejledning(&$variables) {
+  if ($variables['view_mode'] == 'full') {
+    $variables['sections'] = views_embed_view('os2intra_node_panes', array('panel_pane_7'));
+  }
+}
+
 function fki_theme(&$existing, $type, $theme, $path) {
   $hooks = array();
 

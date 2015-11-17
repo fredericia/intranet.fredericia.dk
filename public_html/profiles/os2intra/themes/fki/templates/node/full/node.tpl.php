@@ -61,6 +61,10 @@
       <!-- Begin - body -->
       <div class="fki-full-body">
         <?php print render($content); ?>
+
+        <?php if (isset($sections)): ?>
+          <?php print $sections; ?>
+        <?php endif; ?>
       </div>
       <!-- End - body -->
     <?php endif; ?>
