@@ -70,6 +70,68 @@ function os2intra_organisationsgrupper_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_deltagere|node|os2intra_referat|form';
+  $field_group->group_name = 'group_deltagere';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_referat';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_referatform';
+  $field_group->data = array(
+    'label' => 'Mødedeltagere',
+    'weight' => '13',
+    'children' => array(
+      0 => 'field_os2intra_referat_deltagere',
+      1 => 'field_os2intra_referat_afbud',
+      2 => 'field_os2intra_referat_moedelede',
+      3 => 'field_os2intra_referat_refernt',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-deltagere field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_deltagere|node|os2intra_referat|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_detaljer|node|os2intra_referat|form';
+  $field_group->group_name = 'group_detaljer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_referat';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_referatform';
+  $field_group->data = array(
+    'label' => 'Detaljer',
+    'weight' => '12',
+    'children' => array(
+      0 => 'field_os2intra_referat_moedetype',
+      1 => 'field_os2intra_referat_moedested',
+      2 => 'field_os2intra_referat_dato',
+      3 => 'field_os2intra_referat_event',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-detaljer field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_detaljer|node|os2intra_referat|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_group|node|os2intra_group|form';
   $field_group->group_name = 'group_group';
   $field_group->entity_type = 'node';
@@ -151,6 +213,35 @@ function os2intra_organisationsgrupper_field_group_info() {
     ),
   );
   $export['group_indstillinger|node|os2intra_group|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_indstillinger|node|os2intra_referat|form';
+  $field_group->group_name = 'group_indstillinger';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_referat';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_referatform';
+  $field_group->data = array(
+    'label' => 'Indstillinger',
+    'weight' => '14',
+    'children' => array(
+      0 => 'field_os2web_base_field_media',
+      1 => 'scheduler_settings',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-indstillinger field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_indstillinger|node|os2intra_referat|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -300,6 +391,65 @@ function os2intra_organisationsgrupper_field_group_info() {
     ),
   );
   $export['group_meta|node|post|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_referatform|node|os2intra_referat|form';
+  $field_group->group_name = 'group_referatform';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_referat';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Referatform',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_referat',
+      1 => 'group_indstillinger',
+      2 => 'group_deltagere',
+      3 => 'group_detaljer',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-referatform field-group-htabs',
+      ),
+    ),
+  );
+  $export['group_referatform|node|os2intra_referat|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_referat|node|os2intra_referat|form';
+  $field_group->group_name = 'group_referat';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_referat';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_referatform';
+  $field_group->data = array(
+    'label' => 'Referat',
+    'weight' => '11',
+    'children' => array(
+      0 => 'og_group_ref',
+      1 => 'body',
+      2 => 'field_os2intra_referat_type',
+      3 => 'title',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-referat field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_referat|node|os2intra_referat|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

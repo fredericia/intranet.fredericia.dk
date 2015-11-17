@@ -44,6 +44,14 @@ function os2intra_organisationsgrupper_node_info() {
       'title_label' => t('Navn'),
       'help' => '',
     ),
+    'os2intra_referat' => array(
+      'name' => t('Referat'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'post' => array(
       'name' => t('Indlæg'),
       'base' => 'node_content',
