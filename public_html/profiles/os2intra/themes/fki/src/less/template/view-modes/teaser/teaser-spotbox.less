@@ -18,6 +18,12 @@
 @fki-spotbox-with-image-background-color: @content-bg;
 @fki-spotbox-with-image-heading-color: @brand-primary;
 
+// Responsive
+@fki-spotbox-xs-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@fki-spotbox-sm-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@fki-spotbox-md-stacked-spacing: floor( (@grid-gutter-width / 2) );
+@fki-spotbox-lg-stacked-spacing: floor( (@grid-gutter-width / 2) );
+
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
@@ -104,7 +110,9 @@
 @media @media-query-mobile-only {
 
 	// Spotbox
-	.fki-spotbox-teaser {}
+	.fki-spotbox-teaser {
+		margin-bottom: @fki-spotbox-xs-stacked-spacing !important;
+	}
 }
 
 // Tablet
@@ -118,7 +126,9 @@
 @media @media-query-tablet-only {
 
 	// Spotbox
-	.fki-spotbox-teaser {}
+	.fki-spotbox-teaser {
+		margin-bottom: @fki-spotbox-sm-stacked-spacing !important;
+	}
 }
 
 // Desktop
@@ -132,7 +142,9 @@
 @media @media-query-desktop-only {
 
 	// Spotbox
-	.fki-spotbox-teaser {}
+	.fki-spotbox-teaser {
+		margin-bottom: @fki-spotbox-md-stacked-spacing !important;
+	}
 }
 
 // Large desktop
@@ -146,7 +158,9 @@
 @media @media-query-large-desktop-only {
 
 	// Spotbox
-	.fki-spotbox-teaser {}
+	.fki-spotbox-teaser {
+		margin-bottom: @fki-spotbox-lg-stacked-spacing !important;
+	}
 }
 
 // Print

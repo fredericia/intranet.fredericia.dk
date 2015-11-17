@@ -6331,6 +6331,30 @@
 }
 
 @media screen and (max-width: 767px) {
+  .fki-spotbox-teaser {
+    margin-bottom: 10px !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-spotbox-teaser {
+    margin-bottom: 10px !important;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-spotbox-teaser {
+    margin-bottom: 15px !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-spotbox-teaser {
+    margin-bottom: 15px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .fki-message-notification-teaser.fki-message-notification-teaser-variant-with-image .fki-teaser-heading .fki-teaser-heading-title {
     font-size: 14px;
     line-height: 15px;

@@ -64,7 +64,7 @@
 
         <?php if (isset($sections)): ?>
           <?php print $sections; ?>
-        <?php endif; ?>
+        <?php endif ?>
       </div>
       <!-- End - body -->
     <?php endif; ?>
