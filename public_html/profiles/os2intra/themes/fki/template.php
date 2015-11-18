@@ -209,6 +209,37 @@ function fki_preprocess_node__it_vejledning(&$variables) {
   }
 }
 
+/*
+ * Node basket
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__node_basket(&$variables) {
+  global $user;
+
+  // I am author
+  if ($user->uid == $variables['uid']) {
+    $variables['action_button'] = '<a href="/node/' . $variables['nid'] . '/delete" class="pull-right">' . t('Delete') . '</a>';
+  }
+
+  // I am not author
+  else {
+    $user = user_load($user->uid);
+
+    if ($field_subscribed = field_get_items('user', $user, 'field_node_basket_toolboxes')) {
+
+      // It's already added
+      if (in_array($variables['nid'], $field_subscribed)) {
+        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Remove') . '</a>';
+      }
+
+      // Not added
+      else {
+        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Add') . '</a>';
+      }
+    }
+  }
+}
+
 function fki_theme(&$existing, $type, $theme, $path) {
   $hooks = array();
 
