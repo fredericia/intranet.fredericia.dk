@@ -32,8 +32,8 @@ function node_basket_menu(){
     'title' => t('Node basket'),
     'page callback' => 'node_basket_basket_view',
     'access arguments' => array('use node basket'),
-    'menu_name' => 'user-menu',
-    'type' => MENU_NORMAL_ITEM,
+//    'menu_name' => 'user-menu',
+//    'type' => MENU_NORMAL_ITEM,
     'weight' => -8,
   );
 
@@ -152,7 +152,7 @@ function node_basket_basket($action, $arg1, $arg2 = NULL){
     case 'remove':
       $return['msg'] = 'failed to remove node from basket';
         if($msg = node_basket_remove_node_from_basket($arg1)){
-          $return['err'] = FALSE;
+          $return['err'] = FALSE;http://fredericia_intranet.mn/mig-som-ansat
           $return['msg'] = $msg;
         }
       break;

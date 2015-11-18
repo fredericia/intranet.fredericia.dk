@@ -74,7 +74,7 @@ function node_basket_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -125,7 +125,7 @@ function node_basket_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
@@ -197,10 +197,9 @@ function node_basket_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'links' => 0,
-          'view_mode' => 'includeable',
+          'link' => 1,
         ),
-        'type' => 'entityreference_entity_view',
+        'type' => 'entityreference_label',
         'weight' => 1,
       ),
       'includeable' => array(
