@@ -23,6 +23,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -99,6 +105,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 3,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -183,6 +195,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 5,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -239,6 +257,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 4,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -299,6 +323,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'og_group_subscribe',
         'weight' => 0,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -357,6 +387,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -407,6 +443,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -471,6 +513,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 7,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -528,6 +576,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 5,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -583,6 +637,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 6,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -657,6 +717,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 8,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -712,6 +778,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 4,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -771,6 +843,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 10,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -826,6 +904,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 1,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -885,6 +969,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 9,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -961,6 +1051,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 11,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1015,6 +1111,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1065,6 +1167,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 7,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -1145,6 +1253,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 5,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1200,6 +1314,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 6,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -1277,6 +1397,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 11,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1328,6 +1454,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 9,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -1385,6 +1517,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 4,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1440,6 +1578,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 3,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1494,6 +1638,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 10,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -1552,6 +1702,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 2,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1594,6 +1750,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'file_default',
         'weight' => 8,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -1643,6 +1805,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
+        'weight' => 0,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'list' => array(
@@ -1723,6 +1891,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -1777,6 +1951,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 4,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -1858,6 +2038,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',

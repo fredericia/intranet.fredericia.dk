@@ -10,10 +10,14 @@ function os2intra_view_modes_entity_info_alter(&$entity_info) {
     'label'           => t('List'),
     'custom settings' => TRUE,
   );
+  $entity_info['node']['view modes']['includeable'] = array(
+    'label'           => t('Includeable'),
+    'custom settings' => TRUE,
+  );
 
   // User view modes
   $entity_info['user']['view modes']['teaser'] = array(
-    'label' => t('User teaser'),
+    'label' => t('Teaser'),
     'custom settings' => TRUE,
   );
 
