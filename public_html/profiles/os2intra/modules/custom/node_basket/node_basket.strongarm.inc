@@ -80,6 +80,18 @@ function node_basket_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
+      'list' => array(
+        'custom_settings' => TRUE,
+      ),
+      'includeable' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
