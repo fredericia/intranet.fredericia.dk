@@ -145,7 +145,11 @@ function node_basket_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'fki-box-quaternary',
+      'template_suggestion' => 'views',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -174,7 +178,11 @@ function node_basket_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'fki-box-secondary',
+      'template_suggestion' => 'views_panes',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -203,7 +211,11 @@ function node_basket_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'fki-box-tertiary',
+      'template_suggestion' => 'views_panes',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
