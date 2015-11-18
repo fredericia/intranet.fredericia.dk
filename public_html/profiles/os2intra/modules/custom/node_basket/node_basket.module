@@ -191,7 +191,7 @@ function node_basket_basket_view($convert = NULL){
     drupal_goto('/node_basket/basket/view');
   }
 
-  $node_view = t('You do not have a node basket, add nodes to create one.');
+  $information = t('You do not have a node basket, add nodes to create one.');
 
   if($basket_nid){
     $node = node_load($basket_nid);
@@ -199,16 +199,35 @@ function node_basket_basket_view($convert = NULL){
     if(is_object($node)){
       $node_render_array = node_view($node);
 
-      $node_view = '<div class="basket-view basket-information">' . t('The following basket includes links to different tools/sites which you have added. You can convert this basket to a toolbox, you can save for later use.') . '</div>';
-      $node_view .= drupal_render($node_render_array);
-      $node_view .= '<a href="/node/'.$basket_nid.'/edit" class="action-item-small btn btn-primary">'.t('Edit basket').'</a>  ';
-      $node_view .= '<a href="/node_basket/basket/view/convert" class="action-item-small btn btn-secondary">'.t('Convert to toolbox').'</a>  ';
+      // Information
+      $information =  '<div class="basket-view basket-information">';
+      $information .=   '<p>' . t('The following basket includes links to different tools/sites which you have added. You can convert this basket to a toolbox, you can save for later use.') . '</p>';
+      $information .= '</div>';
+
+      // Basket
+      $basket = drupal_render($node_render_array);
+
+      // Action buttons
+      $action_buttons = '<div class="node-basket-action-buttons">';
+      $action_buttons .=   '<a href="/node/'.$basket_nid.'/edit" class="action-item-small btn btn-primary">'.t('Edit basket').'</a>  ';
+      $action_buttons .=   '<a href="/node_basket/basket/view/convert" class="action-item-small btn btn-secondary">'.t('Convert to toolbox').'</a>';
+      $action_buttons .= '</div>';
     }
   }
-  $toolbox_view_own = views_embed_view('node_basket', 'block_own');
-  $toolbox_view_search = views_embed_view('node_basket', 'block_search');
 
-  return $node_view . '<h2>' . t('Own toolboxes' ) . '</h2>' . $toolbox_view_own . '<h2>' . t('Other toolboxes' ) . '</h2>' .$toolbox_view_search;
+  // Toolboxes
+  $toolboxes =  '<div class="node-basket-toolboxes">';
+  $toolboxes .=   '<h2>' . t('Own toolboxes' ) . '</h2>';
+  $toolboxes .=   views_embed_view('node_basket', 'block_own');
+  $toolboxes .= '</div>';
+
+  // Other toolboxes
+  $other_toolboxes =  '<div class="node-basket-other-toolboxes">';
+  $other_toolboxes .=   '<h2>' . t('Other toolboxes' ) . '</h2>';
+  $other_toolboxes .=   views_embed_view('node_basket', 'block_search');
+  $other_toolboxes .= '</div>';
+
+  return $information . $basket . $action_buttons . $toolboxes . $other_toolboxes;
 }
 
 /**
