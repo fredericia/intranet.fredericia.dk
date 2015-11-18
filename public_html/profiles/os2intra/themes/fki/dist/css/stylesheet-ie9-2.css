@@ -6425,6 +6425,62 @@
 }
 
 @media screen and (max-width: 767px) {
+  .node-basket .node-basket-toolboxes .node-basket-toolboxes-heading-title {
+    font-size: 16px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .node-basket .node-basket-toolboxes .node-basket-toolboxes-heading-title {
+    font-size: 17px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .node-basket .node-basket-toolboxes .node-basket-toolboxes-heading-title {
+    font-size: 18px;
+    line-height: 19px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .node-basket .node-basket-toolboxes .node-basket-toolboxes-heading-title {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .node-basket .node-basket-other-toolboxes .node-basket-other-toolboxes-heading-title {
+    font-size: 16px;
+    line-height: 17px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .node-basket .node-basket-other-toolboxes .node-basket-other-toolboxes-heading-title {
+    font-size: 17px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .node-basket .node-basket-other-toolboxes .node-basket-other-toolboxes-heading-title {
+    font-size: 18px;
+    line-height: 19px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .node-basket .node-basket-other-toolboxes .node-basket-other-toolboxes-heading-title {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .fki-box .fki-box-heading .pane-title,
   .fki-box .fki-box-heading .fki-box-heading-title {
     font-size: 14px;

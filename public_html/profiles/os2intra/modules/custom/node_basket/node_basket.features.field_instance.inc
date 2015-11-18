@@ -24,6 +24,12 @@ function node_basket_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -68,11 +74,17 @@ function node_basket_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -113,11 +125,17 @@ function node_basket_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 2,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -179,10 +197,17 @@ function node_basket_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => 1,
+          'links' => 0,
+          'view_mode' => 'includeable',
         ),
-        'type' => 'entityreference_label',
+        'type' => 'entityreference_entity_view',
         'weight' => 1,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -234,6 +259,12 @@ function node_basket_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',

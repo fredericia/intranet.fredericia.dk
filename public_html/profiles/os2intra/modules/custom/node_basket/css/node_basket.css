@@ -37,6 +37,17 @@
   display: block;
 }
 
-.basket-information {
+
+.node-basket .node-basket-information,
+.node-basket .node-basket-action-buttons,
+.node-basket .node-basket-basket,
+.node-basket .node-basket-toolboxes,
+.node-basket .node-basket-other-toolboxes {
   margin-bottom: 20px;
 }
+
+.node-basket .node-basket-information {}
+.node-basket .node-basket-action-buttons {}
+.node-basket .node-basket-basket {}
+.node-basket .node-basket-toolboxes {}
+.node-basket .node-basket-other-toolboxes {}
