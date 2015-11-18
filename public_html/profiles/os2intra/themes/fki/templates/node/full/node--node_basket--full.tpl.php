@@ -15,13 +15,22 @@
           <!-- End - references -->
         <?php endif; ?>
 
-        <a href="/node_basket/basket/view/convert" class="btn btn-secondary">
-          <?php print t('Convert to toolbox'); ?>
-        </a>
-
       </div>
       <!-- End - body -->
     <?php endif; ?>
+
+    <!-- Begin - footer -->
+    <div class="fki-full-footer fki-footer-elements">
+
+      <!-- Begin - convert to toolbox -->
+      <a href="/node_basket/basket/view/convert" class="fki-footer-element">
+        <span class="icon fa fa-recycle"></span>
+        <?php print t('Convert to toolbox'); ?>
+      </a>
+      <!-- End - convert to toolbox -->
+
+    </div>
+    <!-- End - footer -->
 
   </div>
   <!-- End - full node -->

@@ -188,7 +188,10 @@ function node_basket_basket_view($convert = NULL){
   if($convert === 'convert'){
     // Convert basket and reload page
     node_basket_save_basket_as_toolbox($basket_nid);
-    drupal_goto('/node_basket/basket/view');
+
+    drupal_set_message(t('Your basket was succesfully converted to a toolbox.'), 'status');
+
+    drupal_goto($_SERVER['HTTP_REFERER']);
   }
 
   $information = t('You do not have a node basket, add nodes to create one.');

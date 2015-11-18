@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-11-17 14:32+0100\n"
-"PO-Revision-Date: 2015-11-17 14:32+0100\n"
+"POT-Creation-Date: 2015-11-18 14:52+0100\n"
+"PO-Revision-Date: 2015-11-18 14:52+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -29090,6 +29090,797 @@ msgstr ""
 msgid "The available fields were successfully changed."
 msgstr ""
 
+#: /admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato/field-settings?destinations[0]=admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato&destinations[1]=admin/structure/types/manage/os2intra-referat/fields
+msgid ""
+"End dates are used to collect duration. E.g., allow an event to start "
+"on September 15, and end on September 16."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato/field-settings?destinations[0]=admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato&destinations[1]=admin/structure/types/manage/os2intra-referat/fields
+msgid "Cache dates"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato/field-settings?destinations[0]=admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato&destinations[1]=admin/structure/types/manage/os2intra-referat/fields
+msgid ""
+"Date objects can be created and cached as date fields are loaded "
+"rather than when they are displayed to improve performance."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato/field-settings?destinations[0]=admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato&destinations[1]=admin/structure/types/manage/os2intra-referat/fields
+msgid "Maximum dates per field"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato/field-settings?destinations[0]=admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato&destinations[1]=admin/structure/types/manage/os2intra-referat/fields
+msgid ""
+"If set to '0', all date values on every entity will be cached. Note "
+"that caching every date on fields that may have a large number of "
+"multiple or repeating values may create a significant performance "
+"penalty when the cache is cleared. The suggested setting for multiple "
+"value and repeating fields is no more than 4 values per field."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato?destinations[0]=admin/structure/types/manage/os2intra-referat/fields
+msgid ""
+"Describe a time by reference to the current day, like '+90 days' (90 "
+"days from the day the field is created) or '+1 Saturday' (the next "
+"Saturday). See !strtotime for more details."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato?destinations[0]=admin/structure/types/manage/os2intra-referat/fields
+msgid "Same as Default date"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato?destinations[0]=admin/structure/types/manage/os2intra-referat/fields
+msgid "Short date format: @date"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato?destinations[0]=admin/structure/types/manage/os2intra-referat/fields
+msgid "Control the order and format of the options users see."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato?destinations[0]=admin/structure/types/manage/os2intra-referat/fields
+msgid ""
+"The location of date part labels, like 'Year', 'Month', or 'Day' . "
+"'Above' displays the label as titles above each date part. 'None' "
+"doesn't visually label any of the date parts. Theme functions like "
+"'date_part_label_year' and 'date_part_label_month' control label text."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato?destinations[0]=admin/structure/types/manage/os2intra-referat/fields
+msgid "Render as a regular field"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields/field_os2intra_referat_dato?destinations[0]=admin/structure/types/manage/os2intra-referat/fields
+msgid ""
+"Whether to render this field as a regular field instead of a fieldset. "
+"The date field elements are wrapped in a fieldset by default, and may "
+"not display well without it."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields
+msgid "Referatform"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields
+msgid "Referat"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields
+msgid "Mødedeltagere"
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"Error: The selected \"Target type\" %entity does not have bundles that "
+"are a group type"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra-referat/fields
+msgid "Detaljer"
+msgstr ""
+
+#: /gruppe/test-gruppe-1
+msgid "Mødetype"
+msgstr ""
+
+#: /gruppe/test-gruppe-1
+msgid "Mødested"
+msgstr ""
+
+#: /gruppe/test-gruppe-1
+msgid "Mødedato og tidspunkt"
+msgstr ""
+
+#: /gruppe/test-gruppe-1
+msgid "Deltagere"
+msgstr ""
+
+#: /gruppe/test-gruppe-1
+msgid "Afbud"
+msgstr ""
+
+#: /gruppe/test-gruppe-1
+msgid "Mødeleder"
+msgstr ""
+
+#: /gruppe/test-gruppe-1
+msgid "Referent"
+msgstr ""
+
+#: /gruppe/test-gruppe-1
+msgid "Tilknyttet begivenhed"
+msgstr ""
+
+#: /admin/people
+msgid "create os2intra_referat content"
+msgstr ""
+
+#: /admin/people
+msgid "edit any os2intra_referat content"
+msgstr ""
+
+#: /admin/people
+msgid "edit own os2intra_referat content"
+msgstr ""
+
+#: /admin/people
+msgid "delete any os2intra_referat content"
+msgstr ""
+
+#: /admin/people
+msgid "delete own os2intra_referat content"
+msgstr ""
+
+#: /admin/people
+msgid "edit terms in 21"
+msgstr ""
+
+#: /admin/people
+msgid "delete terms in 21"
+msgstr ""
+
+#: /
+msgid "@files downloadable files"
+msgstr ""
+
+#: /hjaelp-og-vaerktoejer/it-vejledninger/intranetdokumentation/opret-it-vejledning/edit
+msgid "Includeable"
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid "HTTP response code"
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid "Change general settings for this variant."
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid "Argument settings"
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid "Access control"
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid "Remove this page from your system completely."
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid "A meaningless second page"
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid ""
+"The URL path to get to this page. You may create named placeholders "
+"for variable parts of the path by using %name for required elements "
+"and !name for optional elements. For example: \"node/%node/foo\", "
+"\"forum/%forum\" or \"dashboard/!input\". These named placeholders can "
+"be turned into contexts on the arguments form."
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid "Make this your site home page."
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid "Site Information"
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid ""
+"To set this panel as your home page you must create a unique path name "
+"with no % placeholders in the path. The site home page is currently "
+"set to %homepage on the !siteinfo configuration form."
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid "Use this page in an admin overlay."
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid ""
+"Admin overlays are used in many places in Drupal 7 and administrative "
+"custom pages should probably utilize this feature."
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid "Visible menu item"
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid "Variant type"
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid "Optional features"
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid ""
+"Check any optional features you need to be presented with forms for "
+"configuring them. If you do not check them here you will still be able "
+"to utilize these features once the new page is created. If you are not "
+"sure, leave these unchecked."
+msgstr ""
+
+#: /admin/structure/pages/add
+msgid "Name is required."
+msgstr ""
+
+#: /admin/structure/pages/add/page-node_basket_view/content
+msgid "Værktøjskasser"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/content
+msgid ""
+"This page is newly created and has not yet been saved to the database. "
+"It will not be available until you save it."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket
+msgid "Choose which display of this view you wish to use."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid "Configure view @view (@display)"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid "No context"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid "Link title to view"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid "Provide a \"more\" link that links to the view"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid ""
+"This is independent of any more link that may be provided by the view "
+"itself; if you see two more links, turn this one off. Views will only "
+"provide a more link if using the \"block\" type, however, so if using "
+"embed, use this one."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid "Display feed icons"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid "Custom pager settings"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid "Use different pager settings from view settings"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid ""
+"<strong>Warning: </strong> This view has AJAX enabled. Overriding the "
+"pager settings will work initially, but when the view is updated via "
+"AJAX, the original settings will be used. You should not override "
+"pager settings on Views with the AJAX setting enabled."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid "Num posts"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid "The number of items to skip and not display."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid "Send arguments"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid ""
+"Select this to send all arguments from the panel directly to the view. "
+"If checked, the panel arguments will come after any context arguments "
+"above and precede any additional arguments passed in through the "
+"Arguments field below. Note that arguments do not include the base "
+"URL; only values after the URL or set as placeholders are considered "
+"arguments."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid ""
+"Additional arguments to send to the view as if they were part of the "
+"URL in the form of arg1/arg2/arg3. You may use %0, %1, ..., %N to grab "
+"arguments from the URL. Or use @0, @1, @2, ..., @N to use arguments "
+"passed into the panel. Note: use these values only as a last resort. "
+"In future versions of Panels these may go away."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid "Override URL"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/center/views/node_basket/step1
+msgid ""
+"If this is set, override the View URL; this can sometimes be useful to "
+"set to the panel URL"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/content
+msgid "Break the lock on this page so that you can edit it."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/content
+msgid ""
+"This page is being edited by user !user, and is therefore locked from "
+"editing by others. This lock is !age old. Click here to <a "
+"href=\"!break\">break this lock</a>."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/content
+msgid ""
+"This page is being edited by another user and you cannot make changes "
+"to it."
+msgstr ""
+
+#: /node_basket/view
+msgid "Tilpasset tekst"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/node_basket/block_2/relationship
+msgid "Bruger refererer til Indhold fra field_node_basket_toolboxes"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Node edit form from node"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Adds node edit form from a node context."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Multiple terms from node"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid ""
+"Adds a taxonomy terms from a node context; if multiple terms are "
+"selected, they wil be concatenated."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Creates an entity context from a foreign key on a field."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "User category edit form from user"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Adds user category edit form from a user context."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Term parent"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Adds a taxonomy term parent from a term context."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Term from node"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid ""
+"Adds a taxonomy term from a node context; if multiple terms are "
+"selected, this will get the \"first\" term only."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Creates the author of a node as a user context."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Adds a book parent from a node context."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Creates an entity context from a field collection field on a field."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "OG membership from a group node and user"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Get the OG membership context from an a node that is a group and user."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Node from view"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Extract a node context from a view context of the base type node."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "User from view"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Extract a user context from a view context of the base type user."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "View From Argument"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Creates a view context from argument input settings."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Term from view"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Extract a term context from a view context of the base type term."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "@to_entity from @from_entity (on @base_table.@relationship)"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid ""
+"Builds a relationship from a @from_entity to a @to_entity using the "
+"@base_table.@relationship field."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "@from_entity from @to_entity (on @base_table.@relationship)"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid ""
+"Builds a relationship from a @to_entity to a @from_entity using the "
+"@base_table.@relationship field."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid ""
+"@to_entity from @from_entity (on @from_entity: @field_label "
+"[@field_name])"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid ""
+"Creates a @to_entity context from @from_entity using the @field_name "
+"field on @from_entity."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "!label field collection (!field_name) from !entity_type (!bundle)"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "argument"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Add argument"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "relationship"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Add relationship"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "context"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Add context"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Required contexts"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "required context"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Add required context"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Summary of contexts"
+msgstr ""
+
+#: /ctools/context/ajax/add/page_manager_context%3A%3Apage-node_basket_view/context/page_node_basket_view__panel/entity:user
+msgid "Page manager context"
+msgstr ""
+
+#: /ctools/context/ajax/add/page_manager_context%3A%3Apage-node_basket_view/context/page_node_basket_view__panel/entity:user
+msgid "Add @type \"@context\""
+msgstr ""
+
+#: /ctools/context/ajax/add/page_manager_context%3A%3Apage-node_basket_view/context/page_node_basket_view__panel/entity:user
+msgid "Configure new !plugin_title"
+msgstr ""
+
+#: /ctools/context/ajax/add/page_manager_context%3A%3Apage-node_basket_view/context/page_node_basket_view__panel/entity:user
+msgid "Enter a name to identify this !type on administrative screens."
+msgstr ""
+
+#: /ctools/context/ajax/add/page_manager_context%3A%3Apage-node_basket_view/context/page_node_basket_view__panel/entity:user
+msgid "Enter a keyword to use for substitution in titles."
+msgstr ""
+
+#: /ctools/context/ajax/add/page_manager_context%3A%3Apage-node_basket_view/context/page_node_basket_view__panel/entity:user
+msgid "Enter the context type"
+msgstr ""
+
+#: /ctools/context/ajax/add/page_manager_context%3A%3Apage-node_basket_view/context/page_node_basket_view__panel/entity:user
+msgid "Select a user"
+msgstr ""
+
+#: /ctools/context/ajax/add/page_manager_context%3A%3Apage-node_basket_view/context/page_node_basket_view__panel/entity:user
+msgid "Enter a user name"
+msgstr ""
+
+#: /ctools/context/ajax/add/page_manager_context%3A%3Apage-node_basket_view/context/page_node_basket_view__panel/entity:user
+msgid "Reset identifier to username"
+msgstr ""
+
+#: /ctools/context/ajax/add/page_manager_context%3A%3Apage-node_basket_view/context/page_node_basket_view__panel/entity:user
+msgid ""
+"If checked, the identifier will be reset to the user name of the "
+"selected user."
+msgstr ""
+
+#: /ctools/context/ajax/add/page_manager_context%3A%3Apage-node_basket_view/relationship/page_node_basket_view__panel/entity_from_field:field_node_basket_toolboxes-user-node
+msgid ""
+"The relationship can only create one context, but multiple items can "
+"be related. Please select which one. Since this can have unlimited "
+"items, type in the number you want. The first one will be 0."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Context @count"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "Keyword: %@keyword"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "@keyword --&gt; @title"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/context
+msgid "From \"@title\""
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/content/token/user%3Afield-node-basket-toolboxes
+msgid "Sanitize"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/content/token/user%3Afield-node-basket-toolboxes
+msgid ""
+"When enabled that output of the token will be stripped from dangerous "
+"HTML."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/content/token/user%3Afield-node-basket-toolboxes/form
+msgid "\"@s\" @name"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/node_basket/block_2/field
+msgid "Rendered Indholdselement"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/node_basket/block_2/field
+msgid "Link this field to its entity"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/node_basket/block_2/field
+msgid "When using this, you should not set any other link on the field."
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/node_basket/block_2/field
+msgid "Show entity label"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/node_basket/block_2/field
+msgid "Show entity ID"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/node_basket/block_2/field
+msgid "Show complete entity"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/node_basket/block_2/field
+msgid "Decide how this field will be displayed."
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/node_basket/block_2/field
+msgid "Link this field to the entity."
+msgstr ""
+
+#: /admin/structure/views/view/node_basket/edit/block_2
+msgid "Toolboxes referenced"
+msgstr ""
+
+#: /admin/structure/views/view/node_basket/edit/block_2
+msgid "<a href=\"/node_basket/toolbox/use/[nid]\">Fjern</a>"
+msgstr ""
+
+#: /admin/modules
+msgid "Allows modification of the 'Add another item' button on fields"
+msgstr ""
+
+#: /admin/modules
+msgid "Provides i18n field integration for Custom add another module"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/pane_title
+msgid ""
+"This is the title that will appear for this view pane in the add "
+"content dialog. If left blank, the view name will be used."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
+msgid ""
+"Checked settings will be available in the panel pane config dialog for "
+"modification by the panels user. Unchecked settings will not be "
+"available and will only use the settings in this display."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
+msgid "Pager offset"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
+msgid "Path override"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
+msgid "Title override"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
+msgid "Use exposed widgets form as pane configuration"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
+msgid "Fields override"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
+msgid "Some"
+msgstr ""
+
+#: /admin/structure/views/view/node_basket/edit/my_toolboxes
+msgid "You are not subscribed to any item."
+msgstr ""
+
+#: /admin/structure/views/view/node_basket/edit/my_toolboxes
+msgid "My toolboxes"
+msgstr ""
+
+#: /admin/structure/views/view/node_basket/edit/subscribed_toolboxes
+msgid "Subscribed toolboxes"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/node_basket/subscribed_toolboxes/access
+msgid "Administer user subscriptions."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/node_basket/my_toolboxes/pane_category
+msgid "This is category the pane will appear in on the add content dialog."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/node_basket/my_toolboxes/pane_category
+msgid ""
+"This is the default weight of the category. Note that if the weight of "
+"a category is defined in multiple places, only the first one Panels "
+"sees will get that definition, so if the weight does not appear to be "
+"working, check other places that the weight might be set."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/sidebar/views_panes/node_basket-my_toolboxes
+msgid "Num items"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/sidebar/views_panes/node_basket-my_toolboxes
+msgid "Select the number of items to display, or 0 to display all results."
+msgstr ""
+
+#: /admin/structure/views/view/node_basket/edit/my_basket
+msgid "My basket"
+msgstr ""
+
+#: /admin/structure/views/view/node_basket/edit/subscribed_toolboxes
+msgid "Du abonnerer p.t. ikke på nogle værktøjskasser"
+msgstr ""
+
+#: /admin/structure/views/view/node_basket/edit/subscribed_toolboxes
+msgid "Du har ikke nogle emner i din kurv."
+msgstr ""
+
+#: /admin/structure/views/view/node_basket/edit/my_toolboxes
+msgid "Du har ikke oprettet nogle værktøjskasser."
+msgstr ""
+
+#: /admin/structure/pages/ajax/operation/page-node_basket_view/settings/menu
+msgid "Local action"
+msgstr ""
+
+#: /admin/structure/pages/ajax/operation/page-node_basket_view/settings/menu
+msgid ""
+"When providing a menu item as a default tab, Drupal needs to know what "
+"the parent menu item of that tab will be. Sometimes the parent will "
+"already exist, but other times you will need to have one created. The "
+"path of a parent item will always be the same path with the last part "
+"left off. i.e, if the path to this view is <em>foo/bar/baz</em>, the "
+"parent path would be <em>foo/bar</em>."
+msgstr ""
+
+#: /admin/structure/pages/ajax/operation/page-node_basket_view/settings/menu
+msgid "Parent item title"
+msgstr ""
+
+#: /admin/structure/pages/ajax/operation/page-node_basket_view/settings/menu
+msgid "Parent item menu"
+msgstr ""
+
+#: /admin/structure/pages/ajax/operation/page-node_basket_view/settings/menu
+msgid "Parent weight"
+msgstr ""
+
+#: /admin/structure/pages/ajax/operation/page-node_basket_view/settings/menu
+msgid ""
+"Enter the weight of the parent item. The lower the number, the more to "
+"the left it will be."
+msgstr ""
+
+#: /node_basket
+msgid "Remove all changes to this page and revert to the version in code."
+msgstr ""
+
 msgid "Public files"
 msgstr "Offentlige filer"
 
@@ -29205,6 +29996,7 @@ msgstr "Højre sidepanel"
 msgid "Content"
 msgstr "Indhold"
 
+#: ; profiles/os2intra/modules/contrib/options_element/options_element.js
 msgid "Default"
 msgstr "Standard"
 
@@ -29504,6 +30296,7 @@ msgstr "Tekstområde med resumé"
 msgid "&lt;none&gt;"
 msgstr "&lt;ingen&gt;"
 
+#: ; profiles/os2intra/modules/contrib/date/date_api/date_year_range.js
 msgid "Other"
 msgstr "Anden"
 
@@ -29534,7 +30327,7 @@ msgstr "Renderet entity"
 msgid "Display the referenced entities rendered by entity_view()."
 msgstr "Vis de refererede entities renderet af entity_view()."
 
-#: ; profiles/os2intra/modules/contrib/views/js/views-admin.js
+#: ; profiles/os2intra/modules/contrib/views/js/views-admin.js; profiles/os2intra/modules/contrib/options_element/options_element.js
 msgid "Add"
 msgstr "Tilføj"
 
@@ -29577,6 +30370,7 @@ msgstr "Etiket, som link med etiket som titel"
 msgid "Separate title and URL"
 msgstr "Separat titel og URL"
 
+#: ; profiles/os2intra/modules/contrib/options_element/options_element.js
 msgid "Key"
 msgstr "Nøgle"
 
@@ -29710,6 +30504,7 @@ msgstr "Sid"
 msgid "The submission ID of the submission."
 msgstr "Indsendelsesn ID."
 
+#: ; profiles/os2intra/modules/contrib/options_element/options_element.js
 msgid "Value"
 msgstr "Værdi"
 
@@ -32569,6 +33364,7 @@ msgstr "Opdatér"
 msgid "Cancel"
 msgstr "Annullér"
 
+#: ; profiles/os2intra/modules/contrib/options_element/options_element.js
 msgid "Remove"
 msgstr "Fjern"
 
@@ -54160,6 +54956,7 @@ msgstr "Importerede: %name."
 msgid "Links"
 msgstr "Links"
 
+#: ; profiles/os2intra/modules/contrib/options_element/options_element.js
 msgid "Add item"
 msgstr "Tilføj menupunkt"
 
@@ -56621,6 +57418,7 @@ msgstr "Værdien @date svarer ikke til det forventede format."
 msgid "Missing system date settings"
 msgstr "Mangler indstillinger for systemdato"
 
+#: ; profiles/os2intra/modules/contrib/date/date_api/date_year_range.js
 msgid "@count year from now"
 msgid_plural "@count years from now"
 msgstr[0] "@count år fra nu"
@@ -68586,11 +69384,7 @@ msgstr "Korttype"
 msgid "Zoom level"
 msgstr "Zoomniveau"
 
-#: /intra
-msgid "@files downloadable files"
-msgstr "@files filer til download"
-
-#: /projekter/test-projektdefinition-af-testindhold
-msgid "@files downloadable file"
-msgstr "@files fil til download"
+#: /node_basket/basket/view/convert
+msgid "Your basket was succesfully converted to a toolbox."
+msgstr "Din kurv blev succesfuldt konverteret til en værktøjskasse."
 
