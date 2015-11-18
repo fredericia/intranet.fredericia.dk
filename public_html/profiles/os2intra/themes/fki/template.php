@@ -215,26 +215,35 @@ function fki_preprocess_node__it_vejledning(&$variables) {
  */
 function fki_preprocess_node__node_basket(&$variables) {
   global $user;
+  $user = user_load($user->uid);
 
-  // I am author
-  if ($user->uid == $variables['uid']) {
-    $variables['action_button'] = '<a href="/node/' . $variables['nid'] . '/delete" class="pull-right">' . t('Delete') . '</a>';
-  }
+  if ($field_subscribed = field_get_items('user', $user, 'field_node_basket_toolboxes')) {
 
-  // I am not author
-  else {
-    $user = user_load($user->uid);
+    // I am author
+    if ($user->uid == $variables['uid']) {
 
-    if ($field_subscribed = field_get_items('user', $user, 'field_node_basket_toolboxes')) {
-
-      // It's already added
+      // It's added
       if (in_array($variables['nid'], $field_subscribed)) {
-        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Remove') . '</a>';
+        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Remove from list') . '</a>';
       }
 
       // Not added
       else {
-        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Add') . '</a>';
+        $variables['action_button'] = '<a href="/node/' . $variables['nid'] . '/delete" class="pull-right">' . t('Delete toolbox') . '</a>';
+      }
+    }
+
+    // I am not author
+    else {
+
+      // It's already added
+      if (in_array($variables['nid'], $field_subscribed)) {
+        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Remove from list') . '</a>';
+      }
+
+      // Not added
+      else {
+        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Add to list') . '</a>';
       }
     }
   }
