@@ -118,6 +118,13 @@ function node_basket_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'list';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['label'] = 'forfatter';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -203,6 +210,12 @@ function node_basket_views_default_views() {
     11 => 0,
     12 => 0,
   );
+  /* Filter criterion: User: Current */
+  $handler->display->display_options['filters']['uid_current']['id'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['uid_current']['value'] = '0';
 
   /* Display: Toolbox menu view */
   $handler = $view->new_display('block', 'Toolbox menu view', 'block_1');
@@ -775,6 +788,7 @@ function node_basket_views_default_views() {
     t('Search toolboxes'),
     t('more'),
     t('S'),
+    t('forfatter'),
     t('Tilføj/Fjern'),
     t('Titel'),
     t('Toolbox menu view'),
