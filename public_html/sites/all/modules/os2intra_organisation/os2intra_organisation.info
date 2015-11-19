@@ -1,0 +1,4 @@
+name = OS2Intra organisation
+core = 7.x
+package = OS2Intra
+features[features_api][] = api:2
