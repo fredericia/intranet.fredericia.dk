@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-11-19 11:14+0100\n"
-"PO-Revision-Date: 2015-11-19 11:14+0100\n"
+"POT-Creation-Date: 2015-11-19 11:40+0100\n"
+"PO-Revision-Date: 2015-11-19 11:40+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -69459,4 +69459,8 @@ msgstr "Fjern"
 #: /node_basket
 msgid "Unsubscribe"
 msgstr "Afmeld"
+
+#: /node_basket
+msgid "written by:"
+msgstr "skrevet af:"
 
