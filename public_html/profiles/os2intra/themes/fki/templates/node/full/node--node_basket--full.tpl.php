@@ -15,22 +15,20 @@
           <!-- End - references -->
         <?php endif; ?>
 
+        <?php if (isset($content['field_node_basket_references'])): ?>
+          <!-- Begin - action buttons -->
+          <div class="fki-full-body-action-buttons">
+            <a href="/node_basket/basket/view/convert" class="btn btn-tertiary btn-sm">
+              <span class="icon fa fa-recycle"></span>
+              <?php print t('Convert to toolbox'); ?>
+            </a>
+          </div>
+          <!-- End - action buttons -->
+        <?php endif; ?>
+
       </div>
       <!-- End - body -->
     <?php endif; ?>
-
-    <!-- Begin - footer -->
-    <div class="fki-full-footer fki-footer-elements">
-
-      <!-- Begin - convert to toolbox -->
-      <a href="/node_basket/basket/view/convert" class="fki-footer-element">
-        <span class="icon fa fa-recycle"></span>
-        <?php print t('Convert to toolbox'); ?>
-      </a>
-      <!-- End - convert to toolbox -->
-
-    </div>
-    <!-- End - footer -->
 
   </div>
   <!-- End - full node -->
