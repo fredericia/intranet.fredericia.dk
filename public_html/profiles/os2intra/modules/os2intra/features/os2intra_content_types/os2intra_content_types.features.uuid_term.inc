@@ -21,6 +21,7 @@ function os2intra_content_types_uuid_features_default_terms() {
     'field_os2web_base_field_banner' => array(),
     'field_os2web_base_field_logo' => array(),
     'field_os2web_base_icon' => array(),
+    'field_os2intra_base_spotboxes' => array(),
     'path' => array(
       'pathauto' => 1,
     ),
@@ -39,6 +40,7 @@ function os2intra_content_types_uuid_features_default_terms() {
     'field_os2web_base_field_banner' => array(),
     'field_os2web_base_field_logo' => array(),
     'field_os2web_base_icon' => array(),
+    'field_os2intra_base_spotboxes' => array(),
     'path' => array(
       'pathauto' => 1,
     ),
@@ -53,6 +55,7 @@ function os2intra_content_types_uuid_features_default_terms() {
     'field_os2web_base_field_banner' => array(),
     'field_os2web_base_field_logo' => array(),
     'field_os2web_base_icon' => array(),
+    'field_os2intra_base_spotboxes' => array(),
     'path' => array(
       'pathauto' => 1,
     ),

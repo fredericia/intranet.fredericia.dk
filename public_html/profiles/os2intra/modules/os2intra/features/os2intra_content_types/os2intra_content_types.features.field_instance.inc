@@ -5417,7 +5417,13 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'list' => array(
         'label' => 'above',
@@ -5429,7 +5435,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -5483,7 +5489,13 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'list' => array(
         'label' => 'above',
@@ -5492,9 +5504,13 @@ function os2intra_content_types_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'teaser_image',
+        ),
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
@@ -5553,12 +5569,18 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'hidden',
         'module' => 'icon_field',
         'settings' => array(
-          'link_to_content' => 1,
+          'link_to_content' => FALSE,
         ),
         'type' => 'icon_field_default',
-        'weight' => 4,
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -5570,7 +5592,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'taxonomy_term',
