@@ -5417,13 +5417,13 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'list' => array(
         'label' => 'above',
@@ -5435,7 +5435,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -5489,13 +5489,13 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'list' => array(
         'label' => 'above',
@@ -5569,18 +5569,21 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
+        'module' => 'icon_field',
+        'settings' => array(
+          'link_to_content' => 1,
+        ),
+        'type' => 'icon_field_default',
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'icon_field',
         'settings' => array(
-          'link_to_content' => FALSE,
+          'link_to_content' => 1,
         ),
         'type' => 'icon_field_default',
-        'weight' => 0,
+        'weight' => 4,
       ),
       'list' => array(
         'label' => 'above',
@@ -5592,7 +5595,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'taxonomy_term',
