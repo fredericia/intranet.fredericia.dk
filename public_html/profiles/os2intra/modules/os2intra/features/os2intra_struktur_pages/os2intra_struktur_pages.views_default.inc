@@ -110,6 +110,8 @@ function os2intra_struktur_pages_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -187,15 +189,12 @@ function os2intra_struktur_pages_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomy term: Representative node */
-  $handler->display->display_options['relationships']['tid_representative']['id'] = 'tid_representative';
-  $handler->display->display_options['relationships']['tid_representative']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['relationships']['tid_representative']['field'] = 'tid_representative';
-  $handler->display->display_options['relationships']['tid_representative']['label'] = 'Repræsentativ node';
-  $handler->display->display_options['relationships']['tid_representative']['required'] = TRUE;
-  $handler->display->display_options['relationships']['tid_representative']['subquery_sort'] = 'field_data_field_os2intra_base_structure.field_os2intra_base_structure_tid';
-  $handler->display->display_options['relationships']['tid_representative']['subquery_view'] = '';
-  $handler->display->display_options['relationships']['tid_representative']['subquery_namespace'] = '';
+  /* Relationship: Taxonomy term: Content with term */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['label'] = 'indholdselement';
+  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Ikon */
   $handler->display->display_options['fields']['field_os2web_base_icon']['id'] = 'field_os2web_base_icon';
@@ -267,7 +266,7 @@ function os2intra_struktur_pages_views_default_views() {
     t('Content pane'),
     t('View panes'),
     t('Content pane 2'),
-    t('Repræsentativ node'),
+    t('indholdselement'),
   );
   $export['term_panel_views_term_'] = $view;
 
