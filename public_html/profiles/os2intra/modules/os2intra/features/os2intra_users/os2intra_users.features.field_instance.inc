@@ -83,6 +83,52 @@ function os2intra_users_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'taxonomy_term-os2intra_organisation_tax-field_os2intra_shortname'.
+  $field_instances['taxonomy_term-os2intra_organisation_tax-field_os2intra_shortname'] = array(
+    'bundle' => 'os2intra_organisation_tax',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_os2intra_shortname',
+    'label' => 'Kort navn',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 43,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_name_first'.
   $field_instances['user-user-field_name_first'] = array(
     'bundle' => 'user',
@@ -870,6 +916,7 @@ function os2intra_users_field_default_field_instances() {
   t('Interesser');
   t('Jobtitel');
   t('Kompetencer');
+  t('Kort navn');
   t('MedarbejderID');
   t('Værktøjskasser');
   t('import groups');
