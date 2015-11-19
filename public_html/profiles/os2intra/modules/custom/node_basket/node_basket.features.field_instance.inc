@@ -10,61 +10,6 @@
 function node_basket_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-node_basket-body'.
-  $field_instances['node-node_basket-body'] = array(
-    'bundle' => 'node_basket',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-      'includeable' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'node-node_basket-field_node_basket_description'.
   $field_instances['node-node_basket-field_node_basket_description'] = array(
     'bundle' => 'node_basket',
@@ -111,7 +56,7 @@ function node_basket_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -301,7 +246,6 @@ function node_basket_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Beskrivelse');
-  t('Body');
   t('Links');
   t('References');
   t('Type');

@@ -96,16 +96,16 @@ function node_basket_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'metatags' => array(
           'weight' => '8',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '4',
         ),
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '5',
         ),
       ),
       'display' => array(),
