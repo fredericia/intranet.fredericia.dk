@@ -192,6 +192,34 @@ function os2intra_users_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_tools|user|user|form';
+  $field_group->group_name = 'group_tools';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_user';
+  $field_group->data = array(
+    'label' => 'Værktøjer',
+    'weight' => '11',
+    'children' => array(
+      0 => 'field_node_basket_toolboxes',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-tools field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_tools|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_user|user|user|form';
   $field_group->group_name = 'group_user';
   $field_group->entity_type = 'user';
@@ -202,12 +230,13 @@ function os2intra_users_field_group_info() {
     'label' => 'Bruger',
     'weight' => '0',
     'children' => array(
-      0 => 'group_grupper',
-      1 => 'group_account',
-      2 => 'group_billede',
+      0 => 'group_account',
+      1 => 'group_billede',
+      2 => 'group_grupper',
       3 => 'group_name',
       4 => 'group_profile',
       5 => 'group_system',
+      6 => 'group_tools',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(

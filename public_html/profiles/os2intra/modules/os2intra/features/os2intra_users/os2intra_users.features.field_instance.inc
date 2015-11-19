@@ -217,6 +217,55 @@ function os2intra_users_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_node_basket_toolboxes'.
+  $field_instances['user-user-field_node_basket_toolboxes'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_node_basket_toolboxes',
+    'label' => 'Værktøjskasser',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_os2intra_department_ref'.
   $field_instances['user-user-field_os2intra_department_ref'] = array(
     'bundle' => 'user',
@@ -822,6 +871,7 @@ function os2intra_users_field_default_field_instances() {
   t('Jobtitel');
   t('Kompetencer');
   t('MedarbejderID');
+  t('Værktøjskasser');
   t('import groups');
   t('os2intra_termination_date');
 

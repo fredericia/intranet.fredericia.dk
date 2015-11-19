@@ -433,29 +433,6 @@ function os2intra_panels_default_page_manager_handlers() {
     $display->content['new-1be22f35-56be-4f8c-8f41-f70eb9c30028'] = $pane;
     $display->panels['content'][0] = 'new-1be22f35-56be-4f8c-8f41-f70eb9c30028';
     $pane = new stdClass();
-    $pane->pid = 'new-65a5eeee-a560-4a24-8113-0808b9c6a439';
-    $pane->panel = 'content';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'os2intra_node_panes-panel_pane_7';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-      'template_suggestion' => 'plain',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '65a5eeee-a560-4a24-8113-0808b9c6a439';
-    $display->content['new-65a5eeee-a560-4a24-8113-0808b9c6a439'] = $pane;
-    $display->panels['content'][1] = 'new-65a5eeee-a560-4a24-8113-0808b9c6a439';
-    $pane = new stdClass();
     $pane->pid = 'new-4c2952f7-5d11-4569-8c3d-9ec78131cd71';
     $pane->panel = 'content';
     $pane->type = 'node_comment_wrapper';
@@ -480,11 +457,11 @@ function os2intra_panels_default_page_manager_handlers() {
       'template_suggestion' => 'plain',
     );
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '4c2952f7-5d11-4569-8c3d-9ec78131cd71';
     $display->content['new-4c2952f7-5d11-4569-8c3d-9ec78131cd71'] = $pane;
-    $display->panels['content'][2] = 'new-4c2952f7-5d11-4569-8c3d-9ec78131cd71';
+    $display->panels['content'][1] = 'new-4c2952f7-5d11-4569-8c3d-9ec78131cd71';
     $pane = new stdClass();
     $pane->pid = 'new-a9acda41-d054-4a2f-9114-8a51a6a8ac35';
     $pane->panel = 'sidebar';

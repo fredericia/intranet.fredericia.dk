@@ -9,4 +9,6 @@ dependencies[] = message_subscribe
 features[features_api][] = api:2
 features[flag][] = os2intra_flag_node_follow
 features[flag][] = os2intra_flag_node_like
+features[flag][] = os2intra_flag_node_old
+features[flag][] = tilmeld_gruppe
 project path = profiles/os2intra/modules/os2intra/features

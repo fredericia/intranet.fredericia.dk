@@ -352,7 +352,7 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
   $handler->display->display_options['fields']['name']['label'] = 'Navn';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  /* Field: Content: Groups audience */
+  /* Field: Content: Gruppe / Afdeling */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
