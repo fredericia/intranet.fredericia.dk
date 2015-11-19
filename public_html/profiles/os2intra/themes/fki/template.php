@@ -222,12 +222,12 @@ function fki_preprocess_node__node_basket(&$variables) {
     // I am author
     if ($user->uid == $variables['uid']) {
 
-      // It's added
-      if (in_array($variables['nid'], $field_subscribed)) {
-        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Remove from list') . '</a>';
+      // Subscription (why?)
+      if (in_array_recursive($variables['nid'], $field_subscribed)) {
+        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Remove subscription') . '</a>';
       }
 
-      // Not added
+      // Not a subscription
       else {
         $variables['action_button'] = '<a href="/node/' . $variables['nid'] . '/delete" class="pull-right">' . t('Delete toolbox') . '</a>';
       }
@@ -237,13 +237,13 @@ function fki_preprocess_node__node_basket(&$variables) {
     else {
 
       // It's already added
-      if (in_array($variables['nid'], $field_subscribed)) {
-        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Remove from list') . '</a>';
+      if (in_array_recursive($variables['nid'], $field_subscribed)) {
+        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Remove subscription') . '</a>';
       }
 
       // Not added
       else {
-        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Add to list') . '</a>';
+        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Subscribe') . '</a>';
       }
     }
   }

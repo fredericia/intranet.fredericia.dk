@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-11-18 14:52+0100\n"
-"PO-Revision-Date: 2015-11-18 14:52+0100\n"
+"POT-Creation-Date: 2015-11-19 10:49+0100\n"
+"PO-Revision-Date: 2015-11-19 10:49+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -29879,6 +29879,42 @@ msgstr ""
 
 #: /node_basket
 msgid "Remove all changes to this page and revert to the version in code."
+msgstr ""
+
+#: /admin/structure/views/view/node_basket/edit/block_search
+msgid "Search toolboxes"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/content?destination=node_basket
+msgid "User masquerade settings."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/content?destination=node_basket
+msgid "Masquerade as user link."
+msgstr ""
+
+#: /admin/people
+msgid "Masquerade as any user"
+msgstr ""
+
+#: /admin/people
+msgid "Masquerade as any user."
+msgstr ""
+
+#: /admin/people
+msgid "masquerade as any user"
+msgstr ""
+
+#: /admin/people
+msgid "administer message subscribe"
+msgstr ""
+
+#: /node_basket
+msgid "Add to list"
+msgstr ""
+
+#: /node_basket
+msgid "Remove from list"
 msgstr ""
 
 msgid "Public files"
@@ -69387,4 +69423,16 @@ msgstr "Zoomniveau"
 #: /node_basket/basket/view/convert
 msgid "Your basket was succesfully converted to a toolbox."
 msgstr "Din kurv blev succesfuldt konverteret til en værktøjskasse."
+
+#: /node_basket
+msgid "Delete toolbox"
+msgstr "Slet værktøjskasse"
+
+#: /views/ajax
+msgid "Subscribe"
+msgstr "Abonnér"
+
+#: /node_basket
+msgid "Remove subscription"
+msgstr "Fjern"
 
