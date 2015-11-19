@@ -31,6 +31,12 @@ function os2intra_struktur_pages_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
