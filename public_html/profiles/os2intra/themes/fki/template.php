@@ -224,7 +224,7 @@ function fki_preprocess_node__node_basket(&$variables) {
 
       // Subscription (why?)
       if (in_array_recursive($variables['nid'], $field_subscribed)) {
-        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Remove subscription') . '</a>';
+        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Unsubscribe') . '</a>';
       }
 
       // Not a subscription
@@ -238,7 +238,7 @@ function fki_preprocess_node__node_basket(&$variables) {
 
       // It's already added
       if (in_array_recursive($variables['nid'], $field_subscribed)) {
-        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Remove subscription') . '</a>';
+        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Unsubscribe') . '</a>';
       }
 
       // Not added

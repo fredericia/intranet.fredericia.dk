@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-11-19 10:49+0100\n"
-"PO-Revision-Date: 2015-11-19 10:49+0100\n"
+"POT-Creation-Date: 2015-11-19 11:14+0100\n"
+"PO-Revision-Date: 2015-11-19 11:14+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -29915,6 +29915,26 @@ msgstr ""
 
 #: /node_basket
 msgid "Remove from list"
+msgstr ""
+
+#: /admin/reports/status
+msgid "Missing composer.json file"
+msgstr ""
+
+#: /admin/reports/status
+msgid "The composer.json file was not found."
+msgstr ""
+
+#: /admin/reports/status
+msgid ""
+"The CTools CSS cache directory, %path could not be created due to a "
+"misconfigured files directory. Please ensure that the files directory "
+"is correctly configured and that the webserver has permission to "
+"create directories."
+msgstr ""
+
+#: /admin/reports/status
+msgid "Unable to create"
 msgstr ""
 
 msgid "Public files"
@@ -69426,7 +69446,7 @@ msgstr "Din kurv blev succesfuldt konverteret til en værktøjskasse."
 
 #: /node_basket
 msgid "Delete toolbox"
-msgstr "Slet værktøjskasse"
+msgstr "Slet"
 
 #: /views/ajax
 msgid "Subscribe"
@@ -69435,4 +69455,8 @@ msgstr "Abonnér"
 #: /node_basket
 msgid "Remove subscription"
 msgstr "Fjern"
+
+#: /node_basket
+msgid "Unsubscribe"
+msgstr "Afmeld"
 
