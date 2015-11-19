@@ -56,6 +56,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -116,6 +118,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -177,6 +181,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -237,6 +243,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -297,6 +305,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -358,6 +368,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -397,6 +409,8 @@ function os2intra_content_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
@@ -486,6 +500,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -548,6 +564,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -610,6 +628,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -665,6 +685,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Body',
     'required' => FALSE,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display_summary' => TRUE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -718,6 +740,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Spotbokse',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -786,6 +810,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Dato',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
@@ -855,6 +881,8 @@ function os2intra_content_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
@@ -943,6 +971,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => TRUE,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -999,6 +1029,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1059,6 +1091,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1111,6 +1145,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Stikord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1163,6 +1199,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'KL Emneord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1223,6 +1261,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => TRUE,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1281,6 +1321,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1329,6 +1371,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Synlighed',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1403,6 +1447,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 1,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -1493,6 +1539,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -1506,55 +1554,6 @@ function os2intra_content_types_field_default_field_instances() {
       ),
       'type' => 'text_textarea_with_summary',
       'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-it_vejledning-field_combo'.
-  $field_instances['node-it_vejledning-field_combo'] = array(
-    'bundle' => 'it_vejledning',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'includeable' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_combo',
-    'label' => 'combo',
-    'required' => FALSE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'options',
-      'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
-      ),
-      'type' => 'options_select',
-      'weight' => 14,
     ),
   );
 
@@ -1597,6 +1596,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Spotbokse',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1651,6 +1652,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Placering',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1666,6 +1669,8 @@ function os2intra_content_types_field_default_field_instances() {
   // 'node-it_vejledning-field_os2intra_base_vejledning'.
   $field_instances['node-it_vejledning-field_os2intra_base_vejledning'] = array(
     'bundle' => 'it_vejledning',
+    'custom_add_another' => 'Tilføj punkt',
+    'custom_remove' => 'Fjern punkt',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -1708,6 +1713,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Vejledning',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1760,6 +1767,8 @@ function os2intra_content_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
@@ -1804,6 +1813,65 @@ function os2intra_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-it_vejledning-field_os2intra_paragraph'.
+  $field_instances['node-it_vejledning-field_os2intra_paragraph'] = array(
+    'bundle' => 'it_vejledning',
+    'custom_add_another' => 'Tilføj afsnit',
+    'custom_remove' => 'Fjern afsnit',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Tilføj',
+          'delete' => 'Slet',
+          'description' => TRUE,
+          'edit' => 'Redigér',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 13,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2intra_paragraph',
+    'label' => 'Afsnit',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 20,
+    ),
+  );
+
   // Exported field_instance: 'node-it_vejledning-field_os2intra_related_ref'.
   $field_instances['node-it_vejledning-field_os2intra_related_ref'] = array(
     'bundle' => 'it_vejledning',
@@ -1842,6 +1910,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Relaterede sider',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1853,7 +1923,7 @@ function os2intra_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 10,
+      'weight' => 15,
     ),
   );
 
@@ -1896,6 +1966,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Selvbetjening',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1950,6 +2022,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Stikord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1961,6 +2035,66 @@ function os2intra_content_types_field_default_field_instances() {
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-it_vejledning-field_os2web_base_field_hidlinks'.
+  $field_instances['node-it_vejledning-field_os2web_base_field_hidlinks'] = array(
+    'bundle' => 'it_vejledning',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 14,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2web_base_field_hidlinks',
+    'label' => 'Skjul automatisk relaterede links',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 14,
     ),
   );
 
@@ -2029,6 +2163,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2082,6 +2218,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'KL Emneord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2134,6 +2272,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Filer',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'description_field' => 0,
       'file_directory' => '',
       'file_extensions' => 'pdf doc docx xls xlsx ppt pptx',
@@ -2197,6 +2337,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2270,6 +2412,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -2336,6 +2480,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2390,6 +2536,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Placering',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2404,6 +2552,8 @@ function os2intra_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-os2intra_base_page-field_os2intra_images'.
   $field_instances['node-os2intra_base_page-field_os2intra_images'] = array(
     'bundle' => 'os2intra_base_page',
+    'custom_add_another' => 'Tilføj et billede mere',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2443,11 +2593,16 @@ function os2intra_content_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
           '4_col_image_-_520x220' => 0,
           'normal' => 'normal',
+          'profilbillede' => 0,
+          'profile_image_default' => 0,
+          'spotboks' => 0,
         ),
       ),
       'file_directory' => '',
@@ -2523,6 +2678,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Afsnit',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2578,6 +2735,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2637,6 +2796,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Stikord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2699,6 +2860,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Skjul automatisk relaterede links',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2779,6 +2942,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2837,6 +3002,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'KL Emneord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2895,6 +3062,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Filer',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'description_field' => 0,
       'file_directory' => '',
       'file_extensions' => 'pdf docx ppt pptx doc xls xlsx docm dot dotx xlm xlt ppsx pptm',
@@ -2975,6 +3144,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3038,6 +3209,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3097,6 +3270,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => TRUE,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3154,6 +3329,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Dato',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
@@ -3219,6 +3396,8 @@ function os2intra_content_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
@@ -3301,6 +3480,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Body',
     'required' => FALSE,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display_summary' => TRUE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -3358,6 +3539,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Beskedmodtagere',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3414,6 +3597,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'KL Emneord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3474,6 +3659,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Kilde',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'linkit' => array(
         'enable' => 0,
         'insert_plugin' => '',
@@ -3541,6 +3728,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Type',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3601,6 +3790,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3664,6 +3855,8 @@ function os2intra_content_types_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -3732,6 +3925,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3796,6 +3991,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => TRUE,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3853,6 +4050,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3914,6 +4113,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -3967,6 +4168,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Stikord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4025,6 +4228,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'KL Emneord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4088,6 +4293,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => TRUE,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4145,6 +4352,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4194,6 +4403,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Synlighed',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4247,6 +4458,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Vis på forside',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4307,6 +4520,8 @@ function os2intra_content_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
@@ -4396,6 +4611,8 @@ function os2intra_content_types_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -4462,6 +4679,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Ekstra tekst',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'linkit' => array(
         'enable' => 0,
         'insert_plugin' => '',
@@ -4555,6 +4774,8 @@ function os2intra_content_types_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display_summary' => 0,
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -4617,6 +4838,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4674,6 +4897,8 @@ function os2intra_content_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
@@ -4765,6 +4990,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => TRUE,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4822,6 +5049,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4875,6 +5104,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'KL Emneord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -4933,6 +5164,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Filer',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'description_field' => 0,
       'file_directory' => '',
       'file_extensions' => 'txt pdf doc docx xls xlsx ppt pptx docm',
@@ -5018,6 +5251,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => TRUE,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -5075,6 +5310,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -5136,6 +5373,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -5191,6 +5430,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Topics',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -5252,6 +5493,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Synlighed',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -5336,6 +5579,8 @@ function os2intra_content_types_field_default_field_instances() {
           'status' => 1,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'view modes' => array(
@@ -5395,6 +5640,8 @@ function os2intra_content_types_field_default_field_instances() {
     'label' => 'Fysisk lokation',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -5417,13 +5664,13 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'list' => array(
         'label' => 'above',
@@ -5435,7 +5682,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -5445,6 +5692,8 @@ function os2intra_content_types_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 0,
       'alt_field_required' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
       'file_directory' => 'subsite/banner',
       'file_extensions' => 'png gif jpg jpeg',
@@ -5489,13 +5738,13 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'list' => array(
         'label' => 'above',
@@ -5521,6 +5770,8 @@ function os2intra_content_types_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 1,
       'alt_field_required' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
       'file_directory' => 'subsite/logo',
       'file_extensions' => 'png gif jpg jpeg',
@@ -5569,21 +5820,18 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'icon_field',
-        'settings' => array(
-          'link_to_content' => 1,
-        ),
-        'type' => 'icon_field_default',
-        'weight' => 4,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'icon_field',
         'settings' => array(
-          'link_to_content' => 1,
+          'link_to_content' => FALSE,
         ),
         'type' => 'icon_field_default',
-        'weight' => 4,
+        'weight' => 0,
       ),
       'list' => array(
         'label' => 'above',
@@ -5595,7 +5843,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -5605,6 +5853,8 @@ function os2intra_content_types_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'bundle' => NULL,
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'icon' => NULL,
       'user_register_form' => FALSE,
     ),
@@ -5659,7 +5909,6 @@ function os2intra_content_types_field_default_field_instances() {
   t('Vejledning');
   t('Vis på forside');
   t('Vælg de kantiner retten serveres i');
-  t('combo');
 
   return $field_instances;
 }
