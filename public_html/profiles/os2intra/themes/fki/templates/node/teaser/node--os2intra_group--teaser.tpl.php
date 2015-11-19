@@ -1,5 +1,5 @@
 <?php if ($view_mode == 'teaser'): ?>
-  <!-- node--teaser.tpl.php -->
+  <!-- node--os2intra_group--teaser.tpl.php -->
   <!-- Begin - teaser -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> fki-teaser fki-box fki-box-small-spacing"<?php print $attributes; ?>>
     <div class="table">
