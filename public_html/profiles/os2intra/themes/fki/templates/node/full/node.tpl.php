@@ -34,6 +34,12 @@
       <!-- End - image -->
     <?php endif; ?>
 
+    <div class="fki-full-controlpanel">
+      <ul class="fki-full-controlpanel-list">
+        <li>asd</li>
+      </ul>
+    </div>
+
     <?php if (isset($author_full_name) and $updated_at_short): ?>
       <!-- Begin - entity info -->
       <ul class="fki-full-info fki-entity-info">

@@ -372,7 +372,7 @@ function os2intra_user_import_overview() {
 /**
  * User import wrapper function
  */
-function os2intra_user_import_run() {
+function os2intra_user_import_run_with_drush() {
   if (variable_get('os2intra_user_import_enable', FALSE)) {
     setlocale(LC_ALL, "en_DK.UTF-8");
     variable_get('os2intra_user_import_dir', 'private://user_import');

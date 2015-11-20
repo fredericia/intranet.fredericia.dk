@@ -209,46 +209,6 @@ function fki_preprocess_node__it_vejledning(&$variables) {
   }
 }
 
-/*
- * Node basket
- * Implements hook_preprocess_node().
- */
-function fki_preprocess_node__node_basket(&$variables) {
-  global $user;
-  $user = user_load($user->uid);
-
-  if ($field_subscribed = field_get_items('user', $user, 'field_node_basket_toolboxes')) {
-
-    // I am author
-    if ($user->uid == $variables['uid']) {
-
-      // Subscription (why?)
-      if (in_array_recursive($variables['nid'], $field_subscribed)) {
-        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Unsubscribe') . '</a>';
-      }
-
-      // Not a subscription
-      else {
-        $variables['action_button'] = '<a href="/node/' . $variables['nid'] . '/delete" class="pull-right">' . t('Delete toolbox') . '</a>';
-      }
-    }
-
-    // I am not author
-    else {
-
-      // It's already added
-      if (in_array_recursive($variables['nid'], $field_subscribed)) {
-        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Unsubscribe') . '</a>';
-      }
-
-      // Not added
-      else {
-        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Subscribe') . '</a>';
-      }
-    }
-  }
-}
-
 function fki_theme(&$existing, $type, $theme, $path) {
   $hooks = array();
 
