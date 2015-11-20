@@ -16,6 +16,7 @@ function os2web_habitat_strongarm() {
   $strongarm->name = 'habitat_disable_dev';
   $strongarm->value = array(
     0 => 'piwik',
+    1 => 'piwik_fredericia_prod_settings',
   );
   $export['habitat_disable_dev'] = $strongarm;
 
@@ -25,6 +26,7 @@ function os2web_habitat_strongarm() {
   $strongarm->name = 'habitat_disable_preprod';
   $strongarm->value = array(
     0 => 'piwik',
+    1 => 'piwik_fredericia_prod_settings',
   );
   $export['habitat_disable_preprod'] = $strongarm;
 
@@ -49,6 +51,7 @@ function os2web_habitat_strongarm() {
   $strongarm->name = 'habitat_disable_test';
   $strongarm->value = array(
     0 => 'piwik',
+    1 => 'piwik_fredericia_prod_settings',
   );
   $export['habitat_disable_test'] = $strongarm;
 
