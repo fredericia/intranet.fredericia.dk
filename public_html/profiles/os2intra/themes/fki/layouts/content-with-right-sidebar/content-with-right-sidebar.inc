@@ -3,7 +3,7 @@
  * implementation of hook_panels_layouts()
  */
 $plugin = array(
-  'title' => t('Content with right sidebar'),
+  'title' => t('Content with right sidebar (8/4)'),
   'category' => t('fki'),
   'icon' => 'content-with-right-sidebar.png',
   'theme' => 'content-with-right-sidebar',
