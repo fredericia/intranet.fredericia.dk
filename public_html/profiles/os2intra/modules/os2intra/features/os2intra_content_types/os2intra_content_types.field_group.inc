@@ -208,12 +208,12 @@ function os2intra_content_types_field_group_info() {
     'label' => 'Begivenhed',
     'weight' => '0',
     'children' => array(
-      0 => 'group_media',
-      1 => 'group_tekst',
-      2 => 'group_tilmelding',
-      3 => 'group_indstillinger',
-      4 => 'group_relationer',
-      5 => 'group_spots',
+      0 => 'group_indstillinger',
+      1 => 'group_media',
+      2 => 'group_relationer',
+      3 => 'group_spots',
+      4 => 'group_tekst',
+      5 => 'group_tilmelding',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -386,7 +386,6 @@ function os2intra_content_types_field_group_info() {
     'children' => array(
       0 => 'group_content_access',
       1 => 'field_os2web_base_field_promote',
-      2 => 'scheduler_settings',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -737,16 +736,11 @@ function os2intra_content_types_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'event';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_event';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Meta',
     'weight' => '52',
-    'children' => array(
-      0 => 'field_os2intra_base_spotboxes',
-      1 => 'field_os2intra_related_ref',
-      2 => 'field_os2intra_selvbetjening_ref',
-      3 => 'og_group_ref',
-    ),
+    'children' => array(),
     'format_type' => 'htab',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -899,7 +893,7 @@ function os2intra_content_types_field_group_info() {
       0 => 'field_os2intra_related_ref',
       1 => 'field_os2intra_selvbetjening_ref',
       2 => 'og_group_ref',
-      3 => 'field_os2web_base_field_edi_tags',
+      3 => 'field_os2web_base_field_hidlinks',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -927,11 +921,11 @@ function os2intra_content_types_field_group_info() {
     'label' => 'Relationer',
     'weight' => '18',
     'children' => array(
-      0 => 'field_topics',
-      1 => 'og_group_ref',
-      2 => 'field_os2intra_physical_location',
+      0 => 'og_group_ref',
+      1 => 'field_os2intra_physical_location',
+      2 => 'field_os2intra_selvbetjening_ref',
       3 => 'field_os2web_base_field_ref',
-      4 => 'field_os2intra_selvbetjening_ref',
+      4 => 'field_os2web_base_field_hidlinks',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -1139,8 +1133,9 @@ function os2intra_content_types_field_group_info() {
       0 => 'body',
       1 => 'field_os2intra_date',
       2 => 'field_os2intra_physical_location',
-      3 => 'field_os2web_base_field_kle_ref',
-      4 => 'title',
+      3 => 'field_os2web_base_field_edi_tags',
+      4 => 'field_os2web_base_field_kle_ref',
+      5 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -1236,7 +1231,8 @@ function os2intra_content_types_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_os2web_base_field_kle_ref',
-      2 => 'title',
+      2 => 'field_os2web_base_field_edi_tags',
+      3 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -1355,11 +1351,11 @@ function os2intra_content_types_field_group_info() {
     'label' => 'wiki',
     'weight' => '0',
     'children' => array(
-      0 => 'group_media',
-      1 => 'group_tekst',
-      2 => 'group_spotsnforms',
-      3 => 'group_relationer',
-      4 => 'group_indstillinger',
+      0 => 'group_indstillinger',
+      1 => 'group_media',
+      2 => 'group_relationer',
+      3 => 'group_spotsnforms',
+      4 => 'group_tekst',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(

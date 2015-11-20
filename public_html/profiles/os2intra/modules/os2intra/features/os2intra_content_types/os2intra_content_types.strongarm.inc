@@ -697,13 +697,16 @@ function os2intra_content_types_strongarm() {
           'weight' => '5',
         ),
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '5',
         ),
         'redirect' => array(
-          'weight' => '4',
+          'weight' => '6',
+        ),
+        'scheduler_settings' => array(
+          'weight' => '0',
         ),
       ),
       'display' => array(),

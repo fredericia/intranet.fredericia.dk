@@ -266,11 +266,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:os2intra_group:update field_topics field'
-  $permissions['node:os2intra_group:update field_topics field'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:os2intra_group:update group'
   $permissions['node:os2intra_group:update group'] = array(
     'roles' => array(
@@ -445,11 +440,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_group:view field_os2web_base_field_media field'
   $permissions['node:os2intra_group:view field_os2web_base_field_media field'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:os2intra_group:view field_topics field'
-  $permissions['node:os2intra_group:view field_topics field'] = array(
     'roles' => array(),
   );
 
@@ -768,11 +758,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
     'roles' => array(),
   );
 
-  // Exported og permission: 'node:os2intra_org_group_unit:update field_topics field'
-  $permissions['node:os2intra_org_group_unit:update field_topics field'] = array(
-    'roles' => array(),
-  );
-
   // Exported og permission: 'node:os2intra_org_group_unit:update group'
   $permissions['node:os2intra_org_group_unit:update group'] = array(
     'roles' => array(
@@ -954,11 +939,6 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_org_group_unit:view field_os2web_base_field_media field'
   $permissions['node:os2intra_org_group_unit:view field_os2web_base_field_media field'] = array(
-    'roles' => array(),
-  );
-
-  // Exported og permission: 'node:os2intra_org_group_unit:view field_topics field'
-  $permissions['node:os2intra_org_group_unit:view field_topics field'] = array(
     'roles' => array(),
   );
 
