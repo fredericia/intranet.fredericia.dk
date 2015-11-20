@@ -23,7 +23,7 @@
 
         // Generate list with links and append to parent menu item.
         for (var key in data) {
-          var li = $('<li class="leaf main-navigation-list-link"><a href="node/' + data[key].nid + '">' + data[key].title + '</a></li>');
+          var li = $('<li class="leaf main-navigation-list-link"><a href="/node/' + data[key].nid + '">' + data[key].title + '</a></li>');
           ul.append(li);
         }
       }
