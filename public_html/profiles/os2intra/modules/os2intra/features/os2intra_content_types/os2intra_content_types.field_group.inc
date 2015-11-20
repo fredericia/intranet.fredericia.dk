@@ -180,7 +180,8 @@ function os2intra_content_types_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_os2web_base_field_kle_ref',
-      2 => 'title',
+      2 => 'field_os2web_base_field_edi_tags',
+      3 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -861,11 +862,11 @@ function os2intra_content_types_field_group_info() {
     'label' => 'Post',
     'weight' => '0',
     'children' => array(
-      0 => 'group_content',
-      1 => 'group_indstillinger',
-      2 => 'group_spotsnforms',
-      3 => 'group_media',
-      4 => 'group_meta',
+      0 => 'group_media',
+      1 => 'group_meta',
+      2 => 'group_content',
+      3 => 'group_indstillinger',
+      4 => 'group_spotsnforms',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(

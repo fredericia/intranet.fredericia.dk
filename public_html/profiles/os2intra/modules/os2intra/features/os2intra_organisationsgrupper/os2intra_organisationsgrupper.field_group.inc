@@ -375,8 +375,6 @@ function os2intra_organisationsgrupper_field_group_info() {
       1 => 'field_os2intra_physical_location',
       2 => 'field_os2intra_related_ref',
       3 => 'field_os2intra_selvbetjening_ref',
-      4 => 'field_os2web_base_field_edi_tags',
-      5 => 'field_os2intra_promoteto',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
