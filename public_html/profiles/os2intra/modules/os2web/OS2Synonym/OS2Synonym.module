@@ -1,0 +1,461 @@
+<?php
+
+/**
+ * @file
+ * OS2Synonym handles the management of synoyms. The synonyms rae exported 
+ * and imported in the format of Solr synonyms.txt.
+ *
+ */
+
+/*
+   Please read the README.txt file in the root directory.
+*/
+
+/**
+ * Implements hook_menu().
+ */
+function OS2Synonym_menu() {
+  $items = array();
+
+  $items['OS2Synonym'] = array(
+    'title'            => 'OS2Synonym',
+    'description'      => '',
+    'page callback'    => '_OS2Synonym',
+    'access arguments' => array('edit OS2Synonym'),
+    'type'             => MENU_CALLBACK,
+  );
+
+  $items['OS2Synonym/actions'] = array(
+    'title'            => 'OS2Synonym actions',
+    'description'      => '',
+    'page callback'    => '_OS2Synonym_actions',
+    'access arguments' => array('edit OS2Synonym'),
+    'type'             => MENU_CALLBACK,
+  );
+
+  $items['OS2Synonym/import'] = array(
+    'title'            => 'OS2Synonym import',
+    'description'      => '',
+    'page callback'    => '_OS2Synonym_import',
+    'access arguments' => array('edit OS2Synonym'),
+    'type'             => MENU_CALLBACK,
+  );
+
+  $items['OS2Synonym_download'] = array(
+    'title'            => 'OS2Synonym download',
+    'description'      => '',
+    'page callback'    => '_OS2Synonym_download',
+    'access arguments' => array('edit OS2Synonym'),
+    'type'             => MENU_CALLBACK,
+  );
+
+  $items['OS2Synonym_API'] = array(
+    'title'            => 'OS2Synonym API',
+    'description'      => '',
+    'page callback'    => '_OS2Synonym_API',
+    'access arguments' => array('access content'),
+    'type'             => MENU_CALLBACK,
+  );
+
+  $items['OS2Synonym_send_solr'] = array(
+      'title'            => 'OS2Synonym send to Solr',
+      'description'      => '',
+      'page callback'    => '_OS2Synonym_send_solr',
+      'access arguments' => array('access content'),
+      'type'             => MENU_CALLBACK,
+  );
+
+  $items['admin/config/content/OS2Synonym'] = array(
+    'title' => 'OS2Synonym',
+    'description' => 'Configuration for the OS2Synonym module.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('OS2Synonym_admin_form'),
+    'access arguments' => array('administer OS2Synonym'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function OS2Synonym_permission() {
+  return array(
+    'administer OS2Synonym' => array(
+      'title' => t('OS2Synonym administration'),
+      'description' => 'Allows a user to edit the administrative settings.',
+    ),
+    'edit OS2Synonym' => array(
+      'title' => t('OS2Synonym editor'),
+      'description' => 'Allows a user to edit the synonyms.',
+    ),
+  );
+}
+
+/**
+ * Implements hook_help().
+ */
+function OS2Synonym_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#OS2Synonym':
+      module_load_include('inc', 'OS2Synonym');
+
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides a system to handle synonyms. Each group of synonyms occupies one line.') . '</p>';
+
+      return $output;
+  }
+}
+
+/**
+ * The administration form.
+ */
+function OS2Synonym_admin_form($form, &$form_state) {
+
+  $form['OS2Synonym_Solr_filename'] = array(
+    '#type' => 'textfield',
+    '#title' => t('The name of Solr synonym file'),
+    '#description' => t('The name of the Solr synonym file.'),
+    '#size' => 60,
+    '#maxlength' => 255,
+    '#required' => TRUE,
+    '#default_value' => variable_get('OS2Synonym_Solr_filename', "synonyms.txt"),
+  );
+
+  $form['OS2Synonym_Solr_core_reload_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('The Solr core reload URL'),
+    '#description' => t('Example http://localhost:8983/solr/admin/cores?action=RELOAD&core=collection1'),
+    '#size' => 60,
+    '#maxlength' => 255,
+    '#default_value' => variable_get('OS2Synonym_Solr_core_reload_url', ''),
+  );
+
+  $form['OS2Synonym_import_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('The URL of the shared Solr synonyms text file'),
+    '#description' => htmlspecialchars(t('The URL of the shared Solr synonyms text file. For example http://<servername>/OS2Synonym_download')),
+    '#size' => 60,
+    '#maxlength' => 255,
+    '#required' => TRUE,
+    '#default_value' => variable_get('OS2Synonym_import_url', ""),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * The main page of the module.
+ */
+function _OS2Synonym() {
+  if ((isset($_FILES['synonyms']['tmp_name'])) && (is_uploaded_file($_FILES['synonyms']['tmp_name']))) {
+    if ($_FILES['synonyms']['error'] == UPLOAD_ERR_OK) {
+      $uploaded_file_contents = file_get_contents($_FILES['synonyms']['tmp_name']); 
+
+      // Get all the synonyms from the database as JSON
+      $synonyms = variable_get('OS2Synonym_synonyms_json', array());
+
+      $uploaded_lines = explode("\n", $uploaded_file_contents);
+
+      $imported_lines = array();
+
+      foreach($uploaded_lines as $index => $synonym_line) {
+        if(strpos($synonym_line, "#") === false) {
+          if(! in_array($synonym_line, $synonyms)) {
+            $imported_lines[] = $synonym_line;
+          }
+        }
+      }
+
+      $html = buildBodyContent($imported_lines);
+    }
+    else {
+      
+    }
+  }
+  else {
+    $html = buildBodyContent(array());
+  }
+
+  // Return the page HTML.
+  return $html;
+}
+
+/**
+ * The main page of the module.
+ */
+function _OS2Synonym_actions() {
+  $action = isset($_POST['action']) ? $_POST['action'] : "";
+
+  $result = "";
+
+  switch($action)
+  {
+    case 'save':
+      if(isset($_POST['OS2Synonyms_lines_json'])) {
+        $synonym_lines_json = $_POST['OS2Synonyms_lines_json'];
+
+        $synonym_lines = json_decode($synonym_lines_json, true);
+
+        variable_set('OS2Synonym_synonyms_json', $synonym_lines);
+        
+        $result .= "<div class = 'OS2Synonym-messages-ok'>" . t("The synonyms have been saved.") . "</div>";
+      }
+
+      break;
+  }
+
+  print $result;
+
+  // Return empty to avoid theming
+  return;
+}
+
+function _OS2Synonym_import() {
+  // Get file.
+  $import_url = variable_get('OS2Synonym_import_url');
+
+  // Open connection.
+  $ch = curl_init();
+
+  // Set curl to POST the data and return the result.
+  curl_setopt($ch, CURLOPT_URL, $import_url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+  // Execute post.
+  $default_synonym_file = curl_exec($ch);  
+
+  $result = array();
+
+  // Check for errors and display the error message
+  if($errno = curl_errno($ch)) {
+    $result['status'] = 'error';
+    $result['data'] = "<div class = 'OS2Synonym-messages-error'>" . curl_strerror($errno) . "</div>";
+  }
+  else {
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+    if($http_code == 200) {
+      // Add some information
+      $result['status'] = 'ok';
+      $result['data'] = $default_synonym_file;
+    }
+    else {
+    $result['status'] = 'error';
+    $result['data'] = "<div class = 'OS2Synonym-messages-error'>An error occurred. HTTP code = " . $http_code . "</div>";      
+    }
+  }
+  
+  print json_encode($result);
+  
+  // Return empty to avoid theming
+  return;
+}
+
+function _OS2Synonym_download() {
+  $filename = "synonyms.txt";
+  $synonym_lines = variable_get('OS2Synonym_synonyms_json', array());
+
+  $synonym_text = implode("\n", $synonym_lines);
+
+  // Serve file download.
+  drupal_add_http_header('Pragma', 'public');
+  drupal_add_http_header('Expires', '0');
+  drupal_add_http_header('Cache-Control', 'must-revalidate, post-check=0, pre-check=0');
+  drupal_add_http_header('Content-Type', 'text/plain');
+  drupal_add_http_header('Content-Disposition', 'attachment; filename=' . $filename . ';');
+  drupal_add_http_header('Content-Length', strlen($synonym_text));
+  drupal_send_headers();
+
+  // Text from the synonyms.txt of Solr
+  print "# Contains synonyms to use for your index. For the format used, see\n";
+  print "# http://wiki.apache.org/solr/AnalyzersTokenizersTokenFilters#solr.SynonymFilterFactory\n";
+  print "# (Lines starting with a pound character # are ignored.)\n";
+
+  // Add some information
+  print "# Created by OS2Synonym\n";
+  print $synonym_text;
+
+  drupal_exit();
+
+  // Return empty to avoid theming
+  return;
+}
+
+/**
+ * Handles calls from external systems.
+ */
+function _OS2Synonym_API() {
+  $action = isset($_POST['action']) ? $_POST['action'] : "";
+
+  switch($action) {
+    case 'download':
+      $filename = "synonyms.txt";
+      $synonym_lines = variable_get('OS2Synonym_synonyms_json');
+
+      $synonym_text = implode("\n", $synonym_lines);
+
+      // Serve file download.
+      drupal_add_http_header('Pragma', 'public');
+      drupal_add_http_header('Expires', '0');
+      drupal_add_http_header('Cache-Control', 'must-revalidate, post-check=0, pre-check=0');
+      drupal_add_http_header('Content-Type', 'text/plain');
+      drupal_add_http_header('Content-Disposition', 'attachment; filename=' . $filename . ';');
+      drupal_add_http_header('Content-Length', strlen($synonym_text));
+      drupal_send_headers();
+
+      // Text from the synonyms.txt of Solr
+      print "# Contains synonyms to use for your index. For the format used, see\n";
+      print "# http://wiki.apache.org/solr/AnalyzersTokenizersTokenFilters#solr.SynonymFilterFactory\n";
+      print "# (Lines starting with a pound character # are ignored.)\n";
+
+      // Add some information
+      print "# Created by OS2Synonym\n";
+      print $synonym_text;
+
+      drupal_exit();
+
+      break;
+
+    default:
+      print "Unknown action '$action'";
+
+      break;
+  }
+
+  // Return empty so no theming.
+  return;
+}
+
+function _OS2Synonym_send_solr() {
+
+  // Store synonyms in SOLR synonym file
+  $synonym_filename = variable_get('OS2Synonym_Solr_filename', FALSE);
+
+  if (! $synonym_filename) {
+     // Report some error to user via Drupal...
+    return;
+  }
+
+  // Get synonyms from database
+  $synonym_lines = variable_get('OS2Synonym_synonyms_json', array());
+  $synonym_text = implode("\n", $synonym_lines);
+  $synonym_text .= "\n";
+
+  // Write synonyms file
+  if (! file_put_contents($synonym_filename, $synonym_text)) {
+    //Report some error to user via Drupal...
+    return;
+  }
+
+  _OS2Synonym_reload_solr_core();
+}
+
+/**
+ * Reload Solr core
+ */
+function _OS2Synonym_reload_solr_core() {
+
+  $reload_url = variable_get('OS2Synonym_Solr_core_reload_url', FALSE);
+
+  if (! $reload_url) {
+    return FALSE;
+  }
+
+  // Call the URL
+  file_get_contents($reload_url);
+  return TRUE;
+}
+
+function buildBodyContent($imported_lines = array()) {
+  $html = "";
+
+  // Get all the synonyms from the database as JSON
+  $synonyms = variable_get('OS2Synonym_synonyms_json', array());
+
+  $html .= "<div id = 'OS2Synonym-page'>";
+
+  // The title and description
+  $html .= "<div id = 'OS2Synonym-description'>";
+  $html .= "  <h1>OS2Synonym</h1>";
+  $html .= "</div>";
+
+  // Messages from the system
+  $html .= "<div id = 'OS2Synonym-messages'>";
+  $html .= "</div>";
+
+  // The filter field
+  $html .= "<div id = 'OS2Synonym-filter'>";
+  $html .= "  <div id = 'OS2Synonym-filter-header'>";
+  $html .= "    " . t("Filter");
+  $html .= "  </div>";
+  $html .= "  <input id = 'OS2Synonym-filter-field' value = ''>";
+  $html .= "</div>";
+
+  // The action buttons
+  $html .= "<div id = 'OS2Synonym-actions'>";
+
+  $html .= "<div id = 'OS2Synonym-internal-actions'>";
+  $html .= "  <input type = 'submit' id = 'OS2Synonym-actions-new' class = 'OS2Synonym-actions-button' value = '" . t("Add new synonym line") . "'>";
+
+  if(count($imported_lines) > 0) {
+    $html .= "  <input type = 'submit' id = 'OS2Synonym-actions-save' class = 'OS2Synonym-actions-button' value = '" . t("Save") . "'>";
+  }
+  else {
+    $html .= "  <input type = 'submit' id = 'OS2Synonym-actions-save' class = 'OS2Synonym-actions-button-disabled' value = '" . t("Save") . "'>";
+  }
+  
+  $html .= "</div>";
+  
+  $html .= "<div id = 'OS2Synonym-external-actions'>";
+  $html .= "  <input type = 'submit' id = 'OS2Synonym-actions-send-solr' class = 'OS2Synonym-actions-button-right' value = '" . t("Send til SOLR") . "'>";
+  $html .= "  <input type = 'submit' id = 'OS2Synonym-actions-export' class = 'OS2Synonym-actions-button-right' value = '" . t("Export") . "'>";
+  $html .= "  <input type = 'submit' id = 'OS2Synonym-actions-import-url' class = 'OS2Synonym-actions-button-right' value = '" . t("Import from url") . "'>";
+  $html .= "  <input type = 'submit' id = 'OS2Synonym-actions-import-file' class = 'OS2Synonym-actions-button-right' value = '" . t("Import from file") . "'>";
+  $html .= "</div>";
+
+  // /OS2Synonym-actions
+  $html .= "</div>";
+
+  // The actual synonym lines
+  $html .= "<div id = 'OS2Synonym-lines'>";
+
+  $html .= "  <div id = 'OS2Synonym-lines-header'>";
+  $html .= "    " . t("Synonyms");
+  $html .= "  </div>";
+
+  foreach($synonyms as $index => $synonyms_line) {
+    $html .= "<div class = 'OS2Synonym-wrapper'>";
+
+    $html .= "  <div class = 'OS2Synonym-synonyms'>";
+    $html .= "    <input class = 'OS2Synonym-synonyms-line' value = '$synonyms_line'>";
+    $html .= "    <input type = 'submit' class = 'OS2Synonym-synonyms-line-delete' value = '" . t("Delete") . "'>";
+    $html .= "  </div>";
+    
+    $html .= "</div>";
+  }
+
+  if(count($imported_lines) > 0) {
+    $html .= "<div class = 'OS2Synonym-import-header'>Imported synonyms</div>";
+
+    foreach($imported_lines as $index => $synonyms_line) {
+      $html .= "<div class = 'OS2Synonym-wrapper'>";
+
+      $html .= "  <div class = 'OS2Synonym-synonyms'>";
+      $html .= "    <input class = 'OS2Synonym-synonyms-line' value = '$synonyms_line'>";
+      $html .= "    <input type = 'submit' class = 'OS2Synonym-synonyms-line-delete' value = '" . t("Delete") . "'>";
+      $html .= "  </div>";
+
+      $html .= "</div>";
+    }
+  }
+
+  // /OS2Synonym-lines
+  $html .= "</div>";
+
+  // /OS2Synonym-page
+  $html .= "</div>";
+
+  return $html;
+}

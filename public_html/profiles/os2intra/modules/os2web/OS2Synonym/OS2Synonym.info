@@ -1,0 +1,9 @@
+name = OS2Synonym
+description = Handles synonyms. Includes export to Solr synonyms format.
+core = 7.x
+version = 7.x-1.0
+configure = admin/config/content/OS2Synonym
+
+
+stylesheets[all][] = css/OS2Synonym.css
+scripts[] = js/OS2Synonym.js

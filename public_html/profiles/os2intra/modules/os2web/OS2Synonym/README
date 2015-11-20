@@ -1,0 +1,29 @@
+The OS2Synonym was programmed by Taxon ApS (http://taxon.dk)
+for OS2 - Offentligt digitaliseringsfællesskab (http://os2web.dk).
+
+Copyright (c) 2014, OS2 - Offentligt digitaliseringsfællesskab.
+
+The OS2Synonym is free software; you may use, study, modify and
+distribute it under the terms of version 2.0 of the Mozilla Public
+License. See the LICENSE file for details. If a copy of the MPL was not
+distributed with this file, You can obtain one at
+http://mozilla.org/MPL/2.0/.
+
+All source code in this and the underlying directories is subject to
+the terms of the Mozilla Public License, v. 2.0. 
+
+This module allows transfer of synonyms to Apache Solr.
+
+The following settings must be set:
+
+'The name of Solr synonym file' The local synonyms.txt file the module will write synonyms to. The local Solr installation can be setup to read the synonyms from this file.
+
+'The Solr core reload URL' The URL to call for a Solr core reload. For example: http://localhost:8983/solr/admin/cores?action=RELOAD&core=collection1
+
+'The URL of the shared Solr synonyms text file' This allows the module to load synonyms from another Drupal installation. The URL could be set to http://<hostname>/OS2Synonym_download
+
+The modules userinterface is located at /OS2Synonym. Here new synonyms can be manually entered, uploaded from a file, or from another Drupal installation.
+
+The button 'Send to Solr' will save the synonyms ot the defined synonyms file and trigger a Solr core reload via the URL defined in settings.
+
+Apache Solr can be setup to do either query time parsing or index time parsing of synonyms. Check Apache Solr's documentation for more information.
