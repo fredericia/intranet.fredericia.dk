@@ -69,6 +69,8 @@ function os2intra_users_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -116,6 +118,8 @@ function os2intra_users_field_default_field_instances() {
     'label' => 'Kort navn',
     'required' => FALSE,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -182,6 +186,8 @@ function os2intra_users_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -249,6 +255,8 @@ function os2intra_users_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => 0,
     ),
@@ -297,6 +305,8 @@ function os2intra_users_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -346,6 +356,8 @@ function os2intra_users_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -427,6 +439,8 @@ function os2intra_users_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'linkit' => array(
         'button_text' => 'Search',
         'enable' => 0,
@@ -476,6 +490,8 @@ function os2intra_users_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
@@ -560,6 +576,8 @@ function os2intra_users_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -604,6 +622,8 @@ function os2intra_users_field_default_field_instances() {
     'label' => 'os2intra_termination_date',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
@@ -679,6 +699,8 @@ function os2intra_users_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 1,
       'user_register_form' => 0,
     ),
@@ -728,6 +750,8 @@ function os2intra_users_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -778,6 +802,8 @@ function os2intra_users_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -828,6 +854,8 @@ function os2intra_users_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -881,6 +909,8 @@ function os2intra_users_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'view modes' => array(

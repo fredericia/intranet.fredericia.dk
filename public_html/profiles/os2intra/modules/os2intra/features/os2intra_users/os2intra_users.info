@@ -71,6 +71,7 @@ features[taxonomy][] = os2intra_organisation_tax
 features[taxonomy][] = user_hobbies
 features[taxonomy][] = user_jobtitle
 features[taxonomy][] = user_skills
+features[variable][] = page_manager_user_view_disabled
 features[views_view][] = forfatters_indhold
 features[views_view][] = os2intra_brugervisning
 features[views_view][] = telefonbogen
