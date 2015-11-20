@@ -653,7 +653,7 @@ function os2intra_panels_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -26;
+  $handler->weight = -25;
   $handler->conf = array(
     'title' => 'Panel',
     'no_blocks' => 0,
@@ -1321,6 +1321,211 @@ function os2intra_panels_default_page_manager_handlers() {
   $display->title_pane = 'new-b3812514-dd4f-4b2e-8deb-ad75274cb60e';
   $handler->conf['display'] = $display;
   $export['node_view__panel_context_78c36cac-1085-4311-9c4e-14af6a020b67'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view__panel_context_aa0b0182-0c9a-4301-bbb2-0670172c127d';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = -26;
+  $handler->conf = array(
+    'title' => 'Værktøjskasse',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Bruger',
+        'keyword' => 'user',
+        'name' => 'user',
+        'type' => 'current',
+        'uid' => '',
+        'id' => 1,
+      ),
+    ),
+    'relationships' => array(),
+    'name' => '',
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'node_basket' => 'node_basket',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'content-with-right-sidebar';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'sidebar' => NULL,
+      'content' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'bcd2e8dd-4f6e-4736-9d19-f677e5f24d63';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-e48c24a5-be4b-4d7e-b3ab-1d89fba1f0b9';
+    $pane->panel = 'content';
+    $pane->type = 'node_content';
+    $pane->subtype = 'node_content';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'links' => 0,
+      'no_extras' => 0,
+      'override_title' => 0,
+      'override_title_text' => '',
+      'identifier' => '',
+      'link' => 0,
+      'leave_node_title' => 1,
+      'build_mode' => 'full',
+      'context' => 'argument_entity_id:node_1',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e48c24a5-be4b-4d7e-b3ab-1d89fba1f0b9';
+    $display->content['new-e48c24a5-be4b-4d7e-b3ab-1d89fba1f0b9'] = $pane;
+    $display->panels['content'][0] = 'new-e48c24a5-be4b-4d7e-b3ab-1d89fba1f0b9';
+    $pane = new stdClass();
+    $pane->pid = 'new-e74b73fd-cc12-4955-8afa-96fa84bc2a89';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views';
+    $pane->subtype = 'node_basket';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block_search',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'e74b73fd-cc12-4955-8afa-96fa84bc2a89';
+    $display->content['new-e74b73fd-cc12-4955-8afa-96fa84bc2a89'] = $pane;
+    $display->panels['sidebar'][0] = 'new-e74b73fd-cc12-4955-8afa-96fa84bc2a89';
+    $pane = new stdClass();
+    $pane->pid = 'new-275de35d-a2c0-4bdb-be8c-633a5db69009';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views';
+    $pane->subtype = 'node_basket';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block_own',
+      'context' => array(
+        0 => 'context_user_1.uid',
+      ),
+      'override_title' => 1,
+      'override_title_text' => 'Oprettet af %user:name',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '275de35d-a2c0-4bdb-be8c-633a5db69009';
+    $display->content['new-275de35d-a2c0-4bdb-be8c-633a5db69009'] = $pane;
+    $display->panels['sidebar'][1] = 'new-275de35d-a2c0-4bdb-be8c-633a5db69009';
+    $pane = new stdClass();
+    $pane->pid = 'new-41529789-247a-4b4b-83a2-97bc052461b2';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views';
+    $pane->subtype = 'node_basket';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block_2',
+      'context' => array(
+        0 => 'context_user_1.uid',
+      ),
+      'override_title' => 1,
+      'override_title_text' => ' Abonnerede værktøjer ',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '41529789-247a-4b4b-83a2-97bc052461b2';
+    $display->content['new-41529789-247a-4b4b-83a2-97bc052461b2'] = $pane;
+    $display->panels['sidebar'][2] = 'new-41529789-247a-4b4b-83a2-97bc052461b2';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-e74b73fd-cc12-4955-8afa-96fa84bc2a89';
+  $handler->conf['display'] = $display;
+  $export['node_view__panel_context_aa0b0182-0c9a-4301-bbb2-0670172c127d'] = $handler;
 
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */

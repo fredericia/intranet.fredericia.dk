@@ -554,7 +554,7 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_os2intra_base_spotboxes_node']['field'] = 'reverse_field_os2intra_base_spotboxes_node';
   $handler->display->display_options['relationships']['reverse_field_os2intra_base_spotboxes_node']['label'] = 'Indhold refererer til Indhold fra field_os2intra_base_spotboxes';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Spotbokse */
+  /* Field: Field: Spotbokse */
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['id'] = 'field_os2intra_base_spotboxes';
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['table'] = 'field_data_field_os2intra_base_spotboxes';
   $handler->display->display_options['fields']['field_os2intra_base_spotboxes']['field'] = 'field_os2intra_base_spotboxes';
