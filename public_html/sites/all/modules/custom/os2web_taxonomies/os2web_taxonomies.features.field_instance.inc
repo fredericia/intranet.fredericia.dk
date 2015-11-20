@@ -42,6 +42,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'Afdelingsid',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -90,6 +92,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'Afdelingsnavn',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -136,6 +140,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'Systemid',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -184,6 +190,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'KLE stikord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -236,6 +244,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'Udgået',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -287,6 +297,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'Udgået',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => 1,
       'min' => 0,
       'prefix' => '',
@@ -343,6 +355,8 @@ function os2web_taxonomies_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -396,6 +410,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'Søgeord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -446,6 +462,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'Udgået',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => 1,
       'min' => 0,
       'prefix' => '',
@@ -493,6 +511,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'Søgeord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -580,6 +600,8 @@ function os2web_taxonomies_field_default_field_instances() {
           ),
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -626,6 +648,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'GIS postby',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -672,6 +696,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'GIS navn',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -718,6 +744,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'GIS id',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -765,6 +793,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'GIS type',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -815,6 +845,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'Dagsordensvisning',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => 1,
       'min' => 0,
       'prefix' => '',
@@ -862,6 +894,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'Acadremapning',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -913,6 +947,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'Udgået',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => 1,
       'min' => 0,
       'prefix' => '',
@@ -960,6 +996,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'Søgeord',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1012,6 +1050,8 @@ function os2web_taxonomies_field_default_field_instances() {
     'label' => 'Priority',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'max' => '',
       'min' => '',
       'prefix' => '',
