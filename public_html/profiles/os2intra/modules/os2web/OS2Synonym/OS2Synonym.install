@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Uninstall function for the OS2Synonym module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function OS2Synonym_uninstall() {
+  variable_del('OS2Synonym_Solr_filename');
+  variable_del('OS2Synonym_synonyms_json');
+}
