@@ -209,6 +209,17 @@ function fki_preprocess_node__it_vejledning(&$variables) {
   }
 }
 
+/*
+ * Node basket
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__node_basket(&$variables) {
+
+  if ($field_node_basket_type = field_get_items('node', $variables['node'], 'field_node_basket_type')) {
+    $variables['basket_type'] = $field_node_basket_type[0]['value'];
+  }
+}
+
 function fki_theme(&$existing, $type, $theme, $path) {
   $hooks = array();
 

@@ -15,7 +15,7 @@
           <!-- End - references -->
         <?php endif; ?>
 
-        <?php if (isset($content['field_node_basket_references'])): ?>
+        <?php if (isset($content['field_node_basket_references']) && $basket_type == 'basket'): ?>
           <!-- Begin - action buttons -->
           <div class="fki-full-body-action-buttons">
             <a href="/node_basket/basket/view/convert" class="btn btn-tertiary btn-sm">
