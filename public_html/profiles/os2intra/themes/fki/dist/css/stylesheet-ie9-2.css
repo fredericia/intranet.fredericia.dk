@@ -4450,7 +4450,7 @@
     right: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    min-height: initial;
+    min-height: inherit;
     box-shadow: 0 0 7px 5px rgba(0, 0, 0, 0.2);
   }
 }
@@ -4468,7 +4468,7 @@
     right: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    min-height: initial;
+    min-height: inherit;
     box-shadow: 0 0 7px 5px rgba(0, 0, 0, 0.2);
   }
 }
@@ -4486,7 +4486,7 @@
     right: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    min-height: initial;
+    min-height: inherit;
     box-shadow: 0 0 7px 5px rgba(0, 0, 0, 0.2);
   }
 }
@@ -4504,7 +4504,7 @@
     right: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    min-height: initial;
+    min-height: inherit;
     box-shadow: 0 0 7px 5px rgba(0, 0, 0, 0.2);
   }
 }
