@@ -4567,6 +4567,8 @@ function os2intra_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-spotbox-field_spotbox_link'.
   $field_instances['node-spotbox-field_spotbox_link'] = array(
     'bundle' => 'spotbox',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -4606,6 +4608,7 @@ function os2intra_content_types_field_default_field_instances() {
       'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
+        'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
         'target' => 'default',
@@ -4620,11 +4623,11 @@ function os2intra_content_types_field_default_field_instances() {
       'linkit' => array(
         'button_text' => 'Søg efter destination for spotboks',
         'enable' => 1,
-        'profile' => 'linkit_spotbox',
+        'profile' => 'linkit_field_node',
       ),
       'rel_remove' => 'default',
       'title' => 'required',
-      'title_label_use_field_label' => FALSE,
+      'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 'optional',
