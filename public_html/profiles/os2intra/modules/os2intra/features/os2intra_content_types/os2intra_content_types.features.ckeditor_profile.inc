@@ -14,14 +14,14 @@ function os2intra_content_types_ckeditor_profile_defaults() {
       'settings' => array(
         'ss' => 2,
         'toolbar' => '[
-    [\'Source\'],
-    [\'Cut\',\'Copy\',\'PasteFromWord\',\'-\',\'Scayt\'],
-    [\'Media\',\'Smiley\',\'SpecialChar\'],
-    [\'ShowBlocks\'],
-    \'/\',
+    [\'Bold\',\'Italic\',\'Underline\',\'Strike\'],
     [\'Styles\'],
-    [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'NumberedList\',\'BulletedList\',\'-\',\'Blockquote\'],
-    [\'Link\',\'Unlink\',\'Anchor\']
+    [\'NumberedList\',\'BulletedList\'],
+    [\'Cut\',\'Copy\',\'PasteFromWord\'],
+    [\'Link\',\'Unlink\',\'Anchor\'],
+    [\'Scayt\'],
+    [\'Media\'],
+    [\'Table\']
 ]',
         'expand' => 't',
         'default' => 't',
@@ -57,9 +57,9 @@ function os2intra_content_types_ckeditor_profile_defaults() {
         'filebrowser_flash' => '',
         'UserFilesPath' => '%b%f/',
         'UserFilesAbsolutePath' => '%d%b%f/',
-        'forcePasteAsPlainText' => 'f',
-        'html_entities' => 'f',
-        'scayt_autoStartup' => 'f',
+        'forcePasteAsPlainText' => 't',
+        'html_entities' => 't',
+        'scayt_autoStartup' => 't',
         'theme_config_js' => 'f',
         'js_conf' => '',
         'loadPlugins' => array(
@@ -183,19 +183,8 @@ function os2intra_content_types_ckeditor_profile_defaults() {
       'settings' => array(
         'ss' => 2,
         'toolbar' => '[
-    [\'Source\'],
-    [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'PasteFromWord\',\'-\',\'SpellChecker\', \'Scayt\'],
-    [\'Undo\',\'Redo\',\'Find\',\'Replace\',\'-\',\'SelectAll\'],
-    [\'Image\',\'Media\',\'Flash\',\'Table\',\'HorizontalRule\',\'Smiley\',\'SpecialChar\'],
-    [\'Maximize\', \'ShowBlocks\'],
-    \'/\',
-    [\'Format\'],
-    [\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Subscript\',\'Superscript\',\'-\',\'RemoveFormat\'],
-    [\'NumberedList\',\'BulletedList\',\'-\',\'Outdent\',\'Indent\',\'Blockquote\'],
-    [\'JustifyLeft\',\'JustifyCenter\',\'JustifyRight\',\'JustifyBlock\',\'-\',\'BidiLtr\',\'BidiRtl\'],
-    [\'Link\',\'Unlink\',\'Anchor\',\'Linkit\']
-]
-    ',
+    [\'Bold\',\'Italic\',\'-\',\'Scayt\',\'Smiley\']
+]',
         'expand' => 't',
         'default' => 't',
         'show_toggle' => 't',
