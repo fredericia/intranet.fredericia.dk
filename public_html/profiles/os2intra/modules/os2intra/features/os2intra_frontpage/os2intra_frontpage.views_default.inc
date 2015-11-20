@@ -224,10 +224,10 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['filters']['field_os2intra_date_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_os2intra_date_value']['default_date'] = 'now';
 
-  /* Display: Info til alle */
-  $handler = $view->new_display('block', 'Info til alle', 'block_1');
+  /* Display: Fællesnyt */
+  $handler = $view->new_display('block', 'Fællesnyt', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Info til alle';
+  $handler->display->display_options['title'] = 'Fællesnyt';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
@@ -268,7 +268,7 @@ function os2intra_frontpage_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Kommmende aktiviteter'),
-    t('Info til alle'),
+    t('Fællesnyt'),
   );
   $export['os2intra_forside_views'] = $view;
 
