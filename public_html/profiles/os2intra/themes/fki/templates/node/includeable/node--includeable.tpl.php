@@ -14,7 +14,7 @@
         <?php print l($author_full_name, 'user/' . $node->uid, array('attributes' => array('class' => 'fki-includeable-heading-author-link'))); ?>
       </span>
       <?php endif ?>
-      
+
     </div>
     <!-- End - heading -->
 
