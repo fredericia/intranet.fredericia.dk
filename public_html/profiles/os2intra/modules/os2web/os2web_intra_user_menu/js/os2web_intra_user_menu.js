@@ -13,13 +13,13 @@
 
     $.getJSON('/user-menu/ajax', function(data) {
 
-      var ul = $('<ul class="main-navigation-list-dropdown-menu">');
-
-      // Set class on 'ul's parent
-      ul.parent().addClass('main-navigation-list-dropdown');
-
       // Test if we got group data back
       if (Object.keys(data).length > 0) {
+
+        var ul = $('<ul class="main-navigation-list-dropdown-menu">');
+
+        // Set class on 'ul's parent
+        ul.parent().addClass('main-navigation-list-dropdown');
 
         // Generate list with links and append to parent menu item.
         for (var key in data) {
