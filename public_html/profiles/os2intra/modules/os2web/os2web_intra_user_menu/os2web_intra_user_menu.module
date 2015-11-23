@@ -116,6 +116,9 @@ function os2web_intra_user_menu_settings_submit() {
 function os2web_intra_user_menu_menu_alter(&$items) {
   $items['user']['title callback'] = 'os2web_intra_user_menu_title_callback';
   $items['user']['title arguments'] = array('user');
+
+  $items['user-group']['title callback'] = 'os2web_intra_user_menu_title_callback';
+  $items['user-group']['title arguments'] = array('user-group');
 }
 
 /**
@@ -146,6 +149,11 @@ function os2web_intra_user_menu_title_callback($arg) {
 
       return $name;
       break;
+
+    case 'user-group':
+      // Get user's default group and set as menu title
+      return os2web_intra_user_menu_user_department();
+      break;
   }
 }
 
@@ -172,4 +180,23 @@ function _os2web_intra_user_menu_groups() {
     }
   }
   drupal_json_output($response_data);
+}
+
+/**
+ * Find user's department group
+ */
+function os2web_intra_user_menu_user_department() {
+  global $user;
+
+  $account = user_load($user->uid);
+  $department_ref = field_get_items('user', $account, 'field_os2intra_department_ref');
+
+  if ($department_ref) {
+    $department_node = node_load($department_ref[0]['target_id']);
+
+    return $department_node->title;
+  }
+  else {
+    return t('Grupper');
+  }
 }
