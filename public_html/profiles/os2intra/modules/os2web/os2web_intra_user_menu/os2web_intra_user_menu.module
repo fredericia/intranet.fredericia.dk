@@ -49,7 +49,7 @@ function os2web_intra_user_menu_menu() {
 
     $items['user-group'] = array(
       'title' => 'Mine grupper',
-      'access arguments' => array('authenticated user'),
+      'access callback' => 'user_is_logged_in',
       'menu_name' => 'user-menu',
       'page callback' => 'os2web_intra_user_menu_group',
       'type' => MENU_NORMAL_ITEM,
@@ -61,7 +61,12 @@ function os2web_intra_user_menu_menu() {
       )
     );
   }
+
   return $items;
+}
+
+function os2web_intra_user_menu_test() {
+  return 'hest';
 }
 
 /**
