@@ -2,6 +2,7 @@ name = OS2Intra panels
 description = Panel and panel pane
 core = 7.x
 package = OS2Intra
+dependencies[] = ctools
 dependencies[] = entity
 dependencies[] = entityreference_prepopulate
 dependencies[] = features

@@ -9,6 +9,7 @@ dependencies[] = features
 dependencies[] = field_group
 dependencies[] = link
 dependencies[] = list
+dependencies[] = node
 dependencies[] = os2intra_organisationsgrupper
 dependencies[] = page_manager
 dependencies[] = strongarm

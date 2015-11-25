@@ -47,6 +47,8 @@ function node_basket_field_default_field_instances() {
     'label' => 'Beskrivelse',
     'required' => FALSE,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -105,6 +107,8 @@ function node_basket_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -178,6 +182,8 @@ function node_basket_field_default_field_instances() {
           'status' => 0,
         ),
       ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -230,6 +236,8 @@ function node_basket_field_default_field_instances() {
     'label' => 'Type',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(

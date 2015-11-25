@@ -537,41 +537,43 @@ function node_basket_toolbox_use($nid){
 function node_basket_preprocess_node(&$variables) {
   global $user;
   $user = user_load($user->uid);
+  $subscribed = array();
 
   if ($field_subscribed = field_get_items('user', $user, 'field_node_basket_toolboxes')) {
+    $subscribed = $field_subscribed;
+  }
 
-    // I am author
-    if ($user->uid == $variables['uid']) {
+  // I am author
+  if ($user->uid == $variables['uid']) {
 
-      // Subscription (why?)
-      if (in_array_recursive($variables['nid'], $field_subscribed)) {
-        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Unsubscribe') . '</a>';
-      }
-
-      // Not a subscription
-      else {
-        $variables['action_button'] = '<a href="/node/' . $variables['nid'] . '/delete" class="pull-right">' . t('Delete toolbox') . '</a>';
-      }
+    // Subscription (why?)
+    if (in_array_recursive($variables['nid'], $subscribed)) {
+      $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Unsubscribe') . '</a>';
     }
 
-    // I am not author
+    // Not a subscription
     else {
+      $variables['action_button'] = '<a href="/node/' . $variables['nid'] . '/delete" class="pull-right">' . t('Delete toolbox') . '</a>';
+    }
+  }
 
-      // It's already added
-      if (in_array_recursive($variables['nid'], $field_subscribed)) {
-        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Unsubscribe') . '</a>';
-      }
+  // I am not author
+  else {
 
-      // Not added
-      else {
-        $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Subscribe') . '</a>';
-      }
+    // It's already added
+    if (in_array_recursive($variables['nid'], $subscribed)) {
+      $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Unsubscribe') . '</a>';
+    }
+
+    // Not added
+    else {
+      $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Subscribe') . '</a>';
     }
   }
 
   // Links
   $variables['node_basket'] = array();
-  $variables['node_basket']['add'] = l(t('Add to basket'), 'node/' . $variables['nid'], array('attributes' => array('id' => 'add-to-nodebasket')));
+  $variables['node_basket']['add'] = l(t('Add to basket'), 'node/' . $variables['nid'], array('attributes' => array('id' => 'node-basket-add')));
 }
 
 /*
