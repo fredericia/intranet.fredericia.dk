@@ -36,7 +36,7 @@
 
     <div class="fki-full-controlpanel">
       <ul class="fki-full-controlpanel-list">
-        <li>asd</li>
+        <li><?php print $node_basket['add']; ?></li>
       </ul>
     </div>
 

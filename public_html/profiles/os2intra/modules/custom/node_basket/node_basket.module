@@ -571,8 +571,7 @@ function node_basket_preprocess_node(&$variables) {
 
   // Links
   $variables['node_basket'] = array();
-
-
+  $variables['node_basket']['add'] = l(t('Add to basket'), 'node/' . $variables['nid'], array('attributes' => array('id' => 'add-to-nodebasket')));
 }
 
 /*

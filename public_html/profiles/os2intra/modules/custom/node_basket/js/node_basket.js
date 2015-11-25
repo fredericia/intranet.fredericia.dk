@@ -8,11 +8,17 @@
           var nid = Drupal.settings.node_basket.nid;
           var markup = '<div id="nodebasket-status">';
 
+          $('#node-basket-add').on('click', function (event) {
+            event.preventDefault();
+
+            $.get('/node_basket/basket/add/' + nid, function (data) {});
+          });
+
           $.get('/node_basket/basket/status/' + nid, function (data) {
             if (data.err) {
               $('#node-basket-basket').html('<a id="add-to-nodebasket" href="#">' + Drupal.t('Save to basket') + '</a>' + markup);
 
-              $('#node-basket #add-to-nodebasket').click(function () {
+              $('#node-basket #add-to-nodebasket').on('click', function () {
                 $('#node-basket #nodebasket-status').html('<span class="icon-node-basket-wait"></span>');
 
                 $.get('/node_basket/basket/add/' + nid, function (data) {
