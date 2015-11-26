@@ -3,48 +3,48 @@
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .fki-node-includeable
+// | - .os2-node-includeable
 // |
 
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
 
-@fki-node-includeable-stacked-spacing: 3px;
-@fki-node-includeable-border-color: @border-color;
+@os2-node-includeable-stacked-spacing: 3px;
+@os2-node-includeable-border-color: @border-color;
 
-@fki-node-includeable-heading-font-color: @brand-primary;
-@fki-node-includeable-heading-top-bottom-spacing: 3px;
-@fki-node-includeable-heading-left-right-spacing: 0;
+@os2-node-includeable-heading-font-color: @brand-primary;
+@os2-node-includeable-heading-top-bottom-spacing: 3px;
+@os2-node-includeable-heading-left-right-spacing: 0;
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
 // Includeable
-.fki-node-includeable {
-	padding: @fki-node-includeable-stacked-spacing 0;
-	border-bottom: 1px solid @fki-node-includeable-border-color;
+.os2-node-includeable {
+	padding: @os2-node-includeable-stacked-spacing 0;
+	border-bottom: 1px solid @os2-node-includeable-border-color;
 
-	.fki-node-includeable-heading {
-		padding: @fki-node-includeable-heading-top-bottom-spacing @fki-node-includeable-heading-left-right-spacing;
+	.os2-node-includeable-heading {
+		padding: @os2-node-includeable-heading-top-bottom-spacing @os2-node-includeable-heading-left-right-spacing;
 
-		.fki-node-includeable-heading-title {
+		.os2-node-includeable-heading-title {
 			margin: 0;
 			font-weight: bold;
 
 			&,
 			a {
-				color: @fki-node-includeable-heading-font-color;
+				color: @os2-node-includeable-heading-font-color;
 			}
 		}
 
-		.fki-node-includeable-heading-author {
+		.os2-node-includeable-heading-author {
 			font-size: @font-size-small;
 			font-style: italic;
 
-			.fki-node-includeable-heading-author-intro {}
-			.fki-node-includeable-heading-author-link {}
+			.os2-node-includeable-heading-author-intro {}
+			.os2-node-includeable-heading-author-link {}
 		}
 	}
 }
@@ -53,39 +53,39 @@
 // Variants
 // --------------------------------------------------
 
-.fki-box,
-.fki-box-primary {
+.os2-box,
+.os2-box-primary {
 
-	.fki-node-includeable {
-		.fki-mixin-includeable-box-variant(@brand-primary);
+	.os2-node-includeable {
+		.os2-mixin-includeable-box-variant(@brand-primary);
 	}
 }
 
-.fki-box-secondary {
+.os2-box-secondary {
 
-	.fki-node-includeable {
-		.fki-mixin-includeable-box-variant(@brand-secondary);
+	.os2-node-includeable {
+		.os2-mixin-includeable-box-variant(@brand-secondary);
 	}
 }
 
-.fki-box-tertiary {
+.os2-box-tertiary {
 
-	.fki-node-includeable {
-		.fki-mixin-includeable-box-variant(@brand-tertiary);
+	.os2-node-includeable {
+		.os2-mixin-includeable-box-variant(@brand-tertiary);
 	}
 }
 
-.fki-box-quaternary {
+.os2-box-quaternary {
 
-	.fki-node-includeable {
-		.fki-mixin-includeable-box-variant(@brand-quaternary);
+	.os2-node-includeable {
+		.os2-mixin-includeable-box-variant(@brand-quaternary);
 	}
 }
 
-.fki-box-quinary {
+.os2-box-quinary {
 
-	.fki-node-includeable {
-		.fki-mixin-includeable-box-variant(@brand-quinary);
+	.os2-node-includeable {
+		.os2-mixin-includeable-box-variant(@brand-quinary);
 	}
 }
 
@@ -95,7 +95,7 @@
 
 		&:last-child {
 
-			.fki-node-includeable {
+			.os2-node-includeable {
 
 				&:last-child {
 					border-bottom: 0;
@@ -113,77 +113,77 @@
 @media @media-query-mobile {
 
 	// Includeable
-	.fki-node-includeable {}
+	.os2-node-includeable {}
 }
 
 // Mobile - only
 @media @media-query-mobile-only {
 
 	// Includeable
-	.fki-node-includeable {}
+	.os2-node-includeable {}
 }
 
 // Tablet
 @media @media-query-tablet {
 
 	// Includeable
-	.fki-node-includeable {}
+	.os2-node-includeable {}
 }
 
 // Tablet - only
 @media @media-query-tablet-only {
 
 	// Includeable
-	.fki-node-includeable {}
+	.os2-node-includeable {}
 }
 
 // Desktop
 @media @media-query-desktop {
 
 	// Includeable
-	.fki-node-includeable {}
+	.os2-node-includeable {}
 }
 
 // Desktop - only
 @media @media-query-desktop-only {
 
 	// Includeable
-	.fki-node-includeable {}
+	.os2-node-includeable {}
 }
 
 // Large desktop
 @media @media-query-large-desktop {
 
 	// Includeable
-	.fki-node-includeable {}
+	.os2-node-includeable {}
 }
 
 // Large desktop - only
 @media @media-query-large-desktop-only {
 
 	// Includeable
-	.fki-node-includeable {}
+	.os2-node-includeable {}
 }
 
 // Print
 @media print {
 
 	// Includeable
-	.fki-node-includeable {}
+	.os2-node-includeable {}
 }
 
 // Touch
 .touch {
 
 	// Includeable
-	.fki-node-includeable {}
+	.os2-node-includeable {}
 }
 
 // No touch
 .no-touch {
 
 	// Includeable
-	.fki-node-includeable {}
+	.os2-node-includeable {}
 }
 
 // --------------------------------------------------
@@ -191,14 +191,14 @@
 // --------------------------------------------------
 
 // Includeable mixin
-.fki-mixin-includeable() {}
+.os2-mixin-includeable() {}
 
 // Box variant mixin
-.fki-mixin-includeable-box-variant(@font-color) {
+.os2-mixin-includeable-box-variant(@font-color) {
 
-	.fki-node-includeable-heading {
+	.os2-node-includeable-heading {
 
-		.fki-node-includeable-heading-title {
+		.os2-node-includeable-heading-title {
 			color: @font-color;
 		}
 	}

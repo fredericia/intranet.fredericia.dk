@@ -3,7 +3,7 @@
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .fki-breadcrumb-container
+// | - .os2-breadcrumb-container
 // |
 
 // --------------------------------------------------
@@ -11,21 +11,21 @@
 // --------------------------------------------------
 
 // Breadcrumb
-@fki-breadcrumb-separator-font-size:	@font-size-small;
+@os2-breadcrumb-separator-font-size:	@font-size-small;
 
-@fki-breadcrumb-link-color:			      @text-color-light;
-@fki-breadcrumb-link-hover-color:		  @brand-secondary;
-@fki-breadcrumb-active-color:		  		@fki-breadcrumb-link-color;
+@os2-breadcrumb-link-color:			      @text-color-light;
+@os2-breadcrumb-link-hover-color:		  @brand-secondary;
+@os2-breadcrumb-active-color:		  		@os2-breadcrumb-link-color;
 
-@fki-breadcrumb-separator-color:		  @fki-breadcrumb-link-color;
-@fki-breadcrumb-separator-spacing:	  5px;
+@os2-breadcrumb-separator-color:		  @os2-breadcrumb-link-color;
+@os2-breadcrumb-separator-spacing:	  5px;
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
 // Breadcrumb
-.fki-breadcrumb-container {
+.os2-breadcrumb-container {
 	padding: 10px;
 
 	.breadcrumb {
@@ -33,26 +33,26 @@
 		border-radius: 0;
 
 		li {
-			font-size: @fki-breadcrumb-separator-font-size;
+			font-size: @os2-breadcrumb-separator-font-size;
 			text-transform: uppercase;
 
 			a {
-				color: @fki-breadcrumb-link-color;
+				color: @os2-breadcrumb-link-color;
 
 				&:hover {
-					color: @fki-breadcrumb-link-hover-color;
+					color: @os2-breadcrumb-link-hover-color;
 				}
 			}
 
 			&.active {
-				color: @fki-breadcrumb-active-color;
+				color: @os2-breadcrumb-active-color;
 			}
 
 			+ li {
 
 				&:before {
-					color: @fki-breadcrumb-separator-color;
-					padding: 0 @fki-breadcrumb-separator-spacing;
+					color: @os2-breadcrumb-separator-color;
+					padding: 0 @os2-breadcrumb-separator-spacing;
 					font-family: 'FontAwesome';
 					content: @fa-var-angle-right;
 				}
@@ -69,14 +69,14 @@
 @media @media-query-mobile {
 
 	// Breadcrumb
-	.fki-breadcrumb-container {}
+	.os2-breadcrumb-container {}
 }
 
 // Mobile - only
 @media @media-query-mobile-only {
 
 	// Breadcrumb
-	.fki-breadcrumb-container {
+	.os2-breadcrumb-container {
 		display: none;
 	}
 }
@@ -85,63 +85,63 @@
 @media @media-query-tablet {
 
 	// Breadcrumb
-	.fki-breadcrumb-container {}
+	.os2-breadcrumb-container {}
 }
 
 // Tablet - only
 @media @media-query-tablet-only {
 
 	// Breadcrumb
-	.fki-breadcrumb-container {}
+	.os2-breadcrumb-container {}
 }
 
 // Desktop
 @media @media-query-desktop {
 
 	// Breadcrumb
-	.fki-breadcrumb-container {}
+	.os2-breadcrumb-container {}
 }
 
 // Desktop - only
 @media @media-query-desktop-only {
 
 	// Breadcrumb
-	.fki-breadcrumb-container {}
+	.os2-breadcrumb-container {}
 }
 
 // Large desktop
 @media @media-query-large-desktop {
 
 	// Breadcrumb
-	.fki-breadcrumb-container {}
+	.os2-breadcrumb-container {}
 }
 
 // Large desktop - only
 @media @media-query-large-desktop-only {
 
 	// Breadcrumb
-	.fki-breadcrumb-container {}
+	.os2-breadcrumb-container {}
 }
 
 // Print
 @media print {
 
 	// Breadcrumb
-	.fki-breadcrumb-container {}
+	.os2-breadcrumb-container {}
 }
 
 // Touch
 .touch {
 
 	// Breadcrumb
-	.fki-breadcrumb-container {}
+	.os2-breadcrumb-container {}
 }
 
 // No touch
 .no-touch {
 
 	// Breadcrumb
-	.fki-breadcrumb-container {}
+	.os2-breadcrumb-container {}
 }
 
 // --------------------------------------------------
@@ -149,4 +149,4 @@
 // --------------------------------------------------
 
 // Breadcrumb mixin
-.fki-mixin-breadcrumb() {}
+.os2-mixin-breadcrumb() {}

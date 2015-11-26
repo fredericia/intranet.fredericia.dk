@@ -3,56 +3,56 @@
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .fki-spotbox-teaser
+// | - .os2-spotbox-teaser
 // |
 
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
 
-@fki-spotbox-background-color: @state-primary-bg;
-@fki-spotbox-heading-color: @state-primary-text;
-@fki-spotbox-border-radius: @border-radius-base;
+@os2-spotbox-background-color: @state-primary-bg;
+@os2-spotbox-heading-color: @state-primary-text;
+@os2-spotbox-border-radius: @border-radius-base;
 
 // With image
-@fki-spotbox-with-image-background-color: @content-bg;
-@fki-spotbox-with-image-heading-color: @brand-primary;
+@os2-spotbox-with-image-background-color: @content-bg;
+@os2-spotbox-with-image-heading-color: @brand-primary;
 
 // Responsive
-@fki-spotbox-xs-stacked-spacing: floor( (@grid-gutter-width / 3) );
-@fki-spotbox-sm-stacked-spacing: floor( (@grid-gutter-width / 3) );
-@fki-spotbox-md-stacked-spacing: floor( (@grid-gutter-width / 2) );
-@fki-spotbox-lg-stacked-spacing: floor( (@grid-gutter-width / 2) );
+@os2-spotbox-xs-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@os2-spotbox-sm-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@os2-spotbox-md-stacked-spacing: floor( (@grid-gutter-width / 2) );
+@os2-spotbox-lg-stacked-spacing: floor( (@grid-gutter-width / 2) );
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
 // Spotbox
-.fki-spotbox-teaser {
-	background-color: @fki-spotbox-background-color;
-	border-radius: @fki-spotbox-border-radius;
+.os2-spotbox-teaser {
+	background-color: @os2-spotbox-background-color;
+	border-radius: @os2-spotbox-border-radius;
 
-	.fki-node-teaser-heading {
+	.os2-node-teaser-heading {
 
-		.fki-node-teaser-heading-title {
+		.os2-node-teaser-heading-title {
 			.heading-h5;
 
 			&,
 			a {
-				color: @fki-spotbox-heading-color;
+				color: @os2-spotbox-heading-color;
 			}
 		}
 	}
 
-	.fki-node-teaser-body {
+	.os2-node-teaser-body {
 
-		.fki-node-teaser-body-text {
+		.os2-node-teaser-body-text {
 			color: #8c9eb6;
 		}
 	}
 
-	.fki-node-teaser-image {
+	.os2-node-teaser-image {
 		display: none;
 	}
 }
@@ -62,27 +62,27 @@
 // --------------------------------------------------
 
 // With image
-.fki-spotbox-teaser {
+.os2-spotbox-teaser {
 
-	&.fki-spotbox-teaser-variant-with-image {
+	&.os2-spotbox-teaser-variant-with-image {
 		padding: 0;
-		background-color: @fki-spotbox-with-image-background-color;
+		background-color: @os2-spotbox-with-image-background-color;
 
-		.fki-node-teaser-heading {
+		.os2-node-teaser-heading {
 
-			.fki-node-teaser-heading-title {
+			.os2-node-teaser-heading-title {
 				.heading-h4;
 
 				&,
 				a {
-					color: @fki-spotbox-with-image-heading-color;
+					color: @os2-spotbox-with-image-heading-color;
 				}
 			}
 		}
 
-		.fki-node-teaser-image {
+		.os2-node-teaser-image {
 			display: block;
-			.border-top-radius(@fki-spotbox-border-radius);
+			.border-top-radius(@os2-spotbox-border-radius);
 			overflow: hidden;
 			padding: 0;
 
@@ -91,7 +91,7 @@
 			}
 		}
 
-		.fki-node-teaser-body {
+		.os2-node-teaser-body {
 			display: none;
 		}
 	}
@@ -105,15 +105,15 @@
 @media @media-query-mobile {
 
 	// Spotbox
-	.fki-spotbox-teaser {}
+	.os2-spotbox-teaser {}
 }
 
 // Mobile - only
 @media @media-query-mobile-only {
 
 	// Spotbox
-	.fki-spotbox-teaser {
-		margin-bottom: @fki-spotbox-xs-stacked-spacing !important;
+	.os2-spotbox-teaser {
+		margin-bottom: @os2-spotbox-xs-stacked-spacing !important;
 	}
 }
 
@@ -121,15 +121,15 @@
 @media @media-query-tablet {
 
 	// Spotbox
-	.fki-spotbox-teaser {}
+	.os2-spotbox-teaser {}
 }
 
 // Tablet - only
 @media @media-query-tablet-only {
 
 	// Spotbox
-	.fki-spotbox-teaser {
-		margin-bottom: @fki-spotbox-sm-stacked-spacing !important;
+	.os2-spotbox-teaser {
+		margin-bottom: @os2-spotbox-sm-stacked-spacing !important;
 	}
 }
 
@@ -137,15 +137,15 @@
 @media @media-query-desktop {
 
 	// Spotbox
-	.fki-spotbox-teaser {}
+	.os2-spotbox-teaser {}
 }
 
 // Desktop - only
 @media @media-query-desktop-only {
 
 	// Spotbox
-	.fki-spotbox-teaser {
-		margin-bottom: @fki-spotbox-md-stacked-spacing !important;
+	.os2-spotbox-teaser {
+		margin-bottom: @os2-spotbox-md-stacked-spacing !important;
 	}
 }
 
@@ -153,15 +153,15 @@
 @media @media-query-large-desktop {
 
 	// Spotbox
-	.fki-spotbox-teaser {}
+	.os2-spotbox-teaser {}
 }
 
 // Large desktop - only
 @media @media-query-large-desktop-only {
 
 	// Spotbox
-	.fki-spotbox-teaser {
-		margin-bottom: @fki-spotbox-lg-stacked-spacing !important;
+	.os2-spotbox-teaser {
+		margin-bottom: @os2-spotbox-lg-stacked-spacing !important;
 	}
 }
 
@@ -169,21 +169,21 @@
 @media print {
 
 	// Spotbox
-	.fki-spotbox-teaser {}
+	.os2-spotbox-teaser {}
 }
 
 // Touch
 .touch {
 
 	// Spotbox
-	.fki-spotbox-teaser {}
+	.os2-spotbox-teaser {}
 }
 
 // No touch
 .no-touch {
 
 	// Spotbox
-	.fki-spotbox-teaser {}
+	.os2-spotbox-teaser {}
 }
 
 // --------------------------------------------------
@@ -191,4 +191,4 @@
 // --------------------------------------------------
 
 // Spotbox mixin
-.fki-mixin-spotbox-teaser() {}
+.os2-mixin-spotbox-teaser() {}
