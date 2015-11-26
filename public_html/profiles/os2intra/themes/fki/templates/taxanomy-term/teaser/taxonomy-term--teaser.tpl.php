@@ -1,22 +1,31 @@
 <?php if ($view_mode == 'teaser'): ?>
   <!-- taxonomy-term--teaser.tpl.php -->
   <!-- Begin - teaser -->
-  <div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> fki-teaser">
+  <div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> fki-taxonomy-term-teaser">
+    <div class="table">
+      <div class="table-row">
 
-    <div class="fki-teaser-heading">
-      <h2 class="fki-teaser-heading-title"><?php print $term_name; ?></h2>
-    </div>
+        <?php if (isset($content['field_os2web_base_field_logo'])): ?>
+          <div class="table-cell fki-taxonomy-term-teaser-image-container">
 
-    <?php if (isset($content['body'])): ?>
-      <!-- Begin - body -->
-      <div class="fki-teaser-body">
-        <?php print render($content['body']); ?>
+          <!-- Begin - logo -->
+          <div class="fki-taxonomy-term-teaser-body-logo">
+            <?php print render($content['field_os2web_base_field_logo']); ?>
+            </div>
+            <!-- End - logo -->
+
+          </div>
+        <?php endif; ?>
+
+        <div class="table-cell fki-taxonomy-term-teaser-body">
+
+          <div class="fki-taxonomy-term-teaser-heading">
+            <h2 class="fki-taxonomy-term-teaser-heading-title"><a href="<?php print $term_url; ?>"><?php print $term_name; ?></a></h2>
+          </div>
+
+        </div>
       </div>
-      <!-- End - body -->
-    <?php endif; ?>
-
-    <?php print render($content['links']); ?>
-
+    </div>
   </div>
   <!-- End - teaser -->
 

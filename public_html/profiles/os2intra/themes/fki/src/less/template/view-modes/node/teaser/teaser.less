@@ -1,0 +1,90 @@
+// |--------------------------------------------------------------------------
+// | Teaser (default)
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .fki-node-teaser
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+@fki-node-teaser-inner-top-bottom-spacing: 10px;
+@fki-node-teaser-inner-entity-info-top-spacing: @default-heading-top-bottom-spacing;
+@fki-node-teaser-inner-heading-top-bottom-spacing: @default-heading-top-bottom-spacing;
+@fki-node-teaser-inner-body-top-bottom-spacing: @default-body-top-bottom-spacing;
+@fki-node-teaser-inner-footer-top-bottom-spacing: @default-footer-top-bottom-spacing;
+@fki-node-teaser-inner-left-right-spacing: @default-left-right-spacing;
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Teaser
+.fki-node-teaser {
+    padding: @fki-node-teaser-inner-top-bottom-spacing 0;
+
+    .fki-node-teaser-info {
+        padding: @fki-node-teaser-inner-entity-info-top-spacing @fki-node-teaser-inner-left-right-spacing;
+        padding-top: 0;
+    }
+
+    // Heading
+    .fki-node-teaser-heading {
+        padding: @fki-node-teaser-inner-heading-top-bottom-spacing @fki-node-teaser-inner-left-right-spacing;
+
+        .fki-node-teaser-heading-title {
+            .heading-h4;
+            margin: 0;
+        }
+    }
+
+    .table {
+        margin: 0;
+    }
+
+    // Image
+    .fki-node-teaser-image-container {
+        max-width: 120px;
+    }
+    .fki-node-teaser-image {
+        padding-left: @fki-node-teaser-inner-left-right-spacing;
+    }
+
+    // Body
+    .fki-node-teaser-body {
+        padding: @fki-node-teaser-inner-body-top-bottom-spacing @fki-node-teaser-inner-left-right-spacing;
+        padding-bottom: 0;
+
+        + .fki-node-teaser-footer {
+            padding-top: 0;
+        }
+    }
+
+    // Footer
+    .fki-node-teaser-footer {
+        padding: @fki-node-teaser-inner-footer-top-bottom-spacing @fki-node-teaser-inner-left-right-spacing;
+        padding-bottom: 0;
+    }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {
+}
+
+// Tablet
+@media @media-query-tablet {
+}
+
+// Desktop and up
+@media @media-query-desktop {
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------

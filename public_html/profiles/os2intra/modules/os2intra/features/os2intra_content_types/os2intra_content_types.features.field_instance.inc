@@ -5939,7 +5939,7 @@ function os2intra_content_types_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'teaser_image',
+          'image_style' => 'taxonomy_teaser',
         ),
         'type' => 'image',
         'weight' => 0,

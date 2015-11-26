@@ -1,0 +1,225 @@
+// |--------------------------------------------------------------------------
+// | Teaser (default)
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .fki-taxonomy-term-teaser
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+@fki-taxonomy-term-teaser-background-color: #fff;
+@fki-taxonomy-term-teaser-border-radius: @border-radius-base;
+@fki-taxonomy-term-teaser-image-width: 90px;
+
+@fki-taxonomy-term-teaser-inner-body-top-bottom-spacing: @default-body-top-bottom-spacing;
+@fki-taxonomy-term-teaser-inner-left-right-spacing: @default-left-right-spacing;
+
+// Responsive
+@fki-taxonomy-term-teaser-xs-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@fki-taxonomy-term-teaser-sm-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@fki-taxonomy-term-teaser-md-stacked-spacing: floor( (@grid-gutter-width / 2) );
+@fki-taxonomy-term-teaser-lg-stacked-spacing: floor( (@grid-gutter-width / 2) );
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Teaser
+.fki-taxonomy-term-teaser {
+    background-color: @fki-taxonomy-term-teaser-background-color;
+    border-radius: @fki-taxonomy-term-teaser-border-radius;
+
+    .table {
+        margin: 0;
+
+        .table-row {
+
+            .table-cell {
+
+                &.fki-taxonomy-term-teaser-image-container {
+                    width: @fki-taxonomy-term-teaser-image-width;
+
+                    &,
+                    img {
+                        .border-left-radius(@fki-taxonomy-term-teaser-border-radius);
+                    }
+                }
+
+                &.fki-taxonomy-term-teaser-body {
+                    padding: @fki-taxonomy-term-teaser-inner-body-top-bottom-spacing @fki-taxonomy-term-teaser-inner-left-right-spacing;
+                    .border-right-radius(@fki-taxonomy-term-teaser-border-radius);
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+    // Heading
+    .fki-taxonomy-term-teaser-heading {
+
+        .fki-taxonomy-term-teaser-heading-title {
+            .heading-h4;
+            margin: 0;
+        }
+    }
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {
+
+    // Teaser
+    .fki-taxonomy-term-teaser {}
+}
+
+// Mobile - only
+@media @media-query-mobile-only {
+
+    // Teaser
+    .fki-taxonomy-term-teaser {
+        margin-bottom: @fki-taxonomy-term-teaser-xs-stacked-spacing !important;;
+    }
+
+    .fki-taxonomy-term-teaser-small-spacing {
+
+        &.fki-taxonomy-term-teaser,
+        > .fki-taxonomy-term-teaser {
+            margin-bottom: floor( (@fki-taxonomy-term-teaser-xs-stacked-spacing / 3) ) !important;;
+        }
+    }
+
+    .fki-taxonomy-term-teaser-large-spacing {
+
+        &.fki-taxonomy-term-teaser,
+        > .fki-taxonomy-term-teaser {
+            margin-bottom: floor( (@fki-taxonomy-term-teaser-xs-stacked-spacing * 2) ) !important;;
+        }
+    }
+}
+
+// Tablet
+@media @media-query-tablet {
+
+    // Teaser
+    .fki-taxonomy-term-teaser {}
+}
+
+// Tablet - only
+@media @media-query-tablet-only {
+
+    // Teaser
+    .fki-taxonomy-term-teaser {
+        margin-bottom: @fki-taxonomy-term-teaser-sm-stacked-spacing !important;;
+    }
+
+    .fki-taxonomy-term-teaser-small-spacing {
+
+        &.fki-taxonomy-term-teaser,
+        > .fki-taxonomy-term-teaser {
+            margin-bottom: floor( (@fki-taxonomy-term-teaser-sm-stacked-spacing / 3) ) !important;;
+        }
+    }
+
+    .fki-taxonomy-term-teaser-large-spacing {
+
+        &.fki-taxonomy-term-teaser,
+        > .fki-taxonomy-term-teaser {
+            margin-bottom: floor( (@fki-taxonomy-term-teaser-sm-stacked-spacing * 2) ) !important;;
+        }
+    }
+}
+
+// Desktop
+@media @media-query-desktop {
+
+    // Teaser
+    .fki-taxonomy-term-teaser {}
+}
+
+// Desktop - only
+@media @media-query-desktop-only {
+
+    // Teaser
+    .fki-taxonomy-term-teaser {
+        margin-bottom: @fki-taxonomy-term-teaser-md-stacked-spacing !important;;
+    }
+
+    .fki-taxonomy-term-teaser-small-spacing {
+
+        &.fki-taxonomy-term-teaser,
+        > .fki-taxonomy-term-teaser {
+            margin-bottom: floor( (@fki-taxonomy-term-teaser-md-stacked-spacing / 3) ) !important;;
+        }
+    }
+
+    .fki-taxonomy-term-teaser-large-spacing {
+
+        &.fki-taxonomy-term-teaser,
+        > .fki-taxonomy-term-teaser {
+            margin-bottom: floor( (@fki-taxonomy-term-teaser-md-stacked-spacing * 2) ) !important;;
+        }
+    }
+}
+
+// Large desktop
+@media @media-query-large-desktop {
+
+    // Teaser
+    .fki-taxonomy-term-teaser {}
+}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {
+
+    // Teaser
+    .fki-taxonomy-term-teaser {
+        margin-bottom: @fki-taxonomy-term-teaser-lg-stacked-spacing !important;;
+    }
+
+    .fki-taxonomy-term-teaser-small-spacing {
+
+        &.fki-taxonomy-term-teaser,
+        > .fki-taxonomy-term-teaser {
+            margin-bottom: floor( (@fki-taxonomy-term-teaser-lg-stacked-spacing / 3) ) !important;;
+        }
+    }
+
+    .fki-taxonomy-term-teaser-large-spacing {
+
+        &.fki-taxonomy-term-teaser,
+        > .fki-taxonomy-term-teaser {
+            margin-bottom: floor( (@fki-taxonomy-term-teaser-lg-stacked-spacing * 2) ) !important;
+        }
+    }
+}
+
+// Print
+@media print {
+
+    // Teaser
+    .fki-taxonomy-term-teaser {}
+}
+
+// Touch
+.touch {
+
+    // Teaser
+    .fki-taxonomy-term-teaser {}
+}
+
+// No touch
+.no-touch {
+
+    // Teaser
+    .fki-taxonomy-term-teaser {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------

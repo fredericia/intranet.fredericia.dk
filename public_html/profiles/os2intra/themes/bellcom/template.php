@@ -121,8 +121,8 @@ function bellcom_preprocess_comment(&$variables) {
  */
 function bellcom_preprocess_taxonomy_term(&$variables) {
 
-  // Add node--view_mode.tpl.php suggestions.
-  $variables['theme_hook_suggestions'][] = 'taxonomy-term__' . $variables['view_mode'];
+  // Add taxonomy-term--view_mode.tpl.php suggestions.
+  $variables['theme_hook_suggestions'][] = 'taxonomy_term__' . $variables['view_mode'];
 
   // Add a class for the view mode.
   $variables['classes_array'][] = 'view-mode-' . $variables['view_mode'];

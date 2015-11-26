@@ -247,6 +247,7 @@ features[image][] = 4_col_image_-_520x220
 features[image][] = normal
 features[image][] = profile_image_default
 features[image][] = spotboks
+features[image][] = taxonomy_teaser
 features[image][] = teaser_image
 features[image][] = teaser_spotbox
 features[linkit_profiles][] = linkit_ckeditor

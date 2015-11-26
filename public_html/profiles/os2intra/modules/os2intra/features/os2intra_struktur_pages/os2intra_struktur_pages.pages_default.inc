@@ -46,7 +46,7 @@ function os2intra_struktur_pages_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'content-with-right-sidebar';
+  $display->layout = 'content-with-right-sidebar-9-3';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -132,7 +132,11 @@ function os2intra_struktur_pages_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'fki-box-secondary',
+      'template_suggestion' => 'views_panes',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
