@@ -26,7 +26,7 @@
   <div class="inner-wrapper" role="document">
 
     <!-- Begin - printable logo -->
-    <img src="<?php print $path_img . '/logo-sidebar-wide.png'; ?>" class="visible-print" alt="<?php print $site_name. t(' logo'); ?>" />
+    <img src="<?php print $path_img . '/logo-sidebar-printable.png'; ?>" class="visible-print" alt="<?php print $site_name. t(' logo'); ?>" />
     <!-- End - printable logo -->
 
     <!-- Begin - simple navigation -->
