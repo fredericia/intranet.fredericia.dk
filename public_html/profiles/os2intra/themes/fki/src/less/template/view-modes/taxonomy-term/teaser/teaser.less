@@ -3,34 +3,34 @@
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .fki-taxonomy-term-teaser
+// | - .os2-taxonomy-term-teaser
 // |
 
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
 
-@fki-taxonomy-term-teaser-background-color: #fff;
-@fki-taxonomy-term-teaser-border-radius: @border-radius-base;
-@fki-taxonomy-term-teaser-image-width: 90px;
+@os2-taxonomy-term-teaser-background-color: #fff;
+@os2-taxonomy-term-teaser-border-radius: @border-radius-base;
+@os2-taxonomy-term-teaser-image-width: 90px;
 
-@fki-taxonomy-term-teaser-inner-body-top-bottom-spacing: @default-body-top-bottom-spacing;
-@fki-taxonomy-term-teaser-inner-left-right-spacing: @default-left-right-spacing;
+@os2-taxonomy-term-teaser-inner-body-top-bottom-spacing: @default-body-top-bottom-spacing;
+@os2-taxonomy-term-teaser-inner-left-right-spacing: @default-left-right-spacing;
 
 // Responsive
-@fki-taxonomy-term-teaser-xs-stacked-spacing: floor( (@grid-gutter-width / 3) );
-@fki-taxonomy-term-teaser-sm-stacked-spacing: floor( (@grid-gutter-width / 3) );
-@fki-taxonomy-term-teaser-md-stacked-spacing: floor( (@grid-gutter-width / 2) );
-@fki-taxonomy-term-teaser-lg-stacked-spacing: floor( (@grid-gutter-width / 2) );
+@os2-taxonomy-term-teaser-xs-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@os2-taxonomy-term-teaser-sm-stacked-spacing: floor( (@grid-gutter-width / 3) );
+@os2-taxonomy-term-teaser-md-stacked-spacing: floor( (@grid-gutter-width / 2) );
+@os2-taxonomy-term-teaser-lg-stacked-spacing: floor( (@grid-gutter-width / 2) );
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
 // Teaser
-.fki-taxonomy-term-teaser {
-    background-color: @fki-taxonomy-term-teaser-background-color;
-    border-radius: @fki-taxonomy-term-teaser-border-radius;
+.os2-taxonomy-term-teaser {
+    background-color: @os2-taxonomy-term-teaser-background-color;
+    border-radius: @os2-taxonomy-term-teaser-border-radius;
 
     .table {
         margin: 0;
@@ -39,18 +39,18 @@
 
             .table-cell {
 
-                &.fki-taxonomy-term-teaser-image-container {
-                    width: @fki-taxonomy-term-teaser-image-width;
+                &.os2-taxonomy-term-teaser-image-container {
+                    width: @os2-taxonomy-term-teaser-image-width;
 
                     &,
                     img {
-                        .border-left-radius(@fki-taxonomy-term-teaser-border-radius);
+                        .border-left-radius(@os2-taxonomy-term-teaser-border-radius);
                     }
                 }
 
-                &.fki-taxonomy-term-teaser-body {
-                    padding: @fki-taxonomy-term-teaser-inner-body-top-bottom-spacing @fki-taxonomy-term-teaser-inner-left-right-spacing;
-                    .border-right-radius(@fki-taxonomy-term-teaser-border-radius);
+                &.os2-taxonomy-term-teaser-body {
+                    padding: @os2-taxonomy-term-teaser-inner-body-top-bottom-spacing @os2-taxonomy-term-teaser-inner-left-right-spacing;
+                    .border-right-radius(@os2-taxonomy-term-teaser-border-radius);
                     vertical-align: middle;
                 }
             }
@@ -58,9 +58,9 @@
     }
 
     // Heading
-    .fki-taxonomy-term-teaser-heading {
+    .os2-taxonomy-term-teaser-heading {
 
-        .fki-taxonomy-term-teaser-heading-title {
+        .os2-taxonomy-term-teaser-heading-title {
             .heading-h4;
             margin: 0;
         }
@@ -75,30 +75,30 @@
 @media @media-query-mobile {
 
     // Teaser
-    .fki-taxonomy-term-teaser {}
+    .os2-taxonomy-term-teaser {}
 }
 
 // Mobile - only
 @media @media-query-mobile-only {
 
     // Teaser
-    .fki-taxonomy-term-teaser {
-        margin-bottom: @fki-taxonomy-term-teaser-xs-stacked-spacing !important;;
+    .os2-taxonomy-term-teaser {
+        margin-bottom: @os2-taxonomy-term-teaser-xs-stacked-spacing !important;;
     }
 
-    .fki-taxonomy-term-teaser-small-spacing {
+    .os2-taxonomy-term-teaser-small-spacing {
 
-        &.fki-taxonomy-term-teaser,
-        > .fki-taxonomy-term-teaser {
-            margin-bottom: floor( (@fki-taxonomy-term-teaser-xs-stacked-spacing / 3) ) !important;;
+        &.os2-taxonomy-term-teaser,
+        > .os2-taxonomy-term-teaser {
+            margin-bottom: floor( (@os2-taxonomy-term-teaser-xs-stacked-spacing / 3) ) !important;;
         }
     }
 
-    .fki-taxonomy-term-teaser-large-spacing {
+    .os2-taxonomy-term-teaser-large-spacing {
 
-        &.fki-taxonomy-term-teaser,
-        > .fki-taxonomy-term-teaser {
-            margin-bottom: floor( (@fki-taxonomy-term-teaser-xs-stacked-spacing * 2) ) !important;;
+        &.os2-taxonomy-term-teaser,
+        > .os2-taxonomy-term-teaser {
+            margin-bottom: floor( (@os2-taxonomy-term-teaser-xs-stacked-spacing * 2) ) !important;;
         }
     }
 }
@@ -107,30 +107,30 @@
 @media @media-query-tablet {
 
     // Teaser
-    .fki-taxonomy-term-teaser {}
+    .os2-taxonomy-term-teaser {}
 }
 
 // Tablet - only
 @media @media-query-tablet-only {
 
     // Teaser
-    .fki-taxonomy-term-teaser {
-        margin-bottom: @fki-taxonomy-term-teaser-sm-stacked-spacing !important;;
+    .os2-taxonomy-term-teaser {
+        margin-bottom: @os2-taxonomy-term-teaser-sm-stacked-spacing !important;;
     }
 
-    .fki-taxonomy-term-teaser-small-spacing {
+    .os2-taxonomy-term-teaser-small-spacing {
 
-        &.fki-taxonomy-term-teaser,
-        > .fki-taxonomy-term-teaser {
-            margin-bottom: floor( (@fki-taxonomy-term-teaser-sm-stacked-spacing / 3) ) !important;;
+        &.os2-taxonomy-term-teaser,
+        > .os2-taxonomy-term-teaser {
+            margin-bottom: floor( (@os2-taxonomy-term-teaser-sm-stacked-spacing / 3) ) !important;;
         }
     }
 
-    .fki-taxonomy-term-teaser-large-spacing {
+    .os2-taxonomy-term-teaser-large-spacing {
 
-        &.fki-taxonomy-term-teaser,
-        > .fki-taxonomy-term-teaser {
-            margin-bottom: floor( (@fki-taxonomy-term-teaser-sm-stacked-spacing * 2) ) !important;;
+        &.os2-taxonomy-term-teaser,
+        > .os2-taxonomy-term-teaser {
+            margin-bottom: floor( (@os2-taxonomy-term-teaser-sm-stacked-spacing * 2) ) !important;;
         }
     }
 }
@@ -139,30 +139,30 @@
 @media @media-query-desktop {
 
     // Teaser
-    .fki-taxonomy-term-teaser {}
+    .os2-taxonomy-term-teaser {}
 }
 
 // Desktop - only
 @media @media-query-desktop-only {
 
     // Teaser
-    .fki-taxonomy-term-teaser {
-        margin-bottom: @fki-taxonomy-term-teaser-md-stacked-spacing !important;;
+    .os2-taxonomy-term-teaser {
+        margin-bottom: @os2-taxonomy-term-teaser-md-stacked-spacing !important;;
     }
 
-    .fki-taxonomy-term-teaser-small-spacing {
+    .os2-taxonomy-term-teaser-small-spacing {
 
-        &.fki-taxonomy-term-teaser,
-        > .fki-taxonomy-term-teaser {
-            margin-bottom: floor( (@fki-taxonomy-term-teaser-md-stacked-spacing / 3) ) !important;;
+        &.os2-taxonomy-term-teaser,
+        > .os2-taxonomy-term-teaser {
+            margin-bottom: floor( (@os2-taxonomy-term-teaser-md-stacked-spacing / 3) ) !important;;
         }
     }
 
-    .fki-taxonomy-term-teaser-large-spacing {
+    .os2-taxonomy-term-teaser-large-spacing {
 
-        &.fki-taxonomy-term-teaser,
-        > .fki-taxonomy-term-teaser {
-            margin-bottom: floor( (@fki-taxonomy-term-teaser-md-stacked-spacing * 2) ) !important;;
+        &.os2-taxonomy-term-teaser,
+        > .os2-taxonomy-term-teaser {
+            margin-bottom: floor( (@os2-taxonomy-term-teaser-md-stacked-spacing * 2) ) !important;;
         }
     }
 }
@@ -171,30 +171,30 @@
 @media @media-query-large-desktop {
 
     // Teaser
-    .fki-taxonomy-term-teaser {}
+    .os2-taxonomy-term-teaser {}
 }
 
 // Large desktop - only
 @media @media-query-large-desktop-only {
 
     // Teaser
-    .fki-taxonomy-term-teaser {
-        margin-bottom: @fki-taxonomy-term-teaser-lg-stacked-spacing !important;;
+    .os2-taxonomy-term-teaser {
+        margin-bottom: @os2-taxonomy-term-teaser-lg-stacked-spacing !important;;
     }
 
-    .fki-taxonomy-term-teaser-small-spacing {
+    .os2-taxonomy-term-teaser-small-spacing {
 
-        &.fki-taxonomy-term-teaser,
-        > .fki-taxonomy-term-teaser {
-            margin-bottom: floor( (@fki-taxonomy-term-teaser-lg-stacked-spacing / 3) ) !important;;
+        &.os2-taxonomy-term-teaser,
+        > .os2-taxonomy-term-teaser {
+            margin-bottom: floor( (@os2-taxonomy-term-teaser-lg-stacked-spacing / 3) ) !important;;
         }
     }
 
-    .fki-taxonomy-term-teaser-large-spacing {
+    .os2-taxonomy-term-teaser-large-spacing {
 
-        &.fki-taxonomy-term-teaser,
-        > .fki-taxonomy-term-teaser {
-            margin-bottom: floor( (@fki-taxonomy-term-teaser-lg-stacked-spacing * 2) ) !important;
+        &.os2-taxonomy-term-teaser,
+        > .os2-taxonomy-term-teaser {
+            margin-bottom: floor( (@os2-taxonomy-term-teaser-lg-stacked-spacing * 2) ) !important;
         }
     }
 }
@@ -203,21 +203,21 @@
 @media print {
 
     // Teaser
-    .fki-taxonomy-term-teaser {}
+    .os2-taxonomy-term-teaser {}
 }
 
 // Touch
 .touch {
 
     // Teaser
-    .fki-taxonomy-term-teaser {}
+    .os2-taxonomy-term-teaser {}
 }
 
 // No touch
 .no-touch {
 
     // Teaser
-    .fki-taxonomy-term-teaser {}
+    .os2-taxonomy-term-teaser {}
 }
 
 // --------------------------------------------------

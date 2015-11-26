@@ -1,15 +1,15 @@
 <?php if ($view_mode == 'teaser'): ?>
   <!-- node--teaser.tpl.php -->
   <!-- Begin - teaser -->
-  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> fki-node-teaser fki-box fki-box-small-spacing"<?php print $attributes; ?>>
+  <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-teaser os2-box os2-box-small-spacing"<?php print $attributes; ?>>
     <div class="table">
       <div class="table-row">
 
         <?php if (isset($content['field_os2intra_image'])): ?>
-          <div class="table-cell fki-node-teaser-image-container">
+          <div class="table-cell os2-node-teaser-image-container">
 
             <!-- Begin - image -->
-            <div class="fki-node-teaser-image">
+            <div class="os2-node-teaser-image">
               <?php print render($content['field_os2intra_image']); ?>
             </div>
             <!-- End - image -->
@@ -18,10 +18,10 @@
         <?php endif; ?>
 
         <?php if (isset($content['field_os2intra_images'])): ?>
-          <div class="table-cell fki-node-teaser-image-container">
+          <div class="table-cell os2-node-teaser-image-container">
 
             <!-- Begin - images -->
-            <div class="fki-node-teaser-image">
+            <div class="os2-node-teaser-image">
               <?php print render($content['field_os2intra_images']); ?>
             </div>
             <!-- End - images -->
@@ -33,7 +33,7 @@
 
           <?php if (isset($author_full_name) and $updated_at_short): ?>
             <!-- Begin - entity info -->
-            <ul class="fki-node-teaser-info fki-entity-info">
+            <ul class="os2-node-teaser-info os2-entity-info">
               <li><?php print l($author_full_name, 'user/' . $node->uid); ?></li>
               <li><span><?php print t('Sidst opdateret d.'); ?> <?php print $updated_at_short; ?></span></li>
             </ul>
@@ -41,17 +41,17 @@
           <?php endif ?>
 
           <!-- Begin - heading -->
-          <div class="fki-node-teaser-heading">
-            <h3 class="fki-node-teaser-heading-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
+          <div class="os2-node-teaser-heading">
+            <h3 class="os2-node-teaser-heading-title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
           </div>
           <!-- End - heading -->
 
           <!-- Begin - body -->
-          <div class="fki-node-teaser-body">
+          <div class="os2-node-teaser-body">
 
             <?php if (isset($content['body'])): ?>
               <!-- Begin - body -->
-              <div class="fki-node-teaser-body-content">
+              <div class="os2-node-teaser-body-content">
                 <?php print render($content['body']); ?>
               </div>
               <!-- End - body -->
@@ -65,17 +65,17 @@
     </div>
 
     <!-- Begin - footer -->
-    <div class="fki-node-teaser-footer fki-footer-elements">
+    <div class="os2-node-teaser-footer os2-footer-elements">
 
       <!-- Begin - number of hits -->
-      <span class="fki-footer-element">
+      <span class="os2-footer-element">
         <span class="icon fa fa-eye"></span>
         <?php print $number_of_hits; ?>
       </span>
       <!-- End - number of hits -->
 
       <!-- Begin - number of comments -->
-      <span class="fki-footer-element">
+      <span class="os2-footer-element">
         <span class="icon fa fa-comment"></span>
         <?php print $number_of_comments; ?>
       </span>

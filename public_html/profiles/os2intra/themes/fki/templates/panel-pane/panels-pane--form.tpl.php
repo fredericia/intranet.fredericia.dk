@@ -6,14 +6,14 @@
   <?php endif; ?>
 
   <div class="<?php print $classes; ?>" <?php print $id; ?> <?php print $attributes; ?>>
-    <div class="fki-box">
+    <div class="os2-box">
       <?php if ($admin_links): ?>
         <?php print $admin_links; ?>
       <?php endif; ?>
 
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
-        <div class="fki-box-heading">
+        <div class="os2-box-heading">
           <<?php print $title_heading; ?> <?php print $title_attributes; ?>>
           <?php print $title; ?>
           </<?php print $title_heading; ?>>

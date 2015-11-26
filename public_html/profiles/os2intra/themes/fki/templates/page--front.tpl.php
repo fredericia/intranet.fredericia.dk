@@ -99,7 +99,7 @@
 
         <?php if (!empty($breadcrumb)): ?>
           <!-- Begin - breadcrumb -->
-          <section class="fki-breadcrumb-container">
+          <section class="os2-breadcrumb-container">
             <div class="row">
               <div class="col-xs-12">
                 <?php print $breadcrumb; ?>

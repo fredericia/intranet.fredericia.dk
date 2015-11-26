@@ -3,59 +3,59 @@
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .fki-node-list
+// | - .os2-node-list
 // |
 
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
 
-@fki-node-list-stacked-spacing: 3px;
-@fki-node-list-border-color: @border-color;
+@os2-node-list-stacked-spacing: 3px;
+@os2-node-list-border-color: @border-color;
 
-@fki-node-list-heading-font-color: @brand-primary;
-@fki-node-list-heading-top-bottom-spacing: 3px;
-@fki-node-list-heading-left-right-spacing: 0;
+@os2-node-list-heading-font-color: @brand-primary;
+@os2-node-list-heading-top-bottom-spacing: 3px;
+@os2-node-list-heading-left-right-spacing: 0;
 
-@fki-node-list-body-top-bottom-spacing: 0;
-@fki-node-list-body-left-right-spacing: 0;
+@os2-node-list-body-top-bottom-spacing: 0;
+@os2-node-list-body-left-right-spacing: 0;
 
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
 // List
-.fki-node-list {
-	padding: @fki-node-list-stacked-spacing 0;
-	border-bottom: 1px solid @fki-node-list-border-color;
+.os2-node-list {
+	padding: @os2-node-list-stacked-spacing 0;
+	border-bottom: 1px solid @os2-node-list-border-color;
 
-	.fki-node-list-info {
+	.os2-node-list-info {
 
 		span {
 			font-style: italic;
 		}
 	}
 
-	.fki-node-list-heading {
-		padding: @fki-node-list-heading-top-bottom-spacing @fki-node-list-heading-left-right-spacing;
+	.os2-node-list-heading {
+		padding: @os2-node-list-heading-top-bottom-spacing @os2-node-list-heading-left-right-spacing;
 
-		.fki-node-list-heading-title {
+		.os2-node-list-heading-title {
 			margin: 0;
 			.heading-h5;
 
 			&,
 			a {
-				color: @fki-node-list-heading-font-color;
+				color: @os2-node-list-heading-font-color;
 			}
 		}
 
-		.fki-node-list-heading-time-ago {
+		.os2-node-list-heading-time-ago {
 			font-style: italic;
 		}
 	}
 
-	.fki-node-list-body {
-		padding: @fki-node-list-body-top-bottom-spacing @fki-node-list-body-left-right-spacing;
+	.os2-node-list-body {
+		padding: @os2-node-list-body-top-bottom-spacing @os2-node-list-body-left-right-spacing;
 	}
 }
 
@@ -63,39 +63,39 @@
 // Variants
 // --------------------------------------------------
 
-.fki-box,
-.fki-box-primary {
+.os2-box,
+.os2-box-primary {
 
-	.fki-node-list {
-		.fki-mixin-list-box-variant(@brand-primary);
+	.os2-node-list {
+		.os2-mixin-list-box-variant(@brand-primary);
 	}
 }
 
-.fki-box-secondary {
+.os2-box-secondary {
 
-	.fki-node-list {
-		.fki-mixin-list-box-variant(@brand-secondary);
+	.os2-node-list {
+		.os2-mixin-list-box-variant(@brand-secondary);
 	}
 }
 
-.fki-box-tertiary {
+.os2-box-tertiary {
 
-	.fki-node-list {
-		.fki-mixin-list-box-variant(@brand-tertiary);
+	.os2-node-list {
+		.os2-mixin-list-box-variant(@brand-tertiary);
 	}
 }
 
-.fki-box-quaternary {
+.os2-box-quaternary {
 
-	.fki-node-list {
-		.fki-mixin-list-box-variant(@brand-quaternary);
+	.os2-node-list {
+		.os2-mixin-list-box-variant(@brand-quaternary);
 	}
 }
 
-.fki-box-quinary {
+.os2-box-quinary {
 
-	.fki-node-list {
-		.fki-mixin-list-box-variant(@brand-quinary);
+	.os2-node-list {
+		.os2-mixin-list-box-variant(@brand-quinary);
 	}
 }
 
@@ -103,7 +103,7 @@
 
 	&:last-child {
 
-		.fki-node-list {
+		.os2-node-list {
 
 			&:last-child {
 				border-bottom: 0;
@@ -120,77 +120,77 @@
 @media @media-query-mobile {
 
 	// List
-	.fki-node-list {}
+	.os2-node-list {}
 }
 
 // Mobile - only
 @media @media-query-mobile-only {
 
 	// List
-	.fki-node-list {}
+	.os2-node-list {}
 }
 
 // Tablet
 @media @media-query-tablet {
 
 	// List
-	.fki-node-list {}
+	.os2-node-list {}
 }
 
 // Tablet - only
 @media @media-query-tablet-only {
 
 	// List
-	.fki-node-list {}
+	.os2-node-list {}
 }
 
 // Desktop
 @media @media-query-desktop {
 
 	// List
-	.fki-node-list {}
+	.os2-node-list {}
 }
 
 // Desktop - only
 @media @media-query-desktop-only {
 
 	// List
-	.fki-node-list {}
+	.os2-node-list {}
 }
 
 // Large desktop
 @media @media-query-large-desktop {
 
 	// List
-	.fki-node-list {}
+	.os2-node-list {}
 }
 
 // Large desktop - only
 @media @media-query-large-desktop-only {
 
 	// List
-	.fki-node-list {}
+	.os2-node-list {}
 }
 
 // Print
 @media print {
 
 	// List
-	.fki-node-list {}
+	.os2-node-list {}
 }
 
 // Touch
 .touch {
 
 	// List
-	.fki-node-list {}
+	.os2-node-list {}
 }
 
 // No touch
 .no-touch {
 
 	// List
-	.fki-node-list {}
+	.os2-node-list {}
 }
 
 // --------------------------------------------------
@@ -198,18 +198,18 @@
 // --------------------------------------------------
 
 // List mixin
-.fki-mixin-list() {}
+.os2-mixin-list() {}
 
 // Box variant mixin
-.fki-mixin-list-box-variant(@font-color) {
+.os2-mixin-list-box-variant(@font-color) {
 
-	.fki-node-list-heading {
+	.os2-node-list-heading {
 
-		.fki-node-list-heading-calendar-date {
+		.os2-node-list-heading-calendar-date {
 			color: @font-color;
 		}
 
-		.fki-node-list-heading-time-ago {
+		.os2-node-list-heading-time-ago {
 			color: @font-color;
 		}
 	}

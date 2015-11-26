@@ -103,7 +103,7 @@
 
         <?php if (!empty($breadcrumb)): ?>
           <!-- Begin - breadcrumb -->
-          <section class="fki-breadcrumb-container">
+          <section class="os2-breadcrumb-container">
             <div class="row">
               <div class="col-xs-12">
                 <?php print $breadcrumb; ?>
@@ -124,13 +124,13 @@
         <a id="main-content"></a>
 
         <?php if (!panels_get_current_page_display()): ?>
-          <div class="fki-box">
+          <div class="os2-box">
             <?php if ($title): ?>
-            <div class="fki-box-heading">
-              <h2 class="fki-box-heading-title"><?php print $title; ?></h2>
+            <div class="os2-box-heading">
+              <h2 class="os2-box-heading-title"><?php print $title; ?></h2>
             </div>
             <?php endif; ?>
-            <div class="fki-box-body">
+            <div class="os2-box-body">
               <?php print render($page['content']); ?>
             </div>
           </div>

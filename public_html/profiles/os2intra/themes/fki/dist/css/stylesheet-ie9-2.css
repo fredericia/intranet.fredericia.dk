@@ -6185,375 +6185,375 @@
 }
 
 @media screen and (max-width: 767px) {
-  .fki-breadcrumb-container {
+  .os2-breadcrumb-container {
     display: none;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-node-full .fki-node-full-heading .fki-node-full-heading-title {
+  .os2-node-full .os2-node-full-heading .os2-node-full-heading-title {
     font-size: 16px;
     line-height: 17px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-node-full .fki-node-full-heading .fki-node-full-heading-title {
+  .os2-node-full .os2-node-full-heading .os2-node-full-heading-title {
     font-size: 17px;
     line-height: 18px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-node-full .fki-node-full-heading .fki-node-full-heading-title {
+  .os2-node-full .os2-node-full-heading .os2-node-full-heading-title {
     font-size: 18px;
     line-height: 19px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-node-full .fki-node-full-heading .fki-node-full-heading-title {
+  .os2-node-full .os2-node-full-heading .os2-node-full-heading-title {
     font-size: 20px;
     line-height: 22px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-node-full .fki-node-full-intro {
+  .os2-node-full .os2-node-full-intro {
     font-size: 12px;
     line-height: 13px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-node-full .fki-node-full-intro {
+  .os2-node-full .os2-node-full-intro {
     font-size: 13px;
     line-height: 14px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-node-full .fki-node-full-intro {
+  .os2-node-full .os2-node-full-intro {
     font-size: 14px;
     line-height: 15px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-node-full .fki-node-full-intro {
+  .os2-node-full .os2-node-full-intro {
     font-size: 16px;
     line-height: 17px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-node-teaser .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-node-teaser .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 14px;
     line-height: 15px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-node-teaser .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-node-teaser .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 15px;
     line-height: 16px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-node-teaser .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-node-teaser .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 16px;
     line-height: 17px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-node-teaser .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-node-teaser .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 18px;
     line-height: 19px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-spotbox-teaser .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-spotbox-teaser .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 12px;
     line-height: 13px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-spotbox-teaser .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-spotbox-teaser .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 13px;
     line-height: 14px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-spotbox-teaser .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-spotbox-teaser .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 14px;
     line-height: 15px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-spotbox-teaser .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-spotbox-teaser .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 16px;
     line-height: 17px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-spotbox-teaser.fki-spotbox-teaser-variant-with-image .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-spotbox-teaser.os2-spotbox-teaser-variant-with-image .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 14px;
     line-height: 15px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-spotbox-teaser.fki-spotbox-teaser-variant-with-image .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-spotbox-teaser.os2-spotbox-teaser-variant-with-image .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 15px;
     line-height: 16px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-spotbox-teaser.fki-spotbox-teaser-variant-with-image .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-spotbox-teaser.os2-spotbox-teaser-variant-with-image .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 16px;
     line-height: 17px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-spotbox-teaser.fki-spotbox-teaser-variant-with-image .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-spotbox-teaser.os2-spotbox-teaser-variant-with-image .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 18px;
     line-height: 19px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-spotbox-teaser {
+  .os2-spotbox-teaser {
     margin-bottom: 10px !important;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-spotbox-teaser {
+  .os2-spotbox-teaser {
     margin-bottom: 10px !important;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-spotbox-teaser {
+  .os2-spotbox-teaser {
     margin-bottom: 15px !important;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-spotbox-teaser {
+  .os2-spotbox-teaser {
     margin-bottom: 15px !important;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-message-notification-teaser.fki-message-notification-teaser-variant-with-image .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-message-notification-teaser.os2-message-notification-teaser-variant-with-image .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 14px;
     line-height: 15px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-message-notification-teaser.fki-message-notification-teaser-variant-with-image .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-message-notification-teaser.os2-message-notification-teaser-variant-with-image .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 15px;
     line-height: 16px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-message-notification-teaser.fki-message-notification-teaser-variant-with-image .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-message-notification-teaser.os2-message-notification-teaser-variant-with-image .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 16px;
     line-height: 17px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-message-notification-teaser.fki-message-notification-teaser-variant-with-image .fki-node-teaser-heading .fki-node-teaser-heading-title {
+  .os2-message-notification-teaser.os2-message-notification-teaser-variant-with-image .os2-node-teaser-heading .os2-node-teaser-heading-title {
     font-size: 18px;
     line-height: 19px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-node-list .fki-node-list-heading .fki-node-list-heading-title {
+  .os2-node-list .os2-node-list-heading .os2-node-list-heading-title {
     font-size: 12px;
     line-height: 13px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-node-list .fki-node-list-heading .fki-node-list-heading-title {
+  .os2-node-list .os2-node-list-heading .os2-node-list-heading-title {
     font-size: 13px;
     line-height: 14px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-node-list .fki-node-list-heading .fki-node-list-heading-title {
+  .os2-node-list .os2-node-list-heading .os2-node-list-heading-title {
     font-size: 14px;
     line-height: 15px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-node-list .fki-node-list-heading .fki-node-list-heading-title {
+  .os2-node-list .os2-node-list-heading .os2-node-list-heading-title {
     font-size: 16px;
     line-height: 17px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-taxonomy-term-full .fki-taxonomy-term-full-heading .fki-taxonomy-term-full-heading-title {
+  .os2-taxonomy-term-full .os2-taxonomy-term-full-heading .os2-taxonomy-term-full-heading-title {
     font-size: 20px;
     line-height: 22px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-taxonomy-term-full .fki-taxonomy-term-full-heading .fki-taxonomy-term-full-heading-title {
+  .os2-taxonomy-term-full .os2-taxonomy-term-full-heading .os2-taxonomy-term-full-heading-title {
     font-size: 22px;
     line-height: 24px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-taxonomy-term-full .fki-taxonomy-term-full-heading .fki-taxonomy-term-full-heading-title {
+  .os2-taxonomy-term-full .os2-taxonomy-term-full-heading .os2-taxonomy-term-full-heading-title {
     font-size: 23px;
     line-height: 25px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-taxonomy-term-full .fki-taxonomy-term-full-heading .fki-taxonomy-term-full-heading-title {
+  .os2-taxonomy-term-full .os2-taxonomy-term-full-heading .os2-taxonomy-term-full-heading-title {
     font-size: 26px;
     line-height: 28px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-taxonomy-term-full .fki-taxonomy-term-full-body .fki-taxonomy-term-full-body-heading .fki-taxonomy-term-full-body-heading-title {
+  .os2-taxonomy-term-full .os2-taxonomy-term-full-body .os2-taxonomy-term-full-body-heading .os2-taxonomy-term-full-body-heading-title {
     font-size: 20px;
     line-height: 22px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-taxonomy-term-full .fki-taxonomy-term-full-body .fki-taxonomy-term-full-body-heading .fki-taxonomy-term-full-body-heading-title {
+  .os2-taxonomy-term-full .os2-taxonomy-term-full-body .os2-taxonomy-term-full-body-heading .os2-taxonomy-term-full-body-heading-title {
     font-size: 22px;
     line-height: 24px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-taxonomy-term-full .fki-taxonomy-term-full-body .fki-taxonomy-term-full-body-heading .fki-taxonomy-term-full-body-heading-title {
+  .os2-taxonomy-term-full .os2-taxonomy-term-full-body .os2-taxonomy-term-full-body-heading .os2-taxonomy-term-full-body-heading-title {
     font-size: 23px;
     line-height: 25px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-taxonomy-term-full .fki-taxonomy-term-full-body .fki-taxonomy-term-full-body-heading .fki-taxonomy-term-full-body-heading-title {
+  .os2-taxonomy-term-full .os2-taxonomy-term-full-body .os2-taxonomy-term-full-body-heading .os2-taxonomy-term-full-body-heading-title {
     font-size: 26px;
     line-height: 28px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-taxonomy-term-teaser .fki-taxonomy-term-teaser-heading .fki-taxonomy-term-teaser-heading-title {
+  .os2-taxonomy-term-teaser .os2-taxonomy-term-teaser-heading .os2-taxonomy-term-teaser-heading-title {
     font-size: 14px;
     line-height: 15px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-taxonomy-term-teaser .fki-taxonomy-term-teaser-heading .fki-taxonomy-term-teaser-heading-title {
+  .os2-taxonomy-term-teaser .os2-taxonomy-term-teaser-heading .os2-taxonomy-term-teaser-heading-title {
     font-size: 15px;
     line-height: 16px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-taxonomy-term-teaser .fki-taxonomy-term-teaser-heading .fki-taxonomy-term-teaser-heading-title {
+  .os2-taxonomy-term-teaser .os2-taxonomy-term-teaser-heading .os2-taxonomy-term-teaser-heading-title {
     font-size: 16px;
     line-height: 17px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-taxonomy-term-teaser .fki-taxonomy-term-teaser-heading .fki-taxonomy-term-teaser-heading-title {
+  .os2-taxonomy-term-teaser .os2-taxonomy-term-teaser-heading .os2-taxonomy-term-teaser-heading-title {
     font-size: 18px;
     line-height: 19px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-taxonomy-term-teaser {
+  .os2-taxonomy-term-teaser {
     margin-bottom: 10px !important;
   }
 
-  .fki-taxonomy-term-teaser-small-spacing.fki-taxonomy-term-teaser,
-  .fki-taxonomy-term-teaser-small-spacing > .fki-taxonomy-term-teaser {
+  .os2-taxonomy-term-teaser-small-spacing.os2-taxonomy-term-teaser,
+  .os2-taxonomy-term-teaser-small-spacing > .os2-taxonomy-term-teaser {
     margin-bottom: 3px !important;
   }
 
-  .fki-taxonomy-term-teaser-large-spacing.fki-taxonomy-term-teaser,
-  .fki-taxonomy-term-teaser-large-spacing > .fki-taxonomy-term-teaser {
+  .os2-taxonomy-term-teaser-large-spacing.os2-taxonomy-term-teaser,
+  .os2-taxonomy-term-teaser-large-spacing > .os2-taxonomy-term-teaser {
     margin-bottom: 20px !important;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-taxonomy-term-teaser {
+  .os2-taxonomy-term-teaser {
     margin-bottom: 10px !important;
   }
 
-  .fki-taxonomy-term-teaser-small-spacing.fki-taxonomy-term-teaser,
-  .fki-taxonomy-term-teaser-small-spacing > .fki-taxonomy-term-teaser {
+  .os2-taxonomy-term-teaser-small-spacing.os2-taxonomy-term-teaser,
+  .os2-taxonomy-term-teaser-small-spacing > .os2-taxonomy-term-teaser {
     margin-bottom: 3px !important;
   }
 
-  .fki-taxonomy-term-teaser-large-spacing.fki-taxonomy-term-teaser,
-  .fki-taxonomy-term-teaser-large-spacing > .fki-taxonomy-term-teaser {
+  .os2-taxonomy-term-teaser-large-spacing.os2-taxonomy-term-teaser,
+  .os2-taxonomy-term-teaser-large-spacing > .os2-taxonomy-term-teaser {
     margin-bottom: 20px !important;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-taxonomy-term-teaser {
+  .os2-taxonomy-term-teaser {
     margin-bottom: 15px !important;
   }
 
-  .fki-taxonomy-term-teaser-small-spacing.fki-taxonomy-term-teaser,
-  .fki-taxonomy-term-teaser-small-spacing > .fki-taxonomy-term-teaser {
+  .os2-taxonomy-term-teaser-small-spacing.os2-taxonomy-term-teaser,
+  .os2-taxonomy-term-teaser-small-spacing > .os2-taxonomy-term-teaser {
     margin-bottom: 5px !important;
   }
 
-  .fki-taxonomy-term-teaser-large-spacing.fki-taxonomy-term-teaser,
-  .fki-taxonomy-term-teaser-large-spacing > .fki-taxonomy-term-teaser {
+  .os2-taxonomy-term-teaser-large-spacing.os2-taxonomy-term-teaser,
+  .os2-taxonomy-term-teaser-large-spacing > .os2-taxonomy-term-teaser {
     margin-bottom: 30px !important;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-taxonomy-term-teaser {
+  .os2-taxonomy-term-teaser {
     margin-bottom: 15px !important;
   }
 
-  .fki-taxonomy-term-teaser-small-spacing.fki-taxonomy-term-teaser,
-  .fki-taxonomy-term-teaser-small-spacing > .fki-taxonomy-term-teaser {
+  .os2-taxonomy-term-teaser-small-spacing.os2-taxonomy-term-teaser,
+  .os2-taxonomy-term-teaser-small-spacing > .os2-taxonomy-term-teaser {
     margin-bottom: 5px !important;
   }
 
-  .fki-taxonomy-term-teaser-large-spacing.fki-taxonomy-term-teaser,
-  .fki-taxonomy-term-teaser-large-spacing > .fki-taxonomy-term-teaser {
+  .os2-taxonomy-term-teaser-large-spacing.os2-taxonomy-term-teaser,
+  .os2-taxonomy-term-teaser-large-spacing > .os2-taxonomy-term-teaser {
     margin-bottom: 30px !important;
   }
 }
@@ -6635,128 +6635,128 @@
 }
 
 @media screen and (max-width: 767px) {
-  .fki-box .fki-box-heading .pane-title,
-  .fki-box .fki-box-heading .fki-box-heading-title {
+  .os2-box .os2-box-heading .pane-title,
+  .os2-box .os2-box-heading .os2-box-heading-title {
     font-size: 14px;
     line-height: 15px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-box .fki-box-heading .pane-title,
-  .fki-box .fki-box-heading .fki-box-heading-title {
+  .os2-box .os2-box-heading .pane-title,
+  .os2-box .os2-box-heading .os2-box-heading-title {
     font-size: 15px;
     line-height: 16px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-box .fki-box-heading .pane-title,
-  .fki-box .fki-box-heading .fki-box-heading-title {
+  .os2-box .os2-box-heading .pane-title,
+  .os2-box .os2-box-heading .os2-box-heading-title {
     font-size: 16px;
     line-height: 17px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-box .fki-box-heading .pane-title,
-  .fki-box .fki-box-heading .fki-box-heading-title {
+  .os2-box .os2-box-heading .pane-title,
+  .os2-box .os2-box-heading .os2-box-heading-title {
     font-size: 18px;
     line-height: 19px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-box {
+  .os2-box {
     margin-bottom: 10px !important;
   }
 
-  .fki-box-small-spacing.fki-box,
-  .fki-box-small-spacing > .fki-box {
+  .os2-box-small-spacing.os2-box,
+  .os2-box-small-spacing > .os2-box {
     margin-bottom: 3px !important;
   }
 
-  .fki-box-large-spacing.fki-box,
-  .fki-box-large-spacing > .fki-box {
+  .os2-box-large-spacing.os2-box,
+  .os2-box-large-spacing > .os2-box {
     margin-bottom: 20px !important;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-box {
+  .os2-box {
     margin-bottom: 10px !important;
   }
 
-  .fki-box-small-spacing.fki-box,
-  .fki-box-small-spacing > .fki-box {
+  .os2-box-small-spacing.os2-box,
+  .os2-box-small-spacing > .os2-box {
     margin-bottom: 3px !important;
   }
 
-  .fki-box-large-spacing.fki-box,
-  .fki-box-large-spacing > .fki-box {
+  .os2-box-large-spacing.os2-box,
+  .os2-box-large-spacing > .os2-box {
     margin-bottom: 20px !important;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-box {
+  .os2-box {
     margin-bottom: 15px !important;
   }
 
-  .fki-box-small-spacing.fki-box,
-  .fki-box-small-spacing > .fki-box {
+  .os2-box-small-spacing.os2-box,
+  .os2-box-small-spacing > .os2-box {
     margin-bottom: 5px !important;
   }
 
-  .fki-box-large-spacing.fki-box,
-  .fki-box-large-spacing > .fki-box {
+  .os2-box-large-spacing.os2-box,
+  .os2-box-large-spacing > .os2-box {
     margin-bottom: 30px !important;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-box {
+  .os2-box {
     margin-bottom: 15px !important;
   }
 
-  .fki-box-small-spacing.fki-box,
-  .fki-box-small-spacing > .fki-box {
+  .os2-box-small-spacing.os2-box,
+  .os2-box-small-spacing > .os2-box {
     margin-bottom: 5px !important;
   }
 
-  .fki-box-large-spacing.fki-box,
-  .fki-box-large-spacing > .fki-box {
+  .os2-box-large-spacing.os2-box,
+  .os2-box-large-spacing > .os2-box {
     margin-bottom: 30px !important;
   }
 }
 
 @media screen and (max-width: 767px) {
-  #homebox .homebox-portlet.fki-box .fki-box-heading .pane-title,
-  #homebox .homebox-portlet.fki-box .fki-box-heading .fki-box-heading-title {
+  #homebox .homebox-portlet.os2-box .os2-box-heading .pane-title,
+  #homebox .homebox-portlet.os2-box .os2-box-heading .os2-box-heading-title {
     font-size: 14px;
     line-height: 15px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  #homebox .homebox-portlet.fki-box .fki-box-heading .pane-title,
-  #homebox .homebox-portlet.fki-box .fki-box-heading .fki-box-heading-title {
+  #homebox .homebox-portlet.os2-box .os2-box-heading .pane-title,
+  #homebox .homebox-portlet.os2-box .os2-box-heading .os2-box-heading-title {
     font-size: 15px;
     line-height: 16px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  #homebox .homebox-portlet.fki-box .fki-box-heading .pane-title,
-  #homebox .homebox-portlet.fki-box .fki-box-heading .fki-box-heading-title {
+  #homebox .homebox-portlet.os2-box .os2-box-heading .pane-title,
+  #homebox .homebox-portlet.os2-box .os2-box-heading .os2-box-heading-title {
     font-size: 16px;
     line-height: 17px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  #homebox .homebox-portlet.fki-box .fki-box-heading .pane-title,
-  #homebox .homebox-portlet.fki-box .fki-box-heading .fki-box-heading-title {
+  #homebox .homebox-portlet.os2-box .os2-box-heading .pane-title,
+  #homebox .homebox-portlet.os2-box .os2-box-heading .os2-box-heading-title {
     font-size: 18px;
     line-height: 19px;
   }
@@ -6769,7 +6769,7 @@
 }
 
 @media print {
-  .fki-links {
+  .os2-links {
     display: none;
   }
 }

@@ -4,7 +4,7 @@
  */
 $plugin = array(
   'title' => t('Content with left and right sidebar'),
-  'category' => t('fki'),
+  'category' => t('os2'),
   'icon' => 'content-with-left-and-right-sidebar.png',
   'theme' => 'content-with-left-and-right-sidebar',
   'css' => 'content-with-left-and-right-sidebar.css',
