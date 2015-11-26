@@ -1,21 +1,39 @@
 <?php if ($view_mode == 'full'): ?>
   <!-- taxonomy-term.tpl.php -->
   <!-- Begin - full -->
-  <div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> fki-full">
+  <div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> fki-taxonomy-term-full">
+    <div class="table">
+      <div class="table-row">
+        <div class="table-cell fki-taxonomy-term-full-body">
 
-    <div class="fki-full-heading">
-      <h2 class="fki-full-heading-title"><?php print $term_name; ?></h2>
-    </div>
+          <!-- Begin - heading -->
+          <div class="fki-taxonomy-term-full-body-heading">
+            <h2 class="fki-taxonomy-term-full-body-heading-title"><?php print $term_name; ?></h2>
+          </div>
+          <!-- End - heading -->
 
-    <?php if (isset($content['description'])): ?>
-      <!-- Begin - description -->
-      <div class="fki-full-description">
-        <?php print render($content['description']); ?>
+          <?php if (isset($content['description'])): ?>
+            <!-- Begin - description -->
+            <div class="fki-taxonomy-term-full-body-description">
+              <?php print render($content['description']); ?>
+            </div>
+            <!-- End - description -->
+          <?php endif; ?>
+
+        </div>
+
+        <?php if (isset($field_taxonomy_term_top_level_icon)): ?>
+          <div class="table-cell fki-taxonomy-term-full-icon">
+
+            <!-- Begin - icon -->
+            <?php print render($field_taxonomy_term_top_level_icon); ?>
+            <!-- End - icon -->
+
+          </div>
+        <?php endif ?>
+
       </div>
-      <!-- End - description -->
-    <?php endif; ?>
-
-    <?php print render($content['links']); ?>
+    </div>
 
   </div>
   <!-- End - full -->

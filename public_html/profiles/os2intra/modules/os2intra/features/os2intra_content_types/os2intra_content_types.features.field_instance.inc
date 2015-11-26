@@ -6002,8 +6002,11 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'icon_field',
+        'settings' => array(
+          'link_to_content' => FALSE,
+        ),
+        'type' => 'icon_field_default',
         'weight' => 1,
       ),
       'full' => array(

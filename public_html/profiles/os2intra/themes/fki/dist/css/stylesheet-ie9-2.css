@@ -6191,56 +6191,56 @@
 }
 
 @media screen and (max-width: 767px) {
-  .fki-full .fki-full-heading .fki-full-heading-title {
+  .fki-node-full .fki-node-full-heading .fki-node-full-heading-title {
     font-size: 16px;
     line-height: 17px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-full .fki-full-heading .fki-full-heading-title {
+  .fki-node-full .fki-node-full-heading .fki-node-full-heading-title {
     font-size: 17px;
     line-height: 18px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-full .fki-full-heading .fki-full-heading-title {
+  .fki-node-full .fki-node-full-heading .fki-node-full-heading-title {
     font-size: 18px;
     line-height: 19px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-full .fki-full-heading .fki-full-heading-title {
+  .fki-node-full .fki-node-full-heading .fki-node-full-heading-title {
     font-size: 20px;
     line-height: 22px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fki-full .fki-full-intro {
+  .fki-node-full .fki-node-full-intro {
     font-size: 12px;
     line-height: 13px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .fki-full .fki-full-intro {
+  .fki-node-full .fki-node-full-intro {
     font-size: 13px;
     line-height: 14px;
   }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .fki-full .fki-full-intro {
+  .fki-node-full .fki-node-full-intro {
     font-size: 14px;
     line-height: 15px;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .fki-full .fki-full-intro {
+  .fki-node-full .fki-node-full-intro {
     font-size: 16px;
     line-height: 17px;
   }
@@ -6407,6 +6407,62 @@
   .fki-list .fki-list-heading .fki-list-heading-title {
     font-size: 16px;
     line-height: 17px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fki-taxonomy-term-full .fki-taxonomy-term-full-heading .fki-taxonomy-term-full-heading-title {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-taxonomy-term-full .fki-taxonomy-term-full-heading .fki-taxonomy-term-full-heading-title {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-taxonomy-term-full .fki-taxonomy-term-full-heading .fki-taxonomy-term-full-heading-title {
+    font-size: 23px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-taxonomy-term-full .fki-taxonomy-term-full-heading .fki-taxonomy-term-full-heading-title {
+    font-size: 26px;
+    line-height: 28px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .fki-taxonomy-term-full .fki-taxonomy-term-full-body .fki-taxonomy-term-full-body-heading .fki-taxonomy-term-full-body-heading-title {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .fki-taxonomy-term-full .fki-taxonomy-term-full-body .fki-taxonomy-term-full-body-heading .fki-taxonomy-term-full-body-heading-title {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .fki-taxonomy-term-full .fki-taxonomy-term-full-body .fki-taxonomy-term-full-body-heading .fki-taxonomy-term-full-body-heading-title {
+    font-size: 23px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fki-taxonomy-term-full .fki-taxonomy-term-full-body .fki-taxonomy-term-full-body-heading .fki-taxonomy-term-full-body-heading-title {
+    font-size: 26px;
+    line-height: 28px;
   }
 }
 

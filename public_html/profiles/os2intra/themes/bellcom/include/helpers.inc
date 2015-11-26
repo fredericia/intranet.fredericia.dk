@@ -12,3 +12,22 @@ function in_array_recursive($needle, $haystack, $strict = FALSE) {
 
   return false;
 }
+
+/*
+ * Get top level taxonomy term
+ */
+function _taxonomy_term_top_level($tid) {
+  $taxonomy_term_parents = taxonomy_get_parents_all($tid);
+  $taxonomy_term_top_level = NULL;
+
+  // Run through all parents
+  foreach($taxonomy_term_parents as $taxonomy_term_parent) {
+    $taxonomy_term_parent_parents = taxonomy_get_parents_all($taxonomy_term_parent->tid);
+
+    if ($taxonomy_term_parent_parents != false) {
+      $taxonomy_term_top_level = $taxonomy_term_parent;
+    }
+  }
+
+  return $taxonomy_term_top_level;
+}
