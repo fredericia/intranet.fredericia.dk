@@ -78,6 +78,7 @@ dependencies[] = adminimal_admin_menu
 dependencies[] = icon
 dependencies[] = icon_menu
 dependencies[] = fontawesome
+dependencies[] = print
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; OS2web mdules.
