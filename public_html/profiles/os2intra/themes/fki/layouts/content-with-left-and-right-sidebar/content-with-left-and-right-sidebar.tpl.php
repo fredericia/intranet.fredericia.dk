@@ -8,7 +8,7 @@
     <!-- End - left sidebar -->
 
     <!-- Begin - right sidebar -->
-    <div class="col-md-3 col-md-push-6">
+    <div class="col-md-3 col-md-push-6 hidden-print">
         <?php print $content['sidebar-right']; ?>
     </div>
     <!-- End - right sidebar -->
