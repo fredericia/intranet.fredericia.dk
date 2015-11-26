@@ -21,14 +21,10 @@
     "jsApp": [
       "src/vendor/bootstrap/dist/js/bootstrap.js",
       "src/vendor/bs3-designer/js/bs3-designer.js",
-      "src/vendor/bs3-masonry/js/bs3-masonry.js",
+      "src/vendor/bs3-sidebar/js/bs3-sidebar.js",
       "src/vendor/jquery-placeholder/jquery.placeholder.js",
       "src/vendor/jquery.cookie/jquery.cookie.js",
       "src/vendor/fastclick/lib/fastclick.js",
-      "src/vendor/imagesloaded/imagesloaded.pkgd.js",
-      "src/vendor/masonry/dist/masonry.pkgd.js",
-      "src/js/bs3-sidebar.js",
-      "src/js/popover-button.js",
       "src/js/init.js"
     ],
     "jsIe9": [
