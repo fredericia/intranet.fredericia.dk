@@ -474,7 +474,7 @@ function os2intra_content_types_field_group_info() {
   $field_group->parent_name = 'group_row';
   $field_group->data = array(
     'label' => 'Kolonne 2',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_os2intra_itvejledning_img',
     ),
@@ -505,7 +505,7 @@ function os2intra_content_types_field_group_info() {
   $field_group->parent_name = 'group_row';
   $field_group->data = array(
     'label' => 'Kolonne 3',
-    'weight' => '8',
+    'weight' => '7',
     'children' => array(
       0 => 'field_os2intra_itvejledninger_4',
     ),
