@@ -239,7 +239,7 @@ function fki_preprocess_taxonomy_term(&$variables) {
   // Icon
   if ($taxonomy_term_top_level = _taxonomy_term_top_level($variables['tid'])) {
 
-    if ($field_icon = field_view_field('taxonomy_term', $term, 'field_os2web_base_icon', $variables['view_mode'])) {
+    if ($field_icon = field_view_field('taxonomy_term', $taxonomy_term_top_level, 'field_os2web_base_icon', $variables['view_mode'])) {
       $variables['field_taxonomy_term_top_level_icon'] = $field_icon;
     }
   }
