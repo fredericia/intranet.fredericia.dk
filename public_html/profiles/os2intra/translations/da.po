@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-11-19 11:40+0100\n"
-"PO-Revision-Date: 2015-11-19 11:40+0100\n"
+"POT-Creation-Date: 2015-11-26 10:41+0100\n"
+"PO-Revision-Date: 2015-11-26 10:41+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -25599,10 +25599,6 @@ msgid "Indholdskurv, bruges af systemet til at oprette værktøjskasser med"
 msgstr ""
 
 #: /
-msgid "Kurv"
-msgstr ""
-
-#: /
 msgid "Toolboxes search"
 msgstr ""
 
@@ -29239,10 +29235,6 @@ msgstr ""
 msgid "delete terms in 21"
 msgstr ""
 
-#: /
-msgid "@files downloadable files"
-msgstr ""
-
 #: /hjaelp-og-vaerktoejer/it-vejledninger/intranetdokumentation/opret-it-vejledning/edit
 msgid "Includeable"
 msgstr ""
@@ -29756,97 +29748,238 @@ msgstr ""
 msgid "Provides i18n field integration for Custom add another module"
 msgstr ""
 
-#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/pane_title
-msgid ""
-"This is the title that will appear for this view pane in the add "
-"content dialog. If left blank, the view name will be used."
+#: /
+msgid "Remove all changes to this page and revert to the version in code."
 msgstr ""
 
-#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
-msgid ""
-"Checked settings will be available in the panel pane config dialog for "
-"modification by the panels user. Unchecked settings will not be "
-"available and will only use the settings in this display."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
-msgid "Pager offset"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
-msgid "Path override"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
-msgid "Title override"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
-msgid "Use exposed widgets form as pane configuration"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
-msgid "Fields override"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/node_basket/panel_pane_1/allow
-msgid "Some"
-msgstr ""
-
-#: /admin/structure/views/view/node_basket/edit/my_toolboxes
+#: /
 msgid "You are not subscribed to any item."
 msgstr ""
 
-#: /admin/structure/views/view/node_basket/edit/my_toolboxes
+#: /
 msgid "My toolboxes"
 msgstr ""
 
-#: /admin/structure/views/view/node_basket/edit/subscribed_toolboxes
-msgid "Subscribed toolboxes"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/node_basket/subscribed_toolboxes/access
-msgid "Administer user subscriptions."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/node_basket/my_toolboxes/pane_category
-msgid "This is category the pane will appear in on the add content dialog."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/node_basket/my_toolboxes/pane_category
-msgid ""
-"This is the default weight of the category. Note that if the weight of "
-"a category is defined in multiple places, only the first one Panels "
-"sees will get that definition, so if the weight does not appear to be "
-"working, check other places that the weight might be set."
-msgstr ""
-
-#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/sidebar/views_panes/node_basket-my_toolboxes
-msgid "Num items"
-msgstr ""
-
-#: /panels/ajax/editor/add-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/sidebar/views_panes/node_basket-my_toolboxes
-msgid "Select the number of items to display, or 0 to display all results."
-msgstr ""
-
-#: /admin/structure/views/view/node_basket/edit/my_basket
-msgid "My basket"
-msgstr ""
-
-#: /admin/structure/views/view/node_basket/edit/subscribed_toolboxes
-msgid "Du abonnerer p.t. ikke på nogle værktøjskasser"
-msgstr ""
-
-#: /admin/structure/views/view/node_basket/edit/subscribed_toolboxes
-msgid "Du har ikke nogle emner i din kurv."
-msgstr ""
-
-#: /admin/structure/views/view/node_basket/edit/my_toolboxes
+#: /
 msgid "Du har ikke oprettet nogle værktøjskasser."
 msgstr ""
 
-#: /admin/structure/pages/ajax/operation/page-node_basket_view/settings/menu
+#: /
+msgid "Subscribed toolboxes"
+msgstr ""
+
+#: /
+msgid "Du abonnerer p.t. ikke på nogle værktøjskasser"
+msgstr ""
+
+#: /
+msgid "My basket"
+msgstr ""
+
+#: /
+msgid "Du har ikke nogle emner i din kurv."
+msgstr ""
+
+#: /
+msgid "Search toolboxes"
+msgstr ""
+
+#: /admin/people
+msgid "Administer user subscriptions."
+msgstr ""
+
+#: /admin/people
+msgid "administer message subscribe"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/analysis
+msgid ""
+"No components have analysis enabled in this form. Enable analysis "
+"under the \"Add analysis components\" fieldset."
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/analysis
+msgid "Add analysis components"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/analysis
+msgid "The selected components will be included on the analysis page."
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/analysis
+msgid "Update analysis display"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/table
+msgid "Værdi"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/table
+msgid "Nærmeste leder"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "Microsoft Excel (older versions)"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "A file readable by older versions of Microsoft Excel."
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "Column header format"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "Choose whether to show the label or field key in each column header."
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "Submitted Time"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "Completed Time"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "Modified Time"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "Workflow State"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "All submissions by date"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "Included submissions"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "Finished and draft submissions"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "Finished submissions only"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "Drafts only"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid ""
+"Submissions by number from !start and optionally to: !end &nbsp; (Last "
+"downloaded: !serial)"
+msgstr ""
+
+#: /content/test-intern-haendelse-dennis/webform-results/download
+msgid "Submissions by date from !start_date and optionally to: !end_date"
+msgstr ""
+
+#: /admin/structure/views/view/node_basket/edit/my_toolboxes?destination=node_basket
+msgid "Some"
+msgstr ""
+
+#: /admin/structure/flags/add
+msgid "Select flag type"
+msgstr ""
+
+#: /admin/structure/flags/add
+msgid ""
+"The type of object this flag will affect. This cannot be changed once "
+"the flag is created."
+msgstr ""
+
+#: /admin/structure/flags/add
+msgid ""
+"Select the type of flag to create. An individual flag can only affect "
+"one type of object. This cannot be changed once the flag is created."
+msgstr ""
+
+#: /admin/structure/flags/add/node
+msgid "Add new @type flag"
+msgstr ""
+
+#: /admin/structure/flags/add/node
+msgid "Flag this item"
+msgstr ""
+
+#: /admin/structure/flags/add/node
+msgid "Unflag this item"
+msgstr ""
+
+#: /
+msgid "OS2intra Flag Node as Old"
+msgstr ""
+
+#: /admin/structure/flags/manage/os2intra_flag_node_old
+msgid ""
+"The \"Unflag not allowed text\" is required if any user roles are not "
+"allowed to unflag."
+msgstr ""
+
+#: /node_basket
+msgid "2 columns"
+msgstr ""
+
+#: /node_basket
+msgid "Left sided content"
+msgstr ""
+
+#: /node_basket
+msgid "Right sided content"
+msgstr ""
+
+#: /admin/structure/pages/edit/page-node_basket_view
+msgid "This page is publicly accessible."
+msgstr ""
+
+#: /admin/structure/pages/edit/page-node_basket_view
+msgid "No menu entry."
+msgstr ""
+
+#: /admin/structure/pages/edit/page-node_basket_view
+msgid "Normal menu entry."
+msgstr ""
+
+#: /admin/structure/pages/edit/page-node_basket_view
+msgid "Menu tab."
+msgstr ""
+
+#: /admin/structure/pages/edit/page-node_basket_view
+msgid "Default menu tab."
+msgstr ""
+
+#: /admin/structure/pages/edit/page-node_basket_view
 msgid "Local action"
+msgstr ""
+
+#: /admin/structure/pages/edit/page-node_basket_view
+msgid "Title: %title."
+msgstr ""
+
+#: /admin/structure/pages/edit/page-node_basket_view
+msgid "Parent title: %title."
+msgstr ""
+
+#: /admin/structure/flags/manage/os2intra_flag_node_old
+msgid "Flag @title has been saved."
+msgstr ""
+
+#: /admin/structure/flags/add/og_membership
+msgid "Tilmeld gruppe"
+msgstr ""
+
+#: /admin/content
+msgid "Forældet"
+msgstr ""
+
+#: /admin/content
+msgid "Ikke forældet"
 msgstr ""
 
 #: /admin/structure/pages/ajax/operation/page-node_basket_view/settings/menu
@@ -29877,19 +30010,1572 @@ msgid ""
 "the left it will be."
 msgstr ""
 
-#: /node_basket
-msgid "Remove all changes to this page and revert to the version in code."
+#: /
+msgid "og_membership"
 msgstr ""
 
-#: /admin/structure/views/view/node_basket/edit/block_search
-msgid "Search toolboxes"
+#: /booking-og-bestilling/moedelokaler-og-forplejning
+msgid "Marker siden som forældet"
 msgstr ""
 
-#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/content?destination=node_basket
+#: /admin/structure/types/manage/node-basket/fields
+msgid "kurv"
+msgstr ""
+
+#: /admin/structure/types/manage/node-basket/fields
+msgid "Interne links"
+msgstr ""
+
+#: /admin/structure/types/manage/node-basket/fields
+msgid "Eksterne links"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3Anode_view__afdeling%3A%3A%3A%3A/content/block/views-3376adf101a7391e97b73e666de55e7e
+msgid "Inherit path"
+msgstr ""
+
+#: /users/boal/edit?destination=admin/workbench
+msgid "America/Fort Nelson"
+msgstr ""
+
+#: /admin/structure/pages/edit/term_view
+msgid "Only a single term may be used."
+msgstr ""
+
+#: /admin/structure/pages/edit/term_view
+msgid "%term"
+msgstr ""
+
+#: /admin/structure/pages/edit/term_view
+msgid "Breadcrumb trail will contain taxonomy term hierarchy"
+msgstr ""
+
+#: /admin/structure/pages/edit/term_view
+msgid "@identifier vocabulary is \"@machine_names\""
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/term_view/actions/add
+msgid ""
+"Administrative title of this variant. If you leave blank it will be "
+"automatically assigned."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/term_view/actions/add
+msgid ""
+"A unique machine-readable name for this variant. It must only contain "
+"lowercase letters, numbers, and underscores. This name will be used "
+"when exporting the variant. If left empty the variant's name will be "
+"used instead."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/term_view/actions/add
+msgid ""
+"Before this variant can be added, it must be configured. When you are "
+"finished, click \"Create variant\" at the end of this wizard to add "
+"this to your page."
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/term_view/actions/configure
+msgid ""
+"Configure a newly created variant prior to actually adding it to the "
+"page."
+msgstr ""
+
+#: /ctools/context/ajax/access/add/page_manager_task_handler-term_view%2A/term
+msgid "Select the vocabulary for this form."
+msgstr ""
+
+#: /ctools/context/ajax/access/add/page_manager_task_handler-term_view%2A/term
+msgid "Select a term or terms from @vocabulary."
+msgstr ""
+
+#: /ctools/context/ajax/access/add/page_manager_task_handler-term_view%2A/term_vocabulary
+msgid "Only the checked vocabularies will be valid."
+msgstr ""
+
+#: /ctools/context/ajax/access/add/page_manager_task_handler-term_view%2A/term_vocabulary
+msgid "@identifier vocabulary is one of \"@machine_names\""
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Aterm_view%3A%3A%3A%3A%3A%3A/left-content/term_description/term_description/form
+msgid "\"@s\" term description"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Aterm_view%3A%3A%3A%3A%3A%3A/right-content/term_name/term_name
+msgid "Title tag"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Aterm_view%3A%3A%3A%3A%3A%3A/right-content/term_name/term_name
+msgid "- No tag -"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Aterm_view%3A%3A%3A%3A%3A%3A/right-content/term_name/term_name
+msgid "CSS id to use"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Aterm_view%3A%3A%3A%3A%3A%3A/right-content/term_name/term_name
+msgid "CSS class to use"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Aterm_view%3A%3A%3A%3A%3A%3A/right-content/term_name/term_name
+msgid "Link to term"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Aterm_view%3A%3A%3A%3A%3A%3A/right-content/term_name/term_name
+msgid "Check here to make the name link to the term page."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Aterm_view%3A%3A%3A%3A%3A%3A/right-content/term_name/term_name/form
+msgid "\"@s\" name"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Aterm_view%3A%3Aterm_view__panel_context_72c30d67-74b9-4c21-b931-7f7873405479%3A%3A%3A%3A/right-content/flag_link/taxonomy_term
+msgid "Select a flag."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Aterm_view%3A%3Aterm_view__panel_context_72c30d67-74b9-4c21-b931-7f7873405479%3A%3A%3A%3A/right-content/flag_link/taxonomy_term/form
+msgid "Deleted/missing content type @type"
+msgstr ""
+
+#: /niveau-1
+msgid "Edit term"
+msgstr ""
+
+#: /niveau-1
+msgid "Edit this term"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/term_view/handlers/term_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba/content?destination=taxonomy/term/22
+msgid "\"@s\" @type"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/term_view/handlers/term_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba/context
+msgid "Argument @count"
+msgstr ""
+
+#: /admin/structure/pages/ajax/operation/term_view/handlers/term_view__panel_context_72c30d67-74b9-4c21-b931-7f7873405479/actions/delete
+msgid ""
+"Are you sure you want to delete this variant? This deletion will not "
+"be made permanent until you click Save."
+msgstr ""
+
+#: /flag/flag/os2intra_flag_node_old/133?destination=node/133&token=roNRApMr9m-5jyG_N_9jXHnQTKKT68l-AzKiK2HiJ8Q
+msgid "Fjern markering for forældet side"
+msgstr ""
+
+#: /flag/flag/os2intra_flag_node_old/133?destination=node/133&token=roNRApMr9m-5jyG_N_9jXHnQTKKT68l-AzKiK2HiJ8Q
+msgid "Siden er markeret som forældet"
+msgstr ""
+
+#: /
+msgid "Missing Feeds plugin %plugin. Please contact your site administrator."
+msgstr ""
+
+#: /
+msgid "PHPExcel Library"
+msgstr ""
+
+#: /
+msgid ""
+"Missing Feeds plugin %plugin. See <a href=\"@link\">@id</a>. Check "
+"whether all required libraries and modules are installed properly."
+msgstr ""
+
+#: /
+msgid "Feeds XLS allow download of all entities"
+msgstr ""
+
+#: /
+msgid ""
+"Allow the user to download all of the site's data in an Excel "
+"template, bypassing ALL access permissions."
+msgstr ""
+
+#: /
+msgid ""
+"Warning: This permission provides access to ALL entity data stored "
+"within this site."
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid "Select a file from your local system."
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid ""
+"<a href=\"!url\" target=\"_blank\" class=\"overlay-exclude\">Excel "
+"template file</a> for this import.  Your template file should contain "
+"the following column headers:"
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid ""
+"<a href=\"!popurl\" target=\"_blank\" class=\"overlay-exclude\">Excel "
+"template file</a> for updating data already present on your site. "
+"<span class=\"error\">Please ensure all data from your site is present "
+"in your downloaded file.</span></p>"
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid "All worksheets"
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid ""
+"Check this box if you would like to import data from all worksheets, "
+"and not just the first sheet."
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid "Maximum number of rows"
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid ""
+"Select the maximum number of rows your Excel file contains.  This "
+"number MUST be greater than the total number of rows in your file.  "
+"Selecting this value will improve the progress bar feedback."
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid "65535 XLS Maximum"
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid "Unlimited. NO PROGRESS FEEDBACK"
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid "No imported items."
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid "Unlock"
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid ""
+"The external URL of the item. E. g. the feed item URL in the case of a "
+"syndication feed. May be unique."
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid ""
+"The globally unique identifier of the item. E. g. the feed item GUID "
+"in the case of a syndication feed. May be unique."
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid "Name of the taxonomy term."
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid "Parent: Term name"
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid "The name of the parent taxonomy term."
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid "Parent: GUID"
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid "The GUID of the parent taxonomy term."
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid "Term weight"
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid "Weight of the taxonomy term."
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid "Description of the taxonomy term."
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid "URL path alias of the node."
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid "Term id"
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid ""
+"The tid of the taxonomy term. NOTE: use this feature with care, node "
+"ids are usually assigned by Drupal."
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid "The @label field of the entity."
+msgstr ""
+
+#: /batch?id=30&op=do
+msgid "Created @number @entities."
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid "Last import: @ago ago."
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid "@count imported items total."
+msgstr ""
+
+#: /import/os2intra_organisation
+msgid "Select a different file from your local system."
+msgstr ""
+
+#: /content/test-afdeling
+msgid "Kort navn"
+msgstr ""
+
+#: /booking-og-bestilling
+msgid "Content pane 2"
+msgstr ""
+
+#: /booking-og-bestilling
+msgid "Repræsentativ node"
+msgstr ""
+
+#: /admin/structure/taxonomy/os2web_base_tax_site_structure/display
+msgid "Termside"
+msgstr ""
+
+#: /admin/modules
+msgid "Excel file parser for importing excel data via feeds.module"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/term_view/handlers/term_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba/content?destination=taxonomy/term/8
+msgid "This setting contains unsaved changes."
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Aterm_view%3A%3Aterm_view__panel_context_657b7a4c-6618-4410-ad94-4eafb7b28eba%3A%3A%3A%3A/53
+msgid "You may use keywords for substitutions."
+msgstr ""
+
+#: /admin/structure/views/view/term_panel_views_term_/edit
+msgid "Beskrivelse af term"
+msgstr ""
+
+#: /admin/structure/views/ajax/add-item/term_panel_views_term_/panel_pane_2/relationship
+msgid "indholdselement"
+msgstr ""
+
+#: /
+msgid "Manage Linkit profiles."
+msgstr ""
+
+#: /
+msgid "Linkit profile"
+msgstr ""
+
+#: /
+msgid "Linkit profiles"
+msgstr ""
+
+#: /
+msgid "Extend Linkit with @entity support."
+msgstr ""
+
+#: /
+msgid "Administer Linkit"
+msgstr ""
+
+#: /
+msgid "Perform administration tasks for Linkit."
+msgstr ""
+
+#: /
+msgid "Support for the Linkit module <em>(buttons: Linkit)</em>"
+msgstr ""
+
+#: /
+msgid "Support for Linkit module"
+msgstr ""
+
+#: /intra
+msgid "Linkit Profiles"
+msgstr ""
+
+#: /intra
+msgid "Add new profile"
+msgstr ""
+
+#: /admin/config/content/formats/indhold
+msgid "Import profiles"
+msgstr ""
+
+#: /admin/config/content/linkit
+msgid "Profile type"
+msgstr ""
+
+#: sites/all/modules/contrib/linkit/js/linkit.js
+msgid "Loading Linkit dashboard..."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "The unique ID for this @export."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "This profile will be used with"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Editors"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "This profile will be used with editors like CKeditor or TinyMCE."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "This profile will be used with fields that do not have any editors."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Attach this profile to one or more text formats"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "- Select one or more text format- "
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Search plugins"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid ""
+"Linkit is all about the search plugins. They define what content "
+"Linkit will present in the autocomplete search field."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Enable @title"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "!type plugin settings"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Result description"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Available tokens: %tokens."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Type filter"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "If left blank, all types will appear in autocomplete results."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Group by bundle"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Include unpublished nodes"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid ""
+"In order to see unpublished nodes, the user must also have permissions "
+"to do so. "
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Managed files"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Extend Linkit with file support (Managed files)."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Show file scheme"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Group files by scheme"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "URL type"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Direct file link"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Download file link"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Entity view page"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "linkit_thumb"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Show thumbnails <em>(using the image style !linkit_thumb_link)</em>"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Show pixel dimensions"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Markdown"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Raw URL"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "HTML Link"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Insert methods"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Insert plugin"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "- Select an insert plugin -"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Insert paths as:"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Raw paths"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Raw paths, with a slash (/) in the beginning."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid ""
+"This will insert Drupal internal paths like\n"
+"         %example_link which is probably what you want if you are "
+"going to use\n"
+"         this profile together with <strong>fields</strong>.\n"
+"         <br/>If used in textareas, these paths typically need to be "
+"formatted\n"
+"         using a input filter, but provides more flexibility in a "
+"multilingual\n"
+"         site or when moving a site."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid ""
+"This is the default behavior, it will insert paths\n"
+"         like %example_link.<br/>These will work <strong>without the "
+"need for an input filter</strong>,\n"
+"         but might fail after moving a site, or on multilingual sites."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "These will have no effect on already created links."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Alias paths"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid ""
+"This will insert the alias for the result item.\n"
+"        <br/>The paths will be run through the <em>url()</em> "
+"function."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Id"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Access key"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid ""
+"Attributes are HTML attributes that will be attached to\n"
+"      the insert plugin."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Autocomplete options"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Better Autocomplete"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid ""
+"Linkit uses !bac which may be configured with a focus on\n"
+"      performance."
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid ""
+"Minimum number of characters to perform server polling.\n"
+"      A higher value reduces server load. <em>Default: @default</em>"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Key press delay"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid ""
+"Time from last key press to poll the server. A higher\n"
+"      value reduces server load. <em>Default: @default</em>"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "ms"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "Remote timeout"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid ""
+"Client side timeout for a request to the server.\n"
+"      <em>Default: @default</em>"
+msgstr ""
+
+#: /admin/config/content/linkit
+msgid "Editor"
+msgstr ""
+
+#: /admin/config/content/linkit/add
+msgid "You have to select a insert plugin for profiles used with fields."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra_base_page/fields/field_os2web_base_field_ref
+msgid "Custom add another item button"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra_base_page/fields/field_os2web_base_field_ref
+msgid ""
+"If the number of items in this field is set to 'Unlimited' then you "
+"might get a button that allows you to 'Add another item'. You may "
+"customise the text for that button here, an empty value will just use "
+"the default value for the button text."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra_base_page/fields/field_os2web_base_field_ref
+msgid "Custom remove button"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra_base_page/fields/field_os2web_base_field_ref
+msgid ""
+"If the number of items in this field is set to 'Unlimited' then you "
+"might get a button that allows you to 'Remove'. You may customise the "
+"text for that button here, an empty value will just use the default "
+"value for the button text."
+msgstr ""
+
+#: /admin/structure/types/manage/spotbox/fields/field_spotbox_link
+msgid "Linkit field settings"
+msgstr ""
+
+#: /admin/structure/types/manage/spotbox/fields/field_spotbox_link
+msgid "Enable Linkit for this field."
+msgstr ""
+
+#: /admin/structure/types/manage/spotbox/fields/field_spotbox_link
+msgid ""
+"Do not use this for CKeditor and TinyMCE fields. You will have to "
+"configure this on the wysiwyg/ckeditor profile."
+msgstr ""
+
+#: /admin/structure/types/manage/spotbox/fields/field_spotbox_link
+msgid "- Select a profile -"
+msgstr ""
+
+#: /admin/structure/types/manage/spotbox/fields/field_spotbox_link
+msgid "Button text that activates linkit modal."
+msgstr ""
+
+#: /admin/structure/types/manage/spotbox/fields/field_spotbox_link
+msgid "You must select an profile."
+msgstr ""
+
+#: /import/os2web_taxonomies_feed_kle
+msgid ""
+"Specify a path to a file or a directory. Prefix the path with a "
+"scheme. Available schemes: @schemes."
+msgstr ""
+
+#: /admin/structure/feeds
+msgid "Attached to"
+msgstr ""
+
+#: /admin/structure/feeds
+msgid ""
+"Create one or more Feed importers for pulling content into Drupal. You "
+"can use these importers from the <a href=\"@import\">Import</a> page "
+"or - if you attach them to a content type - simply by creating a node "
+"from that content type."
+msgstr ""
+
+#: /admin/structure/feeds
+msgid "No importers available."
+msgstr ""
+
+#: /import/os2web_taxonomies_feed_kle
+msgid "The specified file or directory does not exist."
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid ""
+"Enter a value like \"512\" (bytes), \"80 KB\" (kilobytes) or \"50 MB\" "
+"(megabytes) in order to restrict the allowed file size. If left empty "
+"the file sizes will be limited only by PHP's maximum post and file "
+"upload sizes (current max limit <strong>%limit</strong>)."
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid "Default allowed file extensions"
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid "Alt attribute"
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid ""
+"The text to use as value for the <em>img</em> tag <em>alt</em> "
+"attribute."
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid "Title attribute"
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid ""
+"The text to use as value for the <em>img</em> tag <em>title</em> "
+"attribute."
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid "File upload wizard"
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid "Configure the steps available when uploading a new file."
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid "Skip filetype selection."
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid ""
+"The file type selection step is only available if the uploaded file "
+"falls into two or more file types. If this step is skipped, files with "
+"no available file type or two or more file types will not be assigned "
+"a file type."
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid "Skip scheme selection."
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid ""
+"The scheme selection step is only available if two or more file "
+"destinations, such as public local files served by the webserver and "
+"private local files served by Drupal, are available. If this step is "
+"skipped, files will automatically be saved using the default download "
+"method."
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid "Skip available fields."
+msgstr ""
+
+#: /admin/config/media/file-settings
+msgid ""
+"The field selection step is only available if the file type the file "
+"belongs to has any available fields. If this step is skipped, any "
+"fields on the file will be left blank."
+msgstr ""
+
+#: /admin/config/media/file-system
+msgid "Transliterate the displayed file name."
+msgstr ""
+
+#: /admin/config/media/file-system
+msgid ""
+"Enable to also convert the file name that is displayed within the site "
+"(for example, in link text)."
+msgstr ""
+
+#: /admin/config/services/kle_import
+msgid "URL til KLE XML fil"
+msgstr ""
+
+#: /admin/config/services/kle_import
+msgid "URL til lokal KLE XML fil"
+msgstr ""
+
+#: /admin/config/services/kle_import
+msgid ""
+"Intern URL hvor den konverterede XML fil skal placeres (f.eks. "
+"public://kle.xml)."
+msgstr ""
+
+#: /admin/config/services/kle_import
+msgid "Base URL til retsinfo (SKAL have afsluttende \"/\")"
+msgstr ""
+
+#: /admin/config/services/kle_import
+msgid "Antal dage mellem importen køres"
+msgstr ""
+
+#: /admin/config/services/kle_import
+msgid "Sidste import kørte: "
+msgstr ""
+
+#: /admin/config/services/kle_import
+msgid "Næste import køres: "
+msgstr ""
+
+#: /admin/config/services/kle_import
+msgid "Indlæs og konverter XML fil nu"
+msgstr ""
+
+#: /admin/config/services/kle_import
+msgid "XML konverteret til brug af feed importer."
+msgstr ""
+
+#: /batch?id=32&op=do
+msgid "@name: URL"
+msgstr ""
+
+#: /batch?id=32&op=do
+msgid "@name: Title"
+msgstr ""
+
+#: /batch?id=32&op=do
+msgid "XPath Expression"
+msgstr ""
+
+#: /batch?id=32&op=do
+msgid ""
+"Allows you to configure an XPath expression that will populate this "
+"field."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Getting started"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"\n"
+"    <p>\n"
+"    You can create as many Feeds importer configurations as you would "
+"like to. Each can have a distinct purpose like letting your users "
+"aggregate RSS feeds or importing a CSV file for content migration. "
+"Here are a couple of things that are important to understand in order "
+"to get started with Feeds:\n"
+"    </p>\n"
+"    <ul>\n"
+"    <li>\n"
+"    Every importer configuration consists of basic settings, a "
+"fetcher, a parser and a processor and their settings.\n"
+"    </li>\n"
+"    <li>\n"
+"    The <strong>basic settings</strong> define the general behavior of "
+"the importer. <strong>Fetchers</strong> are responsible for loading "
+"data, <strong>parsers</strong> for organizing it and "
+"<strong>processors</strong> for \"doing stuff\" with it, usually "
+"storing it.\n"
+"    </li>\n"
+"    <li>\n"
+"    In Basic settings, you can <strong>attach an importer "
+"configuration to a content type</strong>. This is useful when many "
+"imports of a kind should be created, for example in an RSS aggregation "
+"scenario. If you don't attach a configuration to a content type, you "
+"can use it on the !import page.\n"
+"    </li>\n"
+"    <li>\n"
+"    Imports can be <strong>scheduled periodically</strong> - see the "
+"periodic import select box in the Basic settings.\n"
+"    </li>\n"
+"    <li>\n"
+"    Processors can have <strong>mappings</strong> in addition to "
+"settings. Mappings allow you to define what elements of a data feed "
+"should be mapped to what content fields on a granular level. For "
+"instance, you can specify that a feed item's author should be mapped "
+"to a node's body.\n"
+"    </li>\n"
+"    </ul>\n"
+"    "
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "[none]"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Attached to: @type"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Periodic import: !import_period"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Import on submission"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Allowed file extensions for upload."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Supply path to file or directory directly"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"For experts. Lets users specify a path to a file <em>or a directory of "
+"files</em> directly,\n"
+"        instead of a file upload through the browser. This is useful "
+"when the files that need to be imported\n"
+"        are already on the server."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"Directory where uploaded files get stored. Prefix the path with a "
+"scheme. Available schemes: @schemes."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Allowed schemes"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Select the schemes you want to allow for direct upload."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "XPath Parser Settings"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "This is the base query, all other queries will run in this context."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"Field <strong>!column</strong> is mandatory and considered unique: "
+"only one item per !column value will be created."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"Fields <strong>!columns</strong> are mandatory and values in these "
+"columns are considered unique: only one entry per value in one of "
+"these columns will be created."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"Field <strong>GUID</strong> is mandatory and considered unique: only "
+"one item per GUID value will be created."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "The XPath query to run."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "The variable %variable is available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "The variables %variable are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"The variable <em class=\"placeholder\">$name</em> is available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"The variables <em class=\"placeholder\">$name, $guid</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"The variables <em class=\"placeholder\">$name, $guid, $parentguid</em> "
+"are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"The variables <em class=\"placeholder\">$name, $guid, $parentguid, "
+"$description</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"The variables <em class=\"placeholder\">$name, $guid, $parentguid, "
+"$description, $field_os2web_taxonomies_dis_cont</em> are available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"The variables <em class=\"placeholder\">$name, $guid, $parentguid, "
+"$description, $field_os2web_taxonomies_dis_cont, "
+"$field_os2web_taxonomies_legi_ref:url</em> are available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"The variables <em class=\"placeholder\">$name, $guid, $parentguid, "
+"$description, $field_os2web_taxonomies_dis_cont, "
+"$field_os2web_taxonomies_legi_ref:url, "
+"$field_os2web_taxonomies_legi_ref:title</em> are available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"The variables <em class=\"placeholder\">$name, $guid, $parentguid, "
+"$description, $field_os2web_taxonomies_dis_cont, "
+"$field_os2web_taxonomies_legi_ref:url, "
+"$field_os2web_taxonomies_legi_ref:title, "
+"$field_os2web_taxonomies_cue_word</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Select the queries you would like to return raw XML or HTML"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Debug Options"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Show error messages."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Debug query"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Allow source configuration override"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"This setting allows feed nodes to specify their own XPath values for "
+"the context and sources."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Update existing @entities"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"Existing @entities will be determined using mappings that are a "
+"\"unique target\"."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Do not update existing @entities"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Replace existing @entities"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Skip hash check"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Force update of items even if item source data did not change."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"Select the default input format for the text fields of the nodes to be "
+"created."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"Action to take when previously imported @entities are missing in the "
+"feed"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid ""
+"Select how @entities previously imported and now missing in the feed "
+"should be updated."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Skip non-existent @entities"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle
+msgid "Delete non-existent @entities"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings
+msgid "A human readable name of this importer."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings
+msgid "A description of this importer."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings
+msgid "Attach to content type"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings
+msgid ""
+"If \"Use standalone form\" is selected a source is imported by using a "
+"form under !import_form.\n"
+"                           If a content type is selected a source is "
+"imported by creating a node of that content type."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings
+msgid "Use standalone form"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings
+msgid "Requires cron to be configured."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings
+msgid "Every !p"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings
+msgid "Periodic import"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings
+msgid "Choose how often a source should be imported periodically."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings
+msgid ""
+"Check if import should be started at the moment a standalone form or "
+"node form is submitted."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings
+msgid "Process in background"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings
+msgid ""
+"For very large imports. If checked, import and delete tasks started "
+"from the web UI will be handled by a cron task in the background "
+"rather than by the browser. This does not affect periodic imports, "
+"they are handled by a cron task in any case."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings
+msgid "every !interval"
+msgstr ""
+
+#: /
+msgid "Fællesnyt"
+msgstr ""
+
+#: /admin/config/content/ckeditor/edit/Advanced
+msgid "Linkit"
+msgstr ""
+
+#: /
+msgid "View: OS2intra Forside views: Fællesnyt"
+msgstr ""
+
+#: /administration/wiki/test-nyt-til-administrationen
+msgid "Synes godt om"
+msgstr ""
+
+#: /intra
+msgid "Fjern Synes godt om"
+msgstr ""
+
+#: /admin/modules
+msgid "Handles synonyms. Includes export to Solr synonyms format."
+msgstr ""
+
+#: /admin/people
+msgid "clear os2intra_organisation feeds"
+msgstr ""
+
+#: /admin/people
+msgid "import os2intra_organisation feeds"
+msgstr ""
+
+#: /admin/people
+msgid "unlock os2intra_organisation feeds"
+msgstr ""
+
+#: /admin/people
+msgid "feeds xls allow download of all entities"
+msgstr ""
+
+#: /admin/people
+msgid "flag os2intra_flag_node_old"
+msgstr ""
+
+#: /admin/people
+msgid "flag tilmeld_gruppe"
+msgstr ""
+
+#: /admin/people
+msgid "unflag os2intra_flag_node_old"
+msgstr ""
+
+#: /admin/people
+msgid "unflag tilmeld_gruppe"
+msgstr ""
+
+#: /admin/people
+msgid "administer linkit"
+msgstr ""
+
+#: /admin/people
+msgid "edit terms in 22"
+msgstr ""
+
+#: /admin/people
+msgid "delete terms in 22"
+msgstr ""
+
+#: /admin/structure/panels
+msgid "Custom layout"
+msgstr ""
+
+#: /admin/structure/panels
+msgid ""
+"Custom layouts can add more, site-specific layouts that you can use in "
+"your panels."
+msgstr ""
+
+#: /admin/structure/panels
+msgid "There are no custom layouts."
+msgstr ""
+
+#: /admin/structure/panels
+msgid "Manage custom layouts"
+msgstr ""
+
+#: /admin/structure/panels
+msgid ""
+"Panel pages can be used as landing pages. They have a URL path, accept "
+"arguments and can have menu entries."
+msgstr ""
+
+#: /admin/structure/panels
+msgid "Manage pages"
+msgstr ""
+
+#: /admin/structure/panels
+msgid "Mini panel"
+msgstr ""
+
+#: /admin/structure/panels
+msgid "You must activate the Mini panels module for this functionality."
+msgstr ""
+
+#: /admin/structure/panels
+msgid "Panel node"
+msgstr ""
+
+#: /admin/structure/panels
+msgid "You must activate the panel node module for this functionality."
+msgstr ""
+
+#: /admin/structure/panels
+msgid "Page wizards"
+msgstr ""
+
+#: /admin/structure/pages/edit/user_view
+msgid "User being viewed"
+msgstr ""
+
+#: /search?search_api_views_fulltext=Familie
+msgid ""
+"Required field @field not indexed on index @index. Could not perform "
+"access checks."
+msgstr ""
+
+#: /node/add/it-vejledning
+msgid "Tilføj punkt"
+msgstr ""
+
+#: /node/add/it-vejledning
+msgid "Fjern punkt"
+msgstr ""
+
+#: /node/add/it-vejledning
+msgid "Tilføj afsnit"
+msgstr ""
+
+#: /node/add/it-vejledning
+msgid "Fjern afsnit"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3A%3A%3A%3A%3A/sidebar/views/node_basket/step1
+msgid "Please choose which context and how you would like it converted."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3A%3A%3A%3A%3A/content/node_content/node_content
+msgid "Link title to node"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3A%3A%3A%3A%3A/content/node_content/node_content
+msgid "Check here to make the title link to the node."
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3A%3A%3A%3A%3A/content/node_content/node_content
+msgid "No extras"
+msgstr ""
+
+#: /panels/ajax/editor/add-pane/panel_context%3Anode_view%3A%3A%3A%3A%3A%3A/content/node_content/node_content
+msgid ""
+"Check here to disable additions that modules might make to the node, "
+"such as file attachments and CCK fields; this should just display the "
+"basic teaser or body."
+msgstr ""
+
+#: /
+msgid "Content with right sidebar (8/4)"
+msgstr ""
+
+#: /projekter/test-projektdefinition-af-testindhold
+msgid "Content with right sidebar (9/3)"
+msgstr ""
+
+#: /projekter/test-projektdefinition-af-testindhold
+msgid "Content with right sidebar (7/5)"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/37
+msgid "Num items"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Apage-node_basket_view%3A%3Apage_node_basket_view__panel%3A%3A%3A%3A/37
+msgid "Select the number of items to display, or 0 to display all results."
+msgstr ""
+
+#: /fristedet/motionsklubben/edit
+msgid "Click to view details"
+msgstr ""
+
+#: /group/node/141/admin/permissions
+msgid ""
+"Warning: Give to trusted roles only; this permission has security "
+"implications in the group context."
+msgstr ""
+
+#: /file/add/upload/archive
+msgid "Upload an archive file"
+msgstr ""
+
+#: /file/add/upload/archive
+msgid ""
+"Only files matching this pattern will be imported. For example, to "
+"import all jpg and gif files, the pattern would be "
+"<em>*.jpg|*.gif</em>. Use <em>.*</em> to extract all files in the "
+"archive."
+msgstr ""
+
+#: /admin/config/user-interface/owlcarousel
+msgid "Add settings group"
+msgstr ""
+
+#: /admin/config/user-interface/owlcarousel
+msgid "Identifier for group of settings."
+msgstr ""
+
+#: /admin/config/user-interface/owlcarousel
+msgid "Add new instance settings group"
+msgstr ""
+
+#: /admin/config/media/wysiwyg-view-mode
+msgid "WYSIWYG allowed view modes"
+msgstr ""
+
+#: /admin/config/media/wysiwyg-view-mode
+msgid ""
+"Restrict the allowed view modes when embedding files inside of the the "
+"WYSIWYG editor."
+msgstr ""
+
+#: /admin/config/media/wysiwyg-view-mode
+msgid "Restrict allowed view modes for %type"
+msgstr ""
+
+#: /admin/config/media/wysiwyg-view-mode
+msgid "Restrict view modes"
+msgstr ""
+
+#: /admin/config/media/wysiwyg-view-mode
+msgid "File WYSIWYG view mode"
+msgstr ""
+
+#: /admin/config/media/wysiwyg-view-mode
+msgid ""
+"Use a custom view mode when displaying files inside of the WYSIWYG "
+"editor."
+msgstr ""
+
+#: /admin/config/media/wysiwyg-view-mode
+msgid "Use a custom view mode for %type"
+msgstr ""
+
+#: /admin/config/media/wysiwyg-view-mode
+msgid "Configure view modes for files displayed inside of the WYSIWYG editor."
+msgstr ""
+
+#: /admin/config/media/wysiwyg-view-mode
+msgid ""
+"View modes can be configured per file type. Only enabled view modes "
+"are selectable."
+msgstr ""
+
+#: /test-pressemeddelelse/edit
+msgid "New !instance_label"
+msgstr ""
+
+#: /field-collection/field-os2intra-base-vejledning/add/node/156?destination=node/156
+msgid "Add new !instance_label"
+msgstr ""
+
+#: /group/node/160/admin/people/add-user
+msgid "You have entered an invalid user name."
+msgstr ""
+
+#: /group/node/161/admin/people/add-user
+msgid "User %name is already subscribed to group."
+msgstr ""
+
+#: /group/node/160/admin/people/edit-membership/83?destination=group/node/160/admin/people
+msgid "Edit a group membership in %group"
+msgstr ""
+
+#: /group/node/160/admin/people/edit-membership/83?destination=group/node/160/admin/people
+msgid "Change the current membership status."
+msgstr ""
+
+#: /group/node/160/admin/people/edit-membership/83?destination=group/node/160/admin/people
+msgid "Update membership"
+msgstr ""
+
+#: /group/node/160/admin/people/edit-membership/83?destination=group/node/160/admin/people
+msgid "The membership has been updated."
+msgstr ""
+
+#: /content/personalemoede-den-23-november/edit
+msgid "This post is unpublished and will be published @publish_time."
+msgstr ""
+
+#: /linkit/dashboard/linkit_field_node
+msgid "Search for content."
+msgstr ""
+
+#: /linkit/dashboard/linkit_field_node
+msgid "Start typing to find content or paste a URL."
+msgstr ""
+
+#: /linkit/dashboard/linkit_field_node
+msgid "This will be populated by the search, or you can fill it in yourself."
+msgstr ""
+
+#: /linkit/dashboard/linkit_field_node
+msgid "Insert link"
+msgstr ""
+
+#: sites/all/modules/contrib/linkit/js/linkit.dashboard.js
+msgid "Open file browser"
+msgstr ""
+
+#: sites/all/modules/contrib/linkit/js/linkit.dashboard.js
+msgid "Change profile"
+msgstr ""
+
+#: /file/38/delete
+msgid "This file is currently in use and may cause problems if deleted."
+msgstr ""
+
+#: /group/node/43/admin/roles
+msgid "view permissions"
+msgstr ""
+
+#: /group/node/43/admin/permission/1/edit
+msgid "Edit role's permissions"
+msgstr ""
+
+#: /group/node/43/admin/permission/1/edit
+msgid "Determine access to features by selecting permissions for role."
+msgstr ""
+
+#: /intra
+msgid "Add to basket"
+msgstr ""
+
+#: /node_basket/toolbox_list
+msgid "Læseliste"
+msgstr ""
+
+#: /
 msgid "User masquerade settings."
 msgstr ""
 
-#: /admin/structure/pages/nojs/operation/page-node_basket_view/handlers/page_node_basket_view__panel/content?destination=node_basket
+#: /
 msgid "Masquerade as user link."
 msgstr ""
 
@@ -29905,27 +31591,27 @@ msgstr ""
 msgid "masquerade as any user"
 msgstr ""
 
-#: /admin/people
-msgid "administer message subscribe"
+#: /
+msgid "Cannot acquire lock for source @id / @feed_nid."
 msgstr ""
 
-#: /node_basket
-msgid "Add to list"
+#: /batch?op=start&id=66
+msgid "Stage File Proxy settings"
 msgstr ""
 
-#: /node_basket
-msgid "Remove from list"
+#: /batch?op=start&id=66
+msgid "Administrative interface for the Stage File Proxy module"
 msgstr ""
 
-#: /admin/reports/status
+#: /admin/config
 msgid "Missing composer.json file"
 msgstr ""
 
-#: /admin/reports/status
+#: /admin/config
 msgid "The composer.json file was not found."
 msgstr ""
 
-#: /admin/reports/status
+#: /admin/config
 msgid ""
 "The CTools CSS cache directory, %path could not be created due to a "
 "misconfigured files directory. Please ensure that the files directory "
@@ -29933,8 +31619,98 @@ msgid ""
 "create directories."
 msgstr ""
 
-#: /admin/reports/status
+#: /admin/config
 msgid "Unable to create"
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid "The origin website."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid ""
+"The origin website. For example: 'http://example.com' with no trailing "
+"slash.\n"
+"      If the site is using HTTP Basic Authentication (the browser "
+"popup for username and password) you can\n"
+"      embed those in the url. Be sure to URL encode any special "
+"characters:<br/><br/>For example, setting a user\n"
+"      name of 'myusername' and password as, 'letme&in' the "
+"configuration would be the following: <br/><br/>\n"
+"      'http://myusername:letme%26in@example.com';"
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid "The origin directory."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid ""
+"If this is set then Stage File Proxy will use a different path for the "
+"remote\n"
+"      files. This is useful for multisite installations where the "
+"sites directory contains different names\n"
+"      for each url. If this is not set, it defaults to the same path "
+"as the local site."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid "Imagecache Root."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid ""
+"If this is true (default) then Stage File Proxy will look for "
+"/imagecache/ in\n"
+"      the URL and determine the original file and request that rather "
+"than the\n"
+"      processed file, then send a header to the browser to refresh the "
+"image and let\n"
+"      imagecache handle it. This will speed up future imagecache "
+"requests for the\n"
+"      same original file."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid "Hotlink."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid ""
+"If this is true then Stage File Proxy will not transfer the remote "
+"file to the\n"
+"      local machine, it will just serve a 301 to the remote file and "
+"let the origin webserver handle it."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid "SSL Version."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid ""
+"CURL will try to figure out which ssl version to use, but if it fails "
+"to do that\n"
+"      properly it can lead to getting an empty file and a 0 status "
+"code. The default is 3 which seems\n"
+"      relatively common, but if you get 0 byte files you can try "
+"changing it to 2."
+msgstr ""
+
+#: /admin/structure/field-collections/field_os2intra_base_vejledning/display
+msgid "E.g. div, section, aside etc."
+msgstr ""
+
+#: /admin/structure/field-collections/field_os2intra_base_vejledning/display
+msgid "E.g. name=\"anchor\""
+msgstr ""
+
+#: /admin/structure/flags/manage/os2intra_flag_node_old
+msgid "Administer Stage File Proxy module"
+msgstr ""
+
+#: /admin/structure/flags/manage/os2intra_flag_node_old
+msgid "Perform administration tasks for the Stage File Proxy module."
 msgstr ""
 
 msgid "Public files"
@@ -58577,6 +60353,7 @@ msgstr "Det er flaget mindst én gang"
 msgid "It is flagged by the current user"
 msgstr "Det er flaget af den aktuelle bruger"
 
+#: ; profiles/os2intra/modules/contrib/flag/theme/flag-admin.js
 msgid "No flags"
 msgstr "Ingen flag"
 
@@ -69029,15 +70806,19 @@ msgstr "Maksimal filstørrelse for billeder, i kB."
 
 #: /
 msgid "Node basket"
-msgstr "Kurv"
+msgstr "Læseliste"
+
+#: /
+msgid "Kurv"
+msgstr "Værktøjer"
 
 #: sites/all/modules/custom/node_basket/js/node_basket.js; profiles/os2intra/modules/custom/node_basket/js/node_basket.js
 msgid "Save to basket"
-msgstr "Gem i kurv"
+msgstr "Gem som værktøj"
 
 #: sites/all/modules/custom/node_basket/js/node_basket.js; profiles/os2intra/modules/custom/node_basket/js/node_basket.js
 msgid "Remove from basket"
-msgstr "Fjern fra kurv"
+msgstr "Fjern værktøj"
 
 #: sites/all/modules/custom/node_basket/js/node_basket.js; profiles/os2intra/modules/custom/node_basket/js/node_basket.js
 msgid "Add to toolbox"
@@ -69440,21 +71221,29 @@ msgstr "Korttype"
 msgid "Zoom level"
 msgstr "Zoomniveau"
 
+#: /
+msgid "@files downloadable files"
+msgstr "@files fil til download"
+
 #: /node_basket/basket/view/convert
 msgid "Your basket was succesfully converted to a toolbox."
 msgstr "Din kurv blev succesfuldt konverteret til en værktøjskasse."
 
+#: /strategier-politikker-og-visioner/vision-2020
+msgid "@files downloadable file"
+msgstr "@files filer til download"
+
 #: /node_basket
 msgid "Delete toolbox"
-msgstr "Slet"
-
-#: /views/ajax
-msgid "Subscribe"
-msgstr "Abonnér"
+msgstr "Slet værktøjskasse"
 
 #: /node_basket
 msgid "Remove subscription"
 msgstr "Fjern"
+
+#: /views/ajax
+msgid "Subscribe"
+msgstr "Abonnér"
 
 #: /node_basket
 msgid "Unsubscribe"

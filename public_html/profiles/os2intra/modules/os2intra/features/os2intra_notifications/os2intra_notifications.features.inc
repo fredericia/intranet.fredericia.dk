@@ -110,11 +110,11 @@ function os2intra_notifications_flag_default_flags() {
       3 => 'os2intra_base_page',
       4 => 'wiki',
     ),
-    'flag_short' => 'Forældet',
-    'flag_long' => 'Marker siden som forældet',
-    'flag_message' => 'Siden er markeret som forældet',
-    'unflag_short' => 'Ikke forældet',
-    'unflag_long' => 'Fjern markering for forældet side',
+    'flag_short' => 'Marker siden som forældet',
+    'flag_long' => '',
+    'flag_message' => '',
+    'unflag_short' => 'Fjern markering for forældet side',
+    'unflag_long' => '',
     'unflag_message' => '',
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
@@ -165,11 +165,11 @@ function os2intra_notifications_flag_default_flags() {
     'show_on_form' => 0,
     'access_author' => '',
     'show_contextual_link' => 0,
-    'api_version' => 3,
     'module' => 'os2intra_notifications',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   return $flags;
 
