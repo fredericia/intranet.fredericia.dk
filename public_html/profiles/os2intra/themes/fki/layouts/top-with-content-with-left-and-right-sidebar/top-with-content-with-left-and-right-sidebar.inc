@@ -5,10 +5,11 @@
 $plugin = array(
   'title' => t('Content with left and right sidebar'),
   'category' => t('OS2'),
-  'icon' => 'content-with-left-and-right-sidebar.png',
-  'theme' => 'content-with-left-and-right-sidebar',
-  'css' => 'content-with-left-and-right-sidebar.css',
+  'icon' => 'top-with-content-with-left-and-right-sidebar.png',
+  'theme' => 'top-with-content-with-left-and-right-sidebar',
+  'css' => 'top-with-content-with-left-and-right-sidebar.css',
   'regions' => array(
+    'top' => t('Top'),
     'sidebar-left' => t('Left sidebar'),
     'sidebar-right' => t('Right sidebar'),
     'content' => t('Content'),

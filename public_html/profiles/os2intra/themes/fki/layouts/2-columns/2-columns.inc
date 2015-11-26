@@ -4,7 +4,7 @@
  */
 $plugin = array(
   'title' => t('2 columns'),
-  'category' => t('os2'),
+  'category' => t('OS2'),
   'icon' => '2-columns.png',
   'theme' => '2-columns',
   'css' => '2-columns.css',
