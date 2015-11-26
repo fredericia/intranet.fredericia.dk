@@ -4,7 +4,7 @@
     <?php if ($content['sidebar']): ?>
 
         <!-- Begin - sidebar -->
-        <div class="col-sm-4">
+        <div class="col-sm-4 hidden-print">
             <?php print $content['sidebar']; ?>
         </div>
         <!-- End - sidebar -->
