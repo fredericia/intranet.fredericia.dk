@@ -134,7 +134,7 @@ function os2intra_struktur_pages_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'fki-box-secondary',
+      'css_class' => 'os2-box-secondary',
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();

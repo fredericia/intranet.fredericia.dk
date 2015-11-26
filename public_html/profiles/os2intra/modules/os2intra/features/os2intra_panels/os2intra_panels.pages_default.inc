@@ -278,7 +278,7 @@ function os2intra_panels_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'fki-box-quinary',
+      'css_class' => 'os2-box-quinary',
       'template_suggestion' => 'views',
     );
     $pane->extras = array();
@@ -305,7 +305,7 @@ function os2intra_panels_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'fki-box-tertiary',
+      'css_class' => 'os2-box-tertiary',
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
@@ -666,7 +666,7 @@ function os2intra_panels_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'fki-box-tertiary fki-box-watermarked',
+      'css_class' => 'os2-box-tertiary os2-box-watermarked',
       'template_suggestion' => 'entity_field',
     );
     $pane->extras = array();
@@ -751,7 +751,7 @@ function os2intra_panels_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'fki-box-large-spacing',
+      'css_class' => 'os2-box-large-spacing',
       'template_suggestion' => 'entity_view',
     );
     $pane->extras = array();
@@ -808,7 +808,7 @@ function os2intra_panels_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'fki-box-watermarked',
+      'css_class' => 'os2-box-watermarked',
       'template_suggestion' => 'block',
     );
     $pane->extras = array();
