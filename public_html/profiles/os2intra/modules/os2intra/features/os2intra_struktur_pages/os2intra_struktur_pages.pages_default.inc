@@ -17,7 +17,7 @@ function os2intra_struktur_pages_default_page_manager_handlers() {
   $handler->task = 'term_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = -30;
   $handler->conf = array(
     'title' => 'Overordnet struktur',
     'no_blocks' => 0,

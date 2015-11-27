@@ -13,7 +13,7 @@ function os2intra_users_taxonomy_default_vocabularies() {
       'name' => 'OS2Intra organisation',
       'machine_name' => 'os2intra_organisation_tax',
       'description' => '',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
     ),

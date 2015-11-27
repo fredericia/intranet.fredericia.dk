@@ -57,7 +57,7 @@ function fki_preprocess_html(&$variables) {
 function fki_preprocess_page(&$variables) {
 
   // Search form
-  $variables['main_navigation_search'] = drupal_get_form('search_form');
+  $variables['main_navigation_search'] = module_invoke('views', 'block_view', '-exp-Search-page');
 }
 
 /**
