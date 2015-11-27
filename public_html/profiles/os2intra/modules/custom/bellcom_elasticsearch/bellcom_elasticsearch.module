@@ -45,12 +45,21 @@ function bellcom_elasticsearch_menu(){
     'file' => 'bellcom_elasticsearch.admin.inc',
   );
 
+  $items['admin/config/search/synonyms'] = array(
+    'title' => 'Synonyms set up',
+    'description' => 'Configure the synonyms used during the search',
+    'type' => MENU_NORMAL_ITEM | MENU_LOCAL_TASK,
+    'access arguments' => array('administer search_api'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('bellcom_elasticsearch_synonyms_settings_page'),
+    'file' => 'bellcom_elasticsearch.admin.inc',
+  );
+
   return $items;
 }
 
 
 function bellcom_elasticsearch_elasticsearch_connector_search_api_query_alter($query, &$params){
-
   $query_str = $params['body']['query']['bool']['must'][0]['multi_match']['query'];
   $params['body']['query'] = array(
     'function_score' => array(
@@ -108,13 +117,15 @@ function _bellcom_elasticsearch_get_boosting($query_string = null){
 }
 
 function _bellcom_elasticsearch_get_query($query_string) {
+  $synonym_active = variable_get('bellcom_elasticsearch_synonyms_active', FALSE);
   $query = array(
     'bool' => array(
       'should' => array(
         array(
           'query_string' => array(
-            'query' => '*'. $query_string . '*',
-            'fields' => array('_all')
+            'query' => ($synonym_active)? $query_string : '*' . $query_string . '*',
+            'fields' => array('_all'),
+            'analyzer' => ($synonym_active)? 'synonym' : null
           )
         ),
       ),

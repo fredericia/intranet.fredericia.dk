@@ -2,6 +2,7 @@
 
 define("DATE_FORMAT", variable_get('date_format_os2web_base_date_only', 'd-m-Y'));
 
+
 function bellcom_elasticsearch_kle_settings_page(){
     drupal_add_library('system', 'ui.datepicker');
     drupal_add_js(array('bellcom_elasticsearch' => array(
@@ -222,6 +223,108 @@ function bellcom_elasticsearch_update_phrase($id){
 	    ->fields($fields)
 	    ->condition('id', $id)
 	    ->execute();
+}
+
+function bellcom_elasticsearch_synonyms_settings_page($form, &$form_state) {
+    $form['bellcom_elasticsearch_synonyms_active'] = array(
+	'#type' => 'checkbox', 
+	'#title' => t('Use synonyms'),
+	'#default_value' => variable_get('bellcom_elasticsearch_synonyms_active', false),
+    );
+
+    $form['bellcom_elasticsearch_synonyms'] = array(
+	'#title' => t('Synonyms'),
+	'#type' => 'textarea',
+	'#description' => t('One synomym group per line, look at %link for help in formatting', array('%link' => 'https://www.elastic.co/guide/en/elasticsearch/guide/current/synonym-formats.html')),
+	'#states' => array(
+	    'visible' => array(
+		':input[name="bellcom_elasticsearch_synonyms_active"]' => array('checked' => TRUE),
+	    ),
+	),
+	'#default_value' => variable_get('bellcom_elasticsearch_synonyms')
+    );
+
+    $default_cluster = elasticsearch_connector_get_default_connector();
+    $cluster_indicies = elasticsearch_connector_get_indices_options($default_cluster);
+
+    $form['bellcom_elasticsearch_synonyms_cluser'] = array(
+	'#type' => 'hidden',
+	'#value' => variable_get('bellcom_elasticsearch_synonyms_index', $default_cluster)
+    );
+
+    $form['bellcom_elasticsearch_synonyms_index'] = array(
+	'#type' => 'select',
+	'#title' => t('Select index'),
+	'#options' => $cluster_indicies,
+	'#default_value' => variable_get('bellcom_elasticsearch_synonyms_index'),
+	'#description' => t('Select index, which the synonyms should be applied to'),
+    );
+
+    $form['bellcom_elasticsearch_synonyms_file_path'] = array(
+	'#type' => 'textfield',
+	'#title' => t('Synonyms file path'),
+	'#default_value' => variable_get('bellcom_elasticsearch_synonyms_file_path', 'public://'),
+	'#description' => t('File with filename "synonyms.txt" will be saved in this path. Must be writtable'),
+	'#field_suffix' => '/synonyms.txt', 
+    );
+
+    $form['#submit'][] = 'bellcom_elasticsearch_synonyms_submit';
+
+    return system_settings_form($form);
+}
+
+function bellcom_elasticsearch_synonyms_submit($form, &$form_state) {
+    module_load_include('inc', 'bellcom_elasticsearch', 'includes/bellcom_elasticsearch.api.index');
+
+    try {
+	$cluster_id = $form_state['values']['bellcom_elasticsearch_synonyms_cluser'];
+	$cluster = elasticsearch_connector_cluster_load($cluster_id);
+	if ($cluster) {
+	    $client = elasticsearch_connector_load_library($cluster);
+	    $index_id = $form_state['values']['bellcom_elasticsearch_synonyms_index'];
+	    
+	    if ($form_state['values']['bellcom_elasticsearch_synonyms_active']) {
+		
+		//saving file
+		$data = $form_state['values']['bellcom_elasticsearch_synonyms'];
+		$path = $form_state['values']['bellcom_elasticsearch_synonyms_file_path'];
+		if (substr($path, -1) !== '/') {
+		    $path .= '/';
+		}
+		$path .= 'synonyms.txt';
+		
+		file_save_data($data, $path, FILE_EXISTS_REPLACE);
+	    
+		//activated
+		try {	
+		    bellcom_elasticsearch_api_index_close($client, $index_id);
+		    if ($path) {
+			bellcom_elasticsearch_api_add_analyzer($client, $index_id, drupal_realpath($path));
+		    }
+		}  catch (Exception $e) {
+		    drupal_set_message(t('Error while updating index: ') . $e->getMessage(), 'warning');
+		    watchdog('bellcom_elasticsearch', $e->getMessage(), WATCHDOG_WARNING);
+		} finally {
+		    bellcom_elasticsearch_api_index_open($client, $index_id);
+		}
+	    } else {
+		//deactivated
+		try {
+		    bellcom_elasticsearch_api_index_close($client, $index_id);
+		    bellcom_elasticsearch_api_add_analyzer($client, $index_id, '');
+		} catch (Exception $e) {
+		    drupal_set_message(t('Error while updating index: ') . $e->getMessage(), 'warning');
+		    watchdog('bellcom_elasticsearch', $e->getMessage(), WATCHDOG_WARNING);
+		} finally {
+		    bellcom_elasticsearch_api_index_open($client, $index_id);
+		}
+	    }
+	    drupal_set_message('Index is updated');
+	}
+    } catch (Exception $e) {
+	drupal_set_message(t('Could not update synonyms: ') . $e->getMessage(), 'warning');
+	watchdog('bellcom_elasticsearch', $e->getMessage(), WATCHDOG_WARNING);
+    }
 }
 
 function bellcom_elasticsearch_get_js_date_format(){
