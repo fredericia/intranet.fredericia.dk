@@ -139,6 +139,9 @@ function fki_preprocess_comment(&$variables) {
   }
 }
 
+/*
+ * Implements template_node_view_alter().
+ */
 function fki_node_view_alter(&$build) {
 
   // Full
@@ -153,6 +156,7 @@ function fki_node_view_alter(&$build) {
       $build['links']['node']['#links']['number-of-files'] = array(
         'href' => '#',
         'html' => TRUE,
+        'external' => TRUE,
       );
 
       // 1
