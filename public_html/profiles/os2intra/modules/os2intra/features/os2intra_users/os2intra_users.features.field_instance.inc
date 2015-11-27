@@ -32,10 +32,11 @@ function os2intra_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_default',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -86,6 +87,60 @@ function os2intra_users_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'taxonomy_term-os2intra_organisation_tax-field_os2intra_org_presented'.
+  $field_instances['taxonomy_term-os2intra_organisation_tax-field_os2intra_org_presented'] = array(
+    'bundle' => 'os2intra_organisation_tax',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_os2intra_org_presented',
+    'label' => 'Vis i oversigt',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 44,
+    ),
+  );
+
+  // Exported field_instance:
   // 'taxonomy_term-os2intra_organisation_tax-field_os2intra_shortname'.
   $field_instances['taxonomy_term-os2intra_organisation_tax-field_os2intra_shortname'] = array(
     'bundle' => 'os2intra_organisation_tax',
@@ -107,9 +162,10 @@ function os2intra_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'text_default',
         'weight' => 0,
       ),
     ),
@@ -948,6 +1004,7 @@ function os2intra_users_field_default_field_instances() {
   t('Kompetencer');
   t('Kort navn');
   t('MedarbejderID');
+  t('Vis i oversigt');
   t('Værktøjskasser');
   t('import groups');
   t('os2intra_termination_date');
