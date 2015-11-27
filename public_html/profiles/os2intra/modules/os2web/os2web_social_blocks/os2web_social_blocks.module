@@ -1,0 +1,125 @@
+    <?php
+    /**
+     * @file
+     * Module file for os2web_social_blocks.
+     */
+
+
+
+    /**
+     * Implements hook_menu().
+     *
+     * Provides a default page to explain what this module does.
+     */
+
+	/**
+	 * Implements hook_block_info().
+	 */
+	function os2web_social_blocks_block_info() {
+	  $blocks = array();
+	  $blocks['os2web_social_blocks'] = array(
+	    'info' => t('Facebook væg'));
+	
+	  return $blocks;
+	}
+	
+	/**
+	 * Implements hook_block_configure().
+	 */
+	function os2web_social_blocks_block_configure($delta = '') {
+	  $form = array();
+	
+	  if ($delta == 'os2web_social_fb') {
+	    $form['fb_url'] = array(
+	      '#type' => 'textfield',
+	      '#title' => t('Indtast Facebook URL her'),
+	      '#default_value' => variable_get('os2web_social_blocks_block_text', ''),
+	    );
+	  }
+	  return $form;
+	}
+	
+	/**
+	 * Implements hook_block_save().
+	 */
+	function os2web_social_blocks_block_save($delta = '', $edit = array()) {
+	
+	  if ($delta == 'os2web_social_fb') {
+	    variable_set('os2web_social_blocks_block_text', $edit['fb_url']['value']);
+	  }
+	}
+	
+	/**
+	 * Implements hook_block_view().
+	 */
+	function os2web_social_blocks_block_view($delta = '') {
+	  $block = array();
+	
+	  if ($delta == 'os2web_social_fb') {
+	    $block['content'] = _os2web_social_blocks_block_text();
+	  }
+	  return $block;
+	}
+	
+	/**
+	 * Block text below insulation house image.
+	 *
+	 * @return mixed
+	 */
+	function _os2web_social_blocks_block_text() {
+	
+	  $block = array();
+	  $text = '<div id="fb-root"></div>
+  				<script>(function(d, s, id) { 
+  				var js, fjs = d.getElementsByTagName(s)[0];
+  				if (d.getElementById(id)) return;
+  				js = d.createElement(s); js.id = id;
+  				js.src = "//connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v2.5&appId=184672628330054";
+  				fjs.parentNode.insertBefore(js, fjs);
+  				}
+  				(document, \'script\', \'facebook-jssdk\'));
+  				</script>
+  				
+  				<div class="fb-page" 
+  					data-href="https://www.facebook.com/fredericiakommune/" 
+  					data-width="280" data-height="380" data-small-header="true" 
+  					data-adapt-container-width="true" data-hide-cover="true"
+  					data-show-facepile="false" data-show-posts="true">
+  					<div class="fb-xfbml-parse-ignore">
+	  					<blockquote cite="https://www.facebook.com/fredericiakommune/">
+		  					<a href="https://www.facebook.com/fredericiakommune/">Fredericia Kommune</a>
+	  					</blockquote>
+  					</div>
+  				</div>';
+	  $module_path = drupal_get_path('module', 'os2web_social_blocks');
+	
+	  $block['fb_url'] = array(
+	    '#type' => 'markup',
+	    '#markup' => $text,
+	    '#attached' => array(
+	      'js' => array(
+	        array(
+	          'type' => 'file',
+	          'data' => $module_path . '/js/hotspots.js',
+	        ),
+	        array(
+	          'type' => 'setting',
+	          'data' => array('os2web_social_blocks' => array('modulePath' => $module_path)),
+	        ),
+	      ),
+	      'css' => array(
+	        $module_path . '/css/hotspots.css',
+	      ),
+	    ),
+	  );
+	  return $block;
+	  
+	  
+	  
+	  
+	  
+	  
+
+
+
+
