@@ -27,20 +27,19 @@
 // Links
 .os2-links {
 
-	.number-of-files a,
-	.flag {
+	a {
 		font-size: @os2-links-font-size;
 		font-weight: @os2-links-font-weight;
 		color: @os2-links-text-color;
 
 		&:before {
-			display: inline-block;
 			font-family: FontAwesome;
 			font-size: @os2-links-icon-font-size;
 			color: @os2-links-icon-color;
-			margin-right: 3px;
 			.line-height(@os2-links-icon-font-size);
 			.transition(all @bs3-designer-transition-time ease-in-out);
+			display: inline-block;
+			margin-right: 3px;
 		}
 
 		&:hover {
@@ -58,6 +57,26 @@
 
 			&:before {
 				content: @fa-var-cloud-download;
+			}
+		}
+	}
+
+	.print_html {
+
+		a {
+
+			&:before {
+				content: @fa-var-print;
+			}
+		}
+	}
+
+	.print_mail {
+
+		a {
+
+			&:before {
+				content: @fa-var-share;
 			}
 		}
 	}

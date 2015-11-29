@@ -1,7 +1,9 @@
 <?php if ($view_mode == 'full'): ?>
   <?php
     hide($content['comments']);
+    hide($content['links_top']);
     hide($content['links']);
+    hide($content['links_bottom']);
     hide($content['field_tags']);
 
     if (isset($content['field_tags'])) {
@@ -34,11 +36,19 @@
       <!-- End - image -->
     <?php endif; ?>
 
-    <div class="os2-node-full-controlpanel">
-      <ul class="os2-node-full-controlpanel-list">
-        <li><?php print $node_basket['add']; ?></li>
-      </ul>
-    </div>
+    <?php if (!empty($content['links_top'])): ?>
+      <!-- Begin - controlpanel -->
+      <div class="os2-node-full-controlpanel">
+
+        <!-- Begin - links -->
+        <div class="os2-links os2-links-top">
+          <?php print render($content['links_top']); ?>
+        </div>
+        <!-- End - links -->
+
+      </div>
+      <!-- End - controlpanel -->
+    <?php endif ?>
 
     <?php if (isset($author_full_name) and $updated_at_short): ?>
       <!-- Begin - entity info -->
@@ -75,11 +85,19 @@
       <!-- End - body -->
     <?php endif; ?>
 
-    <!-- Begin - footer -->
-    <div class="os2-node-full-footer os2-links">
-      <?php print render($content['links']); ?>
-    </div>
-    <!-- End - footer -->
+    <?php if (!empty($content['links_bottom'])): ?>
+      <!-- Begin - footer -->
+      <div class="os2-node-full-footer">
+
+        <!-- Begin - links -->
+        <div class="os2-links os2-links-bottom">
+          <?php print render($content['links_bottom']); ?>
+        </div>
+        <!-- End - links -->
+
+      </div>
+      <!-- End - footer -->
+    <?php endif ?>
 
   </div>
   <!-- End - full node -->

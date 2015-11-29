@@ -167,6 +167,19 @@ function fki_node_view_alter(&$build) {
         $build['links']['node']['#links']['number-of-files']['title'] = t('@files downloadable files', array('@files' => $number_of_files));
       }
     }
+
+    // Make two extra versions of links (top and bottom)
+    $links = $build['links'];
+    $build['links_top'] = $links;
+    $build['links_bottom'] = $links;
+    //xdebug_break();
+
+    // Hide from links_top
+    unset($build['links_top']['flag']);
+
+    // Hide from links_bottom
+    unset($build['links_bottom']['print_html']);
+    unset($build['links_bottom']['print_mail']);
   }
 }
 
