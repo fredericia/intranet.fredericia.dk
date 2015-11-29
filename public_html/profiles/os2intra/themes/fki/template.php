@@ -172,7 +172,6 @@ function fki_node_view_alter(&$build) {
     $links = $build['links'];
     $build['links_top'] = $links;
     $build['links_bottom'] = $links;
-    //xdebug_break();
 
     // Hide from links_top
     unset($build['links_top']['flag']);
@@ -180,6 +179,7 @@ function fki_node_view_alter(&$build) {
     // Hide from links_bottom
     unset($build['links_bottom']['print_html']);
     unset($build['links_bottom']['print_mail']);
+    unset($build['links_bottom']['print_pdf']);
   }
 }
 
