@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-11-30 11:08+0100\n"
-"PO-Revision-Date: 2015-11-30 11:08+0100\n"
+"POT-Creation-Date: 2015-11-30 14:17+0100\n"
+"PO-Revision-Date: 2015-11-30 14:17+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -31934,6 +31934,16 @@ msgstr ""
 
 #: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "The date of the last access to the node's PDF version."
+msgstr ""
+
+#: /
+msgid ""
+"The generator version number to store in the MANIFEST file. The "
+"default is 7.0.0."
+msgstr ""
+
+#: profiles/os2intra/modules/custom/node_basket/js/node_basket.js
+msgid "An error occured. Try to refresh the page and try again."
 msgstr ""
 
 msgid "Public files"
@@ -72103,4 +72113,20 @@ msgstr "Afsenderadresse"
 
 msgid "Send page by email"
 msgstr "Send side via e-mail"
+
+#: profiles/os2intra/modules/custom/node_basket/js/node_basket.js
+msgid "The page was sucessfully added to the basket"
+msgstr "Siden blev tilføjet til kurven."
+
+#: profiles/os2intra/modules/custom/node_basket/js/node_basket.js
+msgid "Success!"
+msgstr "Succes!"
+
+#: profiles/os2intra/modules/custom/node_basket/js/node_basket.js
+msgid "An error occured"
+msgstr "Der opstod en fejl!"
+
+#: profiles/os2intra/modules/custom/node_basket/js/node_basket.js
+msgid "Try to refresh the page and try again."
+msgstr "Genopfrisk siden og forsøg igen."
 
