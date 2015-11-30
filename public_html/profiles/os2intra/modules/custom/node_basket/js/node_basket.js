@@ -8,10 +8,20 @@
           var nid = Drupal.settings.node_basket.nid;
           var markup = '<div id="nodebasket-status">';
 
-          $('#node-basket-add').on('click', function (event) {
+          $('.add_to_basket > a').on('click', function (event) {
             event.preventDefault();
 
-            $.get('/node_basket/basket/add/' + nid, function (data) {});
+            $.get('/node_basket/basket/add/' + nid, function (data) {
+
+              // Success
+              if (data.err == false) {
+                bs3Alert.push(Drupal.t('Success!'), Drupal.t('The page was sucessfully added to the basket'), 'success');
+              }
+              // Error
+              else {
+                bs3Alert.push(Drupal.t('An error occured'), Drupal.t('Try to refresh the page and try again.'), 'danger');
+              }
+            });
           });
 
           $.get('/node_basket/basket/status/' + nid, function (data) {

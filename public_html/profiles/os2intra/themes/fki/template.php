@@ -149,25 +149,6 @@ function fki_node_view_alter(&$build) {
     unset($build['links']['statistics']);
     unset($build['links']['comment']);
 
-    // Number of files
-    if ($number_of_files = field_get_items('node', $build['#node'], 'field_os2web_base_field_media')) {
-      $number_of_files = count($number_of_files);
-
-      $build['links']['node']['#links']['number-of-files'] = array(
-        'href' => '#',
-        'html' => TRUE,
-        'external' => TRUE,
-      );
-
-      // 1
-      if ($number_of_files == 1) {
-        $build['links']['node']['#links']['number-of-files']['title'] = t('@files downloadable file', array('@files' => $number_of_files));
-      }
-      else {
-        $build['links']['node']['#links']['number-of-files']['title'] = t('@files downloadable files', array('@files' => $number_of_files));
-      }
-    }
-
     // Make two extra versions of links (top and bottom)
     $links = $build['links'];
     $build['links_top'] = $links;
@@ -175,11 +156,13 @@ function fki_node_view_alter(&$build) {
 
     // Hide from links_top
     unset($build['links_top']['flag']);
+    unset($build['links_top']['number_of_files']);
 
     // Hide from links_bottom
     unset($build['links_bottom']['print_html']);
     unset($build['links_bottom']['print_mail']);
     unset($build['links_bottom']['print_pdf']);
+    unset($build['links_bottom']['add_to_basket']);
   }
 }
 

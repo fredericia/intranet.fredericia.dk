@@ -79,6 +79,22 @@ function node_basket_node_view($node, $view_mode, $langcode){
   if($view_mode == 'full' || $view_mode == 'default'){
     drupal_add_js(array('node_basket' => array('nid' => $node->nid)), 'setting');
   }
+
+  if ($view_mode == 'full') {
+
+    $links['add_to_basket'] = array(
+      'title' => t('Add to basket'),
+      'href'     => '#',
+      'html'     => TRUE,
+      'external' => TRUE,
+    );
+
+    $node->content['links']['add_to_basket'] = array(
+      '#theme'      => 'links',
+      '#links'      => $links,
+      '#attributes' => array('class' => array('links', 'inline')),
+    );
+  }
 }
 
 /*
@@ -570,10 +586,6 @@ function node_basket_preprocess_node(&$variables) {
       $variables['action_button'] = '<a href="/node_basket/toolbox/use/' . $variables['nid'] . '" class="pull-right">' . t('Subscribe') . '</a>';
     }
   }
-
-  // Links
-  $variables['node_basket'] = array();
-  $variables['node_basket']['add'] = l(t('Add to basket'), 'node/' . $variables['nid'], array('attributes' => array('id' => 'node-basket-add')));
 }
 
 /*

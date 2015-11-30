@@ -1,0 +1,28 @@
+<?php
+
+/*
+ * Implements hook_node_view().
+ */
+function os2intra_custom_links_node_view($node, $view_mode) {
+
+  if ($view_mode == 'full') {
+
+    // Number of files
+    if ($field_number_of_files = field_get_items('node', $node, 'field_os2web_base_field_media')) {
+      $number_of_files_count = count($field_number_of_files);
+
+      $links['number_of_files'] = array(
+        'title' => ($number_of_files_count == 1) ? t('@files downloadable file', array('@files' => $number_of_files_count)) : t('@files downloadable files', array('@files' => $number_of_files_count)),
+        'href'     => '#',
+        'html'     => TRUE,
+        'external' => TRUE,
+      );
+
+      $node->content['links']['number_of_files'] = array(
+        '#theme'      => 'links',
+        '#links'      => $links,
+        '#attributes' => array('class' => array('links', 'inline')),
+      );
+    }
+  }
+}
