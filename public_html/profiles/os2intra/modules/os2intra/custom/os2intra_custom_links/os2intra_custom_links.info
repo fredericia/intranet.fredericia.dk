@@ -1,0 +1,4 @@
+name        = 'OS2Intra custom links'
+description = 'Contains custom links for OS2Intra.'
+core        = 7.x
+package     = 'OS2Intra custom'
