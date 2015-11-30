@@ -8,29 +8,19 @@ function os2intra_custom_links_node_view($node, $view_mode) {
   if ($view_mode == 'full') {
 
     // Number of files
-    if ($number_of_files = field_get_items('node', $node, 'field_os2web_base_field_media')) {
-      $number_of_files = count($number_of_files);
+    if ($field_number_of_files = field_get_items('node', $node, 'field_os2web_base_field_media')) {
+      $number_of_files_count = count($field_number_of_files);
 
-      $node->content['links']['number_of_files'] = array(
-        'href' => '#',
-        'html' => TRUE,
+      $links['number_of_files'] = array(
+        'title' => ($number_of_files_count == 1) ? t('@files downloadable file', array('@files' => $number_of_files_count)) : t('@files downloadable files', array('@files' => $number_of_files_count)),
+        'href'     => '#',
+        'html'     => TRUE,
         'external' => TRUE,
       );
 
-      // 1
-      if ($number_of_files == 1) {
-        $build['links']['node']['#links']['number-of-files']['title'] = t('@files downloadable file', array('@files' => $number_of_files));
-      }
-      else {
-        $build['links']['node']['#links']['number-of-files']['title'] = t('@files downloadable files', array('@files' => $number_of_files));
-      }
-    }
-
-    if ($statistics) {
-      $links['statistics_counter']['title'] = format_plural($statistics['totalcount'], '1 read', '@count reads');
-      $node->content['links']['statistics'] = array(
-        '#theme' => 'links__node__statistics',
-        '#links' => $links,
+      $node->content['links']['number_of_files'] = array(
+        '#theme'      => 'links',
+        '#links'      => $links,
         '#attributes' => array('class' => array('links', 'inline')),
       );
     }

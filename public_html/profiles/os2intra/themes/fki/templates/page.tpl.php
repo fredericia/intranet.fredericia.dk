@@ -59,7 +59,9 @@
     <div class="content">
       <div class="container container-fluid-lg-only container-fluid-md-only">
 
-        <?php print $messages; ?>
+        <div class="bs3-alert-wrapper">
+          <?php print $messages; ?>
+        </div>
 
         <?php if (user_is_logged_in()): ?>
         <!-- Begin - main navigation -->

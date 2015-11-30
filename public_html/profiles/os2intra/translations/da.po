@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-11-30 09:03+0100\n"
-"PO-Revision-Date: 2015-11-30 09:03+0100\n"
+"POT-Creation-Date: 2015-11-30 11:08+0100\n"
+"PO-Revision-Date: 2015-11-30 11:08+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -31549,10 +31549,6 @@ msgstr ""
 msgid "Determine access to features by selecting permissions for role."
 msgstr ""
 
-#: /intra
-msgid "Add to basket"
-msgstr ""
-
 #: /node_basket/toolbox_list
 msgid "Læseliste"
 msgstr ""
@@ -31710,6 +31706,62 @@ msgstr ""
 msgid "Tilknyttet gruppe/afdeling"
 msgstr ""
 
+#: /
+msgid "Send node as HTML formatted email"
+msgstr ""
+
+#: /
+msgid "From email adress"
+msgstr ""
+
+#: /
+msgid "Send email to"
+msgstr ""
+
+#: /
+msgid "The message that should be displayed (optional)."
+msgstr ""
+
+#: /admin/config/regional/translate
+msgid "Configure the print module links."
+msgstr ""
+
+#: /admin/config/regional/translate
+msgid "Configure the settings of the PDF generation functionality."
+msgstr ""
+
+#: /admin/config/regional/translate
+msgid "Override the user-facing strings used in the PDF version."
+msgstr ""
+
+#: /admin/config/regional/translate
+msgid "Settings for the common functionalities for all the print sub-modules."
+msgstr ""
+
+#: /admin/config/regional/translate
+msgid "Override the user-facing strings used by the print module."
+msgstr ""
+
+#: /admin/config/regional/translate
+msgid "Override the user-facing strings used in the printer-friendly version."
+msgstr ""
+
+#: /admin/config/regional/translate
+msgid "Configure the settings of the send by email functionality."
+msgstr ""
+
+#: /admin/config/regional/translate
+msgid "Override the user-facing strings used in the send by email version."
+msgstr ""
+
+#: /admin/config/regional/translate
+msgid "print"
+msgstr ""
+
+#: /admin/config/regional/translate
+msgid "print_ui"
+msgstr ""
+
 #: /admin/modules
 msgid "PDF generation library using dompdf."
 msgstr ""
@@ -31750,805 +31802,138 @@ msgstr ""
 msgid "OS2Web - Frontend"
 msgstr ""
 
-#: /batch?op=start&id=81
+#: /admin/modules
+msgid "Contains custom links for OS2Intra."
+msgstr ""
+
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Web: Show link"
 msgstr ""
 
-#: /batch?op=start&id=81
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Whether to show the printer-friendly version link."
 msgstr ""
 
-#: /batch?op=start&id=81
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Web: Show link in individual comments"
 msgstr ""
 
-#: /batch?op=start&id=81
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid ""
 "Whether to show the printer-friendly version link in individual "
 "comments."
 msgstr ""
 
-#: /batch?op=start&id=81
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Web: Show Printer-friendly URLs list"
 msgstr ""
 
-#: /batch?op=start&id=81
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Whether to show the URL list."
 msgstr ""
 
-#: /batch?op=start&id=81
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Web: Number of page accesses"
 msgstr ""
 
-#: /batch?op=start&id=81
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Counter of accesses to the printer-friendly version for this node."
 msgstr ""
 
-#: /batch?op=start&id=81
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Web: Last access"
 msgstr ""
 
-#: /batch?op=start&id=81
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "The date of the last access to the node's printer-friendly version."
 msgstr ""
 
-#: /batch?op=start&id=81
-msgid "PDF: Show link"
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "Whether to show the PDF version link."
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "PDF: Show link in individual comments"
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "Whether to show the PDF version link in individual comments."
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "PDF: Show Printer-friendly URLs list"
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "PDF: Number of page accesses"
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "Counter of accesses to the PDF version for this node."
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "PDF: Last access"
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "The date of the last access to the node's PDF version."
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "Configure the print module links."
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "Configure the settings of the PDF generation functionality."
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "Override the user-facing strings used in the PDF version."
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "Settings for the common functionalities for all the print sub-modules."
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "Override the user-facing strings used by the print module."
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "Override the user-facing strings used in the printer-friendly version."
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "print"
-msgstr ""
-
-#: /batch?op=start&id=81
-msgid "print_ui"
-msgstr ""
-
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
-msgid "Send node as HTML formatted email"
-msgstr ""
-
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
-msgid "From email adress"
-msgstr ""
-
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
-msgid "Send email to"
-msgstr ""
-
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
-msgid "The message that should be displayed (optional)."
-msgstr ""
-
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Email: Show link"
 msgstr ""
 
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Whether to show the send by email link."
 msgstr ""
 
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Email: Show link in individual comments"
 msgstr ""
 
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Whether to show the send by email link in individual comments."
 msgstr ""
 
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Email: Show Printer-friendly URLs list"
 msgstr ""
 
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Email: Number of page accesses"
 msgstr ""
 
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Counter of accesses to the send by email form for this node."
 msgstr ""
 
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Email: Last access"
 msgstr ""
 
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "The date of the last access to the node's send by email form."
 msgstr ""
 
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Email: Number of sent emails"
 msgstr ""
 
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Counter of emails sent for this node."
 msgstr ""
 
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "Email: Last email sent"
 msgstr ""
 
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
 msgid "The date when the node was last sent by email."
 msgstr ""
 
-#: /admin/modules?filter=print&enabled=1&disabled=1&required=1&unavailable=1
-msgid "Configure the settings of the send by email functionality."
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+msgid "PDF: Show link"
 msgstr ""
 
-#: /test-hr-fredericia
-msgid "Override the user-facing strings used in the send by email version."
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+msgid "Whether to show the PDF version link."
 msgstr ""
 
-#: /print/239
-msgid "Udgivet på %site_name"
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+msgid "PDF: Show link in individual comments"
 msgstr ""
 
-#: /print/239
-msgid "hentet den %date"
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+msgid "Whether to show the PDF version link in individual comments."
 msgstr ""
 
-#: /printmail/239
-msgid "Test HR Fredericia"
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+msgid "PDF: Show Printer-friendly URLs list"
 msgstr ""
 
-#: /printmail/239
-msgid "!user har sendt dig en besked fra !site"
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+msgid "PDF: Number of page accesses"
 msgstr ""
 
-#: /admin/config
-msgid "Missing composer.json file"
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+msgid "Counter of accesses to the PDF version for this node."
 msgstr ""
 
-#: /admin/config
-msgid "The composer.json file was not found."
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+msgid "PDF: Last access"
 msgstr ""
 
-#: /admin/config
-msgid "Printer, email and PDF versions - PDF generation library"
-msgstr ""
-
-#: /admin/config
-msgid "PDF settings page"
-msgstr ""
-
-#: /admin/config
-msgid "Please configure it in the !url."
-msgstr ""
-
-#: /admin/config/user-interface/print
-msgid "Help area"
-msgstr ""
-
-#: /admin/config/user-interface/print
-msgid "Display printer-friendly link in teaser"
-msgstr ""
-
-#: /admin/config/user-interface/print
-msgid "Enabling this will display the link in teaser mode."
-msgstr ""
-
-#: /admin/config/user-interface/print
-msgid "Printer-friendly URLs list in system pages"
-msgstr ""
-
-#: /admin/config/user-interface/print
-msgid ""
-"Enabling this option will display a list of printer-friendly "
-"destination URLs at the bottom of the page."
-msgstr ""
-
-#: /admin/config/user-interface/print/pdf
-msgid "Display link to the PDF version in teaser"
-msgstr ""
-
-#: /admin/config/user-interface/print/pdf
-msgid "Access images via local file access"
-msgstr ""
-
-#: /admin/config/user-interface/print/pdf
-msgid ""
-"Enabling this option will make the tool use local file access for "
-"image files. This option is not recommended to use in conjunction with "
-"modules like imagecache which generate the image after it's first "
-"accessed. However, it may be necessary in low-end hosting services "
-"where the web server is not allowed to open URLs and the user can't "
-"modify that configuration setting."
-msgstr ""
-
-#: /admin/config/user-interface/print/pdf
-msgid "Auto-configure the PDF tool settings"
-msgstr ""
-
-#: /admin/config/user-interface/print/pdf
-msgid ""
-"If you disable this option, the pdf tool settings must be configured "
-"manually. For TCDPF, edit the tcpdf/config/tcpdf_config.php file. For "
-"dompdf, edit the dompdf/dompdf_config.inc.php file."
-msgstr ""
-
-#: /admin/config/user-interface/print/pdf
-msgid "Enable font subsetting"
-msgstr ""
-
-#: /admin/config/user-interface/print/pdf
-msgid ""
-"(TCPDF only) Only embed those font characters that are actually used.  "
-"This can generates smaller PDF files but may significantly slow down "
-"processing."
-msgstr ""
-
-#: /admin/config/user-interface/print/pdf
-msgid "Use dompdf's Unicode Mode"
-msgstr ""
-
-#: /admin/config/user-interface/print/pdf
-msgid ""
-"If enabled, dompdf's Unicode mode is used. If not, the module will "
-"attempt to convert some non-ASCII chars to ISO-8859-1."
-msgstr ""
-
-#: /admin/config/user-interface/print/pdf
-msgid "PDF filename"
-msgstr ""
-
-#: /admin/config/user-interface/print/ui
-msgid "Link options"
-msgstr ""
-
-#: /admin/config/user-interface/print/email
-msgid "Send by email options"
-msgstr ""
-
-#: /admin/config/user-interface/print/email
-msgid "Send by email link"
-msgstr ""
-
-#: /admin/config/user-interface/print/email
-msgid ""
-"Choose the location of the link(s) to the send by email page. The "
-"Links area is usually below the node content, whereas the Content "
-"corner is placed in the upper-right corner of the node content. "
-"Unselect all options to disable the link. Even if the link is "
-"disabled, you can still send a node by email by going to !path/nid "
-"where nid is the numeric id of the node."
-msgstr ""
-
-#: /admin/config/user-interface/print/email
-msgid "Display send by email link in teaser"
-msgstr ""
-
-#: /admin/config/user-interface/print/email
-msgid ""
-"Setting this option will add a send by email link on pages created by "
-"Drupal or the enabled modules."
-msgstr ""
-
-#: /admin/config/user-interface/print/email
-msgid "The maximum number of emails a user can send per hour."
-msgstr ""
-
-#: /admin/config/user-interface/print/email
-msgid "Use Reply-To header"
-msgstr ""
-
-#: /admin/config/user-interface/print/email
-msgid ""
-"When enabled, any email sent will use the provided user and username "
-"in the 'Reply-To' header, with the site's email address used in the "
-"'From' header (configured in !link). Enabling this helps in preventing "
-"email being flagged as spam."
-msgstr ""
-
-#: /admin/config/user-interface/print/email
-msgid "Default email sending format"
-msgstr ""
-
-#: /admin/config/user-interface/print/email
-msgid "Inline HTML"
-msgstr ""
-
-#: /admin/config/user-interface/print/email
-msgid "Send emails using queue"
-msgstr ""
-
-#: /admin/config/user-interface/print/email
-msgid ""
-"Selecting this option, email delivery will be performed by the system "
-"queue during each cron run. Leaving this unselected, the email will be "
-"sent immediately, but the site will take slightly longer to reply to "
-"the user."
-msgstr ""
-
-#: /
-msgid "Retrieve Drush aliases for all accessible Acquia Cloud sites."
-msgstr ""
-
-#: /
-msgid "Email address for your Acquia Network user account"
-msgstr ""
-
-#: /
-msgid "Private Cloud API key for your Acquia Network user account"
-msgstr ""
-
-#: /
-msgid ""
-"Acquia Cloud API config files location. If not specified config will "
-"be loaded from $HOME/.drush"
-msgstr ""
-
-#: /
-msgid ""
-"Acquia Cloud API user config file location. If not specified config "
-"will be loaded from $HOME"
-msgstr ""
-
-#: /
-msgid "Acquia Cloud API endpoint URL."
-msgstr ""
-
-#: /
-msgid ""
-"Path to a file containing the SSL certificates needed to verify the "
-"ac-api-endpoint."
-msgstr ""
-
-#: /
-msgid ""
-"Format to output the object. Use \"print_r\" for print_r, \"export\" "
-"for var_export, and \"json\" for JSON. If not provided, the output is "
-"printed in a human-readable format."
-msgstr ""
-
-#: /
-msgid "Store Acquia Cloud API credentials and configuration information."
-msgstr ""
-
-#: /
-msgid ""
-"Discard any existing stored values from a previous call. Without this "
-"option, new values will be merged with existing values."
-msgstr ""
-
-#: /
-msgid "List all sites available to the current user."
-msgstr ""
-
-#: /
-msgid "Show information about a site."
-msgstr ""
-
-#: /
-msgid "List a site's environments."
-msgstr ""
-
-#: /
-msgid "Show information about a site environment."
-msgstr ""
-
-#: /
-msgid ""
-"Install a Drupal distribution from a pre-selected list, URL, or Drush "
-"Makefile."
-msgstr ""
-
-#: /
-msgid "Type of distro source: distro_url or make_url."
-msgstr ""
-
-#: /
-msgid "A URL to a distro or URL to a Drush make file."
-msgstr ""
-
-#: /
-msgid "Configure Live Development on a site environment."
-msgstr ""
-
-#: /
-msgid "Action to take.  'enable' or 'disable' live development."
-msgstr ""
-
-#: /
-msgid "When action is 'disable', set to 1 to discard uncommitted changes."
-msgstr ""
-
-#: /
-msgid "List servers for a site and environment."
-msgstr ""
-
-#: /
-msgid "Show information about a server."
-msgstr ""
-
-#: /
-msgid "Server name."
-msgstr ""
-
-#: /
-msgid ""
-"Calculate the php max procs value based on possible memory limits and "
-"apc shm settings."
-msgstr ""
-
-#: /
-msgid "Memory limits."
-msgstr ""
-
-#: /
-msgid "APC shm settings."
-msgstr ""
-
-#: /
-msgid "List a site's databases."
-msgstr ""
-
-#: /
-msgid "Show information about a site database."
-msgstr ""
-
-#: /
-msgid ""
-"The environment-agnostic database name; this is the name shown on the "
-"Workflow page of the Cloud UI."
-msgstr ""
-
-#: /
-msgid "Add a database."
-msgstr ""
-
-#: /
-msgid "The database."
-msgstr ""
-
-#: /
-msgid "Delete a database."
-msgstr ""
-
-#: /
-msgid "List a site environment's database instances."
-msgstr ""
-
-#: /
-msgid "Show information about a site environment's database instance."
-msgstr ""
-
-#: /
-msgid "List a site environment's database instance backups."
-msgstr ""
-
-#: /
-msgid "Show information about a site environment's database instance backup."
-msgstr ""
-
-#: /
-msgid "Backup id."
-msgstr ""
-
-#: /
-msgid "Download a site environment database instance backup."
-msgstr ""
-
-#: /
-msgid ""
-"Save to a file; specify the full path in which to store the backup. If "
-"not provided, the backup is sent the standard output."
-msgstr ""
-
-#: /
-msgid "Create a database instance backup."
-msgstr ""
-
-#: /
-msgid "Restore a database instance backup."
-msgstr ""
-
-#: /
-msgid "The backup id."
-msgstr ""
-
-#: /
-msgid "Delete a database instance backup."
-msgstr ""
-
-#: /
-msgid "List a site's tasks."
-msgstr ""
-
-#: /
-msgid ""
-"The task state to retrieve. If not specified, retrieve all tasks for "
-"the site."
-msgstr ""
-
-#: /
-msgid "Show information about a site task."
-msgstr ""
-
-#: /
-msgid "The task id."
-msgstr ""
-
-#: /
-msgid "Deploy code from one site environment to another."
-msgstr ""
-
-#: /
-msgid "The target environment."
-msgstr ""
-
-#: /
-msgid "Deploy a specific branch or tag in an environment."
-msgstr ""
-
-#: /
-msgid "The branch or tag to deploy."
-msgstr ""
-
-#: /
-msgid "Copy a database from one site environment to another."
-msgstr ""
-
-#: /
-msgid "Copy user-uploaded files from one site environment to another."
-msgstr ""
-
-#: /
-msgid "Move a domain from one site environment to another."
-msgstr ""
-
-#: /
-msgid "Comma separated list of domains, or * for all."
-msgstr ""
-
-#: /
-msgid "List a site's SSH keys."
-msgstr ""
-
-#: /
-msgid "Show information about a site SSH key."
-msgstr ""
-
-#: /
-msgid "SSH key id."
-msgstr ""
-
-#: /
-msgid "Add an SSH key to a site."
-msgstr ""
-
-#: /
-msgid "File containing the SSH public key."
-msgstr ""
-
-#: /
-msgid "The SSH key nickname."
-msgstr ""
-
-#: /
-msgid "Set shell access for this key. (true or false)"
-msgstr ""
-
-#: /
-msgid "Set git access for this key. (true or false)"
-msgstr ""
-
-#: /
-msgid ""
-"Array containing a list of environments to disallow access for this "
-"key"
-msgstr ""
-
-#: /
-msgid "Delete an SSH key from a site."
-msgstr ""
-
-#: /
-msgid "The SSH key id to delete."
-msgstr ""
-
-#: /
-msgid "List a site's SVN users."
-msgstr ""
-
-#: /
-msgid "Show information about a site SVN user."
-msgstr ""
-
-#: /
-msgid "SVN user id."
-msgstr ""
-
-#: /
-msgid "Add an SVN user to a site."
-msgstr ""
-
-#: /
-msgid "SVN username."
-msgstr ""
-
-#: /
-msgid "SVN password."
-msgstr ""
-
-#: /
-msgid "Delete an SVN user from a site."
-msgstr ""
-
-#: /
-msgid "The SVN user id to delete."
-msgstr ""
-
-#: /
-msgid "List a site's domains."
-msgstr ""
-
-#: /
-msgid "Show information about a site domain."
-msgstr ""
-
-#: /
-msgid "Domain name."
-msgstr ""
-
-#: /
-msgid "Add a domain name to an environment."
-msgstr ""
-
-#: /
-msgid "Delete a domain name from an environment."
-msgstr ""
-
-#: /
-msgid "Purge a domain from the Varnish cache."
-msgstr ""
-
-#: /
-msgid ""
-"The generator version number to store in the MANIFEST file. The "
-"default is 8.0.0-beta12."
-msgstr ""
-
-#: /
-msgid "Compile all Twig template(s)."
-msgstr ""
-
-#: /
-msgid "!extension was not found and will not be disabled."
-msgstr ""
-
-#: /
-msgid "There were no extensions that could be disabled."
-msgstr ""
-
-#: /admin/config/user-interface/print/common
-msgid "Custom stylesheet"
-msgstr ""
-
-#: /admin/config/user-interface/print/common
-msgid ""
-"The path to your custom print cascading stylesheet, if any. The path "
-"provided must be relative to the base path. When none is specified, "
-"the default module CSS file is used."
-msgstr ""
-
-#: /admin/config/user-interface/print/common
-msgid "Macros: %t (path to theme: \"%theme\")"
-msgstr ""
-
-#: /admin/config/user-interface/print/common
-msgid "Requires the <em>Administer site configuration</em> permission."
-msgstr ""
-
-#: /admin/config/user-interface/print/common
-msgid "Keep the current theme CSS"
-msgstr ""
-
-#: /admin/config/user-interface/print/common
-msgid ""
-"If set, the current theme css will still be applied to the "
-"printer-friendly versions."
-msgstr ""
-
-#: /admin/config/user-interface/print/common
-msgid "Include named anchors in printer-friendly URLs list"
-msgstr ""
-
-#: /admin/config/user-interface/print/common
-msgid ""
-"If set, the list of the URLs at the bottom of the page will include "
-"anchors links on the same page."
-msgstr ""
-
-#: /admin/config/user-interface/print/email/strings
-msgid "Form page title"
-msgstr ""
-
-#: /admin/config/user-interface/print/email/strings
-msgid ""
-"Text used as the page title of the mail submission form. Requires a "
-"menu rebuild to apply."
-msgstr ""
-
-#: /admin/config/user-interface/print/email/strings
-msgid ""
-"email subject line. The sender's name will appear in place of !user in "
-"the subject. The web site name will be inserted in place of !site. The "
-"page title replaces !title."
-msgstr ""
-
-#: /admin/config/user-interface/print/email/strings
-msgid "Message preamble"
-msgstr ""
-
-#: /admin/config/user-interface/print/email/strings
-msgid ""
-"email message preamble. The sender will be able to add their own "
-"message after this."
-msgstr ""
-
-#: /admin/config/user-interface/print/email/strings
-msgid "Message content"
-msgstr ""
-
-#: /admin/config/user-interface/print/email/strings
-msgid "Thank you message"
+#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+msgid "The date of the last access to the node's PDF version."
 msgstr ""
 
 msgid "Public files"
@@ -72073,7 +71458,7 @@ msgstr "Zoomniveau"
 
 #: /
 msgid "@files downloadable files"
-msgstr "@files filer til download"
+msgstr "@files fil til download"
 
 #: /node_basket/basket/view/convert
 msgid "Your basket was succesfully converted to a toolbox."
@@ -72081,7 +71466,7 @@ msgstr "Din kurv blev succesfuldt konverteret til en værktøjskasse."
 
 #: /strategier-politikker-og-visioner/vision-2020
 msgid "@files downloadable file"
-msgstr "@files fil til download"
+msgstr "@files filer til download"
 
 #: /node_basket
 msgid "Delete toolbox"
@@ -72103,6 +71488,43 @@ msgstr "Afmeld"
 msgid "written by:"
 msgstr "skrevet af:"
 
+#: /intra
+msgid "Add to basket"
+msgstr "Gem i kurv"
+
+msgid "Most printed"
+msgstr "Mest udskrevne"
+
+msgid "Most emailed"
+msgstr "Mest sendte"
+
+msgid "Most PDFd"
+msgstr "Mest PDFede"
+
+msgid "Send by email"
+msgstr "Send via e-mail"
+
+msgid "Display a printer-friendly version of this page."
+msgstr "Vis en printervenlig udgave af denne side."
+
+msgid "Send this page by email."
+msgstr "Send denne side via e-mail."
+
+msgid "PDF version"
+msgstr "PDF udgave"
+
+msgid "Display a PDF version of this page."
+msgstr "Vis en PDF-udgave af denne side."
+
+msgid "Show link"
+msgstr "Vis link"
+
+msgid "Show link in individual comments"
+msgstr "Vis link i individuelle kommentarer"
+
+msgid "Show Printer-friendly URLs list"
+msgstr "Vis printervenlig URL-liste"
+
 msgid "PDF"
 msgstr "PDF"
 
@@ -72123,9 +71545,6 @@ msgstr "Vis kun på de nævnte sider."
 
 msgid "Send email"
 msgstr "Send e-mail"
-
-msgid "Display a PDF version of this page."
-msgstr "Vis en PDF-udgave af denne side."
 
 msgid "Hourly threshold"
 msgstr "Kontakter pr. time"
@@ -72178,9 +71597,6 @@ msgstr ""
 
 msgid "Printer-friendly"
 msgstr "Printervenlig"
-
-msgid "Display a printer-friendly version of this page."
-msgstr "Vis en printervenlig udgave af denne side."
 
 msgid "Printer-friendly page link"
 msgstr "Link til printervenlig side"
@@ -72466,18 +71882,6 @@ msgstr ""
 msgid "Text used in the link to the printer-friendly version."
 msgstr "Tekst som bruges i linket til den printervenlige udgave."
 
-msgid "Most printed"
-msgstr "Mest udskrevne"
-
-msgid "Show link"
-msgstr "Vis link"
-
-msgid "Show link in individual comments"
-msgstr "Vis link i individuelle kommentarer"
-
-msgid "Show Printer-friendly URLs list"
-msgstr "Vis printervenlig URL-liste"
-
 msgid "Send only the teaser"
 msgstr "Send kun resuméet"
 
@@ -72553,9 +71957,6 @@ msgstr "os"
 
 msgid "print_mail"
 msgstr "print_mail"
-
-msgid "Most emailed"
-msgstr "Mest sendte"
 
 msgid "PDF options"
 msgstr "PDF Valg"
@@ -72666,9 +72067,6 @@ msgstr "Intet PDF-værtkøj valgt"
 msgid "Font size must be at least 1."
 msgstr "Skriftstørrelse skal mindst være 1."
 
-msgid "PDF version"
-msgstr "PDF udgave"
-
 msgid "Text used in the link to the PDF version."
 msgstr "Tekst i linket til PDF-udgaven."
 
@@ -72677,9 +72075,6 @@ msgstr "Side !n af !total"
 
 msgid "Printer-friendly PDF"
 msgstr "Printervenlig PDF"
-
-msgid "Most PDFd"
-msgstr "Mest PDFede"
 
 msgid "Close window after sending to printer"
 msgstr "Luk vinduet når siden er sendt til printeren"
@@ -72706,12 +72101,6 @@ msgstr "Afsendernavn"
 msgid "Sender email"
 msgstr "Afsenderadresse"
 
-msgid "Send by email"
-msgstr "Send via e-mail"
-
 msgid "Send page by email"
 msgstr "Send side via e-mail"
-
-msgid "Send this page by email."
-msgstr "Send denne side via e-mail."
 
