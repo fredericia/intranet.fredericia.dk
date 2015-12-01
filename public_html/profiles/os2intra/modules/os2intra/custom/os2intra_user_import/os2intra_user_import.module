@@ -195,7 +195,8 @@ function os2intra_user_import_settings() {
     9,
     10,
     11,
-    12
+    12,
+    13,
   );
 
   $form['placeholder'] = array(
@@ -212,6 +213,7 @@ function os2intra_user_import_settings() {
   $form['os2intra_user_import_dir'] = array(
     '#title'         => t('Directory containing CSV with users'),
     '#type'          => 'textfield',
+    '#required'      => TRUE,
     '#description'   => t('ex. private://user_import'),
     '#default_value' => variable_get('os2intra_user_import_dir', 'private://user_import')
   );
@@ -221,6 +223,12 @@ function os2intra_user_import_settings() {
     '#type'          => 'textfield',
     '#description'   => t('CSV, ex. 1,2,3'),
     '#default_value' => variable_get('os2intra_user_default_groups')
+  );
+
+  $form['os2intra_user_notification_email'] = array(
+    '#title'         => t('Email address that should be notified when new departments are created'),
+    '#type'          => 'textfield',
+    '#default_value' => variable_get('os2intra_user_notification_email', variable_get('site_mail')),
   );
 
   $form['mapping'] = array(
@@ -256,6 +264,13 @@ function os2intra_user_import_settings() {
     '#required'      => TRUE,
     '#options'       => $csv_cols,
     '#default_value' => variable_get('os2intra_mapping_department'),
+  );
+
+  $form['mapping']['os2intra_mapping_department_shortname'] = array(
+    '#type'          => 'select',
+    '#title'         => t('Department short name'),
+    '#options'       => $csv_cols,
+    '#default_value' => variable_get('os2intra_mapping_department_shortname'),
   );
 
   $form['mapping']['os2intra_mapping_centre'] = array(
@@ -321,7 +336,7 @@ function os2intra_user_import_settings_validate(&$form, &$form_state) {
     $default_groups = explode(',', $form_state['values']['os2intra_user_default_groups']);
     foreach ($default_groups as $group) {
       $node = node_load($group);
-      if (!$node || $node->type != 'os2intra_group') {
+      if (!$node || $node->type != 'os2intra_org_group_unit') {
         form_set_error('os2intra_user_default_groups', t('Must be a valid NID of type organic groups (OG)'));
       }
     }
@@ -385,12 +400,11 @@ function os2intra_user_import_run_with_drush() {
     }
 
     if (file_exists($realpath)) {
-      $file = file_get_contents($realpath);
 
       os2intra_user_import_clear_log();
       os2intra_user_import_save_log('', 'Starting import');
       // Parse file, map data accordingly
-      $users = os2intra_user_import_process_file($file);
+      $users = os2intra_user_import_process_file($realpath);
 
       // Check and create groups
       os2intra_user_import_groups($users);
@@ -451,26 +465,26 @@ function os2intra_user_import_disable_users() {
 /**
  * Helper function to parse file contents to array with relevant info
  */
-function os2intra_user_import_process_file($file) {
-  $data = str_getcsv($file, "\n"); //parse the rows
+function os2intra_user_import_process_file($file_path) {
 
   // CSV field mapping
   // rewrite for settings page?
   $map = array(
-    variable_get('os2intra_mapping_employee_id')      => 'employee_id',
-    variable_get('os2intra_mapping_first_name')       => 'first_name',
-    variable_get('os2intra_mapping_last_name')        => 'last_name',
-    variable_get('os2intra_mapping_department')       => 'department',
-    variable_get('os2intra_mapping_centre')           => 'centre',
-    variable_get('os2intra_mapping_job_description')  => 'job_description',
-    variable_get('os2intra_mapping_termination_date') => 'termination_date',
-    variable_get('os2intra_mapping_birthday')         => 'birthday',
+    variable_get('os2intra_mapping_employee_id')          => 'employee_id',
+    variable_get('os2intra_mapping_first_name')           => 'first_name',
+    variable_get('os2intra_mapping_last_name')            => 'last_name',
+    variable_get('os2intra_mapping_department')           => 'department',
+    variable_get('os2intra_mapping_department_shortname') => 'department_shortname',
+    variable_get('os2intra_mapping_centre')               => 'centre',
+    variable_get('os2intra_mapping_job_description')      => 'job_description',
+    variable_get('os2intra_mapping_termination_date')     => 'termination_date',
+    variable_get('os2intra_mapping_birthday')             => 'birthday',
   );
 
   // Load data from file
-  foreach ($data as $row_str) {
-    $row = str_getcsv($row_str, ",");
+  $csv = array_map('str_getcsv', file($file_path));
 
+  foreach ($csv as $row) {
     // Parse mapping
     foreach ($row as $key => $field) {
       // If there is a mapping for the key
@@ -518,7 +532,7 @@ function os2intra_user_import_check_users(&$users) {
 /**
  * Create/update user
  * If a uid is sent the user will be updated, otherwise a new user will be created.
- * The user has multiple group connections, some ar form the import file, and some
+ * The user has multiple group connections, some are from the import file, and some
  * are set manually in the system. In order to preserve the manually set groups we
  * save the imported values in field_os2intra_import_groups, we then diff this
  * field with og_user_node to find out what groups are set manually (the diff).
@@ -655,10 +669,10 @@ function os2intra_user_import_save_user($user, $uid = '') {
     'field_os2intra_import_groups'    => $import_groups,
 
     // First Name
-    'field_fornavn'                   => array(LANGUAGE_NONE => array(0 => array('value' => $user['first_name']))),
+    'field_name_first'                   => array(LANGUAGE_NONE => array(0 => array('value' => $user['first_name']))),
 
     // Last Name
-    'field_efternavn'                 => array(LANGUAGE_NONE => array(0 => array('value' => $user['last_name']))),
+    'field_name_last'                 => array(LANGUAGE_NONE => array(0 => array('value' => $user['last_name']))),
 
     // Activate user
     'status'                          => ($account->uid != 0) ? $account->status : 1,
@@ -679,8 +693,8 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $fields['field_os2intra_termination_date'] = array(LANGUAGE_NONE => array(0 => array('value' => $termination_date_timestamp)));
   }
 
-  // Handle wether were updating or creating a new user
-  // if were updating we dont generate username and set password
+  // Handle whether we're updating or creating a new user
+  // if we're updating we don't generate username and sets password
   if (!is_numeric($uid)) {
     $password = user_password(8);
 
@@ -724,30 +738,31 @@ function os2intra_user_import_save_user($user, $uid = '') {
  *  array of users with groups
  */
 function os2intra_user_import_groups($users) {
-  os2intra_user_import_save_log('', 'Import groups');
-  $groups = array();
 
-  foreach ($users as $user) {
-    $groups[] = $user['department'];
-  }
+  // Array holding created terms. For email use later.
+  $created_terms = array();
+
+  os2intra_user_import_save_log('', 'Import groups');
 
   $vocab = taxonomy_vocabulary_machine_name_load('os2intra_organisation_tax');
   $tree = taxonomy_get_tree($vocab->vid);
 
   // find first term with no parents
-  // used as parent tid later
+  // used as default parent tid later
   foreach ($tree as $term) {
     if ($term->parents[0] == 0) {
-      $parent_tid = $term->tid;
+      $default_parent_tid = $term->tid;
       break;
     }
   }
 
-  foreach ($groups as $group) {
-    $query = new EntityFieldQuery;
-    $query->entityCondition('entity_type', 'taxonomy_term');
-    $query->fieldCondition('field_os2intra_department_id', 'value', $group, '=');
-    $result = $query->execute();
+  foreach ($users as $user) {
+
+    $group = $user['department'];
+    $parent_tid = $default_parent_tid;
+
+    // Check if term already exists
+    $result = os2intra_user_import_query_term_by_department($group);
 
     if (!empty($result)) {
       os2intra_user_import_save_log('', 'Group already exists: ' . $group);
@@ -756,50 +771,109 @@ function os2intra_user_import_groups($users) {
 
     // Create taxonomy terms
     os2intra_user_import_save_log('', 'Create group: ' . $group);
-    $term = new stdClass();
 
+    // Search for parent tid for department
+    $result = os2intra_user_import_query_term_by_department($user['centre']);
+
+    if (!empty($result)) {
+      $parent_term = taxonomy_term_load(key($result['taxonomy_term']));
+      $parent_tid = $parent_term->tid;
+    }
+
+    $term = new stdClass();
     $term->name = $group;
     $term->parent = array($parent_tid);
     $term->field_os2intra_department_id[LANGUAGE_NONE][0]['value'] = $group;
+    $term->field_os2intra_shortname[LANGUAGE_NONE][0]['value'] = $user['department_shortname'];
     $term->vid = $vocab->vid;
 
     taxonomy_term_save($term);
+    $created_terms[] = $term;
 
     $tid = $term->tid;
-    // Create group nodes
 
+    // Create group nodes
     $node = new stdClass();
 
     // Title and type
     $node->title = $group;
-    $node->type = 'os2intra_group';
+    $node->type = 'os2intra_org_group_unit';
 
     // Generic node stuff
     node_object_prepare($node);
 
-    $node->language = LANGUAGE_NONE;
+    $node->language = 'da';
     $node->uid = 1;
     $node->status = 1;
 
+    // For some reason, we need to save the node and load it again, before we can assign values to fields
+    $node = node_submit($node);
+    node_save($node);
+
     // Set organization term
-    $node->field_os2intra_organization[LANGUAGE_NONE][0]['tid'] = $tid;
+    $node->field_os2intra_organisation[LANGUAGE_NONE][]['target_id'] = $tid;
 
     // Save department id on node
-    $node->field_os2intra_department_id[LANGUAGE_NONE][0]['value'] = $group;
+    if (field_info_instance('node', 'field_os2intra_department_id', 'os2intra_org_group_unit')) {
+      $node->field_os2intra_department_id[LANGUAGE_NONE][0]['value'] = $group;
+    }
 
     // Group type "Organisation"
     // Todo: make more generic
-    $node->field_os2intra_grouptype[LANGUAGE_NONE][0]['tid'] = 6;
+    if (field_info_instance('node', 'field_os2intra_grouptype', 'os2intra_org_group_unit')) {
+      $node->field_os2intra_grouptype[LANGUAGE_NONE][0]['tid'] = 6;
+    }
 
     // Closed group, require invitation
-    $node->field_og_subscribe_settings[LANGUAGE_NONE][0]['value'] = 'invitation';
+    if (field_info_instance('node', 'field_og_subscribe_settings', 'os2intra_org_group_unit')) {
+      $node->field_og_subscribe_settings[LANGUAGE_NONE][0]['value'] = 'invitation';
+    }
 
     $node = node_submit($node);
-
     node_save($node);
-
   }
   os2intra_user_import_save_log('', 'Finished importing groups');
+
+  // Send email that new groups has been created
+  if (count($created_terms > 0)) {
+    _os2intra_user_import_send_email($created_terms);
+  }
+}
+
+/**
+ * Searches for terms by department id and resturns an EntityFieldQuery result.
+ */
+function os2intra_user_import_query_term_by_department($department_id) {
+  $query = new EntityFieldQuery;
+  $query->entityCondition('entity_type', 'taxonomy_term');
+  $query->fieldCondition('field_os2intra_department_id', 'value', $department_id, '=');
+  $result = $query->execute();
+
+  return $result;
+}
+
+/**
+ * Notify via email that new departments has been created.
+ */
+function _os2intra_user_import_send_email($terms) {
+
+  global $base_url;
+
+  $body = "The list below contains name and URL of created departments:\n\n";
+
+  // Loop through terms and build email body
+  foreach ($terms as $term) {
+    $body.= $term->name . ' ' . $base_url . '/' . drupal_get_path_alias('taxonomy/term/124') . "\n";
+  }
+
+  // Build and send email to administrator, that a new department has been created.
+  $params = array(
+    'subject' => t('New department has been created'),
+    'body' => $body,
+  );
+  $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'));
+
+  drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
 }
 
 /**
@@ -853,4 +927,17 @@ function os2intra_user_import_user_title($job_description) {
   }
 
   return $term->tid;
+}
+
+/**
+ * Implements hook_mail().
+ */
+function os2intra_user_import_mail($key, &$message, $params) {
+  switch ($key) {
+    case 'os2intra_user_notification_email':
+
+      $message['subject'] = $params['subject'];
+      $message['body'][] = $params['body'];
+      break;
+  }
 }
