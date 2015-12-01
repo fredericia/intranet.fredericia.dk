@@ -40,3 +40,5 @@ features[views_view][] = os2intra_gruppe_medlemmer
 features[views_view][] = os2intra_node_panes
 features[views_view][] = os2intra_organisation
 features[views_view][] = os2intra_organisation_afdelinger
+features[views_view][] = os2intra_personale
+features[views_view][] = termpanel

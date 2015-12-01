@@ -1209,5 +1209,503 @@ function os2intra_panels_views_default_views() {
   );
   $export['os2intra_organisation_afdelinger'] = $view;
 
+  $view = new view();
+  $view->name = 'os2intra_personale';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'users';
+  $view->human_name = 'OS2intra Personale';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_os2intra_afdeling',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+    1 => array(
+      'field' => 'title',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: OG membership: Group User from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_user_group']['id'] = 'og_membership_related_user_group';
+  $handler->display->display_options['relationships']['og_membership_related_user_group']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_user_group']['field'] = 'og_membership_related_user_group';
+  /* Relationship: OG membership: Group Node from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'og_membership_related_node_group';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Ovenstående Afdeling */
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['settings'] = array(
+    'link' => 1,
+  );
+  /* Sort criterion: User: Created date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: OG membership: Group ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: User: The user ID */
+  $handler->display->display_options['filters']['uid_raw']['id'] = 'uid_raw';
+  $handler->display->display_options['filters']['uid_raw']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
+  $handler->display->display_options['filters']['uid_raw']['operator'] = '!=';
+  $handler->display->display_options['filters']['uid_raw']['value']['value'] = '1';
+
+  /* Display: Afdelingspersonale */
+  $handler = $view->new_display('panel_pane', 'Afdelingspersonale', 'panel_pane_1');
+  $handler->display->display_options['pane_category']['name'] = 'OS2intra';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'gid' => array(
+      'type' => 'none',
+      'context' => 'entity:taxonomy_term.tid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'OG membership: Group ID',
+    ),
+  );
+
+  /* Display: Afdelingspersonale - ovenstående */
+  $handler = $view->new_display('panel_pane', 'Afdelingspersonale - ovenstående', 'panel_pane_2');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Ovenstående Afdeling (field_os2intra_afdeling) */
+  $handler->display->display_options['arguments']['field_os2intra_afdeling_target_id']['id'] = 'field_os2intra_afdeling_target_id';
+  $handler->display->display_options['arguments']['field_os2intra_afdeling_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['field_os2intra_afdeling_target_id']['field'] = 'field_os2intra_afdeling_target_id';
+  $handler->display->display_options['arguments']['field_os2intra_afdeling_target_id']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['arguments']['field_os2intra_afdeling_target_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_os2intra_afdeling_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_os2intra_afdeling_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_os2intra_afdeling_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_os2intra_afdeling_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['pane_category']['name'] = 'OS2intra';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'field_os2intra_afdeling_target_id' => array(
+      'type' => 'user',
+      'context' => 'entity:blame.bid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Ovenstående Afdeling (field_os2intra_afdeling)',
+    ),
+  );
+
+  /* Display: Afdelingspersonale - ovenståendes term */
+  $handler = $view->new_display('panel_pane', 'Afdelingspersonale - ovenståendes term', 'panel_pane_3');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: OG membership: Group User from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_user_group']['id'] = 'og_membership_related_user_group';
+  $handler->display->display_options['relationships']['og_membership_related_user_group']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_user_group']['field'] = 'og_membership_related_user_group';
+  /* Relationship: OG membership: Group Node from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
+  /* Relationship: OG membership: Group Node from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_node_group_1']['id'] = 'og_membership_related_node_group_1';
+  $handler->display->display_options['relationships']['og_membership_related_node_group_1']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_node_group_1']['field'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group_1']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group_1']['label'] = 'Term fra ovenstående';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Ovenstående Afdeling */
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['settings'] = array(
+    'link' => 1,
+  );
+  /* Field: Content: Organisation */
+  $handler->display->display_options['fields']['field_os2intra_organisation']['id'] = 'field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['table'] = 'field_data_field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['field'] = 'field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_organisation']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['settings'] = array(
+    'link' => 1,
+  );
+  /* Field: Content: Organisation */
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['id'] = 'field_os2intra_organisation_1';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['table'] = 'field_data_field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['field'] = 'field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['relationship'] = 'og_membership_related_node_group_1';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['label'] = 'Ovenstående Organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Organisation (field_os2intra_organisation) */
+  $handler->display->display_options['arguments']['field_os2intra_organisation_target_id']['id'] = 'field_os2intra_organisation_target_id';
+  $handler->display->display_options['arguments']['field_os2intra_organisation_target_id']['table'] = 'field_data_field_os2intra_organisation';
+  $handler->display->display_options['arguments']['field_os2intra_organisation_target_id']['field'] = 'field_os2intra_organisation_target_id';
+  $handler->display->display_options['arguments']['field_os2intra_organisation_target_id']['relationship'] = 'og_membership_related_node_group_1';
+  $handler->display->display_options['arguments']['field_os2intra_organisation_target_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_os2intra_organisation_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_os2intra_organisation_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_os2intra_organisation_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_os2intra_organisation_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['pane_category']['name'] = 'OS2intra';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'field_os2intra_organisation_target_id' => array(
+      'type' => 'context',
+      'context' => 'entity:taxonomy_term.tid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Organisation (field_os2intra_organisation)',
+    ),
+  );
+
+  /* Display: Afdelingspersonale - ovenståendes terms ovenstående term */
+  $handler = $view->new_display('panel_pane', 'Afdelingspersonale - ovenståendes terms ovenstående term', 'panel_pane_4');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: OG membership: Group User from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_user_group']['id'] = 'og_membership_related_user_group';
+  $handler->display->display_options['relationships']['og_membership_related_user_group']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_user_group']['field'] = 'og_membership_related_user_group';
+  /* Relationship: OG membership: Group Node from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
+  /* Relationship: OG membership: Group Node from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_node_group_1']['id'] = 'og_membership_related_node_group_1';
+  $handler->display->display_options['relationships']['og_membership_related_node_group_1']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_node_group_1']['field'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group_1']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group_1']['label'] = 'Term fra ovenstående';
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'os2intra_organisation_tax' => 'os2intra_organisation_tax',
+    'os2web_base_tax_site_structure' => 0,
+    'os2web_taxonomies_tax_comittee' => 0,
+    'begivenhedstyper' => 0,
+    'user_hobbies' => 0,
+    'user_jobtitle' => 0,
+    'user_skills' => 0,
+    'os2web_taxonomies_tax_places' => 0,
+    'indlaegstyper' => 0,
+    'os2intra_canteen' => 0,
+    'os2web_taxonomies_tax_kle' => 0,
+    'os2web_taxonomies_tax_org' => 0,
+    'os2web_base_tax_promoteto' => 0,
+    'os2web_taxonomies_tax_politics' => 0,
+    'os2web_taxonomies_tax_portal_cat' => 0,
+    'os2web_taxonomies_tax_editor_tag' => 0,
+    'tags' => 0,
+    'topics' => 0,
+    'os2web_taxonomies_tax_user_pos' => 0,
+  );
+  /* Relationship: Taxonomy term: Parent term */
+  $handler->display->display_options['relationships']['parent']['id'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['relationships']['parent']['field'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['parent']['label'] = 'Overordnet element';
+  /* Relationship: Taxonomy term: Parent term */
+  $handler->display->display_options['relationships']['parent_1']['id'] = 'parent_1';
+  $handler->display->display_options['relationships']['parent_1']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['relationships']['parent_1']['field'] = 'parent';
+  $handler->display->display_options['relationships']['parent_1']['relationship'] = 'parent';
+  $handler->display->display_options['relationships']['parent_1']['label'] = 'Overordnet element';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Ovenstående Afdeling */
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['settings'] = array(
+    'link' => 1,
+  );
+  /* Field: Content: Organisation */
+  $handler->display->display_options['fields']['field_os2intra_organisation']['id'] = 'field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['table'] = 'field_data_field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['field'] = 'field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['relationship'] = 'og_membership_related_node_group';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_organisation']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['settings'] = array(
+    'link' => 1,
+  );
+  /* Field: Content: Organisation */
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['id'] = 'field_os2intra_organisation_1';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['table'] = 'field_data_field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['field'] = 'field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['relationship'] = 'og_membership_related_node_group_1';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['label'] = 'Ovenstående Organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['relationship'] = 'parent';
+  $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Taxonomy term: Parent term */
+  $handler->display->display_options['arguments']['parent']['id'] = 'parent';
+  $handler->display->display_options['arguments']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['arguments']['parent']['field'] = 'parent';
+  $handler->display->display_options['arguments']['parent']['relationship'] = 'parent';
+  $handler->display->display_options['arguments']['parent']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['parent']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['parent']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['parent']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['parent']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['pane_category']['name'] = 'OS2intra';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['argument_input'] = array(
+    'parent' => array(
+      'type' => 'context',
+      'context' => 'entity:taxonomy_term.tid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Ord i ordforråd: Overordnet ord',
+    ),
+  );
+  $translatables['os2intra_personale'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Group user from OG membership'),
+    t('Group node from OG membership'),
+    t('Nid'),
+    t('Alle'),
+    t('Afdelingspersonale'),
+    t('OS2intra'),
+    t('Afdelingspersonale - ovenstående'),
+    t('Afdelingspersonale - ovenståendes term'),
+    t('Term fra ovenstående'),
+    t('Organisation'),
+    t('Ovenstående Organisation'),
+    t('Afdelingspersonale - ovenståendes terms ovenstående term'),
+    t('term'),
+    t('Overordnet element'),
+    t('Term ID'),
+    t('.'),
+    t(','),
+  );
+  $export['os2intra_personale'] = $view;
+
+  $view = new view();
+  $view->name = 'termpanel';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'Termpanel';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'fki-box';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  /* Relationship: Taxonomy term: Representative node */
+  $handler->display->display_options['relationships']['tid_representative']['id'] = 'tid_representative';
+  $handler->display->display_options['relationships']['tid_representative']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['tid_representative']['field'] = 'tid_representative';
+  $handler->display->display_options['relationships']['tid_representative']['label'] = 'Repræsentativ node';
+  $handler->display->display_options['relationships']['tid_representative']['required'] = TRUE;
+  $handler->display->display_options['relationships']['tid_representative']['subquery_sort'] = 'node.nid';
+  $handler->display->display_options['relationships']['tid_representative']['subquery_view'] = '';
+  $handler->display->display_options['relationships']['tid_representative']['subquery_namespace'] = '';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Contextual filter: Taxonomy term: Parent term */
+  $handler->display->display_options['arguments']['parent']['id'] = 'parent';
+  $handler->display->display_options['arguments']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['arguments']['parent']['field'] = 'parent';
+  $handler->display->display_options['arguments']['parent']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['parent']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['parent']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['parent']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['parent']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['parent']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'os2web_base_tax_site_structure' => 'os2web_base_tax_site_structure',
+  );
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'parent' => array(
+      'type' => 'context',
+      'context' => 'entity:taxonomy_term.tid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Ord i ordforråd: Overordnet ord',
+    ),
+  );
+  $translatables['termpanel'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Repræsentativ node'),
+    t('Alle'),
+    t('Content pane'),
+    t('View panes'),
+  );
+  $export['termpanel'] = $view;
+
   return $export;
 }
