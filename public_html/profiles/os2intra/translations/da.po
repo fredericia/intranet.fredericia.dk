@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-11-30 14:17+0100\n"
-"PO-Revision-Date: 2015-11-30 14:17+0100\n"
+"POT-Creation-Date: 2015-12-02 14:34+0100\n"
+"PO-Revision-Date: 2015-12-02 14:34+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -7527,10 +7527,6 @@ msgstr ""
 
 #: /admin/reports/status
 msgid "E-mail: \"Account activation\" template"
-msgstr ""
-
-#: /
-msgid "Access denied. You must log in to view this page."
 msgstr ""
 
 #: /admin/reports/status
@@ -31802,148 +31798,471 @@ msgstr ""
 msgid "OS2Web - Frontend"
 msgstr ""
 
-#: /admin/modules
-msgid "Contains custom links for OS2Intra."
+#: /grafisk-materiale/visitkort
+msgid "!name via !site_name"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /printpdf/241
+msgid "Udgivet på %site_name"
+msgstr ""
+
+#: /printpdf/241
+msgid "hentet den %date"
+msgstr ""
+
+#: /printmail/230
+msgid "Velkommen til gruppen \"Intranet-redaktører\""
+msgstr ""
+
+#: /printmail/230
+msgid "!user har sendt dig en besked fra !site"
+msgstr ""
+
+#: /
 msgid "Web: Show link"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Whether to show the printer-friendly version link."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Web: Show link in individual comments"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid ""
 "Whether to show the printer-friendly version link in individual "
 "comments."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Web: Show Printer-friendly URLs list"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Whether to show the URL list."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Web: Number of page accesses"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Counter of accesses to the printer-friendly version for this node."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Web: Last access"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "The date of the last access to the node's printer-friendly version."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Email: Show link"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Whether to show the send by email link."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Email: Show link in individual comments"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Whether to show the send by email link in individual comments."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Email: Show Printer-friendly URLs list"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Email: Number of page accesses"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Counter of accesses to the send by email form for this node."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Email: Last access"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "The date of the last access to the node's send by email form."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Email: Number of sent emails"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Counter of emails sent for this node."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Email: Last email sent"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "The date when the node was last sent by email."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "PDF: Show link"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Whether to show the PDF version link."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "PDF: Show link in individual comments"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Whether to show the PDF version link in individual comments."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "PDF: Show Printer-friendly URLs list"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "PDF: Number of page accesses"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "Counter of accesses to the PDF version for this node."
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "PDF: Last access"
 msgstr ""
 
-#: /admin/modules?filter=os2intra_cu&enabled=1&disabled=1&required=1&unavailable=1
+#: /
 msgid "The date of the last access to the node's PDF version."
+msgstr ""
+
+#: /printmail/34
+msgid "Visitkort"
+msgstr ""
+
+#: /printmail/149
+msgid "TEST:  Arbejdsmiljø"
+msgstr ""
+
+#: /
+msgid "The EPUB library to download. Available choices: !libs."
+msgstr ""
+
+#: /
+msgid "Download and extract a EPUB library."
+msgstr ""
+
+#: /
+msgid "The EPUB library to download. Available choices: phpepub."
+msgstr ""
+
+#: /
+msgid "The PDF library to download. Available choices: !libs."
+msgstr ""
+
+#: /
+msgid "Download and extract a PDF library."
 msgstr ""
 
 #: /
 msgid ""
-"The generator version number to store in the MANIFEST file. The "
-"default is 7.0.0."
+"The PDF library to download. Available choices: dompdf, mpdf, tcpdf, "
+"wkhtmltopdf."
 msgstr ""
 
-#: profiles/os2intra/modules/custom/node_basket/js/node_basket.js
-msgid "An error occured. Try to refresh the page and try again."
+#: /
+msgid "Group user from OG membership"
+msgstr ""
+
+#: /
+msgid "Afdelingspersonale"
+msgstr ""
+
+#: /
+msgid "Afdelingspersonale - ovenstående"
+msgstr ""
+
+#: /
+msgid "Afdelingspersonale - ovenståendes term"
+msgstr ""
+
+#: /
+msgid "Term fra ovenstående"
+msgstr ""
+
+#: /
+msgid "Ovenstående Organisation"
+msgstr ""
+
+#: /
+msgid "Afdelingspersonale - ovenståendes terms ovenstående term"
+msgstr ""
+
+#: /
+msgid "PDF: Paper size"
+msgstr ""
+
+#: /
+msgid "Configured PDF paper size"
+msgstr ""
+
+#: /
+msgid "PDF: Page orientation"
+msgstr ""
+
+#: /
+msgid "Configured PDF page orientation."
+msgstr ""
+
+#: /
+msgid "Printervenlig version"
+msgstr ""
+
+#: /
+msgid "Text used in the link to the send by email form."
+msgstr ""
+
+#: /
+msgid "Send via e-mail"
+msgstr ""
+
+#: /
+msgid "PDF udgave"
+msgstr ""
+
+#: /
+msgid "dompdf"
+msgstr ""
+
+#: /
+msgid "Configure the dompdf options."
+msgstr ""
+
+#: /admin/people
+msgid "Administer the module"
+msgstr ""
+
+#: /admin/people
+msgid "Perform maintenance tasks for the print module."
+msgstr ""
+
+#: /admin/people
+msgid "Access the printer-friendly page"
+msgstr ""
+
+#: /admin/people
+msgid ""
+"View the printer-friendly pages and the links to them in the original "
+"pages."
+msgstr ""
+
+#: /admin/people
+msgid "access print"
+msgstr ""
+
+#: /admin/people
+msgid "administer print"
+msgstr ""
+
+#: /admin/people
+msgid "Access the Send by email functionality"
+msgstr ""
+
+#: /admin/people
+msgid ""
+"Provides the ability to send pages by email and the links to them in "
+"the original pages."
+msgstr ""
+
+#: /admin/people
+msgid "Send unlimited emails"
+msgstr ""
+
+#: /admin/people
+msgid ""
+"Overrides the built-in hourly threshold limits when sending emails. "
+"This permission should only be granted to trusted users, due to it's "
+"potential in enabling the use of your site as a source of email spam."
+msgstr ""
+
+#: /admin/people
+msgid "access send by email"
+msgstr ""
+
+#: /admin/people
+msgid "send unlimited emails"
+msgstr ""
+
+#: /admin/people
+msgid "Node-specific configuration"
+msgstr ""
+
+#: /admin/people
+msgid "Enable access to the per-node settings."
+msgstr ""
+
+#: /admin/people
+msgid "node-specific print configuration"
+msgstr ""
+
+#: /admin/people
+msgid "Access the PDF version"
+msgstr ""
+
+#: /admin/people
+msgid "View the PDF versions and the links to them in the original pages."
+msgstr ""
+
+#: /admin/people
+msgid "access PDF version"
+msgstr ""
+
+#: /content/bestil-visitkort/webform-results/analysis
+msgid ""
+"This page shows analysis of submitted data, such as the number of "
+"submissions per component value, calculations, and averages. "
+"Additional components may be added under the \"Add analysis "
+"components\" fieldset."
+msgstr ""
+
+#: /content/bestil-visitkort/webform-results/table
+msgid "Medarbejder"
+msgstr ""
+
+#: /content/bestil-visitkort/webform-results/table
+msgid "Stillingsbetegnelse"
+msgstr ""
+
+#: /content/bestil-visitkort/webform-results/table
+msgid "Telefon"
+msgstr ""
+
+#: /content/bestil-visitkort/webform-results/table
+msgid "Mobil"
+msgstr ""
+
+#: /content/bestil-visitkort/webform-results/table
+msgid "Visitkorttype"
+msgstr ""
+
+#: /content/bestil-visitkort/webform-results/table
+msgid "Tilvalg til visitkort"
+msgstr ""
+
+#: /content/bestil-visitkort/webform-results/table
+msgid "Antal visitkort"
+msgstr ""
+
+#: /content/bestil-visitkort/webform-results/table
+msgid "Vedhæft evt. billede"
+msgstr ""
+
+#: /admin/modules
+msgid "Contains custom links for OS2Intra."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Adds the capability to export pages as PDF. Requires a PDF library and "
+"the respective handler module."
+msgstr ""
+
+#: /admin/modules
+msgid "Generates a printer-friendly version of Drupal pages."
+msgstr ""
+
+#: /group/node/43/admin/people/add-user
+msgid "Select the field name, the group membership should be registered in."
+msgstr ""
+
+#: /useractivation
+msgid "Birthdate"
+msgstr ""
+
+#: /useractivation
+msgid "Format: 10/03/1982"
+msgstr ""
+
+#: /linkit/autocomplete/linkit_field_node?s=pro
+msgid "Linkit autocomplete response function"
+msgstr ""
+
+#: /
+msgid "Tree (Adjacency model)"
+msgstr ""
+
+#: /
+msgid "Display the results as a nested tree"
+msgstr ""
+
+#: /content/bestilling-af-haandvaerkeropgaver-ved-raadhusbetjentene/webform-results/table
+msgid "Lokalenr."
+msgstr ""
+
+#: /content/bestilling-af-haandvaerkeropgaver-ved-raadhusbetjentene/webform-results/table
+msgid "Kontaktperson"
+msgstr ""
+
+#: /content/bestilling-af-haandvaerkeropgaver-ved-raadhusbetjentene/webform-results/table
+msgid "Telefon nr."
+msgstr ""
+
+#: /content/bestilling-af-haandvaerkeropgaver-ved-raadhusbetjentene/webform-results/table
+msgid "Udføres af"
+msgstr ""
+
+#: /content/bestilling-af-haandvaerkeropgaver-ved-raadhusbetjentene/webform-results/table
+msgid "I samarbejde med"
+msgstr ""
+
+#: /content/bestilling-af-haandvaerkeropgaver-ved-raadhusbetjentene/webform-results/table
+msgid "Forventes udført"
+msgstr ""
+
+#: /content/bestilling-af-haandvaerkeropgaver-ved-raadhusbetjentene/webform-results/table
+msgid "Hasteopgave"
+msgstr ""
+
+#: /content/bestilling-af-haandvaerkeropgaver-ved-raadhusbetjentene/webform-results/table
+msgid "Opsætning"
+msgstr ""
+
+#: /content/bestilling-af-haandvaerkeropgaver-ved-raadhusbetjentene/webform-results/table
+msgid "Flytning af møbler eller lignende"
+msgstr ""
+
+#: /content/bestilling-af-haandvaerkeropgaver-ved-raadhusbetjentene/webform-results/table
+msgid "El-opgave"
+msgstr ""
+
+#: /content/bestilling-af-haandvaerkeropgaver-ved-raadhusbetjentene/webform-results/table
+msgid "Reparation"
+msgstr ""
+
+#: /content/bestilling-af-haandvaerkeropgaver-ved-raadhusbetjentene/webform-results/table
+msgid "Andet"
+msgstr ""
+
+#: /content/bestilling-af-haandvaerkeropgaver-ved-raadhusbetjentene/webform-results/table
+msgid "Ønsker at blive kontaktet"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"A Views style plugin to display a tree of elements using the adjacency "
+"model."
 msgstr ""
 
 msgid "Public files"
@@ -35425,6 +35744,7 @@ msgstr "Gem"
 msgid "Update"
 msgstr "Opdatér"
 
+#: ; profiles/os2intra/modules/contrib/epsacrop/js/epsacrop.js
 msgid "Cancel"
 msgstr "Annullér"
 
@@ -70019,6 +70339,10 @@ msgstr "Tilpasset etiket"
 msgid "End time"
 msgstr "Slut tid"
 
+#: /
+msgid "Access denied. You must log in to view this page."
+msgstr "Adgang afvist. Du skal logge ind for adgang."
+
 msgid "Opt-in or out of tracking"
 msgstr "Til- eller fravalg af tracking"
 
@@ -71468,7 +71792,7 @@ msgstr "Zoomniveau"
 
 #: /
 msgid "@files downloadable files"
-msgstr "@files fil til download"
+msgstr "@files filer til download"
 
 #: /node_basket/basket/view/convert
 msgid "Your basket was succesfully converted to a toolbox."
@@ -71476,7 +71800,7 @@ msgstr "Din kurv blev succesfuldt konverteret til en værktøjskasse."
 
 #: /strategier-politikker-og-visioner/vision-2020
 msgid "@files downloadable file"
-msgstr "@files filer til download"
+msgstr "@files fil til download"
 
 #: /node_basket
 msgid "Delete toolbox"
@@ -72115,12 +72439,12 @@ msgid "Send page by email"
 msgstr "Send side via e-mail"
 
 #: profiles/os2intra/modules/custom/node_basket/js/node_basket.js
-msgid "The page was sucessfully added to the basket"
-msgstr "Siden blev tilføjet til kurven."
-
-#: profiles/os2intra/modules/custom/node_basket/js/node_basket.js
 msgid "Success!"
 msgstr "Succes!"
+
+#: profiles/os2intra/modules/custom/node_basket/js/node_basket.js
+msgid "The page was sucessfully added to the basket"
+msgstr "Siden blev tilføjet til kurven."
 
 #: profiles/os2intra/modules/custom/node_basket/js/node_basket.js
 msgid "An error occured"
