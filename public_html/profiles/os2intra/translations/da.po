@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-12-02 14:34+0100\n"
-"PO-Revision-Date: 2015-12-02 14:34+0100\n"
+"POT-Creation-Date: 2015-12-02 14:35+0100\n"
+"PO-Revision-Date: 2015-12-02 14:35+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -289,10 +289,6 @@ msgstr ""
 
 #: /install.php?profile=os2intra&locale=da&op=start&id=2
 msgid "Message type category"
-msgstr ""
-
-#: /install.php?profile=os2intra&locale=da&op=start&id=2
-msgid "Search result highlighting input"
 msgstr ""
 
 #: /install.php?profile=os2intra&locale=da&op=start&id=2
@@ -1228,10 +1224,6 @@ msgstr ""
 
 #: /install.php?profile=os2intra&locale=da&op=start&id=2
 msgid "Og membership \"etid\" property."
-msgstr ""
-
-#: /install.php?profile=os2intra&locale=da&op=start&id=2
-msgid "Group ID"
 msgstr ""
 
 #: /install.php?profile=os2intra&locale=da&op=start&id=2
@@ -3304,10 +3296,6 @@ msgid ""
 "force redirect to another page using the format \"5; "
 "url=http://example.com/\", which would be triggered after five "
 "seconds."
-msgstr ""
-
-#: misc/drupal.js
-msgid "CustomMessage: !customMessage"
 msgstr ""
 
 #: /install.php?profile=os2intra&locale=da&id=2&op=finished
@@ -14471,10 +14459,6 @@ msgstr ""
 msgid "The response failed verification so will not be processed."
 msgstr ""
 
-#: misc/ajax.js
-msgid "The callback URL is not local and not trusted: !url"
-msgstr ""
-
 #: /admin/config/system/piwik
 msgid "Line @lineno"
 msgstr ""
@@ -20775,10 +20759,6 @@ msgid "The language for the CKEditor user interface."
 msgstr ""
 
 #: /admin/config/content/ckeditor/edit/Full
-msgid "Language direction"
-msgstr ""
-
-#: /admin/config/content/ckeditor/edit/Full
 msgid "Get from current locale (default)"
 msgstr ""
 
@@ -25684,14 +25664,6 @@ msgstr ""
 msgid "Refresh YouTube information from source"
 msgstr ""
 
-#: /admin/content/file
-msgid "1 place"
-msgstr ""
-
-#: /admin/content/file
-msgid "@count places"
-msgstr ""
-
 #: /admin/structure/taxonomy_manager/voc/os2web_base_tax_site_structure
 msgid "Deleting a term will delete all its children if there are any."
 msgstr ""
@@ -27193,10 +27165,6 @@ msgstr ""
 msgid "Features of each Hierarchical Select implementation."
 msgstr ""
 
-#: /node/add/os2intra-base-page
-msgid "Site-wide settings"
-msgstr ""
-
 #: sites/all/modules/contrib/hierarchical_select/hierarchical_select.js
 msgid "Received an invalid response from the server."
 msgstr ""
@@ -28349,10 +28317,6 @@ msgid ""
 "details."
 msgstr ""
 
-#: /user/register
-msgid "- Restricted access -"
-msgstr ""
-
 #: /file/22/usage
 msgid "This table lists all of the places where @filename is used."
 msgstr ""
@@ -28914,19 +28878,11 @@ msgid ""
 msgstr ""
 
 #: /system/ajax
-msgid "Level"
-msgstr ""
-
-#: /system/ajax
 msgid "Root level"
 msgstr ""
 
 #: /system/ajax
 msgid "Sublevel !depth"
-msgstr ""
-
-#: /system/ajax
-msgid "Allow"
 msgstr ""
 
 #: /system/ajax
@@ -30231,10 +30187,6 @@ msgstr ""
 msgid "No imported items."
 msgstr ""
 
-#: /import/os2intra_organisation
-msgid "Unlock"
-msgstr ""
-
 #: /batch?id=30&op=do
 msgid ""
 "The external URL of the item. E. g. the feed item URL in the case of a "
@@ -30354,22 +30306,6 @@ msgid "Manage Linkit profiles."
 msgstr ""
 
 #: /
-msgid "Linkit profile"
-msgstr ""
-
-#: /
-msgid "Linkit profiles"
-msgstr ""
-
-#: /
-msgid "Extend Linkit with @entity support."
-msgstr ""
-
-#: /
-msgid "Administer Linkit"
-msgstr ""
-
-#: /
 msgid "Perform administration tasks for Linkit."
 msgstr ""
 
@@ -30377,20 +30313,8 @@ msgstr ""
 msgid "Support for the Linkit module <em>(buttons: Linkit)</em>"
 msgstr ""
 
-#: /
-msgid "Support for Linkit module"
-msgstr ""
-
 #: /intra
 msgid "Linkit Profiles"
-msgstr ""
-
-#: /intra
-msgid "Add new profile"
-msgstr ""
-
-#: /admin/config/content/formats/indhold
-msgid "Import profiles"
 msgstr ""
 
 #: /admin/config/content/linkit
@@ -30407,10 +30331,6 @@ msgstr ""
 
 #: /admin/config/content/linkit/add
 msgid "This profile will be used with"
-msgstr ""
-
-#: /admin/config/content/linkit/add
-msgid "Editors"
 msgstr ""
 
 #: /admin/config/content/linkit/add
@@ -30456,33 +30376,13 @@ msgid "Available tokens: %tokens."
 msgstr ""
 
 #: /admin/config/content/linkit/add
-msgid "Type filter"
-msgstr ""
-
-#: /admin/config/content/linkit/add
-msgid "If left blank, all types will appear in autocomplete results."
-msgstr ""
-
-#: /admin/config/content/linkit/add
 msgid "Group by bundle"
-msgstr ""
-
-#: /admin/config/content/linkit/add
-msgid "Include unpublished nodes"
 msgstr ""
 
 #: /admin/config/content/linkit/add
 msgid ""
 "In order to see unpublished nodes, the user must also have permissions "
 "to do so. "
-msgstr ""
-
-#: /admin/config/content/linkit/add
-msgid "Managed files"
-msgstr ""
-
-#: /admin/config/content/linkit/add
-msgid "Extend Linkit with file support (Managed files)."
 msgstr ""
 
 #: /admin/config/content/linkit/add
@@ -30518,27 +30418,7 @@ msgid "Show thumbnails <em>(using the image style !linkit_thumb_link)</em>"
 msgstr ""
 
 #: /admin/config/content/linkit/add
-msgid "Show pixel dimensions"
-msgstr ""
-
-#: /admin/config/content/linkit/add
-msgid "Markdown"
-msgstr ""
-
-#: /admin/config/content/linkit/add
-msgid "Raw URL"
-msgstr ""
-
-#: /admin/config/content/linkit/add
-msgid "HTML Link"
-msgstr ""
-
-#: /admin/config/content/linkit/add
 msgid "Insert methods"
-msgstr ""
-
-#: /admin/config/content/linkit/add
-msgid "Insert plugin"
 msgstr ""
 
 #: /admin/config/content/linkit/add
@@ -30594,10 +30474,6 @@ msgid ""
 msgstr ""
 
 #: /admin/config/content/linkit/add
-msgid "Id"
-msgstr ""
-
-#: /admin/config/content/linkit/add
 msgid "Access key"
 msgstr ""
 
@@ -30605,10 +30481,6 @@ msgstr ""
 msgid ""
 "Attributes are HTML attributes that will be attached to\n"
 "      the insert plugin."
-msgstr ""
-
-#: /admin/config/content/linkit/add
-msgid "Autocomplete options"
 msgstr ""
 
 #: /admin/config/content/linkit/add
@@ -30628,31 +30500,15 @@ msgid ""
 msgstr ""
 
 #: /admin/config/content/linkit/add
-msgid "Key press delay"
-msgstr ""
-
-#: /admin/config/content/linkit/add
 msgid ""
 "Time from last key press to poll the server. A higher\n"
 "      value reduces server load. <em>Default: @default</em>"
 msgstr ""
 
 #: /admin/config/content/linkit/add
-msgid "ms"
-msgstr ""
-
-#: /admin/config/content/linkit/add
-msgid "Remote timeout"
-msgstr ""
-
-#: /admin/config/content/linkit/add
 msgid ""
 "Client side timeout for a request to the server.\n"
 "      <em>Default: @default</em>"
-msgstr ""
-
-#: /admin/config/content/linkit
-msgid "Editor"
 msgstr ""
 
 #: /admin/config/content/linkit/add
@@ -30681,10 +30537,6 @@ msgid ""
 "might get a button that allows you to 'Remove'. You may customise the "
 "text for that button here, an empty value will just use the default "
 "value for the button text."
-msgstr ""
-
-#: /admin/structure/types/manage/spotbox/fields/field_spotbox_link
-msgid "Linkit field settings"
 msgstr ""
 
 #: /admin/structure/types/manage/spotbox/fields/field_spotbox_link
@@ -31517,10 +31369,6 @@ msgstr ""
 msgid "This will be populated by the search, or you can fill it in yourself."
 msgstr ""
 
-#: /linkit/dashboard/linkit_field_node
-msgid "Insert link"
-msgstr ""
-
 #: sites/all/modules/contrib/linkit/js/linkit.dashboard.js
 msgid "Open file browser"
 msgstr ""
@@ -32298,7 +32146,6 @@ msgstr "Layouts"
 msgid "Table that contains field group entries and settings."
 msgstr "Tabel som indeholder feltgrupper og indstillinger."
 
-#: ; misc/machine-name.js
 msgid "Edit"
 msgstr "Redigér"
 
@@ -32380,7 +32227,6 @@ msgstr "Højre sidepanel"
 msgid "Content"
 msgstr "Indhold"
 
-#: ; profiles/os2intra/modules/contrib/options_element/options_element.js
 msgid "Default"
 msgstr "Standard"
 
@@ -32416,6 +32262,9 @@ msgstr "RSS"
 
 msgid "Search index"
 msgstr "Søgeindex"
+
+msgid "Search result highlighting input"
+msgstr "Søgeresultat med fremhævelse af input"
 
 msgid "Redirect"
 msgstr "Redirect"
@@ -32680,7 +32529,6 @@ msgstr "Tekstområde med resumé"
 msgid "&lt;none&gt;"
 msgstr "&lt;ingen&gt;"
 
-#: ; profiles/os2intra/modules/contrib/date/date_api/date_year_range.js
 msgid "Other"
 msgstr "Anden"
 
@@ -32711,7 +32559,6 @@ msgstr "Renderet entity"
 msgid "Display the referenced entities rendered by entity_view()."
 msgstr "Vis de refererede entities renderet af entity_view()."
 
-#: ; profiles/os2intra/modules/contrib/views/js/views-admin.js; profiles/os2intra/modules/contrib/options_element/options_element.js
 msgid "Add"
 msgstr "Tilføj"
 
@@ -32754,7 +32601,6 @@ msgstr "Etiket, som link med etiket som titel"
 msgid "Separate title and URL"
 msgstr "Separat titel og URL"
 
-#: ; profiles/os2intra/modules/contrib/options_element/options_element.js
 msgid "Key"
 msgstr "Nøgle"
 
@@ -32816,7 +32662,6 @@ msgstr ""
 msgid "Storage"
 msgstr "Lagring"
 
-#: ; profiles/os2intra/themes/contrib/adminimal_theme/js/adminimal_theme.js
 msgid "Search"
 msgstr "Søg"
 
@@ -32872,7 +32717,6 @@ msgstr "Oprette forrige/næste navigation."
 msgid "Webform"
 msgstr "Webformular"
 
-#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Status"
 msgstr "Status"
 
@@ -32888,7 +32732,6 @@ msgstr "Sid"
 msgid "The submission ID of the submission."
 msgstr "Indsendelsesn ID."
 
-#: ; profiles/os2intra/modules/contrib/options_element/options_element.js
 msgid "Value"
 msgstr "Værdi"
 
@@ -33593,6 +33436,9 @@ msgstr "UUID"
 msgid "Revisions"
 msgstr "Versioner"
 
+msgid "Group ID"
+msgstr "Gruppe ID"
+
 msgid "Importer"
 msgstr "Importér"
 
@@ -33825,7 +33671,6 @@ msgstr "Udgivet"
 msgid "Whether or not the content is published."
 msgstr "Hvorvidt indholdet er udgivet eller ej."
 
-#: ; modules/node/node.js; modules/node/content_types.js
 msgid "Not published"
 msgstr "Ikke udgivet"
 
@@ -34117,7 +33962,6 @@ msgstr "Udvidelse"
 msgid "The extension of the file."
 msgstr "Filens endelse."
 
-#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Size"
 msgstr "Størrelse"
 
@@ -35081,7 +34925,6 @@ msgstr "."
 msgid ","
 msgstr ","
 
-#: ; profiles/os2intra/modules/contrib/module_filter/js/module_filter_tab.js
 msgid "All"
 msgstr "Alle"
 
@@ -35342,11 +35185,9 @@ msgstr "Tilsluttet"
 msgid "Off"
 msgstr "Afbrudt"
 
-#: ; modules/filter/filter.admin.js; profiles/os2intra/modules/contrib/search_api/search_api.admin.js
 msgid "Enabled"
 msgstr "Aktiveret"
 
-#: ; profiles/os2intra/modules/contrib/taxonomy_menu_trails/js/node-type-form.js; modules/filter/filter.admin.js; profiles/os2intra/modules/contrib/search_api/search_api.admin.js
 msgid "Disabled"
 msgstr "Deaktiveret"
 
@@ -35560,37 +35401,32 @@ msgstr "Kanonisk URL"
 msgid "Refresh"
 msgstr "Opdatér"
 
-#: ; misc/drupal.js
 msgid "An AJAX HTTP error occurred."
 msgstr "Der opstod en AJAX HTTP-fejl."
 
-#: ; misc/drupal.js
 msgid "HTTP Result Code: !status"
 msgstr "HTTP resultatkode: !status"
 
-#: ; misc/drupal.js
 msgid "An AJAX HTTP request terminated abnormally."
 msgstr "En AJAX HTTP-forespørgsel afsluttede på unormal vis."
 
-#: ; misc/drupal.js
 msgid "Debugging information follows."
 msgstr "Information til fejlsøgning følger."
 
-#: ; misc/drupal.js
 msgid "Path: !uri"
 msgstr "Sti: !uri"
 
-#: ; misc/drupal.js
 msgid "StatusText: !statusText"
 msgstr "StatusText: !statusText"
 
-#: ; misc/drupal.js
 msgid "ResponseText: !responseText"
 msgstr "ResponseText: !responseText"
 
-#: ; misc/drupal.js
 msgid "ReadyState: !readyState"
 msgstr "ReadyState: !readyState"
+
+msgid "CustomMessage: !customMessage"
+msgstr "CustomMessage: !customMessage"
 
 msgid "The date this submission was submitted."
 msgstr "Datoen for indsendelse."
@@ -35731,7 +35567,6 @@ msgstr "Indtast adgangskoden der hører til dit brugernavn."
 msgid "Manage"
 msgstr "Håndtér"
 
-#: ; modules/contextual/contextual.js
 msgid "Configure"
 msgstr "Konfigurér"
 
@@ -35744,11 +35579,9 @@ msgstr "Gem"
 msgid "Update"
 msgstr "Opdatér"
 
-#: ; profiles/os2intra/modules/contrib/epsacrop/js/epsacrop.js
 msgid "Cancel"
 msgstr "Annullér"
 
-#: ; profiles/os2intra/modules/contrib/options_element/options_element.js
 msgid "Remove"
 msgstr "Fjern"
 
@@ -36181,7 +36014,6 @@ msgstr "En dato i 'kort' format (%date)"
 msgid "Medium format"
 msgstr "Mellem format"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Mon"
 msgstr "man"
 
@@ -36191,7 +36023,6 @@ msgstr "En dato i 'mellem' format (%date)"
 msgid "Long format"
 msgstr "Langt format"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Monday"
 msgstr "Mandag"
 
@@ -36565,7 +36396,6 @@ msgstr "Opdatér stil"
 msgid "Confirm"
 msgstr "Bekræft"
 
-#: ; profiles/os2intra/modules/contrib/media/modules/media_wysiwyg/js/media_wysiwyg.format_form.js
 msgid "Submit"
 msgstr "Indsend"
 
@@ -36581,14 +36411,12 @@ msgstr "Genopbyg"
 msgid "Primary tabs"
 msgstr "Primære faneblade"
 
-#: ; sites/all/modules/contrib/field_group/horizontal-tabs/horizontal-tabs.js; misc/vertical-tabs.js
 msgid "(active tab)"
 msgstr "(aktiv fane)"
 
 msgid "!local-task-title!active"
 msgstr "!local-task-title!active"
 
-#: ; profiles/os2intra/modules/contrib/webform/js/webform.js
 msgid "This field is required."
 msgstr "Dette felt er obligatorisk."
 
@@ -36601,7 +36429,6 @@ msgstr "Gå til hovedindhold"
 msgid "User interface"
 msgstr "Brugergrænseflade"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Next"
 msgstr "Næste"
 
@@ -36799,7 +36626,6 @@ msgstr ""
 "Sider på et givet niveau sorteres først efter vægt og dernæst "
 "efter titel."
 
-#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "none"
 msgstr "ingen"
 
@@ -36848,27 +36674,21 @@ msgstr "Session åbnet for %name."
 msgid "Open"
 msgstr "Åben"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Sunday"
 msgstr "Søndag"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Tuesday"
 msgstr "Tirsdag"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Wednesday"
 msgstr "Onsdag"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Thursday"
 msgstr "Torsdag"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Friday"
 msgstr "Fredag"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Saturday"
 msgstr "Lørdag"
 
@@ -36878,7 +36698,6 @@ msgstr "Format"
 msgid "History"
 msgstr "Historik"
 
-#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Filename"
 msgstr "Filnavn"
 
@@ -37059,7 +36878,6 @@ msgstr "Fjern fra indholdsfortegnelse"
 msgid "Unknown export format."
 msgstr "Ukendt eksportformat."
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Done"
 msgstr "Færdig"
 
@@ -37263,11 +37081,9 @@ msgstr "Advarsel"
 msgid "blocked"
 msgstr "blokeret"
 
-#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "N/A"
 msgstr "N/A"
 
-#: ; profiles/os2intra/modules/contrib/media/js/media.popups.js
 msgid "OK"
 msgstr "O.k."
 
@@ -37382,7 +37198,6 @@ msgstr "Widget"
 msgid "Last reply"
 msgstr "Seneste svar"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Prev"
 msgstr "Forrige"
 
@@ -37479,75 +37294,57 @@ msgstr "Tyrkiet"
 msgid "Day"
 msgstr "Dag"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Tue"
 msgstr "tir"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Wed"
 msgstr "ons"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Thu"
 msgstr "tor"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Fri"
 msgstr "fre"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Sat"
 msgstr "lør"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Sun"
 msgstr "søn"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "January"
 msgstr "Januar"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "February"
 msgstr "Februar"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "March"
 msgstr "Marts"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "April"
 msgstr "April"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "May"
 msgstr "maj"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "June"
 msgstr "Juni"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "July"
 msgstr "Juli"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "August"
 msgstr "August"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "September"
 msgstr "September"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "October"
 msgstr "Oktober"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "November"
 msgstr "November"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "December"
 msgstr "December"
 
@@ -38348,7 +38145,6 @@ msgstr "Skrevet den"
 msgid "Leave blank for %anonymous."
 msgstr "Lad feltet stå tomt for %anonymous."
 
-#: ; misc/collapse.js
 msgid "Show"
 msgstr "Vis"
 
@@ -38511,11 +38307,9 @@ msgstr "Ingen brugere valgt."
 msgid "Detected malicious attempt to alter protected user fields."
 msgstr "Opdaget forsøg på at ændre beskyttede felter."
 
-#: ; misc/tableselect.js
 msgid "Select all rows in this table"
 msgstr "Vælg alle rækker i tabellen"
 
-#: ; misc/tableselect.js
 msgid "Deselect all rows in this table"
 msgstr "Fravælg alle rækker i tabellen"
 
@@ -38543,7 +38337,6 @@ msgstr "Emne"
 msgid "Allowed values list"
 msgstr "Liste af tilladte værdier"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Today"
 msgstr "I dag"
 
@@ -38574,47 +38367,36 @@ msgstr "Indstil blok"
 msgid "How many content items to display in \"day\" list."
 msgstr "Hvor mange indlæg der vises i listen \"Dagens\"."
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Jan"
 msgstr "jan"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Feb"
 msgstr "feb"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Mar"
 msgstr "mar"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Apr"
 msgstr "apr"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Jun"
 msgstr "jun"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Jul"
 msgstr "jul"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Aug"
 msgstr "aug"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Sep"
 msgstr "sep"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Oct"
 msgstr "okt"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Nov"
 msgstr "nov"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Dec"
 msgstr "dec"
 
@@ -38678,31 +38460,24 @@ msgstr "tegn"
 msgid "profile"
 msgstr "profil"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Su"
 msgstr "Sø"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Mo"
 msgstr "Ma"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Tu"
 msgstr "Ti"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "We"
 msgstr "On"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Th"
 msgstr "To"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Fr"
 msgstr "Fr"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "Sa"
 msgstr "Lø"
 
@@ -39074,7 +38849,6 @@ msgstr "Mappe til midlertidige filer"
 msgid "File upload error. Could not move uploaded file."
 msgstr "Fejl ved filoverførsel. Kunne ikke flytte den overførte fil."
 
-#: ; profiles/os2intra/modules/contrib/adminimal_admin_menu/js/slicknav/jquery-no-conflict.slicknav.js; profiles/os2intra/modules/contrib/adminimal_admin_menu/js/adminimal_admin_menu.js
 msgid "Shortcuts"
 msgstr "Genveje"
 
@@ -39102,7 +38876,6 @@ msgstr "Navnet der tildeles anonyme brugere."
 msgid "Alternate text"
 msgstr "Alternativ tekst"
 
-#: ; misc/ajax.js
 msgid "Please wait..."
 msgstr "Vent venligst…"
 
@@ -39396,7 +39169,6 @@ msgstr "!title !required"
 msgid "My blog"
 msgstr "Min blog"
 
-#: ; misc/collapse.js
 msgid "Hide"
 msgstr "Skjul"
 
@@ -40475,7 +40247,6 @@ msgstr "Nogle påkrævede moduler skal aktiveres"
 msgid "New posts"
 msgstr "Nye indlæg"
 
-#: ; modules/locale/locale.datepicker.js
 msgid "mm/dd/yy"
 msgstr "mm/dd/yy"
 
@@ -41343,23 +41114,18 @@ msgstr "Ikke i bog"
 msgid "New book"
 msgstr "Ny bog"
 
-#: ; modules/node/node.js
 msgid "By @name on @date"
 msgstr "Af @name, @date"
 
-#: ; modules/node/node.js
 msgid "By @name"
 msgstr "Af @name"
 
-#: ; modules/menu/menu.js
 msgid "Not in menu"
 msgstr "Ikke i menu"
 
-#: ; sites/all/modules/contrib/pathauto/pathauto.js; modules/path/path.js
 msgid "Alias: @alias"
 msgstr "Alias: @alias"
 
-#: ; sites/all/modules/contrib/pathauto/pathauto.js; modules/path/path.js
 msgid "No alias"
 msgstr "Intet alias"
 
@@ -41399,7 +41165,6 @@ msgstr "Filtrér meddelelser"
 msgid "You must select something to filter by."
 msgstr "Du skal vælge, hvad du vil filtrere efter."
 
-#: ; modules/node/node.js
 msgid "New revision"
 msgstr "Ny version"
 
@@ -41514,11 +41279,9 @@ msgstr "Catalansk"
 msgid "Contact form"
 msgstr "Kontaktformular"
 
-#: ; misc/tabledrag.js
 msgid "Drag to re-order"
 msgstr "Træk for at (om)sortere"
 
-#: ; misc/tabledrag.js
 msgid ""
 "Changes made in this table will not be saved until the form is "
 "submitted."
@@ -42579,7 +42342,6 @@ msgstr ""
 "Blokken %info blev knyttet til den ugyldig region %region og er blevet "
 "deaktiveret."
 
-#: ; modules/block/block.js
 msgid ""
 "The changes to these blocks will not be saved until the <em>Save "
 "blocks</em> button is clicked."
@@ -44995,7 +44757,6 @@ msgstr "Søg efter opdateringer til deaktiverede moduler og temaer"
 msgid "Fetcher"
 msgstr "Fetcher"
 
-#: ; modules/user/user.permissions.js
 msgid "This permission is inherited from the authenticated user role."
 msgstr "Denne tilladelse er arvet fra den godkendte brugerrolle."
 
@@ -45020,22 +44781,18 @@ msgstr "Sekundær menu"
 msgid "Administrator role"
 msgstr "Administratorrolle"
 
-#: ; modules/node/node.js
 msgid "No revision"
 msgstr "Ingen version"
 
-#: ; modules/comment/comment-node-form.js
 msgid "@number comments per page"
 msgstr "@number kommentarer pr. side"
 
-#: ; modules/node/content_types.js
 msgid "Requires a title"
 msgstr "Kræver en titel"
 
 msgid "Private files"
 msgstr "Private filer"
 
-#: ; modules/block/block.js; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Not restricted"
 msgstr "Ikke begrænset"
 
@@ -45733,7 +45490,6 @@ msgstr ""
 msgid "Customizable per user"
 msgstr "Tilpasset pr. bruger"
 
-#: ; modules/block/block.js; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Not customizable"
 msgstr "Kan ikke tilpasses"
 
@@ -45882,11 +45638,9 @@ msgstr ""
 "kasser med indhold som renderes i et bestemt område eller en bestemt "
 "region på en webside."
 
-#: ; modules/block/block.js; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Restricted to certain pages"
 msgstr "Begrænset til bestemte sider"
 
-#: ; modules/block/block.js
 msgid "The block cannot be placed in this region."
 msgstr "Blokken kan ikke placeres i denne region."
 
@@ -46855,11 +46609,9 @@ msgstr ""
 "Lad stå tomt for at bruge den beskårne udgave af brødteksten som "
 "resumé."
 
-#: ; modules/field/modules/text/text.js
 msgid "Hide summary"
 msgstr "Skjul resumé"
 
-#: ; modules/field/modules/text/text.js
 msgid "Edit summary"
 msgstr "Redigér resumé"
 
@@ -49019,7 +48771,6 @@ msgstr ""
 msgid "Edit content type"
 msgstr "Redigér indholdstype"
 
-#: ; modules/node/content_types.js
 msgid "Don't display post information"
 msgstr "Vis ikke information om indlægget"
 
@@ -53306,7 +53057,6 @@ msgstr "Schweitzertysk"
 msgid "Scots"
 msgstr "Skotsk"
 
-#: ; modules/file/file.js
 msgid ""
 "The selected file %filename cannot be uploaded. Only files with the "
 "following extensions are allowed: %extensions."
@@ -53647,15 +53397,12 @@ msgstr ""
 msgid "Māori"
 msgstr "Māori"
 
-#: ; misc/tabledrag.js
 msgid "Re-order rows by numerical weight instead of dragging."
 msgstr "Sortér rækker med numeriske vægte i stedet for at trække dem."
 
-#: ; misc/tabledrag.js
 msgid "Show row weights"
 msgstr "Vis rækkevægte"
 
-#: ; misc/tabledrag.js
 msgid "Hide row weights"
 msgstr "Skjul rækkevægte"
 
@@ -55013,11 +54760,9 @@ msgstr ""
 msgid "The directory you specified is not writable by the web server."
 msgstr "Webserveren kan ikke skrive til den angivne mappe."
 
-#: ; misc/autocomplete.js
 msgid "Autocomplete popup"
 msgstr "Autocomplete popup"
 
-#: ; misc/autocomplete.js
 msgid "Searching for matches..."
 msgstr "Søger efter resultater..."
 
@@ -56857,7 +56602,6 @@ msgstr "Taxonomy Menu"
 msgid "Unavailable"
 msgstr "Ikke tilgængelig"
 
-#: ; profiles/os2intra/modules/contrib/module_filter/js/module_filter.js
 msgid "No results"
 msgstr "Ingen resultater"
 
@@ -57056,7 +56800,6 @@ msgstr "Thumbnail"
 msgid "Tables"
 msgstr "Tabeller"
 
-#: ; profiles/os2intra/themes/contrib/bootstrap/js/bootstrap.admin.js
 msgid "Breadcrumbs"
 msgstr "Brødkrummer"
 
@@ -57123,7 +56866,6 @@ msgstr "Standardafvigelse"
 msgid "%time ago"
 msgstr "%time siden"
 
-#: ; sites/all/modules/contrib/features/features.js
 msgid "Select all"
 msgstr "Markér alt"
 
@@ -57701,7 +57443,6 @@ msgstr "Formularelement til datovalg"
 msgid "Bypass access checks"
 msgstr "Tilsidesæt adgangskontrol"
 
-#: ; profiles/os2intra/modules/contrib/search_api/search_api.admin.js
 msgid "List additional actions"
 msgstr "Vis yderligere handlinger"
 
@@ -57860,15 +57601,12 @@ msgstr ""
 msgid "Vertical tab"
 msgstr "Vertikal fane"
 
-#: ; sites/all/modules/contrib/scheduler/scheduler_vertical_tabs.js
 msgid "Scheduled for publishing"
 msgstr "Planlagt til publicering"
 
-#: ; sites/all/modules/contrib/scheduler/scheduler_vertical_tabs.js
 msgid "Scheduled for unpublishing"
 msgstr "Planlagt til afpublicering"
 
-#: ; sites/all/modules/contrib/scheduler/scheduler_vertical_tabs.js
 msgid "Not scheduled"
 msgstr "Ikke planlagt"
 
@@ -58914,7 +58652,6 @@ msgstr "TIlgængelige knapper"
 msgid "\"@s\" created date"
 msgstr "\"@s\" oprettelsesdato"
 
-#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "all"
 msgstr "alle"
 
@@ -58966,7 +58703,6 @@ msgstr "Datofelt"
 msgid "Interval"
 msgstr "Interval"
 
-#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "Select"
 msgstr "Vælg"
 
@@ -59802,7 +59538,6 @@ msgstr "Værdien @date svarer ikke til det forventede format."
 msgid "Missing system date settings"
 msgstr "Mangler indstillinger for systemdato"
 
-#: ; profiles/os2intra/modules/contrib/date/date_api/date_year_range.js
 msgid "@count year from now"
 msgid_plural "@count years from now"
 msgstr[0] "@count år fra nu"
@@ -60905,7 +60640,6 @@ msgstr "Det er flaget mindst én gang"
 msgid "It is flagged by the current user"
 msgstr "Det er flaget af den aktuelle bruger"
 
-#: ; profiles/os2intra/modules/contrib/flag/theme/flag-admin.js
 msgid "No flags"
 msgstr "Ingen flag"
 
@@ -63780,7 +63514,6 @@ msgstr "Stort begyndelsesbogstav"
 msgid "sorted by"
 msgstr "sorteret efter"
 
-#: ; profiles/os2intra/modules/contrib/views/js/views-admin.js
 msgid "Remove group"
 msgstr "Fjern gruppe"
 
@@ -67022,11 +66755,9 @@ msgstr ""
 "\"Ensure my table\" blev kaldt, men forespørgslen har ikke en "
 "ensure_table-metode."
 
-#: ; profiles/os2intra/modules/contrib/views/js/views-admin.js
 msgid "Apply (all displays)"
 msgstr "Anvend (alle displays)"
 
-#: ; profiles/os2intra/modules/contrib/views/js/views-admin.js
 msgid "Apply (this display)"
 msgstr "Anvend (dette display)"
 
@@ -67318,7 +67049,6 @@ msgstr "Sorteringen som bruges til det ovenfor valgte sorteringskriterie."
 msgid "And/Or, Rearrange"
 msgstr "Skift operand eller rækkefølge"
 
-#: ; profiles/os2intra/modules/contrib/views/js/views-admin.js
 msgid "Revert to default"
 msgstr "Gendan til standard"
 
@@ -70003,7 +69733,6 @@ msgstr "Medie-browser til valg og upload af mediefiler"
 msgid "Upload a new file"
 msgstr "Upload en ny fil"
 
-#: ; profiles/os2intra/modules/contrib/media/js/media.browser.js
 msgid "Cannot continue, nothing selected"
 msgstr "Kan ikke fortsætte, intet valgt"
 
@@ -70110,7 +69839,6 @@ msgstr "Filen findes ikke."
 msgid "An error occurred and no file was uploaded."
 msgstr "Der opstod en fejl og der blev ikke uploadet en fil."
 
-#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Start upload"
 msgstr "Start upload"
 
@@ -70227,7 +69955,6 @@ msgstr "Media Internet Sources"
 msgid "Media browser theme"
 msgstr "Mediebrowser theme"
 
-#: ; profiles/os2intra/modules/contrib/media/js/media.admin.js
 msgid "If you switch views, you will lose your selection."
 msgstr "Hvis du skifter views mister du dine valg."
 
@@ -70576,6 +70303,9 @@ msgstr "@items aktiveret"
 msgid "No privacy"
 msgstr "Ingen beskyttelse af personlige oplysninger"
 
+msgid "The callback URL is not local and not trusted: !url"
+msgstr "Callback-URLen er ikke lokal og er ikke troværdig: !url"
+
 #: os2intra_user_import.module:138
 msgid "Administer OS2Intra User import"
 msgstr "Administrer OS2Intra bruger import"
@@ -70808,6 +70538,9 @@ msgstr "Der er ingen tilmeldte til %name"
 
 msgid "This registration is for:"
 msgstr "Denne tilmelding er for:"
+
+msgid "Language direction"
+msgstr "Sprogretning"
 
 msgid "Taxonomy Manager"
 msgstr "Taksonomistyring"
@@ -71393,6 +71126,11 @@ msgstr "Fjern værktøj"
 msgid "Add to toolbox"
 msgstr "Tilføj til værktøjskasse"
 
+msgid "1 place"
+msgid_plural "@count places"
+msgstr[0] "1 sted"
+msgstr[1] "@count steder"
+
 #: /
 msgid "@comment_count comments"
 msgstr "@comment_count kommentarer"
@@ -71775,6 +71513,12 @@ msgstr "Dagens ret"
 msgid "Find colleague"
 msgstr "Find kollega"
 
+msgid "Site-wide settings"
+msgstr "Indstillinger for hele sitet"
+
+msgid "- Restricted access -"
+msgstr "- Begrænset adgang -"
+
 msgid "Map"
 msgstr "Knyt"
 
@@ -71789,6 +71533,12 @@ msgstr "Korttype"
 
 msgid "Zoom level"
 msgstr "Zoomniveau"
+
+msgid "Level"
+msgstr "Niveau"
+
+msgid "Allow"
+msgstr "Tillad"
 
 #: /
 msgid "@files downloadable files"
@@ -71821,6 +71571,89 @@ msgstr "Afmeld"
 #: /node_basket
 msgid "written by:"
 msgstr "skrevet af:"
+
+msgid "Unlock"
+msgstr "Lås op"
+
+msgid "Linkit profile"
+msgstr "Linkit-profil"
+
+msgid "Linkit profiles"
+msgstr "Linkit-profiler"
+
+msgid "Extend Linkit with @entity support."
+msgstr "Udvid Linkit med understøttelse af @entity."
+
+msgid "Administer Linkit"
+msgstr "Administrér Linkit"
+
+msgid "Support for Linkit module"
+msgstr "Understøttelse af Linkit-modulet"
+
+msgid "Add new profile"
+msgstr "Tilføj ny profil"
+
+msgid "Import profiles"
+msgstr "Importér profiler"
+
+msgid "Editors"
+msgstr "Redaktører"
+
+msgid "Type filter"
+msgstr "Typefilter"
+
+msgid "If left blank, all types will appear in autocomplete results."
+msgstr ""
+"Hvis du ikke vælger noget, vil alle indholdstyper blive medtaget i "
+"autocomplete-resultaterne."
+
+msgid "Include unpublished nodes"
+msgstr "Medtag upubliceret indhold"
+
+msgid "Managed files"
+msgstr "Filer"
+
+msgid "Extend Linkit with file support (Managed files)."
+msgstr "Udvid Linkit med understøttelse af filer."
+
+msgid "Show pixel dimensions"
+msgstr "Vis pixel-dimensioner"
+
+msgid "Markdown"
+msgstr "Markdown"
+
+msgid "Raw URL"
+msgstr "Rå URL"
+
+msgid "HTML Link"
+msgstr "HTML Link"
+
+msgid "Insert plugin"
+msgstr "Insert-plugin"
+
+msgid "Id"
+msgstr "Id"
+
+msgid "Autocomplete options"
+msgstr "Indstillinger for autocomplete"
+
+msgid "Key press delay"
+msgstr "Indtastningsforsinkelse"
+
+msgid "ms"
+msgstr "ms"
+
+msgid "Remote timeout"
+msgstr "Server timeout"
+
+msgid "Editor"
+msgstr "Editor"
+
+msgid "Linkit field settings"
+msgstr "Linkit felt-indstillinger"
+
+msgid "Insert link"
+msgstr "Indsæt link"
 
 #: /intra
 msgid "Add to basket"
@@ -72453,4 +72286,56 @@ msgstr "Der opstod en fejl!"
 #: profiles/os2intra/modules/custom/node_basket/js/node_basket.js
 msgid "Try to refresh the page and try again."
 msgstr "Genopfrisk siden og forsøg igen."
+
+msgid "Lock"
+msgstr "Lås"
+
+msgid "Feed title"
+msgstr "Feed-titel"
+
+msgid "unknown"
+msgstr "ukendt"
+
+msgid "Taxonomy: Term"
+msgstr "Taksonomi: Ord"
+
+msgid "Bold"
+msgstr "Fed"
+
+msgid "!title: !required"
+msgstr "!title: !required"
+
+msgid "Editable"
+msgstr "Redigérbar"
+
+msgid "All terms"
+msgstr "Alle termer"
+
+msgid "Term ID (with depth)"
+msgstr "Term ID (med dybde)"
+
+msgid "The depth filter is more complex, so provides fewer options."
+msgstr ""
+"Dybdefiltret er mere komplekst, så det stiller færre valgmuligheder "
+"til rådighed."
+
+msgid "Field label"
+msgstr "Feltmærkat"
+
+msgid "The taxonomy term ID."
+msgstr "Taksonomitermens ID."
+
+msgid "Link to content"
+msgstr "Link til indhold"
+
+msgid "Frontpage"
+msgstr "Forside"
+
+msgid "Link options"
+msgstr "Link-muligheder"
+
+msgid "1 second"
+msgid_plural "@count seconds"
+msgstr[0] "1 sekund"
+msgstr[1] "@count sekunder"
 
