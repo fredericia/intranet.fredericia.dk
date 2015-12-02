@@ -3550,7 +3550,6 @@ var bs3Alert = (function ($) {
       .attr('role', 'alert')
       .addClass('alert')
       .addClass('alert-' + state);
-    console.log('2');
 
     $alert.html('<strong>' + headline + '</strong> ' + text);
 
