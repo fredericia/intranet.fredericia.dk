@@ -19,7 +19,7 @@ function os2intra_frontpage_flag_default_flags() {
   // Exported flag: "Info til alle".
   $flags['os2intra_flag_info_til_alle'] = array(
     'entity_type' => 'node',
-    'title' => 'Fællesnyt',
+    'title' => 'Info til alle',
     'global' => 0,
     'types' => array(
       0 => 'event',
@@ -52,11 +52,11 @@ function os2intra_frontpage_flag_default_flags() {
     'access_author' => '',
     'show_contextual_link' => 1,
     'i18n' => 0,
-    'api_version' => 3,
     'module' => 'os2intra_frontpage',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   return $flags;
 

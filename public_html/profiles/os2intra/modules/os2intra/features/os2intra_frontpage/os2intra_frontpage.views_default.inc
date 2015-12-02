@@ -68,6 +68,11 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'os2intra_flag_info_til_alle';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['label'] = 'forfatter';
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations_1']['id'] = 'views_bulk_operations_1';
   $handler->display->display_options['fields']['views_bulk_operations_1']['table'] = 'node';
@@ -80,6 +85,20 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations_1']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations_1']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations_1']['vbo_operations'] = array(
+    'action::node_make_unsticky_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_make_sticky_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::system_send_email_action' => array(
       'selected' => 1,
       'postpone_processing' => 0,
@@ -145,13 +164,15 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['unpublish_on']['id'] = 'unpublish_on';
   $handler->display->display_options['fields']['unpublish_on']['table'] = 'scheduler';
   $handler->display->display_options['fields']['unpublish_on']['field'] = 'unpublish_on';
-  $handler->display->display_options['fields']['unpublish_on']['label'] = 'Afpublicér den';
+  $handler->display->display_options['fields']['unpublish_on']['label'] = 'Afpublicés';
   $handler->display->display_options['fields']['unpublish_on']['date_format'] = 'short';
   $handler->display->display_options['fields']['unpublish_on']['second_date_format'] = 'long';
   /* Field: Content: Fremhæv indhold */
   $handler->display->display_options['fields']['field_os2web_base_field_promote']['id'] = 'field_os2web_base_field_promote';
   $handler->display->display_options['fields']['field_os2web_base_field_promote']['table'] = 'field_data_field_os2web_base_field_promote';
   $handler->display->display_options['fields']['field_os2web_base_field_promote']['field'] = 'field_os2web_base_field_promote';
+  $handler->display->display_options['fields']['field_os2web_base_field_promote']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_base_field_promote']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_os2web_base_field_promote']['settings'] = array(
     'link' => 0,
   );
@@ -161,7 +182,23 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['ops']['table'] = 'flagging';
   $handler->display->display_options['fields']['ops']['field'] = 'ops';
   $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
-  $handler->display->display_options['fields']['ops']['label'] = 'Flag-link';
+  $handler->display->display_options['fields']['ops']['label'] = 'Forfrem';
+  /* Field: Content: Sticky */
+  $handler->display->display_options['fields']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['fields']['sticky']['table'] = 'node';
+  $handler->display->display_options['fields']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['fields']['sticky']['label'] = '';
+  $handler->display->display_options['fields']['sticky']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['sticky']['type'] = 'custom';
+  $handler->display->display_options['fields']['sticky']['type_custom_true'] = 'Klæbrig';
+  $handler->display->display_options['fields']['sticky']['type_custom_false'] = 'Alm';
+  $handler->display->display_options['fields']['sticky']['not'] = 0;
+  /* Field: Realname: Real name */
+  $handler->display->display_options['fields']['realname']['id'] = 'realname';
+  $handler->display->display_options['fields']['realname']['table'] = 'realname';
+  $handler->display->display_options['fields']['realname']['field'] = 'realname';
+  $handler->display->display_options['fields']['realname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['realname']['label'] = 'Forfatter';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -259,14 +296,17 @@ function os2intra_frontpage_views_default_views() {
     t('last »'),
     t('term'),
     t('flag'),
+    t('forfatter'),
     t('- Choose an operation -'),
     t('Title'),
     t('Gruppe / Afdeling'),
     t('Oprettelsesdato'),
     t('Type'),
-    t('Afpublicér den'),
-    t('Fremhæv indhold'),
-    t('Flag-link'),
+    t('Afpublicés'),
+    t('Forfrem'),
+    t('Klæbrig'),
+    t('Alm'),
+    t('Forfatter'),
     t('Udgivet'),
     t('Søg på titel'),
     t('Valgt'),
