@@ -11,6 +11,227 @@ function os2intra_panels_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'os2intra_afdlingsorganisation';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'OS2intra Afdlingsorganisation';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['style_plugin'] = 'tree';
+  $handler->display->display_options['style_options']['main_field'] = 'nid';
+  $handler->display->display_options['style_options']['parent_field'] = 'field_os2intra_afdeling';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'os2intra_organisation_tax' => 'os2intra_organisation_tax',
+    'os2web_base_tax_site_structure' => 0,
+    'os2web_taxonomies_tax_comittee' => 0,
+    'begivenhedstyper' => 0,
+    'user_hobbies' => 0,
+    'user_jobtitle' => 0,
+    'user_skills' => 0,
+    'os2web_taxonomies_tax_places' => 0,
+    'indlaegstyper' => 0,
+    'os2intra_canteen' => 0,
+    'os2web_taxonomies_tax_kle' => 0,
+    'os2web_taxonomies_tax_org' => 0,
+    'os2web_base_tax_promoteto' => 0,
+    'os2web_taxonomies_tax_politics' => 0,
+    'os2web_taxonomies_tax_portal_cat' => 0,
+    'os2web_taxonomies_tax_editor_tag' => 0,
+    'tags' => 0,
+    'topics' => 0,
+    'os2web_taxonomies_tax_user_pos' => 0,
+  );
+  /* Relationship: Taxonomy term: Parent term */
+  $handler->display->display_options['relationships']['parent']['id'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['relationships']['parent']['field'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['parent']['label'] = 'Overordnet element';
+  /* Relationship: Taxonomy term: Parent term */
+  $handler->display->display_options['relationships']['parent_1']['id'] = 'parent_1';
+  $handler->display->display_options['relationships']['parent_1']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['relationships']['parent_1']['field'] = 'parent';
+  $handler->display->display_options['relationships']['parent_1']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['parent_1']['label'] = 'Overordnet element';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_class'] = 'afd-[field_os2intra_afdeling] nid-[nid] org2-[field_os2intra_organisation] org2-[field_os2intra_organisation_1]';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Field: Content: Ovenstående Afdeling */
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Content: Organisation */
+  $handler->display->display_options['fields']['field_os2intra_organisation']['id'] = 'field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['table'] = 'field_data_field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['field'] = 'field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_organisation']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Content: Organisation */
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['id'] = 'field_os2intra_organisation_1';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['table'] = 'field_data_field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['field'] = 'field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Content: Rendered Node */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'includeable';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['validate_options']['vocabularies'] = array(
+    'os2intra_organisation_tax' => 'os2intra_organisation_tax',
+  );
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '10';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'os2intra_org_group_unit' => 'os2intra_org_group_unit',
+  );
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'term_node_tid_depth' => array(
+      'type' => 'context',
+      'context' => 'entity:taxonomy_term.tid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Har taksonomiterm ID (med dybde)',
+    ),
+  );
+
+  /* Display: Content pane 2 */
+  $handler = $view->new_display('panel_pane', 'Content pane 2', 'panel_pane_2');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
+  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '10';
+  $handler->display->display_options['argument_input'] = array(
+    'term_node_tid_depth' => array(
+      'type' => 'user',
+      'context' => 'entity:blame.bid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Har taksonomiterm ID (med dybde)',
+    ),
+  );
+  $translatables['os2intra_afdlingsorganisation'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Antal elementer'),
+    t('- Alle -'),
+    t('Forskydning'),
+    t('« første'),
+    t('‹ forrige'),
+    t('næste ›'),
+    t('sidste »'),
+    t('term'),
+    t('Overordnet element'),
+    t('Ovenstående Afdeling'),
+    t('Nid'),
+    t('Organisation'),
+    t('Alle'),
+    t('Content pane'),
+    t('View panes'),
+    t('Content pane 2'),
+  );
+  $export['os2intra_afdlingsorganisation'] = $view;
+
+  $view = new view();
   $view->name = 'os2intra_gruppe_indhold';
   $view->description = 'Show all content (nodes) of a group.';
   $view->tag = 'og';

@@ -1675,7 +1675,16 @@ function os2intra_panels_default_page_manager_handlers() {
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
-    'relationships' => array(),
+    'relationships' => array(
+      0 => array(
+        'identifier' => 'Term parent',
+        'keyword' => 'parent_term',
+        'name' => 'term_parent',
+        'type' => 'parent',
+        'context' => 'argument_term_1',
+        'id' => 1,
+      ),
+    ),
     'name' => 'os2intra-organisation',
     'access' => array(
       'plugins' => array(
@@ -1757,6 +1766,29 @@ function os2intra_panels_default_page_manager_handlers() {
     $pane->uuid = '5a0da111-bdec-4a88-a721-7599158b1b90';
     $display->content['new-5a0da111-bdec-4a88-a721-7599158b1b90'] = $pane;
     $display->panels['sidebar'][0] = 'new-5a0da111-bdec-4a88-a721-7599158b1b90';
+    $pane = new stdClass();
+    $pane->pid = 'new-834e9567-f9cf-4844-a333-766acb180f4b';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'os2intra_afdlingsorganisation-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_term_1',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '834e9567-f9cf-4844-a333-766acb180f4b';
+    $display->content['new-834e9567-f9cf-4844-a333-766acb180f4b'] = $pane;
+    $display->panels['sidebar'][1] = 'new-834e9567-f9cf-4844-a333-766acb180f4b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
