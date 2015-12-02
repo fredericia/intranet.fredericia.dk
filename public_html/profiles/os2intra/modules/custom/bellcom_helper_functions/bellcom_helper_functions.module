@@ -16,7 +16,7 @@ function in_array_recursive($needle, $haystack, $strict = FALSE) {
 /*
  * Get top level taxonomy term
  */
-function _taxonomy_term_top_level($tid) {
+function taxonomy_term_top_level_load($tid) {
   $taxonomy_term_parents = taxonomy_get_parents_all($tid);
   $taxonomy_term_top_level = NULL;
 

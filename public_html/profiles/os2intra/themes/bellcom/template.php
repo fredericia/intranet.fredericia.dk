@@ -1,5 +1,4 @@
 <?php
-include( dirname(__FILE__) . '/include/helpers.inc');
 include( dirname(__FILE__) . '/include/menu.inc');
 include( dirname(__FILE__) . '/include/settings.inc');
 
