@@ -358,6 +358,12 @@ function os2intra_organisationsgrupper_strongarm() {
       'list' => array(
         'custom_settings' => TRUE,
       ),
+      'includeable' => array(
+        'custom_settings' => TRUE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -376,8 +382,18 @@ function os2intra_organisationsgrupper_strongarm() {
         'scheduler_settings' => array(
           'weight' => '0',
         ),
+        'flag' => array(
+          'weight' => '3',
+        ),
       ),
-      'display' => array(),
+      'display' => array(
+        'flag_os2intra_flag_info_til_alle' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__post'] = $strongarm;

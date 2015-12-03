@@ -357,7 +357,8 @@ function os2intra_content_types_field_group_info() {
     'children' => array(
       0 => 'field_os2web_base_field_promote',
       1 => 'group_content_access',
-      2 => 'scheduler_settings',
+      2 => 'flag',
+      3 => 'scheduler_settings',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

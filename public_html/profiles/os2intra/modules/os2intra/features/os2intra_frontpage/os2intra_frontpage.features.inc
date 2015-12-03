@@ -16,11 +16,11 @@ function os2intra_frontpage_views_api($module = NULL, $api = NULL) {
  */
 function os2intra_frontpage_flag_default_flags() {
   $flags = array();
-  // Exported flag: "Info til alle".
+  // Exported flag: "Fællsesnyt".
   $flags['os2intra_flag_info_til_alle'] = array(
     'entity_type' => 'node',
-    'title' => 'Info til alle',
-    'global' => 0,
+    'title' => 'Fællsesnyt',
+    'global' => 1,
     'types' => array(
       0 => 'event',
       1 => 'post',
@@ -36,7 +36,7 @@ function os2intra_frontpage_flag_default_flags() {
     'link_type' => 'toggle',
     'weight' => 0,
     'show_in_links' => array(
-      'full' => 0,
+      'full' => 'full',
       'teaser' => 0,
       'rss' => 0,
       'search_index' => 0,
@@ -47,7 +47,7 @@ function os2intra_frontpage_flag_default_flags() {
       'print' => 0,
       'token' => 0,
     ),
-    'show_as_field' => 0,
+    'show_as_field' => 1,
     'show_on_form' => 1,
     'access_author' => '',
     'show_contextual_link' => 1,

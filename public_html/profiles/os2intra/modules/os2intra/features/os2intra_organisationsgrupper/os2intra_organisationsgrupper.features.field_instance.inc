@@ -2122,7 +2122,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
           'image_style' => 'normal',
         ),
         'type' => 'image',
-        'weight' => 4,
+        'weight' => 1,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -2202,6 +2202,8 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   // Exported field_instance: 'node-post-og_group_ref'.
   $field_instances['node-post-og_group_ref'] = array(
     'bundle' => 'post',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
@@ -2211,7 +2213,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 11,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -2236,7 +2238,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'fences_wrapper' => 'div_div_div',
     'field_name' => 'og_group_ref',
     'label' => 'Gruppe / Afdeling',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
@@ -2245,19 +2247,19 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
             'widget_type' => 'entityreference_autocomplete',
           ),
           'default' => array(
-            'widget_type' => 'options_select',
+            'widget_type' => 'options_buttons',
           ),
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'action' => 'none',
-          'action_on_edit' => 0,
+          'action' => 'hide',
+          'action_on_edit' => 1,
           'fallback' => 'none',
           'providers' => array(
             'og_context' => 0,
             'url' => 1,
           ),
-          'skip_perm' => 0,
+          'skip_perm' => 'administer nodes',
           'status' => 1,
         ),
       ),
