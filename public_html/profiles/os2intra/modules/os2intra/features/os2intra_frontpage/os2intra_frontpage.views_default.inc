@@ -26,6 +26,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
+    3 => '3',
     7 => '7',
   );
   $handler->display->display_options['cache']['type'] = 'none';
@@ -272,7 +273,7 @@ function os2intra_frontpage_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'admin/content/koncernnyheder';
+  $handler->display->display_options['path'] = 'admin/workbench/koncernnyheder';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Koncernnyheder';
   $handler->display->display_options['menu']['weight'] = '0';
