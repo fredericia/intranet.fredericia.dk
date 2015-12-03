@@ -27,13 +27,6 @@ function fredericia_theme_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_sys_urllist';
-  $strongarm->value = 0;
-  $export['print_display_sys_urllist'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'print_footer_options';
   $strongarm->value = '1';
   $export['print_footer_options'] = $strongarm;
@@ -66,8 +59,8 @@ function fredericia_theme_settings_strongarm() {
   $strongarm->value = array(
     'link' => 'link',
     'corner' => 0,
-    'block' => 0,
-    'help' => 0,
+    'block' => 'block',
+    'help' => 'help',
   );
   $export['print_html_link_pos'] = $strongarm;
 
@@ -98,20 +91,6 @@ function fredericia_theme_settings_strongarm() {
   $strongarm->name = 'print_html_new_window';
   $strongarm->value = 0;
   $export['print_html_new_window'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_html_node_link_pages';
-  $strongarm->value = '';
-  $export['print_html_node_link_pages'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_html_node_link_visibility';
-  $strongarm->value = '0';
-  $export['print_html_node_link_visibility'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -218,8 +197,8 @@ function fredericia_theme_settings_strongarm() {
   $strongarm->value = array(
     'link' => 'link',
     'corner' => 0,
-    'block' => 0,
-    'help' => 0,
+    'block' => 'block',
+    'help' => 'help',
   );
   $export['print_mail_link_pos'] = $strongarm;
 
@@ -236,20 +215,6 @@ function fredericia_theme_settings_strongarm() {
   $strongarm->name = 'print_mail_link_use_alias';
   $strongarm->value = 0;
   $export['print_mail_link_use_alias'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_mail_node_link_pages';
-  $strongarm->value = '';
-  $export['print_mail_node_link_pages'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_mail_node_link_visibility';
-  $strongarm->value = '0';
-  $export['print_mail_node_link_visibility'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -391,8 +356,8 @@ function fredericia_theme_settings_strongarm() {
   $strongarm->value = array(
     'link' => 'link',
     'corner' => 0,
-    'block' => 0,
-    'help' => 0,
+    'block' => 'block',
+    'help' => 'help',
   );
   $export['print_pdf_link_pos'] = $strongarm;
 
@@ -413,20 +378,6 @@ function fredericia_theme_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'print_pdf_node_link_pages';
-  $strongarm->value = '';
-  $export['print_pdf_node_link_pages'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_pdf_node_link_visibility';
-  $strongarm->value = '0';
-  $export['print_pdf_node_link_visibility'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'print_pdf_page_orientation';
   $strongarm->value = 'portrait';
   $export['print_pdf_page_orientation'] = $strongarm;
@@ -442,7 +393,7 @@ function fredericia_theme_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_pdf_pdf_tool';
-  $strongarm->value = 'profiles/os2intra/libraries/dompdf/dompdf_config.inc.php';
+  $strongarm->value = 'print_pdf_dompdf|profiles/os2intra/libraries/dompdf/dompdf_config.inc.php';
   $export['print_pdf_pdf_tool'] = $strongarm;
 
   $strongarm = new stdClass();
