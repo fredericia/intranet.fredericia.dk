@@ -142,13 +142,13 @@ function _fb_likebox_validate_block_settings(&$form, $form_state) {
  */
 function _fb_likebox_block_view(){
      // Get the values given in the admin form.
-    $fb_url = variable_get('fb_likebox_url', 'https://www.facebook.com/FacebookDevelopers');
+    $fb_url = variable_get('fb_likebox_url', 'https://www.facebook.com/fredericiakommune');
     $fb_hide_header = variable_get('fb_likebox_hide_header', 'false');
     $fb_stream = variable_get('fb_likebox_stream', 'false');
     $fb_show_faces = variable_get('fb_likebox_show_faces', 'true');
-    $fb_width = variable_get('fb_likebox_width', '340');
+    $fb_width = variable_get('fb_likebox_width', '100%');
     $fb_height = variable_get('fb_likebox_height', '500');
-    $fb_iframe_title = variable_get('fb_likebox_title', 'Like us on Facebook');
+    $fb_iframe_title = variable_get('fb_likebox_title', 'Fredericia Kommune på Facebook');
     
     $block['root-div'] = array(
       '#type' => 'container',
@@ -161,12 +161,14 @@ function _fb_likebox_block_view(){
         '#type' => 'container',
         '#attributes' => array(
           'class' => array('fb-page'),
-          'data-href' => array($fb_url),
-          'data-width' => array($fb_width),
-          'data-height' => array($fb_height),
-          'data-hide-cover' => array($fb_hide_header),
-          'data-show-facepile' =>  array($fb_show_faces),
-          'data-show-posts' => array($fb_stream),
+          'style' => array('width: 100% !important'),
+          'data-tabs' => array('timeline'),
+          'data-small-header' => array('true'),
+          'data-adapt-container-width'  => array('true'),
+          'data-href' => array('https://www.facebook.com/fredericiakommune'),
+          'data-width' => array('2000'),
+          'data-hide-cover' => array('false'),
+          'data-show-facepile' => array('false'),
         ),
       );
      $block['block']['child'] = array(
