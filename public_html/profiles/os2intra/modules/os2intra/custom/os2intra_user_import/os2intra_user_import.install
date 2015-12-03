@@ -31,3 +31,22 @@ function os2intra_user_import_schema() {
 
   return $schema;
 }
+
+/**
+ * Implements hook_uninstall().
+ */
+function os2intra_user_import_uninstall() {
+  variable_delete('os2intra_user_import_enable');
+  variable_delete('os2intra_user_import_dir');
+  variable_delete('os2intra_user_default_groups');
+  variable_delete('os2intra_user_notification_email');
+  variable_delete('os2intra_mapping_first_name');
+  variable_delete('os2intra_mapping_last_name');
+  variable_delete('os2intra_mapping_department');
+  variable_delete('os2intra_mapping_department_shortname');
+  variable_delete('os2intra_mapping_centre');
+  variable_delete('os2intra_mapping_employee_id');
+  variable_delete('os2intra_mapping_job_description');
+  variable_delete('os2intra_mapping_termination_date');
+  variable_delete('os2intra_mapping_birthday');
+}
