@@ -446,7 +446,7 @@ function os2intra_users_field_default_field_bases() {
   // Exported field_base: 'og_org_ref'.
   $field_bases['og_org_ref'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'og_org_ref',
@@ -464,9 +464,17 @@ function os2intra_users_field_default_field_bases() {
           'og_behavior' => array(
             'status' => TRUE,
           ),
+          'views-select-list' => array(
+            'status' => 0,
+          ),
         ),
         'membership_type' => 'og_membership_type_default',
-        'target_bundles' => array(),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'os2intra_org_group_unit' => 'os2intra_org_group_unit',
+        ),
       ),
       'handler_submit' => 'Change handler',
       'target_type' => 'node',

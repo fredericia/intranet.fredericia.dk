@@ -39,6 +39,8 @@ function os2intra_settings_field_default_field_instances() {
     'label' => 'Organisation',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => 0,
     ),
     'widget' => array(
@@ -46,7 +48,7 @@ function os2intra_settings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => -1,
     ),
   );
 
