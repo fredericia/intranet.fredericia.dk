@@ -2052,6 +2052,8 @@ function os2intra_content_types_field_default_field_instances() {
   // 'node-it_vejledning-field_os2web_base_field_edi_tags'.
   $field_instances['node-it_vejledning-field_os2web_base_field_edi_tags'] = array(
     'bundle' => 'it_vejledning',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2085,7 +2087,7 @@ function os2intra_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_edi_tags',
     'label' => 'Stikord',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -2823,6 +2825,8 @@ function os2intra_content_types_field_default_field_instances() {
   // 'node-os2intra_base_page-field_os2web_base_field_edi_tags'.
   $field_instances['node-os2intra_base_page-field_os2web_base_field_edi_tags'] = array(
     'bundle' => 'os2intra_base_page',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -2861,7 +2865,7 @@ function os2intra_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_edi_tags',
     'label' => 'Stikord',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
