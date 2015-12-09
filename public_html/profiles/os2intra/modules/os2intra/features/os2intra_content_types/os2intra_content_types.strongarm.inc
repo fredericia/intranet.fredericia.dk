@@ -537,6 +537,12 @@ function os2intra_content_types_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'list' => array(
+        'custom_settings' => TRUE,
+      ),
+      'includeable' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
