@@ -118,8 +118,19 @@
         <?php endif; ?>
 
         <a id="main-content"></a>
+        <?php if (user_is_logged_in()): ?>
 
         <?php print render($page['content']); ?>
+
+        <?php else: ?>
+        
+        <div class="os2-box">
+          <div class="os2-box-body">
+            <?php print render($page['content']); ?>
+          </div>
+        </div>
+        <?php endif; ?>
+        
 
       </div>
     </div>
