@@ -597,8 +597,9 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['gid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['gid']['title'] = '%1 members';
+  $handler->display->display_options['arguments']['gid']['title'] = 'Medlemmer i %1';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
@@ -687,6 +688,15 @@ function os2intra_panels_views_default_views() {
       'label' => 'OG membership: Group ID',
     ),
   );
+
+  /* Display: Side */
+  $handler = $view->new_display('page', 'Side', 'page_1');
+  $handler->display->display_options['path'] = 'node/%/medlemmer';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Medlemmer';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['os2intra_gruppe_medlemmer'] = array(
     t('Defaults'),
     t('more'),
@@ -696,16 +706,16 @@ function os2intra_panels_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('OG membership from user'),
-    t('All'),
-    t('%1 members'),
+    t('Alle'),
+    t('Medlemmer i %1'),
     t('Block'),
     t('Gruppens medlemmer'),
     t('OS2intra Gruppe medlemmer'),
     t('OS2intra'),
     t('Afdelingens medlemmer'),
-    t('Alle'),
     t('Medarbejdere i %1'),
     t('OS2intra Afdelings medlemmer'),
+    t('Side'),
   );
   $export['os2intra_gruppe_medlemmer'] = $view;
 

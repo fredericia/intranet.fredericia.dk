@@ -272,3 +272,20 @@
 
 // Links mixin
 .os2-mixin-links() {}
+
+.pane-node-create-links {
+  ul {
+    .list-inline;
+    a {
+      .btn;
+      .btn-tertiary;
+      .btn-sm;
+      margin-bottom: 4px;
+      &:before {
+        font-family: FontAwesome;
+        content: @fa-var-plus;
+        margin-right: 4px;
+        }
+    }
+  }
+}
