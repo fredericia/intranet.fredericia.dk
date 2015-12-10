@@ -348,4 +348,5 @@ features[variable][] = pathauto_node_os2intra_group_pattern
 features[variable][] = pathauto_node_os2intra_org_group_unit_pattern
 features[variable][] = pathauto_node_post_pattern
 features[views_view][] = os2intra_afdelingsindhold
+features[views_view][] = os2intra_grupper
 features[views_view][] = os2intra_paragraphs
