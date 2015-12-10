@@ -514,7 +514,7 @@ function os2intra_organisationsgrupper_views_default_views() {
   $handler->display->display_options['fields']['group_group']['field'] = 'group_group';
   $handler->display->display_options['fields']['group_group']['label'] = '';
   $handler->display->display_options['fields']['group_group']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['group_group']['alter']['path'] = 'btn btn-info btn-xs';
+  $handler->display->display_options['fields']['group_group']['alter']['link_class'] = 'btn btn-info btn-xs';
   $handler->display->display_options['fields']['group_group']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['group_group']['type'] = 'og_group_subscribe';
   $handler->display->display_options['fields']['group_group']['settings'] = array(
