@@ -95,6 +95,8 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   // Exported field_instance: 'node-os2intra_group-field_os2intra_image'.
   $field_instances['node-os2intra_group-field_os2intra_image'] = array(
     'bundle' => 'os2intra_group',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -143,8 +145,11 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
-          '4_col_image_-_520x220' => '4_col_image_-_520x220',
+          '4_col_image_-_520x220' => 0,
           'normal' => 0,
+          'profilbillede' => 'profilbillede',
+          'profile_image_default' => 0,
+          'spotboks' => 0,
         ),
       ),
       'file_directory' => '',
@@ -160,6 +165,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'private' => 0,
           'public' => 'public',
           'youtube' => 0,
         ),

@@ -541,17 +541,6 @@ function os2intra_organisationsgrupper_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_related_user_group']['table'] = 'og_membership';
   $handler->display->display_options['relationships']['og_membership_related_user_group']['field'] = 'og_membership_related_user_group';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Billede */
-  $handler->display->display_options['fields']['field_os2intra_image']['id'] = 'field_os2intra_image';
-  $handler->display->display_options['fields']['field_os2intra_image']['table'] = 'field_data_field_os2intra_image';
-  $handler->display->display_options['fields']['field_os2intra_image']['field'] = 'field_os2intra_image';
-  $handler->display->display_options['fields']['field_os2intra_image']['label'] = '';
-  $handler->display->display_options['fields']['field_os2intra_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_os2intra_image']['settings'] = array(
-    'image_style' => 'teaser_image',
-    'image_link' => 'content',
-  );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -606,6 +595,15 @@ function os2intra_organisationsgrupper_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'context',
