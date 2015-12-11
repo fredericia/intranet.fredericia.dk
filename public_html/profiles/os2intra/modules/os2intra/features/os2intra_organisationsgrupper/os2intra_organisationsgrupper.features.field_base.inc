@@ -73,7 +73,7 @@ function os2intra_organisationsgrupper_field_default_field_bases() {
   // Exported field_base: 'field_os2intra_dept_tools'.
   $field_bases['field_os2intra_dept_tools'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_os2intra_dept_tools',
@@ -85,17 +85,18 @@ function os2intra_organisationsgrupper_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'base',
+      'handler' => 'views',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 0,
           ),
         ),
-        'sort' => array(
-          'type' => 'none',
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_1',
+          'view_name' => 'os2intra_afdelingsindhold',
         ),
-        'target_bundles' => array(),
       ),
       'target_type' => 'node',
     ),
@@ -188,7 +189,7 @@ function os2intra_organisationsgrupper_field_default_field_bases() {
   // Exported field_base: 'field_os2intra_promoted_content'.
   $field_bases['field_os2intra_promoted_content'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_os2intra_promoted_content',
@@ -200,20 +201,17 @@ function os2intra_organisationsgrupper_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'base',
+      'handler' => 'views',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 0,
           ),
         ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'event' => 'event',
-          'post' => 'post',
-          'wiki' => 'wiki',
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_2',
+          'view_name' => 'os2intra_afdelingsindhold',
         ),
       ),
       'target_type' => 'node',

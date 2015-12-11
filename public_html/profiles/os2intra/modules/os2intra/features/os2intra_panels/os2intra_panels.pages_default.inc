@@ -143,7 +143,7 @@ function os2intra_panels_default_page_manager_handlers() {
       'field_name' => 'og_group_ref',
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => '%node:title',
+      'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -153,7 +153,7 @@ function os2intra_panels_default_page_manager_handlers() {
     $pane->css = array(
       'css_id' => '',
       'css_class' => '',
-      'template_suggestion' => 'createlinks',
+      'template_suggestion' => 'plain',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -170,8 +170,8 @@ function os2intra_panels_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'inherit_path' => 1,
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => '%node:title',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -223,7 +223,7 @@ function os2intra_panels_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'hidden',
+      'label' => 'title',
       'formatter' => 'entityreference_entity_view',
       'delta_limit' => 0,
       'delta_offset' => '0',
@@ -234,7 +234,7 @@ function os2intra_panels_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Ovenstående afdeling',
+      'override_title_text' => 'Ovenstående Afdeling',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
