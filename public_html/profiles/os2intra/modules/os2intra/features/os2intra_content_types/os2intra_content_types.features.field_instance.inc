@@ -584,6 +584,8 @@ function os2intra_content_types_field_default_field_instances() {
   // 'field_collection_item-field_os2intra_paragraph-field_os2intra_paragraph_title'.
   $field_instances['field_collection_item-field_os2intra_paragraph-field_os2intra_paragraph_title'] = array(
     'bundle' => 'field_os2intra_paragraph',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -600,7 +602,7 @@ function os2intra_content_types_field_default_field_instances() {
     'fences_wrapper' => 'div_div_div',
     'field_name' => 'field_os2intra_paragraph_title',
     'label' => 'Overskrift',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
@@ -630,6 +632,11 @@ function os2intra_content_types_field_default_field_instances() {
       ),
       'custom_add_another' => '',
       'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -641,6 +648,62 @@ function os2intra_content_types_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_os2intra_paragraph-field_os2web_webform_ref'.
+  $field_instances['field_collection_item-field_os2intra_paragraph-field_os2web_webform_ref'] = array(
+    'bundle' => 'field_os2intra_paragraph',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_os2web_webform_ref',
+    'label' => 'Indlejr webform',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => FALSE,
+          'allow_new' => 0,
+          'delete_references' => 0,
+          'label_plural' => 'indholdselementer',
+          'label_singular' => 'indholdselement',
+          'match_operator' => 'CONTAINS',
+          'override_labels' => 0,
+        ),
+      ),
+      'type' => 'options_select',
+      'weight' => 4,
     ),
   );
 

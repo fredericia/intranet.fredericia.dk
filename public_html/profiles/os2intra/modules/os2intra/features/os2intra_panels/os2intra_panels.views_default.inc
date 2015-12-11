@@ -1043,6 +1043,10 @@ function os2intra_panels_views_default_views() {
 
   /* Display: Afsnit */
   $handler = $view->new_display('panel_pane', 'Afsnit', 'panel_pane_7');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '99';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_accordion_plugin_style';
   $handler->display->display_options['style_options']['title_field'] = 'field_os2intra_paragraph_title';
@@ -1089,6 +1093,18 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_paragraph_title']['label'] = '';
   $handler->display->display_options['fields']['field_os2intra_paragraph_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_os2intra_paragraph_title']['element_label_colon'] = FALSE;
+  /* Field: Field: Indlejr webform */
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['id'] = 'field_os2web_webform_ref';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['table'] = 'field_data_field_os2web_webform_ref';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['field'] = 'field_os2web_webform_ref';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['relationship'] = 'field_os2intra_paragraph_value';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 0,
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';

@@ -1,0 +1,30 @@
+// |--------------------------------------------------------------------------
+// | Accordion
+// |--------------------------------------------------------------------------
+// |
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+.os2-node-full-body .accordion-toggle {
+  display: block;
+  
+  &:before {
+    display: inline-block;
+    .pull-right;
+    font-family: fontawesome;
+    content: @fa-var-minus;
+    color: @text-color;
+    font-size: @font-size-large;
+  }
+  
+  &.collapsed {
+    &:before {
+    content: @fa-var-plus;
+    }
+  }
+  
+  &:extend(.clearfix all);
+}
