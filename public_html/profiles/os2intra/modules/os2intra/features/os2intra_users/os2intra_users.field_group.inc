@@ -157,6 +157,41 @@ function os2intra_users_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_slet|user|user|form';
+  $field_group->group_name = 'group_slet';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Slet',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_os2intra_organisation_ref',
+      1 => 'field_os2intra_import_groups',
+      2 => 'field_os2intra_department_ref',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Slet',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-slet field-group-div hidden',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_slet|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_system|user|user|form';
   $field_group->group_name = 'group_system';
   $field_group->entity_type = 'user';
@@ -167,14 +202,12 @@ function os2intra_users_field_group_info() {
     'label' => 'System',
     'weight' => '10',
     'children' => array(
-      0 => 'field_os2intra_organisation_ref',
-      1 => 'field_os2intra_import_groups',
-      2 => 'field_os2intra_employee_id',
-      3 => 'field_os2intra_termination_date',
-      4 => 'field_os2intra_department_ref',
-      5 => 'ckeditor',
-      6 => 'timezone',
-      7 => 'locale',
+      0 => 'field_os2intra_employee_id',
+      1 => 'field_os2intra_termination_date',
+      2 => 'og_org_ref',
+      3 => 'ckeditor',
+      4 => 'timezone',
+      5 => 'locale',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

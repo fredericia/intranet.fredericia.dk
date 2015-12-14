@@ -272,3 +272,35 @@
 
 // Links mixin
 .os2-mixin-links() {}
+
+
+// Grupe links
+
+.pane-node-create-links {
+  ul {
+    .list-inline;
+    a {
+      .btn;
+      .btn-tertiary;
+      .btn-sm;
+      margin-bottom: 4px;
+      &:before {
+        font-family: FontAwesome;
+        content: @fa-var-plus;
+        margin-right: 4px;
+        }
+    }
+  }
+}
+
+a.group {
+  .btn;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  &.subscribe {
+    .btn-tertiary;
+    }
+  &.unsubscribe {
+  .btn-quaternary;
+  }
+}

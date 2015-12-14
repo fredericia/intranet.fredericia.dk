@@ -863,7 +863,7 @@ function _os2intra_user_import_send_email($terms) {
 
   // Loop through terms and build email body
   foreach ($terms as $term) {
-    $body.= $term->name . ' ' . $base_url . '/' . drupal_get_path_alias('taxonomy/term/124') . "\n";
+    $body.= $term->name . ' ' . $base_url . '/' . drupal_get_path_alias('taxonomy/term/' . $term->tid) . "\n";
   }
 
   // Build and send email to administrator, that a new department has been created.

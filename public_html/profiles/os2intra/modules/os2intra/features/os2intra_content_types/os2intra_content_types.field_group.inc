@@ -1137,7 +1137,8 @@ function os2intra_content_types_field_group_info() {
       2 => 'field_os2intra_physical_location',
       3 => 'field_os2web_base_field_edi_tags',
       4 => 'field_os2web_base_field_kle_ref',
-      5 => 'title',
+      5 => 'field_os2intra_event_type',
+      6 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

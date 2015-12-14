@@ -537,6 +537,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['sorts']['status']['id'] = 'status';
   $handler->display->display_options['sorts']['status']['table'] = 'node';
   $handler->display->display_options['sorts']['status']['field'] = 'status';
+  $handler->display->display_options['sorts']['status']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1029,6 +1030,12 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['filters']['title_2']['field'] = 'title';
   $handler->display->display_options['filters']['title_2']['operator'] = 'longerthan';
   $handler->display->display_options['filters']['title_2']['value'] = '2';
+  /* Filter criterion: Content: Dato -  start date (field_os2intra_date) */
+  $handler->display->display_options['filters']['field_os2intra_date_value']['id'] = 'field_os2intra_date_value';
+  $handler->display->display_options['filters']['field_os2intra_date_value']['table'] = 'field_data_field_os2intra_date';
+  $handler->display->display_options['filters']['field_os2intra_date_value']['field'] = 'field_os2intra_date_value';
+  $handler->display->display_options['filters']['field_os2intra_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_os2intra_date_value']['default_date'] = 'now';
   $handler->display->display_options['pane_category']['name'] = 'OS2Intra Intranet';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
@@ -1118,16 +1125,6 @@ function os2intra_frontpage_views_default_views() {
     1 => array(),
     2 => array(),
     3 => array(),
-  );
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type_2']['id'] = 'type_2';
-  $handler->display->display_options['filters']['type_2']['table'] = 'node';
-  $handler->display->display_options['filters']['type_2']['field'] = 'type';
-  $handler->display->display_options['filters']['type_2']['value'] = array(
-    'poll' => 'poll',
-    'event' => 'event',
-    'post' => 'post',
-    'wiki' => 'wiki',
   );
   /* Filter criterion: Realname: Name */
   $handler->display->display_options['filters']['realname']['id'] = 'realname';

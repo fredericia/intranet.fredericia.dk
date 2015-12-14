@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the OS2intra Startindhold feature.
- */
-
-include_once 'os2intra_startcontent.features.inc';

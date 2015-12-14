@@ -261,7 +261,9 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['content'] = 'There is no content in this group.';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Der er ikke tilgængeligt indhold';
+  $handler->display->display_options['empty']['area']['format'] = 'indhold';
   /* Relationship: OG membership: OG membership from Node */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
@@ -362,6 +364,14 @@ function os2intra_panels_views_default_views() {
     3 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['operator'] = 'not in';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'os2intra_org_group_unit' => 'os2intra_org_group_unit',
+  );
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
@@ -538,7 +548,7 @@ function os2intra_panels_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('There is no content in this group.'),
+    t('Der er ikke tilgængeligt indhold'),
     t('OG membership from node'),
     t('All'),
     t('Type'),
@@ -597,8 +607,9 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['relationship'] = 'og_membership_rel';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['gid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['gid']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['gid']['title'] = '%1 members';
+  $handler->display->display_options['arguments']['gid']['title'] = 'Medlemmer i %1';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
@@ -687,6 +698,15 @@ function os2intra_panels_views_default_views() {
       'label' => 'OG membership: Group ID',
     ),
   );
+
+  /* Display: Side */
+  $handler = $view->new_display('page', 'Side', 'page_1');
+  $handler->display->display_options['path'] = 'node/%/medlemmer';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Medlemmer';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['os2intra_gruppe_medlemmer'] = array(
     t('Defaults'),
     t('more'),
@@ -696,16 +716,16 @@ function os2intra_panels_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('OG membership from user'),
-    t('All'),
-    t('%1 members'),
+    t('Alle'),
+    t('Medlemmer i %1'),
     t('Block'),
     t('Gruppens medlemmer'),
     t('OS2intra Gruppe medlemmer'),
     t('OS2intra'),
     t('Afdelingens medlemmer'),
-    t('Alle'),
     t('Medarbejdere i %1'),
     t('OS2intra Afdelings medlemmer'),
+    t('Side'),
   );
   $export['os2intra_gruppe_medlemmer'] = $view;
 
@@ -1023,6 +1043,10 @@ function os2intra_panels_views_default_views() {
 
   /* Display: Afsnit */
   $handler = $view->new_display('panel_pane', 'Afsnit', 'panel_pane_7');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '99';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_accordion_plugin_style';
   $handler->display->display_options['style_options']['title_field'] = 'field_os2intra_paragraph_title';
@@ -1069,6 +1093,18 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_paragraph_title']['label'] = '';
   $handler->display->display_options['fields']['field_os2intra_paragraph_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_os2intra_paragraph_title']['element_label_colon'] = FALSE;
+  /* Field: Field: Indlejr webform */
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['id'] = 'field_os2web_webform_ref';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['table'] = 'field_data_field_os2web_webform_ref';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['field'] = 'field_os2web_webform_ref';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['relationship'] = 'field_os2intra_paragraph_value';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 0,
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';

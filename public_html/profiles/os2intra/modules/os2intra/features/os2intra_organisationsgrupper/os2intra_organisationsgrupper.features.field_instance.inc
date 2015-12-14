@@ -95,6 +95,8 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   // Exported field_instance: 'node-os2intra_group-field_os2intra_image'.
   $field_instances['node-os2intra_group-field_os2intra_image'] = array(
     'bundle' => 'os2intra_group',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -143,8 +145,11 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'default_image' => 0,
       'epsacrop' => array(
         'styles' => array(
-          '4_col_image_-_520x220' => '4_col_image_-_520x220',
+          '4_col_image_-_520x220' => 0,
           'normal' => 0,
+          'profilbillede' => 'profilbillede',
+          'profile_image_default' => 0,
+          'spotboks' => 0,
         ),
       ),
       'file_directory' => '',
@@ -160,6 +165,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'private' => 0,
           'public' => 'public',
           'youtube' => 0,
         ),
@@ -565,6 +571,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'entityreference_autocreate' => 0,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -578,10 +585,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   // 'node-os2intra_org_group_unit-field_os2intra_dept_tools'.
   $field_instances['node-os2intra_org_group_unit-field_os2intra_dept_tools'] = array(
     'bundle' => 'os2intra_org_group_unit',
+    'custom_add_another' => 'Tilføj værktøjskasse',
+    'custom_remove' => 'Fjern',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Afdelingens værktøjskasser vises på en fane under afdelingssiden.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -630,6 +639,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'entityreference_autocreate' => array(
+          'active' => 0,
+          'author' => '',
+          'author_current_user' => 1,
+          'status' => -1,
+        ),
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -787,10 +802,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   // 'node-os2intra_org_group_unit-field_os2intra_promoted_content'.
   $field_instances['node-os2intra_org_group_unit-field_os2intra_promoted_content'] = array(
     'bundle' => 'os2intra_org_group_unit',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Forfremmet indhold vises på afdelingens forside',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -837,13 +854,19 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'options',
       'settings' => array(
+        'entityreference_autocreate' => array(
+          'active' => 0,
+          'author' => '',
+          'author_current_user' => 1,
+          'status' => -1,
+        ),
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'options_buttons',
       'weight' => 6,
     ),
   );
@@ -1534,6 +1557,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'entityreference_autocreate' => 0,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -1724,6 +1748,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'entityreference_autocreate' => 0,
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -2332,6 +2357,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Afbud');
+  t('Afdelingens værktøjskasser vises på en fane under afdelingssiden.');
   t('Afdelingsværktøjer');
   t('Billede');
   t('Billeder');
@@ -2339,6 +2365,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Deltagere');
   t('Determine if this is an OG group.');
   t('Forfremmet indhold');
+  t('Forfremmet indhold vises på afdelingens forside');
   t('Formål med gruppe');
   t('Group');
   t('Group content visibility');

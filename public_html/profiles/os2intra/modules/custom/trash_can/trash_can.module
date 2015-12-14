@@ -30,6 +30,17 @@ function trash_can_form_os2intra_settings_settings_form_alter(&$form, &$form_sta
 }
 
 /**
+ * Implements hook_permission().
+ */
+function trash_can_permission() {
+  return array(
+    'manage all trash can content' => array(
+      'title' => t('Add or remove all content to trash can'),
+    )
+  );
+}
+
+/**
  * Implements hook_cron().
  *
  * Delete expired content in the trash can.
@@ -50,4 +61,33 @@ function trash_can_cron() {
       entity_delete('node', $entity->entity_id);
     }
   }
+}
+
+/**
+ * Implements hook_flag_access().
+ *
+ * Sets permissions for trash can flag.
+ * Permits access to roles with 'manage all trash can content' permission.
+ * Other users only get flag access to their own content.
+ */
+function trash_can_flag_access($flag, $entity_id, $action, $account) {
+
+  // Only handle access to 'papirkurv' flag
+  if ($flag->name != 'papirkurv') {
+    return;
+  }
+
+  global $user;
+  $access = FALSE;
+
+  // Only permit content owner and 'administrator' roles access to the flag
+  if (user_access('manage all trash can content')) {
+    $access = TRUE;
+  }
+
+  $node = node_load($entity_id);
+  if ($node->uid == $user->uid) {
+    $access = TRUE;
+  }
+  return $access;
 }
