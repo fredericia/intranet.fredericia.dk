@@ -393,12 +393,14 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'photoswipe',
+        'module' => 'image',
         'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
           'photoswipe_image_style' => '',
           'photoswipe_node_style' => '4_col_image_-_520x220',
         ),
-        'type' => 'photoswipe',
+        'type' => 'image',
         'weight' => 2,
       ),
     ),
