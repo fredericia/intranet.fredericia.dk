@@ -5805,7 +5805,7 @@
 }
 
 @media print {
-  .content-tabs-container {
+  .os2-tabs-container {
     display: none;
   }
 }

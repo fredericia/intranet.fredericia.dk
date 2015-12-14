@@ -541,7 +541,7 @@ function node_basket_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Du har ikke oprettet nogle værktøjskasser.';
+  $handler->display->display_options['empty']['area']['content'] = 'Du har ikke oprettet nogen værktøjskasser.';
   $handler->display->display_options['empty']['area']['format'] = 'indhold';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Author uid */
@@ -629,7 +629,7 @@ function node_basket_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = 'Du abonnerer p.t. ikke på nogle værktøjskasser';
+  $handler->display->display_options['empty']['area']['content'] = 'Du abonnerer p.t. ikke på nogen værktøjskasser';
   $handler->display->display_options['empty']['area']['format'] = 'indhold';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Entity Reference: Referencing entity */
@@ -811,10 +811,10 @@ function node_basket_views_default_views() {
     t('Bruger refererer til Indhold fra field_node_basket_toolboxes'),
     t('<a href="/node_basket/toolbox/use/[nid]">Fjern</a>'),
     t('My toolboxes'),
-    t('Du har ikke oprettet nogle værktøjskasser.'),
+    t('Du har ikke oprettet nogen værktøjskasser.'),
     t('View panes'),
     t('Subscribed toolboxes'),
-    t('Du abonnerer p.t. ikke på nogle værktøjskasser'),
+    t('Du abonnerer p.t. ikke på nogen værktøjskasser'),
     t('My basket'),
     t('Du har ikke nogle emner i din kurv.'),
   );

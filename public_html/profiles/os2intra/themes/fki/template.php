@@ -58,6 +58,12 @@ function fki_preprocess_page(&$variables) {
 
   // Search form
   $variables['main_navigation_search'] = module_invoke('views', 'block_view', '-exp-Search-page');
+
+  // Tabs
+  $variables['tabs_primary'] = $variables['tabs'];
+  $variables['tabs_secondary'] = $variables['tabs'];
+  unset($variables['tabs_primary']['#secondary']);
+  unset($variables['tabs_secondary']['#primary']);
 }
 
 /**

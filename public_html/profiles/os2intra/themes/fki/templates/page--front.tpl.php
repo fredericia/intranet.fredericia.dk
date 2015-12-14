@@ -109,12 +109,20 @@
           <!-- End - breadcrumb -->
         <?php endif;?>
 
-        <?php if (!empty($tabs)): ?>
-          <!-- Begin - tabs -->
-          <div class="content-tabs-container">
-            <?php print render($tabs); ?>
+        <?php if (!empty($tabs_primary)): ?>
+          <!-- Begin - tabs primary -->
+          <div class="os2-tabs-container os2-tabs-variant-default">
+            <?php print render($tabs_primary); ?>
           </div>
-          <!-- End - tabs -->
+          <!-- End - tabs primary -->
+        <?php endif; ?>
+
+        <?php if (!empty($tabs_secondary)): ?>
+          <!-- Begin - tabs secondary -->
+          <div class="os2-tabs-container os2-tabs-variant-tertiary">
+            <?php print render($tabs_secondary); ?>
+          </div>
+          <!-- End - tabs secondary -->
         <?php endif; ?>
 
         <a id="main-content"></a>
