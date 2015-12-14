@@ -1,14 +1,14 @@
 name = Trash Can
-description = Provides a trash can for user to add nodes to, instead of deleting them. The trash can will be emptied after an expiration time 
+description = Provides a trash can for user to add nodes to, instead of deleting them. The trash can will be emptied after an expiration time
 core = 7.x
 package = OS2Intra
 version = 7.x-1.0
-configure = admin/config/os2intra/settings
 dependencies[] = flag
 dependencies[] = os2intra_settings
 dependencies[] = rules
 dependencies[] = views
 dependencies[] = views_content
+configure = admin/config/os2intra/settings
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[flag][] = papirkurv
