@@ -1322,6 +1322,11 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'list';
+  /* Footer: Global: Unfiltered text */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<a href="/node/93" class="btn btn-primary">Se flere</a>';
   /* Relationship: OG membership: OG membership from Node */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
@@ -1371,6 +1376,7 @@ function os2intra_frontpage_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('<a href="/node/93" class="btn btn-primary">Se flere</a>'),
     t('OG membership from node'),
     t('Alle'),
     t('Block'),
