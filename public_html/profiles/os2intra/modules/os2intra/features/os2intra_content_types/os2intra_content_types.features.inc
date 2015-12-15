@@ -251,7 +251,7 @@ function os2intra_content_types_node_info() {
       'help' => '',
     ),
     'wiki' => array(
-      'name' => t('Wiki'),
+      'name' => t('Lokal side'),
       'base' => 'node_content',
       'description' => t('Indhold hvor flere kan redigere indholdet.'),
       'has_title' => '1',
