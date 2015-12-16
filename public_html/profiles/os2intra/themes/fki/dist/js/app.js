@@ -3519,6 +3519,51 @@ var bs3Sidebar = (function ($) {
 }());
 
 // |--------------------------------------------------------------------------
+// | Popover button
+// |--------------------------------------------------------------------------
+// |
+// | This jQuery script is written by
+// | Morten Nissen
+// |
+var popoverButton = (function ($) {
+  'use strict';
+  var pub = {};
+
+  /**
+   * Instantiate
+   */
+  pub.init = function (options) {
+    registerEventHandlers();
+    registerBootEventHandlers();
+  }
+
+  /**
+   * Register event handlers
+   */
+  function registerEventHandlers() {
+
+    // Toggle sidebar
+    $('.popover-button-toggle').on('click', function (event) {
+      event.preventDefault();
+
+      var $element = $(this);
+
+      $element
+        .parent('.popover-button')
+        .toggleClass('popover-button-open');
+    });
+  }
+
+  /**
+   * Register boot event handlers
+   */
+  function registerBootEventHandlers() {
+  }
+
+  return pub;
+})(jQuery);
+
+// |--------------------------------------------------------------------------
 // | BS3 alert
 // |--------------------------------------------------------------------------
 // |
@@ -3568,6 +3613,9 @@ var bs3Alert = (function ($) {
 
   // Enable BS3 sidebar
   bs3Sidebar.init();
+
+  // Enable popover button
+  popoverButton.init();
 
 })(jQuery);
 

@@ -55,6 +55,20 @@
     <div class="content">
       <div class="container container-fluid-lg-only container-fluid-md-only">
 
+        <?php if (user_is_logged_in()): ?>
+          <?php if (isset($find_colleague_block)): ?>
+            <!-- Begin - find colleague -->
+            <div class="popover-button popover-button-find-colleague">
+              <a href="#" class="popover-button-toggle"><?php print t('Find colleague'); ?></a>
+
+              <div class="popover-button-content">
+                <?php print render($find_colleague_block['content']); ?>
+              </div>
+            </div>
+            <!-- End - find colleague -->
+          <?php endif ?>
+        <?php endif ?>
+
         <?php print $messages; ?>
 
         <?php if (user_is_logged_in()): ?>

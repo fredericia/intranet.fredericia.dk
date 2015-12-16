@@ -59,6 +59,9 @@ function fki_preprocess_page(&$variables) {
   // Search form
   $variables['main_navigation_search'] = module_invoke('views', 'block_view', '-exp-Search-page');
 
+  // Find colleague
+  $variables['find_colleague_block'] = module_invoke('views', 'block_view', '-exp-telefonbogen-page');
+
   // Tabs
   $variables['tabs_primary'] = $variables['tabs'];
   $variables['tabs_secondary'] = $variables['tabs'];

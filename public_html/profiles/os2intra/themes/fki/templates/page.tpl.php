@@ -7,8 +7,8 @@
     <!-- Begin - logo - wide -->
     <div class="sidebar-logo">
       <a href="<?php print $front_page; ?>" class="sidebar-logo-link">
-        <img src="<?php print $path_img . '/logo-sidebar-wide.png'; ?>" class="sidebar-logo-image sidebar-logo-image-wide" alt="<?php print $site_name. t(' logo'); ?>" />
-        <img src="<?php print $path_img . '/logo-sidebar-narrow.png'; ?>" class="sidebar-logo-image sidebar-logo-image-narrow" alt="<?php print $site_name. t(' logo'); ?>" />
+        <img src="<?php print $path_img . '/logo-sidebar-wide.png'; ?>" class="sidebar-logo-image sidebar-logo-image-wide" alt="<?php print $site_name . t(' logo'); ?>" />
+        <img src="<?php print $path_img . '/logo-sidebar-narrow.png'; ?>" class="sidebar-logo-image sidebar-logo-image-narrow" alt="<?php print $site_name . t(' logo'); ?>" />
       </a>
     </div>
     <!-- End - logo - wide -->
@@ -26,7 +26,7 @@
   <div class="inner-wrapper" role="document">
 
     <!-- Begin - printable logo -->
-    <img src="<?php print $path_img . '/logo-sidebar-printable.png'; ?>" class="visible-print" alt="<?php print $site_name. t(' logo'); ?>" />
+    <img src="<?php print $path_img . '/logo-sidebar-printable.png'; ?>" class="visible-print" alt="<?php print $site_name . t(' logo'); ?>" />
     <!-- End - printable logo -->
 
     <!-- Begin - simple navigation -->
@@ -38,8 +38,7 @@
         <!-- Begin - button -->
         <li class="simple-navigation-button">
           <a href="#" data-sidebar-toggle="left">
-            <span class="fa icon fa-bars"></span>
-          </a>
+            <span class="fa icon fa-bars"></span> </a>
         </li>
         <!-- End - button -->
 
@@ -59,40 +58,54 @@
     <div class="content">
       <div class="container container-fluid-lg-only container-fluid-md-only">
 
+        <?php if (user_is_logged_in()): ?>
+          <?php if (isset($find_colleague_block)): ?>
+            <!-- Begin - find colleague -->
+            <div class="popover-button popover-button-find-colleague">
+              <a href="#" class="popover-button-toggle"><?php print t('Find colleague'); ?></a>
+
+              <div class="popover-button-content">
+                <?php print render($find_colleague_block['content']); ?>
+              </div>
+            </div>
+            <!-- End - find colleague -->
+          <?php endif ?>
+        <?php endif ?>
+
         <div class="bs3-alert-wrapper">
           <?php print $messages; ?>
         </div>
 
         <?php if (user_is_logged_in()): ?>
-        <!-- Begin - main navigation -->
-        <nav class="main-navigation-wrapper">
-          <section class="main-navigation-bar">
-            <div class="row">
+          <!-- Begin - main navigation -->
+          <nav class="main-navigation-wrapper">
+            <section class="main-navigation-bar">
+              <div class="row">
 
-              <!-- Begin - content -->
-              <div class="col-md-4">
-                <div class="main-navigation-form">
-                  <?php print render($main_navigation_search); ?>
+                <!-- Begin - content -->
+                <div class="col-md-4">
+                  <div class="main-navigation-form">
+                    <?php print render($main_navigation_search); ?>
+                  </div>
                 </div>
+                <!-- End - content -->
+
+                <!-- Begin - content -->
+                <div class="col-md-8">
+
+                  <?php if (isset($secondary_navigation)): ?>
+                    <!-- Begin - navigation -->
+                    <?php print render($secondary_navigation); ?>
+                    <!-- End - navigation -->
+                  <?php endif; ?>
+
+                </div>
+                <!-- End - content -->
+
               </div>
-              <!-- End - content -->
-
-              <!-- Begin - content -->
-              <div class="col-md-8">
-
-                <?php if (isset($secondary_navigation)): ?>
-                  <!-- Begin - navigation -->
-                  <?php print render($secondary_navigation); ?>
-                  <!-- End - navigation -->
-                <?php endif; ?>
-
-              </div>
-              <!-- End - content -->
-
-            </div>
-          </section>
-        </nav>
-        <!-- End - main navigation -->
+            </section>
+          </nav>
+          <!-- End - main navigation -->
         <?php endif; ?>
 
         <?php if (!empty($page['help'])): ?>
@@ -113,7 +126,7 @@
             </div>
           </section>
           <!-- End - breadcrumb -->
-        <?php endif;?>
+        <?php endif; ?>
 
         <?php if (!empty($tabs_primary)): ?>
           <!-- Begin - tabs primary -->
@@ -136,9 +149,9 @@
         <?php if (!panels_get_current_page_display()): ?>
           <div class="os2-box">
             <?php if ($title): ?>
-            <div class="os2-box-heading">
-              <h2 class="os2-box-heading-title"><?php print $title; ?></h2>
-            </div>
+              <div class="os2-box-heading">
+                <h2 class="os2-box-heading-title"><?php print $title; ?></h2>
+              </div>
             <?php endif; ?>
             <div class="os2-box-body">
               <?php print render($page['content']); ?>

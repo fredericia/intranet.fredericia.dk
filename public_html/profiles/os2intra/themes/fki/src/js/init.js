@@ -8,4 +8,7 @@
   // Enable BS3 sidebar
   bs3Sidebar.init();
 
+  // Enable popover button
+  popoverButton.init();
+
 })(jQuery);
