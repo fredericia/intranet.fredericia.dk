@@ -160,36 +160,6 @@ function os2intra_users_default_page_manager_handlers() {
     $display->content['new-003b46ff-7e82-4dce-9e20-f2fe84d1b968'] = $pane;
     $display->panels['sidebar'][2] = 'new-003b46ff-7e82-4dce-9e20-f2fe84d1b968';
     $pane = new stdClass();
-    $pane->pid = 'new-82fce223-4c6e-4f7c-a785-a7bacbd7d129';
-    $pane->panel = 'sidebar';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'user:field_os2intra_user_bio';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'text_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'argument_entity_id:user_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '82fce223-4c6e-4f7c-a785-a7bacbd7d129';
-    $display->content['new-82fce223-4c6e-4f7c-a785-a7bacbd7d129'] = $pane;
-    $display->panels['sidebar'][3] = 'new-82fce223-4c6e-4f7c-a785-a7bacbd7d129';
-    $pane = new stdClass();
     $pane->pid = 'new-100e3b58-8523-4fbe-a28d-8364a1d49201';
     $pane->panel = 'sidebar';
     $pane->type = 'entity_field';
@@ -216,11 +186,11 @@ function os2intra_users_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '100e3b58-8523-4fbe-a28d-8364a1d49201';
     $display->content['new-100e3b58-8523-4fbe-a28d-8364a1d49201'] = $pane;
-    $display->panels['sidebar'][4] = 'new-100e3b58-8523-4fbe-a28d-8364a1d49201';
+    $display->panels['sidebar'][3] = 'new-100e3b58-8523-4fbe-a28d-8364a1d49201';
     $pane = new stdClass();
     $pane->pid = 'new-a03f7ba1-6c33-4acf-928f-0ded52ac2d6d';
     $pane->panel = 'sidebar';
@@ -249,44 +219,11 @@ function os2intra_users_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'a03f7ba1-6c33-4acf-928f-0ded52ac2d6d';
     $display->content['new-a03f7ba1-6c33-4acf-928f-0ded52ac2d6d'] = $pane;
-    $display->panels['sidebar'][5] = 'new-a03f7ba1-6c33-4acf-928f-0ded52ac2d6d';
-    $pane = new stdClass();
-    $pane->pid = 'new-3faebe9a-0308-4972-b265-ab64c0b72529';
-    $pane->panel = 'sidebar';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'user:og_org_ref';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'title',
-      'formatter' => 'entityreference_entity_view',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'view_mode' => 'list',
-        'links' => 1,
-      ),
-      'context' => 'argument_entity_id:user_1',
-      'override_title' => 1,
-      'override_title_text' => 'Afdeling/Team',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 6;
-    $pane->locks = array();
-    $pane->uuid = '3faebe9a-0308-4972-b265-ab64c0b72529';
-    $display->content['new-3faebe9a-0308-4972-b265-ab64c0b72529'] = $pane;
-    $display->panels['sidebar'][6] = 'new-3faebe9a-0308-4972-b265-ab64c0b72529';
+    $display->panels['sidebar'][4] = 'new-a03f7ba1-6c33-4acf-928f-0ded52ac2d6d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

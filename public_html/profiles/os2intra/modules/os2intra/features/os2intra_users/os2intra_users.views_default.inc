@@ -377,11 +377,11 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'arrangement' => 'arrangement',
-    'forum_post' => 'forum_post',
-    'document' => 'document',
-    'hearing' => 'hearing',
-    'hearing_responses' => 'hearing_responses',
+    'event' => 'event',
+    'post' => 'post',
+    'os2intra_base_page' => 'os2intra_base_page',
+    'wiki' => 'wiki',
+    'os2intra_referat' => 'os2intra_referat',
   );
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
