@@ -388,6 +388,8 @@ function os2intra_content_types_field_default_field_instances() {
   // 'field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledning_img'.
   $field_instances['field_collection_item-field_os2intra_base_vejledning-field_os2intra_itvejledning_img'] = array(
     'bundle' => 'field_os2intra_base_vejledning',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -416,6 +418,9 @@ function os2intra_content_types_field_default_field_instances() {
         'styles' => array(
           '4_col_image_-_520x220' => '4_col_image_-_520x220',
           'normal' => 'normal',
+          'profilbillede' => 0,
+          'profile_image_default' => 0,
+          'spotboks' => 0,
         ),
       ),
       'file_directory' => '',
@@ -431,6 +436,7 @@ function os2intra_content_types_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'private' => 0,
           'public' => 'public',
           'youtube' => 'youtube',
         ),
@@ -438,13 +444,15 @@ function os2intra_content_types_field_default_field_instances() {
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
-          'video' => 0,
+          'video' => 'video',
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_browser_plus--media_browser_my_files' => 0,
+          'media_browser_plus--media_browser_thumbnails' => 0,
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
-          'upload' => 'upload',
+          'upload' => 0,
         ),
       ),
       'type' => 'media_generic',
