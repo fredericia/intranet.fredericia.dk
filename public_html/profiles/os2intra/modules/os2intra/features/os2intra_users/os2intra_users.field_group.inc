@@ -21,7 +21,7 @@ function os2intra_users_field_group_info() {
   $field_group->parent_name = 'group_user';
   $field_group->data = array(
     'label' => 'Brugerkonto',
-    'weight' => '8',
+    'weight' => '4',
     'children' => array(
       0 => 'account',
     ),
@@ -49,7 +49,7 @@ function os2intra_users_field_group_info() {
   $field_group->parent_name = 'group_user';
   $field_group->data = array(
     'label' => 'Billede',
-    'weight' => '6',
+    'weight' => '2',
     'children' => array(
       0 => 'field_os2intra_image',
     ),
@@ -77,7 +77,7 @@ function os2intra_users_field_group_info() {
   $field_group->parent_name = 'group_user';
   $field_group->data = array(
     'label' => 'Grupper',
-    'weight' => '9',
+    'weight' => '5',
     'children' => array(
       0 => 'og_user_node',
     ),
@@ -105,7 +105,7 @@ function os2intra_users_field_group_info() {
   $field_group->parent_name = 'group_user';
   $field_group->data = array(
     'label' => 'Navn og stilling',
-    'weight' => '5',
+    'weight' => '1',
     'children' => array(
       0 => 'field_name_first',
       1 => 'field_name_last',
@@ -135,11 +135,12 @@ function os2intra_users_field_group_info() {
   $field_group->parent_name = 'group_user';
   $field_group->data = array(
     'label' => 'Profil info',
-    'weight' => '7',
+    'weight' => '3',
     'children' => array(
       0 => 'field_os2intra_user_bio',
       1 => 'field_os2intra_user_competences',
       2 => 'field_os2intra_user_inter',
+      3 => 'message_subscribe_email',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -168,8 +169,8 @@ function os2intra_users_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_os2intra_organisation_ref',
-      1 => 'field_os2intra_import_groups',
-      2 => 'field_os2intra_department_ref',
+      1 => 'field_os2intra_department_ref',
+      2 => 'field_os2intra_import_groups',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -200,7 +201,7 @@ function os2intra_users_field_group_info() {
   $field_group->parent_name = 'group_user';
   $field_group->data = array(
     'label' => 'System',
-    'weight' => '10',
+    'weight' => '6',
     'children' => array(
       0 => 'field_os2intra_employee_id',
       1 => 'field_os2intra_termination_date',
@@ -233,7 +234,7 @@ function os2intra_users_field_group_info() {
   $field_group->parent_name = 'group_user';
   $field_group->data = array(
     'label' => 'Værktøjer',
-    'weight' => '11',
+    'weight' => '7',
     'children' => array(
       0 => 'field_node_basket_toolboxes',
     ),

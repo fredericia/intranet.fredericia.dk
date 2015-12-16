@@ -443,6 +443,54 @@ function os2intra_users_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'message_subscribe_email'.
+  $field_bases['message_subscribe_email'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'user',
+    ),
+    'field_name' => 'message_subscribe_email',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'Don\'t email',
+        1 => 'Email',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
+  // Exported field_base: 'og_membership_request'.
+  $field_bases['og_membership_request'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'og_membership',
+    ),
+    'field_name' => 'og_membership_request',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'og_org_ref'.
   $field_bases['og_org_ref'] = array(
     'active' => 1,

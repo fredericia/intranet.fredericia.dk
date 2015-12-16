@@ -769,7 +769,7 @@ function os2intra_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 48,
+      'weight' => 1,
     ),
   );
 
@@ -822,7 +822,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 50,
+      'weight' => 3,
     ),
   );
 
@@ -882,7 +882,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 49,
+      'weight' => 2,
     ),
   );
 
@@ -931,6 +931,51 @@ function os2intra_users_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-message_subscribe_email'.
+  $field_instances['user-user-message_subscribe_email'] = array(
+    'bundle' => 'user',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Email option will be checked automatically when subscribing to something.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 25,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'display_label' => 1,
+    'entity_type' => 'user',
+    'field_name' => 'message_subscribe_email',
+    'label' => 'Email subscriptions',
+    'required' => FALSE,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 0,
     ),
   );
 
@@ -1077,6 +1122,8 @@ function os2intra_users_field_default_field_instances() {
   t('Billede');
   t('Bio');
   t('Efternavn');
+  t('Email option will be checked automatically when subscribing to something.');
+  t('Email subscriptions');
   t('Fornavn');
   t('Group membership');
   t('Interesser');
