@@ -452,14 +452,12 @@ function os2intra_content_types_field_group_info() {
     'format_settings' => array(
       'label' => 'Kolonne 1',
       'instance_settings' => array(
-        'classes' => 'col-md-4',
+        'classes' => 'col-sm-3',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
         'attributes' => '',
-        'required_fields' => 1,
       ),
-      'formatter' => '',
     ),
   );
   $export['group_kolonne1|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
@@ -483,14 +481,12 @@ function os2intra_content_types_field_group_info() {
     'format_settings' => array(
       'label' => 'Kolonne 2',
       'instance_settings' => array(
-        'classes' => 'col-md-4',
+        'classes' => 'col-sm-3',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
         'attributes' => '',
-        'required_fields' => 1,
       ),
-      'formatter' => '',
     ),
   );
   $export['group_kolonne2|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
@@ -514,14 +510,12 @@ function os2intra_content_types_field_group_info() {
     'format_settings' => array(
       'label' => 'Kolonne 3',
       'instance_settings' => array(
-        'classes' => 'col-md-4',
+        'classes' => 'col-sm-6',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
         'attributes' => '',
-        'required_fields' => 1,
       ),
-      'formatter' => '',
     ),
   );
   $export['group_kolonne3|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
