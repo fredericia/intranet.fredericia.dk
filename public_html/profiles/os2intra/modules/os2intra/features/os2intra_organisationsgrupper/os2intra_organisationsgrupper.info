@@ -73,6 +73,7 @@ features[field_instance][] = node-os2intra_group-field_os2intra_image
 features[field_instance][] = node-os2intra_group-group_access
 features[field_instance][] = node-os2intra_group-group_content_access
 features[field_instance][] = node-os2intra_group-group_group
+features[field_instance][] = node-os2intra_group-og_roles_permissions
 features[field_instance][] = node-os2intra_org_group_unit-body
 features[field_instance][] = node-os2intra_org_group_unit-field_os2intra_afdeling
 features[field_instance][] = node-os2intra_org_group_unit-field_os2intra_base_spotboxes

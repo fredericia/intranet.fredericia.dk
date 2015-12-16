@@ -139,7 +139,9 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_group:subscribe without approval'
   $permissions['node:os2intra_group:subscribe without approval'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'non-member' => 'non-member',
+    ),
   );
 
   // Exported og permission: 'node:os2intra_group:unsubscribe'
@@ -280,22 +282,30 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_group:update field_os2intra_user_bio field'
   $permissions['node:os2intra_group:update field_os2intra_user_bio field'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:os2intra_group:update field_os2intra_user_competences field'
   $permissions['node:os2intra_group:update field_os2intra_user_competences field'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:os2intra_group:update field_os2intra_user_inter field'
   $permissions['node:os2intra_group:update field_os2intra_user_inter field'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:os2intra_group:update field_os2intra_user_titles field'
   $permissions['node:os2intra_group:update field_os2intra_user_titles field'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'non-member' => 'non-member',
+    ),
   );
 
   // Exported og permission: 'node:os2intra_group:update field_os2web_base_field_kle_ref field'
@@ -357,7 +367,9 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_group:update og_user_node field'
   $permissions['node:os2intra_group:update og_user_node field'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'member' => 'member',
+    ),
   );
 
   // Exported og permission: 'node:os2intra_group:update own event content'
@@ -460,7 +472,9 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_group:view field_os2intra_organisation_ref field'
   $permissions['node:os2intra_group:view field_os2intra_organisation_ref field'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'non-member' => 'non-member',
+    ),
   );
 
   // Exported og permission: 'node:os2intra_group:view field_os2intra_physical_location field'
@@ -501,22 +515,30 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_group:view field_os2intra_user_bio field'
   $permissions['node:os2intra_group:view field_os2intra_user_bio field'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'non-member' => 'non-member',
+    ),
   );
 
   // Exported og permission: 'node:os2intra_group:view field_os2intra_user_competences field'
   $permissions['node:os2intra_group:view field_os2intra_user_competences field'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'non-member' => 'non-member',
+    ),
   );
 
   // Exported og permission: 'node:os2intra_group:view field_os2intra_user_inter field'
   $permissions['node:os2intra_group:view field_os2intra_user_inter field'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'non-member' => 'non-member',
+    ),
   );
 
   // Exported og permission: 'node:os2intra_group:view field_os2intra_user_titles field'
   $permissions['node:os2intra_group:view field_os2intra_user_titles field'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'non-member' => 'non-member',
+    ),
   );
 
   // Exported og permission: 'node:os2intra_group:view field_os2web_base_field_kle_ref field'
@@ -569,7 +591,9 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
 
   // Exported og permission: 'node:os2intra_group:view og_user_node field'
   $permissions['node:os2intra_group:view og_user_node field'] = array(
-    'roles' => array(),
+    'roles' => array(
+      'non-member' => 'non-member',
+    ),
   );
 
   // Exported og permission: 'node:os2intra_org_group_unit:add user'
