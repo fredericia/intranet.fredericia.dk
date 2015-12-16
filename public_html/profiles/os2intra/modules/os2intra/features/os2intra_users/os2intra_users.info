@@ -84,6 +84,7 @@ features[taxonomy][] = user_skills
 features[user_role][] = Intranet-koordinator
 features[user_role][] = Intranet-redaktør
 features[variable][] = page_manager_user_view_disabled
+features[views_view][] = brugers_indhold
 features[views_view][] = forfatters_indhold
 features[views_view][] = os2intra_brugervisning
 features[views_view][] = telefonbogen
