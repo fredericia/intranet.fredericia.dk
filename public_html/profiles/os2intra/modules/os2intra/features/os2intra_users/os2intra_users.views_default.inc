@@ -510,26 +510,6 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['realname']['element_type'] = 'h2';
   $handler->display->display_options['fields']['realname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['realname']['link_to_user'] = FALSE;
-  /* Field: User: E-mail */
-  $handler->display->display_options['fields']['mail']['id'] = 'mail';
-  $handler->display->display_options['fields']['mail']['table'] = 'users';
-  $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  /* Field: User: Interesser */
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['id'] = 'field_os2intra_user_inter';
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['table'] = 'field_data_field_os2intra_user_inter';
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['field'] = 'field_os2intra_user_inter';
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['label'] = '';
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['alter']['link_class'] = 'btn btn-default btn-xs';
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['settings'] = array(
-    'link' => 0,
-  );
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['field_api_classes'] = TRUE;
   /* Field: User: Jobtitel */
   $handler->display->display_options['fields']['field_os2intra_user_titles']['id'] = 'field_os2intra_user_titles';
   $handler->display->display_options['fields']['field_os2intra_user_titles']['table'] = 'field_data_field_os2intra_user_titles';
@@ -543,30 +523,14 @@ function os2intra_users_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_os2intra_user_titles']['field_api_classes'] = TRUE;
-  /* Field: User: Bio */
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['id'] = 'field_os2intra_user_bio';
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['table'] = 'field_data_field_os2intra_user_bio';
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['field'] = 'field_os2intra_user_bio';
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['label'] = '';
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['field_api_classes'] = TRUE;
-  /* Field: User: Kompetencer */
-  $handler->display->display_options['fields']['field_os2intra_user_competences']['id'] = 'field_os2intra_user_competences';
-  $handler->display->display_options['fields']['field_os2intra_user_competences']['table'] = 'field_data_field_os2intra_user_competences';
-  $handler->display->display_options['fields']['field_os2intra_user_competences']['field'] = 'field_os2intra_user_competences';
-  $handler->display->display_options['fields']['field_os2intra_user_competences']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_os2intra_user_competences']['alter']['link_class'] = 'btn btn-default btn-xs';
-  $handler->display->display_options['fields']['field_os2intra_user_competences']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_os2intra_user_competences']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_os2intra_user_competences']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_user_competences']['settings'] = array(
-    'link' => 1,
-  );
-  $handler->display->display_options['fields']['field_os2intra_user_competences']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_os2intra_user_competences']['field_api_classes'] = TRUE;
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['label'] = '';
+  $handler->display->display_options['fields']['mail']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['mail']['alter']['link_class'] = 'btn btn-primary';
+  $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
   /* Field: User: Organisation */
   $handler->display->display_options['fields']['field_os2intra_organisation_ref']['id'] = 'field_os2intra_organisation_ref';
   $handler->display->display_options['fields']['field_os2intra_organisation_ref']['table'] = 'og_membership';
@@ -574,28 +538,19 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_organisation_ref']['settings'] = array(
     'link' => 0,
   );
-  /* Field: User: Last access */
-  $handler->display->display_options['fields']['access']['id'] = 'access';
-  $handler->display->display_options['fields']['access']['table'] = 'users';
-  $handler->display->display_options['fields']['access']['field'] = 'access';
-  $handler->display->display_options['fields']['access']['label'] = 'Seneste tilgang';
-  $handler->display->display_options['fields']['access']['element_type'] = 'em';
-  $handler->display->display_options['fields']['access']['date_format'] = 'long';
-  $handler->display->display_options['fields']['access']['second_date_format'] = 'long';
-  /* Field: Content: Kantine */
-  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['id'] = 'field_os2intra_canteen_canteen';
-  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['table'] = 'field_data_field_os2intra_canteen_canteen';
-  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['field'] = 'field_os2intra_canteen_canteen';
-  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['label'] = '';
-  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['settings'] = array(
-    'link' => 0,
-  );
-  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_os2intra_canteen_canteen']['field_api_classes'] = TRUE;
+  /* Field: User: Bio */
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['id'] = 'field_os2intra_user_bio';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['table'] = 'field_data_field_os2intra_user_bio';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['field'] = 'field_os2intra_user_bio';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['alter']['text'] = '<hr/>
+[field_os2intra_user_bio]';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['field_api_classes'] = TRUE;
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
@@ -646,10 +601,9 @@ function os2intra_users_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('E-mail'),
-    t('Kompetencer'),
     t('Organisation'),
-    t('Seneste tilgang'),
+    t('<hr/>
+[field_os2intra_user_bio]'),
     t('Alle'),
     t('Content pane'),
     t('View panes'),
