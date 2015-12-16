@@ -472,7 +472,7 @@ function homebox_build($page) {
  */
 function homebox_add_link($text, $page, $module, $delta, $options = array()) {
   $options['query']['token'] = homebox_get_token($page);
-  return l(t($text), 'homebox/js/' . $page->name . '/add/' . $module . '/' . $delta, $options);
+  return l($text, 'homebox/js/' . $page->name . '/add/' . $module . '/' . $delta, $options);
 }
 
 function homebox_save_form($form, &$form_state, $page) {
