@@ -207,11 +207,20 @@ function fki_preprocess_node__post(&$variables) {
  */
 function fki_preprocess_node__spotbox(&$variables) {
   if ($variables['view_mode'] == 'teaser') {
+    $variables['spotbox_link'] = array();
+
+    // Link
+    if ($field_link = field_get_items('node', $variables['node'], 'field_spotbox_link')) {
+      if (!empty($field_link)) {
+        $variables['spotbox_link']['url'] = $field_link[0]['url'];
+        $variables['spotbox_link']['title'] = $field_link[0]['title'];
+      }
+    }
 
     // Image
     if ($field_image = field_get_items('node', $variables['node'], 'field_spotbox_image')) {
       if (!empty($field_image)) {
-        $variables['classes_array'][] = 'fki-spotbox-' . $variables['elements']['#view_mode'] . '-variant-with-image';
+        $variables['classes_array'][] = 'os2-spotbox-' . $variables['elements']['#view_mode'] . '-variant-with-image';
       }
     }
   }
