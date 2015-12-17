@@ -1222,7 +1222,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_event_pattern';
-  $strongarm->value = '[node:og_group_ref]/[node:content-type]/[node:title]';
+  $strongarm->value = '[node:og-group-ref:0:url:relative]/[node:title]';
   $export['pathauto_node_event_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1271,7 +1271,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_wiki_pattern';
-  $strongarm->value = '[node:og_group_ref]/[node:content-type]/[node:title]';
+  $strongarm->value = '[node:og-group-ref:0:url:relative]/sider/[node:title]';
   $export['pathauto_node_wiki_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1280,6 +1280,20 @@ function os2intra_content_types_strongarm() {
   $strongarm->name = 'pathauto_reduce_ascii';
   $strongarm->value = 1;
   $export['pathauto_reduce_ascii'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_begivenhedstyper_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_begivenhedstyper_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_indlaegstyper_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_indlaegstyper_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

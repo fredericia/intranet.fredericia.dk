@@ -218,6 +218,7 @@ features[variable][] = node_submitted_os2intra_referat
 features[variable][] = node_submitted_post
 features[variable][] = pathauto_node_os2intra_group_pattern
 features[variable][] = pathauto_node_os2intra_org_group_unit_pattern
+features[variable][] = pathauto_node_os2intra_referat_pattern
 features[variable][] = pathauto_node_post_pattern
 features[views_view][] = os2intra_afdelingsindhold
 features[views_view][] = os2intra_gruppe_og_afdlings_indhold
