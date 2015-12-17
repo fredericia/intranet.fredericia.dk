@@ -183,6 +183,25 @@ function fki_preprocess_node__full(&$variables) {
 }
 
 /*
+ * Post
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__post(&$variables) {
+  $node = $variables['node'];
+
+  // Able to like content
+  if ($field_able_to_like_content = field_get_items('node', $node, 'field_able_to_like_content')) {
+
+    // Not able to like
+    if ($field_able_to_like_content[0]['value'] == 0) {
+      unset($variables['content']['links']['flag']['#links']['flag-os2intra_flag_node_like']);
+      unset($variables['content']['links_bottom']['flag']['#links']['flag-os2intra_flag_node_like']);
+      unset($variables['content']['links_top']['flag']['#links']['flag-os2intra_flag_node_like']);
+    }
+  }
+}
+
+/*
  * Spotbox
  * Implements hook_preprocess_node().
  */
