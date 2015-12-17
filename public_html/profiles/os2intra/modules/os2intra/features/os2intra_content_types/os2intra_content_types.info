@@ -218,6 +218,7 @@ features[field_instance][] = node-os2web_base_selfservice_link-field_os2web_base
 features[field_instance][] = node-os2web_base_selfservice_link-field_os2web_base_field_type
 features[field_instance][] = node-os2web_base_selfservice_link-field_urlos2intra_selvbetje_int
 features[field_instance][] = node-os2web_base_selfservice_link-field_urlos2intra_selvbetje_link
+features[field_instance][] = node-post-field_able_to_like_content
 features[field_instance][] = node-post-field_os2intra_base_spotboxes
 features[field_instance][] = node-post-field_os2intra_physical_location
 features[field_instance][] = node-post-field_os2intra_related_ref
