@@ -205,7 +205,6 @@ function os2intra_struktur_pages_views_default_views() {
   $handler->display->display_options['relationships']['nid']['table'] = 'taxonomy_index';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
   $handler->display->display_options['relationships']['nid']['label'] = 'indholdselement';
-  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Ikon */
   $handler->display->display_options['fields']['field_os2web_base_icon']['id'] = 'field_os2web_base_icon';

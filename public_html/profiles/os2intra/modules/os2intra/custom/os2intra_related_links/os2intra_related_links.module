@@ -16,6 +16,7 @@ function os2intra_related_links_block_info() {
 
   return $blocks;
 }
+
 /**
  * Implements hook_block_view().
  */
@@ -31,6 +32,7 @@ function os2intra_related_links_block_view($delta = '') {
   return $block;
 
 }
+
 /**
  * KTC block view content callback.
  */
@@ -42,21 +44,44 @@ function _os2intra_related_links_block_content() {
     $node = node_load($nid);
   }
   $related_links = array();
+
+  // Get all related links, manually typed in on node
+  if ($field_related_links = field_get_items('node', $node, 'field_os2web_base_field_ref')) {
+
+    foreach ($field_related_links as $field_related_link) {
+
+      $link_node = node_load($field_related_link['target_id']);
+
+      $related_links[$link_node->nid] = array(
+        'nid'   => $link_node->nid,
+        'title' => $link_node->title,
+        'type'  => $link_node->type,
+        'class' => 'manual',
+      );
+    }
+  }
+
   // Get all related links related to the KLE number on the node,
   // term number topic, tags. Only get
   // these if the checkbox "Skjul relaterede links" isn't checked.
   if (($node && (!$hide_link = field_get_items('node', $node, 'field_os2web_base_field_hidlinks')))
-    || ($node && ($hide_link = field_get_items('node', $node, 'field_os2web_base_field_hidlinks')) && !$hide_link[0]['value'])) {
+    || ($node && ($hide_link = field_get_items('node', $node, 'field_os2web_base_field_hidlinks')) && !$hide_link[0]['value'])
+  ) {
+
     if ($kle_items = field_get_items('node', $node, 'field_os2web_base_field_kle_ref')) {
       foreach ($kle_items as $kle) {
         // Get all nodes which have the same KLE number as this node.
         $query = new EntityFieldQuery();
         $result = $query->entityCondition('entity_type', 'node')
           ->propertyCondition('status', 1)
-          ->entityCondition('bundle', array('hearing', 'group', 'document'), 'NOT IN')
+          ->entityCondition('bundle', array(
+            'hearing',
+            'group',
+            'document'
+          ), 'NOT IN')
           ->fieldCondition('field_os2web_base_field_kle_ref', 'tid', $kle['tid'])
           ->propertyOrderBy('created', 'ASC')
-          ->range(0,10)
+          ->range(0, 10)
           ->execute();
         if (isset($result['node'])) {
           foreach ($result['node'] as $link) {
@@ -68,7 +93,7 @@ function _os2intra_related_links_block_content() {
             $link_node = node_load($link->nid);
             if ($link_node) {
               $related_links[$link->nid] = array(
-                'nid' => $link->nid,
+                'nid'   => $link->nid,
                 'title' => $link_node->title,
                 'class' => 'kle-link',
               );
@@ -79,51 +104,17 @@ function _os2intra_related_links_block_content() {
       }
     }
 
-    // Get topic nodes.
-    if ($topic_items = field_get_items('node', $node, 'field_topics')) {
-      foreach ($topic_items as $item) {
-        // Get all nodes which have the same KLE number as this node.
-        $query = new EntityFieldQuery();
-        $result = $query->entityCondition('entity_type', 'node')
-          ->propertyCondition('status', 1)
-          ->entityCondition('bundle', array('hearing', 'group', 'document'), 'NOT IN')
-          ->fieldCondition('field_topics', 'tid', $item['tid'])
-          ->propertyOrderBy('created', 'ASC')
-          ->range(0,10)
-          ->execute();
-        if (isset($result['node'])) {
-          foreach ($result['node'] as $link) {
-            // Be sure to skip links which already is in list, or links to
-            // current node.
-            if (isset($related_links[$link->nid]) || ($node && $node->nid == $link->nid)) {
-              continue;
-            }
-            $link_node = node_load($link->nid);
-            if ($link_node) {
-              $related_links[$link->nid] = array(
-                'nid' => $link->nid,
-                'title' => $link_node->title,
-                'type' => $link_node->type,
-                'class' => 'emne-link',
-              );
-            }
-
-          }
-        }
-      }
-    }
-
     // Get tags nodes.
-    if ($tags_items = field_get_items('node', $node, 'field_tags')) {
+    if ($tags_items = field_get_items('node', $node, 'field_os2web_base_field_edi_tags')) {
       foreach ($tags_items as $item) {
         // Get all nodes which have the same KLE number as this node.
         $query = new EntityFieldQuery();
         $result = $query->entityCondition('entity_type', 'node')
           ->propertyCondition('status', 1)
           ->entityCondition('bundle', array('hearing', 'group'), 'NOT IN')
-          ->fieldCondition('field_tags', 'tid', $item['tid'])
+          ->fieldCondition('field_os2web_base_field_edi_tags', 'tid', $item['tid'])
           ->propertyOrderBy('created', 'ASC')
-          ->range(0,10)
+          ->range(0, 10)
           ->execute();
         if (isset($result['node'])) {
           foreach ($result['node'] as $link) {
@@ -135,9 +126,9 @@ function _os2intra_related_links_block_content() {
             $link_node = node_load($link->nid);
             if ($link_node) {
               $related_links[$link->nid] = array(
-                'nid' => $link->nid,
+                'nid'   => $link->nid,
                 'title' => $link_node->title,
-                'type' => $link_node->type,
+                'type'  => $link_node->type,
                 'class' => 'tags-link',
               );
             }
@@ -146,9 +137,10 @@ function _os2intra_related_links_block_content() {
       }
     }
   }
-  // Only show 10 items. TODO: admin setting form for content type and max iterms.
-  if (count($related_links) > 10) {
-    $related_links = array_slice($related_links, 0, 10);
+
+  $max_number_of_items = 25;
+  if (count($related_links) > $max_number_of_items) {
+    $related_links = array_slice($related_links, 0, $max_number_of_items);
   }
 
   if (!empty($related_links)) {
@@ -156,14 +148,22 @@ function _os2intra_related_links_block_content() {
   }
   return $output;
 }
+
 /**
  * Make block links markup.
  */
 function os2intra_related_links_make_markup($related_links) {
-  $output = '<ul class="related-links">';
+  $output = '<ul class="os2-related-links">';
 
   foreach ($related_links as $key => $link) {
-    $output .= '<li class="related-link-type-' . $link['type'] . '">';
+
+    if (!empty($link['type'])) {
+      $output .= '<li class="related-link-type-' . $link['type'] . '">';
+    }
+    else {
+      $output .= '<li>';
+    }
+
     if (isset($link['url'])) {
       $output .= l($link['title'], $link['url'], array('attributes' => array('class' => $link['class'])));
     }
