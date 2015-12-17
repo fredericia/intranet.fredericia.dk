@@ -243,10 +243,10 @@ function os2intra_organisationsgrupper_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '2',
         ),
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '3',
         ),
       ),
       'display' => array(),
