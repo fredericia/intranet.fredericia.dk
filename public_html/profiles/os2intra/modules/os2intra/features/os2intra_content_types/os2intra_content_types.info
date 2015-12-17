@@ -69,6 +69,7 @@ features[ctools][] = linkit:linkit_profiles:1
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_base][] = comment_body
+features[field_base][] = field_able_to_like_content
 features[field_base][] = field_os2intra_base_spotboxes
 features[field_base][] = field_os2intra_base_structure
 features[field_base][] = field_os2intra_base_vejledning
