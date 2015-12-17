@@ -1,5 +1,5 @@
-name = Related links
-description = Related links
+name = "OS2 intra - related links"
+description = "Generate a list of related links"
 core = 7.x
 package = OS2intra
 version = 7.x-1.0
