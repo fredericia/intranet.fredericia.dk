@@ -408,6 +408,94 @@ function os2intra_organisationsgrupper_views_default_views() {
   $export['os2intra_afdelingsindhold'] = $view;
 
   $view = new view();
+  $view->name = 'os2intra_gruppe_og_afdlings_indhold';
+  $view->description = '';
+  $view->tag = 'OS2intra';
+  $view->base_table = 'node';
+  $view->human_name = 'OS2intra gruppe og afdelings indhold';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'node';
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['id'] = 'reverse_og_group_ref_node';
+  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['field'] = 'reverse_og_group_ref_node';
+  $handler->display->display_options['relationships']['reverse_og_group_ref_node']['label'] = 'Indhold refererer til Indhold fra og_group_ref';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Gruppe / Afdeling (og_group_ref) */
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Gruppe / Afdelings forside */
+  $handler = $view->new_display('panel_pane', 'Gruppe / Afdelings forside', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'og_group_ref_target_id' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Gruppe / Afdeling (og_group_ref)',
+    ),
+  );
+  $translatables['os2intra_gruppe_og_afdlings_indhold'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Indhold refererer til Indhold fra og_group_ref'),
+    t('Alle'),
+    t('Gruppe / Afdelings forside'),
+    t('View panes'),
+  );
+  $export['os2intra_gruppe_og_afdlings_indhold'] = $view;
+
+  $view = new view();
   $view->name = 'os2intra_grupper';
   $view->description = 'A listing of all node groups.';
   $view->tag = 'OG Extras';
