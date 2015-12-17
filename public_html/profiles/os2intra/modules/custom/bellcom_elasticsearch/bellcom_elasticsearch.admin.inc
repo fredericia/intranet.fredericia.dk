@@ -249,7 +249,7 @@ function bellcom_elasticsearch_synonyms_settings_page($form, &$form_state) {
 
     $form['bellcom_elasticsearch_synonyms_cluser'] = array(
 	'#type' => 'hidden',
-	'#value' => variable_get('bellcom_elasticsearch_synonyms_index', $default_cluster)
+	'#value' => variable_get('bellcom_elasticsearch_synonyms_cluser', $default_cluster)
     );
 
     $form['bellcom_elasticsearch_synonyms_index'] = array(
