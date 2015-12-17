@@ -587,6 +587,12 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['row_options']['comments'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Updated/commented date */
+  $handler->display->display_options['sorts']['last_updated']['id'] = 'last_updated';
+  $handler->display->display_options['sorts']['last_updated']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['sorts']['last_updated']['field'] = 'last_updated';
+  $handler->display->display_options['sorts']['last_updated']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

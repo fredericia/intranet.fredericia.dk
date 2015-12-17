@@ -1284,31 +1284,32 @@ function os2intra_panels_default_page_manager_handlers() {
     $display->content['new-a939258c-78be-484d-9ae2-318e5333b767'] = $pane;
     $display->panels['content'][0] = 'new-a939258c-78be-484d-9ae2-318e5333b767';
     $pane = new stdClass();
-    $pane->pid = 'new-9634b055-907a-4195-8f76-15e6366db79f';
+    $pane->pid = 'new-538be710-abd7-41ef-a7db-19fc8532bf98';
     $pane->panel = 'content';
     $pane->type = 'views_panes';
-    $pane->subtype = 'os2intra_gruppe_indhold-panel_pane_1';
+    $pane->subtype = 'os2intra_gruppe_og_afdlings_indhold-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'context' => array(
         0 => 'argument_entity_id:node_1',
       ),
-      'override_title' => 1,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'plain',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '9634b055-907a-4195-8f76-15e6366db79f';
-    $display->content['new-9634b055-907a-4195-8f76-15e6366db79f'] = $pane;
-    $display->panels['content'][1] = 'new-9634b055-907a-4195-8f76-15e6366db79f';
+    $pane->uuid = '538be710-abd7-41ef-a7db-19fc8532bf98';
+    $display->content['new-538be710-abd7-41ef-a7db-19fc8532bf98'] = $pane;
+    $display->panels['content'][1] = 'new-538be710-abd7-41ef-a7db-19fc8532bf98';
     $pane = new stdClass();
     $pane->pid = 'new-1d18e848-4fe1-4538-b346-d3d839b8ffa4';
     $pane->panel = 'sidebar';
