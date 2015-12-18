@@ -26,13 +26,17 @@ function bellcom_elasticsearch_api_add_analyzer($client, $index_id, $synonyms_fi
 		    'analyzer' => [
 			'synonym' => [
 			    'tokenizer' => 'whitespace',
-			    'filter' => ['synonym']
+			    'filter' => ['synonym', 'lowercase']
 			]
 		    ],
 		    'filter' => [
 			'synonym' => [
 			    'type' => 'synonym',
-			    'synonyms_path' => $synonyms_file_path
+			    'synonyms_path' => $synonyms_file_path,
+			    'ignore_case' => true
+			],
+			'lowercase' => [
+			    'type' => 'lowercase',
 			]
 		    ]
 		]
