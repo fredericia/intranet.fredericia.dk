@@ -168,9 +168,8 @@ function os2intra_users_field_group_info() {
     'label' => 'Slet',
     'weight' => '1',
     'children' => array(
-      0 => 'field_os2intra_organisation_ref',
-      1 => 'field_os2intra_department_ref',
-      2 => 'field_os2intra_import_groups',
+      0 => 'field_os2intra_department_ref',
+      1 => 'field_os2intra_import_groups',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -203,12 +202,14 @@ function os2intra_users_field_group_info() {
     'label' => 'System',
     'weight' => '6',
     'children' => array(
-      0 => 'field_os2intra_employee_id',
-      1 => 'field_os2intra_termination_date',
-      2 => 'og_org_ref',
-      3 => 'ckeditor',
-      4 => 'timezone',
-      5 => 'locale',
+      0 => 'field_os2intra_organisation_ref',
+      1 => 'field_os2intra_employee_id',
+      2 => 'field_os2intra_termination_date',
+      3 => 'og_org_ref',
+      4 => 'field_os2intra_phone',
+      5 => 'ckeditor',
+      6 => 'timezone',
+      7 => 'locale',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -234,7 +235,7 @@ function os2intra_users_field_group_info() {
   $field_group->parent_name = 'group_user';
   $field_group->data = array(
     'label' => 'Værktøjer',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_node_basket_toolboxes',
     ),

@@ -1044,7 +1044,7 @@ function os2intra_users_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 0,
+      'weight' => -4,
     ),
   );
 
