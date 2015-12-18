@@ -31,6 +31,31 @@ function os2intra_content_types_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_able_to_like_content'.
+  $field_bases['field_able_to_like_content'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_able_to_like_content',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'Brugere kan ikke bruge "syntes godt om"',
+        1 => 'Brugere kan "syntes godt om"',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
   // Exported field_base: 'field_os2intra_base_spotboxes'.
   $field_bases['field_os2intra_base_spotboxes'] = array(
     'active' => 1,

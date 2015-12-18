@@ -533,12 +533,14 @@ function os2intra_panels_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'title',
-      'formatter' => 'entityreference_label',
-      'delta_limit' => 0,
+      'formatter' => 'entityreference_entity_view',
+      'delta_limit' => '0',
       'delta_offset' => '0',
-      'delta_reversed' => FALSE,
+      'delta_reversed' => 0,
       'formatter_settings' => array(
         'link' => 1,
+        'view_mode' => 'list',
+        'links' => 0,
       ),
       'fences_wrapper' => 'ul',
       'context' => 'argument_entity_id:node_1',
@@ -550,7 +552,11 @@ function os2intra_panels_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'entity_field',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
@@ -1022,7 +1028,11 @@ function os2intra_panels_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+      'template_suggestion' => 'entity_field',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();

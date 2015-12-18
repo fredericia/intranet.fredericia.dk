@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Full width image
+// | Base page
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .os2-full-width-image
+// | - .os2-node-full
 // |
 
 // --------------------------------------------------
@@ -14,15 +14,16 @@
 // Styling
 // --------------------------------------------------
 
-// Full width image
-.os2-full-width-image {
+// Base page
+.node-type-os2intra-base-page {
 
-    // Image
-    img {
-        min-width: 100%;
-        max-width: 100%;
-        height: auto;
-    }
+	// Base page
+	.os2-node-full {
+
+		.os2-entity-info {
+			display: none;
+		}
+	}
 }
 
 // --------------------------------------------------
@@ -32,84 +33,90 @@
 // Mobile
 @media @media-query-mobile {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Base page
+	.os2-node-full {}
 }
 
 // Mobile - only
 @media @media-query-mobile-only {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Base page
+	.os2-node-full {}
 }
 
 // Tablet
 @media @media-query-tablet {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Base page
+	.os2-node-full {}
 }
 
 // Tablet - only
 @media @media-query-tablet-only {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Base page
+	.os2-node-full {}
 }
 
 // Desktop
 @media @media-query-desktop {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Base page
+	.os2-node-full {}
 }
 
 // Desktop - only
 @media @media-query-desktop-only {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Base page
+	.os2-node-full {}
 }
 
 // Large desktop
 @media @media-query-large-desktop {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Base page
+	.os2-node-full {}
 }
 
 // Large desktop - only
 @media @media-query-large-desktop-only {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Base page
+	.os2-node-full {}
 }
 
 // Print
 @media print {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Base page
+	.os2-node-full {}
 }
 
 // Touch
 .touch {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Base page
+	.os2-node-full {}
 }
 
 // No touch
 .no-touch {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Base page
+	.os2-node-full {}
 }
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-// Full width image mixin
-.os2-mixin-full-width-image() {}
+// Base page mixin
+.os2-mixin-node-full() {}
 
+// Dato visning
+.os2-node-full-body .date-display-single .date-display-range { display: inline; }
+
+.os2-node-full-body .views-bootstrap-accordion-plugin-style {
+	margin: 10px 0;
+}

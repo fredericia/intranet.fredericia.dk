@@ -243,10 +243,10 @@ function os2intra_organisationsgrupper_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '2',
         ),
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '3',
         ),
       ),
       'display' => array(),
@@ -584,7 +584,7 @@ function os2intra_organisationsgrupper_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_os2intra_group_pattern';
-  $strongarm->value = 'gruppe/[node:title]';
+  $strongarm->value = 'grupper/[node:title]';
   $export['pathauto_node_os2intra_group_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -597,8 +597,15 @@ function os2intra_organisationsgrupper_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_os2intra_referat_pattern';
+  $strongarm->value = '[node:og-group-ref:0:url:relative]/[node:title]';
+  $export['pathauto_node_os2intra_referat_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_post_pattern';
-  $strongarm->value = '[node:og-group-ref:0:url:path]/[node:title]';
+  $strongarm->value = '[node:og-group-ref:0:url:relative]/[node:title]';
   $export['pathauto_node_post_pattern'] = $strongarm;
 
   return $export;

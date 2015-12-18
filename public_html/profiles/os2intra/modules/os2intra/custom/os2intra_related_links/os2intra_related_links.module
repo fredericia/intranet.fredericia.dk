@@ -37,13 +37,16 @@ function os2intra_related_links_block_view($delta = '') {
  * KTC block view content callback.
  */
 function _os2intra_related_links_block_content() {
+  $related_links = array();
   $node = FALSE;
   $nid = arg(1);
   $output = '';
   if (is_numeric($nid)) {
     $node = node_load($nid);
   }
-  $related_links = array();
+  else {
+    return $related_links;
+  }
 
   // Get all related links, manually typed in on node
   if ($field_related_links = field_get_items('node', $node, 'field_os2web_base_field_ref')) {
@@ -153,7 +156,7 @@ function _os2intra_related_links_block_content() {
  * Make block links markup.
  */
 function os2intra_related_links_make_markup($related_links) {
-  $output = '<ul class="os2-related-links">';
+  $output = '<ul class="os2-links-list">';
 
   foreach ($related_links as $key => $link) {
 

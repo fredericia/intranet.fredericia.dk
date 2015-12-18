@@ -159,15 +159,42 @@ function os2intra_organisationsgrupper_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_gruppered|node|os2intra_group|form';
+  $field_group->group_name = 'group_gruppered';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_group';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Gruppe redigering',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_gruppe',
+      1 => 'group_indstillinger',
+      2 => 'group_logo',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-gruppered field-group-htabs',
+      ),
+    ),
+  );
+  $export['group_gruppered|node|os2intra_group|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_gruppe|node|os2intra_group|form';
   $field_group->group_name = 'group_gruppe';
   $field_group->entity_type = 'node';
   $field_group->bundle = 'os2intra_group';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_group';
+  $field_group->parent_name = 'group_gruppered';
   $field_group->data = array(
     'label' => 'Gruppe',
-    'weight' => '8',
+    'weight' => '10',
     'children' => array(
       0 => 'body',
       1 => 'title',
@@ -193,13 +220,14 @@ function os2intra_organisationsgrupper_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'os2intra_group';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_group';
+  $field_group->parent_name = 'group_gruppered';
   $field_group->data = array(
     'label' => 'Indstillinger',
-    'weight' => '10',
+    'weight' => '12',
     'children' => array(
-      0 => 'group_access',
-      1 => 'group_content_access',
+      0 => 'group_group',
+      1 => 'group_access',
+      2 => 'group_content_access',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -280,10 +308,10 @@ function os2intra_organisationsgrupper_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'os2intra_group';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_group';
+  $field_group->parent_name = 'group_gruppered';
   $field_group->data = array(
     'label' => 'Logo',
-    'weight' => '9',
+    'weight' => '11',
     'children' => array(
       0 => 'field_os2intra_image',
     ),

@@ -1,28 +1,40 @@
 // |--------------------------------------------------------------------------
-// | Full width image
+// | Links list
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .os2-full-width-image
+// | - .os2-links-list
 // |
 
 // --------------------------------------------------
 // Variables
 // --------------------------------------------------
 
+@os2-links-list-border-color: @border-color;
+@os2-links-list-top-bottom-spacing: 6px;
+
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
-// Full width image
-.os2-full-width-image {
+// Links list
+.os2-links-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
 
-    // Image
-    img {
-        min-width: 100%;
-        max-width: 100%;
-        height: auto;
-    }
+	li {
+		padding: @os2-links-list-top-bottom-spacing 0;
+		border-bottom: 1px solid @os2-links-list-border-color;
+
+		a {
+			font-weight: @font-weight-bold;
+		}
+
+		&:last-child {
+			border-bottom: 0;
+		}
+	}
 }
 
 // --------------------------------------------------
@@ -32,84 +44,83 @@
 // Mobile
 @media @media-query-mobile {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Links list
+	.os2-links-list {}
 }
 
 // Mobile - only
 @media @media-query-mobile-only {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Links list
+	.os2-links-list {}
 }
 
 // Tablet
 @media @media-query-tablet {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Links list
+	.os2-links-list {}
 }
 
 // Tablet - only
 @media @media-query-tablet-only {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Links list
+	.os2-links-list {}
 }
 
 // Desktop
 @media @media-query-desktop {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Links list
+	.os2-links-list {}
 }
 
 // Desktop - only
 @media @media-query-desktop-only {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Links list
+	.os2-links-list {}
 }
 
 // Large desktop
 @media @media-query-large-desktop {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Links list
+	.os2-links-list {}
 }
 
 // Large desktop - only
 @media @media-query-large-desktop-only {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Links list
+	.os2-links-list {}
 }
 
 // Print
 @media print {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Links list
+	.os2-links-list {}
 }
 
 // Touch
 .touch {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Links list
+	.os2-links-list {}
 }
 
 // No touch
 .no-touch {
 
-    // Full width image
-    .os2-full-width-image {}
+	// Links list
+	.os2-links-list {}
 }
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-// Full width image mixin
-.os2-mixin-full-width-image() {}
-
+// Links list mixin
+.os2-mixin-links-list() {}

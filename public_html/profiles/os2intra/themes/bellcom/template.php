@@ -64,9 +64,13 @@ function bellcom_preprocess_node(&$variables) {
 
   // Optionally, run node-type-specific preprocess functions, like
   // foo_preprocess_node_page() or foo_preprocess_node_story().
-  $function = __FUNCTION__ . '__' . $variables['node']->type;
-  if (function_exists($function)) {
-    $function($variables);
+  $function_node_type = __FUNCTION__ . '__' . $variables['node']->type;
+  $function_view_mode = __FUNCTION__ . '__' . $variables['view_mode'];
+  if (function_exists($function_node_type)) {
+    $function_node_type($variables);
+  }
+  if (function_exists($function_view_mode)) {
+    $function_view_mode($variables);
   }
 
   // Title (shortened)
@@ -123,8 +127,22 @@ function bellcom_preprocess_taxonomy_term(&$variables) {
   // Add taxonomy-term--view_mode.tpl.php suggestions.
   $variables['theme_hook_suggestions'][] = 'taxonomy_term__' . $variables['view_mode'];
 
+  // Make "taxonomy-term--TERMTYPE--VIEWMODE.tpl.php" templates available for terms.
+  $variables['theme_hook_suggestions'][] = 'taxonomy_term__' . $variables['vocabulary_machine_name'] . '__' . $variables['view_mode'];
+
   // Add a class for the view mode.
   $variables['classes_array'][] = 'view-mode-' . $variables['view_mode'];
+
+  // Optionally, run node-type-specific preprocess functions, like
+  // foo_preprocess_taxonomy_term_page() or foo_preprocess_taxonomy_term_story().
+  $function_taxonomy_term_type = __FUNCTION__ . '__' . $variables['vocabulary_machine_name'];
+  $function_view_mode = __FUNCTION__ . '__' . $variables['view_mode'];
+  if (function_exists($function_taxonomy_term_type)) {
+    $function_taxonomy_term_type($variables);
+  }
+  if (function_exists($function_view_mode)) {
+    $function_view_mode($variables);
+  }
 }
 
 /**
