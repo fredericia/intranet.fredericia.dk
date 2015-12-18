@@ -307,24 +307,84 @@ function fki_preprocess_taxonomy_term(&$variables) {
  */
 function fki_preprocess_taxonomy_term__os2web_taxonomies_tax_places(&$variables) {
   $term = $variables['term'];
-  $place = '';
 
-  // Name
-  if (!empty($term->name)) {
-    $place = '<span class="os2-place-name">' . $term->name . '</span>';
+  // Teaser
+  if ($variables['view_mode'] == 'teaser') {
+    $place = '';
+
+    // Name
+    if (!empty($term->name)) {
+      $place = '<span class="os2-place-name">' . $term->name . '</span>';
+    }
+
+    // Address
+    if ($field_os2web_taxonomies_address = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_address')) {
+      $place .= ', <span class="os2-place-address">' . $field_os2web_taxonomies_address[0]['value'] . '</span>';
+    }
+
+    // City
+    if ($field_os2web_taxonomies_city = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_city')) {
+      $place .= ', <span class="os2-place-city">' . $field_os2web_taxonomies_city[0]['value'] . '</span>';
+    }
+    $variables['place'] = $place;
+
+    // Google map
+    if ($field_os2web_taxonomies_address && $field_os2web_taxonomies_city) {
+      $variables['google_map'] = _create_google_map($field_os2web_taxonomies_address[0]['value'], $field_os2web_taxonomies_city[0]['value']);
+    }
   }
+}
 
-  // Address
-  if ($field_os2web_taxonomies_address = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_address')) {
-    $place .= ', <span class="os2-place-address">' . $field_os2web_taxonomies_address[0]['value'] . '</span>';
-  }
+/**
+ * Create google map
+ * @param $address
+ * @param $city_with_zipcode
+ *
+ * @return array
+ * @throws \Exception
+ */
+function _create_google_map($field_address, $field_city_with_zipcode) {
+  $element = array();
 
-  // City
-  if ($field_os2web_taxonomies_city = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_city')) {
-    $place .= ', <span class="os2-place-city">' . $field_os2web_taxonomies_city[0]['value'] . '</span>';
-  }
+  // Figure out what to display for each item we have here.
+  $embed = (int) FALSE;
+  $static = (int) TRUE;
+  $link = (int) FALSE;
+  $text = (int) FALSE;
 
-  $variables['place'] = $place;
+  $height = '180px';
+  $width = '600px';
+  $link_text = '';
+  $bubble = TRUE;
+  $zoom_level = 16;
+  $lang_to_use = 'da';
+  $map_type = 'p';
+
+  // For some reason, static gmaps accepts a different value for map type.
+  $static_map_types = array('m' => 'roadmap', 'k' => 'satellite', 'h' => 'hybrid', 'p' => 'terrain');
+
+  $url_value = urlencode(check_plain($field_address . ', ' . $field_city_with_zipcode));
+  $address_value = check_plain($field_address . ', ' . $field_city_with_zipcode);
+  $address = $text ? $address_value : '';
+
+  $element[] = array('#markup' => theme('simple_gmap_output', array(
+    'include_map' => $embed,
+    'include_static_map' => $static,
+    'include_link' => $link,
+    'include_text' => $text,
+    'width' => $width,
+    'height' => $height,
+    'url_suffix' => $url_value,
+    'zoom' => $zoom_level,
+    'information_bubble' => $bubble,
+    'link_text' => ($link_text == 'use_address') ? $address_value : $link_text,
+    'address_text' => $address,
+    'map_type' => $map_type,
+    'langcode' => $lang_to_use,
+    'static_map_type' => $static_map_types[$map_type],
+  )));
+
+  return $element;
 }
 
 /**
