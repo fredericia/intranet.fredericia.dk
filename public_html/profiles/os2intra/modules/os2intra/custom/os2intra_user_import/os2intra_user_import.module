@@ -241,6 +241,14 @@ function os2intra_user_import_settings() {
     '#markup' => t('Select columns in the CSV file corresponding to the data'),
   );
 
+  $form['mapping']['os2intra_mapping_ad_id'] = array(
+    '#type'          => 'select',
+    '#title'         => t('AD id'),
+    '#required'      => TRUE,
+    '#options'       => $csv_cols,
+    '#default_value' => variable_get('os2intra_mapping_ad_id'),
+  );
+
   $form['mapping']['os2intra_mapping_first_name'] = array(
     '#type'          => 'select',
     '#title'         => t('Firstname'),
@@ -300,11 +308,11 @@ function os2intra_user_import_settings() {
     '#default_value' => variable_get('os2intra_mapping_termination_date'),
   );
 
-  $form['mapping']['os2intra_mapping_birthday'] = array(
+  $form['mapping']['os2intra_mapping_phone'] = array(
     '#type'          => 'select',
-    '#title'         => t('Birthday'),
+    '#title'         => t('Phone Number'),
     '#options'       => $csv_cols,
-    '#default_value' => variable_get('os2intra_mapping_birthday'),
+    '#default_value' => variable_get('os2intra_mapping_phone'),
   );
 
   $form['cleanup_help_block'] = array(
@@ -469,6 +477,7 @@ function _os2intra_user_import_process_file($file_path) {
   // CSV field mapping
   // rewrite for settings page?
   $map = array(
+    variable_get('os2intra_mapping_ad_id')                => 'ad_id',
     variable_get('os2intra_mapping_employee_id')          => 'employee_id',
     variable_get('os2intra_mapping_first_name')           => 'first_name',
     variable_get('os2intra_mapping_last_name')            => 'last_name',
@@ -477,7 +486,7 @@ function _os2intra_user_import_process_file($file_path) {
     variable_get('os2intra_mapping_centre')               => 'centre',
     variable_get('os2intra_mapping_job_description')      => 'job_description',
     variable_get('os2intra_mapping_termination_date')     => 'termination_date',
-    variable_get('os2intra_mapping_birthday')             => 'birthday',
+    variable_get('os2intra_mapping_phone')                => 'phone',
   );
 
   // Load data from file
