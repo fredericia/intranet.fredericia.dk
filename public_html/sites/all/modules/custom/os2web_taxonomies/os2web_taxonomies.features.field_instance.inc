@@ -528,6 +528,97 @@ function os2web_taxonomies_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'taxonomy_term-os2web_taxonomies_tax_places-field_os2intra_image'.
+  $field_instances['taxonomy_term-os2web_taxonomies_tax_places-field_os2intra_image'] = array(
+    'bundle' => 'os2web_taxonomies_tax_places',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 6,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'spotboks',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_os2intra_image',
+    'label' => 'Billede',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'default_image' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          '4_col_image_-_520x220' => 0,
+          'normal' => 0,
+          'profilbillede' => 0,
+          'profile_image_default' => 0,
+          'spotboks' => 'spotboks',
+        ),
+      ),
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '3mb',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 0,
+          'media_browser_plus--media_browser_thumbnails' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 32,
+    ),
+  );
+
+  // Exported field_instance:
   // 'taxonomy_term-os2web_taxonomies_tax_places-field_os2web_taxonomies_address'.
   $field_instances['taxonomy_term-os2web_taxonomies_tax_places-field_os2web_taxonomies_address'] = array(
     'bundle' => 'os2web_taxonomies_tax_places',
@@ -550,22 +641,9 @@ function os2web_taxonomies_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'simple_gmap',
-        'settings' => array(
-          'iframe_height' => 200,
-          'iframe_width' => 200,
-          'include_link' => 0,
-          'include_map' => 0,
-          'include_static_map' => 1,
-          'include_text' => 0,
-          'information_bubble' => 1,
-          'langcode' => 'da',
-          'link_text' => 'View larger map',
-          'map_type' => 'm',
-          'zoom_level' => 14,
-        ),
-        'type' => 'simple_gmap',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -640,7 +718,7 @@ function os2web_taxonomies_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -688,7 +766,7 @@ function os2web_taxonomies_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -736,7 +814,7 @@ function os2web_taxonomies_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -785,7 +863,7 @@ function os2web_taxonomies_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -1072,6 +1150,7 @@ function os2web_taxonomies_field_default_field_instances() {
   t('Acadremapning');
   t('Afdelingsid');
   t('Afdelingsnavn');
+  t('Billede');
   t('Dagsordensvisning');
   t('GIS adresse');
   t('GIS id');
