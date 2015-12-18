@@ -8,25 +8,25 @@ function fki_preprocess_html(&$variables) {
 
   // Add conditional stylesheets for IE9 and lower.
   drupal_add_css($theme_path . '/dist/css/stylesheet.css', array(
-    'group'      => CSS_THEME,
+    'group' => CSS_THEME,
   ));
   drupal_add_css($theme_path . '/dist/css/stylesheet-ie9-1.css', array(
-    'group'      => CSS_THEME,
-    'browsers'   => array('IE' => 'lte IE 9', '!IE' => FALSE),
+    'group'    => CSS_THEME,
+    'browsers' => array('IE' => 'lte IE 9', '!IE' => FALSE),
   ));
   drupal_add_css($theme_path . '/dist/css/stylesheet-ie9-2.css', array(
-    'group'      => CSS_THEME,
-    'browsers'   => array('IE' => 'lte IE 9', '!IE' => FALSE),
+    'group'    => CSS_THEME,
+    'browsers' => array('IE' => 'lte IE 9', '!IE' => FALSE),
   ));
   drupal_add_js($theme_path . '/dist/js/modernizr.js', array(
-    'group'      => JS_LIBRARY,
+    'group' => JS_LIBRARY,
   ));
   drupal_add_js($theme_path . '/dist/js/app.js', array(
-    'group'      => JS_THEME,
+    'group' => JS_THEME,
   ));
   drupal_add_js($theme_path . '/dist/js/ie9.js', array(
-    'group'      => JS_THEME,
-    'browsers'   => array('IE' => 'lte IE 9', '!IE' => FALSE),
+    'group'    => JS_THEME,
+    'browsers' => array('IE' => 'lte IE 9', '!IE' => FALSE),
   ));
 
   // Add out fonts from Google Fonts API.
@@ -273,6 +273,26 @@ function fki_theme(&$existing, $type, $theme, $path) {
 function fki_preprocess_taxonomy_term(&$variables) {
   $term = $variables['term'];
 
+  // Add taxonomy-term--view_mode.tpl.php suggestions.
+  $variables['theme_hook_suggestions'][] = 'taxonomy_term__' . $variables['view_mode'];
+
+  // Make "taxonomy-term--TERMTYPE--VIEWMODE.tpl.php" templates available for terms.
+  $variables['theme_hook_suggestions'][] = 'taxonomy_term__' . $variables['vocabulary_machine_name'] . '__' . $variables['view_mode'];
+
+  // Add a class for the view mode.
+  $variables['classes_array'][] = 'view-mode-' . $variables['view_mode'];
+
+  // Optionally, run node-type-specific preprocess functions, like
+  // foo_preprocess_taxonomy_term_page() or foo_preprocess_taxonomy_term_story().
+  $function_taxonomy_term_type = __FUNCTION__ . '__' . $variables['vocabulary_machine_name'];
+  $function_view_mode = __FUNCTION__ . '__' . $variables['view_mode'];
+  if (function_exists($function_taxonomy_term_type)) {
+    $function_taxonomy_term_type($variables);
+  }
+  if (function_exists($function_view_mode)) {
+    $function_view_mode($variables);
+  }
+
   // Icon
   if ($taxonomy_term_top_level = taxonomy_term_top_level_load($variables['tid'])) {
 
@@ -280,6 +300,31 @@ function fki_preprocess_taxonomy_term(&$variables) {
       $variables['field_taxonomy_term_top_level_icon'] = $field_icon;
     }
   }
+}
+
+/*
+ * Implements template_preprocess_taxonomy_term().
+ */
+function fki_preprocess_taxonomy_term__os2web_taxonomies_tax_places(&$variables) {
+  $term = $variables['term'];
+  $place = '';
+
+  // Name
+  if (!empty($term->name)) {
+    $place = '<span class="os2-place-name">' . $term->name . '</span>';
+  }
+
+  // Address
+  if ($field_os2web_taxonomies_address = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_address')) {
+    $place .= ', <span class="os2-place-address">' . $field_os2web_taxonomies_address[0]['value'] . '</span>';
+  }
+
+  // City
+  if ($field_os2web_taxonomies_city = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_city')) {
+    $place .= ', <span class="os2-place-city">' . $field_os2web_taxonomies_city[0]['value'] . '</span>';
+  }
+
+  $variables['place'] = $place;
 }
 
 /**

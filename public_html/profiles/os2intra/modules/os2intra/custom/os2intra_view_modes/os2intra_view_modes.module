@@ -17,7 +17,7 @@ function os2intra_view_modes_entity_info_alter(&$entity_info) {
 
   // User view modes
   $entity_info['user']['view modes']['teaser'] = array(
-    'label' => t('Teaser'),
+    'label'           => t('Teaser'),
     'custom settings' => TRUE,
   );
 
