@@ -330,61 +330,9 @@ function fki_preprocess_taxonomy_term__os2web_taxonomies_tax_places(&$variables)
 
     // Google map
     if ($field_os2web_taxonomies_address && $field_os2web_taxonomies_city) {
-      $variables['google_map'] = _create_google_map($field_os2web_taxonomies_address[0]['value'], $field_os2web_taxonomies_city[0]['value']);
+      $variables['google_map'] = _bellcom_create_google_map($field_os2web_taxonomies_address[0]['value'], $field_os2web_taxonomies_city[0]['value']);
     }
   }
-}
-
-/**
- * Create google map
- * @param $address
- * @param $city_with_zipcode
- *
- * @return array
- * @throws \Exception
- */
-function _create_google_map($field_address, $field_city_with_zipcode) {
-  $element = array();
-
-  // Figure out what to display for each item we have here.
-  $embed = (int) FALSE;
-  $static = (int) TRUE;
-  $link = (int) FALSE;
-  $text = (int) FALSE;
-
-  $height = '180px';
-  $width = '600px';
-  $link_text = '';
-  $bubble = TRUE;
-  $zoom_level = 16;
-  $lang_to_use = 'da';
-  $map_type = 'p';
-
-  // For some reason, static gmaps accepts a different value for map type.
-  $static_map_types = array('m' => 'roadmap', 'k' => 'satellite', 'h' => 'hybrid', 'p' => 'terrain');
-
-  $url_value = urlencode(check_plain($field_address . ', ' . $field_city_with_zipcode));
-  $address_value = check_plain($field_address . ', ' . $field_city_with_zipcode);
-  $address = $text ? $address_value : '';
-
-  $element[] = array('#markup' => theme('simple_gmap_output', array(
-    'include_map' => $embed,
-    'include_static_map' => $static,
-    'include_link' => $link,
-    'include_text' => $text,
-    'width' => $width,
-    'height' => $height,
-    'url_suffix' => $url_value,
-    'zoom' => $zoom_level,
-    'information_bubble' => $bubble,
-    'link_text' => ($link_text == 'use_address') ? $address_value : $link_text,
-    'address_text' => $address,
-    'map_type' => $map_type,
-    'langcode' => $lang_to_use,
-    'static_map_type' => $static_map_types[$map_type],
-  )));
-
-  return $element;
 }
 
 /**
