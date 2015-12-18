@@ -534,7 +534,7 @@ function os2web_taxonomies_field_default_field_instances() {
     'custom_add_another' => '',
     'custom_remove' => '',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Hvis der uploades et billede benyttes dette. Uploades der ikke et billede bliver kortet vist istedet.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -585,7 +585,7 @@ function os2web_taxonomies_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '3mb',
       'max_resolution' => '',
-      'min_resolution' => '',
+      'min_resolution' => '600x180',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -614,7 +614,7 @@ function os2web_taxonomies_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 32,
+      'weight' => 0,
     ),
   );
 
@@ -690,7 +690,7 @@ function os2web_taxonomies_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -738,7 +738,7 @@ function os2web_taxonomies_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -786,7 +786,7 @@ function os2web_taxonomies_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -835,7 +835,7 @@ function os2web_taxonomies_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -883,7 +883,7 @@ function os2web_taxonomies_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -1157,6 +1157,7 @@ function os2web_taxonomies_field_default_field_instances() {
   t('GIS navn');
   t('GIS postby');
   t('GIS type');
+  t('Hvis der uploades et billede benyttes dette. Uploades der ikke et billede bliver kortet vist istedet.');
   t('KLE stikord');
   t('Lovhenvisninger');
   t('Priority');
