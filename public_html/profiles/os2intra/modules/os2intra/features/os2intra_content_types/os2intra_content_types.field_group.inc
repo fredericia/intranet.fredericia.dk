@@ -168,6 +168,35 @@ function os2intra_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_besked|node|os2intra_message_notification|form';
+  $field_group->group_name = 'group_besked';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_message_notification';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_vigtigt';
+  $field_group->data = array(
+    'label' => 'Vigtig besked',
+    'weight' => '1',
+    'children' => array(
+      0 => 'body',
+      1 => 'title',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-besked field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_besked|node|os2intra_message_notification|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_content|node|post|form';
   $field_group->group_name = 'group_content';
   $field_group->entity_type = 'node';
@@ -848,6 +877,64 @@ function os2intra_content_types_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_modtagere|node|os2intra_message_notification|form';
+  $field_group->group_name = 'group_modtagere';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_message_notification';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_vigtigt';
+  $field_group->data = array(
+    'label' => 'Modtagere',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_os2intra_physical_location',
+      1 => 'field_os2intra_organisation_tref',
+      2 => 'field_os2intra_organisation_ref',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-modtagere field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_modtagere|node|os2intra_message_notification|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_planlaeg|node|os2intra_message_notification|form';
+  $field_group->group_name = 'group_planlaeg';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_message_notification';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_vigtigt';
+  $field_group->data = array(
+    'label' => 'Planlæg',
+    'weight' => '3',
+    'children' => array(
+      0 => 'scheduler_settings',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-planlaeg field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_planlaeg|node|os2intra_message_notification|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_post|node|post|form';
   $field_group->group_name = 'group_post';
   $field_group->entity_type = 'node';
@@ -1335,6 +1422,33 @@ function os2intra_content_types_field_group_info() {
     ),
   );
   $export['group_vejledning|node|it_vejledning|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_vigtigt|node|os2intra_message_notification|form';
+  $field_group->group_name = 'group_vigtigt';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'os2intra_message_notification';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'vigtigt',
+    'weight' => '0',
+    'children' => array(
+      0 => 'group_besked',
+      1 => 'group_planlaeg',
+      2 => 'group_modtagere',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-vigtigt field-group-htabs',
+      ),
+    ),
+  );
+  $export['group_vigtigt|node|os2intra_message_notification|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
