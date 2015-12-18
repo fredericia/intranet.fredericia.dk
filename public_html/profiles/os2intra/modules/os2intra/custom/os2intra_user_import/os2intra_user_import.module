@@ -58,10 +58,9 @@ function os2intra_user_import_menu() {
 function os2intra_user_import_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'edit_profile_user_profile_form') {
     if (!user_access('administer os2intra user import')) {
-      $form['field_os2intra_import_groups']['#access'] = 0;
+      $form['og_org_ref']['#access'] = 0;
       $form['field_os2intra_employee_id']['#access'] = 0;
       $form['field_os2intra_termination_date']['#access'] = 0;
-      $form['field_os2intra_department_ref']['#access'] = 0;
     }
   }
 }
@@ -242,6 +241,14 @@ function os2intra_user_import_settings() {
     '#markup' => t('Select columns in the CSV file corresponding to the data'),
   );
 
+  $form['mapping']['os2intra_mapping_ad_id'] = array(
+    '#type'          => 'select',
+    '#title'         => t('AD id'),
+    '#required'      => TRUE,
+    '#options'       => $csv_cols,
+    '#default_value' => variable_get('os2intra_mapping_ad_id'),
+  );
+
   $form['mapping']['os2intra_mapping_first_name'] = array(
     '#type'          => 'select',
     '#title'         => t('Firstname'),
@@ -301,11 +308,18 @@ function os2intra_user_import_settings() {
     '#default_value' => variable_get('os2intra_mapping_termination_date'),
   );
 
-  $form['mapping']['os2intra_mapping_birthday'] = array(
+  $form['mapping']['os2intra_mapping_phone'] = array(
     '#type'          => 'select',
-    '#title'         => t('Birthday'),
+    '#title'         => t('Phone Number'),
     '#options'       => $csv_cols,
-    '#default_value' => variable_get('os2intra_mapping_birthday'),
+    '#default_value' => variable_get('os2intra_mapping_phone'),
+  );
+
+  $form['mapping']['os2intra_mapping_email'] = array(
+    '#type'          => 'select',
+    '#title'         => t('Email Address'),
+    '#options'       => $csv_cols,
+    '#default_value' => variable_get('os2intra_mapping_email'),
   );
 
   $form['cleanup_help_block'] = array(
@@ -404,7 +418,7 @@ function os2intra_user_import_run_with_drush() {
       os2intra_user_import_clear_log();
       os2intra_user_import_save_log('', 'Starting import');
       // Parse file, map data accordingly
-      $users = os2intra_user_import_process_file($realpath);
+      $users = _os2intra_user_import_process_file($realpath);
 
       // Check and create groups
       os2intra_user_import_groups($users);
@@ -465,11 +479,12 @@ function os2intra_user_import_disable_users() {
 /**
  * Helper function to parse file contents to array with relevant info
  */
-function os2intra_user_import_process_file($file_path) {
+function _os2intra_user_import_process_file($file_path) {
 
   // CSV field mapping
   // rewrite for settings page?
   $map = array(
+    variable_get('os2intra_mapping_ad_id')                => 'ad_id',
     variable_get('os2intra_mapping_employee_id')          => 'employee_id',
     variable_get('os2intra_mapping_first_name')           => 'first_name',
     variable_get('os2intra_mapping_last_name')            => 'last_name',
@@ -478,7 +493,8 @@ function os2intra_user_import_process_file($file_path) {
     variable_get('os2intra_mapping_centre')               => 'centre',
     variable_get('os2intra_mapping_job_description')      => 'job_description',
     variable_get('os2intra_mapping_termination_date')     => 'termination_date',
-    variable_get('os2intra_mapping_birthday')             => 'birthday',
+    variable_get('os2intra_mapping_phone')                => 'phone',
+    variable_get('os2intra_mapping_email')                => 'email',
   );
 
   // Load data from file
@@ -559,13 +575,13 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $og_user_node = array();
     $import_groups = array();
     // Get a list of current group nids
-    if ($og_user_node_field = field_get_items('user', $account, 'og_user_node')) {
+    if ($og_user_node_field = field_get_items('user', $account, 'og_user_node2')) {
       foreach ($og_user_node_field as $key => $field) {
         $og_user_node[$field['target_id']] = $field['target_id'];
       }
     }
     // And organisation and centre nid from last import
-    if ($import_group_field = field_get_items('user', $account, 'field_os2intra_import_groups')) {
+    if ($import_group_field = field_get_items('user', $account, 'og_org_ref')) {
       foreach ($import_group_field as $key => $field) {
         $import_groups[$field['target_id']] = $field['target_id'];
       }
@@ -586,7 +602,7 @@ function os2intra_user_import_save_user($user, $uid = '') {
   // Get node id for group
   $query = new EntityFieldQuery;
   $query->entityCondition('entity_type', 'node');
-  $query->fieldCondition('field_os2intra_department_id', 'value', $user['department'], '=');
+  $query->propertyCondition('title', $user['department']);
   $result = $query->execute();
 
   if (!empty($result['node'])) {
@@ -615,13 +631,16 @@ function os2intra_user_import_save_user($user, $uid = '') {
 
   // Get node id for centre
   $query = new EntityFieldQuery;
-  $query->entityCondition('entity_type', 'node');
+  $query->entityCondition('entity_type', 'taxonomy_term');
   $query->fieldCondition('field_os2intra_department_id', 'value', $user['centre'], '=');
   $result = $query->execute();
-  if (!empty($result['node'])) {
+
+
+  if (!empty($result['taxonomy_term'])) {
     $centre_nid = key(array_shift($result));
     $user_groups[LANGUAGE_NONE][]['target_id'] = $centre_nid;
-    // Dont do duplicates
+
+    // Don't do duplicates
     if ($new_group_nid !== $centre_nid) {
       $import_groups[LANGUAGE_NONE][]['target_id'] = $centre_nid;
     }
@@ -650,11 +669,20 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $termination_date_timestamp = 1;
   }
 
-  list($dd, $mm, $yyyy) = explode('-', $user['birthday']);
-  $birthday = date('Y-m-d H:i:s', mktime(0, 0, 0, (int) $mm, (int) $dd, (int) $yyyy));
+
+  // For Frecericia, we only care about department groups.
+  // Query for department (not nested, only one result).
+  $query = new EntityFieldQuery;
+  $query->entityCondition('entity_type', 'node');
+  $query->fieldCondition('field_os2intra_department_id', 'value', $user['centre'], '=');
+  $result = $query->execute();
+
 
   // User title tid
   $title_tid = os2intra_user_import_user_title($user['job_description']);
+
+  // Get user membership to department
+  $department_nid = _os2intra_user_import_get_department_nid($user['department']);
 
   // Populate fields
   $fields = array(
@@ -662,26 +690,27 @@ function os2intra_user_import_save_user($user, $uid = '') {
     // Set employee_id
     'field_os2intra_employee_id'      => array(LANGUAGE_NONE => array(0 => array('value' => $user['employee_id']))),
 
-    // Set group membership
-    'og_user_node'                    => $user_groups,
-
-    // The organisational ids from this import
-    'field_os2intra_import_groups'    => $import_groups,
-
     // First Name
-    'field_name_first'                   => array(LANGUAGE_NONE => array(0 => array('value' => $user['first_name']))),
+    'field_name_first'                => array(LANGUAGE_NONE => array(0 => array('value' => $user['first_name']))),
 
     // Last Name
     'field_name_last'                 => array(LANGUAGE_NONE => array(0 => array('value' => $user['last_name']))),
 
+    // Phone
+   // 'field_os2intra_phone'            => array(LANGUAGE_NONE => array(0 => array('value' => $user['phone']))),
+
+    // Set department membership
+    'og_user_node2'                   => array(LANGUAGE_NONE => array(0 => array('target_id' => $department_nid))),
+
     // Activate user
     'status'                          => ($account->uid != 0) ? $account->status : 1,
-  );
 
-  // Birthday
-  if ($birthday) {
-    $fields['field_os2intra_birthday'] = array(LANGUAGE_NONE => array(0 => array('value' => $birthday)));
-  }
+    'mail'                            => $user['email'],
+
+    'init'                            => $user['email'],
+
+    'timezone'                        => 'Europe/Copenhagen',
+  );
 
   // Job description
   if ($title_tid) {
@@ -699,23 +728,7 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $password = user_password(8);
 
     // Generate username
-    // Todo: make configurable
-    $cln_first_name = preg_replace('/[^A-Za-z0-9\-]/', '', $user['first_name']);
-    $cln_last_name = preg_replace('/[^A-Za-z0-9\-]/', '', $user['last_name']);
-    $cln_department = preg_replace('/[^A-Za-z0-9\-]/', '', $user['department']);
-
-    $username = strtolower(substr($cln_department, 0, 3)) . '-';
-    $username .= strtolower(substr($cln_first_name, 0, 3));
-    $username .= strtolower(substr($cln_last_name, 0, 3));
-
-    $users_query = db_query('SELECT u.name FROM {users} u WHERE u.name LIKE :name', array(':name' => $username . '%'));
-    $count = count($users_query->fetchAll());
-
-    if ($count) {
-      $username .= $count + 1;
-    }
-
-    $fields['name'] = $username;
+    $fields['name'] = $user['ad_id'];
     $fields['pass'] = $password;
   }
 
@@ -814,7 +827,7 @@ function os2intra_user_import_groups($users) {
     $node->field_os2intra_organisation[LANGUAGE_NONE][]['target_id'] = $tid;
 
     // Save department id on node
-    if (field_info_instance('node', 'field_os2intra_department_id', 'os2intra_org_group_unit')) {
+    if (field_info_instance('taxonomy_term', 'field_os2intra_department_id', 'os2intra_org_group_unit')) {
       $node->field_os2intra_department_id[LANGUAGE_NONE][0]['value'] = $group;
     }
 
@@ -940,4 +953,29 @@ function os2intra_user_import_mail($key, &$message, $params) {
       $message['body'][] = $params['body'];
       break;
   }
+}
+
+function _os2intra_user_import_get_department_nid($department) {
+
+  $query = new EntityFieldQuery;
+  $query->entityCondition('entity_type', 'taxonomy_term');
+  $query->fieldCondition('field_os2intra_department_id', 'value', $department, '=');
+  $result = $query->execute();
+
+  if (count($result['taxonomy_term']) > 0) {
+
+    $tid = key($result['taxonomy_term']);
+
+    $query = new EntityFieldQuery;
+    $query->entityCondition('entity_type', 'node');
+    $query->entityCondition('bundle', 'os2intra_org_group_unit');
+    $query->fieldCondition('field_os2intra_organisation', 'target_id', $tid, '=');
+    $result = $query->execute();
+
+    if (count($result['node']) > 0) {
+      return key($result['node']);
+    }
+    return FALSE;
+  }
+
 }
