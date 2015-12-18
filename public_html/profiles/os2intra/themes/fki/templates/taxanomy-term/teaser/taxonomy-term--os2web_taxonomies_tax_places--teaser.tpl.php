@@ -4,7 +4,11 @@
   <div id="taxonomy-term-<?php print $term->tid; ?>" class="<?php print $classes; ?> os2-taxonomy-term-teaser os2-place">
 
     <?php if (isset($content['field_os2intra_image'])): ?>
-      <?php print render($content['field_os2intra_image']); ?>
+      <!-- Begin - image -->
+      <div class="os2-place-google-map os2-taxonomy-term-teaser-full-width-image">
+        <?php print render($content['field_os2intra_image']); ?>
+      </div>
+      <!-- End - image -->
     <?php else: ?>
 
       <?php if (isset($google_map)): ?>
