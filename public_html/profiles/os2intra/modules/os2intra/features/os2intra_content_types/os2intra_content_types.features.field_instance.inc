@@ -3730,10 +3730,13 @@ function os2intra_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2intra_message_notification-field_os2intra_mess_notifi_ref'.
-  $field_instances['node-os2intra_message_notification-field_os2intra_mess_notifi_ref'] = array(
+  // 'node-os2intra_message_notification-field_os2intra_organisation_ref'.
+  $field_instances['node-os2intra_message_notification-field_os2intra_organisation_ref'] = array(
     'bundle' => 'os2intra_message_notification',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -3741,10 +3744,10 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => 1,
+          'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -3766,11 +3769,15 @@ function os2intra_content_types_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'fences_wrapper' => 'div_div_div',
-    'field_name' => 'field_os2intra_mess_notifi_ref',
-    'label' => 'Beskedmodtagere',
+    'field_name' => 'field_os2intra_organisation_ref',
+    'label' => 'Organisation',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'custom_add_another' => '',
       'custom_remove' => '',
       'user_register_form' => FALSE,
@@ -3779,8 +3786,8 @@ function os2intra_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 2,
+      'type' => 'options_buttons',
+      'weight' => 4,
     ),
   );
 
@@ -3845,7 +3852,7 @@ function os2intra_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -6349,7 +6356,6 @@ function os2intra_content_types_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('"Syntes godt om"');
   t('Afsnit');
-  t('Beskedmodtagere');
   t('Billede');
   t('Billeder');
   t('Body');
@@ -6371,6 +6377,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('Kantine');
   t('Kilde');
   t('Link til side');
+  t('Organisation');
   t('Overskrift');
   t('Placering');
   t('Relaterede sider');
