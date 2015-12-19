@@ -499,6 +499,8 @@ function os2intra_organisationsgrupper_field_group_info() {
       4 => 'group_content_access',
       5 => 'og_group_org_ref',
       6 => 'og_roles_permissions',
+      7 => 'group_access',
+      8 => 'og_afd_ref',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

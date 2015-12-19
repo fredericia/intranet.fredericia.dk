@@ -514,74 +514,6 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-os2intra_org_group_unit-field_os2intra_afdeling'.
-  $field_instances['node-os2intra_org_group_unit-field_os2intra_afdeling'] = array(
-    'bundle' => 'os2intra_org_group_unit',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-      'includeable' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'fences_wrapper' => 'div_div_div',
-    'field_name' => 'field_os2intra_afdeling',
-    'label' => 'Ovenstående Afdeling',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'access_override' => 0,
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 17,
-    ),
-  );
-
-  // Exported field_instance:
   // 'node-os2intra_org_group_unit-field_os2intra_base_spotboxes'.
   $field_instances['node-os2intra_org_group_unit-field_os2intra_base_spotboxes'] = array(
     'bundle' => 'os2intra_org_group_unit',
@@ -1072,11 +1004,10 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-os2intra_org_group_unit-og_group_org_ref'.
-  $field_instances['node-os2intra_org_group_unit-og_group_org_ref'] = array(
+  // Exported field_instance: 'node-os2intra_org_group_unit-og_afd_ref'.
+  $field_instances['node-os2intra_org_group_unit-og_afd_ref'] = array(
     'bundle' => 'os2intra_org_group_unit',
     'default_value' => NULL,
-    'default_value_function' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1085,7 +1016,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
-        'weight' => 9,
+        'weight' => 13,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1107,23 +1038,19 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'og_group_org_ref',
-    'label' => 'Groups audience',
-    'required' => 0,
+    'field_name' => 'og_afd_ref',
+    'label' => 'Tilknyttet gruppe/afdeling',
+    'required' => FALSE,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
-          'access_override' => 0,
           'admin' => array(
-            'widget_type' => 'options_select',
+            'widget_type' => 'entityreference_autocomplete',
           ),
           'default' => array(
             'widget_type' => 'options_select',
           ),
           'status' => TRUE,
-        ),
-        'prepopulate' => array(
-          'status' => 0,
         ),
       ),
       'custom_add_another' => '',
@@ -1143,11 +1070,10 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       ),
     ),
     'widget' => array(
-      'active' => 0,
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 13,
+      'weight' => 18,
     ),
   );
 
@@ -1214,7 +1140,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 18,
+      'weight' => 20,
     ),
   );
 
@@ -2437,7 +2363,6 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Group content visibility');
   t('Group roles and permissions');
   t('Group visibility');
-  t('Groups audience');
   t('Gruppe / Afdeling');
   t('Gruppelogo');
   t('KL Emneord');
@@ -2447,7 +2372,6 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Mødested');
   t('Mødetype');
   t('Organisation');
-  t('Ovenstående Afdeling');
   t('Referent');
   t('Spotbokse');
   t('Stikord');
