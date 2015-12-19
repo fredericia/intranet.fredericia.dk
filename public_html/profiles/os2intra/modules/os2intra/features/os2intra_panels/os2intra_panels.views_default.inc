@@ -92,15 +92,11 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['title']['element_class'] = 'afd-[field_os2intra_afdeling] nid-[nid] org2-[field_os2intra_organisation] org2-[field_os2intra_organisation_1]';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Ovenstående Afdeling */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_os2intra_afdeling']['type'] = 'entityreference_entity_id';
-  $handler->display->display_options['fields']['field_os2intra_afdeling']['settings'] = array(
-    'link' => 0,
-  );
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -221,7 +217,7 @@ function os2intra_panels_views_default_views() {
     t('sidste »'),
     t('term'),
     t('Overordnet element'),
-    t('Ovenstående Afdeling'),
+    t('Broken handler og_membership.field_os2intra_afdeling'),
     t('Nid'),
     t('Organisation'),
     t('Alle'),
@@ -889,7 +885,7 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Ovenstående Afdeling */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
@@ -1337,16 +1333,13 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Ovenstående Afdeling */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['label'] = '';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_os2intra_afdeling']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_afdeling']['settings'] = array(
-    'link' => 1,
-  );
   /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
@@ -1493,16 +1486,13 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['title']['relationship'] = 'og_membership_related_node_group';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Ovenstående Afdeling */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['relationship'] = 'og_membership_related_node_group';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['label'] = '';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_afdeling']['settings'] = array(
-    'link' => 1,
-  );
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
@@ -1549,7 +1539,7 @@ function os2intra_panels_views_default_views() {
   /* Display: Afdelingspersonale - ovenstående */
   $handler = $view->new_display('panel_pane', 'Afdelingspersonale - ovenstående', 'panel_pane_2');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Ovenstående Afdeling (field_os2intra_afdeling) */
+  /* Contextual filter: Broken/missing handler */
   $handler->display->display_options['arguments']['field_os2intra_afdeling_target_id']['id'] = 'field_os2intra_afdeling_target_id';
   $handler->display->display_options['arguments']['field_os2intra_afdeling_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['field_os2intra_afdeling_target_id']['field'] = 'field_os2intra_afdeling_target_id';
@@ -1611,7 +1601,7 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Ovenstående Afdeling */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
@@ -1619,9 +1609,6 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_afdeling']['label'] = '';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_os2intra_afdeling']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_afdeling']['settings'] = array(
-    'link' => 1,
-  );
   /* Field: Content: Organisation */
   $handler->display->display_options['fields']['field_os2intra_organisation']['id'] = 'field_os2intra_organisation';
   $handler->display->display_options['fields']['field_os2intra_organisation']['table'] = 'field_data_field_os2intra_organisation';
@@ -1744,7 +1731,7 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Ovenstående Afdeling */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
@@ -1752,9 +1739,6 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_afdeling']['label'] = '';
   $handler->display->display_options['fields']['field_os2intra_afdeling']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_os2intra_afdeling']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_afdeling']['settings'] = array(
-    'link' => 1,
-  );
   /* Field: Content: Organisation */
   $handler->display->display_options['fields']['field_os2intra_organisation']['id'] = 'field_os2intra_organisation';
   $handler->display->display_options['fields']['field_os2intra_organisation']['table'] = 'field_data_field_os2intra_organisation';
