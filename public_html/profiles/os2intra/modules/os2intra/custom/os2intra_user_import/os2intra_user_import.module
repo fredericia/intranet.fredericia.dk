@@ -415,7 +415,7 @@ function os2intra_user_import_run_with_drush() {
 
       // Check and create groups
       os2intra_user_import_groups($users);
-
+/*
       // Check for users that already exist
       $update_users = os2intra_user_import_check_users($users);
 
@@ -433,7 +433,7 @@ function os2intra_user_import_run_with_drush() {
 
       // Disable users
       os2intra_user_import_disable_users();
-
+*/
       // Logging
       os2intra_user_import_save_log('', 'User import finished');
       os2intra_user_import_save_log('', 'Import finished');
@@ -658,14 +658,14 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $termination_date_timestamp = 1;
   }
 
-  list($dd, $mm, $yyyy) = explode('-', $user['birthday']);
-  $birthday = date('Y-m-d H:i:s', mktime(0, 0, 0, (int) $mm, (int) $dd, (int) $yyyy));
-
   // User title tid
   $title_tid = os2intra_user_import_user_title($user['job_description']);
 
   // Populate fields
   $fields = array(
+
+    // Set ad_id
+    'field_os2intra_ad_id'            => array(LANGUAGE_NONE => array(0 => array('value' => $user['ad_id']))),
 
     // Set employee_id
     'field_os2intra_employee_id'      => array(LANGUAGE_NONE => array(0 => array('value' => $user['employee_id']))),
@@ -677,19 +677,17 @@ function os2intra_user_import_save_user($user, $uid = '') {
     'og_org_ref'                      => $import_groups,
 
     // First Name
-    'field_name_first'                   => array(LANGUAGE_NONE => array(0 => array('value' => $user['first_name']))),
+    'field_name_first'                => array(LANGUAGE_NONE => array(0 => array('value' => $user['first_name']))),
 
     // Last Name
     'field_name_last'                 => array(LANGUAGE_NONE => array(0 => array('value' => $user['last_name']))),
 
+    // Phone
+    'field_os2intra_phone'            => array(LANGUAGE_NONE => array(0 => array('value' => $user['phone']))),
+
     // Activate user
     'status'                          => ($account->uid != 0) ? $account->status : 1,
   );
-
-  // Birthday
-  if ($birthday) {
-    $fields['field_os2intra_birthday'] = array(LANGUAGE_NONE => array(0 => array('value' => $birthday)));
-  }
 
   // Job description
   if ($title_tid) {
@@ -707,23 +705,7 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $password = user_password(8);
 
     // Generate username
-    // Todo: make configurable
-    $cln_first_name = preg_replace('/[^A-Za-z0-9\-]/', '', $user['first_name']);
-    $cln_last_name = preg_replace('/[^A-Za-z0-9\-]/', '', $user['last_name']);
-    $cln_department = preg_replace('/[^A-Za-z0-9\-]/', '', $user['department']);
-
-    $username = strtolower(substr($cln_department, 0, 3)) . '-';
-    $username .= strtolower(substr($cln_first_name, 0, 3));
-    $username .= strtolower(substr($cln_last_name, 0, 3));
-
-    $users_query = db_query('SELECT u.name FROM {users} u WHERE u.name LIKE :name', array(':name' => $username . '%'));
-    $count = count($users_query->fetchAll());
-
-    if ($count) {
-      $username .= $count + 1;
-    }
-
-    $fields['name'] = $username;
+    $fields['name'] = $user['ad_id'];
     $fields['pass'] = $password;
   }
 
