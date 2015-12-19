@@ -3730,6 +3730,61 @@ function os2intra_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-os2intra_message_notification-field_os2intra_mess_notifi_ref'.
+  $field_instances['node-os2intra_message_notification-field_os2intra_mess_notifi_ref'] = array(
+    'bundle' => 'os2intra_message_notification',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_os2intra_mess_notifi_ref',
+    'label' => 'Beskedmodtagere',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-os2intra_message_notification-field_os2intra_organisation_ref'.
   $field_instances['node-os2intra_message_notification-field_os2intra_organisation_ref'] = array(
     'bundle' => 'os2intra_message_notification',
@@ -3853,56 +3908,6 @@ function os2intra_content_types_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-os2intra_org_group_unit-group_access'.
-  $field_instances['node-os2intra_org_group_unit-group_access'] = array(
-    'bundle' => 'os2intra_org_group_unit',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 12,
-      ),
-      'includeable' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'list' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'group_access',
-    'label' => 'Group visibility',
-    'required' => FALSE,
-    'settings' => array(
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 20,
     ),
   );
 
@@ -6356,6 +6361,7 @@ function os2intra_content_types_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('"Syntes godt om"');
   t('Afsnit');
+  t('Beskedmodtagere');
   t('Billede');
   t('Billeder');
   t('Body');
@@ -6366,7 +6372,6 @@ function os2intra_content_types_field_default_field_instances() {
   t('Filer');
   t('Fremhæv indhold');
   t('Fysisk lokation');
-  t('Group visibility');
   t('Gruppe / Afdeling');
   t('Handling');
   t('Ikon');
