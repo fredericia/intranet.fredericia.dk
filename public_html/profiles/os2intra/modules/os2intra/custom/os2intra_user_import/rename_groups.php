@@ -44,6 +44,12 @@ foreach($rows as $row){
 
 $nodes = node_load_multiple(array(), array('type' => 'group'));
 
+// Franz - node type = os2intra_org_group_unit
+// $nodes = node_load_multiple(array(), array('type' => 'os2intra_org_group_unit'));
+// nedenstående felt findes ikke på indholdstypene afdeling (os2intra_org_group_unit)
+// det findes kun på taxonomien os2intra_organizaiton_tax
+
+
 foreach ($nodes as $node){
   if($field = field_get_items('node', $node, 'field_os2intra_department_id')){
     error_log(print_r($node->title, 1));

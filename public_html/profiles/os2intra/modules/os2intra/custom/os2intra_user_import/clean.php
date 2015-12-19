@@ -7,6 +7,8 @@ foreach($result as $uid){
   user_delete($uid->entity_id);
 }
 
+// Franz - dette felt (field_data_field_os2intra_department_id) er er ikke på nogen noder, det er kun på taxonimien
+
 $query = db_query("SELECT * FROM `field_data_field_os2intra_department_id` WHERE `entity_type` = 'node'");
 $result = $query->fetchAll();
 

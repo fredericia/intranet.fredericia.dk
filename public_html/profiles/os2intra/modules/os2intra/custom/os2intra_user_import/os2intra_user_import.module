@@ -122,6 +122,9 @@ function os2intra_user_import_activate_form_validate($form, &$form_state) {
       if ($user->mail) {
         form_set_error('employee_id', t('Employee already activated'));
       }
+
+// Franz - vi har ikke brugerns fødselsdag eller cpr nummer
+
       $birthday_field = field_get_items('user', $user, 'field_os2intra_birthday');
       $birthday = strtotime($birthday_field[0]['value']);
       $input_birthday = strtotime($yyyy . '-' . $mm . '-' . $dd);
@@ -484,6 +487,7 @@ function _os2intra_user_import_process_file($file_path) {
     variable_get('os2intra_mapping_department')           => 'department',
     variable_get('os2intra_mapping_department_shortname') => 'department_shortname',
     variable_get('os2intra_mapping_centre')               => 'centre',
+// Franz - vi har vist ikke noget der hedder et center eller centre
     variable_get('os2intra_mapping_job_description')      => 'job_description',
     variable_get('os2intra_mapping_termination_date')     => 'termination_date',
     variable_get('os2intra_mapping_phone')                => 'phone',
@@ -625,6 +629,9 @@ function os2intra_user_import_save_user($user, $uid = '') {
   $query = new EntityFieldQuery;
   $query->entityCondition('entity_type', 'node');
   $query->fieldCondition('field_os2intra_department_id', 'value', $user['centre'], '=');
+  
+// Franz - her står der igen noget med "field_os2intra_department_id" og node
+
   $result = $query->execute();
   if (!empty($result['node'])) {
     $centre_nid = key(array_shift($result));
@@ -666,12 +673,16 @@ function os2intra_user_import_save_user($user, $uid = '') {
 
     // Set ad_id
     'field_os2intra_ad_id'            => array(LANGUAGE_NONE => array(0 => array('value' => $user['ad_id']))),
+    
+// Franz - dette felt er ikke i systemet (field_os2intra_ad_id)
 
     // Set employee_id
     'field_os2intra_employee_id'      => array(LANGUAGE_NONE => array(0 => array('value' => $user['employee_id']))),
 
     // Set group membership
     'og_user_node'                    => $user_groups,
+    
+// Franz - Dette er vidst hvor Organic Group magien sker (og_user_node)...
 
     // The organisational ids from this import
     'og_org_ref'                      => $import_groups,
