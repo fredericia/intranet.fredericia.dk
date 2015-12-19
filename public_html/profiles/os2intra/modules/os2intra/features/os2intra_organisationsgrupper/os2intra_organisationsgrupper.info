@@ -48,6 +48,7 @@ features[field_base][] = group_group
 features[field_base][] = og_afd_ref
 features[field_base][] = og_group_ref
 features[field_base][] = og_roles_permissions
+features[field_base][] = og_user_node1
 features[field_group][] = group_afdeling|node|os2intra_org_group_unit|form
 features[field_group][] = group_billede|node|os2intra_org_group_unit|form
 features[field_group][] = group_deltagere|node|os2intra_referat|form
