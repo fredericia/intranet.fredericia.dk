@@ -781,31 +781,32 @@ function os2intra_user_import_groups($users) {
 
     if (!empty($result)) {
       os2intra_user_import_save_log('', 'Group already exists: ' . $group);
-      continue;
     }
+    else {
+      // Create taxonomy terms
+      os2intra_user_import_save_log('', 'Create group: ' . $group);
 
-    // Create taxonomy terms
-    os2intra_user_import_save_log('', 'Create group: ' . $group);
+      // Search for parent tid for department
+      $result = os2intra_user_import_query_term_by_department($user['centre']);
 
-    // Search for parent tid for department
-    $result = os2intra_user_import_query_term_by_department($user['centre']);
+      if (!empty($result)) {
+        $parent_term = taxonomy_term_load(key($result['taxonomy_term']));
+        $parent_tid = $parent_term->tid;
+      }
 
-    if (!empty($result)) {
-      $parent_term = taxonomy_term_load(key($result['taxonomy_term']));
-      $parent_tid = $parent_term->tid;
+      $term = new stdClass();
+      $term->name = $group;
+      $term->parent = array($parent_tid);
+      $term->field_os2intra_department_id[LANGUAGE_NONE][0]['value'] = $group;
+      $term->field_os2intra_shortname[LANGUAGE_NONE][0]['value'] = $user['department_shortname'];
+      $term->vid = $vocab->vid;
+
+      taxonomy_term_save($term);
+      $created_terms[] = $term;
+
+      $tid = $term->tid;
     }
-
-    $term = new stdClass();
-    $term->name = $group;
-    $term->parent = array($parent_tid);
-    $term->field_os2intra_department_id[LANGUAGE_NONE][0]['value'] = $group;
-    $term->field_os2intra_shortname[LANGUAGE_NONE][0]['value'] = $user['department_shortname'];
-    $term->vid = $vocab->vid;
-
-    taxonomy_term_save($term);
-    $created_terms[] = $term;
-
-    $tid = $term->tid;
+continue;
 
     // Create group nodes
     $node = new stdClass();
