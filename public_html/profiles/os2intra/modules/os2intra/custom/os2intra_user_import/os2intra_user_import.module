@@ -307,14 +307,14 @@ function os2intra_user_import_settings() {
     '#options'       => $csv_cols,
     '#default_value' => variable_get('os2intra_mapping_termination_date'),
   );
-
+/*
   $form['mapping']['os2intra_mapping_phone'] = array(
     '#type'          => 'select',
     '#title'         => t('Phone Number'),
     '#options'       => $csv_cols,
     '#default_value' => variable_get('os2intra_mapping_phone'),
   );
-
+*/
   $form['mapping']['os2intra_mapping_email'] = array(
     '#type'          => 'select',
     '#title'         => t('Email Address'),
@@ -505,7 +505,7 @@ function _os2intra_user_import_process_file($file_path) {
     foreach ($row as $key => $field) {
       // If there is a mapping for the key
       if ($map[$key]) {
-        $mapped_row[$map[$key]] = $field;
+        $mapped_row[$map[$key]] = _os2intra_user_import_sanitize_int($field);
       }
     }
     $rows[] = $mapped_row;
@@ -683,6 +683,8 @@ function os2intra_user_import_save_user($user, $uid = '') {
 
   // Get user membership to department
   $department_nid = _os2intra_user_import_get_department_nid($user['department']);
+  print_r($department_nid); die();
+
 
   // Populate fields
   $fields = array(
@@ -977,5 +979,15 @@ function _os2intra_user_import_get_department_nid($department) {
     }
     return FALSE;
   }
+}
 
+
+/**
+ * Convert numeric values into integers, else return the string untouched.
+ */
+function _os2intra_user_import_sanitize_int($str) {
+  if (is_numeric($str)) {
+    return (int) $str;
+  }
+  return $str;
 }
