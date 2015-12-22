@@ -2068,7 +2068,7 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['fields']['view_user']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['view_user']['alter']['text'] = '[name]';
   $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: User: Telefon nummer */
   $handler->display->display_options['fields']['field_os2intra_phone']['id'] = 'field_os2intra_phone';
   $handler->display->display_options['fields']['field_os2intra_phone']['table'] = 'field_data_field_os2intra_phone';
   $handler->display->display_options['fields']['field_os2intra_phone']['field'] = 'field_os2intra_phone';
