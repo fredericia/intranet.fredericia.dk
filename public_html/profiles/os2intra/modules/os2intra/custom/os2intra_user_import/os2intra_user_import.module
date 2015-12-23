@@ -422,7 +422,7 @@ function os2intra_user_import_run_with_drush() {
 
       // Check and create groups
       os2intra_user_import_groups($users);
-
+return;
       // Check for users that already exist
       $update_users = os2intra_user_import_check_users($users);
 
@@ -781,6 +781,7 @@ function os2intra_user_import_groups($users) {
 
     if (!empty($result)) {
       os2intra_user_import_save_log('', 'Group already exists: ' . $group);
+      os2intra_user_import_create_department(key($result['taxonomy_term']), $user['department']);
     }
     else {
       // Create taxonomy terms
@@ -804,9 +805,12 @@ function os2intra_user_import_groups($users) {
       taxonomy_term_save($term);
       $created_terms[] = $term;
 
-      $tid = $term->tid;
+      os2intra_user_import_create_department($term->tid, $user['department']);
     }
-continue;
+
+    return;
+
+
 
     // Create group nodes
     $node = new stdClass();
@@ -854,6 +858,23 @@ continue;
   if (count($created_terms > 0)) {
     _os2intra_user_import_send_email($created_terms);
   }
+}
+
+/**
+ * Create department nodes
+ */
+function os2intra_user_import_create_department($tid, $department) {
+
+  print_r($department);
+  return;
+
+  // Check if department node already exists.
+  if (_os2intra_user_import_get_department_nid()) {
+    return;
+  }
+
+
+
 }
 
 /**
