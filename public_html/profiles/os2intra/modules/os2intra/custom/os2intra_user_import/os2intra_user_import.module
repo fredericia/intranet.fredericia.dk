@@ -824,14 +824,11 @@ function os2intra_user_import_groups($users) {
  */
 function os2intra_user_import_create_department($tid, $department) {
 
-
   // Check if department node already exists. If so, then do nothing.
   $nid = _os2intra_user_import_get_department_nid($department);
   if ($nid) {
     return;
   }
-
-  echo "department skal oprettes";
 
   // Create group nodes
   $node = new stdClass();
