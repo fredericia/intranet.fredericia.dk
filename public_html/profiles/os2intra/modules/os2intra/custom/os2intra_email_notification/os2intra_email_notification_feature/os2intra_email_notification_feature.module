@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the os2intra_email_notification_feature feature.
+ */
+
+include_once 'os2intra_email_notification_feature.features.inc';

@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * Implements hook_node_insert() */
+
+function os2intra_email_notification_node_insert($node) { 
+
+    list(,, $bundle) = entity_extract_ids('node', $node);
+ if (!og_is_group_content_type('node', $bundle)) {
+    return;
+  }
+
+  entity_get_controller('node')->resetCache(array($node->nid));
+
+  
+  $message_type = 'os2intra_msgtp_afdelingsindhold';
+  $hook = 'node_insert';
+  
+  
+  drupal_alter('os2intra_email_notification_message_selection', $message_type, $hook, $node);
+  $account = user_load($node->uid);
+  
+  
+  $message = message_create($message_type, array('uid' => $account->uid, 'timestamp' => $node->created));
+  
+  
+  $wrapper = entity_metadata_wrapper('message', $message); 
+  $wrapper->field_target_nodes->set($node);
+  $wrapper->field_os2intra_afdindh_afdeling->set($node->og_group_ref['und'][0]['target_id']); 
+    
+  $options = array( 
+    'rendered fields' => array( 
+      'message_notify_email_subject' => 'field_os2intra_afdindh_subject', 
+      'message_notify_email_body' => 'field_os2intra_afdindh_body', 
+    ), 
+  ); 
+  $subscribe_options = array( 
+    'subscribe message' => TRUE, 
+    'email message' => TRUE, 
+  ); 
+  if (module_exists('message_subscribe')) { 
+    message_subscribe_send_message('node', $node, $message, array('email' => $options), $subscribe_options); 
+  } 
+}
