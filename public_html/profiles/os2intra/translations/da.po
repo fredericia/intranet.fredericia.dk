@@ -53401,10 +53401,10 @@ msgid "Re-order rows by numerical weight instead of dragging."
 msgstr "Sortér rækker med numeriske vægte i stedet for at trække dem."
 
 msgid "Show row weights"
-msgstr "Vis rækkevægte"
+msgstr "Vis rækkefølge"
 
 msgid "Hide row weights"
-msgstr "Skjul rækkevægte"
+msgstr "Skjul rækkefølge"
 
 msgid ""
 "Attempt to create an instance of field @field_name without an entity "
