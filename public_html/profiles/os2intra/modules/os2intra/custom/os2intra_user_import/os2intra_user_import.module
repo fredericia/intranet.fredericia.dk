@@ -808,6 +808,13 @@ function os2intra_user_import_groups($users) {
       os2intra_user_import_create_department($term->tid, $user['department']);
     }
 
+    // Send email that new groups has been created
+    if (count($created_terms > 0)) {
+      _os2intra_user_import_send_email($created_terms);
+    }
+
+    os2intra_user_import_save_log('', 'Finished importing groups');
+
     return;
 
 
@@ -852,12 +859,9 @@ function os2intra_user_import_groups($users) {
     $node = node_submit($node);
     node_save($node);
   }
-  os2intra_user_import_save_log('', 'Finished importing groups');
 
-  // Send email that new groups has been created
-  if (count($created_terms > 0)) {
-    _os2intra_user_import_send_email($created_terms);
-  }
+
+
 }
 
 /**
@@ -865,16 +869,11 @@ function os2intra_user_import_groups($users) {
  */
 function os2intra_user_import_create_department($tid, $department) {
 
-  print_r($department);
-  return;
 
   // Check if department node already exists.
-  if (_os2intra_user_import_get_department_nid()) {
-    return;
+  if (_os2intra_user_import_get_department_nid($department)) {
+    echo "department skal oprettes";
   }
-
-
-
 }
 
 /**
