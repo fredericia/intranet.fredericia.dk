@@ -422,7 +422,7 @@ function os2intra_user_import_run_with_drush() {
 
       // Check and create groups
       os2intra_user_import_groups($users);
-return;
+
       // Check for users that already exist
       $update_users = os2intra_user_import_check_users($users);
 
@@ -669,22 +669,11 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $termination_date_timestamp = 1;
   }
 
-
-  // For Frecericia, we only care about department groups.
-  // Query for department (not nested, only one result).
-  $query = new EntityFieldQuery;
-  $query->entityCondition('entity_type', 'node');
-  $query->fieldCondition('field_os2intra_department_id', 'value', $user['centre'], '=');
-  $result = $query->execute();
-
-
   // User title tid
   $title_tid = os2intra_user_import_user_title($user['job_description']);
 
   // Get user membership to department
   $department_nid = _os2intra_user_import_get_department_nid($user['department']);
-  print_r($department_nid); die();
-
 
   // Populate fields
   $fields = array(
@@ -815,7 +804,6 @@ function os2intra_user_import_groups($users) {
 
     os2intra_user_import_save_log('', 'Finished importing groups');
 
-    return;
   }
 }
 
@@ -991,12 +979,12 @@ function _os2intra_user_import_get_department_nid($department) {
     $result = $query->execute();
 
     if (count($result['node']) > 0) {
+
       return key($result['node']);
     }
-    return FALSE;
   }
+  return FALSE;
 }
-
 
 /**
  * Convert numeric values into integers, else return the string untouched.
