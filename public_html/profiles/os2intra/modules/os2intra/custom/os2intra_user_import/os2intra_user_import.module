@@ -816,52 +816,7 @@ function os2intra_user_import_groups($users) {
     os2intra_user_import_save_log('', 'Finished importing groups');
 
     return;
-
-
-
-    // Create group nodes
-    $node = new stdClass();
-
-    // Title and type
-    $node->title = $group;
-    $node->type = 'os2intra_org_group_unit';
-
-    // Generic node stuff
-    node_object_prepare($node);
-
-    $node->language = 'da';
-    $node->uid = 1;
-    $node->status = 1;
-
-    // For some reason, we need to save the node and load it again, before we can assign values to fields
-    $node = node_submit($node);
-    node_save($node);
-
-    // Set organization term
-    $node->field_os2intra_organisation[LANGUAGE_NONE][]['target_id'] = $tid;
-
-    // Save department id on node
-    if (field_info_instance('taxonomy_term', 'field_os2intra_department_id', 'os2intra_org_group_unit')) {
-      $node->field_os2intra_department_id[LANGUAGE_NONE][0]['value'] = $group;
-    }
-
-    // Group type "Organisation"
-    // Todo: make more generic
-    if (field_info_instance('node', 'field_os2intra_grouptype', 'os2intra_org_group_unit')) {
-      $node->field_os2intra_grouptype[LANGUAGE_NONE][0]['tid'] = 6;
-    }
-
-    // Closed group, require invitation
-    if (field_info_instance('node', 'field_og_subscribe_settings', 'os2intra_org_group_unit')) {
-      $node->field_og_subscribe_settings[LANGUAGE_NONE][0]['value'] = 'invitation';
-    }
-
-    $node = node_submit($node);
-    node_save($node);
   }
-
-
-
 }
 
 /**
@@ -870,10 +825,53 @@ function os2intra_user_import_groups($users) {
 function os2intra_user_import_create_department($tid, $department) {
 
 
-  // Check if department node already exists.
-  if (_os2intra_user_import_get_department_nid($department)) {
-    echo "department skal oprettes";
+  // Check if department node already exists. If so, then do nothing.
+  $nid = _os2intra_user_import_get_department_nid($department);
+  if ($nid) {
+    return;
   }
+
+  echo "department skal oprettes";
+
+  // Create group nodes
+  $node = new stdClass();
+
+  // Title and type
+  $node->title = $department;
+  $node->type = 'os2intra_org_group_unit';
+
+  // Generic node stuff
+  node_object_prepare($node);
+
+  $node->language = 'da';
+  $node->uid = 1;
+  $node->status = 1;
+
+  // For some reason, we need to save the node and load it again, before we can assign values to fields
+  $node = node_submit($node);
+  node_save($node);
+
+  // Set organization term
+  $node->field_os2intra_organisation[LANGUAGE_NONE][]['target_id'] = $tid;
+
+  // Save department id on node
+  if (field_info_instance('taxonomy_term', 'field_os2intra_department_id', 'os2intra_org_group_unit')) {
+    $node->field_os2intra_department_id[LANGUAGE_NONE][0]['value'] = $department;
+  }
+
+  // Group type "Organisation"
+  // Todo: make more generic
+  if (field_info_instance('node', 'field_os2intra_grouptype', 'os2intra_org_group_unit')) {
+    $node->field_os2intra_grouptype[LANGUAGE_NONE][0]['tid'] = 6;
+  }
+
+  // Closed group, require invitation
+  if (field_info_instance('node', 'field_og_subscribe_settings', 'os2intra_org_group_unit')) {
+    $node->field_og_subscribe_settings[LANGUAGE_NONE][0]['value'] = 'invitation';
+  }
+
+  $node = node_submit($node);
+  node_save($node);
 }
 
 /**
