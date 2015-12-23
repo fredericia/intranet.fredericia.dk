@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the User import mapping feature.
+ */
+
+include_once 'fredericia_user_import_mapping.features.inc';
