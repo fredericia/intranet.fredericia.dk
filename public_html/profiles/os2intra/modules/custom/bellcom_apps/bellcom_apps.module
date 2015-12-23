@@ -20,20 +20,3 @@ function bellcom_apps_apps_servers_info() {
     ),
   );
 }
-
-/**
- * Implements hook_apps_servers_info().
- */
-function bellcom_apps_menu() {
-  return array(
-    'debug' => array(
-      'title' => 'debug',
-      'page callback' => '_bellcom_apps_debug_callback',
-      'access callback' => true,
-    ),
-  );
-}
-
-function _bellcom_apps_debug_callback() {
-  os2intra_user_import_run_with_drush();
-}

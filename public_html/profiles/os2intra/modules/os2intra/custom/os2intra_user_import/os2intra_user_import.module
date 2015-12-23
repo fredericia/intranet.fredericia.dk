@@ -523,11 +523,11 @@ function os2intra_user_import_check_users(&$users) {
   $update_users = array();
 
   foreach ($users as $key => $user) {
-    $employee_id = $user['employee_id'];
+    $ad_id = $user['ad_id'];
 
     $query = new EntityFieldQuery;
     $query->entityCondition('entity_type', 'user');
-    $query->fieldCondition('field_os2intra_employee_id', 'value', $employee_id, '=');
+    $query->propertyCondition('name', $ad_id);
     $result = $query->execute();
 
     // Unset users already created
@@ -817,11 +817,15 @@ function os2intra_user_import_create_department($tid, $department) {
     return;
   }
 
+  // Find term title
+  $term = taxonomy_term_load($tid);
+  $name = $term->name;
+
   // Create group nodes
   $node = new stdClass();
 
   // Title and type
-  $node->title = $department;
+  $node->title = $name;
   $node->type = 'os2intra_org_group_unit';
 
   // Generic node stuff
