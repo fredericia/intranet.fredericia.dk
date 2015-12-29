@@ -16,7 +16,21 @@ function os2intra_frontpage_default_page_manager_pages() {
   $page->admin_title = 'Nyt og opdateret';
   $page->admin_description = '';
   $page->path = 'opdateret';
-  $page->access = array();
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 2,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Nyt og opdateret',
