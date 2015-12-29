@@ -133,9 +133,30 @@
 		}
 	}
 
-	.flag-os2intra-flag-node-follow {
+	.flag-os2intra-flag-node-follow  {
 
 		.flag {
+
+			&.flag-action {
+
+				&:before {
+					content: @fa-var-star;
+				}
+			}
+
+			&.unflag-action {
+
+				&:before {
+					content: @fa-var-star-o;
+				}
+			}
+		}
+	}
+	
+	.subscribeflag  {
+
+		.flag {
+  		.btn;
 
 			&.flag-action {
 

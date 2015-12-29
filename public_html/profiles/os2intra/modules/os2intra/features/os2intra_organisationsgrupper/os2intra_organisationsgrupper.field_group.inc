@@ -137,15 +137,11 @@ function os2intra_organisationsgrupper_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'os2intra_group';
   $field_group->mode = 'form';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_indstillinger';
   $field_group->data = array(
     'label' => 'Group',
     'weight' => '0',
-    'children' => array(
-      0 => 'group_gruppe',
-      1 => 'group_logo',
-      2 => 'group_indstillinger',
-    ),
+    'children' => array(),
     'format_type' => 'htabs',
     'format_settings' => array(
       'formatter' => '',
