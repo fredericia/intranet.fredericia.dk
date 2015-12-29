@@ -214,6 +214,7 @@ features[field_instance][] = node-os2intra_canteen_menu-field_os2intra_canteen_c
 features[field_instance][] = node-os2intra_canteen_menu-field_os2intra_canteen_menu_date
 features[field_instance][] = node-os2intra_canteen_menu-field_os2intra_image
 features[field_instance][] = node-os2intra_message_notification-body
+features[field_instance][] = node-os2intra_message_notification-field_os2intra_mess_notifi_ref
 features[field_instance][] = node-os2intra_message_notification-field_os2intra_organisation_ref
 features[field_instance][] = node-os2intra_message_notification-field_os2intra_physical_location
 features[field_instance][] = node-os2web_base_selfservice_link-field_os2web_base_field_kle_ref
