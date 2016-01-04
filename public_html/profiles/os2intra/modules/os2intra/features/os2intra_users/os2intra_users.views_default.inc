@@ -692,7 +692,7 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['mail']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['mail']['alter']['link_class'] = 'btn btn-primary';
   $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
-  /* Field: User: Organisation */
+  /* Field: Field: Organisation */
   $handler->display->display_options['fields']['field_os2intra_organisation_ref']['id'] = 'field_os2intra_organisation_ref';
   $handler->display->display_options['fields']['field_os2intra_organisation_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['field_os2intra_organisation_ref']['field'] = 'field_os2intra_organisation_ref';

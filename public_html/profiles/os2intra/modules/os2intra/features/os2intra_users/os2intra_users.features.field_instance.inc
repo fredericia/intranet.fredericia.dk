@@ -724,6 +724,55 @@ function os2intra_users_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_os2intra_physical_location'.
+  $field_instances['user-user-field_os2intra_physical_location'] = array(
+    'bundle' => 'user',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 28,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_os2intra_physical_location',
+    'label' => 'Fysisk lokation',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 59,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_os2intra_termination_date'.
   $field_instances['user-user-field_os2intra_termination_date'] = array(
     'bundle' => 'user',
@@ -1200,6 +1249,7 @@ function os2intra_users_field_default_field_instances() {
   t('Email option will be checked automatically when subscribing to something.');
   t('Email subscriptions');
   t('Fornavn');
+  t('Fysisk lokation');
   t('Group membership');
   t('Interesser');
   t('Jobtitel');

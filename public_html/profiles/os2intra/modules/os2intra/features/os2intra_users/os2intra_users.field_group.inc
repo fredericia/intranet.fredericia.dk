@@ -23,7 +23,9 @@ function os2intra_users_field_group_info() {
     'label' => 'Brugerkonto',
     'weight' => '4',
     'children' => array(
-      0 => 'account',
+      0 => 'ckeditor',
+      1 => 'mimemail',
+      2 => 'account',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -207,9 +209,11 @@ function os2intra_users_field_group_info() {
       2 => 'field_os2intra_termination_date',
       3 => 'og_org_ref',
       4 => 'field_os2intra_phone',
-      5 => 'ckeditor',
-      6 => 'timezone',
-      7 => 'locale',
+      5 => 'og_user_node2',
+      6 => 'masquerade',
+      7 => 'piwik',
+      8 => 'timezone',
+      9 => 'locale',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
