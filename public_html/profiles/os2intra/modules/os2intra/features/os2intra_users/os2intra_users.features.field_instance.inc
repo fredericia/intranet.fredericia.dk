@@ -514,7 +514,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -6,
+      'weight' => -8,
     ),
   );
 
@@ -720,7 +720,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -3,
+      'weight' => -5,
     ),
   );
 
@@ -753,7 +753,7 @@ function os2intra_users_field_default_field_instances() {
     'entity_type' => 'user',
     'field_name' => 'field_os2intra_physical_location',
     'label' => 'Fysisk lokation',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
@@ -762,14 +762,14 @@ function os2intra_users_field_default_field_instances() {
       ),
       'custom_add_another' => '',
       'custom_remove' => '',
-      'user_register_form' => 0,
+      'user_register_form' => 1,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 59,
+      'weight' => 14,
     ),
   );
 
@@ -824,7 +824,7 @@ function os2intra_users_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => -5,
+      'weight' => -7,
     ),
   );
 
@@ -893,7 +893,7 @@ function os2intra_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 1,
+      'weight' => -6,
     ),
   );
 
@@ -946,7 +946,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 3,
+      'weight' => -4,
     ),
   );
 
@@ -1006,7 +1006,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 2,
+      'weight' => -5,
     ),
   );
 
@@ -1099,7 +1099,7 @@ function os2intra_users_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 0,
+      'weight' => -9,
     ),
   );
 
@@ -1168,7 +1168,7 @@ function os2intra_users_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => -4,
+      'weight' => -6,
     ),
   );
 
