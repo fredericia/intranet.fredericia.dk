@@ -12,7 +12,7 @@
 define('ELASTICSEARCH_CONNECTOR_STATUS_INACTIVE', '0');
 define('ELASTICSEARCH_CONNECTOR_STATUS_ACTIVE', '1');
 define('ELASTICSEARCH_CONNECTOR_CLUSTER_STATUS_OK', '200');
-define('ELASTICSEARCH_CONNECTOR_DEFAULT_TIMEOUT',   '3');
+define('ELASTICSEARCH_CONNECTOR_DEFAULT_TIMEOUT', '3');
 
 /**
  * Implements hook_help().
@@ -656,6 +656,7 @@ function elasticsearch_connector_get_indices_options($cluster_id, $empty_option 
 function elasticsearch_connector_cluster_load($cluster_id) {
   ctools_include('export');
   $result = ctools_export_load_object('elasticsearch_connector_cluster', 'names', array($cluster_id));
+  drupal_alter('elasticsearch_connector_clusters', $result);
   if (isset($result[$cluster_id])) {
     if (isset($result[$cluster_id]->options) && !is_array($result[$cluster_id]->options)) {
       $result[$cluster_id]->options = unserialize($result[$cluster_id]->options);
@@ -702,6 +703,8 @@ function elasticsearch_connector_clusters($include_inactive = TRUE) {
       unset($clusters[$cluster_id]);
     }
   }
+
+  drupal_alter('elasticsearch_connector_clusters', $clusters);
 
   return $clusters;
 }
@@ -804,8 +807,6 @@ function elasticsearch_connector_load_library($cluster) {
         );
       }
 
-      drupal_alter('elasticsearch_connector_load_library_options', $options, $cluster);
-
       try {
         if (!class_exists('\Elasticsearch\Client') && module_exists('composer_manager')) {
           // If the class doesn't exists try to explicitly load the classes!
@@ -818,6 +819,8 @@ function elasticsearch_connector_load_library($cluster) {
           // No library available!
           return FALSE;
         }
+
+        drupal_alter('elasticsearch_connector_load_library_options', $options, $cluster);
 
         $clients[$cluster->cluster_id] = new \Elasticsearch\Client($options);
       }

@@ -320,24 +320,29 @@ class SearchApiElasticsearchConnector extends SearchApiAbstractService {
 
     drupal_alter('elasticsearch_connector_search_api_field_update', $index, $properties);
 
-    try {
-      if ($this->elasticsearchClient->indices()->existsType($params)) {
-        $current_mapping = $this->elasticsearchClient->indices()->getMapping($params);
-        if (!empty($current_mapping)) {
-          // If the mapping exits, delete it to be able to re-create it.
-          $this->elasticsearchClient->indices()->deleteMapping($params);
+    // Not remapping for read only indexes as it removes all data
+    if (!isset($index->read_only) || !$index->read_only) {
+      try {
+        if ($this->elasticsearchClient->indices()->existsType($params)) {
+          $current_mapping = $this->elasticsearchClient->indices()->getMapping($params);
+          if (!empty($current_mapping)) {
+            // If the mapping exits, delete it to be able to re-create it.
+            $this->elasticsearchClient->indices()->deleteMapping($params);
+          }
+        }
+
+        $params['body'][$params['type']]['properties'] = $properties;
+        drupal_alter('elasticsearch_connector_search_api_mapping_update', $index, $params['body'][$params['type']]);
+
+        $results = $this->elasticsearchClient->indices()->putMapping($params);
+        if (!elasticsearch_connector_check_response_ack($results)) {
+          drupal_set_message(t('Cannot create the mapping of the fields!'), 'error');
         }
       }
-
-      $params['body'][$params['type']]['properties'] = $properties;
-      $results = $this->elasticsearchClient->indices()->putMapping($params);
-      if (!elasticsearch_connector_check_response_ack($results)) {
-        drupal_set_message(t('Cannot create the mapping of the fields!'), 'error');
+      catch (Exception $e) {
+        drupal_set_message($e->getMessage(), 'error');
+        return FALSE;
       }
-    }
-    catch (Exception $e) {
-      drupal_set_message($e->getMessage(), 'error');
-      return FALSE;
     }
 
     return TRUE;
@@ -1649,19 +1654,25 @@ class SearchApiElasticsearchConnector extends SearchApiAbstractService {
       if ($field_id === 'search_api_relevance') {
         $sort['_score'] = $direction;
       }
-      elseif (isset($spatials[$field_id])) {
-        $sort['_geo_distance'] = array(
-          $field_id => array(
-            'lat' => $spatials[$field_id]['lat'],
-            'lon' => $spatials[$field_id]['lon'],
-          ),
-          'order' => $direction,
-          'unit' => 'km',
-          'distance_type' => 'plane',
-        );
-      }
       elseif (isset($index_fields[$field_id])) {
-        $sort[$field_id] = $direction;
+        // Check whether the field is a location field.
+        if (isset($index_fields[$field_id]['real_type']) && $index_fields[$field_id]['real_type'] == 'location') {
+          // Only set proximity sort if the point is set.
+          if (isset($spatials[$field_id])) {
+            $sort['_geo_distance'] = array(
+              $field_id => array(
+                'lat' => $spatials[$field_id]['lat'],
+                'lon' => $spatials[$field_id]['lon'],
+              ),
+              'order' => $direction,
+              'unit' => 'km',
+              'distance_type' => 'plane',
+            );
+          }
+        }
+        else {
+          $sort[$field_id] = $direction;
+        }
       }
       else {
         throw new Exception(t('Incorrect sorting!.'));
