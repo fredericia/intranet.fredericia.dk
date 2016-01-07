@@ -34,7 +34,6 @@
           <?php if (isset($author_full_name) and $updated_at_short): ?>
             <!-- Begin - entity info -->
             <ul class="os2-node-teaser-info os2-entity-info">
-              <li><span class="fa fa-envelope-o"></span><?php print t('Indlæg'); ?></li>
               <li><?php print l($author_full_name, 'user/' . $node->uid); ?></li>
               <li><span><?php print t('Sidst opdateret d.'); ?> <?php print $updated_at_short; ?></span></li>
             </ul>
