@@ -55,3 +55,6 @@ private
 public_html/sites/*.dd
 public_html/sites/sites.php
 d7
+
+# dompdf log
+public_html/profiles/os2intra/libraries/dompdf/lib/fonts/log.htm
