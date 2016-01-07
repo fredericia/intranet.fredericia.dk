@@ -1,0 +1,158 @@
+// |--------------------------------------------------------------------------
+// | Content type icon
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .prefix-xxxxxx
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Base page (os2_intra_base_page) (intranet side)
+.node--os2intra_base_page--teaser,
+.node--os2intra_base_page--list,
+.node-type-os2intra-base-page {
+
+	.content-type-icon-mixin(@fa-var-newspaper-o);
+}
+
+// Post (post) (indlæg)
+.node--post--teaser,
+.node--post--list,
+.node-type-post {
+
+	.content-type-icon-mixin(@fa-var-envelope-o);
+}
+
+// Node basket (node_basket) (indholdskurv)
+.node--node_basket--teaser,
+.node--node_basket--list,
+.node-type-node_basket {
+
+	.content-type-icon-mixin(@fa-var-shopping-basket);
+}
+
+// Webform (webform) (webformular)
+.node--node_basket--teaser,
+.node--node_basket--list,
+.node-type-node_basket {
+
+	.content-type-icon-mixin(@fa-var-shopping-basket);
+}
+
+// Org group unit (os2intra_org_group_unit) (afdeling)
+.node--os2intra_org_group_unit--teaser,
+.node--os2intra_org_group_unit--list,
+.node-type-os2intra_org_group_unit {
+
+	.content-type-icon-mixin(@fa-var-home);
+}
+
+// Org group unit (os2intra_org_group_unit) (afdeling)
+.node--os2intra_org_group_unit--teaser,
+.node--os2intra_org_group_unit--list,
+.node-type-os2intra_org_group_unit {
+
+	.content-type-icon-mixin(@fa-var-home);
+}
+
+// Wiki (wiki) (lokal side)
+.node--wiki--teaser,
+.node--wiki--list,
+.node-type-wiki {
+
+	.content-type-icon-mixin(@fa-var-file-text-o);
+}
+
+// Referat (os2intra_referat) (referat)
+.node--os2intra_referat--teaser,
+.node--os2intra_referat--list,
+.node-type-os2intra_referat {
+
+	.content-type-icon-mixin(@fa-var-list-ol);
+}
+
+// Spotbox (spotbox) (spotboks)
+.node--spotbox--teaser,
+.node--spotbox--list,
+.node-type-spotbox {
+
+	.content-type-icon-mixin(@fa-var-eye);
+}
+
+// Selfservice link (os2web_base_selfservice_link) (selvbetjeningslinks)
+.node--spotbox--teaser,
+.node--spotbox--list,
+.node-type-spotbox {
+
+	.content-type-icon-mixin(@fa-var-eye);
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {}
+
+// Mobile - only
+@media @media-query-mobile-only {}
+
+// Tablet
+@media @media-query-tablet {}
+
+// Tablet - only
+@media @media-query-tablet-only {}
+
+// Desktop
+@media @media-query-desktop {}
+
+// Desktop - only
+@media @media-query-desktop-only {}
+
+// Large desktop
+@media @media-query-large-desktop {}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {}
+
+// Print
+@media print {}
+
+// Touch
+.touch {}
+
+// No touch
+.no-touch {}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Content type icon mixin
+.content-type-icon-mixin(@icon) {
+
+	.os2-node-teaser-info,
+	.os2-node-list-info,
+	.os2-node-full-info {
+
+		li {
+
+			&:first-child {
+
+				&:before {
+					display: inline-block;
+					margin-right: 4px;
+					font-family: FontAwesome;
+					content: @icon;
+				}
+			}
+		}
+	}
+}

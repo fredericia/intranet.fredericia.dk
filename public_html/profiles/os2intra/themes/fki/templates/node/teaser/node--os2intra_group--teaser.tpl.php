@@ -21,7 +21,6 @@
       <!-- Begin - signup -->
       <span class="os2-footer-element">
         <span class="icon fa fa-sign-in"></span>
-         
       </span>
       <!-- End - signup -->
 
