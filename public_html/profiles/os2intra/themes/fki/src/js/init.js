@@ -11,4 +11,7 @@
   // Enable popover button
   popoverButton.init();
 
+  // Enable OS2Toggler
+  os2Toggler.init();
+
 })(jQuery);

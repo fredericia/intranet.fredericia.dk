@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Organisation tree
+// | Toggler
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .os2-organisation-tree
+// | - .os2-toggler
 // |
 
 // --------------------------------------------------
@@ -14,23 +14,42 @@
 // Styling
 // --------------------------------------------------
 
-// Organisation tree
-.os2-organisation-tree {
+// Toggler
+.os2-toggler {
 
-	.view-content {
+	.os2-toggler-element {
 
-		> ul {
-			list-style: none;
-			padding: 0;
+		.os2-toggler-element-toggle {
+			.pull-right;
+		}
 
-			> li {
+		.os2-toggler-element-toggle-icon {
 
-				&:last-child {
+			&:before {
+				cursor: hand;
+				font-family: FontAwesome;
+				.icon;
+				content: @fa-var-plus;
+			}
+		}
 
-					.os2-node-includeable {
-						border-bottom: 0;
-					}
+		.os2-toggler-element-content {
+			display: none;
+		}
+
+		&.active {
+
+			.os2-toggler-element-toggle {}
+
+			.os2-toggler-element-toggle-icon {
+
+				&:before {
+					content: @fa-var-minus;
 				}
+			}
+
+			.os2-toggler-element-content {
+				display: block;
 			}
 		}
 	}
@@ -43,83 +62,83 @@
 // Mobile
 @media @media-query-mobile {
 
-	// Organisation tree
-	.os2-organisation-tree {}
+	// Toggler
+	.os2-toggler {}
 }
 
 // Mobile - only
 @media @media-query-mobile-only {
 
-	// Organisation tree
-	.os2-organisation-tree {}
+	// Toggler
+	.os2-toggler {}
 }
 
 // Tablet
 @media @media-query-tablet {
 
-	// Organisation tree
-	.os2-organisation-tree {}
+	// Toggler
+	.os2-toggler {}
 }
 
 // Tablet - only
 @media @media-query-tablet-only {
 
-	// Organisation tree
-	.os2-organisation-tree {}
+	// Toggler
+	.os2-toggler {}
 }
 
 // Desktop
 @media @media-query-desktop {
 
-	// Organisation tree
-	.os2-organisation-tree {}
+	// Toggler
+	.os2-toggler {}
 }
 
 // Desktop - only
 @media @media-query-desktop-only {
 
-	// Organisation tree
-	.os2-organisation-tree {}
+	// Toggler
+	.os2-toggler {}
 }
 
 // Large desktop
 @media @media-query-large-desktop {
 
-	// Organisation tree
-	.os2-organisation-tree {}
+	// Toggler
+	.os2-toggler {}
 }
 
 // Large desktop - only
 @media @media-query-large-desktop-only {
 
-	// Organisation tree
-	.os2-organisation-tree {}
+	// Toggler
+	.os2-toggler {}
 }
 
 // Print
 @media print {
 
-	// Organisation tree
-	.os2-organisation-tree {}
+	// Toggler
+	.os2-toggler {}
 }
 
 // Touch
 .touch {
 
-	// Organisation tree
-	.os2-organisation-tree {}
+	// Toggler
+	.os2-toggler {}
 }
 
 // No touch
 .no-touch {
 
-	// Organisation tree
-	.os2-organisation-tree {}
+	// Toggler
+	.os2-toggler {}
 }
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-// Organisation tree mixin
-.os2-mixin-organisation-tree() {}
+// Toggler mixin
+.os2-mixin-toggler() {}

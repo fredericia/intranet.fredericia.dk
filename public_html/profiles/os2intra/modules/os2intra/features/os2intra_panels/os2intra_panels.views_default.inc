@@ -166,6 +166,57 @@ function os2intra_panels_views_default_views() {
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'os2-organisation-tree';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_class'] = 'afd-[field_os2intra_afdeling] nid-[nid] org2-[field_os2intra_organisation] org2-[field_os2intra_organisation_1]';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  /* Field: Broken/missing handler */
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
+  $handler->display->display_options['fields']['field_os2intra_afdeling']['exclude'] = TRUE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Content: Organisation */
+  $handler->display->display_options['fields']['field_os2intra_organisation']['id'] = 'field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['table'] = 'field_data_field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['field'] = 'field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_organisation']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_os2intra_organisation']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Content: Organisation */
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['id'] = 'field_os2intra_organisation_1';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['table'] = 'field_data_field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['field'] = 'field_os2intra_organisation';
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_organisation_1']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Content: Rendered Node */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'includeable';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'term_node_tid_depth' => array(
       'type' => 'context',

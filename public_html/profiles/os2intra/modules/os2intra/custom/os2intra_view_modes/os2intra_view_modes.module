@@ -20,6 +20,10 @@ function os2intra_view_modes_entity_info_alter(&$entity_info) {
     'label'           => t('Teaser'),
     'custom settings' => TRUE,
   );
+  $entity_info['user']['view modes']['includeable'] = array(
+    'label'           => t('Includeable'),
+    'custom settings' => TRUE,
+  );
 
   // Taxonomy term view modes
   $entity_info['taxonomy_term']['view modes']['teaser'] = array(
