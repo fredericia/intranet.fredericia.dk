@@ -20,15 +20,17 @@
 	.os2-toggler-element {
 
 		.os2-toggler-element-toggle {
-			display: block;
+			.pull-right;
+		}
 
-			&:after {
+		.os2-toggler-element-toggle-icon {
+
+			&:before {
+				cursor: hand;
 				font-family: FontAwesome;
+				.icon;
 				content: @fa-var-plus;
-				.pull-right;
 			}
-
-			&:extend(.clearfix all);
 		}
 
 		.os2-toggler-element-content {
@@ -37,10 +39,11 @@
 
 		&.active {
 
-			.os2-toggler-element-toggle {
+			.os2-toggler-element-toggle {}
 
-				&:after {
-					font-family: FontAwesome;
+			.os2-toggler-element-toggle-icon {
+
+				&:before {
 					content: @fa-var-minus;
 				}
 			}
