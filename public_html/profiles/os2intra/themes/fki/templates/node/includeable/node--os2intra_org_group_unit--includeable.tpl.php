@@ -9,14 +9,19 @@
     </div>
     <!-- End - heading -->
 
-    <!-- Begin - users -->
-    <?php if (!empty($users)): ?>
+    <!-- Begin - body -->
+    <div class="os2-node-includeable-body">
 
-      <?php foreach($users AS $user): ?>
-        <?php print render($user); ?>
-      <?php endforeach ?>
-    <?php endif ?>
-    <!-- End - users -->
+      <!-- Begin - users -->
+      <?php if (!empty($users)): ?>
+        <?php foreach($users AS $user): ?>
+          <?php print render($user); ?>
+        <?php endforeach ?>
+      <?php endif ?>
+      <!-- End - users -->
+
+    </div>
+    <!-- End - body -->
 
   </div>
   <!-- End - includeable -->

@@ -255,18 +255,13 @@ function fki_preprocess_node__os2intra_org_group_unit(&$variables) {
     $variables['users'] = array();
 
     $node = $variables['node'];
+    $users_uids = og_get_group_members_properties($node, array(), 'members', 'node');
 
-    // Load all users attached to this node
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', 'user')
-      ->fieldCondition('field_user_node_2', 'tid', $node->nid, '=')
-      ->fieldOrderBy('field_name_first', 'value', 'DESC');
+    if (!empty($users_uids)) {
 
-    $result = $query->execute();
-
-    $users = user_load_multiple(array_keys($result['user']));
-    foreach($users as $user) {
-      $variables['users'][] = user_view($user, 'teaser');
+      foreach($users_uids as $user_uid) {
+        $variables['users'][] = user_view(user_load($user_uid), 'includeable');
+      }
     }
   }
 }
@@ -356,6 +351,42 @@ function fki_preprocess_taxonomy_term__os2web_taxonomies_tax_places(&$variables)
     // Google map
     if ($field_os2web_taxonomies_address && $field_os2web_taxonomies_city) {
       $variables['google_map'] = _bellcom_create_google_map($field_os2web_taxonomies_address[0]['value'], $field_os2web_taxonomies_city[0]['value']);
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_field().
+ */
+function fki_preprocess_field(&$variables, $hook) {
+
+  // Make "field--FIELDNAME--VIEWMODE.tpl.php" templates available.
+  $variables['theme_hook_suggestions'][] = 'field__' . $variables['element']['#field_name'] . '__' . $variables['element']['#view_mode'];
+
+  // Make "field--FIELDNAME--BUNDLE--VIEWMODE.tpl.php" templates available.
+  $variables['theme_hook_suggestions'][] = 'field__' . $variables['element']['#field_name'] . '__' . $variables['element']['#bundle'] . '__' . $variables['element']['#view_mode'];
+}
+
+/**
+ * Implements template_preprocess_user_profile()
+ */
+function fki_preprocess_user_profile(&$variables) {
+  if (isset($variables['account'])) {
+    $user = $variables['account'];
+  }
+  else {
+    $user = $variables['elements']['#account'];
+  }
+
+  // user-profile--VIEWMODE.tpl.php
+  if (isset($variables['elements']['#view_mode'])) {
+    $variables['theme_hook_suggestions'][] = 'user_profile__' . $variables['elements']['#view_mode'];
+  }
+
+  if ($user_information = bellcom_user_get_raw_information($user->uid)) {
+
+    if (isset($user_information['full_name'])) {
+      $variables['user_full_name'] = $user_information['full_name'];
     }
   }
 }
