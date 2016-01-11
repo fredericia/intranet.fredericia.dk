@@ -1,0 +1,141 @@
+// |--------------------------------------------------------------------------
+// | Toggler
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .os2-toggler
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+// Toggler
+.os2-toggler {
+
+	.os2-toggler-element {
+
+		.os2-toggler-element-toggle {
+			display: block;
+
+			&:after {
+				font-family: FontAwesome;
+				content: @fa-var-plus;
+				.pull-right;
+			}
+
+			&:extend(.clearfix all);
+		}
+
+		.os2-toggler-element-content {
+			display: none;
+		}
+
+		&.active {
+
+			.os2-toggler-element-toggle {
+
+				&:after {
+					font-family: FontAwesome;
+					content: @fa-var-minus;
+				}
+			}
+
+			.os2-toggler-element-content {
+				display: block;
+			}
+		}
+	}
+}
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile
+@media @media-query-mobile {
+
+	// Toggler
+	.os2-toggler {}
+}
+
+// Mobile - only
+@media @media-query-mobile-only {
+
+	// Toggler
+	.os2-toggler {}
+}
+
+// Tablet
+@media @media-query-tablet {
+
+	// Toggler
+	.os2-toggler {}
+}
+
+// Tablet - only
+@media @media-query-tablet-only {
+
+	// Toggler
+	.os2-toggler {}
+}
+
+// Desktop
+@media @media-query-desktop {
+
+	// Toggler
+	.os2-toggler {}
+}
+
+// Desktop - only
+@media @media-query-desktop-only {
+
+	// Toggler
+	.os2-toggler {}
+}
+
+// Large desktop
+@media @media-query-large-desktop {
+
+	// Toggler
+	.os2-toggler {}
+}
+
+// Large desktop - only
+@media @media-query-large-desktop-only {
+
+	// Toggler
+	.os2-toggler {}
+}
+
+// Print
+@media print {
+
+	// Toggler
+	.os2-toggler {}
+}
+
+// Touch
+.touch {
+
+	// Toggler
+	.os2-toggler {}
+}
+
+// No touch
+.no-touch {
+
+	// Toggler
+	.os2-toggler {}
+}
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+// Toggler mixin
+.os2-mixin-toggler() {}

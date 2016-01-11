@@ -27,6 +27,7 @@
       "src/vendor/fastclick/lib/fastclick.js",
       "src/js/popover-button.js",
       "src/js/bs3Alert.js",
+      "src/js/os2Toggler.js",
       "src/js/init.js"
     ],
     "jsIe9": [
