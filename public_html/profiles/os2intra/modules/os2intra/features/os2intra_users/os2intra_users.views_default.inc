@@ -865,6 +865,84 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: User: Fornavn */
+  $handler->display->display_options['fields']['field_name_first']['id'] = 'field_name_first';
+  $handler->display->display_options['fields']['field_name_first']['table'] = 'field_data_field_name_first';
+  $handler->display->display_options['fields']['field_name_first']['field'] = 'field_name_first';
+  $handler->display->display_options['fields']['field_name_first']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_name_first']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_name_first']['alter']['path'] = '/users/[name]';
+  /* Field: User: Efternavn */
+  $handler->display->display_options['fields']['field_name_last']['id'] = 'field_name_last';
+  $handler->display->display_options['fields']['field_name_last']['table'] = 'field_data_field_name_last';
+  $handler->display->display_options['fields']['field_name_last']['field'] = 'field_name_last';
+  $handler->display->display_options['fields']['field_name_last']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_name_last']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_name_last']['alter']['path'] = '/users/[name]';
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
+  $handler->display->display_options['filters']['combine']['group'] = 1;
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Navn';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'name' => 'name',
+    'field_name_first' => 'field_name_first',
+    'field_name_last' => 'field_name_last',
+  );
+  /* Filter criterion: User: E-mail */
+  $handler->display->display_options['filters']['mail']['id'] = 'mail';
+  $handler->display->display_options['filters']['mail']['table'] = 'users';
+  $handler->display->display_options['filters']['mail']['field'] = 'mail';
+  $handler->display->display_options['filters']['mail']['operator'] = 'contains';
+  $handler->display->display_options['filters']['mail']['group'] = 1;
+  $handler->display->display_options['filters']['mail']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['mail']['expose']['operator_id'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['label'] = 'E-mail';
+  $handler->display->display_options['filters']['mail']['expose']['operator'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['identifier'] = 'mail';
+  $handler->display->display_options['filters']['mail']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
   $handler->display->display_options['path'] = 'telefonbogen';
 
   /* Display: Block */
@@ -898,6 +976,8 @@ function os2intra_users_views_default_views() {
     t('Navn'),
     t('E-mail'),
     t('Page'),
+    t('Fornavn'),
+    t('Efternavn'),
     t('Block'),
   );
   $export['telefonbogen'] = $view;
