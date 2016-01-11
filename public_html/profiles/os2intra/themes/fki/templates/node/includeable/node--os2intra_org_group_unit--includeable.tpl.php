@@ -10,7 +10,12 @@
     <!-- End - heading -->
 
     <!-- Begin - users -->
+    <?php if (!empty($users)): ?>
 
+      <?php foreach($users AS $user): ?>
+        <?php print render($user); ?>
+      <?php endforeach ?>
+    <?php endif ?>
     <!-- End - users -->
 
   </div>

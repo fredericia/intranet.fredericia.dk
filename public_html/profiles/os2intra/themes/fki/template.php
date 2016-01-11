@@ -247,6 +247,31 @@ function fki_preprocess_node__it_vejledning(&$variables) {
 }
 
 /*
+ * Organisation group unit
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__os2intra_org_group_unit(&$variables) {
+  if ($variables['view_mode'] == 'includeable') {
+    $variables['users'] = array();
+
+    $node = $variables['node'];
+
+    // Load all users attached to this node
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'user')
+      ->fieldCondition('field_user_node_2', 'tid', $node->nid, '=')
+      ->fieldOrderBy('field_name_first', 'value', 'DESC');
+
+    $result = $query->execute();
+
+    $users = user_load_multiple(array_keys($result['user']));
+    foreach($users as $user) {
+      $variables['users'][] = user_view($user, 'teaser');
+    }
+  }
+}
+
+/*
  * Node basket
  * Implements hook_preprocess_node().
  */
