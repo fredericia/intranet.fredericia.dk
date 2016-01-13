@@ -798,9 +798,14 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['label'] = 'Navn';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: User: Telefon nummer */
+  $handler->display->display_options['fields']['field_os2intra_phone']['id'] = 'field_os2intra_phone';
+  $handler->display->display_options['fields']['field_os2intra_phone']['table'] = 'field_data_field_os2intra_phone';
+  $handler->display->display_options['fields']['field_os2intra_phone']['field'] = 'field_os2intra_phone';
+  $handler->display->display_options['fields']['field_os2intra_phone']['element_label_colon'] = FALSE;
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
@@ -842,6 +847,25 @@ function os2intra_users_views_default_views() {
     2 => '2',
     1 => 0,
     3 => 0,
+  );
+  /* Filter criterion: User: Telefon nummer (field_os2intra_phone) */
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['id'] = 'field_os2intra_phone_value';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['table'] = 'field_data_field_os2intra_phone';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['field'] = 'field_os2intra_phone_value';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['operator_id'] = 'field_os2intra_phone_value_op';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['label'] = 'Telefon nummer';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['operator'] = 'field_os2intra_phone_value_op';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['identifier'] = 'field_os2intra_phone_value';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
   );
 
   /* Display: Page */
@@ -896,6 +920,7 @@ function os2intra_users_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Navn'),
+    t('Telefon nummer'),
     t('E-mail'),
     t('Page'),
     t('Block'),
