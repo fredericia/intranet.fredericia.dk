@@ -195,7 +195,7 @@ function os2web_intra_user_menu_user_department() {
   global $user;
 
   $account = user_load($user->uid);
-  $department_ref = field_get_items('user', $account, 'og_org_ref');
+  $department_ref = field_get_items('user', $account, 'og_user_node2');
 
   if ($department_ref) {
     $department_node = node_load($department_ref[0]['target_id']);
