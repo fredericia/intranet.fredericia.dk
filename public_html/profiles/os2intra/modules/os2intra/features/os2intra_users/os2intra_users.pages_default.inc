@@ -52,7 +52,11 @@ function os2intra_users_default_page_manager_handlers() {
     $pane->subtype = 'forfatters_indhold-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:user_1',
+      ),
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,

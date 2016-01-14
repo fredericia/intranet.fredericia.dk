@@ -492,6 +492,14 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<p>Ingen indhold at vise</p>';
+  $handler->display->display_options['empty']['area']['format'] = 'fuld_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -597,6 +605,16 @@ function os2intra_users_views_default_views() {
     25 => 0,
     26 => 0,
   );
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'context',
+      'context' => 'entity:user.uid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Forfatter uid',
+    ),
+  );
   $handler->display->display_options['inherit_panels_path'] = '1';
   $translatables['forfatters_indhold'] = array(
     t('Master'),
@@ -626,6 +644,7 @@ function os2intra_users_views_default_views() {
     t('Vælg'),
     t('- Choose an operation -'),
     t('Content pane'),
+    t('<p>Ingen indhold at vise</p>'),
     t('Navn'),
     t('Udgivet'),
     t('View panes'),
