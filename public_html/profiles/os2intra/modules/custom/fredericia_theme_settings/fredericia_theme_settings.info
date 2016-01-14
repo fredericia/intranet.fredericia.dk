@@ -2,6 +2,7 @@ name = Fredericia theme settings
 description = Theme layout settings
 core = 7.x
 package = Fredericia
+dependencies[] = bellcom_misc
 dependencies[] = bellcom_user
 dependencies[] = ctools
 dependencies[] = print

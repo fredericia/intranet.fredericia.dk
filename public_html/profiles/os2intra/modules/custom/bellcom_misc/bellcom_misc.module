@@ -1,0 +1,9 @@
+<?php
+
+/*
+ * Implements hook_admin_paths_alter().
+ */
+function bellcom_misc_admin_paths_alter(&$paths) {
+  $paths['node/*/group'] = FALSE;
+  $paths['group/*/*/admin/*'] = FALSE;
+}
