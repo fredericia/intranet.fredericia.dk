@@ -2164,7 +2164,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -2203,7 +2203,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'action' => 'hide',
+          'action' => 'none',
           'action_on_edit' => 1,
           'fallback' => 'none',
           'providers' => array(

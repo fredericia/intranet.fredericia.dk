@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function os2intra_organisationsgrupper_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -37,7 +37,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_afdeling|node|os2intra_org_group_unit|form'] = $field_group;
+  $field_groups['group_afdeling|node|os2intra_org_group_unit|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -65,7 +65,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_billede|node|os2intra_org_group_unit|form'] = $field_group;
+  $field_groups['group_billede|node|os2intra_org_group_unit|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -96,7 +96,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_deltagere|node|os2intra_referat|form'] = $field_group;
+  $field_groups['group_deltagere|node|os2intra_referat|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -127,7 +127,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_detaljer|node|os2intra_referat|form'] = $field_group;
+  $field_groups['group_detaljer|node|os2intra_referat|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -150,7 +150,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_group|node|os2intra_group|form'] = $field_group;
+  $field_groups['group_group|node|os2intra_group|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -177,7 +177,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_gruppered|node|os2intra_group|form'] = $field_group;
+  $field_groups['group_gruppered|node|os2intra_group|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -206,7 +206,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_gruppe|node|os2intra_group|form'] = $field_group;
+  $field_groups['group_gruppe|node|os2intra_group|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -236,7 +236,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_indstillinger|node|os2intra_group|form'] = $field_group;
+  $field_groups['group_indstillinger|node|os2intra_group|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -265,7 +265,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_indstillinger|node|os2intra_referat|form'] = $field_group;
+  $field_groups['group_indstillinger|node|os2intra_referat|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -294,7 +294,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_info|node|os2intra_org_group_unit|form'] = $field_group;
+  $field_groups['group_info|node|os2intra_org_group_unit|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -322,7 +322,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_logo|node|os2intra_group|form'] = $field_group;
+  $field_groups['group_logo|node|os2intra_group|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -351,7 +351,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_media|node|post|form'] = $field_group;
+  $field_groups['group_media|node|post|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -380,7 +380,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_meta|node|os2intra_org_group_unit|form'] = $field_group;
+  $field_groups['group_meta|node|os2intra_org_group_unit|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -412,7 +412,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_meta|node|post|form'] = $field_group;
+  $field_groups['group_meta|node|post|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -440,7 +440,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_referatform|node|os2intra_referat|form'] = $field_group;
+  $field_groups['group_referatform|node|os2intra_referat|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -473,7 +473,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_referat|node|os2intra_referat|form'] = $field_group;
+  $field_groups['group_referat|node|os2intra_referat|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -505,7 +505,7 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_system|node|os2intra_org_group_unit|form'] = $field_group;
+  $field_groups['group_system|node|os2intra_org_group_unit|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -533,7 +533,27 @@ function os2intra_organisationsgrupper_field_group_info() {
       ),
     ),
   );
-  $export['group_tools|node|os2intra_org_group_unit|form'] = $field_group;
+  $field_groups['group_tools|node|os2intra_org_group_unit|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Afdeling');
+  t('Afdelingsinfo');
+  t('Billede');
+  t('Billeder');
+  t('Detaljer');
+  t('Forfremmet');
+  t('Group');
+  t('Gruppe');
+  t('Gruppe redigering');
+  t('Indstillinger');
+  t('Logo');
+  t('Mødedeltagere');
+  t('Referat');
+  t('Referatform');
+  t('Relationer');
+  t('System');
+  t('Værktøjer');
+
+  return $field_groups;
 }

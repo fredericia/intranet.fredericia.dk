@@ -15,6 +15,14 @@
           <!-- End - references -->
         <?php endif; ?>
 
+        <?php if (isset($content['field_node_basket_links'])): ?>
+          <!-- Begin - external links -->
+          <div class="os2-node-full-body-external-links">
+            <?php print render($content['field_node_basket_links']); ?>
+          </div>
+          <!-- End - external links -->
+        <?php endif; ?>
+
         <?php if (isset($content['field_node_basket_references']) && $basket_type == 'basket'): ?>
           <!-- Begin - action buttons -->
           <div class="os2-node-full-body-action-buttons">

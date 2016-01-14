@@ -525,6 +525,7 @@ function os2intra_organisationsgrupper_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
+          'os2intra_group' => 'os2intra_group',
           'os2intra_org_group_unit' => 'os2intra_org_group_unit',
         ),
       ),

@@ -389,7 +389,7 @@ function os2intra_organisationsgrupper_strongarm() {
       'display' => array(
         'flag_os2intra_flag_info_til_alle' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '11',
             'visible' => FALSE,
           ),
         ),

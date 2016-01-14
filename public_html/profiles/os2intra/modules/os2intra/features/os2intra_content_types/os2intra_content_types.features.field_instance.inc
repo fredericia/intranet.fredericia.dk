@@ -832,6 +832,8 @@ function os2intra_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_os2intra_date'.
   $field_instances['node-event-field_os2intra_date'] = array(
     'bundle' => 'event',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -903,7 +905,7 @@ function os2intra_content_types_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd.m.Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
         'no_fieldset' => 0,
@@ -4258,10 +4260,9 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 13,
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -4381,7 +4382,7 @@ function os2intra_content_types_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -4438,12 +4439,9 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -4507,7 +4505,7 @@ function os2intra_content_types_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -4568,7 +4566,7 @@ function os2intra_content_types_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -4621,7 +4619,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 13,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -4685,7 +4683,7 @@ function os2intra_content_types_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -4747,7 +4745,7 @@ function os2intra_content_types_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -4800,10 +4798,9 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 9,
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'includeable' => array(
         'label' => 'above',

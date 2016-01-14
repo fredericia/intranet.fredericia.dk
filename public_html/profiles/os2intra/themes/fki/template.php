@@ -183,6 +183,25 @@ function fki_preprocess_node__full(&$variables) {
 }
 
 /*
+ * Event
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__event(&$variables) {
+  $node = $variables['node'];
+
+  if ($variables['view_mode'] == 'list') {
+
+    // Date
+    if ($field_date = field_get_items('node', $node, 'field_os2intra_date')) {
+
+      // Convert to timestamp
+      $date = new DateTime($field_date[0]['value']);
+      $variables['event_date_seperated'] = _bellcom_seperated_dates($date->getTimestamp());
+    }
+  }
+}
+
+/*
  * Post
  * Implements hook_preprocess_node().
  */

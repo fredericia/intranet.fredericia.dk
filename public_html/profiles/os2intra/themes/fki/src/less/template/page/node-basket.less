@@ -10,35 +10,29 @@
 // Variables
 // --------------------------------------------------
 
+@os2-node-basket-external-link-stacked-spacing: 3px;
+@os2-node-basket-external-link-border-color: @border-color;
+
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
 
 // Basket
-.node-basket {
+.os2-node-full-node-basket {
 
-	// Information
-	.node-basket-information {}
+	.os2-node-full-body-external-links {
 
-	// Actions buttons
-	.node-basket-action-buttons {}
+		.field-item {
+			padding: @os2-node-basket-external-link-stacked-spacing 0;
+			border-bottom: 1px solid @os2-node-basket-external-link-border-color;
 
-	// Basket
-	.node-basket-basket {}
+			&:first-child {
+				border-top: 1px solid @os2-node-basket-external-link-border-color;
+			}
 
-	// Toolboxes
-	.node-basket-toolboxes {
-
-		.node-basket-toolboxes-heading-title {
-			.heading-h3;
-		}
-	}
-
-	// Other toolboxes
-	.node-basket-other-toolboxes {
-
-		.node-basket-other-toolboxes-heading-title {
-			.heading-h3;
+			&:last-child {
+				border-bottom: 0;
+			}
 		}
 	}
 }

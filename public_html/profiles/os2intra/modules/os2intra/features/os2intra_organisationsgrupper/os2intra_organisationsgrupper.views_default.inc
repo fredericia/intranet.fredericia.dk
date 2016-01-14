@@ -792,6 +792,15 @@ function os2intra_organisationsgrupper_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div>
+<a href="node/add/os2intra-group" class="btn btn-primary">Opret en ny gruppe</a>
+</div>';
+  $handler->display->display_options['header']['area']['format'] = 'indhold';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Billede */
   $handler->display->display_options['fields']['field_os2intra_image']['id'] = 'field_os2intra_image';
@@ -1016,6 +1025,9 @@ function os2intra_organisationsgrupper_views_default_views() {
     t('Created'),
     t('Søg på gruppens navn'),
     t('Page'),
+    t('<div>
+<a href="node/add/os2intra-group" class="btn btn-primary">Opret en ny gruppe</a>
+</div>'),
     t('Gruppedetaljer'),
     t('%1'),
     t('Intet'),
