@@ -203,6 +203,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -271,6 +277,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -344,6 +356,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 23,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -396,6 +414,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 22,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -443,6 +467,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 18,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_results' => array(
         'label' => 'above',
@@ -534,6 +564,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'image',
         'weight' => 21,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -610,6 +646,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 20,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_results' => array(
         'label' => 'above',
         'settings' => array(),
@@ -664,6 +706,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 26,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -743,6 +791,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 28,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -784,6 +838,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 15,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_results' => array(
         'label' => 'above',
@@ -841,6 +901,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -914,6 +980,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 8,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -968,6 +1040,12 @@ function os2intra_users_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 6,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1027,6 +1105,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 7,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1076,6 +1160,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 25,
       ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1119,6 +1209,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 24,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1186,6 +1282,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 9,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
