@@ -832,6 +832,8 @@ function os2intra_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_os2intra_date'.
   $field_instances['node-event-field_os2intra_date'] = array(
     'bundle' => 'event',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -903,7 +905,7 @@ function os2intra_content_types_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd.m.Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
         'no_fieldset' => 0,

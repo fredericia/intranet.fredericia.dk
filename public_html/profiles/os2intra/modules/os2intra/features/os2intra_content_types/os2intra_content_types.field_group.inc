@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function os2intra_content_types_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -41,7 +41,7 @@ function os2intra_content_types_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_1|field_collection_item|field_os2intra_base_vejledning|form'] = $field_group;
+  $field_groups['group_1|field_collection_item|field_os2intra_base_vejledning|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -74,7 +74,7 @@ function os2intra_content_types_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_2|field_collection_item|field_os2intra_base_vejledning|form'] = $field_group;
+  $field_groups['group_2|field_collection_item|field_os2intra_base_vejledning|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -107,7 +107,7 @@ function os2intra_content_types_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_3|field_collection_item|field_os2intra_base_vejledning|form'] = $field_group;
+  $field_groups['group_3|field_collection_item|field_os2intra_base_vejledning|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -135,7 +135,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_afsnit|node|it_vejledning|form'] = $field_group;
+  $field_groups['group_afsnit|node|it_vejledning|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -163,7 +163,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_afsnit|node|os2intra_base_page|form'] = $field_group;
+  $field_groups['group_afsnit|node|os2intra_base_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -192,7 +192,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_besked|node|os2intra_message_notification|form'] = $field_group;
+  $field_groups['group_besked|node|os2intra_message_notification|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -223,7 +223,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_content|node|post|form'] = $field_group;
+  $field_groups['group_content|node|post|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -253,7 +253,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_event|node|event|form'] = $field_group;
+  $field_groups['group_event|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -283,7 +283,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_form|node|os2intra_base_page|form'] = $field_group;
+  $field_groups['group_form|node|os2intra_base_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -311,7 +311,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_indstilliger|node|os2web_base_selfservice_link|form'] = $field_group;
+  $field_groups['group_indstilliger|node|os2web_base_selfservice_link|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -341,7 +341,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_indstillinger|node|event|form'] = $field_group;
+  $field_groups['group_indstillinger|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -369,7 +369,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_indstillinger|node|it_vejledning|form'] = $field_group;
+  $field_groups['group_indstillinger|node|it_vejledning|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -401,7 +401,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_indstillinger|node|post|form'] = $field_group;
+  $field_groups['group_indstillinger|node|post|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -430,7 +430,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_indstillinger|node|wiki|form'] = $field_group;
+  $field_groups['group_indstillinger|node|wiki|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -461,7 +461,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_itvejledning|node|it_vejledning|form'] = $field_group;
+  $field_groups['group_itvejledning|node|it_vejledning|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -490,7 +490,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_kolonne1|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
+  $field_groups['group_kolonne1|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -519,7 +519,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_kolonne2|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
+  $field_groups['group_kolonne2|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -548,7 +548,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_kolonne3|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
+  $field_groups['group_kolonne3|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -581,7 +581,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_linkset|node|os2web_base_selfservice_link|form'] = $field_group;
+  $field_groups['group_linkset|node|os2web_base_selfservice_link|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -607,7 +607,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_link|node|os2web_base_selfservice_link|form'] = $field_group;
+  $field_groups['group_link|node|os2web_base_selfservice_link|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -635,7 +635,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_media|node|event|form'] = $field_group;
+  $field_groups['group_media|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -664,7 +664,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_media|node|it_vejledning|form'] = $field_group;
+  $field_groups['group_media|node|it_vejledning|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -693,7 +693,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_media|node|os2intra_base_page|form'] = $field_group;
+  $field_groups['group_media|node|os2intra_base_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -722,7 +722,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_media|node|wiki|form'] = $field_group;
+  $field_groups['group_media|node|wiki|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -752,7 +752,7 @@ function os2intra_content_types_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_meta2|node|os2intra_base_page|form'] = $field_group;
+  $field_groups['group_meta2|node|os2intra_base_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -778,7 +778,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_meta|node|event|form'] = $field_group;
+  $field_groups['group_meta|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -809,7 +809,7 @@ function os2intra_content_types_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_meta|node|it_vejledning|form'] = $field_group;
+  $field_groups['group_meta|node|it_vejledning|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -840,7 +840,7 @@ function os2intra_content_types_field_group_info() {
       'formatter' => 'closed',
     ),
   );
-  $export['group_meta|node|os2intra_base_page|form'] = $field_group;
+  $field_groups['group_meta|node|os2intra_base_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -872,7 +872,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_meta|node|wiki|form'] = $field_group;
+  $field_groups['group_meta|node|wiki|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -902,7 +902,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_modtagere|node|os2intra_message_notification|form'] = $field_group;
+  $field_groups['group_modtagere|node|os2intra_message_notification|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -930,7 +930,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_planlaeg|node|os2intra_message_notification|form'] = $field_group;
+  $field_groups['group_planlaeg|node|os2intra_message_notification|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -959,7 +959,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_post|node|post|form'] = $field_group;
+  $field_groups['group_post|node|post|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -990,7 +990,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_relationer|node|event|form'] = $field_group;
+  $field_groups['group_relationer|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1022,7 +1022,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_relationer|node|wiki|form'] = $field_group;
+  $field_groups['group_relationer|node|wiki|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1056,7 +1056,7 @@ function os2intra_content_types_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_row|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
+  $field_groups['group_row|field_collection_item|field_os2intra_base_vejledning|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1085,7 +1085,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_spotsnforms|node|it_vejledning|form'] = $field_group;
+  $field_groups['group_spotsnforms|node|it_vejledning|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1114,7 +1114,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_spotsnforms|node|os2intra_base_page|form'] = $field_group;
+  $field_groups['group_spotsnforms|node|os2intra_base_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1143,7 +1143,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_spotsnforms|node|post|form'] = $field_group;
+  $field_groups['group_spotsnforms|node|post|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1171,7 +1171,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_spotsnforms|node|wiki|form'] = $field_group;
+  $field_groups['group_spotsnforms|node|wiki|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1199,7 +1199,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_spots|node|event|form'] = $field_group;
+  $field_groups['group_spots|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1233,7 +1233,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_tekst|node|event|form'] = $field_group;
+  $field_groups['group_tekst|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1266,7 +1266,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_tekst|node|it_vejledning|form'] = $field_group;
+  $field_groups['group_tekst|node|it_vejledning|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1299,7 +1299,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_tekst|node|os2intra_base_page|form'] = $field_group;
+  $field_groups['group_tekst|node|os2intra_base_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1330,7 +1330,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_tekst|node|wiki|form'] = $field_group;
+  $field_groups['group_tekst|node|wiki|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1358,7 +1358,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_tilmelding|node|event|form'] = $field_group;
+  $field_groups['group_tilmelding|node|event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1393,7 +1393,7 @@ function os2intra_content_types_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_vejledning|field_collection_item|field_os2intra_base_vejledning|form'] = $field_group;
+  $field_groups['group_vejledning|field_collection_item|field_os2intra_base_vejledning|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1421,7 +1421,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_vejledning|node|it_vejledning|form'] = $field_group;
+  $field_groups['group_vejledning|node|it_vejledning|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1448,7 +1448,7 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_vigtigt|node|os2intra_message_notification|form'] = $field_group;
+  $field_groups['group_vigtigt|node|os2intra_message_notification|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1477,7 +1477,39 @@ function os2intra_content_types_field_group_info() {
       ),
     ),
   );
-  $export['group_wiki|node|wiki|form'] = $field_group;
+  $field_groups['group_wiki|node|wiki|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t(1);
+  t(2);
+  t(3);
+  t('Afsnit');
+  t('Begivenhed');
+  t('Formular');
+  t('ITVejledning');
+  t('Indhold');
+  t('Indstillinger');
+  t('Kolonne 1');
+  t('Kolonne 2');
+  t('Kolonne 3');
+  t('Media');
+  t('Meta');
+  t('Modtagere');
+  t('Planlæg');
+  t('Post');
+  t('Referencer');
+  t('Relationer');
+  t('Row');
+  t('Selvbetjeningslink');
+  t('Spotbokse');
+  t('Spotbokse / webform');
+  t('Tekst');
+  t('Tilmelding');
+  t('Vejledning');
+  t('Vigtig besked');
+  t('vigtigt');
+  t('wiki');
+
+  return $field_groups;
 }
