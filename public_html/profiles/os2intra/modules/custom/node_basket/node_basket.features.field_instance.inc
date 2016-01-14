@@ -10,6 +10,41 @@
 function node_basket_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'comment-comment_node_node_basket-comment_body'.
+  $field_instances['comment-comment_node_node_basket-comment_body'] = array(
+    'bundle' => 'comment_node_node_basket',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'comment_body',
+    'label' => 'Comment',
+    'required' => TRUE,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'node-node_basket-field_node_basket_description'.
   $field_instances['node-node_basket-field_node_basket_description'] = array(
     'bundle' => 'node_basket',
@@ -21,7 +56,7 @@ function node_basket_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -71,9 +106,10 @@ function node_basket_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
+        'type' => 'link_default',
+        'weight' => 1,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -211,7 +247,7 @@ function node_basket_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -255,6 +291,7 @@ function node_basket_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Beskrivelse');
+  t('Comment');
   t('Links');
   t('References');
   t('Type');
