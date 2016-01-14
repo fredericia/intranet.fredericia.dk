@@ -2456,29 +2456,6 @@ function os2intra_panels_default_page_manager_handlers() {
     $display->content['new-61f23304-8704-4fb5-98ca-9d8a8836766f'] = $pane;
     $display->panels['content'][0] = 'new-61f23304-8704-4fb5-98ca-9d8a8836766f';
     $pane = new stdClass();
-    $pane->pid = 'new-5a0da111-bdec-4a88-a721-7599158b1b90';
-    $pane->panel = 'sidebar';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'os2intra_personale-panel_pane_4';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_term_1',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '5a0da111-bdec-4a88-a721-7599158b1b90';
-    $display->content['new-5a0da111-bdec-4a88-a721-7599158b1b90'] = $pane;
-    $display->panels['sidebar'][0] = 'new-5a0da111-bdec-4a88-a721-7599158b1b90';
-    $pane = new stdClass();
     $pane->pid = 'new-834e9567-f9cf-4844-a333-766acb180f4b';
     $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
@@ -2500,11 +2477,11 @@ function os2intra_panels_default_page_manager_handlers() {
       'template_suggestion' => 'views_panes',
     );
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '834e9567-f9cf-4844-a333-766acb180f4b';
     $display->content['new-834e9567-f9cf-4844-a333-766acb180f4b'] = $pane;
-    $display->panels['sidebar'][1] = 'new-834e9567-f9cf-4844-a333-766acb180f4b';
+    $display->panels['sidebar'][0] = 'new-834e9567-f9cf-4844-a333-766acb180f4b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
