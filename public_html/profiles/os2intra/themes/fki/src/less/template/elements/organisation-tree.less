@@ -10,6 +10,10 @@
 // Variables
 // --------------------------------------------------
 
+@os2-organisation-tree-color-gradient: darken(@body-bg, 20%);
+@os2-organisation-tree-link-spacing: floor( (@default-left-right-spacing / 2) );
+@os2-organisation-tree-border-color: @border-color;
+
 // --------------------------------------------------
 // Styling
 // --------------------------------------------------
@@ -19,11 +23,35 @@
 
 	.view-content {
 
-		> ul {
+		ul {
 			list-style: none;
 			padding: 0;
 
+			li {
+				border-bottom: 1px solid @os2-organisation-tree-border-color;
+
+				&:last-child {
+					border-bottom: 0;
+
+					&:first-child {
+						border-bottom: 1px solid @os2-organisation-tree-border-color;
+					}
+				}
+			}
+		}
+
+		> ul {
+
 			> li {
+
+				ul {
+					background-color: rgba(red(@os2-organisation-tree-color-gradient), green(@os2-organisation-tree-color-gradient), blue(@os2-organisation-tree-color-gradient), 0.2);
+					margin: 0 (0 - @os2-organisation-tree-link-spacing);
+
+					> li {
+						padding: 0 @os2-organisation-tree-link-spacing;
+					}
+				}
 
 				&:last-child {
 

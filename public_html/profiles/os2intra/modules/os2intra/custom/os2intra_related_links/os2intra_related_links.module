@@ -48,8 +48,16 @@ function _os2intra_related_links_block_content() {
     return $related_links;
   }
 
-  // Get all related links, manually typed in on node
-  if ($field_related_links = field_get_items('node', $node, 'field_os2web_base_field_ref')) {
+  // Get all related links, manually typed in on node TODO - field name should be in admin settings
+  $field_name = '';
+  if (field_info_instance('node', 'field_os2intra_related_ref', 'post')) {
+    $field_name = 'field_os2intra_related_ref';
+  }
+  elseif (field_info_instance('node', 'field_os2web_base_field_ref', 'user')) {
+    $field_name = 'field_os2intra_related_ref';
+  }
+
+  if ($field_related_links = field_get_items('node', $node, $field_name)) {
 
     foreach ($field_related_links as $field_related_link) {
 
@@ -63,6 +71,7 @@ function _os2intra_related_links_block_content() {
       );
     }
   }
+
 
   // Get all related links related to the KLE number on the node,
   // term number topic, tags. Only get

@@ -1,9 +1,9 @@
 // |--------------------------------------------------------------------------
-// | Toggler
+// | Includeable
 // |--------------------------------------------------------------------------
 // |
 // | This file contains styles for the following:
-// | - .os2-toggler
+// | - .os2-user-includeable
 // |
 
 // --------------------------------------------------
@@ -14,56 +14,15 @@
 // Styling
 // --------------------------------------------------
 
-// Toggler
-.os2-toggler {
+// Includeable
+.os2-user-includeable {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-top: 1px solid @border-color;
 
-	.os2-toggler-element {
-
-		> ul {
-			display: none;
-		}
-
-		.os2-toggler-element-toggle {
-			.pull-right;
-			cursor: pointer;
-			cursor: hand;
-		}
-
-		.os2-toggler-element-toggle-icon {
-
-			&:before {
-				font-family: FontAwesome;
-				.icon;
-				content: @fa-var-plus;
-			}
-		}
-
-		.os2-toggler-element-content {
-			display: none;
-		}
-
-		&.active {
-
-			> div {
-
-				.os2-toggler-element-toggle {}
-
-				.os2-toggler-element-toggle-icon {
-
-					&:before {
-						content: @fa-var-minus;
-					}
-				}
-
-				.os2-toggler-element-content {
-					display: block;
-				}
-			}
-
-			> ul {
-				display: block;
-			}
-		}
+	.os2-user-includeable-job-title {
+		font-weight: @font-weight-bold;
+		font-size: @font-size-small;
 	}
 }
 
@@ -74,83 +33,83 @@
 // Mobile
 @media @media-query-mobile {
 
-	// Toggler
-	.os2-toggler {}
+	// Includeable
+	.os2-user-includeable {}
 }
 
 // Mobile - only
 @media @media-query-mobile-only {
 
-	// Toggler
-	.os2-toggler {}
+	// Includeable
+	.os2-user-includeable {}
 }
 
 // Tablet
 @media @media-query-tablet {
 
-	// Toggler
-	.os2-toggler {}
+	// Includeable
+	.os2-user-includeable {}
 }
 
 // Tablet - only
 @media @media-query-tablet-only {
 
-	// Toggler
-	.os2-toggler {}
+	// Includeable
+	.os2-user-includeable {}
 }
 
 // Desktop
 @media @media-query-desktop {
 
-	// Toggler
-	.os2-toggler {}
+	// Includeable
+	.os2-user-includeable {}
 }
 
 // Desktop - only
 @media @media-query-desktop-only {
 
-	// Toggler
-	.os2-toggler {}
+	// Includeable
+	.os2-user-includeable {}
 }
 
 // Large desktop
 @media @media-query-large-desktop {
 
-	// Toggler
-	.os2-toggler {}
+	// Includeable
+	.os2-user-includeable {}
 }
 
 // Large desktop - only
 @media @media-query-large-desktop-only {
 
-	// Toggler
-	.os2-toggler {}
+	// Includeable
+	.os2-user-includeable {}
 }
 
 // Print
 @media print {
 
-	// Toggler
-	.os2-toggler {}
+	// Includeable
+	.os2-user-includeable {}
 }
 
 // Touch
 .touch {
 
-	// Toggler
-	.os2-toggler {}
+	// Includeable
+	.os2-user-includeable {}
 }
 
 // No touch
 .no-touch {
 
-	// Toggler
-	.os2-toggler {}
+	// Includeable
+	.os2-user-includeable {}
 }
 
 // --------------------------------------------------
 // Mixins
 // --------------------------------------------------
 
-// Toggler mixin
-.os2-mixin-toggler() {}
+// Includeable mixin
+.os2-user-mixin-includeable() {}

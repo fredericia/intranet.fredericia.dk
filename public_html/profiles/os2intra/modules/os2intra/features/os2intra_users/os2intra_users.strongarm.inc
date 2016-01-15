@@ -17,5 +17,12 @@ function os2intra_users_strongarm() {
   $strongarm->value = FALSE;
   $export['page_manager_user_view_disabled'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'realname_pattern';
+  $strongarm->value = '[user:field_name_first] [user:field_name_last]';
+  $export['realname_pattern'] = $strongarm;
+
   return $export;
 }
