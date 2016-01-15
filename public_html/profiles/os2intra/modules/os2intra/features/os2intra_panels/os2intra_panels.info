@@ -40,6 +40,7 @@ features[views_view][] = os2intra_afdlingsorganisation
 features[views_view][] = os2intra_gruppe_indhold
 features[views_view][] = os2intra_gruppe_medlemmer
 features[views_view][] = os2intra_node_panes
+features[views_view][] = os2intra_og_info
 features[views_view][] = os2intra_organisation
 features[views_view][] = os2intra_organisation_afdelinger
 features[views_view][] = os2intra_personale
