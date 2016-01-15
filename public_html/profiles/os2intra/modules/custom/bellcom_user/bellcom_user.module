@@ -25,7 +25,17 @@ function bellcom_user_get_raw_information($uid) {
   }
 
   // Full name.
-  if (isset($data['firstname']) || isset($data['lastname'])) {
+  if (module_exists('realname')) {
+
+    if (!empty($entity->realname)) {
+      $data['full_name'] = $entity->realname;
+    }
+    else {
+      $data['full_name'] = $entity->name;
+    }
+  }
+  elseif(isset($data['firstname']) || isset($data['lastname'])) {
+
     if (isset($data['firstname']) && ! isset($data['lastname'])) {
       $data['full_name'] = $data['firstname'];
     }
@@ -35,6 +45,9 @@ function bellcom_user_get_raw_information($uid) {
     else {
       $data['full_name'] = $data['firstname'] . ' ' . $data['lastname'];
     }
+  }
+  else {
+    $data['full_name'] = $entity->name;
   }
 
   // Address.

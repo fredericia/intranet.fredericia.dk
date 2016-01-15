@@ -414,6 +414,7 @@ function fki_preprocess_user_profile(&$variables) {
   else {
     $user = $variables['elements']['#account'];
   }
+  $variables['account'] = $user;
 
   // user-profile--VIEWMODE.tpl.php
   if (isset($variables['elements']['#view_mode'])) {
