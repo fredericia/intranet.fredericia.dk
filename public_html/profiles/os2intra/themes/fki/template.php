@@ -274,16 +274,30 @@ function fki_preprocess_node__os2intra_org_group_unit(&$variables) {
     $variables['users'] = array();
 
     $node = $variables['node'];
-    $users_uids = og_get_group_members_properties($node, array(), 'members', 'node');
+    $user_uids = og_get_group_members_properties($node, array(), 'members', 'node');
 
-    if (!empty($users_uids)) {
+    if (!empty($user_uids)) {
 
-      foreach($users_uids as $user_uid) {
-        if ($user_uid == 1) {
-          continue;
+      // Remove user 1
+      if(($key = array_search(1, $user_uids)) !== FALSE) {
+        unset($user_uids[$key]);
+      }
+
+      $user_objects = user_load_multiple($user_uids);
+
+      foreach($user_objects as $user_object) {
+
+        if ($first_name = field_get_items('user', $user_object, 'field_name_first')) {
+          $users[$first_name[0]['value']] = $user_object;
         }
+      }
 
-        $variables['users'][] = user_view(user_load($user_uid), 'includeable');
+      // Sort by key (name in this case)
+      ksort($users);
+
+      foreach($users as $user) {
+
+        $variables['users'][] = user_view($user, 'includeable');
       }
     }
   }
