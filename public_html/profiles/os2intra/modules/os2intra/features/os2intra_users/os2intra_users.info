@@ -83,7 +83,6 @@ features[field_instance][] = user-user-og_org_ref
 features[field_instance][] = user-user-og_user_node
 features[image][] = profilbillede
 features[menu_custom][] = management
-features[menu_links][] = management_real-name:admin/config/people/realname
 features[page_manager_handlers][] = user_view__panel_context_02fd0cfe-abfa-4afa-9a3a-2bc9d2049494
 features[taxonomy][] = os2intra_organisation_tax
 features[taxonomy][] = user_hobbies
