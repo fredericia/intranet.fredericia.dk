@@ -2415,7 +2415,7 @@ function os2intra_panels_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'content-with-right-sidebar-9-3';
+  $display->layout = 'content-with-right-sidebar';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
