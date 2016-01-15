@@ -279,6 +279,10 @@ function fki_preprocess_node__os2intra_org_group_unit(&$variables) {
     if (!empty($users_uids)) {
 
       foreach($users_uids as $user_uid) {
+        if ($user_uid == 1) {
+          continue;
+        }
+
         $variables['users'][] = user_view(user_load($user_uid), 'includeable');
       }
     }

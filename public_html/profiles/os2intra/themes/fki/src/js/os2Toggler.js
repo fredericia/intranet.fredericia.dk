@@ -15,6 +15,7 @@ var os2Toggler = (function ($) {
    */
   pub.init = function (options) {
     registerEventHandlers();
+    registerBootHandlers();
   }
 
   /**
@@ -30,9 +31,18 @@ var os2Toggler = (function ($) {
 
       // Toggle active class
       $element
-        .parents('.os2-toggler-element')
+        .closest('.os2-toggler-element')
         .toggleClass('active');
     });
+  }
+
+  /**
+   * Register boot handlers
+   */
+  function registerBootHandlers() {
+    var $toggler = $('.os2-organisation-tree');
+
+    $toggler.find('li').addClass('os2-toggler-element');
   }
 
   return pub;

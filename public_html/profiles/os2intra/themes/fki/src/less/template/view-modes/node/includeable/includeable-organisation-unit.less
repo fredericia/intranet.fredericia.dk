@@ -11,7 +11,6 @@
 // --------------------------------------------------
 
 @os2-node-includeable-stacked-spacing: 7px;
-@os2-node-includeable-border-color: @border-color;
 
 @os2-node-includeable-heading-font-color: @brand-primary;
 @os2-node-includeable-heading-top-bottom-spacing: 3px;
@@ -24,7 +23,10 @@
 // Includeable
 .os2-node-includeable-organisation-unit {
 	padding: @os2-node-includeable-stacked-spacing 0;
-	border-bottom: 1px solid @os2-node-includeable-border-color;
+
+	&.os2-node-includeable {
+		border-bottom: 0;
+	}
 
 	.os2-node-includeable-heading {
 		padding: @os2-node-includeable-heading-top-bottom-spacing @os2-node-includeable-heading-left-right-spacing;

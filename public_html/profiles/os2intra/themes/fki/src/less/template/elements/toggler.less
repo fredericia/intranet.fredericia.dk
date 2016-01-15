@@ -19,14 +19,19 @@
 
 	.os2-toggler-element {
 
+		> ul {
+			display: none;
+		}
+
 		.os2-toggler-element-toggle {
 			.pull-right;
+			cursor: pointer;
+			cursor: hand;
 		}
 
 		.os2-toggler-element-toggle-icon {
 
 			&:before {
-				cursor: hand;
 				font-family: FontAwesome;
 				.icon;
 				content: @fa-var-plus;
@@ -39,16 +44,23 @@
 
 		&.active {
 
-			.os2-toggler-element-toggle {}
+			> div {
 
-			.os2-toggler-element-toggle-icon {
+				.os2-toggler-element-toggle {}
 
-				&:before {
-					content: @fa-var-minus;
+				.os2-toggler-element-toggle-icon {
+
+					&:before {
+						content: @fa-var-minus;
+					}
+				}
+
+				.os2-toggler-element-content {
+					display: block;
 				}
 			}
 
-			.os2-toggler-element-content {
+			> ul {
 				display: block;
 			}
 		}
