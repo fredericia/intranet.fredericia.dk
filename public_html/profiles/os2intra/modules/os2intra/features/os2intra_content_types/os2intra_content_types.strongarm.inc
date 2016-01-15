@@ -846,6 +846,9 @@ function os2intra_content_types_strongarm() {
         'scheduler_settings' => array(
           'weight' => '39',
         ),
+        'flag' => array(
+          'weight' => '3',
+        ),
       ),
       'display' => array(),
     ),
