@@ -820,6 +820,15 @@ function os2intra_users_views_default_views() {
   );
   $handler->display->display_options['fields']['field_os2intra_user_inter']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_os2intra_user_inter']['separator'] = '';
+  /* Field: User: Bio */
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['id'] = 'field_os2intra_user_bio';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['table'] = 'field_data_field_os2intra_user_bio';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['field'] = 'field_os2intra_user_bio';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_class'] = 'clearfix bio';
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_default_classes'] = FALSE;
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
