@@ -731,6 +731,17 @@ function os2intra_users_views_default_views() {
   );
   $handler->display->display_options['fields']['og_user_node2']['delta_limit'] = '1';
   $handler->display->display_options['fields']['og_user_node2']['delta_offset'] = '0';
+  /* Field: Field: Fysisk lokation */
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['id'] = 'field_os2intra_physical_location';
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['table'] = 'field_data_field_os2intra_physical_location';
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['field'] = 'field_os2intra_physical_location';
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['alter']['text'] = ' - [field_os2intra_physical_location]';
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_physical_location']['settings'] = array(
+    'link' => 0,
+  );
   /* Field: User: E-mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
@@ -771,7 +782,7 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="btn-group contact" role="group" aria-label="Kontakt via email eller telefon">
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="btn-group btn-group-sm contact" role="group" aria-label="Kontakt via email eller telefon">
 [mail] [field_os2intra_phone] [field_os2intra_mobile]
 </div>';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
@@ -782,8 +793,10 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_user_competences']['table'] = 'field_data_field_os2intra_user_competences';
   $handler->display->display_options['fields']['field_os2intra_user_competences']['field'] = 'field_os2intra_user_competences';
   $handler->display->display_options['fields']['field_os2intra_user_competences']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_os2intra_user_competences']['alter']['link_class'] = 'btn btn-success btn-xs';
-  $handler->display->display_options['fields']['field_os2intra_user_competences']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['element_class'] = 'competences';
   $handler->display->display_options['fields']['field_os2intra_user_competences']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_os2intra_user_competences']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_os2intra_user_competences']['settings'] = array(
@@ -798,7 +811,8 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_user_inter']['label'] = '';
   $handler->display->display_options['fields']['field_os2intra_user_inter']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_os2intra_user_inter']['alter']['link_class'] = 'btn btn-info btn-xs';
-  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_class'] = 'interests';
   $handler->display->display_options['fields']['field_os2intra_user_inter']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_os2intra_user_inter']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_os2intra_user_inter']['settings'] = array(
@@ -857,9 +871,10 @@ function os2intra_users_views_default_views() {
     t('next ›'),
     t('last »'),
     t(' -  [og_user_node2]'),
+    t(' - [field_os2intra_physical_location]'),
     t('<i class="fa fa-envelope"></i> [mail]'),
     t('<i class="fa fa-phone"></i> [field_os2intra_phone]'),
-    t('<div class="btn-group contact" role="group" aria-label="Kontakt via email eller telefon">
+    t('<div class="btn-group btn-group-sm contact" role="group" aria-label="Kontakt via email eller telefon">
 [mail] [field_os2intra_phone] [field_os2intra_mobile]
 </div>'),
     t('Alle'),
