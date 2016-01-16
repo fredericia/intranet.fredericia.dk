@@ -680,7 +680,7 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_image']['field'] = 'field_os2intra_image';
   $handler->display->display_options['fields']['field_os2intra_image']['label'] = '';
   $handler->display->display_options['fields']['field_os2intra_image']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2intra_image']['element_class'] = 'pull-left col-md-3';
+  $handler->display->display_options['fields']['field_os2intra_image']['element_class'] = 'pull-left profilbillede';
   $handler->display->display_options['fields']['field_os2intra_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_os2intra_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_os2intra_image']['click_sort_column'] = 'fid';
