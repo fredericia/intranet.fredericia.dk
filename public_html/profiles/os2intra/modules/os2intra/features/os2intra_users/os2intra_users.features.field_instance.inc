@@ -774,7 +774,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -4,
+      'weight' => 14,
     ),
   );
 
@@ -829,7 +829,7 @@ function os2intra_users_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 14,
+      'weight' => 16,
     ),
   );
 
@@ -965,7 +965,7 @@ function os2intra_users_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => -6,
+      'weight' => -2,
     ),
   );
 
@@ -1024,7 +1024,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => -4,
+      'weight' => 0,
     ),
   );
 
@@ -1090,7 +1090,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => -5,
+      'weight' => -1,
     ),
   );
 
@@ -1353,7 +1353,7 @@ function os2intra_users_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => -4,
+      'weight' => 0,
     ),
   );
 

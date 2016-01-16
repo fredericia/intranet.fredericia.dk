@@ -674,6 +674,20 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Field: Field: Billede */
+  $handler->display->display_options['fields']['field_os2intra_image']['id'] = 'field_os2intra_image';
+  $handler->display->display_options['fields']['field_os2intra_image']['table'] = 'field_data_field_os2intra_image';
+  $handler->display->display_options['fields']['field_os2intra_image']['field'] = 'field_os2intra_image';
+  $handler->display->display_options['fields']['field_os2intra_image']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_image']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_os2intra_image']['element_class'] = 'pull-left';
+  $handler->display->display_options['fields']['field_os2intra_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_os2intra_image']['settings'] = array(
+    'image_style' => 'profilbillede',
+    'image_link' => '',
+  );
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -698,17 +712,17 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_user_titles']['label'] = '';
   $handler->display->display_options['fields']['field_os2intra_user_titles']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_os2intra_user_titles']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_user_titles']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_os2intra_user_titles']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_os2intra_user_titles']['settings'] = array(
     'link' => 0,
   );
-  $handler->display->display_options['fields']['field_os2intra_user_titles']['field_api_classes'] = TRUE;
   /* Field: User: Gruppemedlemskab */
   $handler->display->display_options['fields']['og_user_node2']['id'] = 'og_user_node2';
   $handler->display->display_options['fields']['og_user_node2']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_user_node2']['field'] = 'og_user_node2';
   $handler->display->display_options['fields']['og_user_node2']['label'] = '';
+  $handler->display->display_options['fields']['og_user_node2']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['og_user_node2']['alter']['text'] = ' -  [og_user_node2]';
   $handler->display->display_options['fields']['og_user_node2']['element_type'] = 'span';
   $handler->display->display_options['fields']['og_user_node2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['og_user_node2']['element_default_classes'] = FALSE;
@@ -722,44 +736,76 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
   $handler->display->display_options['fields']['mail']['label'] = '';
+  $handler->display->display_options['fields']['mail']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['mail']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['mail']['alter']['text'] = '<i class="fa fa-envelope"></i> [mail]';
   $handler->display->display_options['fields']['mail']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['mail']['alter']['link_class'] = 'btn btn-primary';
+  $handler->display->display_options['fields']['mail']['alter']['link_class'] = 'btn btn-default btn-lg';
+  $handler->display->display_options['fields']['mail']['element_type'] = 'div';
   $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
-  /* Field: User: Bio */
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['id'] = 'field_os2intra_user_bio';
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['table'] = 'field_data_field_os2intra_user_bio';
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['field'] = 'field_os2intra_user_bio';
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['label'] = '';
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['alter']['text'] = '<hr/>
-[field_os2intra_user_bio]';
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_user_bio']['field_api_classes'] = TRUE;
   /* Field: User: Telefon nummer */
   $handler->display->display_options['fields']['field_os2intra_phone']['id'] = 'field_os2intra_phone';
   $handler->display->display_options['fields']['field_os2intra_phone']['table'] = 'field_data_field_os2intra_phone';
   $handler->display->display_options['fields']['field_os2intra_phone']['field'] = 'field_os2intra_phone';
   $handler->display->display_options['fields']['field_os2intra_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_phone']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_phone']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_phone']['alter']['text'] = '<i class="fa fa-phone"></i> [field_os2intra_phone]';
   $handler->display->display_options['fields']['field_os2intra_phone']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_os2intra_phone']['alter']['path'] = 'tel:[field_os2intra_phone]';
+  $handler->display->display_options['fields']['field_os2intra_phone']['alter']['link_class'] = 'btn btn-default btn-lg';
   $handler->display->display_options['fields']['field_os2intra_phone']['element_label_colon'] = FALSE;
-  /* Field: Field: Billede */
-  $handler->display->display_options['fields']['field_os2intra_image']['id'] = 'field_os2intra_image';
-  $handler->display->display_options['fields']['field_os2intra_image']['table'] = 'field_data_field_os2intra_image';
-  $handler->display->display_options['fields']['field_os2intra_image']['field'] = 'field_os2intra_image';
-  $handler->display->display_options['fields']['field_os2intra_image']['label'] = '';
-  $handler->display->display_options['fields']['field_os2intra_image']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_os2intra_image']['element_class'] = 'pull-left';
-  $handler->display->display_options['fields']['field_os2intra_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_os2intra_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_os2intra_image']['settings'] = array(
-    'image_style' => 'profilbillede',
-    'image_link' => '',
+  /* Field: User: Mobil nummer */
+  $handler->display->display_options['fields']['field_os2intra_mobile']['id'] = 'field_os2intra_mobile';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['table'] = 'field_data_field_os2intra_mobile';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['field'] = 'field_os2intra_mobile';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_mobile']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_mobile']['alter']['path'] = 'tel:[field_os2intra_mobile]';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['alter']['link_class'] = 'btn btn-default btn-lg';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_mobile']['type'] = 'text_plain';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="btn-group contact" role="group" aria-label="Kontakt via email eller telefon">
+[mail] [field_os2intra_phone] [field_os2intra_mobile]
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Field: User: Kompetencer */
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['id'] = 'field_os2intra_user_competences';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['table'] = 'field_data_field_os2intra_user_competences';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['field'] = 'field_os2intra_user_competences';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['alter']['link_class'] = 'btn btn-success btn-xs';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['settings'] = array(
+    'link' => 1,
   );
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_competences']['separator'] = ' ';
+  /* Field: User: Interesser */
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['id'] = 'field_os2intra_user_inter';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['table'] = 'field_data_field_os2intra_user_inter';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['field'] = 'field_os2intra_user_inter';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['alter']['link_class'] = 'btn btn-info btn-xs';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_inter']['separator'] = '';
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
@@ -810,8 +856,12 @@ function os2intra_users_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('<hr/>
-[field_os2intra_user_bio]'),
+    t(' -  [og_user_node2]'),
+    t('<i class="fa fa-envelope"></i> [mail]'),
+    t('<i class="fa fa-phone"></i> [field_os2intra_phone]'),
+    t('<div class="btn-group contact" role="group" aria-label="Kontakt via email eller telefon">
+[mail] [field_os2intra_phone] [field_os2intra_mobile]
+</div>'),
     t('Alle'),
     t('Content pane'),
     t('View panes'),
