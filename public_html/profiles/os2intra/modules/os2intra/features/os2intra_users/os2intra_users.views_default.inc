@@ -537,7 +537,7 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['last_updated']['field'] = 'last_updated';
   $handler->display->display_options['fields']['last_updated']['label'] = '';
   $handler->display->display_options['fields']['last_updated']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['last_updated']['date_format'] = 'medium';
+  $handler->display->display_options['fields']['last_updated']['date_format'] = 'short';
   $handler->display->display_options['fields']['last_updated']['second_date_format'] = 'long';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -673,6 +673,7 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -695,7 +696,7 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_user_titles']['table'] = 'field_data_field_os2intra_user_titles';
   $handler->display->display_options['fields']['field_os2intra_user_titles']['field'] = 'field_os2intra_user_titles';
   $handler->display->display_options['fields']['field_os2intra_user_titles']['label'] = '';
-  $handler->display->display_options['fields']['field_os2intra_user_titles']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_os2intra_user_titles']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_os2intra_user_titles']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_os2intra_user_titles']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_os2intra_user_titles']['element_default_classes'] = FALSE;
@@ -703,6 +704,19 @@ function os2intra_users_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_os2intra_user_titles']['field_api_classes'] = TRUE;
+  /* Field: User: Gruppemedlemskab */
+  $handler->display->display_options['fields']['og_user_node2']['id'] = 'og_user_node2';
+  $handler->display->display_options['fields']['og_user_node2']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['og_user_node2']['field'] = 'og_user_node2';
+  $handler->display->display_options['fields']['og_user_node2']['label'] = '';
+  $handler->display->display_options['fields']['og_user_node2']['element_type'] = 'span';
+  $handler->display->display_options['fields']['og_user_node2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['og_user_node2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['og_user_node2']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['og_user_node2']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['og_user_node2']['delta_offset'] = '0';
   /* Field: User: E-mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
@@ -711,13 +725,6 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['mail']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['mail']['alter']['link_class'] = 'btn btn-primary';
   $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
-  /* Field: Field: Organisation */
-  $handler->display->display_options['fields']['field_os2intra_organisation_ref']['id'] = 'field_os2intra_organisation_ref';
-  $handler->display->display_options['fields']['field_os2intra_organisation_ref']['table'] = 'og_membership';
-  $handler->display->display_options['fields']['field_os2intra_organisation_ref']['field'] = 'field_os2intra_organisation_ref';
-  $handler->display->display_options['fields']['field_os2intra_organisation_ref']['settings'] = array(
-    'link' => 0,
-  );
   /* Field: User: Bio */
   $handler->display->display_options['fields']['field_os2intra_user_bio']['id'] = 'field_os2intra_user_bio';
   $handler->display->display_options['fields']['field_os2intra_user_bio']['table'] = 'field_data_field_os2intra_user_bio';
@@ -731,6 +738,28 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_user_bio']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_os2intra_user_bio']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_os2intra_user_bio']['field_api_classes'] = TRUE;
+  /* Field: User: Telefon nummer */
+  $handler->display->display_options['fields']['field_os2intra_phone']['id'] = 'field_os2intra_phone';
+  $handler->display->display_options['fields']['field_os2intra_phone']['table'] = 'field_data_field_os2intra_phone';
+  $handler->display->display_options['fields']['field_os2intra_phone']['field'] = 'field_os2intra_phone';
+  $handler->display->display_options['fields']['field_os2intra_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_phone']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_phone']['alter']['path'] = 'tel:[field_os2intra_phone]';
+  $handler->display->display_options['fields']['field_os2intra_phone']['element_label_colon'] = FALSE;
+  /* Field: Field: Billede */
+  $handler->display->display_options['fields']['field_os2intra_image']['id'] = 'field_os2intra_image';
+  $handler->display->display_options['fields']['field_os2intra_image']['table'] = 'field_data_field_os2intra_image';
+  $handler->display->display_options['fields']['field_os2intra_image']['field'] = 'field_os2intra_image';
+  $handler->display->display_options['fields']['field_os2intra_image']['label'] = '';
+  $handler->display->display_options['fields']['field_os2intra_image']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_os2intra_image']['element_class'] = 'pull-left';
+  $handler->display->display_options['fields']['field_os2intra_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_os2intra_image']['settings'] = array(
+    'image_style' => 'profilbillede',
+    'image_link' => '',
+  );
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
@@ -781,7 +810,6 @@ function os2intra_users_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Organisation'),
     t('<hr/>
 [field_os2intra_user_bio]'),
     t('Alle'),

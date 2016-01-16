@@ -453,7 +453,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => -3,
+      'weight' => -1,
     ),
   );
 
@@ -693,7 +693,7 @@ function os2intra_users_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => -2,
+      'weight' => 0,
     ),
   );
 
@@ -774,7 +774,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -5,
+      'weight' => -4,
     ),
   );
 
@@ -1276,7 +1276,7 @@ function os2intra_users_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => -6,
+      'weight' => -2,
     ),
   );
 
