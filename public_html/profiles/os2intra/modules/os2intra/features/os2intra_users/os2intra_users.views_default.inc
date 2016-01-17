@@ -605,6 +605,15 @@ function os2intra_users_views_default_views() {
     25 => 0,
     26 => 0,
   );
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'uid' => array(
       'type' => 'context',
@@ -772,6 +781,8 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_mobile']['field'] = 'field_os2intra_mobile';
   $handler->display->display_options['fields']['field_os2intra_mobile']['label'] = '';
   $handler->display->display_options['fields']['field_os2intra_mobile']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_mobile']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_os2intra_mobile']['alter']['text'] = '<i class="fa fa-mobile"></i> [field_os2intra_mobile]';
   $handler->display->display_options['fields']['field_os2intra_mobile']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_os2intra_mobile']['alter']['path'] = 'tel:[field_os2intra_mobile]';
   $handler->display->display_options['fields']['field_os2intra_mobile']['alter']['link_class'] = 'btn btn-default btn-lg';
@@ -883,6 +894,7 @@ function os2intra_users_views_default_views() {
     t(' - [field_os2intra_physical_location]'),
     t('<i class="fa fa-envelope"></i> [mail]'),
     t('<i class="fa fa-phone"></i> [field_os2intra_phone]'),
+    t('<i class="fa fa-mobile"></i> [field_os2intra_mobile]'),
     t('<div class="btn-group btn-group-sm contact" role="group" aria-label="Kontakt via email eller telefon">
 [mail] [field_os2intra_phone] [field_os2intra_mobile]
 </div>'),
