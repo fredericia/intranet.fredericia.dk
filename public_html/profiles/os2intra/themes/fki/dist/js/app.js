@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under the MIT license
  */
@@ -11,13 +11,13 @@ if (typeof jQuery === 'undefined') {
 +function ($) {
   'use strict';
   var version = $.fn.jquery.split(' ')[0].split('.')
-  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1)) {
-    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher')
+  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 2)) {
+    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 3')
   }
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: transition.js v3.3.5
+ * Bootstrap: transition.js v3.3.6
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -77,7 +77,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: alert.js v3.3.5
+ * Bootstrap: alert.js v3.3.6
  * http://getbootstrap.com/javascript/#alerts
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -96,7 +96,7 @@ if (typeof jQuery === 'undefined') {
     $(el).on('click', dismiss, this.close)
   }
 
-  Alert.VERSION = '3.3.5'
+  Alert.VERSION = '3.3.6'
 
   Alert.TRANSITION_DURATION = 150
 
@@ -172,7 +172,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: button.js v3.3.5
+ * Bootstrap: button.js v3.3.6
  * http://getbootstrap.com/javascript/#buttons
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -192,7 +192,7 @@ if (typeof jQuery === 'undefined') {
     this.isLoading = false
   }
 
-  Button.VERSION  = '3.3.5'
+  Button.VERSION  = '3.3.6'
 
   Button.DEFAULTS = {
     loadingText: 'loading...'
@@ -293,7 +293,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: carousel.js v3.3.5
+ * Bootstrap: carousel.js v3.3.6
  * http://getbootstrap.com/javascript/#carousel
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -324,7 +324,7 @@ if (typeof jQuery === 'undefined') {
       .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
   }
 
-  Carousel.VERSION  = '3.3.5'
+  Carousel.VERSION  = '3.3.6'
 
   Carousel.TRANSITION_DURATION = 600
 
@@ -531,7 +531,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: collapse.js v3.3.5
+ * Bootstrap: collapse.js v3.3.6
  * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -561,7 +561,7 @@ if (typeof jQuery === 'undefined') {
     if (this.options.toggle) this.toggle()
   }
 
-  Collapse.VERSION  = '3.3.5'
+  Collapse.VERSION  = '3.3.6'
 
   Collapse.TRANSITION_DURATION = 350
 
@@ -743,7 +743,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: dropdown.js v3.3.5
+ * Bootstrap: dropdown.js v3.3.6
  * http://getbootstrap.com/javascript/#dropdowns
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -763,7 +763,7 @@ if (typeof jQuery === 'undefined') {
     $(element).on('click.bs.dropdown', this.toggle)
   }
 
-  Dropdown.VERSION = '3.3.5'
+  Dropdown.VERSION = '3.3.6'
 
   function getParent($this) {
     var selector = $this.attr('data-target')
@@ -795,7 +795,7 @@ if (typeof jQuery === 'undefined') {
       if (e.isDefaultPrevented()) return
 
       $this.attr('aria-expanded', 'false')
-      $parent.removeClass('open').trigger('hidden.bs.dropdown', relatedTarget)
+      $parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
     })
   }
 
@@ -829,7 +829,7 @@ if (typeof jQuery === 'undefined') {
 
       $parent
         .toggleClass('open')
-        .trigger('shown.bs.dropdown', relatedTarget)
+        .trigger($.Event('shown.bs.dropdown', relatedTarget))
     }
 
     return false
@@ -909,7 +909,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: modal.js v3.3.5
+ * Bootstrap: modal.js v3.3.6
  * http://getbootstrap.com/javascript/#modals
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -943,7 +943,7 @@ if (typeof jQuery === 'undefined') {
     }
   }
 
-  Modal.VERSION  = '3.3.5'
+  Modal.VERSION  = '3.3.6'
 
   Modal.TRANSITION_DURATION = 300
   Modal.BACKDROP_TRANSITION_DURATION = 150
@@ -1247,7 +1247,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: tooltip.js v3.3.5
+ * Bootstrap: tooltip.js v3.3.6
  * http://getbootstrap.com/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
@@ -1274,7 +1274,7 @@ if (typeof jQuery === 'undefined') {
     this.init('tooltip', element, options)
   }
 
-  Tooltip.VERSION  = '3.3.5'
+  Tooltip.VERSION  = '3.3.6'
 
   Tooltip.TRANSITION_DURATION = 150
 
@@ -1762,7 +1762,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: popover.js v3.3.5
+ * Bootstrap: popover.js v3.3.6
  * http://getbootstrap.com/javascript/#popovers
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -1782,7 +1782,7 @@ if (typeof jQuery === 'undefined') {
 
   if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
 
-  Popover.VERSION  = '3.3.5'
+  Popover.VERSION  = '3.3.6'
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right',
@@ -1871,7 +1871,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: scrollspy.js v3.3.5
+ * Bootstrap: scrollspy.js v3.3.6
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -1900,7 +1900,7 @@ if (typeof jQuery === 'undefined') {
     this.process()
   }
 
-  ScrollSpy.VERSION  = '3.3.5'
+  ScrollSpy.VERSION  = '3.3.6'
 
   ScrollSpy.DEFAULTS = {
     offset: 10
@@ -2044,7 +2044,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: tab.js v3.3.5
+ * Bootstrap: tab.js v3.3.6
  * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -2064,7 +2064,7 @@ if (typeof jQuery === 'undefined') {
     // jscs:enable requireDollarBeforejQueryAssignment
   }
 
-  Tab.VERSION = '3.3.5'
+  Tab.VERSION = '3.3.6'
 
   Tab.TRANSITION_DURATION = 150
 
@@ -2200,7 +2200,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: affix.js v3.3.5
+ * Bootstrap: affix.js v3.3.6
  * http://getbootstrap.com/javascript/#affix
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -2229,7 +2229,7 @@ if (typeof jQuery === 'undefined') {
     this.checkPosition()
   }
 
-  Affix.VERSION  = '3.3.5'
+  Affix.VERSION  = '3.3.6'
 
   Affix.RESET    = 'affix affix-top affix-bottom'
 
@@ -2500,6 +2500,180 @@ var bs3Designer = (function ($) {
     }
 
     return pub;
+})(jQuery);
+
+// |--------------------------------------------------------------------------
+// | BS3 sidebar
+// |--------------------------------------------------------------------------
+// |
+// | App alike navigation with sidebar.
+// |
+// | This jQuery script is written by
+// | Morten Nissen
+// |
+var bs3Sidebar = (function ($) {
+  'use strict';
+
+  var Modernizr = {};
+  var pub = {};
+
+  /**
+   * Instantiate
+   */
+  pub.init = function (options) {
+    registerEventHandlers();
+    registerBootEventHandlers();
+  }
+
+  /**
+   * Register event handlers
+   */
+  function registerEventHandlers() {
+
+    // Toggle sidebar
+    $('[data-sidebar-toggle]').on('click', function (event) {
+      event.preventDefault();
+
+      var $element = $(this);
+
+      toggleSidebar($element);
+    });
+
+    // Toggle dropdown
+    $('.sidebar .sidebar-navigation-dropdown > a > .sidebar-navigation-dropdown-toggle').on('click', function (event) {
+      event.preventDefault();
+
+      var $element = $(this);
+
+      toggleDropdown($element);
+    });
+  }
+
+  /**
+   * Register boot event handlers
+   */
+  function registerBootEventHandlers() {
+  }
+
+  /**
+   * Toggle sidebar
+   */
+  function toggleSidebar($element) {
+    var $body = $('body');
+    var attribute = $element.attr('data-sidebar-toggle');
+
+    if (attribute != 'left' && attribute != 'right') {
+      return false;
+    }
+
+    if (attribute == 'left' && $body.hasClass('sidebar-right-open')) {
+      $body.removeClass('sidebar-right-open');
+    }
+
+    if (attribute == 'right' && $body.hasClass('sidebar-left-open')) {
+      $body.removeClass('sidebar-left-open');
+    }
+
+    $body.toggleClass('sidebar-' + attribute + '-open');
+  }
+
+  /**
+   * Toggle dropdown
+   */
+  function toggleDropdown($element) {
+    var $parent = $element.parent().parent();
+    var parentIsActive = $parent.hasClass('active') || $parent.hasClass('active-trail') ? true : false;
+
+    if (parentIsActive) {
+      closeDropdown($parent);
+    }
+
+    else {
+      openDropdown($parent);
+    }
+  }
+
+  /**
+   * Open dropdown
+   */
+  function openDropdown($parent) {
+    var $dropdownMenu = $parent.find('> .sidebar-navigation-dropdown-menu');
+    var dropdownMenuHeight = $dropdownMenu.outerHeight(true);
+    var preAnimationCSS = { opacity: 0.1, height: 0, top: -20 };
+    var animationCSS = { opacity: 1, height: dropdownMenuHeight, top: 0 };
+    var callbackFunction = function () {
+      $dropdownMenu.attr('style', '');
+    };
+
+    closeAllDropdownMenus($parent);
+
+    $parent.addClass('active');
+
+    $dropdownMenu
+      .addClass('active')
+      .css(preAnimationCSS);
+
+    dropdownMenuAnimatedToggle($dropdownMenu, animationCSS, callbackFunction);
+  }
+
+  /**
+   * Close dropdown
+   */
+  function closeDropdown($parent) {
+    var $dropdownMenu = $parent.find('> .sidebar-navigation-dropdown-menu');
+    var animationCSS = { height: 0, opacity: 0.1 };
+    var callbackFunction = function () {
+
+      // Remove all active class' from dropdown menu and all child elements with active states
+      $dropdownMenu
+        .removeClass('active')
+        .attr('style', '')
+        .find('.active:not(a)')
+        .removeClass('active')
+        .attr('style', '');
+
+      $dropdownMenu
+        .removeClass('active-trail')
+        .attr('style', '')
+        .find('.active-trail:not(a)')
+        .removeClass('active-trail')
+        .attr('style', '');
+    };
+
+    $parent
+      .removeClass('active')
+      .removeClass('active-trail');
+
+    dropdownMenuAnimatedToggle($dropdownMenu, animationCSS, callbackFunction);
+  }
+
+  /**
+   * Close all dropdown menus
+   */
+  function closeAllDropdownMenus($parent) {
+    $parent
+      .siblings('.sidebar-navigation-dropdown.active, .sidebar-navigation-dropdown.active-trail')
+      .each(function () {
+        var $element = $(this);
+
+        closeDropdown($element);
+      });
+  }
+
+  /**
+   * Dropdown menu animated toggle
+   */
+  function dropdownMenuAnimatedToggle($dropdownMenu, animationCSS, callbackFunction) {
+    $dropdownMenu.animate(
+      animationCSS,
+      {
+        duration: 400,
+        easing  : 'easeOutSine',
+        complete: callbackFunction
+      });
+  }
+
+  return pub;
 })(jQuery);
 
 ;(function () {
