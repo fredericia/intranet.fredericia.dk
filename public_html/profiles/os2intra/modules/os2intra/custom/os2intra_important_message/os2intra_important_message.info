@@ -1,0 +1,6 @@
+name = os2intra_important_message
+description = Os2intra Vigtig beskeder
+core = 7.x
+package = 'OS2Intra custom'
+dependencies[] = views
+dependencies[] = os2intra_frontpage
