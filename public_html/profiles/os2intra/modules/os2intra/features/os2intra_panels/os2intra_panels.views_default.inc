@@ -23,12 +23,18 @@ function os2intra_panels_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mere';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '50';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -66,7 +72,6 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
   $handler->display->display_options['relationships']['parent']['field'] = 'parent';
   $handler->display->display_options['relationships']['parent']['relationship'] = 'term_node_tid';
-  $handler->display->display_options['relationships']['parent']['label'] = 'Overordnet element';
   /* Relationship: Taxonomy term: Content with term */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'taxonomy_index';
@@ -83,11 +88,6 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['title']['element_class'] = 'afd-[field_os2intra_afdeling] nid-[nid] org2-[field_os2intra_organisation] org2-[field_os2intra_organisation_1]';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_os2intra_afdeling']['id'] = 'field_os2intra_afdeling';
-  $handler->display->display_options['fields']['field_os2intra_afdeling']['table'] = 'og_membership';
-  $handler->display->display_options['fields']['field_os2intra_afdeling']['field'] = 'field_os2intra_afdeling';
-  $handler->display->display_options['fields']['field_os2intra_afdeling']['exclude'] = TRUE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -163,6 +163,10 @@ function os2intra_panels_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'os2-organisation-tree';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -224,110 +228,7 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'os2intra_org_group_unit' => 'os2intra_org_group_unit',
   );
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid']['id'] = 'nid';
-  $handler->display->display_options['filters']['nid']['table'] = 'node';
-  $handler->display->display_options['filters']['nid']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid']['operator'] = '!=';
-  $handler->display->display_options['filters']['nid']['value']['value'] = '236';
-  $handler->display->display_options['filters']['nid']['expose']['operator_id'] = 'nid_op';
-  $handler->display->display_options['filters']['nid']['expose']['label'] = 'Nid';
-  $handler->display->display_options['filters']['nid']['expose']['operator'] = 'nid_op';
-  $handler->display->display_options['filters']['nid']['expose']['identifier'] = 'nid';
-  $handler->display->display_options['filters']['nid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-  );
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid_1']['id'] = 'nid_1';
-  $handler->display->display_options['filters']['nid_1']['table'] = 'node';
-  $handler->display->display_options['filters']['nid_1']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid_1']['operator'] = '!=';
-  $handler->display->display_options['filters']['nid_1']['value']['value'] = '774';
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid_2']['id'] = 'nid_2';
-  $handler->display->display_options['filters']['nid_2']['table'] = 'node';
-  $handler->display->display_options['filters']['nid_2']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid_2']['operator'] = '!=';
-  $handler->display->display_options['filters']['nid_2']['value']['value'] = '762';
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid_3']['id'] = 'nid_3';
-  $handler->display->display_options['filters']['nid_3']['table'] = 'node';
-  $handler->display->display_options['filters']['nid_3']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid_3']['operator'] = '!=';
-  $handler->display->display_options['filters']['nid_3']['value']['value'] = '781';
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid_4']['id'] = 'nid_4';
-  $handler->display->display_options['filters']['nid_4']['table'] = 'node';
-  $handler->display->display_options['filters']['nid_4']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid_4']['operator'] = '!=';
-  $handler->display->display_options['filters']['nid_4']['value']['value'] = '803';
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid_5']['id'] = 'nid_5';
-  $handler->display->display_options['filters']['nid_5']['table'] = 'node';
-  $handler->display->display_options['filters']['nid_5']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid_5']['operator'] = '!=';
-  $handler->display->display_options['filters']['nid_5']['value']['value'] = '857';
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid_6']['id'] = 'nid_6';
-  $handler->display->display_options['filters']['nid_6']['table'] = 'node';
-  $handler->display->display_options['filters']['nid_6']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid_6']['operator'] = '!=';
-  $handler->display->display_options['filters']['nid_6']['value']['value'] = '720';
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid_7']['id'] = 'nid_7';
-  $handler->display->display_options['filters']['nid_7']['table'] = 'node';
-  $handler->display->display_options['filters']['nid_7']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid_7']['operator'] = '!=';
-  $handler->display->display_options['filters']['nid_7']['value']['value'] = '833';
-  $handler->display->display_options['filters']['nid_7']['expose']['operator_id'] = 'nid_7_op';
-  $handler->display->display_options['filters']['nid_7']['expose']['label'] = 'Nid';
-  $handler->display->display_options['filters']['nid_7']['expose']['operator'] = 'nid_7_op';
-  $handler->display->display_options['filters']['nid_7']['expose']['identifier'] = 'nid_7';
-  $handler->display->display_options['filters']['nid_7']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    7 => 0,
-  );
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid_8']['id'] = 'nid_8';
-  $handler->display->display_options['filters']['nid_8']['table'] = 'node';
-  $handler->display->display_options['filters']['nid_8']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid_8']['operator'] = '!=';
-  $handler->display->display_options['filters']['nid_8']['value']['value'] = '817';
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid_9']['id'] = 'nid_9';
-  $handler->display->display_options['filters']['nid_9']['table'] = 'node';
-  $handler->display->display_options['filters']['nid_9']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid_9']['operator'] = '!=';
-  $handler->display->display_options['filters']['nid_9']['value']['value'] = '820';
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid_10']['id'] = 'nid_10';
-  $handler->display->display_options['filters']['nid_10']['table'] = 'node';
-  $handler->display->display_options['filters']['nid_10']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid_10']['operator'] = '!=';
-  $handler->display->display_options['filters']['nid_10']['value']['value'] = '536';
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid_11']['id'] = 'nid_11';
-  $handler->display->display_options['filters']['nid_11']['table'] = 'node';
-  $handler->display->display_options['filters']['nid_11']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid_11']['operator'] = '!=';
-  $handler->display->display_options['filters']['nid_11']['value']['value'] = '621';
-  /* Filter criterion: Content: Nid */
-  $handler->display->display_options['filters']['nid_12']['id'] = 'nid_12';
-  $handler->display->display_options['filters']['nid_12']['table'] = 'node';
-  $handler->display->display_options['filters']['nid_12']['field'] = 'nid';
-  $handler->display->display_options['filters']['nid_12']['operator'] = '!=';
-  $handler->display->display_options['filters']['nid_12']['value']['value'] = '519';
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['argument_input'] = array(
     'term_node_tid_depth' => array(
       'type' => 'context',
@@ -338,49 +239,24 @@ function os2intra_panels_views_default_views() {
       'label' => 'Indhold: Har taksonomiterm ID (med dybde)',
     ),
   );
-
-  /* Display: Content pane 2 */
-  $handler = $view->new_display('panel_pane', 'Content pane 2', 'panel_pane_2');
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Has taxonomy term ID (with depth) */
-  $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '10';
-  $handler->display->display_options['argument_input'] = array(
-    'term_node_tid_depth' => array(
-      'type' => 'user',
-      'context' => 'entity:blame.bid',
-      'context_optional' => 0,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'Indhold: Har taksonomiterm ID (med dybde)',
-    ),
-  );
   $translatables['os2intra_afdlingsorganisation'] = array(
     t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
+    t('mere'),
+    t('Udfør'),
+    t('Gendan'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
     t('term'),
-    t('Overordnet element'),
+    t('Parent'),
     t('indhold m overterm'),
-    t('Broken handler og_membership.field_os2intra_afdeling'),
     t('Nid'),
     t('Organisation'),
     t('Alle'),
     t('Content pane'),
+    t('more'),
     t('.'),
     t('View panes'),
-    t('Content pane 2'),
   );
   $export['os2intra_afdlingsorganisation'] = $view;
 
