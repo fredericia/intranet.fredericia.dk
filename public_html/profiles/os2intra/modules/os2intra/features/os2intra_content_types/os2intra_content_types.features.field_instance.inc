@@ -2789,12 +2789,13 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'owlcarousel_fields',
         'settings' => array(
-          'image_link' => '',
           'image_style' => 'normal',
+          'settings_group' => 'owlcarousel_settings_slider',
+          'trim_length' => '',
         ),
-        'type' => 'image',
+        'type' => 'owlcarousel_formatter',
         'weight' => 0,
       ),
       'includeable' => array(
