@@ -23,6 +23,27 @@
 
 	.view-content {
 
+		> ul {
+
+			> .os2-toggler-element {
+
+				&,
+				&.active {
+
+					> ul {
+						display: block;
+					}
+				}
+
+				> .views-field {
+
+					.os2-toggler-element-toggle {
+						display: none;
+					}
+				}
+			}
+		}
+
 		ul {
 			list-style: none;
 			padding: 0;
