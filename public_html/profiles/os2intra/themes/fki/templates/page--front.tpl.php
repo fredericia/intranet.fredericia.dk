@@ -19,6 +19,15 @@
       <!-- End - navigation -->
     <?php endif; ?>
 
+    <!-- Begin - logo -->
+    <div class="sidebar-logo sidebar-logo-broen">
+      <a href="<?php print $front_page; ?>" class="sidebar-logo-link">
+        <img src="<?php print $path_img . '/logo-broen-sidebar-wide.png'; ?>" class="sidebar-logo-image sidebar-logo-image-wide" alt="<?php print $site_name . t(' logo'); ?>" />
+        <img src="<?php print $path_img . '/logo-broen-sidebar-narrow.png'; ?>" class="sidebar-logo-image sidebar-logo-image-narrow" alt="<?php print $site_name . t(' logo'); ?>" />
+      </a>
+    </div>
+    <!-- End - logo -->
+
   </div>
   <!-- End - sidebar left -->
 
