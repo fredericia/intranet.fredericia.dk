@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the OS2Web Views cache bully feature.
+ */
+
+include_once 'os2web_views_cache_bully.features.inc';
