@@ -125,6 +125,10 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   $handler->display->display_options['sorts']['weight']['relationship'] = 'term_node_tid';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   /* Contextual filter: Content: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
@@ -226,6 +230,86 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
   $handler->display->display_options['filters']['nid']['operator'] = '!=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '236';
+  $handler->display->display_options['filters']['nid']['expose']['operator_id'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['label'] = 'Nid';
+  $handler->display->display_options['filters']['nid']['expose']['operator'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['identifier'] = 'nid';
+  $handler->display->display_options['filters']['nid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['filters']['nid_1']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_1']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid_1']['value']['value'] = '774';
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_2']['id'] = 'nid_2';
+  $handler->display->display_options['filters']['nid_2']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_2']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_2']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid_2']['value']['value'] = '762';
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_3']['id'] = 'nid_3';
+  $handler->display->display_options['filters']['nid_3']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_3']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_3']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid_3']['value']['value'] = '781';
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_4']['id'] = 'nid_4';
+  $handler->display->display_options['filters']['nid_4']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_4']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_4']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid_4']['value']['value'] = '803';
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_5']['id'] = 'nid_5';
+  $handler->display->display_options['filters']['nid_5']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_5']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_5']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid_5']['value']['value'] = '857';
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_6']['id'] = 'nid_6';
+  $handler->display->display_options['filters']['nid_6']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_6']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_6']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid_6']['value']['value'] = '720';
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_7']['id'] = 'nid_7';
+  $handler->display->display_options['filters']['nid_7']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_7']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_7']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid_7']['value']['value'] = '833';
+  $handler->display->display_options['filters']['nid_7']['expose']['operator_id'] = 'nid_7_op';
+  $handler->display->display_options['filters']['nid_7']['expose']['label'] = 'Nid';
+  $handler->display->display_options['filters']['nid_7']['expose']['operator'] = 'nid_7_op';
+  $handler->display->display_options['filters']['nid_7']['expose']['identifier'] = 'nid_7';
+  $handler->display->display_options['filters']['nid_7']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+  );
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_8']['id'] = 'nid_8';
+  $handler->display->display_options['filters']['nid_8']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_8']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_8']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid_8']['value']['value'] = '817';
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_9']['id'] = 'nid_9';
+  $handler->display->display_options['filters']['nid_9']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_9']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_9']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid_9']['value']['value'] = '820';
   $handler->display->display_options['argument_input'] = array(
     'term_node_tid_depth' => array(
       'type' => 'context',
