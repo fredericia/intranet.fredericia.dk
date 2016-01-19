@@ -266,6 +266,16 @@ function fki_preprocess_node__it_vejledning(&$variables) {
 }
 
 /*
+ * Lokal side
+ * Implements hook_preprocess_node().
+ */
+function fki_preprocess_node__wiki(&$variables) {
+  if ($variables['view_mode'] == 'full') {
+    $variables['sections'] = views_embed_view('os2intra_node_panes', array('panel_pane_7'));
+  }
+}
+
+/*
  * Organisation group unit
  * Implements hook_preprocess_node().
  */
