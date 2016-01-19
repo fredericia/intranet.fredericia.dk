@@ -620,6 +620,12 @@ function os2intra_content_types_strongarm() {
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'includeable' => array(
+        'custom_settings' => TRUE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -828,6 +834,15 @@ function os2intra_content_types_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'list' => array(
+        'custom_settings' => TRUE,
+      ),
+      'includeable' => array(
+        'custom_settings' => TRUE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -850,7 +865,14 @@ function os2intra_content_types_strongarm() {
           'weight' => '3',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'flag_os2intra_flag_info_til_alle' => array(
+          'default' => array(
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__wiki'] = $strongarm;
