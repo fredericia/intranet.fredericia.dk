@@ -310,6 +310,24 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['filters']['nid_9']['field'] = 'nid';
   $handler->display->display_options['filters']['nid_9']['operator'] = '!=';
   $handler->display->display_options['filters']['nid_9']['value']['value'] = '820';
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_10']['id'] = 'nid_10';
+  $handler->display->display_options['filters']['nid_10']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_10']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_10']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid_10']['value']['value'] = '536';
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_11']['id'] = 'nid_11';
+  $handler->display->display_options['filters']['nid_11']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_11']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_11']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid_11']['value']['value'] = '621';
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid_12']['id'] = 'nid_12';
+  $handler->display->display_options['filters']['nid_12']['table'] = 'node';
+  $handler->display->display_options['filters']['nid_12']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_12']['operator'] = '!=';
+  $handler->display->display_options['filters']['nid_12']['value']['value'] = '519';
   $handler->display->display_options['argument_input'] = array(
     'term_node_tid_depth' => array(
       'type' => 'context',
