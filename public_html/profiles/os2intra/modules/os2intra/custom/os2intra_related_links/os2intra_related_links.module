@@ -50,11 +50,16 @@ function _os2intra_related_links_block_content() {
 
   // Get all related links, manually typed in on node TODO - field name should be in admin settings
   $field_name = '';
-  if (field_info_instance('node', 'field_os2intra_related_ref', 'post')) {
-    $field_name = 'field_os2intra_related_ref';
+  if ($node) {
+    if (field_info_instance('node', 'field_os2intra_related_ref', $node->type)) {
+      $field_name = 'field_os2intra_related_ref';
+    }
+    elseif (field_info_instance('node', 'field_os2web_base_field_ref', $node->type)) {
+      $field_name = 'field_os2web_base_field_ref';
+    }
   }
-  elseif (field_info_instance('node', 'field_os2web_base_field_ref', 'user')) {
-    $field_name = 'field_os2intra_related_ref';
+  else {
+    $field_name = 'field_os2web_base_field_ref';
   }
 
   if ($field_related_links = field_get_items('node', $node, $field_name)) {

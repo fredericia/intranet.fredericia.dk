@@ -2789,12 +2789,13 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'owlcarousel_fields',
         'settings' => array(
-          'image_link' => '',
           'image_style' => 'normal',
+          'settings_group' => 'owlcarousel_settings_slider',
+          'trim_length' => '',
         ),
-        'type' => 'image',
+        'type' => 'owlcarousel_formatter',
         'weight' => 0,
       ),
       'includeable' => array(
@@ -5216,12 +5217,9 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 10,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -5277,14 +5275,14 @@ function os2intra_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 8,
+        'weight' => 1,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -5363,17 +5361,10 @@ function os2intra_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Tilføj',
-          'delete' => 'Slet',
-          'description' => TRUE,
-          'edit' => 'Redigér',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 18,
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -5421,12 +5412,9 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 11,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -5483,12 +5471,9 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 13,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -5548,10 +5533,9 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 16,
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -5608,10 +5592,9 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 17,
+        'type' => 'hidden',
+        'weight' => 13,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -5661,10 +5644,9 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 9,
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -5717,7 +5699,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 14,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -5798,12 +5780,9 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 14,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -5860,12 +5839,9 @@ function os2intra_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 12,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -5923,13 +5899,14 @@ function os2intra_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'link' => FALSE,
+          'links' => 0,
+          'view_mode' => 'default',
         ),
-        'type' => 'entityreference_label',
-        'weight' => 15,
+        'type' => 'entityreference_entity_view',
+        'weight' => 2,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -5988,7 +5965,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 15,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -6056,7 +6033,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 11,
       ),
       'includeable' => array(
         'label' => 'above',
