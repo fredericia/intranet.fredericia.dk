@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * Implements hook_user_login().
+ *
+ * Updates the user's LOOP account details.
+ */
+function os2intra_simplesaml_user_login(&$edit, $account) {
+  $attributes = simplesamlphp_auth_get_attributes();
+
+  if (!empty($attributes)) {
+    if (isset($attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'])) {
+      $edit['field_name_first'][LANGUAGE_NONE][0]['value'] = $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'];
+    }
+    if (isset($attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname'])) {
+      $edit['field_name_last'][LANGUAGE_NONE][0]['value'] = $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname'];
+    }
+    if (isset($attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'])) {
+      $edit['mail'] = $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'];
+    }
+    user_save($account, $edit);
+  }
+}
+
+/**
+ * Implements hook_init().
+ */
+function os2intra_simplesaml_init() {
+  // Do not run this from CLI.
+  if (php_sapi_name() != 'cli') {
+    $private_addresses = array(
+      '10.0.0.0|10.255.255.255',
+      '172.16.0.0|172.31.255.255',
+      '192.168.0.0|192.168.255.255'
+    );
+    $long_ip = ip2long($ip);
+
+    if($long_ip != -1) {
+      foreach($private_addresses as $private_address) {
+        list($start, $end) = explode('|', $private_address);
+        // If it's private, login using SimpleSAMLphp; otherwise use normal login
+        if($long_ip >= ip2long($start) && $long_ip <= ip2long($end)) {
+          if (user_is_anonymous() && !in_array($_GET['q'], array('saml_login', 'user/logout', 'user/login'))) {
+            drupal_goto('saml_login', array('query' => array('ReturnTo' => url($_GET['q'], array('absolute' => TRUE)))));
+          }
+        }
+      }
+    }
+  }
+}
