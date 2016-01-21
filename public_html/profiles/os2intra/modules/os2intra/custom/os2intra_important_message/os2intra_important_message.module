@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * Code for the OS2intra vigtig beskeder.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function os2intra_important_message_permission() {
+  return array(
+    'view all message' => array(
+      'title' => t('Se alle Vigtige beskeder'),
+      'description' => t('Vis alle vigtige beskeder til bruger'),
+    ),
+  );
+}
+
+/**
+ * Views_pre_view.
+ */
+function os2intra_important_message_views_pre_view(&$view, &$display_id, &$args) {
+  if ($view->name == 'os2intra_vigtige_beskeder') {
+    global $user;
+    $location = field_get_items('user', $user, 'field_os2intra_physical_location');
+
+    if ($location) {
+      $tid = $location[0]['target_id'];
+      $parents_ids = taxonomy_get_parents_all($tid);
+
+      foreach ($parents_ids as $parent) {
+        $location_nids[] = $parent->tid;
+      }
+    }
+
+    if (user_access('view all message') || !$location) {
+      $args = array('all');
+      return;
+    }
+
+    if (!empty($location_nids)) {
+      $nids = array();
+      $result = db_query("SELECT lc.entity_id FROM {field_data_field_os2intra_physical_location} lc
+                         WHERE lc.field_os2intra_physical_location_target_id IN (:cid)
+                         and lc.bundle = :bundle", array(':cid' => $location_nids, ':bundle' => 'os2intra_message_notification'));
+
+      if ($result) {
+        foreach ($result as $term) {
+          $nids[] = $term->entity_id;
+        }
+      }
+
+      $args = array(implode(',', $nids));
+    }
+  }
+}
