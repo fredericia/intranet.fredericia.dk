@@ -4,18 +4,18 @@
 
   <div class="table">
     <div class="table-row">
-      <div class="table-cell">
+      <div class="table-cell os2-user-teaser-image">
 
         <?php if (isset($user_profile['field_os2intra_image'])): ?>
           <!-- Begin - image -->
-          <div class="os2-user-teaser-image">
+          <div class="user-picture">
             <?php print render($user_profile['field_os2intra_image']); ?>
           </div>
           <!-- End - image -->
         <?php endif; ?>
 
       </div>
-      <div class="table-cell">
+      <div class="table-cell os2-user-teaser-information">
 
         <!-- Begin - full name -->
         <?php if (isset($user_full_name)): ?>
