@@ -3858,12 +3858,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-xs.sidebar-left-hidden-xs .sidebar {
+  .sidebar-left-enabled-xs.sidebar-left-hidden-xs .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-xs.sidebar-left-hidden-xs .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 }
 
@@ -4029,12 +4027,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-sm.sidebar-left-hidden-sm .sidebar {
+  .sidebar-left-enabled-sm.sidebar-left-hidden-sm .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-sm.sidebar-left-hidden-sm .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 }
 
@@ -4200,12 +4196,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-md.sidebar-left-hidden-md .sidebar {
+  .sidebar-left-enabled-md.sidebar-left-hidden-md .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-md.sidebar-left-hidden-md .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 }
 
@@ -4371,12 +4365,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-lg.sidebar-left-hidden-lg .sidebar {
+  .sidebar-left-enabled-lg.sidebar-left-hidden-lg .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-lg.sidebar-left-hidden-lg .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 }
 
@@ -4519,12 +4511,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-xs.sidebar-left-expanded-xs .sidebar {
+  .sidebar-left-enabled-xs.sidebar-left-expanded-xs .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-xs.sidebar-left-expanded-xs .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 }
 
@@ -4667,12 +4657,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-sm.sidebar-left-expanded-sm .sidebar {
+  .sidebar-left-enabled-sm.sidebar-left-expanded-sm .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-sm.sidebar-left-expanded-sm .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 }
 
@@ -4815,12 +4803,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-md.sidebar-left-expanded-md .sidebar {
+  .sidebar-left-enabled-md.sidebar-left-expanded-md .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-md.sidebar-left-expanded-md .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 }
 
@@ -4963,12 +4949,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-lg.sidebar-left-expanded-lg .sidebar {
+  .sidebar-left-enabled-lg.sidebar-left-expanded-lg .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-lg.sidebar-left-expanded-lg .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 }
 
@@ -5081,12 +5065,10 @@
     display: block;
   }
 
-  .sidebar-left-enabled-xs.sidebar-left-collapsed-xs .sidebar {
+  .sidebar-left-enabled-xs.sidebar-left-collapsed-xs .sidebar .sidebar-inner-wrapper {
     padding-bottom: 98px;
-  }
-
-  .sidebar-left-enabled-xs.sidebar-left-collapsed-xs .sidebar .sidebar-logo-broen {
-    width: 50px;
+    background-image: url("../img/logo-broen-sidebar-narrow.png");
+    background-size: 38px 38px;
   }
 }
 
@@ -5199,12 +5181,10 @@
     display: block;
   }
 
-  .sidebar-left-enabled-sm.sidebar-left-collapsed-sm .sidebar {
+  .sidebar-left-enabled-sm.sidebar-left-collapsed-sm .sidebar .sidebar-inner-wrapper {
     padding-bottom: 98px;
-  }
-
-  .sidebar-left-enabled-sm.sidebar-left-collapsed-sm .sidebar .sidebar-logo-broen {
-    width: 50px;
+    background-image: url("../img/logo-broen-sidebar-narrow.png");
+    background-size: 38px 38px;
   }
 }
 
@@ -5317,12 +5297,10 @@
     display: block;
   }
 
-  .sidebar-left-enabled-md.sidebar-left-collapsed-md .sidebar {
+  .sidebar-left-enabled-md.sidebar-left-collapsed-md .sidebar .sidebar-inner-wrapper {
     padding-bottom: 98px;
-  }
-
-  .sidebar-left-enabled-md.sidebar-left-collapsed-md .sidebar .sidebar-logo-broen {
-    width: 50px;
+    background-image: url("../img/logo-broen-sidebar-narrow.png");
+    background-size: 38px 38px;
   }
 }
 
@@ -5435,12 +5413,10 @@
     display: block;
   }
 
-  .sidebar-left-enabled-lg.sidebar-left-collapsed-lg .sidebar {
+  .sidebar-left-enabled-lg.sidebar-left-collapsed-lg .sidebar .sidebar-inner-wrapper {
     padding-bottom: 98px;
-  }
-
-  .sidebar-left-enabled-lg.sidebar-left-collapsed-lg .sidebar .sidebar-logo-broen {
-    width: 50px;
+    background-image: url("../img/logo-broen-sidebar-narrow.png");
+    background-size: 38px 38px;
   }
 }
 
@@ -5625,12 +5601,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-xs.sidebar-left-hidden-xs .sidebar {
+  .sidebar-left-enabled-xs.sidebar-left-hidden-xs .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-xs.sidebar-left-hidden-xs .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 
   .sidebar-left-enabled-xs.sidebar-left-collapsed-xs .sidebar-navigation > li {
@@ -5729,12 +5703,10 @@
     display: block;
   }
 
-  .sidebar-left-enabled-xs.sidebar-left-collapsed-xs .sidebar {
+  .sidebar-left-enabled-xs.sidebar-left-collapsed-xs .sidebar .sidebar-inner-wrapper {
     padding-bottom: 98px;
-  }
-
-  .sidebar-left-enabled-xs.sidebar-left-collapsed-xs .sidebar .sidebar-logo-broen {
-    width: 50px;
+    background-image: url("../img/logo-broen-sidebar-narrow.png");
+    background-size: 38px 38px;
   }
 
   .sidebar-left-enabled-xs.sidebar-left-expanded-xs .sidebar {
@@ -5863,12 +5835,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-xs.sidebar-left-expanded-xs .sidebar {
+  .sidebar-left-enabled-xs.sidebar-left-expanded-xs .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-xs.sidebar-left-expanded-xs .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 }
 
@@ -5999,12 +5969,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-sm.sidebar-left-hidden-sm .sidebar {
+  .sidebar-left-enabled-sm.sidebar-left-hidden-sm .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-sm.sidebar-left-hidden-sm .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 
   .sidebar-left-enabled-sm.sidebar-left-collapsed-sm .sidebar-navigation > li {
@@ -6103,12 +6071,10 @@
     display: block;
   }
 
-  .sidebar-left-enabled-sm.sidebar-left-collapsed-sm .sidebar {
+  .sidebar-left-enabled-sm.sidebar-left-collapsed-sm .sidebar .sidebar-inner-wrapper {
     padding-bottom: 98px;
-  }
-
-  .sidebar-left-enabled-sm.sidebar-left-collapsed-sm .sidebar .sidebar-logo-broen {
-    width: 50px;
+    background-image: url("../img/logo-broen-sidebar-narrow.png");
+    background-size: 38px 38px;
   }
 
   .sidebar-left-enabled-sm.sidebar-left-expanded-sm .sidebar {
@@ -6237,12 +6203,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-sm.sidebar-left-expanded-sm .sidebar {
+  .sidebar-left-enabled-sm.sidebar-left-expanded-sm .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-sm.sidebar-left-expanded-sm .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 }
 
@@ -6373,12 +6337,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-md.sidebar-left-hidden-md .sidebar {
+  .sidebar-left-enabled-md.sidebar-left-hidden-md .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-md.sidebar-left-hidden-md .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 
   .sidebar-left-enabled-md.sidebar-left-collapsed-md .sidebar-navigation > li {
@@ -6477,12 +6439,10 @@
     display: block;
   }
 
-  .sidebar-left-enabled-md.sidebar-left-collapsed-md .sidebar {
+  .sidebar-left-enabled-md.sidebar-left-collapsed-md .sidebar .sidebar-inner-wrapper {
     padding-bottom: 98px;
-  }
-
-  .sidebar-left-enabled-md.sidebar-left-collapsed-md .sidebar .sidebar-logo-broen {
-    width: 50px;
+    background-image: url("../img/logo-broen-sidebar-narrow.png");
+    background-size: 38px 38px;
   }
 
   .sidebar-left-enabled-md.sidebar-left-expanded-md .sidebar {
@@ -6611,12 +6571,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-md.sidebar-left-expanded-md .sidebar {
+  .sidebar-left-enabled-md.sidebar-left-expanded-md .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-md.sidebar-left-expanded-md .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 }
 
@@ -6747,12 +6705,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-lg.sidebar-left-hidden-lg .sidebar {
+  .sidebar-left-enabled-lg.sidebar-left-hidden-lg .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-lg.sidebar-left-hidden-lg .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 
   .sidebar-left-enabled-lg.sidebar-left-collapsed-lg .sidebar-navigation > li {
@@ -6851,12 +6807,10 @@
     display: block;
   }
 
-  .sidebar-left-enabled-lg.sidebar-left-collapsed-lg .sidebar {
+  .sidebar-left-enabled-lg.sidebar-left-collapsed-lg .sidebar .sidebar-inner-wrapper {
     padding-bottom: 98px;
-  }
-
-  .sidebar-left-enabled-lg.sidebar-left-collapsed-lg .sidebar .sidebar-logo-broen {
-    width: 50px;
+    background-image: url("../img/logo-broen-sidebar-narrow.png");
+    background-size: 38px 38px;
   }
 
   .sidebar-left-enabled-lg.sidebar-left-expanded-lg .sidebar {
@@ -6985,12 +6939,10 @@
     transition: all 0.25s ease-in-out;
   }
 
-  .sidebar-left-enabled-lg.sidebar-left-expanded-lg .sidebar {
+  .sidebar-left-enabled-lg.sidebar-left-expanded-lg .sidebar .sidebar-inner-wrapper {
     padding-bottom: 113px;
-  }
-
-  .sidebar-left-enabled-lg.sidebar-left-expanded-lg .sidebar .sidebar-logo-broen {
-    width: 280px;
+    background-image: url("../img/logo-broen-sidebar-wide.png");
+    background-size: 140px 53px;
   }
 }
 

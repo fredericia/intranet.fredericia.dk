@@ -22,23 +22,12 @@
 // Sidebar
 .sidebar {
 
-  // Broen logo
-  .sidebar-logo-broen {
-    position: absolute;
-    bottom: 0;
-    border-bottom-width: 0;
-
-    .sidebar-logo-image {
-
-      &.sidebar-logo-image-narrow {
-        width: floor( (@sidebar-logo-broen-narrow-width / 2) );
-      }
-
-      &.sidebar-logo-image-wide {
-        width: floor( (@sidebar-logo-broen-wide-width / 2) );
-      }
-    }
+  .sidebar-inner-wrapper {
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom 20px center;
   }
+
 
   .sidebar-navigation {
 
@@ -241,11 +230,11 @@
 
       // Sidebar
       .sidebar {
-        padding-bottom: floor( ( floor( (2 * @bs3-sidebar-logo-top-bottom-spacing) ) + floor( (@sidebar-logo-broen-wide-height / 2) ) ) );
 
-        // Broen logo
-        .sidebar-logo-broen {
-          width: @sidebar-hidden-width;
+        .sidebar-inner-wrapper {
+          padding-bottom: floor( ( floor( (2 * @bs3-sidebar-logo-top-bottom-spacing) ) + floor( (@sidebar-logo-broen-wide-height / 2) ) ) );
+          background-image: url("../img/logo-broen-sidebar-wide.png");
+          background-size: floor( (@sidebar-logo-broen-wide-width / 2) ) floor( (@sidebar-logo-broen-wide-height / 2) );
         }
       }
     }
@@ -261,11 +250,11 @@
 
       // Sidebar
       .sidebar {
-        padding-bottom: floor( ( floor( (2 * @bs3-sidebar-logo-top-bottom-spacing) ) + floor( (@sidebar-logo-broen-narrow-height / 2) ) ) );
 
-        // Broen logo
-        .sidebar-logo-broen {
-          width: @sidebar-collapsed-width;
+        .sidebar-inner-wrapper {
+          padding-bottom: floor( ( floor( (2 * @bs3-sidebar-logo-top-bottom-spacing) ) + floor( (@sidebar-logo-broen-narrow-height / 2) ) ) );
+          background-image: url("../img/logo-broen-sidebar-narrow.png");
+          background-size: floor( (@sidebar-logo-broen-narrow-width / 2 ) ) floor( (@sidebar-logo-broen-narrow-height / 2) );
         }
       }
     }
@@ -281,11 +270,11 @@
 
       // Sidebar
       .sidebar {
-        padding-bottom: floor( ( floor( (2 * @bs3-sidebar-logo-top-bottom-spacing) ) + floor( (@sidebar-logo-broen-wide-height / 2) ) ) );
 
-        // Broen logo
-        .sidebar-logo-broen {
-          width: @sidebar-expanded-width;
+        .sidebar-inner-wrapper {
+          padding-bottom: floor( ( floor( (2 * @bs3-sidebar-logo-top-bottom-spacing) ) + floor( (@sidebar-logo-broen-wide-height / 2) ) ) );
+          background-image: url("../img/logo-broen-sidebar-wide.png");
+          background-size: floor( (@sidebar-logo-broen-wide-width / 2) ) floor( (@sidebar-logo-broen-wide-height / 2) );
         }
       }
     }
