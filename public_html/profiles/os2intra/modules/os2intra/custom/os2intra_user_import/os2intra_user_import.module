@@ -321,6 +321,13 @@ function os2intra_user_import_settings() {
     '#default_value' => variable_get('os2intra_user_import_dir', 'private://user_import')
   );
 
+  $form['os2intra_user_import_delimiter'] = array(
+    '#title'         => t('CSV delimiter'),
+    '#type'          => 'textfield',
+    '#description'   => t('The delimiter used to separate values in the CSV, ex. a semicolon, a comma or \t (tab)'),
+    '#default_value' => variable_get('os2intra_user_import_delimiter', ';'),
+  );
+
   $form['os2intra_user_default_groups'] = array(
     '#title'         => t('Node ids (nid) of default OG groups, that should be added to every imported used'),
     '#type'          => 'textfield',
@@ -602,13 +609,15 @@ function _os2intra_user_import_process_file($file_path) {
   );
 
   // Load data from file
-  $csv = array_map('str_getcsv', file($file_path));
+  $csv = array_map(function($d) {
+    return str_getcsv($d, variable_get('os2intra_user_import_delimiter'));
+  }, file($file_path));
   $at_content = FALSE;
 
   foreach ($csv as $row) {
 
     // Look for where headings start and ignore everything before the headings.
-    if (! $at_content
+    if (!$at_content
       && (!array_key_exists(variable_get('os2intra_mapping_ad_id'), $row)
      || $row[variable_get('os2intra_mapping_ad_id')] =! 'AD-ID')) {
 
@@ -782,9 +791,8 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $user_groups[LANGUAGE_NONE][]['target_id'] = $group_id;
   }
 
-  // Create unix timestamp for termination date
   // @todo: check that timestamp is not today
-  $termination_date_timestamp = strtotime($user['termination_date']);
+  $termination_date_timestamp = $user['termination_date'];
   // Check if the timestamp supplied from the import is larger than
   // what unix timestamps can be.
   if ($termination_date_timestamp > 2147483647) {
@@ -1112,11 +1120,11 @@ function _os2intra_user_import_get_department_nid($department) {
 }
 
 /**
- * Convert numeric values into integers, else return the string untouched.
+ * Convert numeric values into integers, else return the string as utf8.
  */
 function _os2intra_user_import_sanitize_int($str) {
   if (is_numeric($str)) {
     return (int) $str;
   }
-  return $str;
+  return utf8_encode($str);
 }
