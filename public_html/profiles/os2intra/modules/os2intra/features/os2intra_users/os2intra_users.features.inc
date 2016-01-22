@@ -55,5 +55,20 @@ function os2intra_users_image_default_styles() {
     ),
   );
 
+  // Exported image style: profile_image_small.
+  $styles['profile_image_small'] = array(
+    'label' => 'Profile image - small',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 58,
+          'height' => 58,
+        ),
+        'weight' => -9,
+      ),
+    ),
+  );
+
   return $styles;
 }
