@@ -1,6 +1,73 @@
 <?php
 
 /**
+ * Implements hook_menu()
+ */
+function os2intra_simplesaml_menu() {
+  $items = array();
+
+  $items['admin/config/os2intra/simplesaml'] = array(
+    'title'            => 'OS2Intra SimpleSAML',
+    'description'      => 'Administer SimpleSAML',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('os2intra_simplesaml_settings_form'),
+    'access arguments' => array('administer os2intra simplesaml')
+  );
+
+  return $items;
+}
+
+/**
+ * Form callback for settings
+ */
+function os2intra_simplesaml_settings_form($form, &$form_state) {
+  $private_addresses = implode("\n", array(
+    '10.0.0.0|10.255.255.255',
+    '172.16.0.0|172.31.255.255',
+    '192.168.0.0|192.168.255.255'
+  ));
+
+  $form['os2intra_simplesaml_redirected_ips'] = array(
+    '#title'         => t('Redirect IP ranges to SimpleSAML login'),
+    '#type'          => 'textarea',
+    '#description'   => t('ex. 192.168.0.0|192.168.255.255 separated with new line.<br />Defaults to the private IP ranges.'),
+    '#default_value' => variable_get('os2intra_simplesaml_redirected_ips', $private_addresses)
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Save',
+  );
+
+  return $form;
+}
+
+/**
+ * Implements hook_form_validate().
+ */
+function os2intra_simplesaml_settings_form_validate($form, &$form_state) {
+  if (preg_match("/[^0-9.|\r\n]/", $form_state['values']['os2intra_simplesaml_redirected_ips'])) {
+    form_set_error('os2intra_simplesaml_redirected_ips', 'Invalid format');
+  }
+}
+
+/**
+ * Implements hook_form_submit().
+ */
+function os2intra_simplesaml_settings_form_submit($form, &$form_state) {
+  $ips_as_string = NULL;
+  if (!empty($form_state['values']['os2intra_simplesaml_redirected_ips'])) {
+    $ips = explode("\n", $form_state['values']['os2intra_simplesaml_redirected_ips']);
+    foreach ($ips as $ip) {
+      $ips_as_string = $ips_as_string . "\n" . $ip;
+    }
+  }
+  if (variable_set('os2intra_simplesaml_redirected_ips', $ips_as_string)) {
+    drupal_set_message(t('The IP ranges for SimpleSAML login are saved.'));
+  }
+}
+
+/**
  * Implements hook_user_login().
  *
  * Updates the user's LOOP account details.
@@ -33,13 +100,21 @@ function os2intra_simplesaml_init() {
       '172.16.0.0|172.31.255.255',
       '192.168.0.0|192.168.255.255'
     );
-    $long_ip = ip2long($ip);
 
-    if($long_ip != -1) {
-      foreach($private_addresses as $private_address) {
-        list($start, $end) = explode('|', $private_address);
+    $custom_ips = variable_get('os2intra_simplesaml_redirected_ips', $private_addresses);
+    if (!is_array($custom_ips)) {
+      $custom_ips = explode("\n", $custom_ips);
+      $custom_ips = array_filter($custom_ips);
+      unset($custom_ips[0]);
+    }
+
+    $long_ip = ip2long($_SERVER['REMOTE_ADDR']);
+
+    if ($long_ip != -1) {
+      foreach ($custom_ips as $custom_ip) {
+        list($start, $end) = explode('|', $custom_ip);
         // If it's private, login using SimpleSAMLphp; otherwise use normal login
-        if($long_ip >= ip2long($start) && $long_ip <= ip2long($end)) {
+        if ($long_ip >= ip2long($start) && $long_ip <= ip2long($end)) {
           if (user_is_anonymous() && !in_array($_GET['q'], array('saml_login', 'user/logout', 'user/login'))) {
             drupal_goto('saml_login', array('query' => array('ReturnTo' => url($_GET['q'], array('absolute' => TRUE)))));
           }
