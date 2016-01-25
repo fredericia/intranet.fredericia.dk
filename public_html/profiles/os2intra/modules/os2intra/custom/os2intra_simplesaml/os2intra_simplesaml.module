@@ -21,17 +21,11 @@ function os2intra_simplesaml_menu() {
  * Form callback for settings
  */
 function os2intra_simplesaml_settings_form($form, &$form_state) {
-  $private_addresses = implode("\n", array(
-    '10.0.0.0|10.255.255.255',
-    '172.16.0.0|172.31.255.255',
-    '192.168.0.0|192.168.255.255'
-  ));
-
   $form['os2intra_simplesaml_redirected_ips'] = array(
-    '#title'         => t('Redirect IP ranges to SimpleSAML login'),
-    '#type'          => 'textarea',
-    '#description'   => t('ex. 192.168.0.0|192.168.255.255 separated with new line.<br />Defaults to the private IP ranges.'),
-    '#default_value' => variable_get('os2intra_simplesaml_redirected_ips', $private_addresses)
+    '#title'         => t('Redirect IP\'s to SimpleSAML login'),
+    '#type'          => 'textfield',
+    '#description'   => t('Comma separated. Ex. 192.168.1.1,192.168.2.1'),
+    '#default_value' => variable_get('os2intra_simplesaml_redirected_ips')
   );
 
   $form['submit'] = array(
@@ -46,7 +40,7 @@ function os2intra_simplesaml_settings_form($form, &$form_state) {
  * Implements hook_form_validate().
  */
 function os2intra_simplesaml_settings_form_validate($form, &$form_state) {
-  if (preg_match("/[^0-9.|\r\n]/", $form_state['values']['os2intra_simplesaml_redirected_ips'])) {
+  if (preg_match("/[^0-9.,]/", $form_state['values']['os2intra_simplesaml_redirected_ips'])) {
     form_set_error('os2intra_simplesaml_redirected_ips', 'Invalid format');
   }
 }
@@ -55,16 +49,7 @@ function os2intra_simplesaml_settings_form_validate($form, &$form_state) {
  * Implements hook_form_submit().
  */
 function os2intra_simplesaml_settings_form_submit($form, &$form_state) {
-  $ips_as_string = NULL;
-  if (!empty($form_state['values']['os2intra_simplesaml_redirected_ips'])) {
-    $ips = explode("\n", $form_state['values']['os2intra_simplesaml_redirected_ips']);
-    foreach ($ips as $ip) {
-      $ips_as_string = $ips_as_string . "\n" . $ip;
-    }
-  }
-  if (variable_set('os2intra_simplesaml_redirected_ips', $ips_as_string)) {
-    drupal_set_message(t('The IP ranges for SimpleSAML login are saved.'));
-  }
+  variable_set('os2intra_simplesaml_redirected_ips', $form_state['values']['os2intra_simplesaml_redirected_ips']);
 }
 
 /**
@@ -95,32 +80,17 @@ function os2intra_simplesaml_user_login(&$edit, $account) {
 function os2intra_simplesaml_boot() {
   // Do not run this from CLI.
   if (php_sapi_name() != 'cli' && $GLOBALS['user']->uid == 0) {
-    $private_addresses = array(
-      '10.0.0.0|10.255.255.255',
-      '172.16.0.0|172.31.255.255',
-      '192.168.0.0|192.168.255.255'
-    );
+    $custom_ips = explode(',', variable_get('os2intra_simplesaml_redirected_ips'));
+    $remote_ip = $_SERVER['REMOTE_ADDR'];
 
-    $custom_ips = variable_get('os2intra_simplesaml_redirected_ips', $private_addresses);
-    if (!is_array($custom_ips)) {
-      $custom_ips = explode("\n", $custom_ips);
-      $custom_ips = array_filter($custom_ips);
-      unset($custom_ips[0]);
-    }
-
-    $long_ip = ip2long($_SERVER['REMOTE_ADDR']);
-    if ($long_ip != -1) {
-      foreach ($custom_ips as $custom_ip) {
-        list($start, $end) = explode('|', $custom_ip);
-      }
-    }
-
-    // If it's private, login using SimpleSAMLphp; otherwise use normal login
-    require_once (DRUPAL_ROOT . '/includes/common.inc');
-    require_once (DRUPAL_ROOT . '/includes/path.inc');
-    if ($long_ip >= ip2long($start) && $long_ip <= ip2long($end)) {
-      if (!in_array($_GET['q'], array('saml_login', 'user/logout'))) {
-        drupal_goto('saml_login', array('query' => array('ReturnTo' => url($_GET['q'], array('absolute' => TRUE)))));
+    foreach ($custom_ips as $custom_ip) {
+      // If we the client request is from one of the IP's, login using SimpleSAMLphp; otherwise use normal login
+      if ($remote_ip == $custom_ip) {
+        if (!in_array($_GET['q'], array('saml_login', 'user/logout'))) {
+          require_once (DRUPAL_ROOT . '/includes/common.inc');
+          require_once (DRUPAL_ROOT . '/includes/path.inc');
+          drupal_goto('saml_login', array('query' => array('ReturnTo' => url($_GET['q'], array('absolute' => TRUE)))));
+        }
       }
     }
   }
