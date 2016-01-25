@@ -399,6 +399,91 @@ function os2intra_users_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_os2intra_birthdate'.
+  $field_instances['user-user-field_os2intra_birthdate'] = array(
+    'bundle' => 'user',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The first 6 characters of your CPR-number',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 30,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_os2intra_birthdate',
+    'label' => 'Birthdate',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'fuld_html' => 'fuld_html',
+          'indhold' => 'indhold',
+          'kommentar' => 'kommentar',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => -6,
+            ),
+            'fuld_html' => array(
+              'weight' => -9,
+            ),
+            'indhold' => array(
+              'weight' => -10,
+            ),
+            'kommentar' => array(
+              'weight' => -8,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 6,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_os2intra_department_ref'.
   $field_instances['user-user-field_os2intra_department_ref'] = array(
     'bundle' => 'user',
@@ -1448,6 +1533,7 @@ function os2intra_users_field_default_field_instances() {
   t('Afdelings Reference');
   t('Billede');
   t('Bio');
+  t('Birthdate');
   t('Efternavn');
   t('Email option will be checked automatically when subscribing to something.');
   t('Email subscriptions');
@@ -1461,6 +1547,7 @@ function os2intra_users_field_default_field_instances() {
   t('MedarbejderID');
   t('Mobil nummer');
   t('Telefon nummer');
+  t('The first 6 characters of your CPR-number');
   t('Vis i oversigt');
   t('Værktøjskasser');
   t('import groups');
