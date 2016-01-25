@@ -16,6 +16,52 @@ include_once 'node_basket.features.inc';
  */
 
 /*
+ * Implements hook_menu()
+ */
+function node_basket_menu(){
+  $items = array();
+
+  // Ajax
+  $items['node_basket/basket'] = array(
+    'title' => 'Node basket',
+    'page callback' => 'node_basket_basket',
+    'access arguments' => array('use node basket'),
+  );
+
+  $items['node_basket/basket/view'] = array(
+    'title' => t('Node basket'),
+    'page callback' => 'node_basket_basket_view',
+    'access arguments' => array('use node basket'),
+//    'menu_name' => 'user-menu',
+//    'type' => MENU_NORMAL_ITEM,
+    'weight' => -8,
+  );
+
+  // Ajax
+  $items['node_basket/toolbox_list'] = array(
+    'title' => t('Node basket'),
+    'page callback' => 'node_basket_toolbox_list',
+    'access arguments' => array('administer node basket toolboxs'),
+  );
+
+  $items['node_basket/menu/ajax'] = array(
+    'title' => 'User menu ajax functions',
+    'description' => 'Ajax',
+    'page callback' => '_node_basket_user_menu',
+    'access callback' => 'user_is_logged_in',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['node_basket/toolbox/use'] = array(
+    'title' => t('Node basket'),
+    'page callback' => 'node_basket_toolbox_use',
+    'access arguments' => array('use node basket'),
+  );
+
+  return $items;
+}
+
+/*
  * Implements hook_init()
  */
 function node_basket_init(){
@@ -31,6 +77,34 @@ function node_basket_init(){
     // css stuff
     drupal_add_css(drupal_get_path('module', 'node_basket') . '/css/node_basket.css');
   }
+}
+
+/* Callback for menu generation */
+function _node_basket_user_menu() {
+  global $user;
+  $response_data = array();
+
+  $query = new EntityFieldQuery();
+
+  $result = $query
+    ->entityCondition('entity_type', 'node')
+    ->propertyCondition('uid', $user->uid)
+    ->fieldCondition('field_node_basket_type', 'value', 'toolbox', '=')
+    ->execute();
+
+  if (count($result['node']) > 0) {
+    foreach($result['node'] as $key => $item) {
+
+      $node = node_load($key);
+
+      $response_data[] = array(
+        'nid' => $node->nid,
+        'title' => $node->title,
+      );
+    }
+  }
+
+  drupal_json_output($response_data);
 }
 
 /*
