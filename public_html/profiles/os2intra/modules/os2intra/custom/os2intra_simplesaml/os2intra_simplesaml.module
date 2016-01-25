@@ -90,9 +90,9 @@ function os2intra_simplesaml_user_login(&$edit, $account) {
 }
 
 /**
- * Implements hook_init().
+ * Implements hook_boot().
  */
-function os2intra_simplesaml_init() {
+function os2intra_simplesaml_boot() {
   // Do not run this from CLI.
   if (php_sapi_name() != 'cli') {
     $private_addresses = array(
@@ -109,16 +109,18 @@ function os2intra_simplesaml_init() {
     }
 
     $long_ip = ip2long($_SERVER['REMOTE_ADDR']);
-
     if ($long_ip != -1) {
       foreach ($custom_ips as $custom_ip) {
         list($start, $end) = explode('|', $custom_ip);
-        // If it's private, login using SimpleSAMLphp; otherwise use normal login
-        if ($long_ip >= ip2long($start) && $long_ip <= ip2long($end)) {
-          if (user_is_anonymous() && !in_array($_GET['q'], array('saml_login', 'user/logout', 'user/login'))) {
-            drupal_goto('saml_login', array('query' => array('ReturnTo' => url($_GET['q'], array('absolute' => TRUE)))));
-          }
-        }
+      }
+    }
+
+    // If it's private, login using SimpleSAMLphp; otherwise use normal login
+    require_once (DRUPAL_ROOT . '/includes/common.inc');
+    require_once (DRUPAL_ROOT . '/includes/path.inc');
+    if ($long_ip >= ip2long($start) && $long_ip <= ip2long($end)) {
+      if (!isset($GLOBAL['user']->uid) && !in_array($_GET['q'], array('saml_login', 'user/logout', 'user/login'))) {
+        drupal_goto('saml_login', array('query' => array('ReturnTo' => url($_GET['q'], array('absolute' => TRUE)))));
       }
     }
   }
