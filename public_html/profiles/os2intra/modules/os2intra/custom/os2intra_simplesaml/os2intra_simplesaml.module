@@ -89,7 +89,7 @@ function os2intra_simplesaml_boot() {
         if (!in_array($_GET['q'], array('saml_login', 'user/logout'))) {
           require_once (DRUPAL_ROOT . '/includes/common.inc');
           require_once (DRUPAL_ROOT . '/includes/path.inc');
-          drupal_goto('saml_login', array('query' => array('ReturnTo' => url($_GET['q'], array('absolute' => TRUE)))));
+          drupal_goto('saml_login', array('query' => drupal_get_destination()));
         }
       }
     }
