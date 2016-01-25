@@ -133,10 +133,10 @@ function os2intra_user_import_activate_form($form_state) {
   }
 
   if (variable_get('os2intra_user_import_activate_birthday')) {
-    $form['birthday'] = array(
+    $form['birthdate'] = array(
       '#type'        => 'textfield',
       '#title'       => t('Birthdate'),
-      '#description' => t('Format: 10/03/1982'),
+      '#description' => t('First 6 characters of your CPR-number (format: 070593)'),
     );
   }
 
@@ -204,14 +204,14 @@ function os2intra_user_import_activate_form_validate($form, &$form_state) {
       if (variable_get('os2intra_user_import_activate_birthday')) {
 
         // Check if birthdate is valid format
-        list($dd, $mm, $yyyy) = explode('/', $form_state['values']['birthday']);
-        if (!checkdate($mm, $dd, $yyyy)) {
-          form_set_error('birthday', t('Birthdate: Invalid format.'));
+        $input_birthday = $form_state['values']['birthdate'];
+        if (!ctype_digit($input_birthday) && strlen($input_birthday) !== 6) {
+          form_set_error('birthdate', t('Birthdate: Invalid format.'));
         }
-        $birthday_field = field_get_items('user', $user, 'field_os2intra_birthday');
-        $birthday = strtotime($birthday_field[0]['value']);
-        $input_birthday = strtotime($yyyy . '-' . $mm . '-' . $dd);
-        if ($input_birthday !== $birthday) {
+
+        // Check if it matches the users birthday field
+        $birthday_field = field_get_items('user', $user, 'field_os2intra_birthdate');
+        if ($input_birthday !== $birthday_field[0]['value']) {
           form_set_error('form', 'Please check your input.');
         }
       }
@@ -219,22 +219,8 @@ function os2intra_user_import_activate_form_validate($form, &$form_state) {
       // Check if we should validate by email
       if (variable_get('os2intra_user_import_activate_email')) {
 
-        // Check if email address is valid
-        if (valid_email_address($form_state['values']['mail'])) {
-
-          // Check if entered email address belongs to user
-          $query = new EntityFieldQuery;
-          $query->entityCondition('entity_type', 'user');
-          $query->propertyCondition('status', 1);
-          $query->propertyCondition('mail', $form_state['values']['mail'], 'LIKE');
-          $tmp_result = $query->execute();
-          $result = array_shift($tmp_result);
-
-          if (!$result) {
-            form_set_error('mail', t('Invalid email address.'));
-          }
-        }
-        else {
+        // Check if email address is valid and not empty
+        if (!valid_email_address($form_state['values']['mail']) || empty(($form_state['values']['mail']))) {
           form_set_error('mail', t('Invalid email address.'));
         }
       }
