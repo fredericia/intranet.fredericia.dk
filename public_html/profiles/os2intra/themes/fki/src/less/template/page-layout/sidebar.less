@@ -119,6 +119,97 @@
       }
     }
   }
+
+  .sidebar-navigation {
+
+    > li {
+
+      > a {
+
+        &:before {
+          font-family: FontAwesome;
+        }
+      }
+
+      // Organisation
+      &.node-246 {
+
+        > a {
+
+          &:before {
+            content: @fa-var-umbrella;
+          }
+        }
+      }
+
+      // Opret IT-vejledning and opret intranetside
+      &.node-add-it-vejledning,
+      &.node-add-os2intra-base-page {
+
+        > a {
+
+          &:before {
+            content: @fa-var-plus;
+          }
+        }
+      }
+
+      // Booking & bestilling
+      &.taxonomy-term-8 {
+
+        > a {
+
+          &:before {
+            content: @fa-var-tag;
+          }
+        }
+      }
+
+      // Hjælp og værktøjer
+      &.taxonomy-term-3 {
+
+        > a {
+
+          &:before {
+            content: @fa-var-stethoscope;
+          }
+        }
+      }
+
+      // Mig som ansat
+      &.taxonomy-term-4 {
+
+        > a {
+
+          &:before {
+            content: @fa-var-users;
+          }
+        }
+      }
+
+      // Opdateret
+      &.opdateret {
+
+        > a {
+
+          &:before {
+            content: @fa-var-bookmark-o;
+          }
+        }
+      }
+
+      // Grupper
+      &.grupper {
+
+        > a {
+
+          &:before {
+            content: @fa-var-cloud;
+          }
+        }
+      }
+    }
+  }
 }
 
 // --------------------------------------------------
