@@ -381,12 +381,12 @@ function fki_preprocess_taxonomy_term__os2web_taxonomies_tax_places(&$variables)
 
     // Name
     if (!empty($term->name)) {
-      $place = '<span class="os2-place-name">' . $term->name . '</span>';
+      //$place = '<span class="os2-place-name">' . $term->name . '</span>';
     }
 
     // Address
     if ($field_os2web_taxonomies_address = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_address')) {
-      $place .= ', <span class="os2-place-address">' . $field_os2web_taxonomies_address[0]['value'] . '</span>';
+      $place .= '<span class="os2-place-address">' . $field_os2web_taxonomies_address[0]['value'] . '</span>';
     }
 
     // City
