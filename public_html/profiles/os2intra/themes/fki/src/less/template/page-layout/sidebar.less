@@ -22,20 +22,191 @@
 // Sidebar
 .sidebar {
 
-  // Broen logo
-  .sidebar-logo-broen {
-    position: absolute;
-    bottom: 0;
-    border-bottom-width: 0;
+  .sidebar-inner-wrapper {
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom 20px center;
+  }
 
-    .sidebar-logo-image {
 
-      &.sidebar-logo-image-narrow {
-        width: floor( (@sidebar-logo-broen-narrow-width / 2) );
+  .sidebar-navigation {
+
+    > li {
+
+      > a {
+
+        &:before {
+          font-family: FontAwesome;
+        }
       }
 
-      &.sidebar-logo-image-wide {
-        width: floor( (@sidebar-logo-broen-wide-width / 2) );
+      // Organisation
+      &.node-246 {
+
+        > a {
+
+          &:before {
+            content: @fa-var-umbrella;
+          }
+        }
+      }
+
+      // Opret IT-vejledning and opret intranetside
+      &.node-add-it-vejledning,
+      &.node-add-os2intra-base-page {
+
+        > a {
+
+          &:before {
+            content: @fa-var-plus;
+          }
+        }
+      }
+
+      // Booking & bestilling
+      &.taxonomy-term-8 {
+
+        > a {
+
+          &:before {
+            content: @fa-var-tag;
+          }
+        }
+      }
+
+      // Hjælp og værktøjer
+      &.taxonomy-term-3 {
+
+        > a {
+
+          &:before {
+            content: @fa-var-stethoscope;
+          }
+        }
+      }
+
+      // Mig som ansat
+      &.taxonomy-term-4 {
+
+        > a {
+
+          &:before {
+            content: @fa-var-users;
+          }
+        }
+      }
+
+      // Opdateret
+      &.opdateret {
+
+        > a {
+
+          &:before {
+            content: @fa-var-bookmark-o;
+          }
+        }
+      }
+
+      // Grupper
+      &.grupper {
+
+        > a {
+
+          &:before {
+            content: @fa-var-cloud;
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar-navigation {
+
+    > li {
+
+      > a {
+
+        &:before {
+          font-family: FontAwesome;
+        }
+      }
+
+      // Organisation
+      &.node-246 {
+
+        > a {
+
+          &:before {
+            content: @fa-var-umbrella;
+          }
+        }
+      }
+
+      // Opret IT-vejledning and opret intranetside
+      &.node-add-it-vejledning,
+      &.node-add-os2intra-base-page {
+
+        > a {
+
+          &:before {
+            content: @fa-var-plus;
+          }
+        }
+      }
+
+      // Booking & bestilling
+      &.taxonomy-term-8 {
+
+        > a {
+
+          &:before {
+            content: @fa-var-tag;
+          }
+        }
+      }
+
+      // Hjælp og værktøjer
+      &.taxonomy-term-3 {
+
+        > a {
+
+          &:before {
+            content: @fa-var-stethoscope;
+          }
+        }
+      }
+
+      // Mig som ansat
+      &.taxonomy-term-4 {
+
+        > a {
+
+          &:before {
+            content: @fa-var-users;
+          }
+        }
+      }
+
+      // Opdateret
+      &.opdateret {
+
+        > a {
+
+          &:before {
+            content: @fa-var-bookmark-o;
+          }
+        }
+      }
+
+      // Grupper
+      &.grupper {
+
+        > a {
+
+          &:before {
+            content: @fa-var-cloud;
+          }
+        }
       }
     }
   }
@@ -150,11 +321,11 @@
 
       // Sidebar
       .sidebar {
-        padding-bottom: floor( ( floor( (2 * @bs3-sidebar-logo-top-bottom-spacing) ) + floor( (@sidebar-logo-broen-wide-height / 2) ) ) );
 
-        // Broen logo
-        .sidebar-logo-broen {
-          width: @sidebar-hidden-width;
+        .sidebar-inner-wrapper {
+          padding-bottom: floor( ( floor( (2 * @bs3-sidebar-logo-top-bottom-spacing) ) + floor( (@sidebar-logo-broen-wide-height / 2) ) ) );
+          background-image: url("../img/logo-broen-sidebar-wide.png");
+          background-size: floor( (@sidebar-logo-broen-wide-width / 2) ) floor( (@sidebar-logo-broen-wide-height / 2) );
         }
       }
     }
@@ -170,11 +341,11 @@
 
       // Sidebar
       .sidebar {
-        padding-bottom: floor( ( floor( (2 * @bs3-sidebar-logo-top-bottom-spacing) ) + floor( (@sidebar-logo-broen-narrow-height / 2) ) ) );
 
-        // Broen logo
-        .sidebar-logo-broen {
-          width: @sidebar-collapsed-width;
+        .sidebar-inner-wrapper {
+          padding-bottom: floor( ( floor( (2 * @bs3-sidebar-logo-top-bottom-spacing) ) + floor( (@sidebar-logo-broen-narrow-height / 2) ) ) );
+          background-image: url("../img/logo-broen-sidebar-narrow.png");
+          background-size: floor( (@sidebar-logo-broen-narrow-width / 2 ) ) floor( (@sidebar-logo-broen-narrow-height / 2) );
         }
       }
     }
@@ -190,11 +361,11 @@
 
       // Sidebar
       .sidebar {
-        padding-bottom: floor( ( floor( (2 * @bs3-sidebar-logo-top-bottom-spacing) ) + floor( (@sidebar-logo-broen-wide-height / 2) ) ) );
 
-        // Broen logo
-        .sidebar-logo-broen {
-          width: @sidebar-expanded-width;
+        .sidebar-inner-wrapper {
+          padding-bottom: floor( ( floor( (2 * @bs3-sidebar-logo-top-bottom-spacing) ) + floor( (@sidebar-logo-broen-wide-height / 2) ) ) );
+          background-image: url("../img/logo-broen-sidebar-wide.png");
+          background-size: floor( (@sidebar-logo-broen-wide-width / 2) ) floor( (@sidebar-logo-broen-wide-height / 2) );
         }
       }
     }
