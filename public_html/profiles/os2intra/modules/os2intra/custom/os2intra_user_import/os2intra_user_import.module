@@ -411,14 +411,14 @@ function os2intra_user_import_settings() {
     '#options'       => $csv_cols,
     '#default_value' => variable_get('os2intra_mapping_termination_date'),
   );
-/*
+
   $form['mapping']['os2intra_mapping_phone'] = array(
     '#type'          => 'select',
     '#title'         => t('Phone Number'),
     '#options'       => $csv_cols,
     '#default_value' => variable_get('os2intra_mapping_phone'),
   );
-*/
+
   $form['mapping']['os2intra_mapping_email'] = array(
     '#type'          => 'select',
     '#title'         => t('Email Address'),
@@ -508,11 +508,11 @@ function os2intra_user_import_overview() {
 function os2intra_user_import_run_with_drush() {
   if (variable_get('os2intra_user_import_enable', FALSE)) {
     setlocale(LC_ALL, "en_DK.UTF-8");
-    variable_get('os2intra_user_import_dir', 'private://user_import');
+    $import_dir = variable_get('os2intra_user_import_dir', 'private://user_import');
 
     $realpath = '';
 
-    $dir = reset(file_scan_directory('private://user_import', '/.*\.csv$/'));
+    $dir = reset(file_scan_directory($import_dir, '/.*\.csv$/'));
     if ($dir) {
       $realpath = drupal_realpath($dir->uri);
     }
@@ -603,8 +603,26 @@ function _os2intra_user_import_process_file($file_path) {
 
   // Load data from file
   $csv = array_map('str_getcsv', file($file_path));
+  $at_content = FALSE;
 
   foreach ($csv as $row) {
+
+    // Look for where headings start and ignore everything before the headings.
+    if (! $at_content
+      && (!array_key_exists(variable_get('os2intra_mapping_ad_id'), $row)
+     || $row[variable_get('os2intra_mapping_ad_id')] =! 'AD-ID')) {
+
+      continue;
+    }
+    else {
+      $at_content = TRUE;
+    }
+
+    // SKip if row has no user name
+    if ($row[variable_get('os2intra_mapping_ad_id')] == '') {
+      continue;
+    }
+
     // Parse mapping
     foreach ($row as $key => $field) {
       // If there is a mapping for the key
@@ -792,7 +810,7 @@ function os2intra_user_import_save_user($user, $uid = '') {
     'field_name_last'                 => array(LANGUAGE_NONE => array(0 => array('value' => $user['last_name']))),
 
     // Phone
-   // 'field_os2intra_phone'            => array(LANGUAGE_NONE => array(0 => array('value' => $user['phone']))),
+   'field_os2intra_phone'            => array(LANGUAGE_NONE => array(0 => array('value' => $user['phone']))),
 
     // Set department membership
     'og_user_node2'                   => array(LANGUAGE_NONE => array(0 => array('target_id' => $department_nid))),

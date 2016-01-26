@@ -115,19 +115,5 @@ function fredericia_user_import_mapping_strongarm() {
   $strongarm->value = 'ad_id';
   $export['os2intra_user_import_activate_identification'] = $strongarm;
 
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'os2intra_user_import_dir';
-  $strongarm->value = 'private://user_import';
-  $export['os2intra_user_import_dir'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'os2intra_user_import_enable';
-  $strongarm->value = 1;
-  $export['os2intra_user_import_enable'] = $strongarm;
-
   return $export;
 }
