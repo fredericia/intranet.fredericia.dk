@@ -533,7 +533,7 @@ function os2intra_organisationsgrupper_views_default_views() {
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'access denied';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
@@ -544,6 +544,7 @@ function os2intra_organisationsgrupper_views_default_views() {
   $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
     'os2intra_org_group_unit' => 'os2intra_org_group_unit',
   );
+  $handler->display->display_options['arguments']['nid']['validate_options']['access'] = TRUE;
   $handler->display->display_options['arguments']['nid']['validate']['fail'] = 'access denied';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -553,6 +554,13 @@ function os2intra_organisationsgrupper_views_default_views() {
   $handler->display->display_options['filters']['body_value']['field'] = 'body_value';
   $handler->display->display_options['filters']['body_value']['operator'] = 'longerthan';
   $handler->display->display_options['filters']['body_value']['value'] = '7';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'os2intra_org_group_unit' => 'os2intra_org_group_unit',
+  );
   $handler->display->display_options['path'] = 'node/%/info';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Info';
