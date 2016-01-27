@@ -2,7 +2,7 @@
 
 // As we have no preprocess function for each homebox block, we add PHP here.
 $box_class = strtolower('os2-box-homebox-' . drupal_clean_css_identifier($block->subject));
-$newest_content_box = $box_class == 'os2-box-homebox-nyeste-indhold-fra-dine-grupper' ? true : false;
+$newest_content_box = $box_class == 'os2-box-homebox-os2intra-front-og-content' ? true : false;
 $important_message_box = $box_class == 'os2-box-homebox-vigtige-meddelelser' ? true : false;
 
 ?>
