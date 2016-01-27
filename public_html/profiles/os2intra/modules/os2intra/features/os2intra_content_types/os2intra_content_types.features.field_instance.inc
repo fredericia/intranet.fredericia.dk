@@ -2836,6 +2836,7 @@ function os2intra_content_types_field_default_field_instances() {
       'epsacrop' => array(
         'styles' => array(
           '4_col_image_-_520x220' => 0,
+          'group_logo' => 0,
           'normal' => 'normal',
           'profilbillede' => 0,
           'profile_image_default' => 0,
@@ -2855,6 +2856,7 @@ function os2intra_content_types_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'private' => 0,
           'public' => 'public',
           'youtube' => 'youtube',
         ),
@@ -2865,6 +2867,8 @@ function os2intra_content_types_field_default_field_instances() {
           'video' => 'video',
         ),
         'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
           'media_default--media_browser_1' => 'media_default--media_browser_1',
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
           'media_internet' => 'media_internet',
@@ -3262,6 +3266,8 @@ function os2intra_content_types_field_default_field_instances() {
   // 'node-os2intra_base_page-field_os2web_base_field_media'.
   $field_instances['node-os2intra_base_page-field_os2web_base_field_media'] = array(
     'bundle' => 'os2intra_base_page',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3305,6 +3311,16 @@ function os2intra_content_types_field_default_field_instances() {
       'custom_add_another' => '',
       'custom_remove' => '',
       'description_field' => 0,
+      'epsacrop' => array(
+        'styles' => array(
+          '4_col_image_-_520x220' => 0,
+          'group_logo' => 0,
+          'normal' => 0,
+          'profilbillede' => 0,
+          'profile_image_default' => 0,
+          'spotboks' => 0,
+        ),
+      ),
       'file_directory' => '',
       'file_extensions' => 'pdf docx ppt pptx doc xls xlsx docm dot dotx xlm xlt ppsx pptm',
       'max_filesize' => '',
@@ -3312,7 +3328,7 @@ function os2intra_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
           'private' => 0,
@@ -3320,22 +3336,21 @@ function os2intra_content_types_field_default_field_instances() {
           'youtube' => 0,
         ),
         'allowed_types' => array(
-          'application' => 0,
           'audio' => 0,
           'document' => 'document',
           'image' => 0,
           'video' => 0,
         ),
         'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
           'media_default--media_browser_1' => 'media_default--media_browser_1',
           'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
           'media_internet' => 0,
           'upload' => 'upload',
-          'youtube' => 0,
         ),
-        'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 29,
     ),
   );
