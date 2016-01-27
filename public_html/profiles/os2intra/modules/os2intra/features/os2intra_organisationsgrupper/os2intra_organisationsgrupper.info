@@ -99,6 +99,7 @@ features[field_instance][] = node-post-body
 features[field_instance][] = node-post-field_os2intra_images
 features[field_instance][] = node-post-og_group_ref
 features[field_instance][] = og_membership-organisatorisk-field_os2intra_orgleder
+features[image][] = group_logo
 features[node][] = os2intra_group
 features[node][] = os2intra_org_group_unit
 features[node][] = os2intra_referat

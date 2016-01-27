@@ -1348,7 +1348,7 @@ function os2intra_panels_default_page_manager_handlers() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'image_style' => 'profilbillede',
+        'image_style' => 'group_logo',
         'image_link' => '',
       ),
       'context' => 'argument_entity_id:node_1',
@@ -1362,7 +1362,7 @@ function os2intra_panels_default_page_manager_handlers() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'os2-box-group-logo',
       'template_suggestion' => 'nobody',
     );
     $pane->extras = array();
