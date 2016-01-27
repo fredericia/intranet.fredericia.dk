@@ -1545,7 +1545,13 @@ function os2intra_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-event-group_content_access'.
   $field_instances['node-event-group_content_access'] = array(
     'bundle' => 'event',
-    'default_value' => NULL,
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -4781,7 +4787,13 @@ function os2intra_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-post-group_content_access'.
   $field_instances['node-post-group_content_access'] = array(
     'bundle' => 'post',
-    'default_value' => NULL,
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
