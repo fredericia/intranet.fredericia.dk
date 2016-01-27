@@ -1,6 +1,6 @@
 <?php if ($content): ?>
 
-  <!-- panels-pane.tpl.php -->
+  <!-- panels-pane--nobody.tpl.php -->
   <?php if ($pane_prefix): ?>
     <?php print $pane_prefix; ?>
   <?php endif; ?>

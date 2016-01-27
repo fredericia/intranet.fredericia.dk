@@ -165,6 +165,7 @@
         }
       }
       var menu_item = $('a[href="/node_basket"]').parent();
+      menu_item.find('li').remove();
       menu_item.append(ul);
 
       // Set class on 'ul's parent
