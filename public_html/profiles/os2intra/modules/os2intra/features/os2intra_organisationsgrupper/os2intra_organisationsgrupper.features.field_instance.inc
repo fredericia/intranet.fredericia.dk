@@ -736,8 +736,10 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   // 'node-os2intra_org_group_unit-field_os2intra_organisation'.
   $field_instances['node-os2intra_org_group_unit-field_os2intra_organisation'] = array(
     'bundle' => 'os2intra_org_group_unit',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
-    'default_value_function' => '',
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -777,7 +779,15 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'status' => 0,
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => 0,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
         ),
         'taxonomy-index' => array(
           'status' => TRUE,
@@ -1907,7 +1917,64 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 4,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-os2intra_referat-group_content_access'.
+  $field_instances['node-os2intra_referat-group_content_access'] = array(
+    'bundle' => 'os2intra_referat',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 14,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'group_content_access',
+    'label' => 'Synlighed',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 6,
     ),
   );
 
@@ -2309,6 +2376,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   t('Referent');
   t('Spotbokse');
   t('Stikord');
+  t('Synlighed');
   t('Tilknyttet begivenhed');
   t('Tilknyttet gruppe/afdeling');
   t('Type');

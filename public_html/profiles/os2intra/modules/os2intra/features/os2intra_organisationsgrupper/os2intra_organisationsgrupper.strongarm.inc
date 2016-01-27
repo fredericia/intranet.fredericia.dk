@@ -320,7 +320,7 @@ function os2intra_organisationsgrupper_strongarm() {
           'weight' => '4',
         ),
         'scheduler_settings' => array(
-          'weight' => '3',
+          'weight' => '5',
         ),
       ),
       'display' => array(),
