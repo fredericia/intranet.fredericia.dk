@@ -15,7 +15,26 @@
 // --------------------------------------------------
 
 // Teaser
-.os2-user-teaser {}
+.os2-user-teaser {
+
+	.table-cell {
+
+		&.os2-user-teaser-image {
+			width: 70px;
+		}
+
+		&.os2-user-teaser-information {
+			vertical-align: middle;
+
+			.os2-user-teaser-full-name {
+
+				a {
+					font-weight: @font-weight-bold;
+				}
+			}
+		}
+	}
+}
 
 // --------------------------------------------------
 // Responsive

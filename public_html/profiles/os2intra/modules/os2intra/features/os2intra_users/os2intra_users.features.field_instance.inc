@@ -214,7 +214,7 @@ function os2intra_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'user',
@@ -290,7 +290,7 @@ function os2intra_users_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'user',
@@ -368,7 +368,7 @@ function os2intra_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 12,
       ),
     ),
     'entity_type' => 'user',
@@ -399,6 +399,91 @@ function os2intra_users_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_os2intra_birthdate'.
+  $field_instances['user-user-field_os2intra_birthdate'] = array(
+    'bundle' => 'user',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The first 6 characters of your CPR-number',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 30,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_os2intra_birthdate',
+    'label' => 'Birthdate',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'fuld_html' => 'fuld_html',
+          'indhold' => 'indhold',
+          'kommentar' => 'kommentar',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => -6,
+            ),
+            'fuld_html' => array(
+              'weight' => -9,
+            ),
+            'indhold' => array(
+              'weight' => -10,
+            ),
+            'kommentar' => array(
+              'weight' => -8,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 6,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_os2intra_department_ref'.
   $field_instances['user-user-field_os2intra_department_ref'] = array(
     'bundle' => 'user',
@@ -426,7 +511,7 @@ function os2intra_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 13,
       ),
     ),
     'entity_type' => 'user',
@@ -553,6 +638,8 @@ function os2intra_users_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_os2intra_image'.
   $field_instances['user-user-field_os2intra_image'] = array(
     'bundle' => 'user',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -577,7 +664,7 @@ function os2intra_users_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'profilbillede',
+          'image_style' => 'profile_image_small',
         ),
         'type' => 'image',
         'weight' => 0,
@@ -598,6 +685,7 @@ function os2intra_users_field_default_field_instances() {
           '4_col_image_-_520x220' => 0,
           'normal' => 0,
           'profilbillede' => 'profilbillede',
+          'profile_image_default' => 'profile_image_default',
           'spotboks' => 0,
         ),
       ),
@@ -605,7 +693,7 @@ function os2intra_users_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '',
+      'min_resolution' => '58x58',
       'title_field' => 0,
       'user_register_form' => 0,
     ),
@@ -614,6 +702,7 @@ function os2intra_users_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'private' => 0,
           'public' => 'public',
           'youtube' => 0,
         ),
@@ -624,6 +713,8 @@ function os2intra_users_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 0,
+          'media_browser_plus--media_browser_thumbnails' => 0,
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
@@ -668,7 +759,7 @@ function os2intra_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 11,
       ),
     ),
     'display_in_partial_form' => 0,
@@ -720,10 +811,11 @@ function os2intra_users_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'text_plain',
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'user',
@@ -778,7 +870,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -805,10 +897,11 @@ function os2intra_users_field_default_field_instances() {
         'weight' => 11,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
+        'type' => 'text_plain',
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'user',
@@ -859,7 +952,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -892,7 +985,7 @@ function os2intra_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 16,
       ),
     ),
     'entity_type' => 'user',
@@ -914,7 +1007,7 @@ function os2intra_users_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -1212,7 +1305,7 @@ function os2intra_users_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 5,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'user',
@@ -1235,7 +1328,7 @@ function os2intra_users_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -1267,7 +1360,7 @@ function os2intra_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 15,
       ),
     ),
     'display_label' => 1,
@@ -1317,7 +1410,7 @@ function os2intra_users_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 14,
       ),
     ),
     'entity_type' => 'user',
@@ -1388,13 +1481,9 @@ function os2intra_users_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 0,
-          'view_mode' => 'list',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 4,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'user',
@@ -1448,6 +1537,7 @@ function os2intra_users_field_default_field_instances() {
   t('Afdelings Reference');
   t('Billede');
   t('Bio');
+  t('Birthdate');
   t('Efternavn');
   t('Email option will be checked automatically when subscribing to something.');
   t('Email subscriptions');
@@ -1461,6 +1551,7 @@ function os2intra_users_field_default_field_instances() {
   t('MedarbejderID');
   t('Mobil nummer');
   t('Telefon nummer');
+  t('The first 6 characters of your CPR-number');
   t('Vis i oversigt');
   t('Værktøjskasser');
   t('import groups');

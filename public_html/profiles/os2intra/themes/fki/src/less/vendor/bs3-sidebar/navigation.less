@@ -143,6 +143,7 @@
 		border-bottom-color: @bs3-sidebar-navigation-link-border-color;
 		border-bottom-color: @bs3-sidebar-navigation-link-border-color-rgba;
 
+		&:before,
 		@{bs3-sidebar-navigation-link-icon-identifier} {
 			color: @bs3-sidebar-navigation-link-icon-font-color;
 		}
@@ -152,6 +153,7 @@
 			background-color: @bs3-sidebar-navigation-link-hover-background-color;
 			background-color: @bs3-sidebar-navigation-link-hover-background-color-rgba;
 
+			&:before,
 			@{bs3-sidebar-navigation-link-icon-identifier} {
 				color: @bs3-sidebar-navigation-link-hover-icon-font-color;
 			}
@@ -170,6 +172,7 @@
 			background-color: @bs3-sidebar-navigation-link-active-background-color;
 			background-color: @bs3-sidebar-navigation-link-active-background-color-rgba;
 
+			&:before,
 			@{bs3-sidebar-navigation-link-icon-identifier} {
 				color: @bs3-sidebar-navigation-link-active-icon-font-color;
 			}
@@ -260,6 +263,7 @@
 		a {
 
 			&,
+			&:before,
 			@{bs3-sidebar-navigation-link-icon-identifier} {
 				.transition(all @bs3-sidebar-transition-time ease-in-out);
 			}
@@ -293,6 +297,7 @@
 				padding-bottom: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
 				text-align: center;
 
+				&:before,
 				@{bs3-sidebar-navigation-link-icon-identifier} {
 					font-size: @bs3-sidebar-navigation-parent-level-link-icon-font-size;
 					line-height: inherit;
@@ -446,6 +451,7 @@
 
 			a {
 
+				&:before,
 				@{bs3-sidebar-navigation-link-icon-identifier} {
 					float: left;
 					margin-left: floor((0 - @bs3-sidebar-navigation-link-icon-max-width));
@@ -461,6 +467,7 @@
 				padding-top: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
 				padding-bottom: @bs3-sidebar-navigation-parent-level-link-top-bottom-spacing;
 
+				&:before,
 				@{bs3-sidebar-navigation-link-icon-identifier} {
 					font-size: @bs3-sidebar-navigation-parent-level-link-icon-font-size;
 					line-height: inherit;
@@ -559,6 +566,7 @@
 				padding-top: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
 				padding-bottom: @bs3-sidebar-navigation-child-level-link-top-bottom-spacing;
 
+				&:before,
 				@{bs3-sidebar-navigation-link-icon-identifier} {
 					font-size: @bs3-sidebar-navigation-child-level-link-icon-font-size;
 					line-height: inherit;

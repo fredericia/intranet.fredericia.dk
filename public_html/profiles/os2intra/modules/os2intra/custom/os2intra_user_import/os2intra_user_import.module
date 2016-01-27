@@ -133,10 +133,10 @@ function os2intra_user_import_activate_form($form_state) {
   }
 
   if (variable_get('os2intra_user_import_activate_birthday')) {
-    $form['birthday'] = array(
+    $form['birthdate'] = array(
       '#type'        => 'textfield',
       '#title'       => t('Birthdate'),
-      '#description' => t('Format: 10/03/1982'),
+      '#description' => t('First 6 characters of your CPR-number (format: 070593)'),
     );
   }
 
@@ -204,14 +204,14 @@ function os2intra_user_import_activate_form_validate($form, &$form_state) {
       if (variable_get('os2intra_user_import_activate_birthday')) {
 
         // Check if birthdate is valid format
-        list($dd, $mm, $yyyy) = explode('/', $form_state['values']['birthday']);
-        if (!checkdate($mm, $dd, $yyyy)) {
-          form_set_error('birthday', t('Birthdate: Invalid format.'));
+        $input_birthday = $form_state['values']['birthdate'];
+        if (!ctype_digit($input_birthday) && strlen($input_birthday) !== 6) {
+          form_set_error('birthdate', t('Birthdate: Invalid format.'));
         }
-        $birthday_field = field_get_items('user', $user, 'field_os2intra_birthday');
-        $birthday = strtotime($birthday_field[0]['value']);
-        $input_birthday = strtotime($yyyy . '-' . $mm . '-' . $dd);
-        if ($input_birthday !== $birthday) {
+
+        // Check if it matches the users birthday field
+        $birthday_field = field_get_items('user', $user, 'field_os2intra_birthdate');
+        if ($input_birthday !== $birthday_field[0]['value']) {
           form_set_error('form', 'Please check your input.');
         }
       }
@@ -219,22 +219,8 @@ function os2intra_user_import_activate_form_validate($form, &$form_state) {
       // Check if we should validate by email
       if (variable_get('os2intra_user_import_activate_email')) {
 
-        // Check if email address is valid
-        if (valid_email_address($form_state['values']['mail'])) {
-
-          // Check if entered email address belongs to user
-          $query = new EntityFieldQuery;
-          $query->entityCondition('entity_type', 'user');
-          $query->propertyCondition('status', 1);
-          $query->propertyCondition('mail', $form_state['values']['mail'], 'LIKE');
-          $tmp_result = $query->execute();
-          $result = array_shift($tmp_result);
-
-          if (!$result) {
-            form_set_error('mail', t('Invalid email address.'));
-          }
-        }
-        else {
+        // Check if email address is valid and not empty
+        if (!valid_email_address($form_state['values']['mail']) || empty(($form_state['values']['mail']))) {
           form_set_error('mail', t('Invalid email address.'));
         }
       }
@@ -300,6 +286,7 @@ function os2intra_user_import_settings() {
     11,
     12,
     13,
+    14,
   );
 
   $form['placeholder'] = array(
@@ -319,6 +306,13 @@ function os2intra_user_import_settings() {
     '#required'      => TRUE,
     '#description'   => t('ex. private://user_import'),
     '#default_value' => variable_get('os2intra_user_import_dir', 'private://user_import')
+  );
+
+  $form['os2intra_user_import_delimiter'] = array(
+    '#title'         => t('CSV delimiter'),
+    '#type'          => 'textfield',
+    '#description'   => t('The delimiter used to separate values in the CSV, ex. a semicolon, a comma or \t (tab)'),
+    '#default_value' => variable_get('os2intra_user_import_delimiter', ';'),
   );
 
   $form['os2intra_user_default_groups'] = array(
@@ -411,19 +405,26 @@ function os2intra_user_import_settings() {
     '#options'       => $csv_cols,
     '#default_value' => variable_get('os2intra_mapping_termination_date'),
   );
-/*
+
   $form['mapping']['os2intra_mapping_phone'] = array(
     '#type'          => 'select',
     '#title'         => t('Phone Number'),
     '#options'       => $csv_cols,
     '#default_value' => variable_get('os2intra_mapping_phone'),
   );
-*/
+
   $form['mapping']['os2intra_mapping_email'] = array(
     '#type'          => 'select',
     '#title'         => t('Email Address'),
     '#options'       => $csv_cols,
     '#default_value' => variable_get('os2intra_mapping_email'),
+  );
+
+  $form['mapping']['os2intra_mapping_birthdate'] = array(
+    '#type'          => 'select',
+    '#title'         => t('Birthdate'),
+    '#options'       => $csv_cols,
+    '#default_value' => variable_get('os2intra_mapping_birthdate'),
   );
 
   $form['cleanup_help_block'] = array(
@@ -508,11 +509,11 @@ function os2intra_user_import_overview() {
 function os2intra_user_import_run_with_drush() {
   if (variable_get('os2intra_user_import_enable', FALSE)) {
     setlocale(LC_ALL, "en_DK.UTF-8");
-    variable_get('os2intra_user_import_dir', 'private://user_import');
+    $import_dir = variable_get('os2intra_user_import_dir', 'private://user_import');
 
     $realpath = '';
 
-    $dir = reset(file_scan_directory('private://user_import', '/.*\.csv$/'));
+    $dir = reset(file_scan_directory($import_dir, '/.*\.csv$/'));
     if ($dir) {
       $realpath = drupal_realpath($dir->uri);
     }
@@ -599,12 +600,33 @@ function _os2intra_user_import_process_file($file_path) {
     variable_get('os2intra_mapping_termination_date')     => 'termination_date',
     variable_get('os2intra_mapping_phone')                => 'phone',
     variable_get('os2intra_mapping_email')                => 'email',
+    variable_get('os2intra_mapping_birthdate')            => 'birthdate',
   );
 
   // Load data from file
-  $csv = array_map('str_getcsv', file($file_path));
+  $csv = array_map(function($d) {
+    return str_getcsv($d, variable_get('os2intra_user_import_delimiter'));
+  }, file($file_path));
+  $at_content = FALSE;
 
   foreach ($csv as $row) {
+
+    // Look for where headings start and ignore everything before the headings.
+    if (!$at_content
+      && (!array_key_exists(variable_get('os2intra_mapping_ad_id'), $row)
+     || $row[variable_get('os2intra_mapping_ad_id')] =! 'AD-ID')) {
+
+      continue;
+    }
+    else {
+      $at_content = TRUE;
+    }
+
+    // SKip if row has no user name
+    if ($row[variable_get('os2intra_mapping_ad_id')] == '') {
+      continue;
+    }
+
     // Parse mapping
     foreach ($row as $key => $field) {
       // If there is a mapping for the key
@@ -764,9 +786,8 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $user_groups[LANGUAGE_NONE][]['target_id'] = $group_id;
   }
 
-  // Create unix timestamp for termination date
   // @todo: check that timestamp is not today
-  $termination_date_timestamp = strtotime($user['termination_date']);
+  $termination_date_timestamp = $user['termination_date'];
   // Check if the timestamp supplied from the import is larger than
   // what unix timestamps can be.
   if ($termination_date_timestamp > 2147483647) {
@@ -792,7 +813,10 @@ function os2intra_user_import_save_user($user, $uid = '') {
     'field_name_last'                 => array(LANGUAGE_NONE => array(0 => array('value' => $user['last_name']))),
 
     // Phone
-   // 'field_os2intra_phone'            => array(LANGUAGE_NONE => array(0 => array('value' => $user['phone']))),
+    'field_os2intra_phone'            => array(LANGUAGE_NONE => array(0 => array('value' => $user['phone']))),
+
+    // Set birthdate
+    'field_os2intra_birthdate'        => array(LANGUAGE_NONE => array(0 => array('value' => $user['birthdate']))),
 
     // Set department membership
     'og_user_node2'                   => array(LANGUAGE_NONE => array(0 => array('target_id' => $department_nid))),
@@ -1094,11 +1118,11 @@ function _os2intra_user_import_get_department_nid($department) {
 }
 
 /**
- * Convert numeric values into integers, else return the string untouched.
+ * Convert numeric values into integers, else return the string as utf8.
  */
 function _os2intra_user_import_sanitize_int($str) {
   if (is_numeric($str)) {
     return (int) $str;
   }
-  return $str;
+  return utf8_encode($str);
 }
