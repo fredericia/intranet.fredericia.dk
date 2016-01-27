@@ -1006,12 +1006,44 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'name' => 'name',
+    'realname' => 'realname',
+    'mail' => 'mail',
+    'og_org_ref' => 'og_org_ref',
+    'field_os2intra_phone' => 'field_os2intra_phone',
+    'field_os2intra_mobile' => 'field_os2intra_mobile',
   );
-  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['default'] = 'realname';
   $handler->display->display_options['style_options']['info'] = array(
-    'name' => array(
-      'sortable' => 0,
+    'realname' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'mail' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'og_org_ref' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_os2intra_phone' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_os2intra_mobile' => array(
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -1023,33 +1055,44 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Field: User: Fornavn */
-  $handler->display->display_options['fields']['field_name_first']['id'] = 'field_name_first';
-  $handler->display->display_options['fields']['field_name_first']['table'] = 'field_data_field_name_first';
-  $handler->display->display_options['fields']['field_name_first']['field'] = 'field_name_first';
-  $handler->display->display_options['fields']['field_name_first']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_name_first']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_name_first']['alter']['path'] = '/users/[name]';
-  /* Field: User: Efternavn */
-  $handler->display->display_options['fields']['field_name_last']['id'] = 'field_name_last';
-  $handler->display->display_options['fields']['field_name_last']['table'] = 'field_data_field_name_last';
-  $handler->display->display_options['fields']['field_name_last']['field'] = 'field_name_last';
-  $handler->display->display_options['fields']['field_name_last']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_name_last']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_name_last']['alter']['path'] = '/users/[name]';
+  /* Field: Realname: Real name */
+  $handler->display->display_options['fields']['realname']['id'] = 'realname';
+  $handler->display->display_options['fields']['realname']['table'] = 'realname';
+  $handler->display->display_options['fields']['realname']['field'] = 'realname';
+  $handler->display->display_options['fields']['realname']['label'] = 'Navn';
+  $handler->display->display_options['fields']['realname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['realname']['empty'] = '<i>Ikke angivet</i>';
   /* Field: User: E-mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['mail']['empty'] = '<i>Ikke angivet</i>';
+  /* Field: User: Afdeling */
+  $handler->display->display_options['fields']['og_org_ref']['id'] = 'og_org_ref';
+  $handler->display->display_options['fields']['og_org_ref']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['og_org_ref']['field'] = 'og_org_ref';
+  $handler->display->display_options['fields']['og_org_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['og_org_ref']['empty'] = '<i>Ikke angivet</i>';
+  $handler->display->display_options['fields']['og_org_ref']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: User: Telefon nummer */
+  $handler->display->display_options['fields']['field_os2intra_phone']['id'] = 'field_os2intra_phone';
+  $handler->display->display_options['fields']['field_os2intra_phone']['table'] = 'field_data_field_os2intra_phone';
+  $handler->display->display_options['fields']['field_os2intra_phone']['field'] = 'field_os2intra_phone';
+  $handler->display->display_options['fields']['field_os2intra_phone']['label'] = 'Tlf. nr.';
+  $handler->display->display_options['fields']['field_os2intra_phone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_phone']['empty'] = '<i>Ikke angivet</i>';
+  $handler->display->display_options['fields']['field_os2intra_phone']['type'] = 'text_plain';
+  /* Field: User: Mobil nummer */
+  $handler->display->display_options['fields']['field_os2intra_mobile']['id'] = 'field_os2intra_mobile';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['table'] = 'field_data_field_os2intra_mobile';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['field'] = 'field_os2intra_mobile';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['label'] = 'Mobil tlf.';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2intra_mobile']['empty'] = '<i>Ikke angivet</i>';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['type'] = 'text_plain';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: User: Active */
@@ -1059,30 +1102,23 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Global: Combine fields filter */
-  $handler->display->display_options['filters']['combine']['id'] = 'combine';
-  $handler->display->display_options['filters']['combine']['table'] = 'views';
-  $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
-  $handler->display->display_options['filters']['combine']['group'] = 1;
-  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Navn';
-  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
-  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+  /* Filter criterion: Realname: Name */
+  $handler->display->display_options['filters']['realname']['id'] = 'realname';
+  $handler->display->display_options['filters']['realname']['table'] = 'realname';
+  $handler->display->display_options['filters']['realname']['field'] = 'realname';
+  $handler->display->display_options['filters']['realname']['operator'] = 'contains';
+  $handler->display->display_options['filters']['realname']['group'] = 1;
+  $handler->display->display_options['filters']['realname']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['realname']['expose']['operator_id'] = 'realname_op';
+  $handler->display->display_options['filters']['realname']['expose']['label'] = 'Navn';
+  $handler->display->display_options['filters']['realname']['expose']['operator'] = 'realname_op';
+  $handler->display->display_options['filters']['realname']['expose']['identifier'] = 'realname';
+  $handler->display->display_options['filters']['realname']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
-    4 => 0,
     5 => 0,
-    6 => 0,
     7 => 0,
-  );
-  $handler->display->display_options['filters']['combine']['fields'] = array(
-    'name' => 'name',
-    'field_name_first' => 'field_name_first',
-    'field_name_last' => 'field_name_last',
   );
   /* Filter criterion: User: E-mail */
   $handler->display->display_options['filters']['mail']['id'] = 'mail';
@@ -1099,6 +1135,24 @@ function os2intra_users_views_default_views() {
     2 => '2',
     1 => 0,
     3 => 0,
+  );
+  /* Filter criterion: User: Telefon nummer (field_os2intra_phone) */
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['id'] = 'field_os2intra_phone_value';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['table'] = 'field_data_field_os2intra_phone';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['field'] = 'field_os2intra_phone_value';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['operator_id'] = 'field_os2intra_phone_value_op';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['label'] = 'Telefon nummer';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['operator'] = 'field_os2intra_phone_value_op';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['identifier'] = 'field_os2intra_phone_value';
+  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    5 => 0,
+    7 => 0,
   );
   $handler->display->display_options['path'] = 'telefonbogen';
 
@@ -1134,8 +1188,10 @@ function os2intra_users_views_default_views() {
     t('Telefon nummer'),
     t('E-mail'),
     t('Page'),
-    t('Fornavn'),
-    t('Efternavn'),
+    t('<i>Ikke angivet</i>'),
+    t('Afdeling'),
+    t('Tlf. nr.'),
+    t('Mobil tlf.'),
     t('Block'),
   );
   $export['telefonbogen'] = $view;

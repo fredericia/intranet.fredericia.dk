@@ -94,7 +94,6 @@ features[taxonomy][] = user_hobbies
 features[taxonomy][] = user_jobtitle
 features[taxonomy][] = user_skills
 features[user_permission][] = administer realname
-features[user_role][] = Intranet-koordinator
 features[user_role][] = Intranet-redaktør
 features[variable][] = page_manager_user_view_disabled
 features[variable][] = realname_pattern
