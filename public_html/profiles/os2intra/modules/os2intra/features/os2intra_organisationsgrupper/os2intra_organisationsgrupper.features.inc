@@ -24,6 +24,38 @@ function os2intra_organisationsgrupper_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function os2intra_organisationsgrupper_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: group_logo.
+  $styles['group_logo'] = array(
+    'label' => 'Group logo',
+    'effects' => array(
+      4 => array(
+        'name' => 'epsacrop_crop',
+        'data' => array(
+          'width' => 550,
+          'height' => 200,
+          'anchor' => 'center-center',
+          'disable_scale' => 0,
+          'jcrop_settings' => array(
+            'aspect_ratio' => '',
+            'bgcolor' => 'black',
+            'bgopacity' => 0.6,
+            'fallback' => 0,
+          ),
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function os2intra_organisationsgrupper_node_info() {

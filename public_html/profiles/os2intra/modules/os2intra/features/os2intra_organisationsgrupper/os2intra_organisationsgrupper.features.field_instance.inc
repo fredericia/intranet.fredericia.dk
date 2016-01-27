@@ -146,8 +146,9 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'epsacrop' => array(
         'styles' => array(
           '4_col_image_-_520x220' => 0,
+          'group_logo' => 'group_logo',
           'normal' => 0,
-          'profilbillede' => 'profilbillede',
+          'profilbillede' => 0,
           'profile_image_default' => 0,
           'spotboks' => 0,
         ),
@@ -156,7 +157,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '',
+      'min_resolution' => '550x200',
       'title_field' => 0,
       'user_register_form' => FALSE,
     ),
@@ -176,6 +177,8 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
+          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
+          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
@@ -736,8 +739,10 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   // 'node-os2intra_org_group_unit-field_os2intra_organisation'.
   $field_instances['node-os2intra_org_group_unit-field_os2intra_organisation'] = array(
     'bundle' => 'os2intra_org_group_unit',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
-    'default_value_function' => '',
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -777,7 +782,15 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'status' => 0,
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => 0,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
         ),
         'taxonomy-index' => array(
           'status' => TRUE,
