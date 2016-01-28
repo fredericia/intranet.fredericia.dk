@@ -1068,15 +1068,17 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
   $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['mail']['empty'] = '<i>Ikke angivet</i>';
-  /* Field: User: Afdeling */
-  $handler->display->display_options['fields']['og_org_ref']['id'] = 'og_org_ref';
-  $handler->display->display_options['fields']['og_org_ref']['table'] = 'og_membership';
-  $handler->display->display_options['fields']['og_org_ref']['field'] = 'og_org_ref';
-  $handler->display->display_options['fields']['og_org_ref']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['og_org_ref']['empty'] = '<i>Ikke angivet</i>';
-  $handler->display->display_options['fields']['og_org_ref']['settings'] = array(
+  /* Field: User: Gruppemedlemskab */
+  $handler->display->display_options['fields']['og_user_node2']['id'] = 'og_user_node2';
+  $handler->display->display_options['fields']['og_user_node2']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['og_user_node2']['field'] = 'og_user_node2';
+  $handler->display->display_options['fields']['og_user_node2']['label'] = 'Afdeling';
+  $handler->display->display_options['fields']['og_user_node2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['og_user_node2']['empty'] = '<i>Ikke angivet</i>';
+  $handler->display->display_options['fields']['og_user_node2']['settings'] = array(
     'link' => 0,
   );
+  $handler->display->display_options['fields']['og_user_node2']['delta_offset'] = '0';
   /* Field: User: Telefon nummer */
   $handler->display->display_options['fields']['field_os2intra_phone']['id'] = 'field_os2intra_phone';
   $handler->display->display_options['fields']['field_os2intra_phone']['table'] = 'field_data_field_os2intra_phone';
