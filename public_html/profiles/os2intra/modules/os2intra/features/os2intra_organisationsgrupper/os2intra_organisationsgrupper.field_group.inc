@@ -252,7 +252,8 @@ function os2intra_organisationsgrupper_field_group_info() {
     'weight' => '14',
     'children' => array(
       0 => 'field_os2web_base_field_media',
-      1 => 'scheduler_settings',
+      1 => 'group_content_access',
+      2 => 'scheduler_settings',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -427,10 +428,10 @@ function os2intra_organisationsgrupper_field_group_info() {
     'label' => 'Referatform',
     'weight' => '0',
     'children' => array(
-      0 => 'group_referat',
-      1 => 'group_indstillinger',
-      2 => 'group_deltagere',
-      3 => 'group_detaljer',
+      0 => 'group_deltagere',
+      1 => 'group_detaljer',
+      2 => 'group_indstillinger',
+      3 => 'group_referat',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
