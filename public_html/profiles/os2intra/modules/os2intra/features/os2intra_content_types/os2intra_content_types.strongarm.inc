@@ -1677,21 +1677,21 @@ function os2intra_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_allow_date_only';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['scheduler_allow_date_only'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_date_format';
-  $strongarm->value = 'd.m-Y - H:i';
+  $strongarm->value = 'd.m.Y - H:i';
   $export['scheduler_date_format'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_date_only_format';
-  $strongarm->value = 'd.m-Y';
+  $strongarm->value = 'd.m.Y';
   $export['scheduler_date_only_format'] = $strongarm;
 
   $strongarm = new stdClass();
