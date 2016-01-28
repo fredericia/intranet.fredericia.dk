@@ -36,12 +36,10 @@ function os2web_habitat_strongarm() {
   $strongarm->name = 'habitat_disable_prod';
   $strongarm->value = array(
     0 => 'habitat_ui',
-    1 => 'views_ui',
-    2 => 'devel',
-    3 => 'stage_file_proxy',
-    4 => 'reroute_email',
-    5 => 'dblog',
-    6 => 'field_ui',
+    1 => 'devel',
+    2 => 'stage_file_proxy',
+    3 => 'reroute_email',
+    4 => 'dblog',
   );
   $export['habitat_disable_prod'] = $strongarm;
 
