@@ -61,7 +61,10 @@ function os2intra_content_types_ckeditor_profile_defaults() {
         'html_entities' => 't',
         'scayt_autoStartup' => 't',
         'theme_config_js' => 'f',
-        'js_conf' => '',
+        'js_conf' => 'config.wsc_lang = \'da_DK\';
+config.scayt_defLan = \'da_DK\';
+config.language = \'da_DK\';
+config.scayt_sLang = \'da_DK\';',
         'loadPlugins' => array(
           'media' => array(
             'name' => 'media',
@@ -152,13 +155,14 @@ function os2intra_content_types_ckeditor_profile_defaults() {
         'filebrowser_flash' => '',
         'UserFilesPath' => '%b%f/',
         'UserFilesAbsolutePath' => '%d%b%f/',
-        'ckeditor_load_method' => 'ckeditor.js',
-        'ckeditor_load_time_out' => 0,
         'forcePasteAsPlainText' => 'f',
         'html_entities' => 'f',
         'scayt_autoStartup' => 'f',
         'theme_config_js' => 'f',
-        'js_conf' => '',
+        'js_conf' => 'config.wsc_lang = \'da_DK\';
+config.scayt_defLan = \'da_DK\';
+config.language = \'da_DK\';
+config.scayt_sLang = \'da_DK\';',
         'loadPlugins' => array(
           'drupalbreaks' => array(
             'name' => 'drupalbreaks',
