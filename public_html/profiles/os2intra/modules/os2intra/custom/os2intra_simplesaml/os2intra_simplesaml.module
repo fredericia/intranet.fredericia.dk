@@ -67,7 +67,7 @@ function os2intra_simplesaml_user_login(&$edit, $account) {
     if (isset($attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname'])) {
       $edit['field_name_last'][LANGUAGE_NONE][0]['value'] = $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname'];
     }
-    if (isset($attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'])) {
+    if (isset($attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress']) && !empty($edit['mail'])) {
       $edit['mail'] = $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'];
     }
     user_save($account, $edit);
