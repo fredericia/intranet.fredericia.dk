@@ -56,6 +56,7 @@
 
 	// Full node
 	.os2-node-full {}
+
 }
 
 // Mobile - only
@@ -84,6 +85,8 @@
 
 	// Full node
 	.os2-node-full {}
+
+
 }
 
 // Desktop - only
@@ -109,6 +112,23 @@
 
 // Print
 @media print {
+  .inner-wrapper {
+    left: 0 !important;
+    position: static !important;
+  }
+  .sidebar-left {
+    width: 0;
+  }
+  .col-sm-8 {
+    left: 0;
+    float: none;
+    width: 80%;
+  }
+
+  .popover-button-toggle {
+    display: none;
+    visibility: hidden;
+  }
 
 	// Full node
 	.os2-node-full {}
