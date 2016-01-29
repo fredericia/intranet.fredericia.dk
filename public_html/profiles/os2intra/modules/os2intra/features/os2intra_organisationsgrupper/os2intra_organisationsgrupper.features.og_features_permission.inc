@@ -313,6 +313,7 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   $permissions['node:os2intra_org_group_unit:update group'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+      'member' => 'member',
       'superuser' => 'superuser',
     ),
   );
