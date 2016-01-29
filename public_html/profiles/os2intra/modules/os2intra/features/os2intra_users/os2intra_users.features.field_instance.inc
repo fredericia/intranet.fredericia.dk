@@ -87,6 +87,72 @@ function os2intra_users_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'taxonomy_term-os2intra_organisation_tax-field_os2intra_manager_id'.
+  $field_instances['taxonomy_term-os2intra_organisation_tax-field_os2intra_manager_id'] = array(
+    'bundle' => 'os2intra_organisation_tax',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 3,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_os2intra_manager_id',
+    'label' => 'Manager',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'entityreference_autocreate' => array(
+          'active' => 0,
+          'author' => '',
+          'author_current_user' => 1,
+          'status' => -1,
+        ),
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 45,
+    ),
+  );
+
+  // Exported field_instance:
   // 'taxonomy_term-os2intra_organisation_tax-field_os2intra_org_presented'.
   $field_instances['taxonomy_term-os2intra_organisation_tax-field_os2intra_org_presented'] = array(
     'bundle' => 'os2intra_organisation_tax',
@@ -631,7 +697,7 @@ function os2intra_users_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -8,
+      'weight' => 3,
     ),
   );
 
@@ -1068,7 +1134,7 @@ function os2intra_users_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => -7,
+      'weight' => 4,
     ),
   );
 
@@ -1379,7 +1445,7 @@ function os2intra_users_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => -9,
+      'weight' => 2,
     ),
   );
 
@@ -1425,7 +1491,7 @@ function os2intra_users_field_default_field_instances() {
             'widget_type' => 'entityreference_autocomplete',
           ),
           'default' => array(
-            'widget_type' => 'options_select',
+            'widget_type' => 'entityreference_autocomplete',
           ),
           'status' => TRUE,
         ),
@@ -1454,7 +1520,7 @@ function os2intra_users_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => -2,
+      'weight' => 1,
     ),
   );
 
@@ -1548,6 +1614,7 @@ function os2intra_users_field_default_field_instances() {
   t('Jobtitel');
   t('Kompetencer');
   t('Kort navn');
+  t('Manager');
   t('MedarbejderID');
   t('Mobil nummer');
   t('Telefon nummer');
