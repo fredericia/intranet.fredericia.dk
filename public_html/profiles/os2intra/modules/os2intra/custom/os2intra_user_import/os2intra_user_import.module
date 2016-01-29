@@ -1199,3 +1199,34 @@ function os2intra_user_import_add_user_to_parent_departments($account) {
     }
   }
 }
+
+
+/**
+ * Give department managers 'manager-role' to the deparments children
+ */
+function os2intra_user_import_add_managers_to_departments() {
+  $department_taxonomies = taxonomy_get_tree(
+    $vid = 16,
+    $parent = 0,
+    $max_depth = NULL,
+    $load_entities = TRUE
+  );
+
+  // Loop over all departments and find departments with managers
+  foreach ($department_taxonomies as $department_taxonomy) {
+    $department = entity_metadata_wrapper('taxonomy_term', $department_taxonomy);
+
+    // Get department managers
+    foreach ($department->field_os2intra_manager_id->getIterator() as $user) {
+      $manager_uids[] = $user->uid->value();
+    }
+
+    // Set as admins in children departments
+    $department_children = taxonomy_get_children($department->tid->value());
+    foreach ($department_children as $child) {
+      $child = entity_metadata_wrapper('taxonomy_term', $child);
+      $child->field_os2intra_manager_id->set($manager_uids);
+      $child->save();
+    }
+  }
+}
