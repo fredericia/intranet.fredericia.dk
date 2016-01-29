@@ -24,6 +24,7 @@ features[user_role][] = Koncernyheder
 features[views_view][] = koncernnyheder
 features[views_view][] = os2intra_canteen_menu
 features[views_view][] = os2intra_forside_views
+features[views_view][] = os2intra_front_og_content
 features[views_view][] = os2intra_group_term_activity
 features[views_view][] = os2intra_markedspladsen
 features[views_view][] = os2intra_user_groups

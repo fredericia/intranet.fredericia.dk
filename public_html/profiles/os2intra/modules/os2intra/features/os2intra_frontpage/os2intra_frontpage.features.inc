@@ -90,17 +90,6 @@ function os2intra_frontpage_homebox() {
       5 => '#E4F0F8',
     ),
     'blocks' => array(
-      'views_os2intra_forside_views-block_1' => array(
-        'module' => 'views',
-        'delta' => 'os2intra_forside_views-block_1',
-        'region' => 2,
-        'movable' => 0,
-        'status' => 1,
-        'open' => 1,
-        'closable' => 0,
-        'title' => 'Fællesnyt',
-        'weight' => -27,
-      ),
       'views_os2intra_vigtige_beskeder-block' => array(
         'module' => 'views',
         'delta' => 'os2intra_vigtige_beskeder-block',
@@ -110,6 +99,17 @@ function os2intra_frontpage_homebox() {
         'open' => 1,
         'closable' => 0,
         'title' => 'Vigtige beskeder',
+        'weight' => -28,
+      ),
+      'views_os2intra_forside_views-block_1' => array(
+        'module' => 'views',
+        'delta' => 'os2intra_forside_views-block_1',
+        'region' => 2,
+        'movable' => 0,
+        'status' => 1,
+        'open' => 1,
+        'closable' => 0,
+        'title' => 'Fællesnyt',
         'weight' => -27,
       ),
       'views_os2intra_forside_views-block' => array(
@@ -123,9 +123,9 @@ function os2intra_frontpage_homebox() {
         'title' => 'Kommende aktiviteter',
         'weight' => -26,
       ),
-      'views_05c9b062e59c366c742de6b83c6f9d33' => array(
+      'views_4cc9e4aa1408373d81709febccd65223' => array(
         'module' => 'views',
-        'delta' => '05c9b062e59c366c742de6b83c6f9d33',
+        'delta' => '4cc9e4aa1408373d81709febccd65223',
         'region' => 1,
         'movable' => 0,
         'status' => 1,
