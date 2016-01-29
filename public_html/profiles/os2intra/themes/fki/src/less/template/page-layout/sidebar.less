@@ -22,6 +22,10 @@
 // Sidebar
 .sidebar {
 
+  @media print {
+    display: none;
+  }
+
   .sidebar-inner-wrapper {
     min-height: 100%;
     background-repeat: no-repeat;
@@ -288,7 +292,10 @@
 @media print {
 
   // Sidebar
-  .sidebar {}
+  .sidebar {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 // Touch
