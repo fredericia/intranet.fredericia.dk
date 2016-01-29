@@ -342,11 +342,18 @@ function os2intra_user_import_settings() {
     '#default_value' => variable_get('os2intra_user_notification_email', variable_get('site_mail')),
   );
 
-  $form['os2intra_user_import_og_role'] = array(
+  $form['os2intra_user_import_og_role_id_parent'] = array(
     '#title'         => t('OG Role Grant ID'),
     '#type'          => 'textfield',
-    '#default_value' => variable_get('os2intra_user_import_og_role_id', 14),
+    '#default_value' => variable_get('os2intra_user_import_og_role_id_parent', 14),
     '#description'   => t('ID of the group role to grant the user, when added to "read-only" groups.'),
+  );
+
+  $form['os2intra_user_import_og_role_id_user'] = array(
+    '#title'         => t('OG Role Grant ID'),
+    '#type'          => 'textfield',
+    '#default_value' => variable_get('os2intra_user_import_og_role_id_user', 16),
+    '#description'   => t('ID of the group role to grant the user, when added to "member" group.'),
   );
 
   $form['mapping'] = array(
@@ -1047,7 +1054,7 @@ function _os2intra_user_import_send_email($terms) {
   );
   $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'));
 
-  drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
+  // drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
 }
 
 /**
@@ -1158,6 +1165,9 @@ function os2intra_user_import_add_user_to_parent_departments($account) {
   $og_department_nid = node_load(field_get_items('user', $account, 'og_user_node2')[0]['target_id']);
   $organisation_tid = field_get_items('node', $og_department_nid, 'field_os2intra_organisation')[0]['target_id'];
 
+  // Add member role
+  // og_role_grant('node', $og_department_nid, $account->uid, variable_get('os2intra_user_import_og_role_id_user', 16));
+
   $parent_terms = taxonomy_get_parents_all($organisation_tid);
 
   foreach ($parent_terms as $parent_term) {
@@ -1185,7 +1195,7 @@ function os2intra_user_import_add_user_to_parent_departments($account) {
       $og_membership = og_group('node', $nid, $values, FALSE);
       $og_membership->save();
       os2intra_user_import_save_log('', 'add user ID: ' . $account->uid . ' to OG nid' . $nid);
-      og_role_grant('node', $nid, $account->uid, variable_get('os2intra_user_import_og_role_id', 14));
+      og_role_grant('node', $nid, $account->uid, variable_get('os2intra_user_import_og_role_id_parent', 14));
     }
   }
 }
