@@ -172,7 +172,8 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   // Exported og permission: 'node:os2intra_org_group_unit:create event content'
   $permissions['node:os2intra_org_group_unit:create event content'] = array(
     'roles' => array(
-      'member' => 'member',
+      'leder' => 'leder',
+      'medarbejder' => 'medarbejder',
     ),
   );
 
@@ -184,14 +185,16 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   // Exported og permission: 'node:os2intra_org_group_unit:create post content'
   $permissions['node:os2intra_org_group_unit:create post content'] = array(
     'roles' => array(
-      'member' => 'member',
+      'leder' => 'leder',
+      'medarbejder' => 'medarbejder',
     ),
   );
 
   // Exported og permission: 'node:os2intra_org_group_unit:create wiki content'
   $permissions['node:os2intra_org_group_unit:create wiki content'] = array(
     'roles' => array(
-      'member' => 'member',
+      'leder' => 'leder',
+      'medarbejder' => 'medarbejder',
     ),
   );
 
@@ -199,6 +202,7 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   $permissions['node:os2intra_org_group_unit:delete any event content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+      'leder' => 'leder',
       'superuser' => 'superuser',
     ),
   );
@@ -212,6 +216,7 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   $permissions['node:os2intra_org_group_unit:delete any post content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+      'leder' => 'leder',
       'superuser' => 'superuser',
     ),
   );
@@ -220,6 +225,7 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   $permissions['node:os2intra_org_group_unit:delete any wiki content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+      'leder' => 'leder',
       'superuser' => 'superuser',
     ),
   );
@@ -227,7 +233,8 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   // Exported og permission: 'node:os2intra_org_group_unit:delete own event content'
   $permissions['node:os2intra_org_group_unit:delete own event content'] = array(
     'roles' => array(
-      'member' => 'member',
+      'leder' => 'leder',
+      'medarbejder' => 'medarbejder',
     ),
   );
 
@@ -239,14 +246,16 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   // Exported og permission: 'node:os2intra_org_group_unit:delete own post content'
   $permissions['node:os2intra_org_group_unit:delete own post content'] = array(
     'roles' => array(
-      'member' => 'member',
+      'leder' => 'leder',
+      'medarbejder' => 'medarbejder',
     ),
   );
 
   // Exported og permission: 'node:os2intra_org_group_unit:delete own wiki content'
   $permissions['node:os2intra_org_group_unit:delete own wiki content'] = array(
     'roles' => array(
-      'member' => 'member',
+      'leder' => 'leder',
+      'medarbejder' => 'medarbejder',
     ),
   );
 
@@ -284,6 +293,7 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   $permissions['node:os2intra_org_group_unit:update any event content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+      'leder' => 'leder',
       'superuser' => 'superuser',
     ),
   );
@@ -297,6 +307,7 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   $permissions['node:os2intra_org_group_unit:update any post content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+      'leder' => 'leder',
       'superuser' => 'superuser',
     ),
   );
@@ -305,6 +316,8 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   $permissions['node:os2intra_org_group_unit:update any wiki content'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+      'leder' => 'leder',
+      'medarbejder' => 'medarbejder',
       'superuser' => 'superuser',
     ),
   );
@@ -313,7 +326,10 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   $permissions['node:os2intra_org_group_unit:update group'] = array(
     'roles' => array(
       'administrator member' => 'administrator member',
+      'leder' => 'leder',
+      'medarbejder' => 'medarbejder',
       'member' => 'member',
+      'organisatorisk' => 'organisatorisk',
       'superuser' => 'superuser',
     ),
   );
@@ -321,7 +337,8 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   // Exported og permission: 'node:os2intra_org_group_unit:update own event content'
   $permissions['node:os2intra_org_group_unit:update own event content'] = array(
     'roles' => array(
-      'member' => 'member',
+      'leder' => 'leder',
+      'medarbejder' => 'medarbejder',
     ),
   );
 
@@ -333,14 +350,16 @@ function os2intra_organisationsgrupper_og_features_default_permissions() {
   // Exported og permission: 'node:os2intra_org_group_unit:update own post content'
   $permissions['node:os2intra_org_group_unit:update own post content'] = array(
     'roles' => array(
-      'member' => 'member',
+      'leder' => 'leder',
+      'medarbejder' => 'medarbejder',
     ),
   );
 
   // Exported og permission: 'node:os2intra_org_group_unit:update own wiki content'
   $permissions['node:os2intra_org_group_unit:update own wiki content'] = array(
     'roles' => array(
-      'member' => 'member',
+      'leder' => 'leder',
+      'medarbejder' => 'medarbejder',
     ),
   );
 
