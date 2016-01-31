@@ -1173,6 +1173,9 @@ function _os2intra_user_import_sanitize_int($str) {
  */
 function os2intra_user_import_add_user_to_parent_departments($account) {
   $og_department_node = node_load(field_get_items('user', $account, 'og_user_node2')[0]['target_id']);
+  if (empty($og_department_node)) {
+    return;
+  }
   $organisation_tid = field_get_items('node', $og_department_node, 'field_os2intra_organisation')[0]['target_id'];
 
   // Add user to their primary department and give them the 'medarbejder' role
