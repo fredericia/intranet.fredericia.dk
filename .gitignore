@@ -46,6 +46,7 @@ tmp
 share
 import
 private
+simplesamlphp
 
 # Files that might appear on external disks
 .Spotlight-V100
