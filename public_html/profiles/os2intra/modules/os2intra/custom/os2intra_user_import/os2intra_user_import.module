@@ -1236,10 +1236,17 @@ function os2intra_user_import_add_managers_to_departments($form, &$form_state) {
       if (!in_array($manager_uid, $child->field_os2intra_manager_id->raw())) {
         $child->field_os2intra_manager_id[] = $manager_uid;
       }
+      $account = user_load($manager_uid);
+      // Add user to their primary department and give them the 'manager' role
+      $values = array(
+        'entity' => $account,
+        'field_name' => 'og_org_ref',
+      );
+      $department_nid = _os2intra_user_import_get_department_nid($child->field_os2intra_department_id->value());
+      og_group('node', $department_nid, $values);
+      og_role_grant('node', $department_nid, $account->uid, variable_get('os2intra_user_import_og_role_id_manager', 15));
     }
 
     $child->save();
-
-    $department_nid = _os2intra_user_import_get_department_nid($child->field_os2intra_department_id->value());
   }
 }
