@@ -98,7 +98,7 @@ function fredericia_user_import_mapping_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'os2intra_user_import_activate_birthday';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['os2intra_user_import_activate_birthday'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -112,8 +112,15 @@ function fredericia_user_import_mapping_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'os2intra_user_import_activate_identification';
-  $strongarm->value = 'ad_id';
+  $strongarm->value = 'employee_id';
   $export['os2intra_user_import_activate_identification'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'os2intra_user_import_authmap_name_suffix';
+  $strongarm->value = '@fredericia.dk';
+  $export['os2intra_user_import_authmap_name_suffix'] = $strongarm;
 
   return $export;
 }
