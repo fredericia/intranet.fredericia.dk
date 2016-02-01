@@ -352,6 +352,13 @@ function os2intra_user_import_settings() {
     '#description'   => t('ID of the group role to grant the user, when added to manager group.'),
   );
 
+  $form['os2intra_user_import_authmap_name_suffix'] = array(
+    '#title'         => t("Suffix used on the column 'authname' in the authmap table"),
+    '#type'          => 'textfield',
+    '#default_value' => variable_get('os2intra_user_import_authmap_name_suffix'),
+    '#description'   => t("For example '@fredericia.dk'"),
+  );
+
   $form['mapping'] = array(
     '#type'        => 'fieldset',
     '#title'       => t('Mapping'),
@@ -880,7 +887,7 @@ function os2intra_user_import_save_user($user, $uid = '') {
 
   // Create authmap for user
   $authmap = array(
-    'authname_simplesamlphp_auth' => $user['ad_id'] . '@fredericia.dk',
+    'authname_simplesamlphp_auth' => $user['ad_id'] . variable_get('os2intra_user_import_authmap_name_suffix'),
   );
   user_set_authmaps($account, $authmap);
 
