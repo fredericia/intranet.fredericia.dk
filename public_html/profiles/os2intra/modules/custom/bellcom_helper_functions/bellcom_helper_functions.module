@@ -6,11 +6,11 @@
 function in_array_recursive($needle, $haystack, $strict = FALSE) {
   foreach ($haystack as $item) {
     if (($strict ? $item === $needle : $item == $needle) || (is_array($item) && in_array_recursive($needle, $item, $strict))) {
-      return true;
+      return TRUE;
     }
   }
 
-  return false;
+  return FALSE;
 }
 
 /*
@@ -21,10 +21,10 @@ function taxonomy_term_top_level_load($tid) {
   $taxonomy_term_top_level = NULL;
 
   // Run through all parents
-  foreach($taxonomy_term_parents as $taxonomy_term_parent) {
+  foreach ($taxonomy_term_parents as $taxonomy_term_parent) {
     $taxonomy_term_parent_parents = taxonomy_get_parents_all($taxonomy_term_parent->tid);
 
-    if ($taxonomy_term_parent_parents != false) {
+    if ($taxonomy_term_parent_parents != FALSE) {
       $taxonomy_term_top_level = $taxonomy_term_parent;
     }
   }
@@ -32,10 +32,9 @@ function taxonomy_term_top_level_load($tid) {
   return $taxonomy_term_top_level;
 }
 
-
-
 /**
  * Create google map
+ *
  * @param $address
  * @param $city_with_zipcode
  *
@@ -60,28 +59,60 @@ function _bellcom_create_google_map($field_address, $field_city_with_zipcode) {
   $map_type = 'p';
 
   // For some reason, static gmaps accepts a different value for map type.
-  $static_map_types = array('m' => 'roadmap', 'k' => 'satellite', 'h' => 'hybrid', 'p' => 'terrain');
+  $static_map_types = array(
+    'm' => 'roadmap',
+    'k' => 'satellite',
+    'h' => 'hybrid',
+    'p' => 'terrain'
+  );
 
   $url_value = urlencode(check_plain($field_address . ', ' . $field_city_with_zipcode));
   $address_value = check_plain($field_address . ', ' . $field_city_with_zipcode);
   $address = $text ? $address_value : '';
 
-  $element[] = array('#markup' => theme('simple_gmap_output', array(
-    'include_map' => $embed,
-    'include_static_map' => $static,
-    'include_link' => $link,
-    'include_text' => $text,
-    'width' => $width,
-    'height' => $height,
-    'url_suffix' => $url_value,
-    'zoom' => $zoom_level,
-    'information_bubble' => $bubble,
-    'link_text' => ($link_text == 'use_address') ? $address_value : $link_text,
-    'address_text' => $address,
-    'map_type' => $map_type,
-    'langcode' => $lang_to_use,
-    'static_map_type' => $static_map_types[$map_type],
-  )));
+  $element[] = array(
+    '#markup' => theme('simple_gmap_output', array(
+      'include_map' => $embed,
+      'include_static_map' => $static,
+      'include_link' => $link,
+      'include_text' => $text,
+      'width' => $width,
+      'height' => $height,
+      'url_suffix' => $url_value,
+      'zoom' => $zoom_level,
+      'information_bubble' => $bubble,
+      'link_text' => ($link_text == 'use_address') ? $address_value : $link_text,
+      'address_text' => $address,
+      'map_type' => $map_type,
+      'langcode' => $lang_to_use,
+      'static_map_type' => $static_map_types[$map_type],
+    ))
+  );
 
   return $element;
+}
+
+/**
+ * Get group members by role in group.
+ * Entity = ex. node object
+ * Role name = ex. "employee", "boss" etc.
+ */
+function _og_get_members_by_role($entity, $role_name, $type = 'node') {
+  $members = array();
+
+  list($id) = entity_extract_ids($type, $entity);
+
+  $query = db_select('og_users_roles', 'ogur');
+  $query->innerJoin('og_role', 'ogr', 'ogr.rid = ogur.rid');
+  $query->fields('ogur', array('uid'))
+    ->condition('ogur.gid', $id)
+    ->condition('ogur.group_type', $type)
+    ->condition('ogr.name', $role_name);
+
+  $result = $query->execute();
+  $current_members = $result->fetchCol();
+  $members = array_merge($members, $current_members);
+
+  $members = array_keys(array_flip($members));
+  return $members;
 }

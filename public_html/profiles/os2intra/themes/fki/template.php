@@ -284,7 +284,8 @@ function fki_preprocess_node__os2intra_org_group_unit(&$variables) {
     $variables['users'] = array();
 
     $node = $variables['node'];
-    $user_uids = og_get_group_members_properties($node, array(), 'members', 'node');
+
+    $user_uids = _og_get_members_by_role($node, 'medarbejder', 'node');
 
     if (!empty($user_uids)) {
 
