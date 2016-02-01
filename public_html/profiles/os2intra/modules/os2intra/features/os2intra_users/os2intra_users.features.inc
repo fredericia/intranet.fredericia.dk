@@ -36,7 +36,7 @@ function os2intra_users_image_default_styles() {
   $styles['profilbillede'] = array(
     'label' => 'Profilbillede',
     'effects' => array(
-      1 => array(
+      2 => array(
         'name' => 'epsacrop_crop',
         'data' => array(
           'width' => 520,
@@ -47,10 +47,18 @@ function os2intra_users_image_default_styles() {
             'aspect_ratio' => '',
             'bgcolor' => 'black',
             'bgopacity' => 0.6,
-            'fallback' => 0,
+            'fallback' => 1,
           ),
         ),
         'weight' => 1,
+      ),
+      3 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 520,
+          'height' => 520,
+        ),
+        'weight' => 2,
       ),
     ),
   );
@@ -59,7 +67,14 @@ function os2intra_users_image_default_styles() {
   $styles['profile_image_small'] = array(
     'label' => 'Profile image - small',
     'effects' => array(
-      1 => array(
+      5 => array(
+        'name' => 'epsacrop_crop_reuse',
+        'data' => array(
+          'jcrop_reuse' => 'profilbillede',
+        ),
+        'weight' => -10,
+      ),
+      4 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 58,

@@ -749,9 +749,10 @@ function os2intra_users_field_default_field_instances() {
       'epsacrop' => array(
         'styles' => array(
           '4_col_image_-_520x220' => 0,
+          'group_logo' => 0,
           'normal' => 0,
           'profilbillede' => 'profilbillede',
-          'profile_image_default' => 'profile_image_default',
+          'profile_image_default' => 0,
           'spotboks' => 0,
         ),
       ),
@@ -759,7 +760,7 @@ function os2intra_users_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '58x58',
+      'min_resolution' => '520x520',
       'title_field' => 0,
       'user_register_form' => 0,
     ),
