@@ -639,6 +639,11 @@ function os2intra_organisationsgrupper_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'users';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
+  /* Relationship: OG membership: OG Roles from membership */
+  $handler->display->display_options['relationships']['og_users_roles']['id'] = 'og_users_roles';
+  $handler->display->display_options['relationships']['og_users_roles']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_users_roles']['field'] = 'og_users_roles';
+  $handler->display->display_options['relationships']['og_users_roles']['relationship'] = 'og_membership_rel';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -673,6 +678,20 @@ function os2intra_organisationsgrupper_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: OG user roles: Role Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'og_role';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['relationship'] = 'og_users_roles';
+  $handler->display->display_options['filters']['name']['value'] = array(
+    'medarbejder' => 'medarbejder',
+  );
+  /* Filter criterion: User: The user ID */
+  $handler->display->display_options['filters']['uid_raw']['id'] = 'uid_raw';
+  $handler->display->display_options['filters']['uid_raw']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
+  $handler->display->display_options['filters']['uid_raw']['operator'] = '!=';
+  $handler->display->display_options['filters']['uid_raw']['value']['value'] = '1';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -699,6 +718,7 @@ function os2intra_organisationsgrupper_views_default_views() {
     t('next ›'),
     t('last »'),
     t('OG membership from user'),
+    t('OG Roles from OG membership'),
     t('Alle'),
     t('%1'),
     t('Page'),
