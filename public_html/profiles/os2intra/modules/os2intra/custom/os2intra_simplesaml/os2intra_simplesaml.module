@@ -80,7 +80,6 @@ function os2intra_simplesaml_user_login(&$edit, $account) {
 function os2intra_simplesaml_boot() {
   // Do not run this from CLI.
   if (php_sapi_name() != 'cli' && $GLOBALS['user']->uid == 0) {
-  error_log('saml',print_r($attributes),0);
     $custom_ips = explode(',', variable_get('os2intra_simplesaml_redirected_ips'));
     $remote_ip = $_SERVER['REMOTE_ADDR'];
 
