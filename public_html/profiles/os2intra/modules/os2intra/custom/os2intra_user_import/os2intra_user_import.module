@@ -876,7 +876,13 @@ function os2intra_user_import_save_user($user, $uid = '') {
   }
 
   // Save user
-  user_save($account, $fields);
+  $account = user_save($account, $fields);
+
+  // Create authmap for user
+  $authmap = array(
+    'authname_simplesamlphp_auth' => $user['ad_id'] . '@fredericia.dk',
+  );
+  user_set_authmaps($account, $authmap);
 
   // Add users to parent departments
   os2intra_user_import_add_user_to_parent_departments($account);
