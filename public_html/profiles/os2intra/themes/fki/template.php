@@ -138,13 +138,21 @@ function fki_preprocess_node(&$variables) {
  * Implements template_preprocess_comment().
  */
 function fki_preprocess_comment(&$variables) {
+  $author_uid = $variables['comment']->uid;
+  $author = user_load($author_uid);
+  $variables['account'] = $author;
 
   // Author
-  if ($author_information = bellcom_user_get_raw_information($variables['comment']->uid)) {
+  if ($author_information = bellcom_user_get_raw_information($author_uid)) {
 
     if (isset($author_information['full_name'])) {
       $variables['author_full_name'] = $author_information['full_name'];
     }
+  }
+
+  // Profile image (custom)
+  if ($profile_image = field_view_field('user', $author, 'field_os2intra_image', 'teaser')) {
+    $variables['profile_image'] = $profile_image;
   }
 }
 

@@ -4,7 +4,13 @@
   <div class="table">
     <div class="table-row">
       <div class="table-cell comment-user-picture-wrapper">
-        <?php print $picture ?>
+        <?php if (isset($profile_image)): ?>
+          <!-- Begin - image -->
+          <div class="user-picture">
+            <?php print render($profile_image); ?>
+          </div>
+          <!-- End - image -->
+        <?php endif; ?>
       </div>
       <div class="table-cell comment-body-wrapper">
 
@@ -13,7 +19,7 @@
           <?php if (isset($author_full_name) and $updated_at_short): ?>
             <!-- Begin - entity info -->
             <ul class="os2-comment-info os2-entity-info">
-              <li><?php print l($author_full_name, 'user/' . $node->uid); ?></li>
+              <li><?php print $author; ?></li>
               <li><span><?php print $created_at_ago; ?></span></li>
             </ul>
             <!-- End - entity info -->
