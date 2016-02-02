@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-12-02 14:35+0100\n"
-"PO-Revision-Date: 2015-12-02 14:35+0100\n"
+"POT-Creation-Date: 2016-02-02 16:18+0100\n"
+"PO-Revision-Date: 2016-02-02 16:18+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -1774,10 +1774,6 @@ msgstr ""
 
 #: /install.php?profile=os2intra&locale=da&op=start&id=2
 msgid "No messages created yet."
-msgstr ""
-
-#: /install.php?profile=os2intra&locale=da&op=start&id=2
-msgid "There is no content in this group."
 msgstr ""
 
 #: /install.php?profile=os2intra&locale=da&op=start&id=2
@@ -5216,10 +5212,6 @@ msgstr ""
 
 #: /?q=system%2Ftimezone%2FCET%2F3600%2F0&date=Mon+Nov+02+2015+10%3A56%3A55+GMT%2B0100+(CET)
 msgid "saved user"
-msgstr ""
-
-#: /?q=system%2Ftimezone%2FCET%2F3600%2F0&date=Mon+Nov+02+2015+10%3A56%3A55+GMT%2B0100+(CET)
-msgid "User account page is viewed"
 msgstr ""
 
 #: /?q=system%2Ftimezone%2FCET%2F3600%2F0&date=Mon+Nov+02+2015+10%3A56%3A55+GMT%2B0100+(CET)
@@ -17734,10 +17726,6 @@ msgid "Vejledning"
 msgstr ""
 
 #: /node/add/it-vejledning
-msgid "Switch to plain text editor"
-msgstr ""
-
-#: /node/add/it-vejledning
 msgid "Switch to rich text editor"
 msgstr ""
 
@@ -17745,7 +17733,7 @@ msgstr ""
 msgid "Opens in new window"
 msgstr ""
 
-#: profiles/os2intra/modules/contrib/epsacrop/js/epsacrop.js
+#: profiles/os2intra/modules/contrib/epsacrop/js/epsacrop.js; profiles/os2intra/modules/patched/epsacrop/js/epsacrop.js
 msgid "Error on load : @error"
 msgstr ""
 
@@ -32035,14 +32023,6 @@ msgstr ""
 msgid "Select the field name, the group membership should be registered in."
 msgstr ""
 
-#: /useractivation
-msgid "Birthdate"
-msgstr ""
-
-#: /useractivation
-msgid "Format: 10/03/1982"
-msgstr ""
-
 #: /linkit/autocomplete/linkit_field_node?s=pro
 msgid "Linkit autocomplete response function"
 msgstr ""
@@ -32111,6 +32091,4534 @@ msgstr ""
 msgid ""
 "A Views style plugin to display a tree of elements using the adjacency "
 "model."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Simple module that provides a configurable block with Facebook's Page "
+"Plugin"
+msgstr ""
+
+#: /admin/modules
+msgid "Enables compatibility of Page Plugin with patterns module."
+msgstr ""
+
+#: /admin/modules
+msgid "Page Plugin"
+msgstr ""
+
+#: /
+msgid "!extension is already enabled."
+msgstr ""
+
+#: /
+msgid "There were no extensions that could be enabled."
+msgstr ""
+
+#: /admin/structure/block/manage/fb_likebox/0/configure
+msgid "Facebook Page URL"
+msgstr ""
+
+#: /admin/structure/block/manage/fb_likebox/0/configure
+msgid ""
+"Enter the Facebook Page URL. I.e.: "
+"https://www.facebook.com/FacebookDevelopers"
+msgstr ""
+
+#: /admin/structure/block/manage/fb_likebox/0/configure
+msgid "Hide cover photo in the header"
+msgstr ""
+
+#: /admin/structure/block/manage/fb_likebox/0/configure
+msgid "Show posts from the Page's timeline"
+msgstr ""
+
+#: /admin/structure/block/manage/fb_likebox/0/configure
+msgid "Show profile photos when friends like this"
+msgstr ""
+
+#: /admin/structure/block/manage/fb_likebox/0/configure
+msgid "iFrame title attribute"
+msgstr ""
+
+#: /admin/structure/block/manage/fb_likebox/0/configure
+msgid "The value of the title attribute."
+msgstr ""
+
+#: /admin/structure/block/manage/fb_likebox/0/configure
+msgid ""
+"The width of the Facebook likebox. Must be a number between 280 and "
+"500, limits included."
+msgstr ""
+
+#: /admin/structure/block/manage/fb_likebox/0/configure
+msgid "The height of the plugin in pixels. Must be a number bigger than 130."
+msgstr ""
+
+#: /admin/structure/flags/manage/os2intra_flag_info_til_alle/export
+msgid ""
+"Use the exported code to later <a href=\"@import-flag\">import</a> it. "
+"Exports can be included in modules using <a "
+"href=\"http://drupal.org/node/305086#default-flags\">hook_flag_default_flags()</a> "
+"or using the <a href=\"@features-url\">Features</a> module."
+msgstr ""
+
+#: /intra
+msgid "Checkboxes for toggling flags"
+msgstr ""
+
+#: /
+msgid "Koncernnyheder"
+msgstr ""
+
+#: /
+msgid "Flag-link"
+msgstr ""
+
+#: /
+msgid "Søg på titel"
+msgstr ""
+
+#: /
+msgid "Valgt"
+msgstr ""
+
+#: /admin/content/koncernnyheder
+msgid "Vis i Fællesnyt"
+msgstr ""
+
+#: /
+msgid "Afpublicés"
+msgstr ""
+
+#: /
+msgid "Forfrem"
+msgstr ""
+
+#: /
+msgid "Klæbrig"
+msgstr ""
+
+#: /
+msgid "Alm"
+msgstr ""
+
+#: /flag/flag/os2intra_flag_info_til_alle/205?destination=admin/content/koncernnyheder&token=1-VSeSQ6I3or9XTLr2mGa1_Wiq28LZRBLgRBT7s9tKI
+msgid "Fjern fra Fællesnyt"
+msgstr ""
+
+#: /flag/flag/os2intra_flag_info_til_alle/205?destination=admin/content/koncernnyheder&token=1-VSeSQ6I3or9XTLr2mGa1_Wiq28LZRBLgRBT7s9tKI
+msgid "Bliver nu vist i Fællesnyt"
+msgstr ""
+
+#: /
+msgid "Fredricia Kommune på Facebook"
+msgstr ""
+
+#: /
+msgid "Notat"
+msgstr ""
+
+#: /admin/people
+msgid "flag os2intra_flag_info_til_alle"
+msgstr ""
+
+#: /admin/people
+msgid "unflag os2intra_flag_info_til_alle"
+msgstr ""
+
+#: /admin/config
+msgid "Printer, email and PDF versions - PDF generation library"
+msgstr ""
+
+#: /admin/modules
+msgid "Contains alot of PHP helper functions for Bellcom solutions"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "Table to store KLE influence on elasticsearch results"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "TID of KLE term"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "The date from when this weight is valid"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "The date until when this weight is valid"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "The weight of this KLE term in the search results"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "Table to store the phrase cather information"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "The phrase to catch"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "NID of the node"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid ""
+"This desides whether the attached node should be returned as a single "
+"result"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "The date from when this phrase is active"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "The date until when this phrase is active"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid ""
+"The weight of this phrase in the search results is used when there are "
+"more than one phrases matching"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "Change weight"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "KLE Weight"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "Configure the weight of the KLE terms"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "Phrase catcher"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "Configure the phrase top search result"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "Synonyms set up"
+msgstr ""
+
+#: /hjaelp-og-vaerktojer/kommunikation-og-web/intranet
+msgid "Configure the synonyms used during the search"
+msgstr ""
+
+#: /useractivation
+msgid "Invalid email address."
+msgstr ""
+
+#: /
+msgid "Faceboook"
+msgstr ""
+
+#: /admin/structure/flags/manage/os2intra_flag_info_til_alle
+msgid "This setting cannot be changed when flaggings exist for this flag."
+msgstr ""
+
+#: /flag/unflag/os2intra_flag_info_til_alle/183?destination=admin/workbench/koncernnyheder&token=8JLn-qd3_twJJFUuhYgmR2rEO-0pWucdqlsRlmpkx-M
+msgid "Er nu fjernet fra Fællesnyt"
+msgstr ""
+
+#: /nyt-og-opdateret
+msgid "Flag: @title"
+msgstr ""
+
+#: /nyt-og-opdateret
+msgid "Individual flag link"
+msgstr ""
+
+#: /content/projektportalen-fejl-og-oensker/webform/components/new/markup?name=Registreret&required=0&pid=0&weight=4
+msgid "Markup allows you to enter custom HTML into your form."
+msgstr ""
+
+#: /content/projektportalen-fejl-og-oensker/webform/components/new/markup?name=Registreret&required=0&pid=0&weight=4
+msgid "Display on"
+msgstr ""
+
+#: /content/projektportalen-fejl-og-oensker/webform/components/new/markup?name=Registreret&required=0&pid=0&weight=4
+msgid "form only"
+msgstr ""
+
+#: /content/projektportalen-fejl-og-oensker/webform/components/new/markup?name=Registreret&required=0&pid=0&weight=4
+msgid "viewed submission only"
+msgstr ""
+
+#: /content/projektportalen-fejl-og-oensker/webform/components/new/markup?name=Registreret&required=0&pid=0&weight=4
+msgid "both form and viewed submission"
+msgstr ""
+
+#: /admin/config/system/path_alias_xt
+msgid ""
+"For the current user: instead of <em>/user/uid</em> or its alias, "
+"apply the alias for <em>/user</em>."
+msgstr ""
+
+#: /admin/config/system/path_alias_xt
+msgid ""
+"If ticked and the system path <em>/user</em> has an <a "
+"target=\"alias\" href=\"!alias\">alias</a>, such as "
+"<em>/MyAccount</em>, then <em>/MyAccount</em> will also be applied "
+"when a user visits their <em>/user/uid/...</em> pages.<br/>For this "
+"feature to work you must complete the full installation procedure "
+"outlined in the <a href=\"!README\">README</a>."
+msgstr ""
+
+#: /admin/config/system/path_alias_xt
+msgid ""
+"Regular expression to match system paths for nodes, users and taxonomy "
+"terms"
+msgstr ""
+
+#: /admin/config/system/path_alias_xt
+msgid ""
+"While you can always reset this configuration and recover without "
+"permanent damage to your site, a change to this expression may "
+"temporarily break all extended aliases. Change only when you know what "
+"you're doing."
+msgstr ""
+
+#: /
+msgid ""
+"Command !command needs the following modules installed/enabled to run: "
+"!dependencies."
+msgstr ""
+
+#: /
+msgid "The drush command '!args' could not be executed."
+msgstr ""
+
+#: /
+msgid "Vedhæftede filer"
+msgstr ""
+
+#: /
+msgid "Fællsesnyt"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Arkiv over vigtige meddelelser"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "OG membership from node group"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "user from OG membership"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "OS2Intra message notifications"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "OS2Intra message notifications group"
+msgstr ""
+
+#: /
+msgid ""
+"The CTools CSS cache directory, %path could not be created due to a "
+"misconfigured files directory. Please ensure that the files directory "
+"is correctly configured and that the webserver has permission to "
+"create directories."
+msgstr ""
+
+#: /
+msgid "Unable to create"
+msgstr ""
+
+#: /
+msgid "%lib directory"
+msgstr ""
+
+#: /
+msgid "Non-writable permissions"
+msgstr ""
+
+#: /
+msgid ""
+"You must change the %libdir permissions to be writable, as %lib "
+"requires write-access to that directory."
+msgstr ""
+
+#: /
+msgid "Managed file size: @managed_filesize_mbMB"
+msgstr ""
+
+#: /
+msgid "Duplicate titles"
+msgstr ""
+
+#: /
+msgid "There are @count duplicate titles in the following types: @types"
+msgstr ""
+
+#: /
+msgid ""
+"Consider reviewing your content and finding a way to disambiguate the "
+"duplicate titles."
+msgstr ""
+
+#: /
+msgid ""
+"There are @extension_count extensions enabled; that's higher than the "
+"average."
+msgstr ""
+
+#: /
+msgid "Consider the following options:"
+msgstr ""
+
+#: /
+msgid "Disable unneeded or unnecessary extensions."
+msgstr ""
+
+#: /
+msgid ""
+"Consolidate functionality if possible, or custom develop a solution "
+"specific to your needs."
+msgstr ""
+
+#: /
+msgid ""
+"Avoid using modules that serve only one small purpose that is not "
+"mission critical."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_taxonomies_feed_kle/settings/FeedsFileFetcher
+msgid "Settings for !plugin"
+msgstr ""
+
+#: /node/add/os2intra-base-page
+msgid "This flag does not apply to this entity type."
+msgstr ""
+
+#: /admin/config/system/tokens
+msgid "Maximum depth limit for the token UI"
+msgstr ""
+
+#: /admin/config/system/tokens
+msgid ""
+"Lowering this value with limit the depth of the tokens built for the "
+"token tree. Increasing this value will allow more tokens to be visible "
+"but may affect performance. The default value is <em>4</em>."
+msgstr ""
+
+#: /
+msgid "Photoswipe"
+msgstr ""
+
+#: /
+msgid "Download and install the PhotoSwipe plugin."
+msgstr ""
+
+#: /
+msgid ""
+"Optional. A path where to install the PhotoSwipe plugin. If omitted "
+"Drush will use the default location."
+msgstr ""
+
+#: /
+msgid "PhotoSwipe plugin has been installed in @path"
+msgstr ""
+
+#: /hjaelp-og-vaerktoejer/fagsystemer/saadan-kommer-du-igang-med-kmd-opera
+msgid "<a href=\"%url%\" target=\"_blank\">The image</a> could not be loaded."
+msgstr ""
+
+#: /hjaelp-og-vaerktoejer/fagsystemer/saadan-kommer-du-igang-med-kmd-opera
+msgid "Close (Esc)"
+msgstr ""
+
+#: /hjaelp-og-vaerktoejer/fagsystemer/saadan-kommer-du-igang-med-kmd-opera
+msgid "Share"
+msgstr ""
+
+#: /hjaelp-og-vaerktoejer/fagsystemer/saadan-kommer-du-igang-med-kmd-opera
+msgid "Toggle fullscreen"
+msgstr ""
+
+#: /hjaelp-og-vaerktoejer/fagsystemer/saadan-kommer-du-igang-med-kmd-opera
+msgid "Zoom in/out"
+msgstr ""
+
+#: /hjaelp-og-vaerktoejer/fagsystemer/saadan-kommer-du-igang-med-kmd-opera
+msgid "Previous (arrow left)"
+msgstr ""
+
+#: /hjaelp-og-vaerktoejer/fagsystemer/saadan-kommer-du-igang-med-kmd-opera
+msgid "Next (arrow right)"
+msgstr ""
+
+#: /users/underviser/edit
+msgid ""
+"Autocreate enabled - any title put here will cause a \"!bundle\" to be "
+"created if no autocomplete match is found."
+msgstr ""
+
+#: /users/underviser/edit
+msgid "Slet"
+msgstr ""
+
+#: /admin/config/group/permissions
+msgid ""
+"No group types available. Edit or <a href=\"@url\">add a new content "
+"type</a> and set it to behave as a group."
+msgstr ""
+
+#: /admin/config
+msgid "Photoswipe plugin"
+msgstr ""
+
+#: /admin/help
+msgid "PhotoSwipe website"
+msgstr ""
+
+#: /admin/help
+msgid ""
+"PhotoSwipe provides a nice javascript-based display for photo "
+"galleries, very sleek on mobile browsers."
+msgstr ""
+
+#: /admin/modules
+msgid "Allows entityreference fields to refer to target that don't yet exist."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Javascript-based photo gallery display for your Drupal website (very "
+"sleek with mobile browsers)."
+msgstr ""
+
+#: /admin/modules?filter=subs&enabled=1&disabled=1&required=1&unavailable=1
+msgid "PhotoSwipe"
+msgstr ""
+
+#: /admin/modules?filter=subs&enabled=1&disabled=1&required=1&unavailable=1
+msgid "Adjust PhotoSwipe settings."
+msgstr ""
+
+#: /users/pcmz/edit?pass-reset-token=K0ayoVcFY3uYXbOukVgiDsCCebh7EMkP__fLPyR49xU
+msgid "photoswipe"
+msgstr ""
+
+#: /users/pcmz
+msgid "Email subscriptions"
+msgstr ""
+
+#: /admin/modules
+msgid "Gives additional control over what tabs are seen by a user."
+msgstr ""
+
+#: /batch?op=start&id=104
+msgid "Tab Tamer"
+msgstr ""
+
+#: /batch?op=start&id=104
+msgid "Tab Tamer lets you hide, disable and re-order all Drupal menu tabs."
+msgstr ""
+
+#: /batch?op=start&id=104
+msgid "Edit tabs"
+msgstr ""
+
+#: /batch?op=start&id=104
+msgid "tabtamer"
+msgstr ""
+
+#: /admin/modules?filter=tab&enabled=1&disabled=1&required=1&unavailable=1
+msgid ""
+"Tab Tamer lets you hide, disable and re-order all Drupal menu tabs. "
+"After making changes, you must Clear all caches under Performance in "
+"order to reflect your changes. By default the administrative tabs are "
+"not shown. You can enable this feature under the Settings tab. As the "
+"Tab Tamer list is cached, you need to Clear all caches when disabling "
+"or enabling this feature in order to reflect your choice."
+msgstr ""
+
+#: /batch?op=start&id=105
+msgid "Publish link"
+msgstr ""
+
+#: /batch?op=start&id=105
+msgid "Display a link to publish the node."
+msgstr ""
+
+#: /batch?op=start&id=105
+msgid "Publish content settings"
+msgstr ""
+
+#: /batch?op=start&id=105
+msgid "Configure settings."
+msgstr ""
+
+#: /admin/config/content/publishcontent
+msgid "Quick publish method"
+msgstr ""
+
+#: /admin/config/content/publishcontent
+msgid ""
+"Choose the quick links method. With no quick links, the published "
+"checkbox will still appear on the node edit form. Note that a Drupal "
+"cache clear is required after changing this."
+msgstr ""
+
+#: /admin/config/content/publishcontent
+msgid "Action links on node view."
+msgstr ""
+
+#: /admin/config/content/publishcontent
+msgid "Button."
+msgstr ""
+
+#: /admin/config/content/publishcontent
+msgid "Tabs."
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Publish any content"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Unpublish any content"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Publish editable content"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Unpublish editable content"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "administer tabtamer"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Administer the Tab Tamer"
+msgstr ""
+
+#: /admin/config/system/tabtamer
+msgid ""
+"Tabs are grouped by their parent path. Many paths use a wilcard "
+"(\"%\") as a placeholder to allow for dynamic paths, such a "
+"\"user/1/edit\" or \"node/3/revisions\", which are represented here as "
+"\"user/%/edit\" and \"node/%/revisions\"."
+msgstr ""
+
+#: /admin/config/system/tabtamer
+msgid ""
+"From this screen, you can change the order that the tabs will be "
+"displayed, hide them or disable them.  Hiding a tab allows for the URL "
+"to still function, whereas disabling a tab will remove the URL from "
+"the menu system altogether."
+msgstr ""
+
+#: /admin/config/system/tabtamer
+msgid "Reset to Defaults"
+msgstr ""
+
+#: /admin/config/system/tabtamer/settings
+msgid "Control Administration Tabs"
+msgstr ""
+
+#: /admin/config/system/tabtamer/settings
+msgid ""
+"Most of the tabs in Drupal are found in the administration pages, an "
+"area which the average user will not access. Because of this, and to "
+"keep the interface as simple as possible, administration page tabs are "
+"not processed by default. You can override the default behavior by "
+"enabling this option. When disabling this option, you need to clear "
+"the Drupal caches to reflect the change."
+msgstr ""
+
+#: /admin/config/system/tabtamer
+msgid ""
+"You may need to clear your cache in order for these changes to take "
+"effect."
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra_base_page
+msgid "Enable publishcontent"
+msgstr ""
+
+#: /admin/structure/types/manage/os2intra_base_page
+msgid "Display publish or unpublish link for nodes of this type."
+msgstr ""
+
+#: /arbejdsmiljoe-og-forebyggelse/arbejdsmiljoeugerne-2016/unpublish/DQ-J-svk0eioZsDztQoBP59adxVigEIEtm1rz3th-wQ
+msgid "\"@title\" [@nid] has been unpublished"
+msgstr ""
+
+#: /arbejdsmiljoe-og-forebyggelse/arbejdsmiljoeugerne-2016/publish/DQ-J-svk0eioZsDztQoBP59adxVigEIEtm1rz3th-wQ
+msgid "\"@title\" [@nid] has been published"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Publish any @type content"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Publish own @type content"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Publish editable @type content"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Unpublish any @type content"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Unpublish own @type content"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Unpublish editable @type content"
+msgstr ""
+
+#: /
+msgid "No graphical display appears to be available, not starting browser."
+msgstr ""
+
+#: /admin/people
+msgid "publish any it_vejledning content"
+msgstr ""
+
+#: /admin/people
+msgid "publish any post content"
+msgstr ""
+
+#: /admin/people
+msgid "publish any os2intra_base_page content"
+msgstr ""
+
+#: /admin/people
+msgid "publish any content"
+msgstr ""
+
+#: /admin/people
+msgid "publish editable it_vejledning content"
+msgstr ""
+
+#: /admin/people
+msgid "publish editable post content"
+msgstr ""
+
+#: /admin/people
+msgid "publish editable os2intra_base_page content"
+msgstr ""
+
+#: /admin/people
+msgid "publish editable content"
+msgstr ""
+
+#: /admin/people
+msgid "publish own it_vejledning content"
+msgstr ""
+
+#: /admin/people
+msgid "publish own post content"
+msgstr ""
+
+#: /admin/people
+msgid "publish own os2intra_base_page content"
+msgstr ""
+
+#: /admin/people
+msgid "unpublish any it_vejledning content"
+msgstr ""
+
+#: /admin/people
+msgid "unpublish any post content"
+msgstr ""
+
+#: /admin/people
+msgid "unpublish any os2intra_base_page content"
+msgstr ""
+
+#: /admin/people
+msgid "unpublish any content"
+msgstr ""
+
+#: /admin/people
+msgid "unpublish editable it_vejledning content"
+msgstr ""
+
+#: /admin/people
+msgid "unpublish editable post content"
+msgstr ""
+
+#: /admin/people
+msgid "unpublish editable os2intra_base_page content"
+msgstr ""
+
+#: /admin/people
+msgid "unpublish editable content"
+msgstr ""
+
+#: /admin/people
+msgid "unpublish own it_vejledning content"
+msgstr ""
+
+#: /admin/people
+msgid "unpublish own post content"
+msgstr ""
+
+#: /admin/people
+msgid "unpublish own os2intra_base_page content"
+msgstr ""
+
+#: /
+msgid "Søg på gruppens navn"
+msgstr ""
+
+#: /
+msgid "Gruppedetaljer"
+msgstr ""
+
+#: /
+msgid "Intet"
+msgstr ""
+
+#: /
+msgid "Medlemmer i %1"
+msgstr ""
+
+#: /
+msgid "Side"
+msgstr ""
+
+#: /gruppe/administration
+msgid "Medlemmer"
+msgstr ""
+
+#: /node/add/post?og_group_ref=294&destination=node/294%3Ftype%3DAll
+msgid "The variable or parameter %name is empty."
+msgstr ""
+
+#: /node/add/post?og_group_ref=294&destination=node/294%3Ftype%3DAll
+msgid "edit configuration"
+msgstr ""
+
+#: /user
+msgid "Indhold markeret som forældet"
+msgstr ""
+
+#: /user
+msgid "Markeret"
+msgstr ""
+
+#: /user
+msgid "Der er endnu ikke oprettet indhold i afdelingen"
+msgstr ""
+
+#: /user
+msgid "Afdelingsværktøjer for %1"
+msgstr ""
+
+#: /user
+msgid "Afdelingstools - ref"
+msgstr ""
+
+#: /user
+msgid "Forfremmet indhold - ref"
+msgstr ""
+
+#: /user
+msgid "Forfatter uid"
+msgstr ""
+
+#: /user
+msgid "[type]: [title] ([realname])"
+msgstr ""
+
+#: /user
+msgid "Der er ikke tilgængeligt indhold"
+msgstr ""
+
+#: /user
+msgid "Markeret som forældet"
+msgstr ""
+
+#: /content/indmelding-fapf/webform-results/table
+msgid "Arbejdssted"
+msgstr ""
+
+#: /content/indmelding-fapf/webform-results/table
+msgid "Fødselsdato"
+msgstr ""
+
+#: /content/indmelding-fapf/webform-results/table
+msgid "Interesser:"
+msgstr ""
+
+#: /admin/config/group/context
+msgid "Group context detection"
+msgstr ""
+
+#: /admin/config/group/context
+msgid "Order of Group context detection methods."
+msgstr ""
+
+#: /admin/config/group/group-membership/manage/og_membership_type_default
+msgid ""
+"A unique machine-readable name for this group membership type. It must "
+"only contain lowercase letters, numbers, and underscores."
+msgstr ""
+
+#: /admin/config/group/fields
+msgid ""
+"This field type supports adding multiple instances on the same bundle "
+"(i.e. the field name is not hardcoded)."
+msgstr ""
+
+#: /admin/config/group/fields
+msgid "@bundle - @entity entity"
+msgstr ""
+
+#: /admin/config/group/fields
+msgid "Delete an OG field from a bundle."
+msgstr ""
+
+#: /system/ajax
+msgid "Field %field already exists in %bundle."
+msgstr ""
+
+#: /admin/config/group/settings
+msgid "Group manager full permissions"
+msgstr ""
+
+#: /admin/config/group/settings
+msgid ""
+"When enabled the group manager will have all the permissions in the "
+"group."
+msgstr ""
+
+#: /admin/config/group/settings
+msgid "Strict node access permissions"
+msgstr ""
+
+#: /admin/config/group/settings
+msgid ""
+"When enabled Organic groups will restrict permissions for creating, "
+"updating and deleting according to the  Organic groups access "
+"settings. Example: A content editor with the <em>Edit any page "
+"content</em> permission who is not a member of a group would be denied "
+"access to modifying page content in that group. (For restricting view "
+"access use the Organic groups access control module.)"
+msgstr ""
+
+#: /admin/config/group/settings
+msgid "Admin people View"
+msgstr ""
+
+#: /admin/config/group/settings
+msgid ""
+"Select the View that should be used to show and control the people in "
+"the group."
+msgstr ""
+
+#: /admin/config/group/settings
+msgid "Group manager default roles"
+msgstr ""
+
+#: /admin/config/group/settings
+msgid ""
+"Select the role(s) a group manager will be granted upon creating a new "
+"group."
+msgstr ""
+
+#: /admin/config/group/settings
+msgid "Roles in @entity-label - @bundle-label"
+msgstr ""
+
+#: /admin/config/group/settings
+msgid "Prevent \"Features\" export piping"
+msgstr ""
+
+#: /admin/config/group/settings
+msgid ""
+"When exporting using Features module a content-type, this will prevent "
+"from OG related fields to be exported."
+msgstr ""
+
+#: /admin/config/group/settings
+msgid "Use queue"
+msgstr ""
+
+#: /admin/config/group/settings
+msgid ""
+"Use the core's queue process to operations such as deleting "
+"memberships when groups are deleted."
+msgstr ""
+
+#: /admin/config/group/settings
+msgid "Delete orphans"
+msgstr ""
+
+#: /admin/config/group/settings
+msgid ""
+"Delete \"Orphan\" group-content (not including useres), when the group "
+"is deleted."
+msgstr ""
+
+#: /admin/config/group/fields
+msgid "Added field @field-type to @bundle."
+msgstr ""
+
+#: /gruppe/administration
+msgid "Gruppemedlemskab"
+msgstr ""
+
+#: /
+msgid "Afdelingens værktøjskasser vises på en fane under afdelingssiden."
+msgstr ""
+
+#: /
+msgid "Forfremmet indhold vises på afdelingens forside"
+msgstr ""
+
+#: /admin/config/group/fields/flagging/tilmeld_gruppe/group_group/delete
+msgid "Determine access to the group."
+msgstr ""
+
+#: /admin/config/group/fields/flagging/tilmeld_gruppe/group_group/delete
+msgid ""
+"Determine access to the group content, which may override the group "
+"settings."
+msgstr ""
+
+#: /
+msgid "Do you really want to revert @module.@component?"
+msgstr ""
+
+#: /node/add/os2intra-org-group-unit
+msgid "Tilføj værktøjskasse"
+msgstr ""
+
+#: /
+msgid "Du har ikke oprettet nogen værktøjskasser."
+msgstr ""
+
+#: /
+msgid "Du abonnerer p.t. ikke på nogen værktøjskasser"
+msgstr ""
+
+#: /
+msgid "Lokal side"
+msgstr ""
+
+#: /
+msgid "<a href=\"/node/93\" class=\"btn btn-primary\">Se flere</a>"
+msgstr ""
+
+#: /admin/modules
+msgid "Provides enhanced UX and addtional features for Media."
+msgstr ""
+
+#: /batch?op=start&id=121
+msgid "Media browser plus"
+msgstr ""
+
+#: /batch?op=start&id=121
+msgid "Preview of a file item as used in the media browsers."
+msgstr ""
+
+#: /batch?op=start&id=121
+msgid "Preview with operations"
+msgstr ""
+
+#: /batch?op=start&id=121
+msgid "Area with different file related actions."
+msgstr ""
+
+#: /batch?op=start&id=121
+msgid "Area to collect and download files."
+msgstr ""
+
+#: /batch?op=start&id=121
+msgid "Area to navigate using the folder structure."
+msgstr ""
+
+#: /batch?op=start&id=121
+msgid "Displays rows as an HTML list including the folder management."
+msgstr ""
+
+#: /batch?op=start&id=121
+msgid "Media Browser Plus Settings"
+msgstr ""
+
+#: /batch?op=start&id=121
+msgid "Change the behaviour and layout of the media browser plus UI"
+msgstr ""
+
+#: /batch?id=121&op=finished
+msgid "<div class=\"icon\"></div> [name]"
+msgstr ""
+
+#: /batch?id=121&op=finished
+msgid "No files found"
+msgstr ""
+
+#: /batch?id=121&op=finished
+msgid "Library (MBP)"
+msgstr ""
+
+#: /batch?id=121&op=finished
+msgid "My files (MBP)"
+msgstr ""
+
+#: /batch?id=121&op=finished
+msgid "Media Browser Plus"
+msgstr ""
+
+#: /admin/content
+msgid "Thumbnails Plus"
+msgstr ""
+
+#: /node/93
+msgid "Media Folder"
+msgstr ""
+
+#: /admin/content/file
+msgid "Download file(s)"
+msgstr ""
+
+#: /admin/content/file
+msgid "Folders"
+msgstr ""
+
+#: /admin/content/file
+msgid "Media Files"
+msgstr ""
+
+#: /admin/content/file
+msgid "Edit selected"
+msgstr ""
+
+#: /admin/content/file
+msgid "Delete selected"
+msgstr ""
+
+#: /admin/content/file
+msgid "Download selected"
+msgstr ""
+
+#: /admin/content/file
+msgid "Media Basket"
+msgstr ""
+
+#: /admin/content/file
+msgid "Download files in Media Basket"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/media_browser_plus/js/media_browser_plus.js
+msgid "An error occured, please refresh the page and try again."
+msgstr ""
+
+#: /file/add
+msgid "Defines the folder where the uploaded files will be saved"
+msgstr ""
+
+#: /group/node/235/admin/people/add-user
+msgid "%name has reached maximum values in field %field."
+msgstr ""
+
+#: /admin/config/search/redirect/add?redirect=taxonomy/term/12022&destination=system/ajax
+msgid "If this box is checked, this redirect will be enabled."
+msgstr ""
+
+#: /admin/config/search/redirect/add?redirect=taxonomy/term/12026&destination=system/ajax
+msgid ""
+"A redirect already exists for the source path %source. Do you want to "
+"<a href=\"@edit-page\">edit the existing redirect</a>?"
+msgstr ""
+
+#: /admin/reports/status
+msgid "Media Browser Plus: Media Bulk Upload enabled"
+msgstr ""
+
+#: /admin/reports/status
+msgid "Media Browser Plus needs Media Bulk Upload to work properly."
+msgstr ""
+
+#: /admin/reports/status
+msgid "Media Browser Plus: Archiver found"
+msgstr ""
+
+#: /admin/reports/status
+msgid "Media Browser Plus needs an archiver to provide multifile downloads."
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Add or remove all content to trash can"
+msgstr ""
+
+#: /admin/content/file
+msgid "Select all items on this page"
+msgstr ""
+
+#: /admin/config/search/path/settings
+msgid ""
+"When a pattern includes certain characters (such as those with "
+"accents) should Pathauto attempt to transliterate them into the "
+"US-ASCII alphabet? Transliteration is handled by the Transliteration "
+"module."
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters
+msgid "Cluster name"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters
+msgid "Cluster Status"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters
+msgid "Indices"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters
+msgid "server version: @ver"
+msgstr ""
+
+#: /admin/structure/taxonomy/media_folders/add
+msgid "Folder %term_name created successfully"
+msgstr ""
+
+#: /admin/content/file/delete-multiple/146
+msgid "Delete multiple files"
+msgstr ""
+
+#: /admin/content/file/delete-multiple/146
+msgid "Deleted 1 file."
+msgstr ""
+
+#: /admin/content/file/mbp
+msgid "The name of the archive file."
+msgstr ""
+
+#: /batch?id=124&op=do
+msgid "An archive has been created and can be downloaded from: !url"
+msgstr ""
+
+#: /admin/structure/taxonomy/media_folders
+msgid "Updating Media"
+msgstr ""
+
+#: /batch?id=125&op=do
+msgid "Relocating files"
+msgstr ""
+
+#: /batch?id=125&op=finished
+msgid "Successfully updated all folders"
+msgstr ""
+
+#: /admin/config/search/search_api/server/elasticsearch_server
+msgid "Elasticsearch cluster status"
+msgstr ""
+
+#: /admin/config/search/search_api/server/elasticsearch_server
+msgid "More info"
+msgstr ""
+
+#: /admin/config/search/search_api/server/elasticsearch_server
+msgid "Elasticsearch server settings"
+msgstr ""
+
+#: /admin/config/search/search_api/server/elasticsearch_server
+msgid "Delete all indexed data on this server"
+msgstr ""
+
+#: /admin/config/search/search_api/server/elasticsearch_server
+msgid "Search indexes"
+msgstr ""
+
+#: /admin/config/search/search_api/server/elasticsearch_server
+msgid "Service options"
+msgstr ""
+
+#: /content/domaenenavn/webform-results/table
+msgid "Domæne/navn"
+msgstr ""
+
+#: /content/domaenenavn/webform-results/table
+msgid "Redelegering"
+msgstr ""
+
+#: /content/domaenenavn/webform-results/table
+msgid "Bestiller/navn"
+msgstr ""
+
+#: /content/domaenenavn/webform-results/table
+msgid "Bestillingsdato"
+msgstr ""
+
+#: /content/domaenenavn/webform-results/table
+msgid "Bemærkninger"
+msgstr ""
+
+#: /content/domaenenavn/webform-results/table
+msgid "Slettet"
+msgstr ""
+
+#: /users/tine-jeanette-busk/edit?pass-reset-token=SiZDS4JTyNNF8ShES_xnwtx5k_yb0mtKtpj78lV3uP0
+msgid "Clone a node"
+msgstr ""
+
+#: /users/tine-jeanette-busk/edit?pass-reset-token=SiZDS4JTyNNF8ShES_xnwtx5k_yb0mtKtpj78lV3uP0
+msgid "Node to clone"
+msgstr ""
+
+#: /users/tine-jeanette-busk/edit?pass-reset-token=SiZDS4JTyNNF8ShES_xnwtx5k_yb0mtKtpj78lV3uP0
+msgid "Cloned node"
+msgstr ""
+
+#: /admin/people
+msgid "edit terms in 23"
+msgstr ""
+
+#: /admin/people
+msgid "delete terms in 23"
+msgstr ""
+
+#: /admin/people
+msgid "manage all trash can content"
+msgstr ""
+
+#: /
+msgid "Unconnected field collection item"
+msgstr ""
+
+#: /admin/content/file/144/move-to-folder/12032
+msgid "Load Media Entities"
+msgstr ""
+
+#: /content/domaenenavn/webform-results/download
+msgid "Exporting submissions"
+msgstr ""
+
+#: /content/domaenenavn/webform-results/download
+msgid "Creating export file"
+msgstr ""
+
+#: /content/domaenenavn/webform-results/download
+msgid "The export file could not be created because an error occurred."
+msgstr ""
+
+#: /batch?id=127&op=do
+msgid "Exported @count of @total submissions..."
+msgstr ""
+
+#: /batch?id=127&op=finished
+msgid ""
+"Export creation complete. Your download should begin now. If it does "
+"not start, <a href=\"!href\">download the file here</a>. This file may "
+"only be downloaded once."
+msgstr ""
+
+#: /
+msgid "'!type' cache is not a valid cache type."
+msgstr ""
+
+#: /
+msgid ""
+"<hr/>\n"
+"[field_os2intra_user_bio]"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Elasticsearch cluster info"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Total Shards"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Successful Shards"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Total Documents"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Total Size"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Time out"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Number of nodes"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Number of data nodes"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Active primary shards"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Active shards"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Relocating shards"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Initializing shards"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Unassigned shards"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Number of pending tasks"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Cluster statistics"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Node name"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/info
+msgid "Cluster Health"
+msgstr ""
+
+#: /admin/config/search/phrase
+msgid "New phrase"
+msgstr ""
+
+#: /admin/config/search/phrase
+msgid "Phrase"
+msgstr ""
+
+#: /admin/config/search/phrase
+msgid "Exclusive"
+msgstr ""
+
+#: /admin/config/search/synonyms
+msgid "Use synonyms"
+msgstr ""
+
+#: /admin/config/search/synonyms
+msgid "Synonyms"
+msgstr ""
+
+#: /admin/config/search/synonyms
+msgid "One synomym group per line, look at %link for help in formatting"
+msgstr ""
+
+#: /admin/config/search/synonyms
+msgid "Select index, which the synonyms should be applied to"
+msgstr ""
+
+#: /admin/config/search/synonyms
+msgid "Synonyms file path"
+msgstr ""
+
+#: /admin/config/search/synonyms
+msgid ""
+"File with filename \"synonyms.txt\" will be saved in this path. Must "
+"be writtable"
+msgstr ""
+
+#: /admin/config/search/kle
+msgid "Handler i stykker views.php"
+msgstr ""
+
+#: /
+msgid "Se indhold"
+msgstr ""
+
+#: /
+msgid "View resultattæller"
+msgstr ""
+
+#: /
+msgid "Har nyt indhold"
+msgstr ""
+
+#: /
+msgid "Indhold med %1 som ejer"
+msgstr ""
+
+#: /
+msgid "Nyt og opdateret"
+msgstr ""
+
+#: /
+msgid "Underside, vises ikke på forsiden"
+msgstr ""
+
+#: /
+msgid "sites/default/settings.php"
+msgstr ""
+
+#: /
+msgid "Check if the configuration file exists."
+msgstr ""
+
+#: /
+msgid "settings.php exists and is not a symbolic link."
+msgstr ""
+
+#: /
+msgid "sites/default"
+msgstr ""
+
+#: /
+msgid "Check if it exists and isn't symbolic"
+msgstr ""
+
+#: /
+msgid "sites/default is a directory and not a symbolic link."
+msgstr ""
+
+#: /
+msgid "sites/all"
+msgstr ""
+
+#: /
+msgid "sites/all is a directory and not a symbolic link."
+msgstr ""
+
+#: /
+msgid "Multi-site"
+msgstr ""
+
+#: /
+msgid "Detect multi-site configurations."
+msgstr ""
+
+#: /
+msgid "No multi-sites detected."
+msgstr ""
+
+#: /
+msgid "Superfluous files in /sites"
+msgstr ""
+
+#: /
+msgid "Detect unnecessary files."
+msgstr ""
+
+#: /
+msgid "No unnecessary files detected."
+msgstr ""
+
+#: /
+msgid "Fast 404 pages"
+msgstr ""
+
+#: /
+msgid "Check if enabled."
+msgstr ""
+
+#: /
+msgid "Fast 404 pages are enabled."
+msgstr ""
+
+#: /
+msgid "PHP Filter"
+msgstr ""
+
+#: /
+msgid "PHP Filter is not enabled."
+msgstr ""
+
+#: /
+msgid "Block status"
+msgstr ""
+
+#: /
+msgid "Check to see if enabled"
+msgstr ""
+
+#: /
+msgid "Block is enabled."
+msgstr ""
+
+#: /
+msgid "Verify Drupal's block caching is enabled."
+msgstr ""
+
+#: /
+msgid "Block caching is enabled."
+msgstr ""
+
+#: /
+msgid "Cache report"
+msgstr ""
+
+#: /
+msgid "Individual block cache settings."
+msgstr ""
+
+#: /
+msgid "Anonymous caching"
+msgstr ""
+
+#: /
+msgid "Verify Drupal's anonymous page caching is enabled."
+msgstr ""
+
+#: /
+msgid "Anonymous caching is enabled."
+msgstr ""
+
+#: /
+msgid "Verify that Drupal's minimum cache lifetime is set to never expire."
+msgstr ""
+
+#: /
+msgid "Minimum cache lifetime is set to none."
+msgstr ""
+
+#: /
+msgid "Verify that Drupal's cached pages last for at least 15 minutes."
+msgstr ""
+
+#: /
+msgid "Expiration of cached pages is set to @minutes min."
+msgstr ""
+
+#: /
+msgid "Verify that Drupal is set to compress cached pages."
+msgstr ""
+
+#: /
+msgid "Cached pages are compressed."
+msgstr ""
+
+#: /
+msgid "Aggregate and compress CSS files in Drupal"
+msgstr ""
+
+#: /
+msgid "Verify that Drupal is aggregating and compressing CSS."
+msgstr ""
+
+#: /
+msgid "CSS aggregation and compression is enabled."
+msgstr ""
+
+#: /
+msgid "Aggregate JavaScript files in Drupal"
+msgstr ""
+
+#: /
+msgid "Verify that Drupal is aggregating JavaScript."
+msgstr ""
+
+#: /
+msgid "JavaScript aggregation is enabled."
+msgstr ""
+
+#: /
+msgid "Determine the default locking mechanism."
+msgstr ""
+
+#: /
+msgid "Detail caching backends."
+msgstr ""
+
+#: /
+msgid ""
+"Determine the default cache class, used whenever no alternative is "
+"specified."
+msgstr ""
+
+#: /
+msgid "Detail explicitly defined cache bins."
+msgstr ""
+
+#: /
+msgid "Determine the size of @files_folder."
+msgstr ""
+
+#: /
+msgid "Determine the size of the site root; does not include remote mounts."
+msgstr ""
+
+#: /
+msgid "Determine the count of Drupal managed files."
+msgstr ""
+
+#: /
+msgid "Determine the size of Drupal managed files."
+msgstr ""
+
+#: /
+msgid "Available content types and counts"
+msgstr ""
+
+#: /
+msgid "Check for unused content types"
+msgstr ""
+
+#: /
+msgid "There are no unused content types."
+msgstr ""
+
+#: /
+msgid "Scan nodes for duplicate titles within a particular content type"
+msgstr ""
+
+#: /
+msgid "Available vocabularies and term counts"
+msgstr ""
+
+#: /
+msgid "Check for unused vocabularies"
+msgstr ""
+
+#: /
+msgid "Field status"
+msgstr ""
+
+#: /
+msgid "Field is enabled."
+msgstr ""
+
+#: /
+msgid "Total number of fields"
+msgstr ""
+
+#: /
+msgid ""
+"For each bundle, entity and instance, get the count of populated "
+"fields"
+msgstr ""
+
+#: /
+msgid "Determine which fields are unused in each bundle."
+msgstr ""
+
+#: /
+msgid "Check to see if cron is scheduled to run."
+msgstr ""
+
+#: /
+msgid "Cron is set to run every @minutes minutes."
+msgstr ""
+
+#: /
+msgid "Running"
+msgstr ""
+
+#: /
+msgid "Check to see if cron is actively running."
+msgstr ""
+
+#: /
+msgid "Cron is not currently running."
+msgstr ""
+
+#: /
+msgid "Last run"
+msgstr ""
+
+#: /
+msgid "Time Cron last executed"
+msgstr ""
+
+#: /
+msgid "Cron last ran at @date (@ago ago)"
+msgstr ""
+
+#: /
+msgid "Determine the size of the database."
+msgstr ""
+
+#: /
+msgid ""
+"Return list of all tables with at least @min_rows rows in the "
+"database."
+msgstr ""
+
+#: /
+msgid "Collations"
+msgstr ""
+
+#: /
+msgid "Check to see if there are any tables that aren't using UTF-8."
+msgstr ""
+
+#: /
+msgid "Every table is using UTF-8."
+msgstr ""
+
+#: /
+msgid "Storage Engines"
+msgstr ""
+
+#: /
+msgid "Check to see if there are any tables that aren't using InnoDB."
+msgstr ""
+
+#: /
+msgid "Every table is using InnoDB."
+msgstr ""
+
+#: /
+msgid "Count the number of enabled extensions (modules and themes) in a site."
+msgstr ""
+
+#: /
+msgid "Check for enabled development modules."
+msgstr ""
+
+#: /
+msgid "Reason"
+msgstr ""
+
+#: /
+msgid "Not recommended"
+msgstr ""
+
+#: /
+msgid "Check for unrecommended modules."
+msgstr ""
+
+#: /
+msgid "No unrecommended extensions were detected; no action required."
+msgstr ""
+
+#: /
+msgid "Duplicates"
+msgstr ""
+
+#: /
+msgid "Check for duplicate extensions in the site codebase."
+msgstr ""
+
+#: /
+msgid "No duplicate extensions were detected."
+msgstr ""
+
+#: /
+msgid ""
+"Detect missing extensions (modules and themes) in a site, which "
+"degrades performance."
+msgstr ""
+
+#: /
+msgid "No extensions are missing from your codebase."
+msgstr ""
+
+#: /
+msgid "Detect modules that have been disabled, but have not been uninstalled."
+msgstr ""
+
+#: /
+msgid "Determine what projects can be updated."
+msgstr ""
+
+#: /
+msgid "Determine what projects should be updated due to security concerns."
+msgstr ""
+
+#: /
+msgid "Menu Router"
+msgstr ""
+
+#: /
+msgid "Check for potentially malicious entries in the menu router."
+msgstr ""
+
+#: /
+msgid ""
+"No known potentially malicious entries were detected in the "
+"menu_router table."
+msgstr ""
+
+#: /
+msgid "System Status"
+msgstr ""
+
+#: /
+msgid "Drupal's status report."
+msgstr ""
+
+#: /
+msgid "Count All"
+msgstr ""
+
+#: /
+msgid "Total number of Drupal users."
+msgstr ""
+
+#: /
+msgid "There are @count_users_all users."
+msgstr ""
+
+#: /
+msgid "Count Blocked"
+msgstr ""
+
+#: /
+msgid "Total number of blocked Drupal users."
+msgstr ""
+
+#: /
+msgid "There are no blocked users."
+msgstr ""
+
+#: /
+msgid "List Roles"
+msgstr ""
+
+#: /
+msgid "Show all available roles and user counts."
+msgstr ""
+
+#: /
+msgid "Identify UID #1"
+msgstr ""
+
+#: /
+msgid "Show username and email of UID #1."
+msgstr ""
+
+#: /
+msgid "UID #1: @name, email: @mail"
+msgstr ""
+
+#: /
+msgid "UID #1 access"
+msgstr ""
+
+#: /
+msgid "Determine if UID #1 is blocked."
+msgstr ""
+
+#: /
+msgid "UID #1 not blocked."
+msgstr ""
+
+#: /
+msgid "Views status"
+msgstr ""
+
+#: /
+msgid "Views is enabled."
+msgstr ""
+
+#: /
+msgid "Number of enabled Views."
+msgstr ""
+
+#: /
+msgid "There are @count_views enabled views."
+msgstr ""
+
+#: /
+msgid "Check the length of time raw query results should be cached."
+msgstr ""
+
+#: /
+msgid "Go to /admin/structure/views/"
+msgstr ""
+
+#: /
+msgid "Edit the View in question"
+msgstr ""
+
+#: /
+msgid "Select the Display"
+msgstr ""
+
+#: /
+msgid "Click Advanced"
+msgstr ""
+
+#: /
+msgid "Next to Caching, click to edit."
+msgstr ""
+
+#: /
+msgid "Query results: (something other than Never cache)"
+msgstr ""
+
+#: /
+msgid "Check the length of time raw rendered output should be cached."
+msgstr ""
+
+#: /
+msgid "Rendered output: (something other than Never cache)"
+msgstr ""
+
+#: /
+msgid "Check to see if syslog logging is enabled"
+msgstr ""
+
+#: /
+msgid "Check to see if database logging is enabled"
+msgstr ""
+
+#: /admin/structure/feeds/create
+msgid ""
+"A natural name for this configuration. Example: RSS Feed. You can "
+"always change this name later."
+msgstr ""
+
+#: /admin/structure/feeds/create
+msgid "A description of this configuration."
+msgstr ""
+
+#: /
+msgid "A total of @total views were found in this Drupal installation:"
+msgstr ""
+
+#: /
+msgid "  @indb views reside only in the database"
+msgstr ""
+
+#: /
+msgid "  @over views are overridden"
+msgstr ""
+
+#: /
+msgid "  @incode views are in their default state"
+msgstr ""
+
+#: /
+msgid "  @dis views are disabled\n"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid "Edit cluster"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid "Edit cluster settings"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid "Administrative cluster name"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid ""
+"Enter the administrative cluster name that will uniquely define your "
+"Elasticsearch cluster"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid "Cluster id"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid ""
+"Unique, machine-readable identifier for this Elasticsearch "
+"environment."
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid "Server URL"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid ""
+"Enter the URL and the port of a server (node) in the cluster. Example: "
+"http://localhost:9200. Please enter the port also even it is the "
+"default one e.g. https://localhost:443"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid "Make this cluster default connection"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid ""
+"If no specific cluster connection specified the API will use the "
+"default connection."
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid "Use multiple nodes connection"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid ""
+"It will automatically discover all nodes and use them in the "
+"connection to the cluster. The Elasticsearch client can then randomise "
+"the query execution between nodes."
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid "Use authentication"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid "Use HTTP authentication method to connect to Elasticsearch."
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid "Authentication type"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid "Select the http authentication type."
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid "The username for the authentication."
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid "The password for the authentication."
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/edit
+msgid ""
+"The seconds in which the connection will timeout if no connection with "
+"Elasticsearch."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/facets
+msgid ""
+"To enable block caching, visit the <a "
+"href=\"@performance-page\">performance page</a>."
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/indices
+msgid "Elasticsearch cluster indices"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/indices
+msgid "Docs"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/indices
+msgid "Aliases"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/indices/intranet_search/edit
+msgid "Enter the index name."
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/indices/intranet_search/edit
+msgid "Number of shards"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/indices/intranet_search/edit
+msgid "Enter the number of shards for the index."
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/indices/intranet_search/edit
+msgid "Number of replica"
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/indices/intranet_search/edit
+msgid "Enter the number of shards replicas."
+msgstr ""
+
+#: /admin/config/elasticsearch-connector/clusters/elasticsearch_cluster/indices/intranet_search/aliases
+msgid "Alias name"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/reindex
+msgid "Re-index index @name"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/reindex
+msgid "Do you really want to queue all items on this index for re-indexing?"
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/reindex
+msgid ""
+"This will mark all items for this index to be marked as needing to be "
+"indexed. Searches on this index will continue to yield results while "
+"the items are being re-indexed. This action cannot be undone."
+msgstr ""
+
+#: /admin/config/search/search_api/index/default_node_index/reindex
+msgid "The index was successfully marked for re-indexing."
+msgstr ""
+
+#: /users/admin/indhold
+msgid "Selected <strong>!row_count</strong> in this page."
+msgstr ""
+
+#: /users/admin/indhold
+msgid "Selected <strong>!row_count</strong> in this view."
+msgstr ""
+
+#: /users/admin/indhold
+msgid "Select all !row_count in this view."
+msgstr ""
+
+#: /users/admin/indhold
+msgid "Select only !row_count in this page."
+msgstr ""
+
+#: /admin/appearance/settings/fki
+msgid ""
+"Use <code>.container-fluid</code> class. See <a href=\"!url\">Fluid "
+"container</a>"
+msgstr ""
+
+#: /admin/appearance/settings/fki
+msgid ""
+"Enable the <code>.well</code>, <code>.well-sm</code> or "
+"<code>.well-lg</code> classes for specified regions. See: "
+"documentation on <a href=\"!wells\" target=\"_blank>Bootstrap "
+"Wells</a>."
+msgstr ""
+
+#: /admin/appearance/settings/fki
+msgid ""
+"This plugin is not able to be configured from the UI as it is severely "
+"broken. In an effort to balance not break backwards compatibility and "
+"to prevent new users from running into unforeseen issues, you must "
+"manually opt-in/out inside your theme .info file. Please see the "
+"following issue for more details: <a href=\"!url\" "
+"target=\"_blank\">Replace custom JS with the bootstrap-anchor "
+"plugin</a>"
+msgstr ""
+
+#: /admin/appearance/settings/fki
+msgid ""
+"Elements that have the <code>data-toggle=\"popover\"</code> attribute "
+"set will automatically initialize the popover upon page load. <strong "
+"class=\"error text-error\">WARNING: This feature can sometimes impact "
+"performance. Disable if pages appear to \"hang\" after initial "
+"load.</strong>"
+msgstr ""
+
+#: /admin/appearance/settings/fki
+msgid ""
+"These are global options. Each popover can independently override "
+"desired settings by appending the option name to <code>data-</code>. "
+"Example: <code>data-animation=\"false\"</code>."
+msgstr ""
+
+#: /admin/appearance/settings/fki
+msgid ""
+"If a selector is provided, tooltip objects will be delegated to the "
+"specified targets. In practice, this is used to enable dynamic HTML "
+"content to have popovers added. See <a href=\"!this\" "
+"target=\"_blank\">this</a> and <a href=\"!example\" "
+"target=\"_blank\">an informative example</a>."
+msgstr ""
+
+#: /admin/appearance/settings/fki
+msgid ""
+"Inspired by the excellent jQuery.tipsy plugin written by Jason Frame; "
+"Tooltips are an updated version, which don't rely on images, use CSS3 "
+"for animations, and data-attributes for local title storage. See <a "
+"href=\"!url\" target=\"_blank\">Bootstrap tooltips</a> for more "
+"documentation."
+msgstr ""
+
+#: /admin/appearance/settings/fki
+msgid ""
+"Elements that have the <code>data-toggle=\"tooltip\"</code> attribute "
+"set will automatically initialize the tooltip upon page load. <strong "
+"class=\"error text-error\">WARNING: This feature can sometimes impact "
+"performance. Disable if pages appear to \"hang\" after initial "
+"load.</strong>"
+msgstr ""
+
+#: /admin/appearance/settings/fki
+msgid ""
+"These are global options. Each tooltip can independently override "
+"desired settings by appending the option name to <code>data-</code>. "
+"Example: <code>data-animation=\"false\"</code>."
+msgstr ""
+
+#: /admin/appearance/settings/fki
+msgid ""
+"<p style=\"background:#EB4C36\"><a href=\"!jsdelivr\" "
+"target=\"_blank\"><img src=\"http://www.jsdelivr.com/img/logo-34.png\" "
+"alt=\"jsDelivr Logo\" /></a></p><p><a href=\"!jsdelivr\" "
+"target=\"_blank\">jsDelivr</a> is a free multi-CDN infrastructure that "
+"uses <a href=\"!maxcdn\" target=\"_blank\">MaxCDN</a>, <a "
+"href=\"!cloudflare\" target=\"_blank\">Cloudflare</a> and many others "
+"to combine their powers for the good of the open source community... "
+"<a href=\"!jsdelivr_about\" target=\"_blank\">read more</a></p>"
+msgstr ""
+
+#: /users/admin/edit
+msgid ""
+"Created a new %entity_type %target_bundle : !target "
+"(entityreference_autocreate)"
+msgstr ""
+
+#: /filter/tips
+msgid ""
+"If you include a word in your post that's filtered (usually foul "
+"language), it will be replaced by the filtered version of the word."
+msgstr ""
+
+#: /
+msgid "The feature !feature is not enabled."
+msgstr ""
+
+#: /
+msgid "Indhold refererer til Indhold fra og_group_ref"
+msgstr ""
+
+#: /
+msgid "Gruppe / Afdelings forside"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__intranetside/content?destination=node/239
+msgid "Deleted/missing block @module-@delta"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__intranetside%3A%3A%3A%3A/new-83e3ada4-96e7-4712-ac29-d6e848ea2de7
+msgid "- All vocabularies -"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__intranetside%3A%3A%3A%3A/new-83e3ada4-96e7-4712-ac29-d6e848ea2de7
+msgid ""
+"Optionally restrict the terms to a specific vocabulary, or allow terms "
+"from all vocabularies."
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__intranetside%3A%3A%3A%3A/new-83e3ada4-96e7-4712-ac29-d6e848ea2de7
+msgid "Term formatting"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__intranetside%3A%3A%3A%3A/new-83e3ada4-96e7-4712-ac29-d6e848ea2de7
+msgid "Taxonomy links (uses theme('links'))"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__intranetside%3A%3A%3A%3A/new-83e3ada4-96e7-4712-ac29-d6e848ea2de7
+msgid "Inline, delimited"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__intranetside%3A%3A%3A%3A/new-83e3ada4-96e7-4712-ac29-d6e848ea2de7
+msgid "Link to terms"
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__intranetside%3A%3A%3A%3A/new-83e3ada4-96e7-4712-ac29-d6e848ea2de7
+msgid "Check here to make the terms link to the term paths."
+msgstr ""
+
+#: /panels/ajax/editor/edit-pane/panel_context%3Anode_view%3A%3Anode_view__intranetside%3A%3A%3A%3A/new-83e3ada4-96e7-4712-ac29-d6e848ea2de7
+msgid "Term delimiter"
+msgstr ""
+
+#: /test-hr-fredericia
+msgid "Relaterede links block"
+msgstr ""
+
+#: /admin/modules
+msgid "Generate a list of related links"
+msgstr ""
+
+#: /
+msgid "\"Syntes godt om\""
+msgstr ""
+
+#: /admin/structure/taxonomy/os2web_taxonomies_tax_places/fields
+msgid "Heltal"
+msgstr ""
+
+#: /node/add/os2intra-group
+msgid "Gruppe redigering"
+msgstr ""
+
+#: /gruppe/administration
+msgid "Manage the group roles."
+msgstr ""
+
+#: /gruppe/administration
+msgid "Manage the group permissions."
+msgstr ""
+
+#: /admin/structure
+msgid "OS2intra gruppe og afdelings medlemmer"
+msgstr ""
+
+#: /gruppe/administration
+msgid "Personer"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "Email address that should be notified when new departments are created"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "Department short name"
+msgstr ""
+
+#: /
+msgid ""
+"Hvis der uploades et billede benyttes dette. Uploades der ikke et "
+"billede bliver kortet vist istedet."
+msgstr ""
+
+#: /booking-og-bestilling/grafisk-materiale
+msgid "Telefon nummer"
+msgstr ""
+
+#: /admin/config/group/fields
+msgid "Added field @field-type (@field-name) to @bundle."
+msgstr ""
+
+#: /content/ewefwef
+msgid "testafdelingslettes"
+msgstr ""
+
+#: /admin/structure/pages/nojs/operation/node_view/handlers/node_view__afdeling/content?destination=node/357
+msgid "Context is missing for field: @name"
+msgstr ""
+
+#: /fredericia-kommune/direktionen/hr-facility
+msgid "Handler i stykker og_membership.field_os2intra_afdeling"
+msgstr ""
+
+#: /
+msgid "Broken handler og_membership.field_os2intra_afdeling"
+msgstr ""
+
+#: /
+msgid "Unknown option"
+msgstr ""
+
+#: /
+msgid ""
+"@unknown: --@options.  See `drush help @command` for available "
+"options. To suppress this error, add the option --strict=0."
+msgstr ""
+
+#: /
+msgid ""
+"The drush command '!args' could not be found.  Run `drush cache-clear "
+"drush` to clear the commandfile cache if you have installed new "
+"extensions."
+msgstr ""
+
+#: /content/tilmelding-workshop-nyt-intranet/webform/conditionals
+msgid ""
+"The subject of the conditional cannot be the same as the component "
+"that is changed (%target)."
+msgstr ""
+
+#: /content/tilmelding-workshop-nyt-intranet/webform-results/table
+msgid "Dato for afholdelse"
+msgstr ""
+
+#: /admin/modules
+msgid "os2intra_email_notification."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "PHP DOM extension"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Administer Mail System"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid ""
+"Select the default, per-module, and per-mailing <a "
+"href=\"!interface\"><code>@interface</code></a> to use for formatting "
+"and sending email messages."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Edit Mime Mail user settings"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Edit user specific settings for Mime Mail."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Send arbitrary files"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Attach or embed files located outside the public files directory."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "os2intra afdindh afdeling"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "os2intra afdindh body"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "os2intra afdindh subject"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "target_nodes"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Message arguments"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "The arguments to associate with the message."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Send HTML e-mail"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "A key to identify the e-mail sent."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid ""
+"The mail's recipient address. The formatting of this string must "
+"comply with RFC 2822."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "CC Recipient"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid ""
+"The mail's carbon copy address. You may separate multiple addresses "
+"with comma."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid ""
+"The mail's blind carbon copy address. You may separate multiple "
+"addresses with comma."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid ""
+"The sender's name. Leave it empty to use the site-wide configured "
+"name."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Sender e-mail address"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid ""
+"The sender's address. Leave it empty to use the site-wide configured "
+"address."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Reply e-mail address"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "The address to reply to. Leave it empty to use the sender's address."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Unsubscription e-mail and/or URL"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid ""
+"An e-mail address and/or a URL which can be used for unsubscription. "
+"Values must be enclosed by angel brackets and separated by a comma."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid ""
+"The mail's HTML body. Will be formatted using the text format selected "
+"on the <a href=\"@url\">settings</a> page."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Plain text body"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "The mail's plaintext body."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid ""
+"The mail's attachments, one file per line e.g. "
+"\"files/images/mypic.png\" without quotes."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Send HTML mail to all users of a role"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Send mail only to active users."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "The mail's message HTML body."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Plaintext body"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "The mail's message plaintext body."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Send mail in each recipient's language"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid ""
+"If checked, the mail message and subject will be sent in each user's "
+"preferred language. <strong>You can safely leave the language selector "
+"below empty if this option is selected.</strong>"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Fixed language"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid ""
+"If specified, the fixed language used for getting the mail message and "
+"subject."
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Object has been flagged with any flag"
+msgstr ""
+
+#: /admin/modules/list/confirm
+msgid "Object has been unflagged with any flag"
+msgstr ""
+
+#: /batch?op=start&id=136
+msgid "Manage mime mail system settings."
+msgstr ""
+
+#: /admin/structure/flags/manage/email_node
+msgid "Email content"
+msgstr ""
+
+#: /admin/config
+msgid "Printer, email and PDF versions - Send by email"
+msgstr ""
+
+#: /admin/config
+msgid "Incompatible Mail System setting detected"
+msgstr ""
+
+#: /admin/config
+msgid "Mail System Settings page"
+msgstr ""
+
+#: /admin/config
+msgid ""
+"The send by email module requires the use of the DefaultMailSystem, "
+"please configure it in the !url."
+msgstr ""
+
+#: /admin/config/system/mailsystem
+msgid "!module module"
+msgstr ""
+
+#: /admin/config/system/mailsystem
+msgid "Mail System Settings"
+msgstr ""
+
+#: /admin/config/system/mailsystem
+msgid ""
+"Drupal provides a default <a "
+"href=\"!interface\"><code>@interface</code></a> class called <a "
+"href=\"!default_class\"><code>@default_class</code></a>. Modules may "
+"provide additional classes. Each <a "
+"href=\"!interface\"><code>@interface</code></a> class may be "
+"associated with one or more identifiers, composed of a %module and an "
+"optional %key. Each email being sent also has a %module and a %key. To "
+"decide which class to use, Drupal uses the following search order: "
+"<ol><li>The class associated with the %module and %key, if "
+"any.</li><li>The class associated with the %module, if "
+"any.</li><li>The site-wide default <a "
+"href=\"!interface\"><code>@interface</code></a> class.</li></ol>"
+msgstr ""
+
+#: /admin/config/system/mailsystem
+msgid ""
+"Site-wide default <a href=\"!interface\"><code>@interface</code></a> "
+"class"
+msgstr ""
+
+#: /admin/config/system/mailsystem
+msgid "Remove this setting."
+msgstr ""
+
+#: /admin/config/system/mailsystem
+msgid "Theme to render the emails"
+msgstr ""
+
+#: /admin/config/system/mailsystem
+msgid ""
+"Select the theme that will be used to render the emails. This can be "
+"either the current theme, the default theme, the domain theme or any "
+"active theme."
+msgstr ""
+
+#: /admin/config/system/mailsystem
+msgid "New Class"
+msgstr ""
+
+#: /admin/config/system/mailsystem
+msgid ""
+"Create a new <a href=\"!interface\"><code>@interface</code></a> that "
+"inherits its methods from other classes. The new class will be named "
+"after the other classes it uses."
+msgstr ""
+
+#: /admin/config/system/mailsystem
+msgid ""
+"Class to use for the <a href=\"!format\"><code>@format</code></a> "
+"method"
+msgstr ""
+
+#: /admin/config/system/mailsystem
+msgid "Class to use for the <a href=\"!mail\"><code>@mail</code></a> method"
+msgstr ""
+
+#: /admin/config/system/mailsystem
+msgid "New Setting"
+msgstr ""
+
+#: /admin/config/system/mailsystem
+msgid "Add a new %module and %key to the settings list."
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid "The name that all site emails will be from when using default engine."
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid ""
+"The email address that all site e-mails will be from when using "
+"default engine."
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid "Use simple address format"
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid ""
+"Use the simple format of user@example.com for all recipient email "
+"addresses."
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid "Include site style sheets"
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid ""
+"Gather all style sheets when no mail.css found in the default theme "
+"directory."
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid "Send plain text email only"
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid ""
+"This option disables the use of email messages with graphics and "
+"styles. All messages will be converted to plain text."
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid "Link images only"
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid ""
+"This option disables the embedding of images. All image will be "
+"available as external content. This can make email messages much "
+"smaller."
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid "Preserve class attributes"
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid ""
+"This option disables the removing of class attributes from the message "
+"source. Useful for debugging the style of the message."
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid "E-mail format"
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid ""
+"The filter set that will be applied to the message body.\n"
+"      If you are using Mime Mail as default mail sytem, make sure to "
+"enable\n"
+"      \"Convert line breaks into HTML\" and \"Convert URLs into "
+"links\" with a long\n"
+"      enough maximum length for e.g. password reset URLs!"
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid ""
+"This is an advanced setting that should not be enabled unless you know "
+"what you are doing."
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid ""
+"This string will be used to validate incoming messages. It can be "
+"anything, but must be used on both sides of the transfer."
+msgstr ""
+
+#: /admin/config/system/mimemail
+msgid "Default mailing engine."
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "Use Reply-To header"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid ""
+"Sends all e-mail from the domain of the default address above and sets "
+"the \"Reply-To\" header to the actual sender. Helps prevent e-mail "
+"from being flagged as spam."
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "HTML mail system"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid ""
+"Whether the mail system configured for webform is capable of sending "
+"mail in HTML format."
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "Track anonymous users by:"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "Cookie only (least strict)"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "IP address only"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "Both cookie and IP address (most strict)"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid ""
+"<a href=\"http://www.wikipedia.org/wiki/HTTP_cookie\">Cookies</a> can "
+"be used to help prevent the same user from repeatedly submitting a "
+"webform. Limiting by IP address is more effective against repeated "
+"submissions, but may result in unintentional blocking of users sharing "
+"the same address. Confidential submissions are tracked by cookie only. "
+"Logged-in users are always tracked by their user ID and are not "
+"affected by this option."
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "E-mailing multiple recipients"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "Send a single e-mail to all recipients"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "Send individual e-mails to each recipient"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid ""
+"Individual e-mails increases privacy by not revealing the addresses of "
+"other recipients. A single e-mail to all recipients lets them use "
+"\"Reply All\" to communicate."
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "@title — @sample"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid ""
+"Choose the format for the display of date components. Only the date "
+"portion of the format is used. Reporting and export use the short "
+"format."
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "Export word-wrap"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "Only text containing return characters"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "All text"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid ""
+"Some export formats, such as Microsoft Excel, support word-wrapped "
+"text cells."
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "Token access"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "Allow tokens to be used in Webforms."
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "Disable tokens in Webforms"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid ""
+"Tokens can be used to reveal sensitive information. Allow tokens if "
+"Webform creators are trusted."
+msgstr ""
+
+#: /admin/config/content/webform
+msgid "Select email mapping limit"
+msgstr ""
+
+#: /admin/config/content/webform
+msgid ""
+"When mapping emails addresses to a select component, limit the choice "
+"to components with less than the amount of options indicated. This is "
+"to avoid flooding the email settings form."
+msgstr ""
+
+#: /admin/structure/flags/manage/email_og
+msgid "Email groups"
+msgstr ""
+
+#: /admin/structure/flags/manage/email_term
+msgid "Email term"
+msgstr ""
+
+#: /users/admin
+msgid "@label @delta partial"
+msgstr ""
+
+#: /users/admin
+msgid "Rendered message text of the @delta partial"
+msgstr ""
+
+#: /users/admin
+msgid "Mime Mail module settings form elements."
+msgstr ""
+
+#: /users/admin
+msgid "Subscription"
+msgstr ""
+
+#: /users/admin
+msgid "email_flag"
+msgstr ""
+
+#: /admin/structure/flags/manage/subscribe_og
+msgid "Grupper og afdelinger"
+msgstr ""
+
+#: /admin/content
+msgid "Send Email"
+msgstr ""
+
+#: /admin/content
+msgid "Don't send Email"
+msgstr ""
+
+#: /
+msgid "taxonomy_term"
+msgstr ""
+
+#: /users/anders-demo/edit
+msgid ""
+"Check this option if you do not wish to receive email messages with "
+"graphics and styles."
+msgstr ""
+
+#: /content/fredericia-kommune
+msgid " Grupper og afdelinger"
+msgstr ""
+
+#: /admin/people
+msgid "use text format emails"
+msgstr ""
+
+#: /admin/people
+msgid "flag email_node"
+msgstr ""
+
+#: /admin/people
+msgid "flag email_og"
+msgstr ""
+
+#: /admin/people
+msgid "flag subscribe_og"
+msgstr ""
+
+#: /admin/people
+msgid "flag subscribe_node"
+msgstr ""
+
+#: /admin/people
+msgid "flag email_term"
+msgstr ""
+
+#: /admin/people
+msgid "flag subscribe_term"
+msgstr ""
+
+#: /admin/people
+msgid "unflag email_node"
+msgstr ""
+
+#: /admin/people
+msgid "unflag email_og"
+msgstr ""
+
+#: /admin/people
+msgid "unflag subscribe_og"
+msgstr ""
+
+#: /admin/people
+msgid "unflag subscribe_node"
+msgstr ""
+
+#: /admin/people
+msgid "unflag email_term"
+msgstr ""
+
+#: /admin/people
+msgid "unflag subscribe_term"
+msgstr ""
+
+#: /admin/people
+msgid "administer mailsystem"
+msgstr ""
+
+#: /admin/people
+msgid "edit mimemail user settings"
+msgstr ""
+
+#: /admin/people
+msgid "send arbitrary files"
+msgstr ""
+
+#: /
+msgid "CKEditor integration has been moved to the Media CKEditor module."
+msgstr ""
+
+#: /
+msgid ""
+"If you are using the stand-alone CKEditor module in combination with "
+"the CKEditor plugin provided by Media WYSIWYG then you must download "
+"and enable the <a href=\"@url\">Media CKEditor</a> module."
+msgstr ""
+
+#: /
+msgid "!extension was not found."
+msgstr ""
+
+#: /
+msgid ""
+"The following projects provide some or all of the extensions not "
+"found:\n"
+"@list"
+msgstr ""
+
+#: /
+msgid "Downloading project !name ..."
+msgstr ""
+
+#: /
+msgid "Enter a number to choose which cache to clear."
+msgstr ""
+
+#: /
+msgid "!key"
+msgstr ""
+
+#: /users/betina-s-andersen
+msgid "@flag @name follows (@count)"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/media/js/media.popups.js; profiles/os2intra/modules/patched/media/js/media.popups.js
+msgid "You have not selected anything!"
+msgstr ""
+
+#: profiles/os2intra/modules/contrib/media/js/media.popups.js; profiles/os2intra/modules/patched/media/js/media.popups.js
+msgid "Very sorry, there was an unknown error embedding media."
+msgstr ""
+
+#: /
+msgid "Cancelled."
+msgstr ""
+
+#: /
+msgid "Enter a feed URL."
+msgstr ""
+
+#: /
+msgid ""
+"Email option will be checked automatically when subscribing to "
+"something."
+msgstr ""
+
+#: /flag/flag/subscribe_og/82?destination=node/82&token=ONk1ht3bwM7S2Q-EdwHJKaiYgB0UpVCzSMha2tPP44k
+msgid "You are now subscribed to this item."
+msgstr ""
+
+#: /node/add/event?og_group_ref=43&destination=node/43
+msgid "The End date must be greater than the Start date."
+msgstr ""
+
+#: /afsked-med-am/edit
+msgid "@from to @to"
+msgstr ""
+
+#: /afsked-med-am/revisions/view/603/610
+msgid "Marked down"
+msgstr ""
+
+#: /group/node/43/subscribe/og_user_node
+msgid "You are already a member of the group @group."
+msgstr ""
+
+#: /content/test-vigtig-besked-angaaende-projekt/edit
+msgid "Vigtig besked"
+msgstr ""
+
+#: /content/test-vigtig-besked-angaaende-projekt/edit
+msgid "Modtagere"
+msgstr ""
+
+#: /content/test-vigtig-besked-angaaende-projekt/edit
+msgid "Planlæg"
+msgstr ""
+
+#: /content/test-vigtig-besked-angaaende-projekt/edit
+msgid "vigtigt"
+msgstr ""
+
+#: /content/faelles-medicinkort/webform-results/table
+msgid "Deltager"
+msgstr ""
+
+#: /admin/config/search/path/update_bulk
+msgid ""
+"Bulk generation will only generate URL aliases for items that "
+"currently have no aliases. This is typically used when installing "
+"Pathauto on a site that has existing un-aliased content that needs to "
+"be aliased in bulk."
+msgstr ""
+
+#: /batch?id=153&op=do
+msgid "Updated alias for file @fid."
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "AD id"
+msgstr ""
+
+#: /
+msgid "Searching for scripts in "
+msgstr ""
+
+#: /
+msgid "New department has been created"
+msgstr ""
+
+#: /field-collection/field-os2intra-base-vejledning/19/delete?destination=node/105
+msgid "%label has been deleted."
+msgstr ""
+
+#: /
+msgid ""
+"<div>\n"
+"<a href=\"node/add/os2intra-group\" class=\"btn btn-primary\">Opret en "
+"ny gruppe</a>\n"
+"</div>"
+msgstr ""
+
+#: /
+msgid "indhold m overterm"
+msgstr ""
+
+#: /saerligt-ledere/mine-medarbejdere
+msgid "<p>Ingen indhold at vise</p>"
+msgstr ""
+
+#: /
+msgid ""
+"Menuen <em>Management</em> indeholder links til administrative "
+"opgaver."
+msgstr ""
+
+#: /admin/config/people/realname
+msgid "Realname pattern"
+msgstr ""
+
+#: /group/node/161/admin/people/delete-membership/93
+msgid "Remove membership in group @group"
+msgstr ""
+
+#: /group/node/161/admin/people/delete-membership/93
+msgid ""
+"Are you sure you would like to remove the membership for the user "
+"@user?"
+msgstr ""
+
+#: /group/node/161/admin/people/delete-membership/93
+msgid "The membership was removed."
+msgstr ""
+
+#: /
+msgid "Infoside for %1"
+msgstr ""
+
+#: /node/237
+msgid "Indhold refererer til Ord i ordforråd fra field_os2intra_organisation"
+msgstr ""
+
+#: /content/it-afdelingen
+msgid "Overordnet afdeling"
+msgstr ""
+
+#: /user
+msgid " -  [og_user_node2]"
+msgstr ""
+
+#: /user
+msgid "<i class=\"fa fa-envelope\"></i> [mail]"
+msgstr ""
+
+#: /user
+msgid "<i class=\"fa fa-phone\"></i> [field_os2intra_phone]"
+msgstr ""
+
+#: /user
+msgid ""
+"<div class=\"btn-group contact\" role=\"group\" aria-label=\"Kontakt "
+"via email eller telefon\">\n"
+"[mail] [field_os2intra_phone] [field_os2intra_mobile]\n"
+"</div>"
+msgstr ""
+
+#: /user
+msgid "Mobil nummer"
+msgstr ""
+
+#: /user
+msgid " - [field_os2intra_physical_location]"
+msgstr ""
+
+#: /user
+msgid ""
+"<div class=\"btn-group btn-group-sm contact\" role=\"group\" "
+"aria-label=\"Kontakt via email eller telefon\">\n"
+"[mail] [field_os2intra_phone] [field_os2intra_mobile]\n"
+"</div>"
+msgstr ""
+
+#: /user
+msgid "<i class=\"fa fa-mobile\"></i> [field_os2intra_mobile]"
+msgstr ""
+
+#: /flag/unflag/subscribe_og/43?destination=node/43&token=eIEH8otB67urScA-DZW7QmoIE1gSRlw5W1Kg7dDq8NE
+msgid "You are no longer subscribed to this item."
+msgstr ""
+
+#: /
+msgid "Administer Views Cache Bully"
+msgstr ""
+
+#: /
+msgid "Perform administration tasks for Views Cache Bully."
+msgstr ""
+
+#: /grupper/test-bibliotek-vagtskema
+msgid "Views Cache Bully"
+msgstr ""
+
+#: /grupper/test-bibliotek-vagtskema
+msgid "Views Cache Bully settings"
+msgstr ""
+
+#: /admin/config/os2intra/settings
+msgid "Validate first login by"
+msgstr ""
+
+#: /admin/config/os2intra/settings
+msgid "User identification"
+msgstr ""
+
+#: /admin/people
+msgid "administer views cache bully"
+msgstr ""
+
+#: /useractivation
+msgid "AD Id"
+msgstr ""
+
+#: /admin/config/system/views-cache-bully
+msgid "Exempt all views with exposed forms from bullying"
+msgstr ""
+
+#: /admin/config/system/views-cache-bully
+msgid "Views using exposed forms will not be cached by Views Cache Bully."
+msgstr ""
+
+#: /admin/config/system/views-cache-bully
+msgid "Exempt all views with VBO fields from bullying"
+msgstr ""
+
+#: /admin/config/system/views-cache-bully
+msgid ""
+"Views with a views bulk operations field will not be cached by Views "
+"Cache Bully."
+msgstr ""
+
+#: /admin/config/system/views-cache-bully
+msgid "Exempt the following views from bullying"
+msgstr ""
+
+#: /admin/config/system/views-cache-bully
+msgid "Checked views will not be cached."
+msgstr ""
+
+#: /admin/config/system/views-cache-bully
+msgid "Exempt the views with the following tags from bullying"
+msgstr ""
+
+#: /admin/config/system/views-cache-bully
+msgid "Views with checked tag will not be cached."
+msgstr ""
+
+#: /admin/modules
+msgid "Miscellaneous functions and alters"
+msgstr ""
+
+#: /admin/modules
+msgid "Views cache bully forces cache settings on views"
+msgstr ""
+
+#: /admin/modules
+msgid "Forcibily cache all views, come hell or high water."
+msgstr ""
+
+#: /organisation/administration
+msgid "OS2intra Organisatoriske Enheder"
+msgstr ""
+
+#: /organisation/administration
+msgid "[title_1]"
+msgstr ""
+
+#: /organisation/administration
+msgid ""
+"<a "
+"href=\"/node/add/os2intra-org-group-unit?edit%5Btitle%5D=[name]&field_os2intra_organisation=[tid]\">Opret "
+"[name] her</a>"
+msgstr ""
+
+#: /organisation/administration
+msgid "prepopulate"
+msgstr ""
+
+#: /admin/os2intra-org-unit-adm
+msgid "Organisatoriske enheder"
+msgstr ""
+
+#: /admin/config/media/media_browser_plus_settings
+msgid "Use Media Browser Plus thumbnails view as default."
+msgstr ""
+
+#: /admin/config/media/media_browser_plus_settings
+msgid ""
+"If enabled the thumbnails view will displayed when accessing "
+"\"admin/content/file\"."
+msgstr ""
+
+#: /admin/config/media/media_browser_plus_settings
+msgid "Disable the provided default view."
+msgstr ""
+
+#: /admin/config/media/media_browser_plus_settings
+msgid ""
+"Disableds the view shipped with the module. Handy when using features "
+"and a modified view."
+msgstr ""
+
+#: /admin/config/media/media_browser_plus_settings
+msgid "Create folders in filesystem"
+msgstr ""
+
+#: /admin/config/media/media_browser_plus_settings
+msgid ""
+"If enabled the \"virtual\" folder structure will be created in the "
+"filesystem too. This helps to organize the files on the disk."
+msgstr ""
+
+#: /admin/config/media/media_browser_plus_settings
+msgid "Media Root folder"
+msgstr ""
+
+#: /admin/config/media/media_browser_plus_settings
+msgid ""
+"The root folder for files handled by the media module. "
+"<strong>Attention: Changing this will move all existing files in the "
+"file system too!</strong>"
+msgstr ""
+
+#: /admin/config/media/media_browser_plus_settings
+msgid "Rebuild folder structure"
+msgstr ""
+
+#: /admin/modules
+msgid "Os2intra Vigtig beskeder"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Se alle Vigtige beskeder"
+msgstr ""
+
+#: /admin/people/permissions
+msgid "Vis alle vigtige beskeder til bruger"
+msgstr ""
+
+#: /admin/structure/feeds/import
+msgid "Importer id"
+msgstr ""
+
+#: /admin/structure/feeds/import
+msgid ""
+"Enter the id to use for this importer if it is different from the "
+"source importer. Leave blank to use the id of the importer."
+msgstr ""
+
+#: /admin/structure/feeds/import
+msgid "Replace an existing importer if one exists with the same id."
+msgstr ""
+
+#: /admin/structure/feeds/import
+msgid "Bypass importer validation"
+msgstr ""
+
+#: /admin/structure/feeds/import
+msgid "Bypass the validation of plugins when importing."
+msgstr ""
+
+#: /admin/structure/feeds/import
+msgid "Successfully imported the %id feeds importer."
+msgstr ""
+
+#: /import/os2web_adresseimport
+msgid "CSV files"
+msgstr ""
+
+#: /import/os2web_adresseimport
+msgid "Import !csv_files with one or more of these columns: !columns."
+msgstr ""
+
+#: /import/os2web_adresseimport
+msgid ""
+"Column <strong>!columns</strong> is mandatory and considered unique: "
+"only one item per !columns value will be created."
+msgstr ""
+
+#: /import/os2web_adresseimport
+msgid "Download a template"
+msgstr ""
+
+#: /import/os2web_adresseimport
+msgid "Delimiter"
+msgstr ""
+
+#: /import/os2web_adresseimport
+msgid "The character that delimits fields in the CSV file."
+msgstr ""
+
+#: /import/os2web_adresseimport
+msgid "No Headers"
+msgstr ""
+
+#: /import/os2web_adresseimport
+msgid ""
+"Check if the imported CSV file does not start with a header row. If "
+"checked, mapping sources must be named '0', '1', '2' etc."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_adresseimport
+msgid "Default delimiter"
+msgstr ""
+
+#: /admin/structure/feeds/os2web_adresseimport
+msgid "Default field delimiter."
+msgstr ""
+
+#: /admin/structure/feeds/os2web_adresseimport
+msgid "No headers"
+msgstr ""
+
+#: /batch?id=5795&op=do
+msgid "@label: URI"
+msgstr ""
+
+#: /batch?id=5795&op=do
+msgid "The URI of the @label field."
+msgstr ""
+
+#: /batch?id=5795&op=do
+msgid "@label: Alt"
+msgstr ""
+
+#: /batch?id=5795&op=do
+msgid "The alt tag of the @label field."
+msgstr ""
+
+#: /batch?id=5795&op=do
+msgid "@label: Title"
+msgstr ""
+
+#: /batch?id=5795&op=do
+msgid "The title of the @label field."
+msgstr ""
+
+#: /admin/people
+msgid "clear os2web_adresseimport feeds"
+msgstr ""
+
+#: /admin/people
+msgid "import os2web_adresseimport feeds"
+msgstr ""
+
+#: /admin/people
+msgid "unlock os2web_adresseimport feeds"
+msgstr ""
+
+#: /admin/people
+msgid "view all message"
+msgstr ""
+
+#: /admin/structure/flags/manage/os2intra_flag_node_follow/delete
+msgid ""
+"This flag is provided by the %module module. It will lose any "
+"customizations and be disabled."
+msgstr ""
+
+#: /useractivation
+msgid "Employee already activated"
+msgstr ""
+
+#: /
+msgid "(new variable)"
+msgstr ""
+
+#: /
+msgid "!name was set to !value."
+msgstr ""
+
+#: /admin/people/os2web-adminpages-users-no-department
+msgid "Brugere u afdeling"
+msgstr ""
+
+#: /admin/people/os2web-adminpages-users-no-department
+msgid "OS2web adminviews (Users)"
+msgstr ""
+
+#: /admin/people/os2web-adminpages-users-no-department
+msgid "Afdeling (indeholder)"
+msgstr ""
+
+#: /admin/people/os2web-adminpages-users-no-department
+msgid "AD-ID"
+msgstr ""
+
+#: /admin/people/os2web-adminpages-users-no-department
+msgid "Roller"
+msgstr ""
+
+#: /admin/people/os2web-adminpages-users-no-department
+msgid "Indhold entity refereret fra og_user_node2"
+msgstr ""
+
+#: /admin/people/os2web-adminpages-users-no-department
+msgid "Bro til afdeling"
+msgstr ""
+
+#: /system/ajax
+msgid "Updating file locations"
+msgstr ""
+
+#: /admin/people/os2web-adminpages-users
+msgid "Medarbejder ID"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "CSV delimiter"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid ""
+"The delimiter used to separate values in the CSV, ex. a semicolon, a "
+"comma or \\t (tab)"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "Phone Number"
+msgstr ""
+
+#: /doc2mail/om-doc2mail/publish/18o_VIUtGJOujwQsTsWwBe_Un6esQDfAmCugWUqv2-U
+msgid "The status of the node could not be updated."
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "The human-readable description of this message type."
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid ""
+"A unique machine-readable name for this message type. It must only "
+"contain lowercase letters, numbers, and underscores."
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "Default message type category"
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "Field language"
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid ""
+"The language code that will be saved with the field values. This is "
+"used to allow translation of fields."
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "View modes: !view-modes"
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid ""
+"Optional: For <a href=\"@url-rules\">Rules</a> module, in order to set "
+"argument using Rules actions, a comma-separated list of replacement "
+"tokens, e.g. %title or !url, of which the message text makes use of. "
+"Each replacement token has to start with one of the special characters "
+"\"@\", \"%\" or \"!\". This character controls the sanitization method "
+"used, analogously to the <a href=\"!link\">t()</a> function."
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "Clear empty tokens"
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid ""
+"When this option is selected, empty tokens will be removed from "
+"display."
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "Purge settings"
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "Override global settings"
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "Override global purge settings for messages of this type."
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "Purge messages"
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "When enabled, old messages will be deleted."
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "Messages quota"
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "Maximal (approximate) amount of messages of this type."
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "Purge messages older than"
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "Maximal message age in days, for messages of this type."
+msgstr ""
+
+#: /admin/structure/messages/manage/os2intra_msgtp_afdelingsindhold
+msgid "Save message type"
+msgstr ""
+
+#: /
+msgid "The first 6 characters of your CPR-number"
+msgstr ""
+
+#: /
+msgid "<i>Ikke angivet</i>"
+msgstr ""
+
+#: /
+msgid "Tlf. nr."
+msgstr ""
+
+#: /
+msgid "Mobil tlf."
+msgstr ""
+
+#: /media/496/edit/ajax
+msgid "The replaced @type @orphaned has been deleted."
+msgstr ""
+
+#: /faglige-klubber/socialraadgiverklubben/edit
+msgid "Format: %date_only_format or %standard_format."
+msgstr ""
+
+#: /faglige-klubber/socialraadgiverklubben/edit
+msgid "The default time is @default_time."
+msgstr ""
+
+#: /
+msgid "Administer simpleSAMLphp authentication"
+msgstr ""
+
+#: /
+msgid ""
+"SimpleSAMLphp authentication is NOT yet activated. It can be activated "
+"on the <a "
+"href=\"/admin/config/people/simplesamlphp_auth\">configuration "
+"page</a>."
+msgstr ""
+
+#: /
+msgid "After registering a new user account via simpleSAMLphp"
+msgstr ""
+
+#: /
+msgid "User has logged in via simpleSAMLphp"
+msgstr ""
+
+#: /
+msgid "simpleSAMLphp authentication"
+msgstr ""
+
+#: /
+msgid "simplesamlphp_auth"
+msgstr ""
+
+#: /users/franz-skaaning/edit?pass-reset-token=iWkE8fWUF6LyilpP19_ZgJdvfjONkFBbqhES_bDOhFM
+msgid "SimpleSAMLphp Auth Settings"
+msgstr ""
+
+#: /users/franz-skaaning/edit?pass-reset-token=iWkE8fWUF6LyilpP19_ZgJdvfjONkFBbqhES_bDOhFM
+msgid ""
+"Control the various settings of the simpleSAMLphp authentication "
+"module"
+msgstr ""
+
+#: /users/franz-skaaning/edit?pass-reset-token=iWkE8fWUF6LyilpP19_ZgJdvfjONkFBbqhES_bDOhFM
+msgid "OS2Intra SimpleSAML"
+msgstr ""
+
+#: /users/franz-skaaning/edit?pass-reset-token=iWkE8fWUF6LyilpP19_ZgJdvfjONkFBbqhES_bDOhFM
+msgid "Administer SimpleSAML"
+msgstr ""
+
+#: /admin/config/os2intra/simplesaml
+msgid "Redirect IP's to SimpleSAML login"
+msgstr ""
+
+#: /admin/config/os2intra/simplesaml
+msgid "Comma separated. Ex. 192.168.1.1,192.168.2.1"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"SimpleSAMLphp authentication is NOT yet activated. It can be activated "
+"on the <a href=\"/admin/config/people/simplesamlphp_auth\" "
+"class=\"active\">configuration page</a>."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Basic Setup"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Activate authentication via SimpleSAMLphp"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"Checking this box before configuring the module could lock you out of "
+"Drupal."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Installation directory (default: /var/simplesamlphp)"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"The base directory of simpleSAMLphp. Absolute path with no trailing "
+"slash."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Autenticaton source for this SP (default: default-sp)"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"The name of the source to use from "
+"/var/simplesamlphp/config/authsources.php"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Force https for login links"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Should be enabled on production sites."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "User Info and Syncing"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Which attribute from simpleSAMLphp should be used as user's name"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"Example: <i>eduPersonPrincipalName</i> or <i>displayName</i><br />If "
+"the attribute is multivalued, the first value will be used."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"Which attribute from simpleSAMLphp should be used as unique identifier "
+"for the user"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"Example: <i>eduPersonPrincipalName</i> or "
+"<i>eduPersonTargetedID</i><br />If the attribute is multivalued, the "
+"first value will be used."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Which attribute from simpleSAMLphp should be used as user mail address"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"Example: <i>mail</i><br />If the user attribute is multivalued, the "
+"first value will be used."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Automatic role population from simpleSAMLphp attributes"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"A pipe separated list of rules.<br />Example: "
+"<i>roleid1:condition1|roleid2:contition2...</i> <br />For instance: "
+"<i>1:eduPersonPrincipalName,@=,uninett.no;affiliation,=,employee|2:mail,=,andreas@uninett.no</i>"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Reevaluate roles every time the user logs in."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"NOTE: This means users could loose any roles that have been assigned "
+"manually in Drupal."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "User Provisioning"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Register users (i.e., auto-provisioning)"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"Determines wether or not the module should automatically "
+"create/register new Drupal accounts for users that authenticate using "
+"SimpleSAMLphp. Unless you've done some custom work to provision Drupal "
+"accounts with the necessary authmap entries you will want this "
+"checked.<br /><br />NOTE: If unchecked each user must already have "
+"been provisioned a Drupal account with an appropriate entry in the "
+"authmap table before logging in. Otherwise they will receive a notice "
+"and be denied access. Be aware that simply creating a Drupal account "
+"will not create the necessary entry in the authmap table."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Drupal Authentication"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Allow SAML users to set Drupal passwords."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"Check this box if you want to let people set passwords for their local "
+"Drupal accounts. This will allow users to log in using either SAML or "
+"a local Drupal account. Disabling this removes the password change "
+"fields from the user profile form.<br/>NOTE: In order for them to "
+"login using their local Drupal password you must allow local logins "
+"with the settings below."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Allow authentication with local Drupal accounts"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"Check this box if you want to let people log in with local Drupal "
+"accounts (without using simpleSAMLphp). If you want to restrict this "
+"privilege to certain users you can enter the Drupal user IDs in the "
+"field below."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Which ROLES should be allowed to login with local accounts?"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"Roles that should be allowed to login without simpleSAMLphp. Examples "
+"are dev/admin roles or guest roles."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Which users should be allowed to login with local accounts?"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"Example: <i>1,2,3</i><br />A comma-separated list of user IDs that "
+"should be allowed to login without simpleSAMLphp. If left blank, all "
+"local accounts can login."
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Optionally, specify a URL for users to go to after logging out"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Example: https://broen7000.dk"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid ""
+"<p>This module integrates Drupal with a SimpleSAMLphp Service Point "
+"(SP), effectively federating Drupal.</p>"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "<p></p>"
+msgstr ""
+
+#: /saml_login?destination=
+msgid "Logon to the site"
+msgstr ""
+
+#: /saml_login?destination=
+msgid "Provides a site login page"
+msgstr ""
+
+#: /admin/people
+msgid "administer simpleSAMLphp authentication"
+msgstr ""
+
+#: /saml_login?destination=user/login
+msgid "_simplesamlphp_auth_get_authname: Valid local session exist"
+msgstr ""
+
+#: /saml_login?destination=user/login
+msgid "Authname is [%authname] userid is [%uid]"
+msgstr ""
+
+#: /saml_login?destination=user/login
+msgid "Load user [%authname]"
+msgstr ""
+
+#: /saml_login?destination=user/login
+msgid "Register [%authname]"
+msgstr ""
+
+#: /admin/config/people/simplesamlphp_auth
+msgid "Example: http://broen7000.dk"
+msgstr ""
+
+#: /saml_login?destination=
+msgid ""
+"We are sorry. While you have successfully authenticated, you are not "
+"yet entitled to access this site. Please ask the site administrator to "
+"provision access for you."
+msgstr ""
+
+#: /useractivation
+msgid "Invalid AD id"
+msgstr ""
+
+#: /node/add/node-basket
+msgid "You cannot have more than one basket for each user"
+msgstr ""
+
+#: /linkit/autocomplete/linkit_field_node?s=http%3A%2F%2Fmedarbejderportalen%2Forganisation%2Ftv%25c3%25a6rfagligportaler%2Fih%2Fsider%2Fdefault.aspx
+msgid "No information available"
+msgstr ""
+
+#: /linkit/autocomplete/linkit_field_node?s=http%3A%2F%2Fmedarbejderportalen%2Forganisation%2Ftv%25c3%25a6rfagligportaler%2Fih%2Fsider%2Fdefault.aspx
+msgid "This is an external URL, but we don't know where it leads."
+msgstr ""
+
+#: /admin/modules
+msgid "Intra bruger og indhold admin tools"
+msgstr ""
+
+#: /admin/structure/views/view/os2intra_group_term_activity/edit
+msgid "Handler i stykker node.capacity_used"
+msgstr ""
+
+#: /admin/modules
+msgid "Maps SimpleSAMLphp attributes and controls login"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Allows users to authenticate to a remote SAML identity provider (IdP) "
+"via a locally configured SimpleSAMLphp service point (SP)."
+msgstr ""
+
+#: /useractivation
+msgid "First 6 characters of your CPR-number (format: 070593)"
+msgstr ""
+
+#: /node/add/event?og_group_ref=1082&destination=node/1082
+msgid "Could not send message using @title to user ID @uid."
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "Parent OG Role Grant ID"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "ID of the group role to grant the user, when added to parent groups."
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "Primary OG Role Grant ID"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "ID of the group role to grant the user, when added to primary group."
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "Manager OG Role Grant ID"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "ID of the group role to grant the user, when added to manager group."
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "Suffix used on the column 'authname' in the authmap table"
+msgstr ""
+
+#: /admin/config/os2intra/user_import/settings
+msgid "For example '@fredericia.dk'"
+msgstr ""
+
+#: /flag/unflag/email_og/1246?destination=user/5725/message-subscribe/subscribe_og&token=w9X3GX2vbsUD2MB22CHPAx_Yt1NE09Eo9dMPUWLLoHY
+msgid "You will no longer recieve emails about this item."
+msgstr ""
+
+#: /
+msgid ""
+"SimpleSAMLphp could not be found at %basedir . The simplesamlphp_auth "
+"module cannot function until the path to the local SimpleSAMLphp "
+"instance is configured."
+msgstr ""
+
+#: /
+msgid ""
+"Do not fail if the destination file exists; overwrite it instead. "
+"Default is --no-overwrite."
+msgstr ""
+
+#: /
+msgid ""
+"The generator version number to store in the MANIFEST file. The "
+"default is 8.0.1."
+msgstr ""
+
+#: /
+msgid ""
+"Allow drush to overwrite any files in the destination. Default is "
+"--no-overwrite."
+msgstr ""
+
+#: /
+msgid ""
+"Specify a particular browser (defaults to operating system default). "
+"Use --no-brower to suppress opening a browser."
+msgstr ""
+
+#: /
+msgid ""
+"Add field labels before first line of data. Default is on; use "
+"--no-field-labels to disable."
+msgstr ""
+
+#: /
+msgid "repl.md"
+msgstr ""
+
+#: /
+msgid ""
+"The config storage source to read. Additional labels may be defined in "
+"settings.php"
+msgstr ""
+
+#: /
+msgid "Set config value directly."
+msgstr ""
+
+#: /
+msgid "Export configuration to a directory."
+msgstr ""
+
+#: /
+msgid ""
+"A config directory label (i.e. a key in $config_directories array in "
+"settings.php). Defaults to 'sync'"
+msgstr ""
+
+#: /
+msgid ""
+"Run `git add -p` after exporting. This lets you choose which config "
+"changes to sync for commit."
+msgstr ""
+
+#: /
+msgid ""
+"An arbitrary directory that should receive the exported files. An "
+"alternative to label argument."
+msgstr ""
+
+#: /
+msgid ""
+"A list of modules to ignore during export (e.g. to avoid listing "
+"dev-only modules in exported configuration)."
+msgstr ""
+
+#: /
+msgid ""
+"Export configuration; do not include the devel module in the exported "
+"configuration, regardless of whether or not it is enabled in the site."
+msgstr ""
+
+#: /
+msgid ""
+"Export configuration; Save files in a backup directory named "
+"config-export."
+msgstr ""
+
+#: /
+msgid ""
+"A list of modules to ignore during import (e.g. to avoid disabling "
+"dev-only modules that are not enabled in the imported configuration)."
+msgstr ""
+
+#: /
+msgid ""
+"Import configuration; do not enable or disable the devel module, "
+"regardless of whether or not it appears in the imported list of "
+"enabled modules."
+msgstr ""
+
+#: /
+msgid "Export and transfer config from one environment to another."
+msgstr ""
+
+#: /
+msgid ""
+"A site-alias or the name of a subdirectory within /sites whose config "
+"you want to copy from."
+msgstr ""
+
+#: /
+msgid ""
+"A site-alias or the name of a subdirectory within /sites whose config "
+"you want to replace."
+msgstr ""
+
+#: /
+msgid "Validate that there are no git uncommitted changes before proceeding"
+msgstr ""
+
+#: /
+msgid "Export config from @prod and transfer to @stage."
+msgstr ""
+
+#: /
+msgid ""
+"Export config from @prod and transfer to the 'vcs' config directory of "
+"current site."
+msgstr ""
+
+#: /
+msgid ""
+"Run automatic entity schema updates at the end of any update hooks. "
+"Defaults to --no-entity-updates."
+msgstr ""
+
+#: /
+msgid "Apply pending entity schema updates."
+msgstr ""
+
+#: /
+msgid "Compile all Twig template(s)."
+msgstr ""
+
+#: /
+msgid "Show database password.  Defaults to --no-show-passwords."
+msgstr ""
+
+#: /
+msgid "Emit just the sync Config directory with no label."
+msgstr ""
+
+#: /
+msgid ""
+"Escape parameters before executing them with the shell. Default is "
+"escape; use --no-escape to disable."
+msgstr ""
+
+#: /
+msgid ""
+"Runserver option: If opening a web browser, which browser to user "
+"(defaults to operating system default). Use --no-browser to avoid "
+"opening a browser."
+msgstr ""
+
+#: /
+msgid ""
+"Site install option: Defaults to clean; use --no-clean-url to disable. "
+"Note that Drupal 8 and later requires clean."
+msgstr ""
+
+#: /
+msgid ""
+"Drupal configuration export instructions, including customizing "
+"configuration by environment."
+msgstr ""
+
+#: /
+msgid ""
+"Enrich the bash startup file with completion and aliases. Copy "
+".drushrc file to ~/.drush"
+msgstr ""
+
+#: /
+msgid "Open the new config file in an editor."
+msgstr ""
+
+#: /
+msgid ""
+"Always add Drush to the $PATH in the user's .bashrc file, even if it "
+"is already in the $PATH. Use --no-add-path to skip updating .bashrc "
+"with the Drush $PATH. Default is to update .bashrc only if Drush is "
+"not already in the $PATH."
+msgstr ""
+
+#: /
+msgid "Enrich Bash and open drush config file in editor."
+msgstr ""
+
+#: /
+msgid ""
+"Generate a lockfile for this build and copy it into the codebase (at "
+"sites/all/drush/platform.lock). An alternate path (relative to the "
+"Drupal root) can also be specified"
+msgstr ""
+
+#: /
+msgid ""
+"The format for generated lockfiles. Options are \"yaml\" or \"ini\". "
+"Defaults to \"yaml\"."
+msgstr ""
+
+#: /
+msgid "Return project info for use by core-quick-drupal."
+msgstr ""
+
+#: /
+msgid ""
+"The format for generated makefile. Options are \"yaml\" or \"ini\". "
+"Defaults to \"yaml\"."
+msgstr ""
+
+#: /
+msgid ""
+"Save to a file. If not provided, the updated makefile will be dumped "
+"to stdout."
+msgstr ""
+
+#: /
+msgid ""
+"Process a makefile and outputs an equivalent makefile with projects "
+"version *resolved*. Respects pinned versions."
+msgstr ""
+
+#: /
+msgid ""
+"Save to a file. If not provided, the lockfile will be dumped to "
+"stdout."
+msgstr ""
+
+#: /
+msgid "Show a report of available projects and their extensions."
+msgstr ""
+
+#: /
+msgid "Optional. Only incude projects that have one or more Drush commands."
+msgstr ""
+
+#: /
+msgid ""
+"Filter by project status. Choices: enabled, disabled. A project is "
+"considered enabled when at least one of its extensions is enabled."
+msgstr ""
+
+#: /
+msgid ""
+"Specify the default major version of modules to download when there is "
+"no bootstrapped Drupal site.  Defaults to \"8\"."
+msgstr ""
+
+#: /
+msgid ""
+"Host IP address and port number to bind to and path to open in web "
+"browser. Format is addr:port/path, default 127.0.0.1:8888, all "
+"elements optional. See examples for shorthand. Only opens a browser if "
+"a path is specified."
+msgstr ""
+
+#: /
+msgid ""
+"If opening a web browser, which browser to user (defaults to operating "
+"system default). Use --no-browser to avoid opening a browser."
+msgstr ""
+
+#: /
+msgid ""
+"Defaults to clean; use --no-clean-url to disable. Note that Drupal 8 "
+"and later requires clean."
+msgstr ""
+
+#: /
+msgid "Set the current session to use a remote site via site specification."
+msgstr ""
+
+#: /
+msgid "Set the current session to use a local site via site specification."
+msgstr ""
+
+#: /
+msgid ""
+"Directory to change to. Use a full path, TRUE for the site's Drupal "
+"root directory, or --no-cd for the ssh default (usually the remote "
+"user's home directory). Defaults to the Drupal root."
+msgstr ""
+
+#: /
+msgid ""
+"Type for  the value. Use \"auto\" to detect format from value. Other "
+"recognized values are string, integer float, or boolean for "
+"corresponding primitive type, or json, yaml for complex types."
+msgstr ""
+
+#: /
+msgid "Set a key to a complex value (e.g. array)"
+msgstr ""
+
+#: /
+msgid ""
+"Optional value denotes which browser to use (defaults to operating "
+"system default). Use --no-browser to suppress opening a browser."
+msgstr ""
+
+#: /
+msgid "Administer Stage File Proxy module"
+msgstr ""
+
+#: /
+msgid "Perform administration tasks for the Stage File Proxy module."
+msgstr ""
+
+#: /admin/config
+msgid "Missing composer.json file"
+msgstr ""
+
+#: /admin/config
+msgid "The composer.json file was not found."
+msgstr ""
+
+#: /admin/config
+msgid "Stage File Proxy settings"
+msgstr ""
+
+#: /admin/config
+msgid "Administrative interface for the Stage File Proxy module"
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid "The origin website."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid ""
+"The origin website. For example: 'http://example.com' with no trailing "
+"slash.\n"
+"      If the site is using HTTP Basic Authentication (the browser "
+"popup for username and password) you can\n"
+"      embed those in the url. Be sure to URL encode any special "
+"characters:<br/><br/>For example, setting a user\n"
+"      name of 'myusername' and password as, 'letme&in' the "
+"configuration would be the following: <br/><br/>\n"
+"      'http://myusername:letme%26in@example.com';"
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid "The origin directory."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid ""
+"If this is set then Stage File Proxy will use a different path for the "
+"remote\n"
+"      files. This is useful for multisite installations where the "
+"sites directory contains different names\n"
+"      for each url. If this is not set, it defaults to the same path "
+"as the local site."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid "Imagecache Root."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid ""
+"If this is true (default) then Stage File Proxy will look for "
+"/imagecache/ in\n"
+"      the URL and determine the original file and request that rather "
+"than the\n"
+"      processed file, then send a header to the browser to refresh the "
+"image and let\n"
+"      imagecache handle it. This will speed up future imagecache "
+"requests for the\n"
+"      same original file."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid "Hotlink."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid ""
+"If this is true then Stage File Proxy will not transfer the remote "
+"file to the\n"
+"      local machine, it will just serve a 301 to the remote file and "
+"let the origin webserver handle it."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid "SSL Version."
+msgstr ""
+
+#: /admin/config/system/stage_file_proxy
+msgid ""
+"CURL will try to figure out which ssl version to use, but if it fails "
+"to do that\n"
+"      properly it can lead to getting an empty file and a 0 status "
+"code. The default is 3 which seems\n"
+"      relatively common, but if you get 0 byte files you can try "
+"changing it to 2."
 msgstr ""
 
 msgid "Public files"
@@ -32505,6 +37013,7 @@ msgstr "Skjult"
 msgid "Embedded"
 msgstr "Indlejret"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.popups.js; profiles/os2intra/modules/patched/media/js/media.popups.js
 msgid "Media browser"
 msgstr "Mediebrowser"
 
@@ -32601,6 +37110,7 @@ msgstr "Etiket, som link med etiket som titel"
 msgid "Separate title and URL"
 msgstr "Separat titel og URL"
 
+#: ; profiles/os2intra/modules/contrib/options_element/options_element.js
 msgid "Key"
 msgstr "Nøgle"
 
@@ -32732,6 +37242,7 @@ msgstr "Sid"
 msgid "The submission ID of the submission."
 msgstr "Indsendelsesn ID."
 
+#: ; profiles/os2intra/modules/contrib/options_element/options_element.js
 msgid "Value"
 msgstr "Værdi"
 
@@ -33671,6 +38182,7 @@ msgstr "Udgivet"
 msgid "Whether or not the content is published."
 msgstr "Hvorvidt indholdet er udgivet eller ej."
 
+#: ; modules/node/node.js; modules/node/content_types.js
 msgid "Not published"
 msgstr "Ikke udgivet"
 
@@ -34925,6 +39437,7 @@ msgstr "."
 msgid ","
 msgstr ","
 
+#: ; profiles/os2intra/modules/contrib/module_filter/js/module_filter_tab.js
 msgid "All"
 msgstr "Alle"
 
@@ -35029,6 +39542,10 @@ msgstr "Seneste opdatering"
 
 msgid "View panes"
 msgstr "View panes"
+
+#: /install.php?profile=os2intra&locale=da&op=start&id=2
+msgid "There is no content in this group."
+msgstr "Der er ikke oprettet indhold i denne afdeling/gruppe"
 
 msgid "- Choose an operation -"
 msgstr "- Vælg en handling -"
@@ -35401,30 +39918,39 @@ msgstr "Kanonisk URL"
 msgid "Refresh"
 msgstr "Opdatér"
 
+#: ; misc/drupal.js
 msgid "An AJAX HTTP error occurred."
 msgstr "Der opstod en AJAX HTTP-fejl."
 
+#: ; misc/drupal.js
 msgid "HTTP Result Code: !status"
 msgstr "HTTP resultatkode: !status"
 
+#: ; misc/drupal.js
 msgid "An AJAX HTTP request terminated abnormally."
 msgstr "En AJAX HTTP-forespørgsel afsluttede på unormal vis."
 
+#: ; misc/drupal.js
 msgid "Debugging information follows."
 msgstr "Information til fejlsøgning følger."
 
+#: ; misc/drupal.js
 msgid "Path: !uri"
 msgstr "Sti: !uri"
 
+#: ; misc/drupal.js
 msgid "StatusText: !statusText"
 msgstr "StatusText: !statusText"
 
+#: ; misc/drupal.js
 msgid "ResponseText: !responseText"
 msgstr "ResponseText: !responseText"
 
+#: ; misc/drupal.js
 msgid "ReadyState: !readyState"
 msgstr "ReadyState: !readyState"
 
+#: ; misc/drupal.js
 msgid "CustomMessage: !customMessage"
 msgstr "CustomMessage: !customMessage"
 
@@ -36014,6 +40540,7 @@ msgstr "En dato i 'kort' format (%date)"
 msgid "Medium format"
 msgstr "Mellem format"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Mon"
 msgstr "man"
 
@@ -36023,6 +40550,7 @@ msgstr "En dato i 'mellem' format (%date)"
 msgid "Long format"
 msgstr "Langt format"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Monday"
 msgstr "Mandag"
 
@@ -36429,6 +40957,7 @@ msgstr "Gå til hovedindhold"
 msgid "User interface"
 msgstr "Brugergrænseflade"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Next"
 msgstr "Næste"
 
@@ -36674,21 +41203,27 @@ msgstr "Session åbnet for %name."
 msgid "Open"
 msgstr "Åben"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Sunday"
 msgstr "Søndag"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Tuesday"
 msgstr "Tirsdag"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Wednesday"
 msgstr "Onsdag"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Thursday"
 msgstr "Torsdag"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Friday"
 msgstr "Fredag"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Saturday"
 msgstr "Lørdag"
 
@@ -36698,6 +41233,7 @@ msgstr "Format"
 msgid "History"
 msgstr "Historik"
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Filename"
 msgstr "Filnavn"
 
@@ -37198,6 +41734,7 @@ msgstr "Widget"
 msgid "Last reply"
 msgstr "Seneste svar"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Prev"
 msgstr "Forrige"
 
@@ -37294,57 +41831,75 @@ msgstr "Tyrkiet"
 msgid "Day"
 msgstr "Dag"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Tue"
 msgstr "tir"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Wed"
 msgstr "ons"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Thu"
 msgstr "tor"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Fri"
 msgstr "fre"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Sat"
 msgstr "lør"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Sun"
 msgstr "søn"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "January"
 msgstr "Januar"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "February"
 msgstr "Februar"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "March"
 msgstr "Marts"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "April"
 msgstr "April"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "May"
 msgstr "maj"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "June"
 msgstr "Juni"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "July"
 msgstr "Juli"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "August"
 msgstr "August"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "September"
 msgstr "September"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "October"
 msgstr "Oktober"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "November"
 msgstr "November"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "December"
 msgstr "December"
 
@@ -38307,9 +42862,11 @@ msgstr "Ingen brugere valgt."
 msgid "Detected malicious attempt to alter protected user fields."
 msgstr "Opdaget forsøg på at ændre beskyttede felter."
 
+#: ; misc/tableselect.js
 msgid "Select all rows in this table"
 msgstr "Vælg alle rækker i tabellen"
 
+#: ; misc/tableselect.js
 msgid "Deselect all rows in this table"
 msgstr "Fravælg alle rækker i tabellen"
 
@@ -38337,6 +42894,7 @@ msgstr "Emne"
 msgid "Allowed values list"
 msgstr "Liste af tilladte værdier"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Today"
 msgstr "I dag"
 
@@ -38367,36 +42925,47 @@ msgstr "Indstil blok"
 msgid "How many content items to display in \"day\" list."
 msgstr "Hvor mange indlæg der vises i listen \"Dagens\"."
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Jan"
 msgstr "jan"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Feb"
 msgstr "feb"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Mar"
 msgstr "mar"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Apr"
 msgstr "apr"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Jun"
 msgstr "jun"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Jul"
 msgstr "jul"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Aug"
 msgstr "aug"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Sep"
 msgstr "sep"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Oct"
 msgstr "okt"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Nov"
 msgstr "nov"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Dec"
 msgstr "dec"
 
@@ -38460,24 +43029,31 @@ msgstr "tegn"
 msgid "profile"
 msgstr "profil"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Su"
 msgstr "Sø"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Mo"
 msgstr "Ma"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Tu"
 msgstr "Ti"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "We"
 msgstr "On"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Th"
 msgstr "To"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Fr"
 msgstr "Fr"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "Sa"
 msgstr "Lø"
 
@@ -38849,6 +43425,7 @@ msgstr "Mappe til midlertidige filer"
 msgid "File upload error. Could not move uploaded file."
 msgstr "Fejl ved filoverførsel. Kunne ikke flytte den overførte fil."
 
+#: ; profiles/os2intra/modules/contrib/adminimal_admin_menu/js/slicknav/jquery-no-conflict.slicknav.js; profiles/os2intra/modules/contrib/adminimal_admin_menu/js/adminimal_admin_menu.js
 msgid "Shortcuts"
 msgstr "Genveje"
 
@@ -38876,6 +43453,7 @@ msgstr "Navnet der tildeles anonyme brugere."
 msgid "Alternate text"
 msgstr "Alternativ tekst"
 
+#: ; misc/ajax.js
 msgid "Please wait..."
 msgstr "Vent venligst…"
 
@@ -40247,6 +44825,7 @@ msgstr "Nogle påkrævede moduler skal aktiveres"
 msgid "New posts"
 msgstr "Nye indlæg"
 
+#: ; modules/locale/locale.datepicker.js
 msgid "mm/dd/yy"
 msgstr "mm/dd/yy"
 
@@ -41114,18 +45693,23 @@ msgstr "Ikke i bog"
 msgid "New book"
 msgstr "Ny bog"
 
+#: ; modules/node/node.js
 msgid "By @name on @date"
 msgstr "Af @name, @date"
 
+#: ; modules/node/node.js
 msgid "By @name"
 msgstr "Af @name"
 
+#: ; modules/menu/menu.js
 msgid "Not in menu"
 msgstr "Ikke i menu"
 
+#: ; sites/all/modules/contrib/pathauto/pathauto.js; modules/path/path.js; profiles/os2intra/modules/contrib/pathauto/pathauto.js
 msgid "Alias: @alias"
 msgstr "Alias: @alias"
 
+#: ; sites/all/modules/contrib/pathauto/pathauto.js; modules/path/path.js; profiles/os2intra/modules/contrib/pathauto/pathauto.js
 msgid "No alias"
 msgstr "Intet alias"
 
@@ -41165,6 +45749,7 @@ msgstr "Filtrér meddelelser"
 msgid "You must select something to filter by."
 msgstr "Du skal vælge, hvad du vil filtrere efter."
 
+#: ; modules/node/node.js
 msgid "New revision"
 msgstr "Ny version"
 
@@ -41279,6 +45864,7 @@ msgstr "Catalansk"
 msgid "Contact form"
 msgstr "Kontaktformular"
 
+#: ; misc/tabledrag.js
 msgid "Drag to re-order"
 msgstr "Træk for at (om)sortere"
 
@@ -42342,6 +46928,7 @@ msgstr ""
 "Blokken %info blev knyttet til den ugyldig region %region og er blevet "
 "deaktiveret."
 
+#: ; modules/block/block.js
 msgid ""
 "The changes to these blocks will not be saved until the <em>Save "
 "blocks</em> button is clicked."
@@ -44757,6 +49344,7 @@ msgstr "Søg efter opdateringer til deaktiverede moduler og temaer"
 msgid "Fetcher"
 msgstr "Fetcher"
 
+#: ; modules/user/user.permissions.js
 msgid "This permission is inherited from the authenticated user role."
 msgstr "Denne tilladelse er arvet fra den godkendte brugerrolle."
 
@@ -44781,18 +49369,21 @@ msgstr "Sekundær menu"
 msgid "Administrator role"
 msgstr "Administratorrolle"
 
+#: ; modules/node/node.js
 msgid "No revision"
 msgstr "Ingen version"
 
 msgid "@number comments per page"
 msgstr "@number kommentarer pr. side"
 
+#: ; modules/node/content_types.js
 msgid "Requires a title"
 msgstr "Kræver en titel"
 
 msgid "Private files"
 msgstr "Private filer"
 
+#: ; modules/block/block.js; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Not restricted"
 msgstr "Ikke begrænset"
 
@@ -45490,6 +50081,7 @@ msgstr ""
 msgid "Customizable per user"
 msgstr "Tilpasset pr. bruger"
 
+#: ; modules/block/block.js; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Not customizable"
 msgstr "Kan ikke tilpasses"
 
@@ -45638,9 +50230,11 @@ msgstr ""
 "kasser med indhold som renderes i et bestemt område eller en bestemt "
 "region på en webside."
 
+#: ; modules/block/block.js; profiles/os2intra/modules/contrib/piwik/piwik.admin.js
 msgid "Restricted to certain pages"
 msgstr "Begrænset til bestemte sider"
 
+#: ; modules/block/block.js
 msgid "The block cannot be placed in this region."
 msgstr "Blokken kan ikke placeres i denne region."
 
@@ -46609,9 +51203,11 @@ msgstr ""
 "Lad stå tomt for at bruge den beskårne udgave af brødteksten som "
 "resumé."
 
+#: ; modules/field/modules/text/text.js
 msgid "Hide summary"
 msgstr "Skjul resumé"
 
+#: ; modules/field/modules/text/text.js
 msgid "Edit summary"
 msgstr "Redigér resumé"
 
@@ -48771,6 +53367,7 @@ msgstr ""
 msgid "Edit content type"
 msgstr "Redigér indholdstype"
 
+#: ; modules/node/content_types.js
 msgid "Don't display post information"
 msgstr "Vis ikke information om indlægget"
 
@@ -53397,12 +57994,15 @@ msgstr ""
 msgid "Māori"
 msgstr "Māori"
 
+#: ; misc/tabledrag.js
 msgid "Re-order rows by numerical weight instead of dragging."
 msgstr "Sortér rækker med numeriske vægte i stedet for at trække dem."
 
+#: ; misc/tabledrag.js
 msgid "Show row weights"
 msgstr "Vis rækkefølge"
 
+#: ; misc/tabledrag.js
 msgid "Hide row weights"
 msgstr "Skjul rækkefølge"
 
@@ -56602,6 +61202,7 @@ msgstr "Taxonomy Menu"
 msgid "Unavailable"
 msgstr "Ikke tilgængelig"
 
+#: ; profiles/os2intra/modules/contrib/module_filter/js/module_filter.js
 msgid "No results"
 msgstr "Ingen resultater"
 
@@ -56866,6 +61467,7 @@ msgstr "Standardafvigelse"
 msgid "%time ago"
 msgstr "%time siden"
 
+#: ; sites/all/modules/contrib/features/features.js
 msgid "Select all"
 msgstr "Markér alt"
 
@@ -57548,7 +62150,7 @@ msgstr "Tilføj en boks"
 msgid "Maximize"
 msgstr "Maksimér"
 
-#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js; sites/all/modules/contrib/taxonomy_manager/js/tree.js
+#: ; sites/all/modules/contrib/taxonomy_manager/js/tree.js; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Close"
 msgstr "Luk"
 
@@ -57574,7 +62176,7 @@ msgstr "Typografi"
 msgid "Target"
 msgstr "Mål"
 
-#: ; sites/all/modules/contrib/pathauto/pathauto.js
+#: ; sites/all/modules/contrib/pathauto/pathauto.js; profiles/os2intra/modules/contrib/pathauto/pathauto.js
 msgid "Automatic alias"
 msgstr "Automatisk alias"
 
@@ -57601,12 +62203,15 @@ msgstr ""
 msgid "Vertical tab"
 msgstr "Vertikal fane"
 
+#: ; sites/all/modules/contrib/scheduler/scheduler_vertical_tabs.js
 msgid "Scheduled for publishing"
 msgstr "Planlagt til publicering"
 
+#: ; sites/all/modules/contrib/scheduler/scheduler_vertical_tabs.js
 msgid "Scheduled for unpublishing"
 msgstr "Planlagt til afpublicering"
 
+#: ; sites/all/modules/contrib/scheduler/scheduler_vertical_tabs.js
 msgid "Not scheduled"
 msgstr "Ikke planlagt"
 
@@ -58026,7 +62631,7 @@ msgstr ""
 "Indtast brugernavne på konti (adskilt med komma) der skal vises som "
 "hurtigskift-links i 'Skift bruger'-blokken."
 
-#: ; sites/all/modules/contrib/admin_menu/admin_menu.admin.js
+#: ; sites/all/modules/contrib/admin_menu/admin_menu.admin.js; profiles/os2intra/modules/contrib/admin_menu/admin_menu.admin.js
 msgid "Also allow !name role to !permission?"
 msgstr "Giv tilladelsen !permission til rollen !name?"
 
@@ -58652,6 +63257,7 @@ msgstr "TIlgængelige knapper"
 msgid "\"@s\" created date"
 msgstr "\"@s\" oprettelsesdato"
 
+#: ; profiles/os2intra/modules/patched/media/js/media.admin.js
 msgid "all"
 msgstr "alle"
 
@@ -58703,6 +63309,7 @@ msgstr "Datofelt"
 msgid "Interval"
 msgstr "Interval"
 
+#: ; profiles/os2intra/modules/patched/media/js/media.admin.js
 msgid "Select"
 msgstr "Vælg"
 
@@ -60640,6 +65247,7 @@ msgstr "Det er flaget mindst én gang"
 msgid "It is flagged by the current user"
 msgstr "Det er flaget af den aktuelle bruger"
 
+#: ; profiles/os2intra/modules/contrib/flag/theme/flag-admin.js
 msgid "No flags"
 msgstr "Ingen flag"
 
@@ -63514,6 +68122,7 @@ msgstr "Stort begyndelsesbogstav"
 msgid "sorted by"
 msgstr "sorteret efter"
 
+#: ; profiles/os2intra/modules/contrib/views/js/views-admin.js
 msgid "Remove group"
 msgstr "Fjern gruppe"
 
@@ -66755,9 +71364,11 @@ msgstr ""
 "\"Ensure my table\" blev kaldt, men forespørgslen har ikke en "
 "ensure_table-metode."
 
+#: ; profiles/os2intra/modules/contrib/views/js/views-admin.js
 msgid "Apply (all displays)"
 msgstr "Anvend (alle displays)"
 
+#: ; profiles/os2intra/modules/contrib/views/js/views-admin.js
 msgid "Apply (this display)"
 msgstr "Anvend (dette display)"
 
@@ -67049,6 +71660,7 @@ msgstr "Sorteringen som bruges til det ovenfor valgte sorteringskriterie."
 msgid "And/Or, Rearrange"
 msgstr "Skift operand eller rækkefølge"
 
+#: ; profiles/os2intra/modules/contrib/views/js/views-admin.js
 msgid "Revert to default"
 msgstr "Gendan til standard"
 
@@ -69584,15 +74196,15 @@ msgstr "Filens filtype."
 msgid "File preview"
 msgstr "Fil preview"
 
-#: profiles/os2intra/modules/contrib/epsacrop/js/epsacrop.js
+#: profiles/os2intra/modules/contrib/epsacrop/js/epsacrop.js; profiles/os2intra/modules/patched/epsacrop/js/epsacrop.js
 msgid "Cropping Image"
 msgstr "Billedbeskæring"
 
-#: profiles/os2intra/modules/contrib/epsacrop/js/epsacrop.js
+#: profiles/os2intra/modules/contrib/epsacrop/js/epsacrop.js; profiles/os2intra/modules/patched/epsacrop/js/epsacrop.js
 msgid "Apply crop"
 msgstr "Gem beskæring"
 
-#: profiles/os2intra/modules/contrib/epsacrop/js/epsacrop.js
+#: profiles/os2intra/modules/contrib/epsacrop/js/epsacrop.js; profiles/os2intra/modules/patched/epsacrop/js/epsacrop.js
 msgid ""
 "Changes made in image crops will not be saved until the form is "
 "submitted."
@@ -69733,6 +74345,7 @@ msgstr "Medie-browser til valg og upload af mediefiler"
 msgid "Upload a new file"
 msgstr "Upload en ny fil"
 
+#: ; profiles/os2intra/modules/contrib/media/js/media.browser.js; profiles/os2intra/modules/patched/media/js/media.browser.js
 msgid "Cannot continue, nothing selected"
 msgstr "Kan ikke fortsætte, intet valgt"
 
@@ -69839,6 +74452,7 @@ msgstr "Filen findes ikke."
 msgid "An error occurred and no file was uploaded."
 msgstr "Der opstod en fejl og der blev ikke uploadet en fil."
 
+#: ; profiles/os2intra/modules/contrib/plupload/js/i18n.js
 msgid "Start upload"
 msgstr "Start upload"
 
@@ -69955,6 +74569,7 @@ msgstr "Media Internet Sources"
 msgid "Media browser theme"
 msgstr "Mediebrowser theme"
 
+#: ; profiles/os2intra/modules/patched/media/js/media.admin.js
 msgid "If you switch views, you will lose your selection."
 msgstr "Hvis du skifter views mister du dine valg."
 
@@ -70065,6 +74680,10 @@ msgstr "Tilpasset etiket"
 
 msgid "End time"
 msgstr "Slut tid"
+
+#: /?q=system%2Ftimezone%2FCET%2F3600%2F0&date=Mon+Nov+02+2015+10%3A56%3A55+GMT%2B0100+(CET)
+msgid "User account page is viewed"
+msgstr "Profilside"
 
 #: /
 msgid "Access denied. You must log in to view this page."
@@ -70303,6 +74922,7 @@ msgstr "@items aktiveret"
 msgid "No privacy"
 msgstr "Ingen beskyttelse af personlige oplysninger"
 
+#: ; misc/ajax.js
 msgid "The callback URL is not local and not trusted: !url"
 msgstr "Callback-URLen er ikke lokal og er ikke troværdig: !url"
 
@@ -70417,6 +75037,10 @@ msgid ""
 msgstr ""
 "Som gruppeadministrator, associer dette indhold med grupper, som du "
 "<em>ikke</em> tilhører."
+
+#: /node/add/it-vejledning
+msgid "Switch to plain text editor"
+msgstr "Skift til rent tekst editor"
 
 #: /hjaelp-og-vaerktoejer/it-vejledninger/kommer-den-saa-frem-automatisk
 msgid "Group content visibility"
@@ -72287,6 +76911,14 @@ msgstr "Der opstod en fejl!"
 msgid "Try to refresh the page and try again."
 msgstr "Genopfrisk siden og forsøg igen."
 
+#: /useractivation
+msgid "Birthdate"
+msgstr "Fødselsdato"
+
+#: /useractivation
+msgid "Format: 10/03/1982"
+msgstr "Format: 070593"
+
 msgid "Lock"
 msgstr "Lås"
 
@@ -72338,4 +76970,97 @@ msgid "1 second"
 msgid_plural "@count seconds"
 msgstr[0] "1 sekund"
 msgstr[1] "@count sekunder"
+
+#: /admin/structure/block
+msgid "@site_name on Facebook"
+msgstr "Facebook"
+
+#: /
+msgid "Intranet Fredericia on Facebook"
+msgstr "Facebook"
+
+#: /useractivation
+msgid "Birthdate: Invalid format."
+msgstr "Fødselsdato: Forkert format"
+
+msgid "Publish"
+msgstr "Udgiv"
+
+msgid "Unpublish"
+msgstr "Træk tilbage"
+
+msgid "Scheme"
+msgstr "Skema"
+
+msgid "Folder"
+msgstr "Mappe"
+
+#: /group/node/93/unsubscribe
+msgid "Are you sure you want to unsubscribe from the group %title?"
+msgstr "Er du sikker på at du vil melde dig ud af gruppen %title?"
+
+msgid "BCC Recipient"
+msgstr "BCC modtager"
+
+msgid "Attachments"
+msgstr "Bilag"
+
+msgid "Mail System"
+msgstr "Mail System"
+
+msgid "Configure per-module Mail System settings."
+msgstr "Konfigurér modulvis opsætning af Mail System."
+
+msgid "Mime Mail"
+msgstr "Mime Mail"
+
+msgid "-- Select --"
+msgstr "--Vælg--"
+
+msgid "Email settings"
+msgstr "Indstillinger for e-mail"
+
+msgid "Plaintext email only"
+msgstr "Kun e-mail i ren tekst"
+
+msgid "Process incoming messages posted to this site"
+msgstr "Behandl indkommende meddelelser til sitet"
+
+msgid "Message validation string"
+msgstr "Streng til godkendelse af meddelelse"
+
+msgid "E-mail engine"
+msgstr "E-mail motor"
+
+msgid "Engine specific settings"
+msgstr "Motor-specifikke indstillinger"
+
+msgid "Please choose a mail engine."
+msgstr "Vælg en mail-motor."
+
+msgid "Authentication error for POST e-mail"
+msgstr "Godkendelsesfejl for POST e-mail"
+
+msgid "Mime Mail CSS Compressor"
+msgstr "Mime Mail CSS kompressor"
+
+msgid "Mime Mail Compress requires the PHP DOM extension to be enabled."
+msgstr "Mime Mail Compress kræver at PHP DOM-udvidelsen er aktiveret."
+
+#: /users/admin
+msgid "@flag you follow (@count)"
+msgstr "@flag du følger (@count) "
+
+msgid "Allows form elements to be prepopulated from the URL."
+msgstr "Forudfyld formularfelter fra URLen."
+
+#: /telefonbogen?realname=Stjernholm&mail=&field_os2intra_phone_value=
+msgid "No department"
+msgstr "Ingen afdeling"
+
+msgid "Prepopulate"
+msgstr "Prepopulate"
+
+msgid "Pre-populates forms with HTTP GET or POST data"
+msgstr "Forudfylder formularer med HTTP GET- eller POST-data."
 
