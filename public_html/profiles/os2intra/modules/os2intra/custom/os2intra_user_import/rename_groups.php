@@ -4,7 +4,8 @@ variable_get('os2intra_user_import_dir', 'private://user_import');
 
 $realpath = '';
 
-$dir = reset(file_scan_directory('private://user_import', '/.*\.csv$/'));
+$filename = variable_get('os2intra_user_import_file_name', 'FK-user_import');
+$dir = reset(file_scan_directory('private://user_import', '/' . $filename . '.csv/'));
 if($dir){
   $realpath = drupal_realpath($dir->uri);
 }
