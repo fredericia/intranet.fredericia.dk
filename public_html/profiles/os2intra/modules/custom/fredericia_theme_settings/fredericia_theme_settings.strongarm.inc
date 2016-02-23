@@ -519,7 +519,7 @@ function fredericia_theme_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'select2_excluded_selectors';
-  $strongarm->value = '';
+  $strongarm->value = '.form-type-hierarchical-select .form-select';
   $export['select2_excluded_selectors'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -540,7 +540,7 @@ function fredericia_theme_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'select2_update_settings_by_ajax';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['select2_update_settings_by_ajax'] = $strongarm;
 
   $strongarm = new stdClass();
