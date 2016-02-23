@@ -11,7 +11,8 @@
 // --------------------------------------------------
 
 // Form field
-.form-control {
+.form-control,
+.select2-search input {
 	border-width: @bs3-designer-form-control-border-width;
 
 	&,
@@ -20,4 +21,14 @@
 		.box-shadow(none);
 		outline: 0;
 	}
+}
+
+// Required form element
+.form-required {
+	display: inline;
+	font-weight: @font-weight-bold;
+	font-size: floor( (@font-size-base * 1.5) );
+	line-height: 1;
+	color: #f00;
+	vertical-align: baseline;
 }

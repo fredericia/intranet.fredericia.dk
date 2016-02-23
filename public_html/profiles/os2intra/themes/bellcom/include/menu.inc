@@ -2,13 +2,13 @@
 
 /**
  * @param $menu_name
- * @param bool|FALSE $theme_function_name
+ * @param bool|FALSE $menu_type
  * @param null $max_depth
- * Menu type: "full" or "trail"
+ * Menu type: "main-navigation" or "sidebar"
  *
  * @return array
  */
-function _bellcom_generate_menu($menu_name, $theme_function_name = FALSE, $max_depth = NULL) {
+function _bellcom_generate_menu($menu_name, $menu_type = FALSE, $max_depth = NULL) {
   if (empty($menu_name)) {
     return array();
   }
@@ -35,18 +35,19 @@ function _bellcom_generate_menu($menu_name, $theme_function_name = FALSE, $max_d
 //  }
 
   // Change theme function for tree and links
-  if ($theme_function_name !== FALSE) {
+  if ($menu_type !== FALSE) {
 
     // Tree
     $menu_tree_function_names = array(
-      'menu_tree__' . strtr($menu_name, '-', '_') . '__' . strtr($theme_function_name, '-', '_'),
+      'menu_tree__' . strtr($menu_type, '-', '_'),
+      'menu_tree__' . strtr($menu_name, '-', '_') . '__' . strtr($menu_type, '-', '_'),
     );
     $output['#theme_wrappers'] = $menu_tree_function_names;
 
     // Links
     $menu_link_function_names = array(
       'old' => 'menu_link__' . strtr($menu_name, '-', '_'),
-      'new' => 'menu_link__' . strtr($theme_function_name, '-', '_'),
+      'new' => 'menu_link__' . strtr($menu_type, '-', '_'),
     );
     array_walk_recursive($output, '_bellcom_alter_menu_theme_function', $menu_link_function_names);
   }

@@ -2362,6 +2362,120 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 
+/*
+ * jQuery appear plugin
+ *
+ * Copyright (c) 2012 Andrey Sidorov
+ * licensed under MIT license.
+ *
+ * https://github.com/morr/jquery.appear/
+ *
+ * Version: 0.3.6
+ */
+(function($) {
+  var selectors = [];
+
+  var check_binded = false;
+  var check_lock = false;
+  var defaults = {
+    interval: 250,
+    force_process: false
+  };
+  var $window = $(window);
+
+  var $prior_appeared = [];
+
+  function process() {
+    check_lock = false;
+    for (var index = 0, selectorsLength = selectors.length; index < selectorsLength; index++) {
+      var $appeared = $(selectors[index]).filter(function() {
+        return $(this).is(':appeared');
+      });
+
+      $appeared.trigger('appear', [$appeared]);
+
+      if ($prior_appeared[index]) {
+        var $disappeared = $prior_appeared[index].not($appeared);
+        $disappeared.trigger('disappear', [$disappeared]);
+      }
+      $prior_appeared[index] = $appeared;
+    }
+  };
+
+  function add_selector(selector) {
+    selectors.push(selector);
+    $prior_appeared.push();
+  }
+
+  // "appeared" custom filter
+  $.expr[':']['appeared'] = function(element) {
+    var $element = $(element);
+    if (!$element.is(':visible')) {
+      return false;
+    }
+
+    var window_left = $window.scrollLeft();
+    var window_top = $window.scrollTop();
+    var offset = $element.offset();
+    var left = offset.left;
+    var top = offset.top;
+
+    if (top + $element.height() >= window_top &&
+        top - ($element.data('appear-top-offset') || 0) <= window_top + $window.height() &&
+        left + $element.width() >= window_left &&
+        left - ($element.data('appear-left-offset') || 0) <= window_left + $window.width()) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  $.fn.extend({
+    // watching for element's appearance in browser viewport
+    appear: function(options) {
+      var opts = $.extend({}, defaults, options || {});
+      var selector = this.selector || this;
+      if (!check_binded) {
+        var on_check = function() {
+          if (check_lock) {
+            return;
+          }
+          check_lock = true;
+
+          setTimeout(process, opts.interval);
+        };
+
+        $(window).scroll(on_check).resize(on_check);
+        check_binded = true;
+      }
+
+      if (opts.force_process) {
+        setTimeout(process, opts.interval);
+      }
+      add_selector(selector);
+      return $(selector);
+    }
+  });
+
+  $.extend({
+    // force elements's appearance check
+    force_appear: function() {
+      if (check_binded) {
+        process();
+        return true;
+      }
+      return false;
+    }
+  });
+})(function() {
+  if (typeof module !== 'undefined') {
+    // Node
+    return require('jquery');
+  } else {
+    return jQuery;
+  }
+}());
+
 // |--------------------------------------------------------------------------
 // | BS3 designer
 // |--------------------------------------------------------------------------
@@ -2382,7 +2496,6 @@ if (typeof jQuery === 'undefined') {
 var bs3Designer = (function ($) {
     'use strict';
 
-    var Modernizr = {};
     var pub = {};
 
     /**
@@ -2397,11 +2510,12 @@ var bs3Designer = (function ($) {
      * Register boot event handlers
      */
     function registerBootEventHandlers() {
-        if ( ! Modernizr.touch) {
+        if ( ! Modernizr.touchevents) {
             footerAttached();
-            optimizeFormElements();
+            footerBelow();
         }
 
+        optimizeFormElements();
         appear();
         bs3Tooltip();
     }
@@ -2413,10 +2527,13 @@ var bs3Designer = (function ($) {
 
         $(window).resize(function () {
             footerAttached();
+            footerBelow();
         });
 
-        $('.btn-loader').on('click', function () {
-            iconSpin($(this));
+        $('.btn-loader').on('click touchstart', function () {
+            var $element = $(this);
+
+            iconSpin($element);
         });
     }
 
@@ -2424,10 +2541,22 @@ var bs3Designer = (function ($) {
      * Footer attached
      */
     function footerAttached() {
-        var $footer = $('.footer');
-        var footerHeight = $footer.outerHeight(true);
-
         if ($('body').hasClass('footer-attached')) {
+            var $footer = $('.footer');
+            var footerHeight = $footer.outerHeight(true);
+
+            $('.inner-wrapper').css('padding-bottom', footerHeight);
+        }
+    }
+
+    /**
+     * Footer below
+     */
+    function footerBelow() {
+        if ($('body').hasClass('footer-below')) {
+            var $footer = $('.footer');
+            var footerHeight = $footer.outerHeight(true);
+
             $('.inner-wrapper').css('padding-bottom', footerHeight);
         }
     }
@@ -2439,15 +2568,15 @@ var bs3Designer = (function ($) {
         var $appear = $('.appear');
         var $animation = $('.animation');
 
-        if (Modernizr.touch || !Modernizr.cssanimations) {
+        if (Modernizr.touchevents || !Modernizr.cssanimations) {
 
             $animation
-                .removeClass('animation')
-                .removeClass('animation-appear-from-top')
-                .removeClass('animation-appear-from-right')
-                .removeClass('animation-appear-from-left')
-                .removeClass('animation-appear-from-bottom')
-                .removeClass('animation-appear-from-center');
+              .removeClass('animation')
+              .removeClass('animation-appear-from-top')
+              .removeClass('animation-appear-from-right')
+              .removeClass('animation-appear-from-left')
+              .removeClass('animation-appear-from-bottom')
+              .removeClass('animation-appear-from-center');
 
             return false;
         }
@@ -2476,7 +2605,7 @@ var bs3Designer = (function ($) {
      * BS tooltip
      */
     function bs3Tooltip() {
-        if (Modernizr.touch) {
+        if (Modernizr.touchevents) {
             $('[data-toggle=tooltip]').tooltip('hide');
 
             return false;
@@ -2496,7 +2625,11 @@ var bs3Designer = (function ($) {
      * Icon spin
      */
     function iconSpin($element) {
-        $element.find('.icon').addClass('icon-spin');
+        var $icon = $('<span />').addClass('fa').addClass('icon').addClass('icon-spin');
+        var elementWidth = $element.outerWidth(true);
+
+        // Remove button value and insert icon
+        $element.html($icon).css('width', elementWidth);
     }
 
     return pub;
@@ -2514,7 +2647,6 @@ var bs3Designer = (function ($) {
 var bs3Sidebar = (function ($) {
   'use strict';
 
-  var Modernizr = {};
   var pub = {};
 
   /**
@@ -2531,7 +2663,7 @@ var bs3Sidebar = (function ($) {
   function registerEventHandlers() {
 
     // Toggle sidebar
-    $('[data-sidebar-toggle]').on('click', function (event) {
+    $('[data-sidebar-toggle]').on('click touchstart', function (event) {
       event.preventDefault();
 
       var $element = $(this);
@@ -2540,7 +2672,7 @@ var bs3Sidebar = (function ($) {
     });
 
     // Toggle dropdown
-    $('.sidebar .sidebar-navigation-dropdown > a > .sidebar-navigation-dropdown-toggle').on('click', function (event) {
+    $('.sidebar .sidebar-navigation-dropdown > a > .sidebar-navigation-dropdown-toggle').on('click touchstart', function (event) {
       event.preventDefault();
 
       var $element = $(this);
@@ -3543,7 +3675,7 @@ var popoverButton = (function ($) {
   function registerEventHandlers() {
 
     // Toggle sidebar
-    $('.popover-button-toggle').on('click', function (event) {
+    $('.popover-button-toggle').on('click touchstart', function (event) {
       event.preventDefault();
 
       var $element = $(this);
@@ -3630,7 +3762,7 @@ var os2Toggler = (function ($) {
   function registerEventHandlers() {
 
     // Toggle
-    $('.os2-toggler-element-toggle').on('click', function (event) {
+    $('.os2-toggler-element-toggle').on('click touchstart', function (event) {
       event.preventDefault();
 
       var $element = $(this);
