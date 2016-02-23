@@ -849,6 +849,7 @@ function os2intra_users_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'content_taxonomy_opt_groups' => FALSE,
+        'use_select2' => FALSE,
       ),
       'type' => 'options_select',
       'weight' => 0,
@@ -1072,7 +1073,9 @@ function os2intra_users_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'use_select2' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 17,
     ),
@@ -1393,7 +1396,9 @@ function os2intra_users_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'use_select2' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 14,
     ),
