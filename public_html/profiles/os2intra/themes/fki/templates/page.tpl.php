@@ -16,9 +16,9 @@
       </div>
       <!-- End - logo -->
 
-      <?php if (isset($sidebar_primary_navigation)): ?>
+      <?php if (isset($sidebar_primary)): ?>
         <!-- Begin - navigation -->
-        <?php print render($sidebar_primary_navigation); ?>
+        <?php print render($sidebar_primary); ?>
         <!-- End - navigation -->
       <?php endif; ?>
 

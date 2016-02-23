@@ -483,6 +483,90 @@ function fredericia_theme_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'select2_compression_type';
+  $strongarm->value = 'minified';
+  $export['select2_compression_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'select2_default_width';
+  $strongarm->value = 'resolve';
+  $export['select2_default_width'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'select2_excluded_cleasses';
+  $strongarm->value = '';
+  $export['select2_excluded_cleasses'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'select2_excluded_ids';
+  $strongarm->value = '';
+  $export['select2_excluded_ids'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'select2_excluded_paths';
+  $strongarm->value = '';
+  $export['select2_excluded_paths'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'select2_excluded_selectors';
+  $strongarm->value = '';
+  $export['select2_excluded_selectors'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'select2_min_options_count_for_search';
+  $strongarm->value = '15';
+  $export['select2_min_options_count_for_search'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'select2_plugin_path';
+  $strongarm->value = 'profiles/os2intra/libraries/select2';
+  $export['select2_plugin_path'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'select2_update_settings_by_ajax';
+  $strongarm->value = 1;
+  $export['select2_update_settings_by_ajax'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'select2_use_for_ac_elements';
+  $strongarm->value = 0;
+  $export['select2_use_for_ac_elements'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'select2_use_for_all_select_elements';
+  $strongarm->value = 1;
+  $export['select2_use_for_all_select_elements'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'select2_use_for_all_select_elements_for_admin_pages';
+  $strongarm->value = 1;
+  $export['select2_use_for_all_select_elements_for_admin_pages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'statistics_count_content_views';
   $strongarm->value = 1;
   $export['statistics_count_content_views'] = $strongarm;
@@ -599,7 +683,7 @@ function fredericia_theme_settings_strongarm() {
     'bootstrap_cdn_custom_css_min' => '//cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css',
     'bootstrap_cdn_custom_js' => '//cdn.jsdelivr.net/bootstrap/3.3.2/js/bootstrap.js',
     'bootstrap_cdn_custom_js_min' => '//cdn.jsdelivr.net/bootstrap/3.3.2/js/bootstrap.min.js',
-    'bootstrap_cdn_jsdelivr_version' => '3.3.2',
+    'bootstrap_cdn_jsdelivr_version' => '3.3.5',
     'bootstrap_cdn_jsdelivr_theme' => 'bootstrap',
     'contact_information' => '1',
     'social_links' => '1',
@@ -616,6 +700,8 @@ function fredericia_theme_settings_strongarm() {
     'sidebar_left_lg_enabled' => 1,
     'sidebar_left_lg_state' => 'expanded',
     'sidebar_left_lg_content_effect' => 'shrink',
+    'footer_attached' => 0,
+    'footer_below' => 0,
     'footer_show_social_links' => 0,
     'business_owner_name' => '',
     'business_startup_year' => '',
