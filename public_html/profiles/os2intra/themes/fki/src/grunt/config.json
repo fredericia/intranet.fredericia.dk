@@ -26,6 +26,7 @@
       "src/vendor/jquery-placeholder/jquery.placeholder.js",
       "src/vendor/jquery.cookie/jquery.cookie.js",
       "src/vendor/fastclick/lib/fastclick.js",
+      "src/vendor/select2/select2.js",
       "src/js/popover-button.js",
       "src/js/bs3Alert.js",
       "src/js/os2Toggler.js",
