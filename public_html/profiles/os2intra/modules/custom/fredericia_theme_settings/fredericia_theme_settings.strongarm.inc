@@ -519,7 +519,7 @@ function fredericia_theme_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'select2_excluded_selectors';
-  $strongarm->value = '.form-type-hierarchical-select .form-select';
+  $strongarm->value = '';
   $export['select2_excluded_selectors'] = $strongarm;
 
   $strongarm = new stdClass();
