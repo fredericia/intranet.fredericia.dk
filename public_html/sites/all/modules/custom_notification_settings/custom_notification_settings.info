@@ -1,0 +1,5 @@
+name = Custom Notification Settings (TEST)
+description = A simple module that allows users to choose when to receive the notifications.
+author = Riivo Erik
+core = 7.x
+

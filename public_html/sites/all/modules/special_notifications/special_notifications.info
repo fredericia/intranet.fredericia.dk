@@ -1,0 +1,7 @@
+
+name = Special Notifications (TEST)
+description = A simple module that sends "push notification" messages to particular users
+core = 7.x
+
+dependencies[] = push_notifications
+
