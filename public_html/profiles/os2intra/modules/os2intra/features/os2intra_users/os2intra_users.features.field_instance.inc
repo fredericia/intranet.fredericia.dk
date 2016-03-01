@@ -745,7 +745,7 @@ function os2intra_users_field_default_field_instances() {
       'alt_field' => 0,
       'custom_add_another' => '',
       'custom_remove' => '',
-      'default_image' => 0,
+      'default_image' => 790,
       'epsacrop' => array(
         'styles' => array(
           '4_col_image_-_520x220' => 0,
