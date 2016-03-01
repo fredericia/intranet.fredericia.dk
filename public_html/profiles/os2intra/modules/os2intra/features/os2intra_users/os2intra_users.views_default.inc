@@ -1095,6 +1095,16 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_mobile']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_os2intra_mobile']['empty'] = '<i>Ikke angivet</i>';
   $handler->display->display_options['fields']['field_os2intra_mobile']['type'] = 'text_plain';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: User: Created date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Realname: Real name */
+  $handler->display->display_options['sorts']['realname']['id'] = 'realname';
+  $handler->display->display_options['sorts']['realname']['table'] = 'realname';
+  $handler->display->display_options['sorts']['realname']['field'] = 'realname';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: User: Active */
@@ -1108,7 +1118,7 @@ function os2intra_users_views_default_views() {
   $handler->display->display_options['filters']['realname']['id'] = 'realname';
   $handler->display->display_options['filters']['realname']['table'] = 'realname';
   $handler->display->display_options['filters']['realname']['field'] = 'realname';
-  $handler->display->display_options['filters']['realname']['operator'] = 'contains';
+  $handler->display->display_options['filters']['realname']['operator'] = 'allwords';
   $handler->display->display_options['filters']['realname']['group'] = 1;
   $handler->display->display_options['filters']['realname']['exposed'] = TRUE;
   $handler->display->display_options['filters']['realname']['expose']['operator_id'] = 'realname_op';
