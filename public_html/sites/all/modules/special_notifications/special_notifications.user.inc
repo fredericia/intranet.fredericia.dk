@@ -103,8 +103,6 @@ function special_notifications_settings_form_submit($form, &$form_state) {
 function _special_notifications_settings_check_user() {
 	global $user;
 
-	//_special_notifications_settings_debug('_special_notifications_settings_check_user() called!');
-
 	$uid = $user->uid;
 	$table = 'special_notifications_settings';
 
@@ -115,8 +113,6 @@ function _special_notifications_settings_check_user() {
 
 	if ($res->rowCount() == 0) {
 		$ins = db_insert($table)->fields(array('uid' => $uid))->execute();
-
-		//_special_notifications_settings_debug(' _special_notifications_settings_check_user(): new entry should be added!');
 	}
 
 	return true;
@@ -170,24 +166,6 @@ function _special_notifications_settings_arr($type) {
 		);
 	} else {
 		return $array();
-	}
-}
-
-
-function _special_notifications_settings_debug($msg) {
-	$file = '/var/www/SNS_DEBUG.txt';
-
-	if (!file_exists($file)) {
-		@touch($file);
-		@chmod($file, 0777);
-	}
-
-	$full_msg = $msg . "\n\n";
-
-	if (file_exists($file) && is_readable($file)) {
-		$fh = fopen($file, 'a');
-		fwrite($fh, $full_msg);
-		fclose($fh);
 	}
 }
 
