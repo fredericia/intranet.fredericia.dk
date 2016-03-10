@@ -1,0 +1,10 @@
+name = Rules new comment
+core = 7.x
+package = OS2Web - Backend
+version = 7.x-1.0
+dependencies[] = comment
+dependencies[] = entity
+dependencies[] = rules
+features[features_api][] = api:2
+features[rules_config][] = rules_new_comment
+project path = profiles/os2intra/modules/custom/
