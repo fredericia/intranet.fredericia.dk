@@ -39,50 +39,50 @@ Drupal.settings.cache.entity = {
 	/* Entity types */
 	entity_types: {
 
-	/* Comments */
-	/*comment: {
-		bundles: {}
-	},*/
+		/* Comments */
+		/*comment: {
+			bundles: {}
+		},*/
 
-	/* Files */
-	/*file: {
-		bundles: {}
-	},*/
+		/* Files */
+		/*file: {
+			bundles: {}
+		},*/
 
-	/* Nodes */
-	node: {
+		/* Nodes */
+		node: {
 
-		/* Node Globals (will be used if not overwritten below) */
-		enabled: true,
-		expiration: 120,
+			/* Node Globals (will be used if not overwritten below) */
+			enabled: true,
+			expiration: 120,
 
-		/* Content types (aka bundles) */
-		bundles: {
+			/* Content types (aka bundles) */
+			bundles: {
 
-			articles: {
-				expiration: 3600
-			},
-			page: {
-				enabled: false
+				articles: {
+					expiration: 3600
+				},
+				page: {
+					enabled: false
+				}
+
 			}
+		},
 
+		/* Terms */
+		/*taxonomy_term: {
+			bundles: {}
+		},*/
+
+		/* Vocabularies */
+		/*taxonomy_vocabulary: {
+			bundles: {}
+		},*/
+
+		/* Users */
+		user: {
+			bundles: {}
 		}
-	},
-
-	/* Terms */
-	/*taxonomy_term: {
-		bundles: {}
-	},*/
-
-	/* Vocabularies */
-	/*taxonomy_vocabulary: {
-		bundles: {}
-	},*/
-
-	/* Users */
-	/*user: {
-		bundles: {}
-	}*/
 
 	}
 
@@ -106,7 +106,7 @@ drupalgap.settings.mode = 'web-app';
 
 // Language Files - locale/[language-code].json
 drupalgap.settings.locale = {
-	 /* es: { } */
+	 da: {}
 };
 
 /*************|
@@ -157,16 +157,15 @@ drupalgap.settings.loader = {
  *****************************************/
 
 /** Contributed Modules - www/app/modules **/
-
-//Drupal.modules.contrib['example'] = {};
+Drupal.modules.contrib['force_authentication'] = {};
+Drupal.modules.contrib['push_notifications'] = {};
+Drupal.modules.contrib['entityreference'] = {};
+Drupal.modules.contrib['media'] = {};
+Drupal.modules.contrib['date'] = {};
+Drupal.modules.contrib['og'] = {};
 
 /** Custom Modules - www/app/modules/custom **/
-
 Drupal.modules.custom['fredericia'] = {};
-Drupal.modules.custom['force_authentication'] = {};
-Drupal.modules.custom['mobile_notifications'] = {};
-Drupal.modules.custom['push_notifications'] = {};
-//Drupal.modules.custom['services_menu'] = {};
 
 
 drupalgap.settings.push_notifications = {
@@ -194,7 +193,7 @@ drupalgap.settings.menus['user_menu_anonymous'] = {
 	options: menu_popup_get_default_options(),
 	links: [
 		{
-			title: 'Login',
+			title: t('Login'),
 			path: 'user/login',
 			options: {
 				attributes: {
@@ -204,7 +203,7 @@ drupalgap.settings.menus['user_menu_anonymous'] = {
 			}
 		},
 		{
-			title: 'Create new account',
+			title: t('Create new account'),
 			path: 'user/register',
 			options: {
 				attributes: {
@@ -220,7 +219,7 @@ drupalgap.settings.menus['user_menu_authenticated'] = {
 	options: menu_popup_get_default_options(),
 	links: [
 		{
-			title: 'My Account',
+			title: t('My Account'),
 			path: 'user',
 			options: {
 				attributes: {
@@ -230,7 +229,7 @@ drupalgap.settings.menus['user_menu_authenticated'] = {
 			}
 		},
 		{
-			title: 'Logout',
+			title: t('Logout'),
 			path: 'user/logout',
 			options: {
 				attributes: {
@@ -238,18 +237,6 @@ drupalgap.settings.menus['user_menu_authenticated'] = {
 				}
 			}
 		},
-
-		// Just put it here right now. (Maybe it should be somewhere else.)
-		{
-			title: 'Notifications',
-			path: 'mobile-notifications',
-			options: {
-				reloadPage: true,
-				attributes: {
-					'data-icon': 'info'
-				}
-			}
-		}
 	]
 };
 
@@ -258,9 +245,9 @@ drupalgap.settings.menus['main_menu'] = {
 	options: menu_popup_get_default_options(),
 	links: [
 		{
-			title:'Content',
-			path:'node',
-			options:{
+			title: t('Content'),
+			path: 'node',
+			options: {
 				attributes: {
 					'data-icon': 'star',
 					'class': 'ui-btn ui-btn-icon-right'
@@ -268,20 +255,20 @@ drupalgap.settings.menus['main_menu'] = {
 			}
 		},
 		{
-			title:'Taxonomy',
-			path:'taxonomy/vocabularies',
-			options:{
-				attributes:{
-					'data-icon':'grid'
+			title: t('Taxonomy'),
+			path: 'taxonomy/vocabularies',
+			options: {
+				attributes: {
+					'data-icon': 'grid'
 				}
 			}
 		},
 		{
-			title:'Users',
-			path:'user-listing',
-			options:{
-				attributes:{
-					'data-icon':'info'
+			title: t('Users'),
+			path: 'user-listing',
+			options: {
+				attributes: {
+					'data-icon': 'info'
 				}
 			}
 		}
@@ -296,32 +283,38 @@ drupalgap.settings.blocks = {}; // Do not remove this line.
 // Easy Street 3 Theme Blocks
 drupalgap.settings.blocks.easystreet3 = {
 	header: {
-	user_menu_anonymous: {
-		roles: {
-			value: ['anonymous user'],
-			mode: 'include',
-		}
+		user_menu_anonymous: {
+			roles: {
+				value: ['anonymous user'],
+				mode: 'include',
+			}
+		},
+
+		user_menu_authenticated: {
+			roles: {
+				value: ['authenticated user'],
+				mode: 'include',
+			}
+		},
+
+		main_menu: {}
 	},
-	user_menu_authenticated: {
-		roles: {
-			value: ['authenticated user'],
-			mode: 'include',
-		}
-	},
-	main_menu: { }
-	},
+
 	sub_header: {
-		title: { }
+		title: {}
 	},
+
 	navigation: {
-		primary_local_tasks: { }
+		primary_local_tasks: {}
 	},
+
 	content: {
-		messages: { },
-	main: { }
+		messages: {},
+		main: {}
 	},
+
 	footer: {
-		powered_by: { }
+		powered_by: {}
 	}
 };
 
@@ -334,7 +327,7 @@ drupalgap.settings.blocks.fredericia = {
 			fredericia_panel_block: {}
 		},
 
-		fredericia_panel_block_button: { },
+		fredericia_panel_block_button: {},
 
 		user_menu_anonymous: {
 			roles: {
@@ -350,24 +343,24 @@ drupalgap.settings.blocks.fredericia = {
 			}
 		},
 
-		main_menu: { }
+		main_menu: {}
 	},
 
 	sub_header: {
-		title: { }
+		title: {}
 	},
 
 	navigation: {
-		primary_local_tasks: { }
+		primary_local_tasks: {}
 	},
 
 	content: {
-		messages: { },
-		main: { }
+		messages: {},
+		main: {}
 	},
 
 	footer: {
-		//powered_by: { }
+		//powered_by: {}
 	}
 };
 
