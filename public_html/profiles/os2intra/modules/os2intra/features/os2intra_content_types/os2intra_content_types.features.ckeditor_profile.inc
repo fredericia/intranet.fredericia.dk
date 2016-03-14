@@ -21,7 +21,7 @@ function os2intra_content_types_ckeditor_profile_defaults() {
     [\'Link\',\'Unlink\',\'Anchor\'],
     [\'Scayt\'],
     [\'Media\'],
-    [\'Table\']
+    [\'Table\',\'Undo\',\'Redo\']
 ]',
         'expand' => 't',
         'default' => 't',
