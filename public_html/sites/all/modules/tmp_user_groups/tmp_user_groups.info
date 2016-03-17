@@ -1,0 +1,4 @@
+name = TMP User Groups (TEST)
+description = Simply showing the user's groups.
+core = 7.x
+

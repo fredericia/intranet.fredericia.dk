@@ -70,9 +70,7 @@ a.fredericia-ui-panel-logo {
 	text-shadow:none !important;
 }
 
-button#edit-user-profile-form-submit,
-button#edit-user-login-form-submit,
-button#edit-user-pass-form-submit {
+button.dg_form_submit_button {
 	background-color:#4ec6f8 !important;
 	border-color:#4ec6f8 !important;
 	color:#ffffff !important;

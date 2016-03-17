@@ -109,9 +109,33 @@ function fredericia_block_info() {
 function fredericia_block_view(delta, region) {
 	try {
 		var content = '';
-		var link_url, link_title;
-		var items = [];
-		var links_arr = _fredericia_get_links_array();
+		var links_basket_arr = _fredericia_basket_links_array();
+		var links_groups_arr = _fredericia_groups_links_array();
+
+		var menu_links_list = function(source_arr, icon) {
+			var link_url, link_title;
+			var items = [];
+
+			for (var i in source_arr) {
+				link_url = Drupal.settings.site_path + '/node/' + source_arr[i][0];
+				link_title = source_arr[i][1];
+
+				items.push(
+					bl(link_title, null, {
+						attributes: {
+							onclick: "window.open('" + link_url + "', '_system', 'location=yes')",
+							'data-icon': icon
+						}
+					})
+				);
+			}
+
+			return items;
+		};
+
+		var tmp_items1 = menu_links_list(links_basket_arr, 'cloud');
+		var tmp_items2 = menu_links_list(links_groups_arr, 'star');
+		var items = tmp_items1.concat(tmp_items2);
 
 		switch (delta) {
 
@@ -124,20 +148,6 @@ function fredericia_block_view(delta, region) {
 					'data-position': 'left', // left or right
 					'data-display': 'overlay' // overlay, reveal or push
 				};
-
-				for (var i in links_arr) {
-					link_url = Drupal.settings.site_path + '/node/' + links_arr[i][0];
-					link_title = links_arr[i][1];
-
-					items.push(
-						bl(link_title, null, {
-							attributes: {
-								onclick: "window.open('" + link_url + "', '_system', 'location=yes')",
-								'data-icon': 'cloud'
-							}
-						})
-					);
-				}
 
 				content += ('' +
 					'<div ' + drupalgap_attributes(attrs) + '>' +
@@ -169,6 +179,25 @@ function fredericia_block_view(delta, region) {
 /* Slider Menu functions (END) */
 
 
+function fredericia_services_postprocess(options, result) {
+	try {
+		var user_data, lang;
+
+		if (options.service == 'user' && options.resource == 'login') {
+			if (Drupal.user.uid === 0) return;
+
+			user_data = _fredericia_get_JSON_data('/?q=drupalgap/user/' + Drupal.user.uid + '.json');
+			lang = (user_data['language'] === '') ? 'und' : user_data['language'];
+			Drupal.settings.language_default = lang;
+
+			drupalgap_goto(drupalgap.settings.front, {reloadPage: true});
+		}
+	} catch (error) {
+		console.log('fredericia_services_postprocess - ' + error);
+	}
+}
+
+
 function fredericia_install() {
 	var css_1 = drupalgap_get_path('module', 'fredericia') + '/font-awesome/css/font-awesome.min.css';
 	var css_2 = drupalgap_get_path('module', 'fredericia') + '/fredericia.css';
@@ -177,9 +206,9 @@ function fredericia_install() {
 }
 
 
-//function fredericia_locale() {
-//	return ['da'];
-//}
+function fredericia_locale() {
+	return ['da'];
+}
 
 
 /* Helper functions */
@@ -224,22 +253,8 @@ function _fredericia_date_formatter(date_str) {
 }
 
 
-function _fredericia_get_links_array() {
-
-	var get_json_data = function() {
-		var arr = [];
-		var xml_http = new XMLHttpRequest();
-
-		if (xml_http != null) {
-			xml_http.open('GET', Drupal.settings.site_path + '/node-basket.json', false);
-			xml_http.send(null);
-			arr = JSON.parse(xml_http.responseText);
-		}
-
-		return arr;
-	};
-
-	var json_data = get_json_data();
+function _fredericia_basket_links_array() {
+	var json_data = _fredericia_get_JSON_data('/node-basket.json');
 	var result = [];
 	var tmp_ids = [], tmp_titles = [];
 
@@ -264,6 +279,20 @@ function _fredericia_get_links_array() {
 }
 
 
+function _fredericia_groups_links_array() {
+	var json_data = _fredericia_get_JSON_data('/os2intra-user-groups.json');
+	var result = [];
+
+	for (var i in json_data['nodes']) {
+		result.push(new Array());
+		result[i].push(json_data['nodes'][i]['node'].nid);
+		result[i].push(json_data['nodes'][i]['node'].title);
+	}
+
+	return result;
+}
+
+
 function _fredericia_link(url, title) {
 	var link = l(title, null, {
 		attributes: {
@@ -274,3 +303,108 @@ function _fredericia_link(url, title) {
 	return link;
 }
 
+
+function _fredericia_get_JSON_data(addr) {
+	var arr = [];
+	var xml_http = new XMLHttpRequest();
+
+	if (xml_http != null) {
+		xml_http.open('GET', Drupal.settings.site_path + addr, false);
+		xml_http.send(null);
+		arr = JSON.parse(xml_http.responseText);
+	}
+
+	return arr;
+}
+
+function fredericia_deviceready() {
+     try {
+     drupalgap.menu_links['user/%/edit'].page_callback = 'drupalgap_get_form';
+      drupalgap.menu_links['user/%/edit'].page_arguments = ['fredericia_user_profile_edit_form'];    
+  }
+  catch (error) { console.log('my_module_deviceready - ' + error); }
+}
+
+function fredericia_user_profile_edit_form(form, form_state) {
+  try {
+      var user_data = _fredericia_get_JSON_data('/?q=drupalgap/user/' + Drupal.user.uid + '.json'); 
+    
+      console.log(_fredericia_users_jobtitles_array());
+    form.elements['name_first'] = {
+      type: 'textfield',
+      title: 'Fornavn',
+      required: false,
+      default_value: 'ssss'
+    };
+     form.elements['name_last'] = {
+      type: 'textfield',
+      title: 'Efternavn',
+      required: false
+    };
+    form.elements['os2intra_user_titles'] = {
+      type: 'select',
+      title: 'Jobtitle',
+      required: false,
+      options: _fredericia_users_jobtitles_array(),
+      default_value: '_none'
+    };
+     form.elements['os2intra_phone'] = {
+      type: 'textfield',
+      title: 'Telefon nummer',
+      required: false
+    };
+    form.elements['submit'] = {
+      type: 'submit',
+      value: 'Save'
+    };
+    return form;
+  }
+  catch (error) { console.log('fredericia_custom_form - ' + error); }
+}
+
+function _fredericia_users_jobtitles_array() {
+	var json_data = _fredericia_get_JSON_data('/user-jobtitle.json');
+	var result = '';
+        var fieldObject = {};
+        fieldObject['_none']='-None-';
+	for (var i in json_data['terms']) {
+		fieldObject[String(json_data['terms'][i]['term'].tid)] = json_data['terms'][i]['term'].name;
+	}
+                //result = result.substring(0, result.length - 1);
+        //result += '}';
+       console.log(sortObj(fieldObject));
+	return fieldObject; //JSON.parse(result);
+}
+
+
+sortObj = function(obj, type, caseSensitive) {
+  var temp_array = [];
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (!caseSensitive) {
+        key = (key['toLowerCase'] ? key.toLowerCase() : key);
+      }
+      temp_array.push(key);
+    }
+  }
+  if (typeof type === 'function') {
+    temp_array.sort(type);
+  } else if (type === 'value') {
+    temp_array.sort(function(a,b) {
+      var x = obj[a];
+      var y = obj[b];
+      if (!caseSensitive) {
+        x = (x['toLowerCase'] ? x.toLowerCase() : x);
+        y = (y['toLowerCase'] ? y.toLowerCase() : y);
+      }
+      return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+  } else {
+    temp_array.sort();
+  }
+  var temp_obj = {};
+  for (var i=0; i<temp_array.length; i++) {
+    temp_obj[temp_array[i]] = obj[temp_array[i]];
+  }
+  return temp_obj;
+};
