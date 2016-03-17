@@ -218,16 +218,16 @@ drupalgap.settings.menus['user_menu_anonymous'] = {
 drupalgap.settings.menus['user_menu_authenticated'] = {
 	options: menu_popup_get_default_options(),
 	links: [
-		{
-			title: t('My Account'),
-			path: 'user',
-			options: {
-				attributes: {
-					'data-icon': 'user',
-					'class': 'ui-btn ui-btn-icon-right'
-				}
-			}
-		},
+		//{
+			//title: t('My Account'),
+			//path: 'user',
+			//options: {
+			//	attributes: {
+			//		'data-icon': 'user',
+			//		'class': 'ui-btn ui-btn-icon-right'
+			//	}
+			//}
+		//},
 		{
 			title: t('Logout'),
 			path: 'user/logout',
