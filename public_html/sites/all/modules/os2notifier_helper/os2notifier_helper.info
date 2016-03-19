@@ -1,0 +1,4 @@
+name = OS2Notifier Helper
+description = Just a simple "hepler" module
+core = 7.x
+

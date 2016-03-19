@@ -1,4 +1,6 @@
 
+var _fredericia_first_pageload = true;
+
 function fredericia_menu() {
 	var items = {};
 
@@ -183,15 +185,32 @@ function fredericia_services_postprocess(options, result) {
 	try {
 		var user_data, lang;
 
-		if (options.service == 'user' && options.resource == 'login') {
-			if (Drupal.user.uid === 0) return;
+		if (options.service == 'system' &&
+			options.resource == 'connect' &&
+			_fredericia_first_pageload == true) {
 
-			user_data = _fredericia_get_JSON_data('/?q=drupalgap/user/' + Drupal.user.uid + '.json');
-			lang = (user_data['language'] === '') ? 'und' : user_data['language'];
-			Drupal.settings.language_default = lang;
+			if (!Drupal.user.uid || Drupal.user.uid === 0) {
+				Drupal.settings.language_default = _fredericia_site_lang();
+			} else {
+				Drupal.settings.language_default = _fredericia_user_lang(Drupal.user.uid);
+			}
 
 			drupalgap_goto(drupalgap.settings.front, {reloadPage: true});
+			_fredericia_first_pageload = false;
 		}
+
+		if (options.service == 'user') {
+			if (options.resource == 'login') {
+				if (Drupal.user.uid === 0) return;
+
+				Drupal.settings.language_default = _fredericia_user_lang(Drupal.user.uid);
+				drupalgap_goto(drupalgap.settings.front, {reloadPage: true});
+			} else if (options.resource == 'logout') {
+				Drupal.settings.language_default = _fredericia_site_lang();
+				drupalgap_goto(drupalgap.settings.front, {reloadPage: true});
+			}
+		}
+
 	} catch (error) {
 		console.log('fredericia_services_postprocess - ' + error);
 	}
@@ -208,6 +227,113 @@ function fredericia_install() {
 
 function fredericia_locale() {
 	return ['da'];
+}
+
+
+function fredericia_deviceready() {
+	try {
+		drupalgap.menu_links['user/%/edit'].page_callback = 'drupalgap_get_form';
+		drupalgap.menu_links['user/%/edit'].page_arguments = ['fredericia_user_profile_edit_form'];
+	}
+	catch (error) { console.log('fredericia_deviceready - ' + error); }
+}
+
+
+function fredericia_user_profile_edit_form(form, form_state) {
+	try {
+		var user_data;
+		user_load(Drupal.user.uid, {
+			success: function(account) {
+				user_data = account;
+			}
+		});
+
+		form.elements['name_first'] = {
+			type: 'textfield',
+			title: 'Fornavn',
+			required: false,
+			default_value: (Object.keys(user_data['field_name_first']).length > 0) ? user_data['field_name_first']['und'][0]['value'] : '',
+		};
+
+		form.elements['name_last'] = {
+			type: 'textfield',
+			title: 'Efternavn',
+			required: false,
+			default_value: (Object.keys(user_data['field_name_last']).length > 0) ? user_data['field_name_last']['und'][0]['value'] : '',
+
+		};
+
+		form.elements['os2intra_user_titles'] = {
+			type: 'select',
+			title: 'Jobtitle',
+			required: false,
+			options: _fredericia_get_taxomony_terms_array('/user-jobtitle.json'),
+			default_value: (Object.keys(user_data['field_jobtitle']).length > 0) ? user_data['field_jobtitle']['und'][0]['target_id'] : '_none',
+		};
+
+		form.elements['os2intra_phone'] = {
+			type: 'textfield',
+			title: 'Telefon nummer',
+			required: false,
+			default_value: (Object.keys(user_data['field_os2intra_phone']).length > 0) ? user_data['field_os2intra_phone']['und'][0]['value'] : '',
+		};
+
+		form.elements['os2intra_mobile'] = {
+			type: 'textfield',
+			title: 'Mobil nummer',
+			required: false,
+			default_value: (Object.keys(user_data['field_os2intra_mobile']).length > 0) ? user_data['field_os2intra_mobile']['und'][0]['value'] : '',
+		};
+
+		form.elements['os2intra_physical_location'] = {
+			type: 'select',
+			title: 'Fysisk lokation',
+			options: _fredericia_get_taxomony_terms_array('/os2intra-physical-location.json'),
+			required: true,
+			default_value: (Object.keys(user_data['field_os2intra_physical_location']).length > 0) ? user_data['field_os2intra_physical_location']['und'][0]['target_id'] : '',
+		};
+
+		form.elements['name'] = {
+			type: 'textfield',
+			title: 'Username',
+			required: user_access('change own username') ? true : false,
+			access: user_access('change own username') ? true : false,
+			default_value: user_data['name'],
+		};
+
+		form.elements['mail'] = {
+			type: 'textfield',
+			title: 'Email',
+			required: true,
+			default_value: user_data['mail'],
+		};
+
+		form.elements['current_pass'] = {
+			'title': t('Current password'),
+			'type': 'password',
+			'description': t('Enter your current password to change the E-mail address or Password.')
+		};
+
+		form.elements['pass_pass1'] = {
+			'title': t('Password'),
+			'type': 'password'
+		};
+
+		form.elements['pass_pass2'] = {
+			'title': t('Confirm password'),
+			'type': 'password',
+			'description': t('To change the current user password, enter the new ' +
+			'password in both fields.')
+		};
+
+		form.elements['submit'] = {
+			type: 'submit',
+			value: 'Save'
+		};
+
+		console.log(Object.keys(user_data['field_os2intra_phone']).length);
+		return form;
+	} catch (error) { console.log('fredericia_custom_form - ' + error); }
 }
 
 
@@ -317,94 +443,29 @@ function _fredericia_get_JSON_data(addr) {
 	return arr;
 }
 
-function fredericia_deviceready() {
-     try {
-     drupalgap.menu_links['user/%/edit'].page_callback = 'drupalgap_get_form';
-      drupalgap.menu_links['user/%/edit'].page_arguments = ['fredericia_user_profile_edit_form'];    
-  }
-  catch (error) { console.log('my_module_deviceready - ' + error); }
-}
 
-function fredericia_user_profile_edit_form(form, form_state) {
-  try {
-      var user_data = _fredericia_get_JSON_data('/?q=drupalgap/user/' + Drupal.user.uid + '.json'); 
-    
-      console.log(_fredericia_users_jobtitles_array());
-    form.elements['name_first'] = {
-      type: 'textfield',
-      title: 'Fornavn',
-      required: false,
-      default_value: 'ssss'
-    };
-     form.elements['name_last'] = {
-      type: 'textfield',
-      title: 'Efternavn',
-      required: false
-    };
-    form.elements['os2intra_user_titles'] = {
-      type: 'select',
-      title: 'Jobtitle',
-      required: false,
-      options: _fredericia_users_jobtitles_array(),
-      default_value: '_none'
-    };
-     form.elements['os2intra_phone'] = {
-      type: 'textfield',
-      title: 'Telefon nummer',
-      required: false
-    };
-    form.elements['submit'] = {
-      type: 'submit',
-      value: 'Save'
-    };
-    return form;
-  }
-  catch (error) { console.log('fredericia_custom_form - ' + error); }
-}
-
-function _fredericia_users_jobtitles_array() {
-	var json_data = _fredericia_get_JSON_data('/user-jobtitle.json');
+function _fredericia_get_taxomony_terms_array(url) {
+	var json_data = _fredericia_get_JSON_data(url);
 	var result = '';
-        var fieldObject = {};
-        fieldObject['_none']='-None-';
+	var fieldObject = {};
+
+	fieldObject['_none']='-None-';
 	for (var i in json_data['terms']) {
 		fieldObject[String(json_data['terms'][i]['term'].tid)] = json_data['terms'][i]['term'].name;
 	}
-                //result = result.substring(0, result.length - 1);
-        //result += '}';
-       console.log(sortObj(fieldObject));
-	return fieldObject; //JSON.parse(result);
+
+	return fieldObject;
 }
 
 
-sortObj = function(obj, type, caseSensitive) {
-  var temp_array = [];
-  for (var key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      if (!caseSensitive) {
-        key = (key['toLowerCase'] ? key.toLowerCase() : key);
-      }
-      temp_array.push(key);
-    }
-  }
-  if (typeof type === 'function') {
-    temp_array.sort(type);
-  } else if (type === 'value') {
-    temp_array.sort(function(a,b) {
-      var x = obj[a];
-      var y = obj[b];
-      if (!caseSensitive) {
-        x = (x['toLowerCase'] ? x.toLowerCase() : x);
-        y = (y['toLowerCase'] ? y.toLowerCase() : y);
-      }
-      return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-    });
-  } else {
-    temp_array.sort();
-  }
-  var temp_obj = {};
-  for (var i=0; i<temp_array.length; i++) {
-    temp_obj[temp_array[i]] = obj[temp_array[i]];
-  }
-  return temp_obj;
-};
+function _fredericia_user_lang(user_id) {
+	var user_data = _fredericia_get_JSON_data('/?q=drupalgap/user/' + user_id + '.json');
+	return (user_data['language'] === '') ? 'und' : user_data['language'];
+}
+
+
+function _fredericia_site_lang() {
+	var site_data = _fredericia_get_JSON_data('/lang-data.json');
+	return (site_data['language'] === '') ? 'und' : site_data['language'];
+}
+

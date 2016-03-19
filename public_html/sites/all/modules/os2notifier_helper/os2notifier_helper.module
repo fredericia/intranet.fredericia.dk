@@ -1,10 +1,18 @@
 <?php
 
-function tmp_user_groups_menu() {
+function os2notifier_helper_menu() {
 	$content = array();
+	$content['lang-data.json'] = array(
+		'title' => 'Language',
+		'page callback' => 'os2notifier_helper_lang_data',
+		'type' => MENU_CALLBACK,
+		'access callback' => true,
+		'access arguments' => array('access content'),
+	);
+
 	$content['os2intra-user-groups.json'] = array(
 		'title' => 'User Groups',
-		'page callback' => 'tmp_user_groups_JSON_data',
+		'page callback' => 'os2notifier_helper_user_groups',
 		'type' => MENU_NORMAL_ITEM,
 		'access callback' => true,
 		'access arguments' => array('access content'),
@@ -14,9 +22,18 @@ function tmp_user_groups_menu() {
 }
 
 
-function tmp_user_groups_JSON_data() {
+function os2notifier_helper_lang_data() {
+	$lang_data = language_default();
+	drupal_json_output($lang_data);
+}
+
+
+function os2notifier_helper_user_groups() {
 	global $user;
-	if (!isset($user)) drupal_json_output('');
+	if (!isset($user)) {
+		drupal_json_output('');
+		return;
+	}
 
 	$result = array();
 	$uid = $user->uid;
