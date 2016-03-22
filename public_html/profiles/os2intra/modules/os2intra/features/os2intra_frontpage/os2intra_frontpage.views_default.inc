@@ -612,13 +612,8 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'event' => 'event',
-    'os2intra_group' => 'os2intra_group',
     'it_vejledning' => 'it_vejledning',
-    'post' => 'post',
     'os2intra_base_page' => 'os2intra_base_page',
-    'wiki' => 'wiki',
-    'os2intra_referat' => 'os2intra_referat',
     'webform' => 'webform',
   );
   $translatables['os2intra_forside_views'] = array(
