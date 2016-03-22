@@ -297,6 +297,9 @@ function fki_preprocess_node__os2intra_org_group_unit(&$variables) {
       $user_objects = user_load_multiple($user_uids);
 
       foreach($user_objects as $user_object) {
+        if ($user_object->status == 0) {
+          continue;
+        }
 
         if ($first_name = field_get_items('user', $user_object, 'field_name_first')) {
           $users[$first_name[0]['value']] = $user_object;
