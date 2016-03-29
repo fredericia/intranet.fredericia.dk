@@ -292,6 +292,7 @@ function os2intra_user_import_settings() {
     12,
     13,
     14,
+    15,
   );
 
   $form['placeholder'] = array(
@@ -444,6 +445,13 @@ function os2intra_user_import_settings() {
     '#title'         => t('Phone Number'),
     '#options'       => $csv_cols,
     '#default_value' => variable_get('os2intra_mapping_phone'),
+  );
+
+  $form['mapping']['os2intra_mapping_mobile'] = array(
+    '#type'          => 'select',
+    '#title'         => t('Mobile Number'),
+    '#options'       => $csv_cols,
+    '#default_value' => variable_get('os2intra_mapping_mobile'),
   );
 
   $form['mapping']['os2intra_mapping_email'] = array(
@@ -632,6 +640,7 @@ function _os2intra_user_import_process_file($file_path) {
     variable_get('os2intra_mapping_job_description')      => 'job_description',
     variable_get('os2intra_mapping_termination_date')     => 'termination_date',
     variable_get('os2intra_mapping_phone')                => 'phone',
+    variable_get('os2intra_mapping_mobile')               => 'mobile',
     variable_get('os2intra_mapping_email')                => 'email',
     variable_get('os2intra_mapping_birthdate')            => 'birthdate',
   );
@@ -848,6 +857,9 @@ function os2intra_user_import_save_user($user, $uid = '') {
     // Phone
     'field_os2intra_phone'            => array(LANGUAGE_NONE => array(0 => array('value' => $user['phone']))),
 
+    // Mobile
+    'field_os2intra_mobile'            => array(LANGUAGE_NONE => array(0 => array('value' => $user['mobile']))),
+
     // Set birthdate
     'field_os2intra_birthdate'        => array(LANGUAGE_NONE => array(0 => array('value' => $user['birthdate']))),
 
@@ -864,6 +876,11 @@ function os2intra_user_import_save_user($user, $uid = '') {
 
     'timezone'                        => 'Europe/Copenhagen',
   );
+
+  // For some reason, the first zero is chopped somewhere. Let's add it.
+  if (strlen($user['birthdate']) < 6) {
+    $fields['field_os2intra_birthdate'] = array(LANGUAGE_NONE => array(0 => array('value' => '0' . $user['birthdate'])));
+  }
 
   // Job description
   if ($title_tid) {
