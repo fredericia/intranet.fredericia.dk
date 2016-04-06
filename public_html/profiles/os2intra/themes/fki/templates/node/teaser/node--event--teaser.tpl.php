@@ -5,6 +5,8 @@
     <div class="table">
       <div class="table-row">
 
+        <?php hide($content['links']); ?>
+
         <?php if (isset($content['field_os2intra_image'])): ?>
           <div class="table-cell os2-node-teaser-image-container">
 
@@ -85,6 +87,12 @@
         <?php print $number_of_comments; ?>
       </span>
       <!-- End - number of comments -->
+
+      <!-- Begin - read more -->
+      <span class="os2-footer-element">
+        <?php print render($content['links']['node']); ?>
+      </span>
+      <!-- End - read more -->
 
     </div>
     <!-- End - footer -->

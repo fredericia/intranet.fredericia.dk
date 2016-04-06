@@ -160,6 +160,31 @@ function os2intra_settings_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'readmorecontrol_behaviour__node';
+  $strongarm->value = 'when_required_body';
+  $export['readmorecontrol_behaviour__node'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'readmorecontrol_format__node';
+  $strongarm->value = array(
+    'enabled' => 'custom',
+    'text' => '<span class="icon fa fa-plus-square"></span> Læs mere<span class="element-invisible"> about @title</span>',
+    'href' => '',
+    'query' => '',
+    'fragment' => '',
+    'title' => '',
+    'class' => '',
+    'rel' => '',
+    'target' => '',
+    'placement' => 'none',
+  );
+  $export['readmorecontrol_format__node'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'theme_default';
   $strongarm->value = 'fki';
   $export['theme_default'] = $strongarm;

@@ -36,5 +36,7 @@ features[variable][] = jquery_update_jquery_migrate_trace
 features[variable][] = jquery_update_jquery_migrate_warnings
 features[variable][] = jquery_update_jquery_version
 features[variable][] = node_admin_theme
+features[variable][] = readmorecontrol_behaviour__node
+features[variable][] = readmorecontrol_format__node
 features[variable][] = theme_default
 project path = profiles/os2intra/modules/os2intra/features
