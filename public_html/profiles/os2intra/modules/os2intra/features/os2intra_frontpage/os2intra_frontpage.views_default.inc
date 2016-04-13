@@ -500,7 +500,6 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['sorts']['field_os2intra_date_value']['id'] = 'field_os2intra_date_value';
   $handler->display->display_options['sorts']['field_os2intra_date_value']['table'] = 'field_data_field_os2intra_date';
   $handler->display->display_options['sorts']['field_os2intra_date_value']['field'] = 'field_os2intra_date_value';
-  $handler->display->display_options['sorts']['field_os2intra_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
