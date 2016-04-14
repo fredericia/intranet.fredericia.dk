@@ -1,8 +1,0 @@
-name = OS2web Facebook Wall
-description = Blok til Fredericia intranet
-core = 7.x
-package = OS2Web - Frontend
-version = 7.x-1.0
-project = os2web_social_blocks
-dependencies[] = block
-project path = profiles/os2sub/modules

@@ -177,11 +177,9 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_browser_plus--media_browser_my_files' => 'media_browser_plus--media_browser_my_files',
-          'media_browser_plus--media_browser_thumbnails' => 'media_browser_plus--media_browser_thumbnails',
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
           'upload' => 'upload',
         ),
       ),
@@ -313,7 +311,9 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
     'widget' => array(
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'use_select2' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 3,
     ),
@@ -452,7 +452,9 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
     'widget' => array(
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'use_select2' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 4,
     ),
@@ -803,7 +805,9 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'use_select2' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 14,
     ),
@@ -1085,7 +1089,9 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
     'widget' => array(
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'use_select2' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 17,
     ),
@@ -1435,7 +1441,9 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'use_select2' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 6,
     ),
@@ -1563,7 +1571,9 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'use_select2' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 8,
     ),
@@ -1626,7 +1636,9 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'use_select2' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 7,
     ),
@@ -1747,7 +1759,9 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'use_select2' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 2,
     ),
@@ -1915,11 +1929,18 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'file',
+      'module' => 'media',
       'settings' => array(
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'image' => 'image',
+        ),
+        'browser_plugins' => array(),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'file_generic',
+      'type' => 'media_generic',
       'weight' => 7,
     ),
   );
@@ -1975,7 +1996,9 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'use_select2' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 6,
     ),
@@ -1984,6 +2007,8 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
   // Exported field_instance: 'node-os2intra_referat-og_group_ref'.
   $field_instances['node-os2intra_referat-og_group_ref'] = array(
     'bundle' => 'os2intra_referat',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
@@ -2027,7 +2052,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
             'widget_type' => 'entityreference_autocomplete',
           ),
           'default' => array(
-            'widget_type' => 'options_buttons',
+            'widget_type' => 'options_select',
           ),
           'status' => TRUE,
         ),
@@ -2137,12 +2162,13 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'owlcarousel_fields',
         'settings' => array(
-          'image_link' => '',
           'image_style' => 'normal',
+          'settings_group' => 'owlcarousel_settings_slider',
+          'trim_length' => '',
         ),
-        'type' => 'image',
+        'type' => 'owlcarousel_formatter',
         'weight' => 1,
       ),
       'includeable' => array(
@@ -2268,7 +2294,7 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
             'widget_type' => 'entityreference_autocomplete',
           ),
           'default' => array(
-            'widget_type' => 'options_buttons',
+            'widget_type' => 'options_select',
           ),
           'status' => TRUE,
         ),

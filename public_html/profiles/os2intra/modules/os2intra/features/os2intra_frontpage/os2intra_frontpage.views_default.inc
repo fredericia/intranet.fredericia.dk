@@ -500,7 +500,6 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['sorts']['field_os2intra_date_value']['id'] = 'field_os2intra_date_value';
   $handler->display->display_options['sorts']['field_os2intra_date_value']['table'] = 'field_data_field_os2intra_date';
   $handler->display->display_options['sorts']['field_os2intra_date_value']['field'] = 'field_os2intra_date_value';
-  $handler->display->display_options['sorts']['field_os2intra_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -529,6 +528,11 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Fællesnyt';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
@@ -607,13 +611,8 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'event' => 'event',
-    'os2intra_group' => 'os2intra_group',
     'it_vejledning' => 'it_vejledning',
-    'post' => 'post',
     'os2intra_base_page' => 'os2intra_base_page',
-    'wiki' => 'wiki',
-    'os2intra_referat' => 'os2intra_referat',
     'webform' => 'webform',
   );
   $translatables['os2intra_forside_views'] = array(

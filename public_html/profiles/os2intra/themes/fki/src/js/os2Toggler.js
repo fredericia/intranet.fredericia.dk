@@ -24,7 +24,7 @@ var os2Toggler = (function ($) {
   function registerEventHandlers() {
 
     // Toggle
-    $('.os2-toggler-element-toggle').on('click', function (event) {
+    $('.os2-toggler-element-toggle').on('click touchstart', function (event) {
       event.preventDefault();
 
       var $element = $(this);

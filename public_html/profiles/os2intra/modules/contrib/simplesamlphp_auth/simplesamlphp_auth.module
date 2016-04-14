@@ -224,16 +224,10 @@ function simplesamlphp_auth_init() {
 
       _simplesaml_auth_debug(t('Authname is [%authname] userid is [%uid]', array('%authname' => $authname, '%uid' => $user->uid)));
 
-   #  if (strpos($authname, $_simplesamlphp_auth_saml_attributes['uid'][0]) !== FALSE) {
-#	$authname = $_simplesamlphp_auth_saml_attributes['uid'][0];
-#      error_log(print_r($_simplesamlphp_auth_saml_attributes, true));
-#     }
-
       if (!empty($authname)) {
         // User is logged in with SAML authentication and we got the unique identifier.
         // Try to log into Drupal.
         _simplesaml_auth_debug(t('Load user [%authname]', array('%authname' => $authname)));
-        error_log('authname ' . $authname); 
         // Retrieve user mapping and attempt to log the user in.
         $ext_user = user_external_load($authname);
         if (!$ext_user) {
@@ -244,7 +238,6 @@ function simplesamlphp_auth_init() {
             _simplesaml_auth_debug(t('Register [%authname]', array('%authname' => $authname)));
 
             user_external_login_register($authname, 'simplesamlphp_auth');
-            error_log('Bruger:' . $user . ' og ' . $_simplesamlphp_auth_saml_attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'][0]);
             if ($user) {
               // Populate roles based on configuration setting.
               $roles = _simplesamlphp_auth_rolepopulation(variable_get('simplesamlphp_auth_rolepopulation', ''));
@@ -258,7 +251,6 @@ function simplesamlphp_auth_init() {
  	    $fk_bruger = $_simplesamlphp_auth_saml_attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'][0];
 	    if ($fk_bruger) {
               $user = user_load_by_mail($fk_bruger);  
-              error_log('Bruger:' . $authname . ' og drupal register variabel ' . $fk_bruger);
 	    }
  	    else {    
               // We are not allowed to register new users on the site through simpleSAML.
@@ -735,8 +727,6 @@ function _simplesamlphp_auth_get_authname() {
       $authname = $_simplesamlphp_auth_saml_attributes[variable_get('simplesamlphp_auth_unique_id', 'eduPersonPrincipalName')][0];
     }
     else {
-      #error_log('SAML...' . $_simplesamlphp_auth_saml_attributes[variable_get('simplesamlphp_auth_unique_id')]);
-      #error_log(print_r($_simplesamlphp_auth_saml_attributes, true));
       throw new Exception(t('error in simplesamlphp_auth.module: no valid unique id attribute set'));
     }
   }

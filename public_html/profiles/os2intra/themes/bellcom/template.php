@@ -1,6 +1,6 @@
 <?php
 include( dirname(__FILE__) . '/include/menu.inc');
-include( dirname(__FILE__) . '/include/settings.inc');
+include( dirname(__FILE__) . '/include/helpers.inc');
 
 /**
  * Implements theme_preprocess_html().
@@ -30,10 +30,10 @@ function bellcom_preprocess_page(&$variables) {
   $secondary_navigation_name = variable_get('menu_secondary_links_source', 'user-menu');
 
   // Navigation
-  $variables['primary_navigation'] = _bellcom_generate_menu($primary_navigation_name, 'main-navigation');
-  $variables['secondary_navigation'] = _bellcom_generate_menu($secondary_navigation_name, 'main-navigation');
-  $variables['sidebar_primary_navigation'] = _bellcom_generate_menu($primary_navigation_name, 'sidebar');
-  $variables['sidebar_secondary_navigation'] = _bellcom_generate_menu($secondary_navigation_name, 'sidebar');
+  $variables['main_navigation_primary'] = _bellcom_generate_menu($primary_navigation_name, 'main-navigation');
+  $variables['main_navigation_secondary'] = _bellcom_generate_menu($secondary_navigation_name, 'main-navigation');
+  $variables['sidebar_primary'] = _bellcom_generate_menu($primary_navigation_name, 'sidebar');
+  $variables['sidebar_secondary'] = _bellcom_generate_menu($secondary_navigation_name, 'sidebar');
 
   // Paths
   $variables['path_js']   = base_path() . drupal_get_path('theme', $current_theme) . '/dist/js';
@@ -190,17 +190,17 @@ function bellcom_preprocess_block(&$variables) {
 
 /*
  * Implements theme_menu_tree().
+ * For main navigation.
  */
-function bellcom_menu_tree__main_menu__main_navigation(&$variables) {
+function bellcom_menu_tree__main_navigation(&$variables) {
   return '<ul class="main-navigation-list">' . $variables['tree'] . '</ul>';
 }
-function bellcom_menu_tree__user_menu__main_navigation(&$variables) {
-  return '<ul class="main-navigation-list main-navigation-right">' . $variables['tree'] . '</ul>';
-}
-function bellcom_menu_tree__main_menu__sidebar(&$variables) {
-  return '<ul class="sidebar-navigation">' . $variables['tree'] . '</ul>';
-}
-function bellcom_menu_tree__user_menu__sidebar(&$variables) {
+
+/*
+ * Implements theme_menu_tree().
+ * For sidebar menu types.
+ */
+function bellcom_menu_tree__sidebar(&$variables) {
   return '<ul class="sidebar-navigation">' . $variables['tree'] . '</ul>';
 }
 
@@ -306,74 +306,42 @@ function bellcom_menu_link__sidebar(array $variables) {
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
 
-/*
- * Seperated dates
- * Heavily inspired by drupals format_date() function.
+/**
+ * Implements hook_field_widget_form_alter().
  */
-function _bellcom_seperated_dates($timestamp) {
-  $seperated_dates = array();
+function bellcom_field_widget_form_alter(&$element, &$form_state, $context) {
 
-  // Use the advanced drupal_static() pattern, since this is called very often.
-  static $drupal_static_fast;
-  if (!isset($drupal_static_fast)) {
-    $drupal_static_fast['timezones'] = &drupal_static(__FUNCTION__);
+  // Make input groups work on BS3
+  if (!empty($element['value']['#field_prefix']) || !empty($element['value']['#field_suffix'])) {
+    $element['value']['#input_group'] = TRUE;
   }
-  $timezones = &$drupal_static_fast['timezones'];
-
-  if (!isset($timezone)) {
-    $timezone = date_default_timezone_get();
-  }
-  // Store DateTimeZone objects in an array rather than repeatedly
-  // constructing identical objects over the life of a request.
-  if (!isset($timezones[$timezone])) {
-    $timezones[$timezone] = timezone_open($timezone);
-  }
-
-  // Use the default langcode if none is set.
-  global $language;
-  if (empty($langcode)) {
-    $langcode = isset($language->language) ? $language->language : 'en';
-  }
-
-  // Create a DateTime object from the timestamp.
-  $date_time = date_create('@' . $timestamp);
-  // Set the time zone for the DateTime object.
-  date_timezone_set($date_time, $timezones[$timezone]);
-
-  // Seperated dates
-  $seperated_dates = array(
-    'day' => array(
-      'integer' => date_format($date_time, 'd'),
-      'short' => t(date_format($date_time, 'D')),
-      'full' => t(date_format($date_time, 'l')),
-    ),
-    'month' => array(
-      'integer' => date_format($date_time, 'm'),
-      'short' => t(date_format($date_time, 'M')),
-      'full' => t(date_format($date_time, 'F')),
-    ),
-    'year' => array(
-      'short' => date_format($date_time, 'y'),
-      'full' => date_format($date_time, 'Y'),
-    ),
-    'week' => date_format($date_time, 'W'),
-  );
-
-  return $seperated_dates;
 }
 
 /*
- * Text shortener
+ * Implements template_preprocess_views_view_table().
  */
-function _bellcom_text_shortener($text_string, $max_length) {
-  $alter = array(
-    'max_length'    => $max_length,
-    'ellipsis'      => TRUE,
-    'word_boundary' => TRUE,
-    'html'          => TRUE,
-  );
+function bellcom_preprocess_views_view_table(&$variables) {
+  $view = $variables['view'];
 
-  $shortened_string = views_trim_text($alter, $text_string);
+  // Add responsive class to the table
+  $variables['classes_array'][] = 'table-responsive-stacked';
 
-  return $shortened_string;
+  $result = $variables['result'] = $variables['rows'];
+  $options = $view->style_plugin->options;
+  $handler = $view->style_plugin;
+  $fields = &$view->field;
+  $columns = $handler->sanitize_columns($options['columns'], $fields);
+
+  foreach ($columns as $field => $column) {
+
+    // Render each field into its appropriate column.
+    foreach ($result as $num => $row) {
+
+      if (!empty($fields[$field]) && empty($fields[$field]->options['exclude'])) {
+        $label = check_plain(!empty($fields[$field]) ? $fields[$field]->label() : '');
+
+        $variables['field_attributes'][$field][$num]['data-title'] = $label;
+      }
+    }
+  }
 }

@@ -1077,7 +1077,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->name = 'node_options_os2intra_base_page';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
+    1 => 'revision',
   );
   $export['node_options_os2intra_base_page'] = $strongarm;
 
@@ -1565,7 +1565,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_os2intra_base_page_pattern';
-  $strongarm->value = '[node:field-os2intra-base-structure]/[node:title]';
+  $strongarm->value = '[node:field-os2intra-base-structure:url:path]/[node:title]';
   $export['pathauto_node_os2intra_base_page_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1992,7 +1992,7 @@ function os2intra_content_types_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_publish_touch_post';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['scheduler_publish_touch_post'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2257,6 +2257,13 @@ function os2intra_content_types_strongarm() {
   $strongarm->name = 'taxonomy_menu_voc_name_os2web_base_tax_site_structure';
   $strongarm->value = FALSE;
   $export['taxonomy_menu_voc_name_os2web_base_tax_site_structure'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'token_tree_recursion_limit';
+  $strongarm->value = '3';
+  $export['token_tree_recursion_limit'] = $strongarm;
 
   return $export;
 }

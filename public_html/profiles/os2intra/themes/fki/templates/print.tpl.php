@@ -81,6 +81,14 @@
       <link rel='shortcut icon' href='<?php print theme_get_setting('favicon') ?>' type='image/x-icon' />
     <?php endif; ?>
     <?php print $css; ?>
+    <style type="text/css">
+      .action-links {
+        display: none;
+      }
+      .field-collection-container {
+        border-bottom: 0;
+      }
+    </style>
   </head>
   <body>
     <?php if (!empty($message)): ?>

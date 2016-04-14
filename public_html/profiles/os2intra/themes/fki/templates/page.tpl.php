@@ -16,9 +16,9 @@
       </div>
       <!-- End - logo -->
 
-      <?php if (isset($sidebar_primary_navigation)): ?>
+      <?php if (isset($sidebar_primary)): ?>
         <!-- Begin - navigation -->
-        <?php print render($sidebar_primary_navigation); ?>
+        <?php print render($sidebar_primary); ?>
         <!-- End - navigation -->
       <?php endif; ?>
 
@@ -97,15 +97,15 @@
                 <!-- End - content -->
 
                 <!-- Begin - content -->
-                <div class="col-md-8">
+                <?php if (isset($main_navigation_secondary)): ?>
+                  <div class="col-md-8 main-navigation-right">
 
-                  <?php if (isset($secondary_navigation)): ?>
                     <!-- Begin - navigation -->
-                    <?php print render($secondary_navigation); ?>
+                    <?php print render($main_navigation_secondary); ?>
                     <!-- End - navigation -->
-                  <?php endif; ?>
 
-                </div>
+                  </div>
+                <?php endif; ?>
                 <!-- End - content -->
 
               </div>

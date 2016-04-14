@@ -9,7 +9,8 @@
     "fastclick": "~1.*",
     "fontawesome": "~4.*",
     "html5shiv": "~3.*",
-    "respond": "~1.*"
+    "respond": "~1.*",
+    "select2-bootstrap-css": "~1.*"
   },
   "ignore": [
     "bower_components"
