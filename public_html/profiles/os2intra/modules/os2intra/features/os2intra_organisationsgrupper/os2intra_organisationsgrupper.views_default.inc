@@ -1230,7 +1230,7 @@ function os2intra_organisationsgrupper_views_default_views() {
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '100';
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['preserve_tags'] = '<p> <br> <div> <hr> <ul> <li> <ol>';
+  $handler->display->display_options['fields']['body']['alter']['preserve_tags'] = '<p> <br> <div> <hr> <ul> <li> <ol><a>';
   $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_type'] = 'p';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
