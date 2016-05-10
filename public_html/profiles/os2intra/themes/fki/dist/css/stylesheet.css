@@ -15594,6 +15594,10 @@ fieldset[disabled] a.os2-category-links .links li a {
 .os2-footer-elements .os2-footer-element + .os2-footer-element {
   margin-left: 10px;
 }
+.os2-footer-element ul {
+  display: inline-block;
+  margin-left: 3px;
+}
 @media screen {
 }
 @media screen and (max-width: 767px) {
