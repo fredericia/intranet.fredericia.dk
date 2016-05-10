@@ -1043,6 +1043,19 @@ function os2intra_panels_views_default_views() {
   $handler->display->display_options['fields']['field_os2intra_paragraph_title']['label'] = '';
   $handler->display->display_options['fields']['field_os2intra_paragraph_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_os2intra_paragraph_title']['element_label_colon'] = FALSE;
+  /* Field: Field: Indlejr webform */
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['id'] = 'field_os2web_webform_ref';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['table'] = 'field_data_field_os2web_webform_ref';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['field'] = 'field_os2web_webform_ref';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['relationship'] = 'field_os2intra_paragraph_value';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['label'] = '';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['type'] = 'entityreference_entity_view';
+  $handler->display->display_options['fields']['field_os2web_webform_ref']['settings'] = array(
+    'view_mode' => 'default',
+    'links' => 0,
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
