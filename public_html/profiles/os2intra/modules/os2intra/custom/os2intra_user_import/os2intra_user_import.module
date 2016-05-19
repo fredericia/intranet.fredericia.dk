@@ -313,7 +313,13 @@ function os2intra_user_import_settings() {
     '#description'   => t('ex. private://user_import'),
     '#default_value' => variable_get('os2intra_user_import_dir', 'private://user_import')
   );
-
+  $form['os2intra_user_import_file_name'] = array(
+    '#title'         => t('CSV file name'),
+    '#type'          => 'textfield',
+    '#required'      => TRUE,
+    '#description'   => t('ex. FK-user_import (without extension .csv, without space)'),
+    '#default_value' => variable_get('os2intra_user_import_file_name', 'FK-user_import'),
+  );
   $form['os2intra_user_import_delimiter'] = array(
     '#title'         => t('CSV delimiter'),
     '#type'          => 'textfield',
@@ -554,7 +560,9 @@ function os2intra_user_import_run_with_drush() {
 
     $realpath = '';
 
-    $dir = reset(file_scan_directory($import_dir, '/.*\.csv$/'));
+    $filename = variable_get('os2intra_user_import_file_name', 'FK-user_import');
+
+    $dir = reset(file_scan_directory($import_dir, '/' . $filename . '.csv/'));
     if ($dir) {
       $realpath = drupal_realpath($dir->uri);
     }
@@ -590,6 +598,9 @@ function os2intra_user_import_run_with_drush() {
       // Logging
       os2intra_user_import_save_log('', 'User import finished');
       os2intra_user_import_save_log('', 'Import finished');
+    }
+    else {
+      os2intra_user_import_save_log('', 'File does not exist');
     }
   }
 }

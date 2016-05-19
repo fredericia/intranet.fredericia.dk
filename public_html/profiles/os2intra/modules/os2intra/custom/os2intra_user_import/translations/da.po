@@ -181,6 +181,14 @@ msgstr "Mappe der indeholder CSV fil med brugere"
 msgid "ex. private://user_import"
 msgstr ""
 
+#: os2intra_user_import.module:314
+msgid "CSV file name"
+msgstr "CSV filnavn"
+
+#: os2intra_user_import.module:317
+msgid "ex. FK-user_import (without extension .csv, without space)"
+msgstr "ex. FK-user_import (uden extension .csv, uden mellemrum.)"
+
 #: os2intra_user_import.module:170
 msgid "Mapping"
 msgstr ""
