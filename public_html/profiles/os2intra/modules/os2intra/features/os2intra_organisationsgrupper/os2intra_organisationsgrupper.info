@@ -79,6 +79,7 @@ features[field_instance][] = node-os2intra_org_group_unit-field_os2intra_dept_to
 features[field_instance][] = node-os2intra_org_group_unit-field_os2intra_image
 features[field_instance][] = node-os2intra_org_group_unit-field_os2intra_organisation
 features[field_instance][] = node-os2intra_org_group_unit-field_os2intra_promoted_content
+features[field_instance][] = node-os2intra_org_group_unit-group_access
 features[field_instance][] = node-os2intra_org_group_unit-group_group
 features[field_instance][] = node-os2intra_org_group_unit-og_group_ref
 features[field_instance][] = node-os2intra_org_group_unit-og_roles_permissions
