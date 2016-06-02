@@ -342,6 +342,8 @@ function fredericia_user_profile_edit_form(form, form_state) {
 function _fredericia_date_formatter(date_str) {
 	var d = date_str;
 
+	if (!d) return '';
+
 	d = d.replace(', 1 ', ', 01 ');
 	d = d.replace(', 2 ', ', 02 ');
 	d = d.replace(', 3 ', ', 03 ');
