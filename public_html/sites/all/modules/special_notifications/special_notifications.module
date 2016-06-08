@@ -153,22 +153,9 @@ function special_notifications_node_submit($node, $form, &$form_state) {
 			$receivers_list, $blocking_users
 		);
 
-		if (count($receivers_list) > 0)
+		if (count($receivers_list) > 0) {
 			_special_notifications_send_message($receivers_list, $msg_arr);
-
-		// Debugging
-		$DEBUG_MSG = (drupal_json_encode($node) . "\n\n"
-			. 'Node belongs to groups: ' . join(', ', $group_list) . "\n"
-			. 'Users from the same groups: ' . join(', ', $group_users) . "\n"
-			. 'Users having the tokens: ' . join(', ', $user_list) . "\n"
-			. 'Users who are blocking the notifications: ' . join(', ', $blocking_users) . "\n"
-			. 'Users who should receive the message: ' . join(', ', $receivers_list) . "\n"
-			. 'Message to send:' . "\n"
-			. '  title: ' . $msg_arr['title'] . "\n"
-			. '  content: ' . $msg_arr['message'] . "\n"
-		);
-
-		_special_notifications_debug($DEBUG_MSG);
+		}
 	}
 }
 
@@ -382,31 +369,6 @@ function _special_notifications_send_message(&$recipients, &$data) {
 			$result = push_notifications_gcm_send_message($tokens_android, $payload);
 			break;
 		}
-	}
-}
-
-
-/*
- * Debugging
- */
-function _special_notifications_debug($msg) {
-	$file = '/var/www/broen7000.dk.devel.dk/public_html/NODE_DEBUG.txt';
-
-	if (!file_exists($file)) {
-		@touch($file);
-		@chmod($file, 0777);
-	}
-
-	if (file_exists($file) && is_writable($file)) {
-
-		$date = "[" . date("Y-m-d H:i:s") . "]\n";
-		$separator = "\n=================================\n\n";
-
-		$msg = $date . $msg . $separator;
-
-		$fh = fopen($file, 'a');
-		fwrite($fh, $msg);
-		fclose($fh);
 	}
 }
 
