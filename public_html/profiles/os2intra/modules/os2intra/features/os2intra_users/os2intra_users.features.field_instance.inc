@@ -269,6 +269,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -344,6 +350,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -424,6 +436,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 23,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -480,6 +498,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 30,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -567,6 +591,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 22,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -620,6 +650,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 18,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -719,6 +755,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'image',
         'weight' => 21,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -810,6 +852,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 20,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -849,7 +897,6 @@ function os2intra_users_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(
         'content_taxonomy_opt_groups' => FALSE,
-        'use_select2' => FALSE,
       ),
       'type' => 'options_select',
       'weight' => 0,
@@ -871,6 +918,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 29,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -958,6 +1011,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 26,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1043,6 +1102,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 28,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1073,9 +1138,7 @@ function os2intra_users_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'use_select2' => FALSE,
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 17,
     ),
@@ -1092,6 +1155,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 15,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1155,6 +1224,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1234,6 +1309,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 8,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1294,6 +1375,12 @@ function os2intra_users_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 6,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1359,6 +1446,12 @@ function os2intra_users_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 7,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'hidden',
         'module' => 'entityreference',
@@ -1396,9 +1489,7 @@ function os2intra_users_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'use_select2' => FALSE,
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 14,
     ),
@@ -1421,6 +1512,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 25,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1471,6 +1568,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 24,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1544,6 +1647,12 @@ function os2intra_users_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 9,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',

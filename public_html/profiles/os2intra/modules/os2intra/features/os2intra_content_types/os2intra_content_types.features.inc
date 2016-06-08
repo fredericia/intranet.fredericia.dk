@@ -60,7 +60,7 @@ function os2intra_content_types_image_default_styles() {
   $styles['normal'] = array(
     'label' => 'Normal billede',
     'effects' => array(
-      4 => array(
+      1 => array(
         'name' => 'epsacrop_crop',
         'data' => array(
           'width' => 1068,
@@ -76,7 +76,7 @@ function os2intra_content_types_image_default_styles() {
         ),
         'weight' => -10,
       ),
-      3 => array(
+      2 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 1068,

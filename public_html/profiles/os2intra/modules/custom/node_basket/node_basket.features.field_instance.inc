@@ -58,6 +58,12 @@ function node_basket_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -110,6 +116,12 @@ function node_basket_field_default_field_instances() {
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 1,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -185,6 +197,12 @@ function node_basket_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 0,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -248,6 +266,12 @@ function node_basket_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',

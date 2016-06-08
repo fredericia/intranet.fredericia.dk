@@ -26,6 +26,12 @@ function os2intra_settings_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 1,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),

@@ -782,6 +782,86 @@ function node_basket_views_default_views() {
       'label' => 'Indhold: Forfatter uid',
     ),
   );
+
+  /* Display: Node basket JSON */
+  $handler = $view->new_display('page', 'Node basket JSON', 'page_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_json';
+  $handler->display->display_options['style_options']['plaintext_output'] = 1;
+  $handler->display->display_options['style_options']['remove_newlines'] = 0;
+  $handler->display->display_options['style_options']['jsonp_prefix'] = '';
+  $handler->display->display_options['style_options']['using_views_api_mode'] = 0;
+  $handler->display->display_options['style_options']['object_arrays'] = 0;
+  $handler->display->display_options['style_options']['numeric_strings'] = 0;
+  $handler->display->display_options['style_options']['bigint_string'] = 0;
+  $handler->display->display_options['style_options']['pretty_print'] = 0;
+  $handler->display->display_options['style_options']['unescaped_slashes'] = 0;
+  $handler->display->display_options['style_options']['unescaped_unicode'] = 0;
+  $handler->display->display_options['style_options']['char_encoding'] = array();
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = 'nid';
+  /* Field: Content: References */
+  $handler->display->display_options['fields']['field_node_basket_references']['id'] = 'field_node_basket_references';
+  $handler->display->display_options['fields']['field_node_basket_references']['table'] = 'field_data_field_node_basket_references';
+  $handler->display->display_options['fields']['field_node_basket_references']['field'] = 'field_node_basket_references';
+  $handler->display->display_options['fields']['field_node_basket_references']['label'] = 'references_ids';
+  $handler->display->display_options['fields']['field_node_basket_references']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_node_basket_references']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_node_basket_references']['delta_offset'] = '0';
+  /* Field: Content: References */
+  $handler->display->display_options['fields']['field_node_basket_references_1']['id'] = 'field_node_basket_references_1';
+  $handler->display->display_options['fields']['field_node_basket_references_1']['table'] = 'field_data_field_node_basket_references';
+  $handler->display->display_options['fields']['field_node_basket_references_1']['field'] = 'field_node_basket_references';
+  $handler->display->display_options['fields']['field_node_basket_references_1']['label'] = 'references_titles';
+  $handler->display->display_options['fields']['field_node_basket_references_1']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_node_basket_references_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_node_basket_references_1']['separator'] = ', \\n';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Author uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'node';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'current_user';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'node_basket' => 'node_basket',
+  );
+  $handler->display->display_options['path'] = 'node-basket.json';
   $translatables['node_basket'] = array(
     t('Master'),
     t('Kurv'),
@@ -817,6 +897,10 @@ function node_basket_views_default_views() {
     t('Du abonnerer p.t. ikke på nogen værktøjskasser'),
     t('My basket'),
     t('Du har ikke nogle emner i din kurv.'),
+    t('Node basket JSON'),
+    t('nid'),
+    t('references_ids'),
+    t('references_titles'),
   );
   $export['node_basket'] = $view;
 

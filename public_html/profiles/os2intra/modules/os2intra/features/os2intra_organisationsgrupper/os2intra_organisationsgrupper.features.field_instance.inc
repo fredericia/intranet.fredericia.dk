@@ -23,6 +23,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 1,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -109,6 +115,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 3,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -206,6 +218,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 5,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -270,6 +288,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'list_default',
         'weight' => 4,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -338,6 +362,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
           'field_name' => 0,
         ),
         'type' => 'og_group_subscribe',
+        'weight' => 0,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'includeable' => array(
@@ -410,6 +440,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 6,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -474,6 +510,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -535,6 +577,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 7,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -603,6 +651,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 5,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -673,6 +727,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 6,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -757,6 +817,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 8,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -833,6 +899,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 4,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -904,6 +976,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 17,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -967,6 +1045,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 1,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1033,6 +1117,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'og_list_default',
         'weight' => 16,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1112,6 +1202,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 11,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1176,6 +1272,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1234,6 +1336,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 7,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1322,6 +1430,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 5,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1385,6 +1499,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 6,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1470,6 +1590,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 11,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1531,6 +1657,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 9,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1597,6 +1729,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 4,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1662,6 +1800,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'entityreference_label',
         'weight' => 3,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1726,6 +1870,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'entityreference_label',
         'weight' => 10,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1793,6 +1943,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 2,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1848,6 +2004,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
         'weight' => 12,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -1906,6 +2068,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 13,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1959,6 +2127,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'file_default',
         'weight' => 8,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -2030,6 +2204,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'list_default',
         'weight' => 14,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2084,6 +2264,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
+        'weight' => 0,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'includeable' => array(
@@ -2172,6 +2358,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'includeable' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2235,6 +2427,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         ),
         'type' => 'owlcarousel_formatter',
         'weight' => 1,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',
@@ -2326,6 +2524,12 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 12,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'includeable' => array(
         'label' => 'above',

@@ -14,7 +14,16 @@ function bellcom_elasticsearch_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'bellcom_elasticsearch_synonyms';
-  $strongarm->value = 'myself, mig';
+  $strongarm->value = 'sygdom,syg
+orlov,barselsorlov,plejeorlov
+Kørsel,transport,befordring
+Personaleforening,FAPF
+medarbejderportalen,medarbejderportal
+Køb, salg, markedspladsen, til salg, byttebørs
+Kriser,krise,beredskab,akut,actionscard,actioncards,terror,brand,ulykke
+Pædagogisk Psykologisk Rådgivning, ppr
+Rådhusbetjentene,rådhusbetjent,betjent
+';
   $export['bellcom_elasticsearch_synonyms'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -42,7 +51,7 @@ function bellcom_elasticsearch_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'bellcom_elasticsearch_synonyms_index';
-  $strongarm->value = 'test_intranet_search';
+  $strongarm->value = 'intranet_search_index';
   $export['bellcom_elasticsearch_synonyms_index'] = $strongarm;
 
   return $export;
