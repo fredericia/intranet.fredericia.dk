@@ -1,0 +1,77 @@
+<?php
+
+function os2notifier_helper_menu() {
+	$content = array();
+	$content['lang-data.json'] = array(
+		'title' => 'Language',
+		'page callback' => 'os2notifier_helper_lang_data',
+		'type' => MENU_CALLBACK,
+		'access callback' => true,
+		'access arguments' => array('access content'),
+	);
+
+	$content['os2intra-user-groups.json'] = array(
+		'title' => 'User Groups',
+		'page callback' => 'os2notifier_helper_user_groups',
+		'type' => MENU_NORMAL_ITEM,
+		'access callback' => true,
+		'access arguments' => array('access content'),
+	);
+
+	return $content;
+}
+
+
+function os2notifier_helper_lang_data() {
+	$lang_data = language_default();
+	drupal_json_output($lang_data);
+}
+
+
+function os2notifier_helper_user_groups() {
+	global $user;
+	if (!isset($user)) {
+		drupal_json_output('');
+		return;
+	}
+
+	$result = array();
+	$uid = $user->uid;
+
+	// Gather those groups where current user is member.
+	$groups = array();
+	$db_result = db_select('og_membership', 'om')
+		->fields('om', array('gid'))
+		->condition('om.entity_type', 'user', '=')
+		->condition('om.group_type', 'node', '=')
+		->condition('om.etid', $uid, '=')
+		->execute()
+		->fetchAll();
+
+	foreach ($db_result as $d) {
+		$groups[] = $d->gid;
+	}
+
+
+	if (count($groups) > 0) {
+
+		// Get the ID and title of each group.
+		$db_result2 = db_select('node', 'n')
+			->fields('n', array('nid', 'title'))
+			->condition('n.type', 'os2intra_group', '=')
+			->condition('n.nid', array($groups), 'IN')
+			->execute()
+			->fetchAll();
+
+		foreach ($db_result2 as $d2) {
+			$tmp = array();
+			$tmp['node']['nid'] = $d2->nid;
+			$tmp['node']['title'] = $d2->title;
+
+			$result['nodes'][] = $tmp;
+		}
+	}
+
+	drupal_json_output($result);
+}
+

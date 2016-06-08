@@ -1,0 +1,232 @@
+<?php
+
+function special_notifications_install() {
+	/* Nothing here yet... */
+}
+
+
+function special_notifications_schema() {
+	$schema = array();
+
+	$schema['special_notifications_settings'] = array(
+		'description' => 'Custom notifications settings',
+		'fields' => array(
+			'id' => array(
+				'description' => 'Item ID',
+				'type' => 'serial',
+				'unsigned' => true,
+				'not null' => true,
+			),
+
+			'uid' => array(
+				'description' => 'User ID',
+				'type' => 'int',
+				'not null' => true,
+			),
+
+			'mon_00_05' => array(
+				'description' => 'Time period 00:00 - 05:59 on Monday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'mon_06_11' => array(
+				'description' => 'Time period 06:00 - 11:59 on Monday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'mon_12_17' => array(
+				'description' => 'Time period 12:00 - 17:59 on Monday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'mon_18_23' => array(
+				'description' => 'Time period 18:00 - 23:59 on Monday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'tue_00_05' => array(
+				'description' => 'Time period 00:00 - 05:59 on Tuesday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'tue_06_11' => array(
+				'description' => 'Time period 06:00 - 11:59 on Tuesday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'tue_12_17' => array(
+				'description' => 'Time period 12:00 - 17:59 on Tuesday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'tue_18_23' => array(
+				'description' => 'Time period 18:00 - 23:59 on Tuesday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'wed_00_05' => array(
+				'description' => 'Time period 00:00 - 05:59 on Wednesday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'wed_06_11' => array(
+				'description' => 'Time period 06:00 - 11:59 on Wednesday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'wed_12_17' => array(
+				'description' => 'Time period 12:00 - 17:59 on Wednesday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'wed_18_23' => array(
+				'description' => 'Time period 18:00 - 23:59 on Wednesday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'thu_00_05' => array(
+				'description' => 'Time period 00:00 - 05:59 on Thursday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'thu_06_11' => array(
+				'description' => 'Time period 06:00 - 11:59 on Thursday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'thu_12_17' => array(
+				'description' => 'Time period 12:00 - 17:59 on Thursday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'thu_18_23' => array(
+				'description' => 'Time period 18:00 - 23:59 on Thursday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'fri_00_05' => array(
+				'description' => 'Time period 00:00 - 05:59 on Friday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'fri_06_11' => array(
+				'description' => 'Time period 06:00 - 11:59 on Friday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'fri_12_17' => array(
+				'description' => 'Time period 12:00 - 17:59 on Friday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'fri_18_23' => array(
+				'description' => 'Time period 18:00 - 23:59 on Friday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+	
+			'sat_00_05' => array(
+				'description' => 'Time period 00:00 - 05:59 on Saturday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'sat_06_11' => array(
+				'description' => 'Time period 06:00 - 11:59 on Saturday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'sat_12_17' => array(
+				'description' => 'Time period 12:00 - 17:59 on Saturday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'sat_18_23' => array(
+				'description' => 'Time period 18:00 - 23:59 on Saturday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'sun_00_05' => array(
+				'description' => 'Time period 00:00 - 05:59 on Sunday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'sun_06_11' => array(
+				'description' => 'Time period 06:00 - 11:59 on Sunday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+
+			'sun_12_17' => array(
+				'description' => 'Time period 12:00 - 17:59 on Sunday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+	
+			'sun_18_23' => array(
+				'description' => 'Time period 18:00 - 23:59 on Sunday',
+				'type' => 'int',
+				'not null' => true,
+				'default' => '1'
+			),
+		),
+
+    	'primary key' => array('id'),
+		'indexes' => array(
+			'uid' => array('uid')
+		),
+	);
+
+	return $schema;
+}
+

@@ -1,0 +1,412 @@
+<?php
+
+function special_notifications_menu() {
+	$items = array();
+	$items['sn-user-settings'] = array(
+		'Title' => 'Special Notifications User Settings',
+		'access callback' => 'user_is_logged_in',
+		'access arguments' => array('access content'),
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('special_notifications_settings_form'),
+		'file' => 'special_notifications.user.inc',
+		'type' => MENU_CALLBACK
+	);
+
+	$items['sn-custom-notification'] = array(
+		'Title' => 'Custom Notifications',
+		'access callback' => '_special_notifications_user_is_admin',
+		'access arguments' => array('access content'),
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('special_notifications_form'),
+		'type' => MENU_CALLBACK
+	);
+
+	return $items;
+}
+
+
+function special_notifications_form($form, &$form_state) {
+	$form['description'] = array(
+		'#type' => 'markup',
+		'#markup' => (''
+			. '<p style="font-weight:bold;">'
+			. t('This form is simply for testing.') . ' '
+			. t('We just need to check if this notification mechanism really works.')
+			. '</p>'
+		)
+	);
+
+	$form['title'] = array(
+		'#type' => 'textfield',
+		'#title' => 'Title',
+		'#size' => '30',
+	);
+
+	$form['message'] = array(
+		'#type' => 'textfield',
+		'#title' => 'Message',
+		'#size' => '30',
+	);
+
+	$form['info'] = array(
+		'#type' => 'markup',
+		'#markup' => '<p>' . t('Please choose which users will receive this message') . '</p>',
+	);
+
+	$form['users'] = array(
+		'#type' => 'checkboxes',
+		'#options' => _special_notifications_user_list(),
+	);
+
+	$form['separator-line'] = array('#type' => 'markup', '#markup' => '<hr />');
+
+	$form['ignore-blocking'] = array(
+		'#type' => 'checkboxes',
+		'#options' => array('ignore-dnd' => t('Ignore the "Do-not-disturb" blocking')),
+	);
+
+	$form['submit'] = array(
+		'#type' => 'submit',
+		'#value' => 'Send message',
+	);
+
+	return $form;
+}
+
+
+function special_notifications_form_validate($form, &$form_state) {
+	$users = array();
+	foreach ($form_state['values']['users'] as $u) {
+		if ($u != '0') $users[] = $u;
+	}
+
+	if (strlen(trim($form_state['values']['title'])) == '') {
+		form_set_error('title', 'Title was empty!');
+	}
+
+	if (strlen(trim($form_state['values']['message'])) == '') {
+		form_set_error('message', 'Message was empty!');
+	}
+
+	if (count($users) == 0) {
+		form_set_error('users', 'No users were selected!');
+	}
+}
+
+
+function special_notifications_form_submit($form, &$form_state) {
+
+	$chosen_users = array();
+	foreach ($form_state['values']['users'] as $u) {
+		if ($u != '0') $chosen_users[] = $u;
+	}
+
+	$data = array(
+		'title' => $form_state['values']['title'],
+		'message' => $form_state['values']['message'],
+	);
+
+	// Remove users who are blocking the notifications
+	if ($form_state['values']['ignore-blocking']['ignore-dnd'] == '0') {
+		$chosen_users = _special_notifications_build_special_array(
+			$chosen_users, _special_notifications_blocking_users()
+		);
+	}
+
+	// Send out the message
+	_special_notifications_send_message($chosen_users, $data);
+	drupal_set_message('Hopefully the message has been sent...');
+}
+
+
+/*
+ * Send notification whenever specific content is added / updated
+ */
+function special_notifications_node_submit($node, $form, &$form_state) {
+	$node_types = array('event', 'wiki', 'post');
+
+	if ($node->op == 'Save' && in_array($node->type, $node_types)) {
+		$node_name = _special_notifications_node_name($node->type);
+		$group_list = array();
+
+		if (isset($node->og_group_ref['und']) && is_array($node->og_group_ref['und'])) {
+			foreach ($node->og_group_ref['und'] as $groups) {
+				$group_list[] = $groups['target_id'];
+			}
+		}
+
+		// Message that users will get (TODO: may need some changes)
+		$msg_arr = array(
+			'title' => $node_name,
+			'message' => (($node->nid == null)
+				? 'New content added' : 'Content updated'
+			)
+		);
+
+		$user_list = _special_notifications_user_uid_list();
+		$group_users = _special_notifications_get_group_users($group_list);
+		$blocking_users = _special_notifications_blocking_users();
+		$receivers_list = array_intersect($user_list, $group_users);
+
+		// Remove users who are blocking the notifications
+		$receivers_list = _special_notifications_build_special_array(
+			$receivers_list, $blocking_users
+		);
+
+		if (count($receivers_list) > 0)
+			_special_notifications_send_message($receivers_list, $msg_arr);
+
+		// Debugging
+		$DEBUG_MSG = (drupal_json_encode($node) . "\n\n"
+			. 'Node belongs to groups: ' . join(', ', $group_list) . "\n"
+			. 'Users from the same groups: ' . join(', ', $group_users) . "\n"
+			. 'Users having the tokens: ' . join(', ', $user_list) . "\n"
+			. 'Users who are blocking the notifications: ' . join(', ', $blocking_users) . "\n"
+			. 'Users who should receive the message: ' . join(', ', $receivers_list) . "\n"
+			. 'Message to send:' . "\n"
+			. '  title: ' . $msg_arr['title'] . "\n"
+			. '  content: ' . $msg_arr['message'] . "\n"
+		);
+
+		_special_notifications_debug($DEBUG_MSG);
+	}
+}
+
+
+/* Helper functions */
+
+/*
+ * Gather all the users with registered tokens (uids and names)
+ */
+function _special_notifications_user_list() {
+
+	$users = array();
+
+	$query = db_select('users', 'u');
+	$query->innerJoin('push_notifications_tokens', 'pnt', 'pnt.uid = u.uid');
+	$query->fields('u', array('uid', 'name'));
+	$result = $query->execute();
+
+	while ($r = $result->fetchAssoc()) {
+		if ($r['uid'] == '0') continue;
+		$users[$r['uid']] = $r['name'];
+	}
+
+	return $users;
+}
+
+
+/*
+ * Gather users with registered tokens (uids only)
+ */
+function _special_notifications_user_uid_list() {
+
+	$uids = array();
+	$user_data = _special_notifications_user_list();
+
+	foreach ($user_data as $uid => $name) {
+		$uids[] = $uid;
+	}
+
+	return $uids;
+}
+
+
+/*
+ * Get the name of the node
+ */
+function _special_notifications_node_name($node_type) {
+	$result = db_select('node_type', 'nt')
+		->fields('nt', array('name'))
+		->condition('nt.type', $node_type, '=')
+		->execute()
+		->fetchAssoc();
+
+	return $result['name'];
+}
+
+
+/*
+ * Get users who belong into any given group
+ */
+function _special_notifications_get_group_users($group_ids) {
+	$result = array();
+	if (empty($group_ids)) return $result;
+
+	$db_result = db_select('og_membership', 'om')
+		->fields('om', array('etid'))
+		->condition('om.entity_type', 'user', '=')
+		->condition('om.group_type', 'node', '=')
+		->condition('om.gid', array($group_ids), 'IN')
+		->execute()
+		->fetchAll();
+
+	foreach ($db_result as $d) {
+		$result[] = $d->etid;
+	}
+
+	return array_unique($result);
+}
+
+
+/*
+ * Get users who are blocking the notifications (based on current day/hour)
+ */
+function _special_notifications_blocking_users() {
+	$curr_day = strtolower(date("D"));
+	$curr_hour = (int)date("G");
+
+	if ($curr_hour >= 0 && $curr_hour <= 5) {
+		$time_field = $curr_day . '_00_05';
+	} elseif ($curr_hour >= 6 && $curr_hour <= 11) {
+		$time_field = $curr_day . '_06_11';
+	} elseif ($curr_hour >= 12 && $curr_hour <= 17) {
+		$time_field = $curr_day . '_12_17';
+	} elseif ($curr_hour >= 18 && $curr_hour <= 23) {
+		$time_field = $curr_day . '_18_23';
+	}
+
+	$uids = array();
+
+	$db_result = db_select('special_notifications_settings', 'sns')
+		->fields('sns', array('uid'))
+		->condition($time_field, '0', '=')
+		->execute()
+		->fetchAll();
+
+	foreach ($db_result as $d) {
+		$uids[] = $d->uid;
+	}
+
+	return array_unique($uids);
+}
+
+
+/*
+ * Create new array with items in array1 but not in array2
+ */
+function _special_notifications_build_special_array($arr1, $arr2) {
+	$result = array();
+
+	foreach ($arr1 as $a) {
+		if (in_array($a, $arr2)) continue;
+		$result[] = $a;
+	}
+
+	return $result;
+}
+
+
+/*
+ * Check whether user has administrator privileges
+ */
+function _special_notifications_user_is_admin() {
+	return in_array('administrator', $GLOBALS['user']->roles);
+}
+
+
+/*
+ * Send out push notifications, switch automatically between delivery method.
+ *
+ * This is basically a slightly modified version of "push_notifications_send_message()" function.
+ */
+function _special_notifications_send_message(&$recipients, &$data) {
+
+	if (!is_array($recipients)
+		|| !is_array($data)
+		|| !isset($data['message'])
+		|| !is_string($data['message'])) {
+		return FALSE;
+	}
+
+	$message = $data['message'];
+
+	// Let modules modify the message before it is sent.
+	foreach(module_implements('push_notifications_send_message') as $module) {
+		$function = $module . '_push_notifications_send_message';
+		$function($message);
+	}
+
+	// Shorten the message to 255 characters / 8 bit.
+	$message = truncate_utf8($message, PUSH_NOTIFICATIONS_APNS_PAYLOAD_SIZE_LIMIT, TRUE, TRUE);
+
+	// Convert the payload into the correct format for delivery.
+	$payload = $data;
+	$payload['alert'] = $data['message'];
+
+	// Determine if any of the recipients have one or multiple tokens stored.
+	$tokens = array();
+	foreach ($recipients as $uid) {
+		$user_tokens = push_notification_get_user_tokens($uid);
+		if (!empty($user_tokens)) {
+			$tokens = array_merge($tokens, $user_tokens);
+		}
+	}
+
+	// Stop right here if none of these users have any tokens.
+	if (empty($tokens)) {
+		return FALSE;
+	}
+
+	// Group tokens into types.
+	$tokens_ios = array();
+	$tokens_android = array();
+	foreach ($tokens as $token) {
+		switch ($token['type']) {
+			case PUSH_NOTIFICATIONS_TYPE_ID_IOS:
+			$tokens_ios[] = $token['token'];
+			break;
+
+			case PUSH_NOTIFICATIONS_TYPE_ID_ANDROID:
+			$tokens_android[] = $token['token'];
+			break;
+		}
+	}
+
+	// Send payload to iOS recipients.
+	if (!empty($tokens_ios)) {
+		// Convert the payload into the correct format for APNS.
+		$payload_apns = array('aps' => $payload);
+		$result = push_notifications_apns_send_message($tokens_ios, $payload_apns);
+	}
+
+	// Send payload to Android recipients if configured correctly.
+	if (!empty($tokens_android) && ((PUSH_NOTIFICATIONS_C2DM_USERNAME && PUSH_NOTIFICATIONS_C2DM_PASSWORD) || PUSH_NOTIFICATIONS_GCM_API_KEY)) {
+		// Determine which method to use for Google push notifications.
+		switch (PUSH_NOTIFICATIONS_GOOGLE_TYPE) {
+			case PUSH_NOTIFICATIONS_GOOGLE_TYPE_C2DM:
+			$result = push_notifications_c2dm_send_message($tokens_android, $payload);
+			break;
+
+			case PUSH_NOTIFICATIONS_GOOGLE_TYPE_GCM:
+			$result = push_notifications_gcm_send_message($tokens_android, $payload);
+			break;
+		}
+	}
+}
+
+
+/*
+ * Debugging
+ */
+function _special_notifications_debug($msg) {
+	$file = '/var/www/broen7000.dk.devel.dk/public_html/NODE_DEBUG.txt';
+
+	if (!file_exists($file)) {
+		@touch($file);
+		@chmod($file, 0777);
+	}
+
+	if (file_exists($file) && is_writable($file)) {
+
+		$date = "[" . date("Y-m-d H:i:s") . "]\n";
+		$separator = "\n=================================\n\n";
+
+		$msg = $date . $msg . $separator;
+
+		$fh = fopen($file, 'a');
+		fwrite($fh, $msg);
+		fclose($fh);
+	}
+}
+

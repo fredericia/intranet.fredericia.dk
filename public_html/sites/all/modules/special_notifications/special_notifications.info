@@ -1,0 +1,11 @@
+
+name = Special Notifications (TEST)
+description = A simple module that sends "push notification" messages to particular users
+core = 7.x
+
+files[] = special_notifications.install
+files[] = special_notifications.module
+files[] = special_notifications.user.inc
+
+dependencies[] = push_notifications
+
