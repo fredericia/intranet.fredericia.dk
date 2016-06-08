@@ -17,8 +17,6 @@ function os2web_habitat_strongarm() {
   $strongarm->value = array(
     0 => 'piwik',
     1 => 'piwik_fredericia_prod_settings',
-    2 => 'simplesamlphp_auth',
-    3 => 'os2intra_simplesaml',
   );
   $export['habitat_disable_dev'] = $strongarm;
 
@@ -60,12 +58,7 @@ function os2web_habitat_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'habitat_enable_dev';
   $strongarm->value = array(
-    0 => 'stage_file_proxy',
-    1 => 'syslog',
-    2 => 'reroute_email',
-    3 => 'habitat_ui',
-    4 => 'dashboard',
-    5 => 'views_ui',
+    0 => '',
   );
   $export['habitat_enable_dev'] = $strongarm;
 
