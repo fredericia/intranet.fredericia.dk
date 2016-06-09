@@ -22,6 +22,16 @@
         <!-- End - navigation -->
       <?php endif; ?>
 
+      <div class="visible-xs">
+
+        <?php if (isset($sidebar_secondary)): ?>
+          <!-- Begin - navigation -->
+          <?php print render($sidebar_secondary); ?>
+          <!-- End - navigation -->
+        <?php endif; ?>
+
+      </div>
+
     </div>
     <!-- End - inner wrapper -->
 

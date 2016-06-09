@@ -22,6 +22,16 @@
         <!-- End - navigation -->
       <?php endif; ?>
 
+      <div class="visible-xs">
+
+        <?php if (isset($sidebar_secondary)): ?>
+          <!-- Begin - navigation -->
+          <?php print render($sidebar_secondary); ?>
+          <!-- End - navigation -->
+        <?php endif; ?>
+
+      </div>
+
     </div>
     <!-- End - inner wrapper -->
 
@@ -53,7 +63,7 @@
 
       <!-- Begin - logo -->
       <a href="<?php print $front_page; ?>" class="simple-navigation-logo-link">
-        <img src="<?php print $path_img . '/logo.png'; ?>" class="simple-navigation-logo-image" alt="<?php print t('intranet.fredericia.dk logo'); ?>" />
+        <img src="<?php print $path_img . '/logo-simple-navigation.png'; ?>" class="simple-navigation-logo-image" alt="<?php print t('intranet.fredericia.dk logo'); ?>" />
       </a>
       <!-- End - logo -->
 

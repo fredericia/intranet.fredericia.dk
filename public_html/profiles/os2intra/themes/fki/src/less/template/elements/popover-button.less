@@ -20,63 +20,9 @@
 // Styling
 // --------------------------------------------------
 
-// Popover button
-.popover-button {
-	position: absolute;
-	right: floor( (0 - @popover-button-width) );
-	width: 250px;
-	background-color: @content-bg;
-	min-height: @popover-button-min-height;
-	.transition(all @bs3-designer-transition-time ease-in-out);
-
-	.popover-button-toggle {
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 100%;
-		.border-bottom-radius(@border-radius-base);
-		font-weight: bold;
-		padding: 5px 15px;
-		text-transform: uppercase;
-		text-decoration: none;
-		.transform-origin(left top);
-		.rotate(90deg);
-		width: @popover-button-toggle-width;
-		text-align: center;
-	}
-
-	.popover-button-content {
-		padding: @default-body-top-bottom-spacing @default-left-right-spacing;
-
-		.form-submit {
-
-			.btn-primary;
-		}
-	}
-
-	&.popover-button-open {
-		right: 0;
-	}
-
-	&:extend(.clearfix all);
-}
-
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
-
-.popover-button-find-colleague {
-	top: (@popover-button-top-spacing);
-	z-index: 2005;
-	.fki-mixin-popover-button(@state-primary-bg, @state-primary-text);
-}
-
-.popover-button-dish-of-the-day {
-	top: (@popover-button-top-spacing + @popover-button-toggle-width + @popover-button-stacked-spacing);
-	z-index: 2000;
-	.fki-mixin-popover-button(@state-secondary-bg, @state-secondary-text);
-}
 
 // --------------------------------------------------
 // Responsive
@@ -86,7 +32,37 @@
 @media @media-query-mobile {
 
 	// Popover button
-	.popover-button {}
+	.popover-button {
+		display: block;
+		margin-bottom: 20px;
+
+		.popover-button-toggle {
+			display: block;
+			text-align: center;
+			color: #fff;
+			padding: 10px 0;
+			background-color: @brand-primary;
+			border-radius: @border-radius-base;
+		}
+
+		.popover-button-content {
+			display: none;
+			padding: @default-body-top-bottom-spacing @default-left-right-spacing;
+			background-color: #fff;
+
+			.form-submit {
+
+				.btn-primary;
+			}
+		}
+
+		&.popover-button-open {
+
+			.popover-button-content {
+				display: block;
+			}
+		}
+	}
 }
 
 // Mobile - only
@@ -100,7 +76,58 @@
 @media @media-query-tablet {
 
 	// Popover button
-	.popover-button {}
+	.popover-button {
+		position: absolute;
+		right: floor( (0 - @popover-button-width) );
+		width: 250px;
+		background-color: @content-bg;
+		min-height: @popover-button-min-height;
+		.transition(all @bs3-designer-transition-time ease-in-out);
+
+		.popover-button-toggle {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 100%;
+			.border-bottom-radius(@border-radius-base);
+			font-weight: bold;
+			padding: 5px 15px;
+			text-transform: uppercase;
+			text-decoration: none;
+			.transform-origin(left top);
+			.rotate(90deg);
+			width: @popover-button-toggle-width;
+			text-align: center;
+		}
+
+		.popover-button-content {
+			padding: @default-body-top-bottom-spacing @default-left-right-spacing;
+
+			.form-submit {
+
+				.btn-primary;
+			}
+		}
+
+		&.popover-button-open {
+			right: 0;
+		}
+
+		&:extend(.clearfix all);
+	}
+
+	.popover-button-find-colleague {
+		top: (@popover-button-top-spacing);
+		z-index: 2005;
+		.fki-mixin-popover-button(@state-primary-bg, @state-primary-text);
+	}
+
+	.popover-button-dish-of-the-day {
+		top: (@popover-button-top-spacing + @popover-button-toggle-width + @popover-button-stacked-spacing);
+		z-index: 2000;
+		.fki-mixin-popover-button(@state-secondary-bg, @state-secondary-text);
+	}
 }
 
 // Tablet - only
