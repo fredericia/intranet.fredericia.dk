@@ -2496,6 +2496,7 @@ if (typeof jQuery === 'undefined') {
 var bs3Designer = (function ($) {
     'use strict';
 
+    var Modernizr = {};
     var pub = {};
 
     /**
@@ -2510,13 +2511,11 @@ var bs3Designer = (function ($) {
      * Register boot event handlers
      */
     function registerBootEventHandlers() {
-        if ( ! Modernizr.touchevents) {
+        if ( ! Modernizr.touch) {
             footerAttached();
-            footerBelow();
+            optimizeFormElements();
         }
 
-        optimizeFormElements();
-        inputClear();
         appear();
         bs3Tooltip();
     }
@@ -2528,13 +2527,10 @@ var bs3Designer = (function ($) {
 
         $(window).resize(function () {
             footerAttached();
-            footerBelow();
         });
 
-        $('.btn-loader').on('click touchstart', function () {
-            var $element = $(this);
-
-            iconSpin($element);
+        $('.btn-loader').on('click', function () {
+            iconSpin($(this));
         });
     }
 
@@ -2542,22 +2538,10 @@ var bs3Designer = (function ($) {
      * Footer attached
      */
     function footerAttached() {
+        var $footer = $('.footer');
+        var footerHeight = $footer.outerHeight(true);
+
         if ($('body').hasClass('footer-attached')) {
-            var $footer = $('.footer');
-            var footerHeight = $footer.outerHeight(true);
-
-            $('.inner-wrapper').css('padding-bottom', footerHeight);
-        }
-    }
-
-    /**
-     * Footer below
-     */
-    function footerBelow() {
-        if ($('body').hasClass('footer-below')) {
-            var $footer = $('.footer');
-            var footerHeight = $footer.outerHeight(true);
-
             $('.inner-wrapper').css('padding-bottom', footerHeight);
         }
     }
@@ -2569,15 +2553,15 @@ var bs3Designer = (function ($) {
         var $appear = $('.appear');
         var $animation = $('.animation');
 
-        if (Modernizr.touchevents || !Modernizr.cssanimations) {
+        if (Modernizr.touch || !Modernizr.cssanimations) {
 
             $animation
-              .removeClass('animation')
-              .removeClass('animation-appear-from-top')
-              .removeClass('animation-appear-from-right')
-              .removeClass('animation-appear-from-left')
-              .removeClass('animation-appear-from-bottom')
-              .removeClass('animation-appear-from-center');
+                .removeClass('animation')
+                .removeClass('animation-appear-from-top')
+                .removeClass('animation-appear-from-right')
+                .removeClass('animation-appear-from-left')
+                .removeClass('animation-appear-from-bottom')
+                .removeClass('animation-appear-from-center');
 
             return false;
         }
@@ -2606,7 +2590,7 @@ var bs3Designer = (function ($) {
      * BS tooltip
      */
     function bs3Tooltip() {
-        if (Modernizr.touchevents) {
+        if (Modernizr.touch) {
             $('[data-toggle=tooltip]').tooltip('hide');
 
             return false;
@@ -2626,51 +2610,7 @@ var bs3Designer = (function ($) {
      * Icon spin
      */
     function iconSpin($element) {
-        var $icon = $('<span />').addClass('fa').addClass('icon').addClass('icon-spin');
-        var elementWidth = $element.outerWidth(true);
-
-        // Remove button value and insert icon
-        $element.html($icon).addClass('btn-loader-active').css('width', elementWidth);
-    }
-
-    /**
-     * Input clear
-     */
-    function inputClear() {
-        var $inputs = $('input[type="text"].form-control').not('.sliderfield-value-field');
-
-        // Run through all input fields and add elements to DOM
-        $inputs.each(function(index) {
-            var $input = $(this);
-            var $wrapper = $('<div />').addClass('form-control-clear-wrapper');
-            var $clearButton = $('<span />').addClass('form-control-clear').on('click touchstart', function(event) {
-                $input.attr('value', '').focus();
-
-                $(this).hide();
-            });
-
-            // Wrap input
-            $input.wrap($wrapper);
-
-            // Add clear button
-            $input.after($clearButton);
-
-            // Input has content - show clear button
-            if ($input.val().replace(/^\s+|\s+$/g, '').length > 0) {
-                $clearButton.show();
-            }
-
-            // Show clear button
-            $input.on('keyup keydown change focus', function(event) {
-
-                if ($input.val().replace(/^\s+|\s+$/g, '').length > 0) {
-
-                    if (!$clearButton.is(':visible')) {
-                        $clearButton.show();
-                    }
-                }
-            });
-        });
+        $element.find('.icon').addClass('icon-spin');
     }
 
     return pub;
@@ -2688,6 +2628,7 @@ var bs3Designer = (function ($) {
 var bs3Sidebar = (function ($) {
   'use strict';
 
+  var Modernizr = {};
   var pub = {};
 
   /**
@@ -2704,7 +2645,7 @@ var bs3Sidebar = (function ($) {
   function registerEventHandlers() {
 
     // Toggle sidebar
-    $('[data-sidebar-toggle]').on('click touchstart', function (event) {
+    $('[data-sidebar-toggle]').on('click', function (event) {
       event.preventDefault();
 
       var $element = $(this);
@@ -2713,7 +2654,7 @@ var bs3Sidebar = (function ($) {
     });
 
     // Toggle dropdown
-    $('.sidebar .sidebar-navigation-dropdown > a > .sidebar-navigation-dropdown-toggle').on('click touchstart', function (event) {
+    $('.sidebar .sidebar-navigation-dropdown > a > .sidebar-navigation-dropdown-toggle').on('click', function (event) {
       event.preventDefault();
 
       var $element = $(this);
