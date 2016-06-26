@@ -106,6 +106,7 @@ features[variable][] = pathauto_taxonomy_term_user_jobtitle_pattern
 features[variable][] = pathauto_taxonomy_term_user_skills_pattern
 features[variable][] = realname_pattern
 features[views_view][] = brugers_indhold
+features[views_view][] = fki_phone_number_export
 features[views_view][] = forfatters_indhold
 features[views_view][] = os2intra_brugervisning
 features[views_view][] = telefonbogen
