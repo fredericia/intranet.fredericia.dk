@@ -1137,9 +1137,11 @@ function os2intra_users_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
+      'module' => 'hser',
+      'settings' => array(
+        'editable' => FALSE,
+      ),
+      'type' => 'hser_hierarchy',
       'weight' => 17,
     ),
   );

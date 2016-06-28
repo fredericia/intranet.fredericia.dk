@@ -8,6 +8,7 @@ dependencies[] = entityreference
 dependencies[] = entityreference_autocreate
 dependencies[] = features
 dependencies[] = field_group
+dependencies[] = hser
 dependencies[] = image
 dependencies[] = list
 dependencies[] = media
