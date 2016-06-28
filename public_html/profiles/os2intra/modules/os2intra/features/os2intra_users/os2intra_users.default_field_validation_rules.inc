@@ -21,8 +21,8 @@ function os2intra_users_default_field_validation_rule() {
   $rule->bundle = 'user';
   $rule->validator = 'field_validation_numeric2_validator';
   $rule->settings = array(
-    'min' => '8',
-    'max' => '',
+    'min' => '',
+    'max' => '99999999',
     'bypass' => 0,
     'roles' => array(
       1 => 0,
@@ -39,7 +39,7 @@ function os2intra_users_default_field_validation_rule() {
       'condition_value' => '',
     ),
   );
-  $rule->error_message = 'Mobil nummer skal være 8 cifre';
+  $rule->error_message = 'Mobil nummer må højest være 8 cifre';
   $export['mobile_phone_number'] = $rule;
 
   $rule = new stdClass();
@@ -53,8 +53,8 @@ function os2intra_users_default_field_validation_rule() {
   $rule->bundle = 'user';
   $rule->validator = 'field_validation_numeric2_validator';
   $rule->settings = array(
-    'min' => '8',
-    'max' => '',
+    'min' => '',
+    'max' => '99999999',
     'bypass' => 0,
     'roles' => array(
       1 => 0,
@@ -71,7 +71,7 @@ function os2intra_users_default_field_validation_rule() {
       'condition_value' => '',
     ),
   );
-  $rule->error_message = 'Telefon nummer skal være 8 cifre';
+  $rule->error_message = 'Telefon nummer må højest være 8 cifre';
   $export['phone_number'] = $rule;
 
   return $export;
