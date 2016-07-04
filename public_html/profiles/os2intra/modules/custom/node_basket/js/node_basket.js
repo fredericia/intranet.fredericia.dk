@@ -153,23 +153,24 @@
       // Test if we got group data back
       if (Object.keys(data).length > 0) {
 
-        var ul = $('<ul class="main-navigation-list-dropdown-menu sidebar-navigation-dropdown-menu">');
+        var $ul = $('<ul class="main-navigation-list-dropdown-menu sidebar-navigation-dropdown-menu" />');
 
         // Set class on 'ul's parent
-        ul.parent().addClass('main-navigation-list-dropdown sidebar-navigation-dropdown');
+        $ul.parent().addClass('main-navigation-list-dropdown sidebar-navigation-dropdown');
 
         // Generate list with links and append to parent menu item.
         for (var key in data) {
-          var li = $('<li class="leaf main-navigation-list-link sidebar-navigation-link"><a href="/node/' + data[key].nid + '">' + data[key].title + '</a></li>');
-          ul.append(li);
+          var $li = $('<li class="leaf main-navigation-list-link sidebar-navigation-link"><a href="/node/' + data[key].nid + '">' + data[key].title + '</a></li>');
+          $ul.append($li);
         }
       }
+
       var menu_item = $('a[href="/node_basket"]').parent();
       menu_item.find('li').remove();
-      menu_item.append(ul);
 
-      // Set class on 'ul's parent
-      ul.parent().addClass('main-navigation-list-dropdown sidebar-navigation-link');
+      if ($ul) {
+        menu_item.append($ul);
+      }
     });
   }
 
