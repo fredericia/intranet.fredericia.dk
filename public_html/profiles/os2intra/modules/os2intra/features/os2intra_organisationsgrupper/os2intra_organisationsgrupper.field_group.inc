@@ -139,15 +139,22 @@ function os2intra_organisationsgrupper_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_indstillinger';
   $field_group->data = array(
-    'label' => 'Group',
-    'weight' => '0',
-    'children' => array(),
-    'format_type' => 'htabs',
+    'label' => 'Synlighed',
+    'weight' => '8',
+    'children' => array(
+      0 => 'group_access',
+      1 => 'group_content_access',
+    ),
+    'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Synlighed',
       'instance_settings' => array(
-        'classes' => 'group-group field-group-htabs',
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $field_groups['group_group|node|os2intra_group|form'] = $field_group;
@@ -222,8 +229,7 @@ function os2intra_organisationsgrupper_field_group_info() {
     'weight' => '12',
     'children' => array(
       0 => 'group_group',
-      1 => 'group_access',
-      2 => 'group_content_access',
+      1 => 'field_os2intra_base_spotboxes',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -544,7 +550,6 @@ function os2intra_organisationsgrupper_field_group_info() {
   t('Billeder');
   t('Detaljer');
   t('Forfremmet');
-  t('Group');
   t('Gruppe');
   t('Gruppe redigering');
   t('Indstillinger');
@@ -553,6 +558,7 @@ function os2intra_organisationsgrupper_field_group_info() {
   t('Referat');
   t('Referatform');
   t('Relationer');
+  t('Synlighed');
   t('System');
   t('Værktøjer');
 

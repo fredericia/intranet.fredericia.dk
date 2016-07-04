@@ -67,6 +67,7 @@ features[field_group][] = group_referat|node|os2intra_referat|form
 features[field_group][] = group_system|node|os2intra_org_group_unit|form
 features[field_group][] = group_tools|node|os2intra_org_group_unit|form
 features[field_instance][] = node-os2intra_group-body
+features[field_instance][] = node-os2intra_group-field_os2intra_base_spotboxes
 features[field_instance][] = node-os2intra_group-field_os2intra_image
 features[field_instance][] = node-os2intra_group-group_access
 features[field_instance][] = node-os2intra_group-group_content_access

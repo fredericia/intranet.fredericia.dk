@@ -875,7 +875,7 @@ function os2intra_user_import_save_user($user, $uid = '') {
     'field_os2intra_birthdate'        => array(LANGUAGE_NONE => array(0 => array('value' => $user['birthdate']))),
 
     // Set department membership
-    //'og_user_node2'                   => array(LANGUAGE_NONE => array(0 => array('target_id' => $department_nid))),
+    'og_user_node2'                   => array(LANGUAGE_NONE => array(0 => array('target_id' => array($department_nid)))),
 
 
     // Activate user
