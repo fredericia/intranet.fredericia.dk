@@ -164,12 +164,16 @@
           $ul.append($li);
         }
       }
-
-      var menu_item = $('a[href="/node_basket"]').parent();
-      menu_item.find('li').remove();
+      var $menu_item = $('a[href="/node_basket"]').parent();
+      //$menu_item.find('li').remove();
 
       if ($ul) {
-        menu_item.append($ul);
+        $menu_item.append($ul);
+
+        // Set class on 'ul's parent
+        $menu_item
+            .removeClass('main-navigation-list-link')
+            .addClass('main-navigation-list-dropdown');
       }
     });
   }

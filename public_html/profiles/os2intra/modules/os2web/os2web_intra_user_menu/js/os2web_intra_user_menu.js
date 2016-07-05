@@ -18,9 +18,6 @@
 
         var $ul = $('<ul class="main-navigation-list-dropdown-menu sidebar-navigation-dropdown-menu">');
 
-        // Set class on 'ul's parent
-        // $ul.parent().addClass('main-navigation-list-dropdown sidebar-navigation-dropdown');
-
         // Generate list with links and append to parent menu item.
         for (var key in data) {
           var li = $('<li class="main-navigation-list-link sidebar-navigation-link"><a href="/node/' + data[key].nid + '">' + data[key].title + '</a></li>');

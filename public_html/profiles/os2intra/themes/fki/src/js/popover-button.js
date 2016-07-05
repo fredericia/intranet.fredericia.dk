@@ -15,7 +15,7 @@ var popoverButton = (function ($) {
   pub.init = function (options) {
     registerEventHandlers();
     registerBootEventHandlers();
-  }
+  };
 
   /**
    * Register event handlers
