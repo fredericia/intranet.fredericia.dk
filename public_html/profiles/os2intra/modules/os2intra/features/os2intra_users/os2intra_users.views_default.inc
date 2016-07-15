@@ -172,6 +172,102 @@ function os2intra_users_views_default_views() {
   $export['brugers_indhold'] = $view;
 
   $view = new view();
+  $view->name = 'fki_phone_number_export';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'users';
+  $view->human_name = 'Phone number export';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: User: Authentication name */
+  $handler->display->display_options['fields']['authname']['id'] = 'authname';
+  $handler->display->display_options['fields']['authname']['table'] = 'authmap';
+  $handler->display->display_options['fields']['authname']['field'] = 'authname';
+  $handler->display->display_options['fields']['authname']['label'] = 'Autentificeringsnavn';
+  $handler->display->display_options['fields']['authname']['element_label_colon'] = FALSE;
+  /* Field: User: Mobil nummer */
+  $handler->display->display_options['fields']['field_os2intra_mobile']['id'] = 'field_os2intra_mobile';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['table'] = 'field_data_field_os2intra_mobile';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['field'] = 'field_os2intra_mobile';
+  $handler->display->display_options['fields']['field_os2intra_mobile']['element_label_colon'] = FALSE;
+  /* Field: User: Telefon nummer */
+  $handler->display->display_options['fields']['field_os2intra_phone']['id'] = 'field_os2intra_phone';
+  $handler->display->display_options['fields']['field_os2intra_phone']['table'] = 'field_data_field_os2intra_phone';
+  $handler->display->display_options['fields']['field_os2intra_phone']['field'] = 'field_os2intra_phone';
+  $handler->display->display_options['fields']['field_os2intra_phone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  /* Filter criterion: User: Telefon nummer (field_os2intra_phone) */
+  $handler->display->display_options['filters']['field_os2intra_phone_value_1']['id'] = 'field_os2intra_phone_value_1';
+  $handler->display->display_options['filters']['field_os2intra_phone_value_1']['table'] = 'field_data_field_os2intra_phone';
+  $handler->display->display_options['filters']['field_os2intra_phone_value_1']['field'] = 'field_os2intra_phone_value';
+  $handler->display->display_options['filters']['field_os2intra_phone_value_1']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_os2intra_phone_value_1']['value'] = ' ';
+  $handler->display->display_options['filters']['field_os2intra_phone_value_1']['group'] = 1;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'users';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  $handler->display->display_options['filters']['status_1']['group'] = 2;
+  /* Filter criterion: User: Mobil nummer (field_os2intra_mobile) */
+  $handler->display->display_options['filters']['field_os2intra_mobile_value']['id'] = 'field_os2intra_mobile_value';
+  $handler->display->display_options['filters']['field_os2intra_mobile_value']['table'] = 'field_data_field_os2intra_mobile';
+  $handler->display->display_options['filters']['field_os2intra_mobile_value']['field'] = 'field_os2intra_mobile_value';
+  $handler->display->display_options['filters']['field_os2intra_mobile_value']['operator'] = 'regular_expression';
+  $handler->display->display_options['filters']['field_os2intra_mobile_value']['value'] = '[^a-zA-Z[:space:][:blank:]/]';
+  $handler->display->display_options['filters']['field_os2intra_mobile_value']['group'] = 2;
+  /* Filter criterion: User: Mobil nummer (field_os2intra_mobile) */
+  $handler->display->display_options['filters']['field_os2intra_mobile_value_1']['id'] = 'field_os2intra_mobile_value_1';
+  $handler->display->display_options['filters']['field_os2intra_mobile_value_1']['table'] = 'field_data_field_os2intra_mobile';
+  $handler->display->display_options['filters']['field_os2intra_mobile_value_1']['field'] = 'field_os2intra_mobile_value';
+  $handler->display->display_options['filters']['field_os2intra_mobile_value_1']['operator'] = '!=';
+  $handler->display->display_options['filters']['field_os2intra_mobile_value_1']['value'] = ' ';
+  $handler->display->display_options['filters']['field_os2intra_mobile_value_1']['group'] = 2;
+  /* Filter criterion: User: Telefon nummer (field_os2intra_phone) */
+  $handler->display->display_options['filters']['field_os2intra_phone_value_2']['id'] = 'field_os2intra_phone_value_2';
+  $handler->display->display_options['filters']['field_os2intra_phone_value_2']['table'] = 'field_data_field_os2intra_phone';
+  $handler->display->display_options['filters']['field_os2intra_phone_value_2']['field'] = 'field_os2intra_phone_value';
+  $handler->display->display_options['filters']['field_os2intra_phone_value_2']['operator'] = 'regular_expression';
+  $handler->display->display_options['filters']['field_os2intra_phone_value_2']['value'] = '[^a-zA-Z[:space:][:blank:]/]';
+  $translatables['fki_phone_number_export'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Autentificeringsnavn'),
+    t('Mobil nummer'),
+    t('Telefon nummer'),
+  );
+  $export['fki_phone_number_export'] = $view;
+
+  $view = new view();
   $view->name = 'forfatters_indhold';
   $view->description = '';
   $view->tag = 'default';

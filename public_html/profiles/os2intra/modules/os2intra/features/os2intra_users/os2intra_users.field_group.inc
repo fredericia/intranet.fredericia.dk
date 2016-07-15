@@ -116,6 +116,7 @@ function os2intra_users_field_group_info() {
       4 => 'field_os2intra_physical_location',
       5 => 'field_os2intra_mobile',
       6 => 'field_os2intra_birthdate',
+      7 => 'field_os2intra_phone_private',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
