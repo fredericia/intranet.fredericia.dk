@@ -995,8 +995,7 @@ function os2intra_user_import_groups($users) {
       $term = taxonomy_term_load(key($result['taxonomy_term']));
       $term->name = $user['department_name'];
       taxonomy_term_save($term);
-
-      // os2intra_user_import_create_department(key($result['taxonomy_term']), $user['department']);
+      os2intra_user_import_create_department($term->tid, $user['department'], $user['department_name']);
     }
     else {
       // Create taxonomy terms
@@ -1035,11 +1034,16 @@ function os2intra_user_import_groups($users) {
 /**
  * Create department nodes
  */
-function os2intra_user_import_create_department($tid, $department) {
+function os2intra_user_import_create_department($tid, $department, $department_name) {
 
-  // Check if department node already exists. If so, then do nothing.
+  // Check if department node already exists.
   $nid = _os2intra_user_import_get_department_nid($department);
   if ($nid) {
+    // Rename group node name if needed
+    $nid = _os2intra_user_import_get_department_nid($department);
+    $node = node_load($nid);
+    $node->title = $department_name;
+    node_save($node);
     return;
   }
 
