@@ -563,6 +563,18 @@ function os2intra_user_import_overview() {
  */
 function os2intra_user_import_run_with_drush() {
   if (variable_get('os2intra_user_import_enable', FALSE)) {
+    // Check if import has run successfully in 1.5 day
+    $last_import_epoch = variable_get('os2intra_user_import_epoch', time());
+    if (time() > $last_import_epoch + 129600) {
+      // Send mail
+      $params = array(
+        'subject' => t('1.5 day since last import'),
+        'body' => 'Check if the import is running correctly.',
+      );
+      $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'));
+      drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
+    }
+
     setlocale(LC_ALL, "en_DK.UTF-8");
     $import_dir = variable_get('os2intra_user_import_dir', 'private://user_import');
 
@@ -579,6 +591,7 @@ function os2intra_user_import_run_with_drush() {
 
       os2intra_user_import_clear_log();
       os2intra_user_import_save_log('', 'Starting import');
+
       // Parse file, map data accordingly
       $users = _os2intra_user_import_process_file($realpath);
 
@@ -606,6 +619,9 @@ function os2intra_user_import_run_with_drush() {
       // Logging
       os2intra_user_import_save_log('', 'User import finished');
       os2intra_user_import_save_log('', 'Import finished');
+
+      // Timestamp to check if import has run successfully
+      variable_set('os2intra_user_import_epoch', time());
     }
     else {
       os2intra_user_import_save_log('', 'File does not exist');
