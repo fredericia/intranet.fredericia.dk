@@ -662,7 +662,7 @@ function _os2intra_user_import_process_file($file_path) {
     variable_get('os2intra_mapping_mobile')               => 'mobile',
     variable_get('os2intra_mapping_email')                => 'email',
     variable_get('os2intra_mapping_birthdate')            => 'birthdate',
-    variable_get('os2intra_mapping_department_name')      => 'deparment_name',
+    variable_get('os2intra_mapping_department_name')      => 'department_name',
   );
 
   // Load data from file
@@ -988,9 +988,15 @@ function os2intra_user_import_groups($users) {
     // Check if term already exists
     $result = os2intra_user_import_query_term_by_department($group);
 
+    // Term already exists
     if (!empty($result)) {
-      os2intra_user_import_save_log('', 'Group already exists: ' . $group);
-      os2intra_user_import_create_department(key($result['taxonomy_term']), $user['department']);
+      os2intra_user_import_save_log('', 'Group already exists: ' . $group . ' with name ' . $user['department_name']);
+      // Rename group term if needed
+      $term = taxonomy_term_load(key($result['taxonomy_term']));
+      $term->name = $user['department_name'];
+      taxonomy_term_save($term);
+
+      // os2intra_user_import_create_department(key($result['taxonomy_term']), $user['department']);
     }
     else {
       // Create taxonomy terms
@@ -1005,7 +1011,7 @@ function os2intra_user_import_groups($users) {
       }
 
       $term = new stdClass();
-      $term->name = $user['deparment_name'];
+      $term->name = $user['department_name'];
       $term->parent = array($parent_tid);
       $term->field_os2intra_department_id[LANGUAGE_NONE][0]['value'] = $group;
       $term->field_os2intra_shortname[LANGUAGE_NONE][0]['value'] = $user['department_shortname'];
