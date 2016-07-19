@@ -571,7 +571,7 @@ function os2intra_user_import_run_with_drush() {
         'subject' => t('1.5 day since last import'),
         'body' => 'Check if the import is running correctly.',
       );
-      $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'));
+      $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'), 'drift@bellcom.dk');
       drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
     }
 
@@ -743,6 +743,24 @@ function os2intra_user_import_check_users(&$users) {
 
     if (!$user['first_name'] || !$user['employee_id']) {
       unset($users[$key]);
+    }
+
+    $query = new EntityFieldQuery;
+    $query->entityCondition('entity_type', 'user');
+    $query->propertyCondition('mail', $user['email']);
+    $result = $query->execute();
+
+    if ($result) {
+      $update_users[key(array_shift($result))] = $user;
+      unset($users[$key]);
+
+      // Send mail
+      $params = array(
+        'subject' => t('An email address appeared two times in the import'),
+        'body' => 'The email ' . $user['email'] . ' appeared two times in the import. Only one was created.',
+      );
+      $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'));
+      drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
     }
   }
 
