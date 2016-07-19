@@ -996,6 +996,22 @@ function os2intra_user_import_groups($users) {
       $term->name = $user['department_name'];
       taxonomy_term_save($term);
       os2intra_user_import_create_department($term->tid, $user['department'], $user['department_name']);
+
+      // Search for parent tid for department
+      $result = os2intra_user_import_query_term_by_department($user['centre']);
+
+      if (!empty($result)) {
+        $parent_term = taxonomy_term_load(key($result['taxonomy_term']));
+        $parent_tid = $parent_term->tid;
+
+        // Send mail
+        $params = array(
+          'subject' => t('Department have new parent department'),
+          'body' => 'The department ' . $user['department_name'] . ' has a new parent department.',
+        );
+        $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'));
+        drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
+      }
     }
     else {
       // Create taxonomy terms
@@ -1007,6 +1023,14 @@ function os2intra_user_import_groups($users) {
       if (!empty($result)) {
         $parent_term = taxonomy_term_load(key($result['taxonomy_term']));
         $parent_tid = $parent_term->tid;
+
+        // Send mail
+        $params = array(
+          'subject' => t('Department have new parent department'),
+          'body' => 'The department ' . $user['department_name'] . ' has a new parent department.',
+        );
+        $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'));
+        drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
       }
 
       $term = new stdClass();
