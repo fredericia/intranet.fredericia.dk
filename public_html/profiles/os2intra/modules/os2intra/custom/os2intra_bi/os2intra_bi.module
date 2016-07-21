@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Code for the OS2intra BI feature.
+ */
+
+include_once 'os2intra_bi.features.inc';
+
+/**
+ * Module for integrating statistics from KMD BI
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function os2intra_bi_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'taxonomy_form_term') {
+    if ($form['vocabulary_machine_name']['#value'] == 'os2intra_bi_opus_roles') {
+      $form['field_os2intra_bi_machine_name']['#disabled'] = TRUE;
+    }
+  }
+}

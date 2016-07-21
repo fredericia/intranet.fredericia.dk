@@ -1,0 +1,14 @@
+name = OS2intra BI
+description = Statistics from KMD BI
+core = 7.x
+package = OS2Intra
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = strongarm
+dependencies[] = taxonomy
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[field_base][] = field_os2intra_bi_machine_name
+features[field_instance][] = taxonomy_term-os2intra_bi_opus_roles-field_os2intra_bi_machine_name
+features[taxonomy][] = os2intra_bi_opus_roles
+project path = profiles/os2intra/modules/os2intra/custom
