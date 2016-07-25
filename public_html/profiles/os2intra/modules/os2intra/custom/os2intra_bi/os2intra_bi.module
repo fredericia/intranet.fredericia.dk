@@ -10,13 +10,304 @@ include_once 'os2intra_bi.features.inc';
  * Module for integrating statistics from KMD BI
  */
 
-/**
- * Implements hook_form_alter().
- */
-function os2intra_bi_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'taxonomy_form_term') {
-    if ($form['vocabulary_machine_name']['#value'] == 'os2intra_bi_opus_roles') {
-      $form['field_os2intra_bi_machine_name']['#disabled'] = TRUE;
-    }
-  }
-}
+ /**
+  * Implements hook_entity_info().
+  */
+ function os2intra_bi_entity_info() {
+   $info = array(
+     'os2intra_bi' => array(
+       'label' => t('OS2intra BI'),
+       'base table' => 'os2intra_bi',
+       'entity keys' => array(
+         'id' => 'id',
+         'bundle' => 'type',
+       ),
+       'bundle keys' => array(
+         'bundle' => 'type',
+       ),
+       'bundles' => array(),
+       'entity class' => 'OS2intraBI',
+       'controller class' => 'OS2intraBIController',
+       'metadata controller class' => '',
+       'fieldable' => TRUE,
+       'uri callback' => 'entity_class_uri',
+       'label callback' => 'entity_class_label',
+       'module' => 'os2intra_bi',
+     ),
+   );
+   $info['os2intra_bi_plugin'] = array(
+     'label' => t('OS2intra BI plugin'),
+     'base table' => 'os2intra_bi_plugin',
+     'entity keys' => array(
+       'id' => 'id',
+       'name' => 'type',
+       'label' => 'label',
+     ),
+     'bundle of' => 'os2intra_bi',
+     'entity class' => 'OS2intraBIPlugin',
+     'controller class' => 'OS2intraBIPluginController',
+     'metadata controller class' => '',
+     'fieldable' => FALSE,
+     'exportable' => TRUE,
+     'module' => 'os2intra_bi',
+     // Automatically create page for managing entity bundles.
+     'admin ui' => array(
+       'path' => 'admin/structure/os2intra_bi',
+       'file' => 'os2intra_bi.admin.inc',
+       'controller class' => 'OS2intraBIPluginUiController',
+     ),
+     // Access callback is necessary for admin UI.
+     // @see http://drupal.org/node/1021576
+     'access callback' => 'os2intra_bi_plugin_access',
+   );
+   return $info;
+ }
+
+ /**
+  * Implements hook_entity_property_info().
+  */
+ function os2intra_bi_entity_property_info() {
+   $info = array();
+
+   // Describe properties of entity.
+   $properties = &$info['os2intra_bi']['properties'];
+   $properties['id'] = array(
+     'type' => 'integer',
+     'schema field' => 'id',
+     'label' => t('Custom entity v6 ID'),
+     'description' => t('The internal ID of custom entity v6.'),
+     'setter callback' => 'entity_property_verbatim_set',
+   );
+   $properties['type'] = array(
+     'type' => 'text',
+     'schema field' => 'type',
+     'required' => TRUE,
+     'label' => t('Custom entity v6 type (bundle)'),
+     'description' => t('Type of custom entity v6.'),
+     'setter callback' => 'entity_property_verbatim_set',
+   );
+   $properties['title'] = array(
+     'type' => 'text',
+     'schema field' => 'title',
+     'required' => TRUE,
+     'label' => t('Custom entity v6 title'),
+     'description' => t('Title of custom entity v6.'),
+     'setter callback' => 'entity_property_verbatim_set',
+   );
+   $properties['description'] = array(
+     'type' => 'text',
+     'schema field' => 'description',
+     'label' => t('Custom entity v6 description'),
+     'description' => t('Description of custom entity v6.'),
+     'setter callback' => 'entity_property_verbatim_set',
+   );
+
+   // Describe properties of entity type.
+   $type_properties = &$info['os2intra_bi_plugin']['properties'];
+   $type_properties['id'] = array(
+     'type' => 'integer',
+     'schema field' => 'id',
+     'label' => t('Type ID'),
+     'setter callback' => 'entity_property_verbatim_set',
+   );
+   $type_properties['type'] = array(
+     'type' => 'text',
+     'schema field' => 'type',
+     'required' => TRUE,
+     'label' => t('Type name'),
+     'setter callback' => 'entity_property_verbatim_set',
+   );
+   $type_properties['label'] = array(
+     'type' => 'text',
+     'schema field' => 'label',
+     'required' => TRUE,
+     'label' => t('Type label'),
+     'setter callback' => 'entity_property_verbatim_set',
+   );
+   $type_properties['description'] = array(
+     'type' => 'text',
+     'schema field' => 'description',
+     'required' => TRUE,
+     'label' => t('Type description'),
+     'setter callback' => 'entity_property_verbatim_set',
+   );
+
+   return $info;
+ }
+
+ /**
+  * Implements hook_entity_info_alter().
+  *
+  * Specify admin pages for all existing entity bundles.
+  */
+ function os2intra_bi_entity_info_alter(&$entity_info) {
+   foreach (os2intra_bi_plugin_load_multiple() as $type => $info) {
+     $entity_info['os2intra_bi']['bundles'][$type] = array(
+       'label' => $info->label,
+       'admin' => array(
+         'path' => 'admin/structure/os2intra_bi/manage/%os2intra_bi_plugin',
+         'real path' => 'admin/structure/os2intra_bi/manage/' . $type,
+         'bundle argument' => 4,
+       ),
+     );
+   }
+ }
+
+ /**
+  * Implements hook_views_api().
+  */
+ function os2intra_bi_views_api() {
+   // Describe the folder where "os2intra_bi.views_default.inc" file
+   // is located.
+   return array(
+     'api' => 3,
+     'path' => drupal_get_path('module', 'os2intra_bi'),
+   );
+ }
+
+ /**
+  * Implements hook_menu().
+  */
+ function os2intra_bi_menu() {
+   $items = array();
+
+   // Base URI for dealing with entity.
+   $base_uri = 'os2intra_bi/%os2intra_bi';
+   $base_uri_argument_position = 1;
+
+   // URI for choosing bundle of entity to add.
+   $items['os2intra-bi/add'] = array(
+     'title' => 'Add OS2intra BI',
+     'page callback' => 'os2intra_bi_choose_bundle',
+     'access arguments' => array('administer os2intra_bi content'),
+     'file' => 'os2intra_bi.admin.inc',
+     'type' => MENU_LOCAL_ACTION,
+   );
+
+   // URI for adding entity of proper bundle.
+   foreach (os2intra_bi_plugin_load_multiple() as $type => $info) {
+     $items['os2intra_bi/add/' . $type] = array(
+       'title' => 'Add OS2intra BI',
+       'page callback' => 'os2intra_bi_add',
+       'page arguments' => array(2),
+       'access arguments' => array('administer os2intra_bi content'),
+       'file' => 'os2intra_bi.admin.inc',
+     );
+   }
+
+   // URI for viewing entity instances.
+   $items[$base_uri] = array(
+     'title callback' => 'entity_label',
+     'title arguments' => array('os2intra_bi', $base_uri_argument_position),
+     'page callback' => 'os2intra_bi_view',
+     'page arguments' => array($base_uri_argument_position),
+     'access arguments' => array('view os2intra_bi content'),
+     'file' => 'os2intra_bi.pages.inc',
+   );
+   $items[$base_uri . '/view'] = array(
+     'title' => 'View OS2intra BI',
+     'type' => MENU_DEFAULT_LOCAL_TASK,
+     'weight' => -10,
+   );
+
+   // URI for editing entity instances.
+   $items[$base_uri . '/edit'] = array(
+     'title' => 'Edit OS2intra BI',
+     'page callback' => 'drupal_get_form',
+     'page arguments' => array('os2intra_bi_form', $base_uri_argument_position),
+     'access arguments' => array('administer os2intra_bi content'),
+     'file' => 'os2intra_bi.admin.inc',
+     'type' => MENU_LOCAL_TASK,
+     'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
+   );
+
+   // URI for deleting entity instances.
+   $items[$base_uri . '/delete'] = array(
+     'title callback' => 'os2intra_bi_label',
+     'title arguments' => array($base_uri_argument_position),
+     'page callback' => 'drupal_get_form',
+     'page arguments' => array('os2intra_bi_delete_form', $base_uri_argument_position),
+     'access arguments' => array('administer os2intra_bi content'),
+     'file' => 'os2intra_bi.admin.inc',
+   );
+
+   // URI for deleting entity bundles.
+   $items['admin/structure/os2intra_bi/%os2intra_bi_plugin/delete'] = array(
+     'title' => 'Delete OS2intra BI Type',
+     'page callback' => 'drupal_get_form',
+     'page arguments' => array('os2intra_bi_plugin_form_delete_confirm', 4),
+     'access arguments' => array('administer os2intra_bi content'),
+     'weight' => 1,
+     'type' => MENU_NORMAL_ITEM,
+     'file' => 'os2intra_bi.admin.inc',
+   );
+
+   return $items;
+ }
+
+ /**
+  * Load an instance of os2intra_bi.
+  *
+  * @param int $id
+  *   Entity identifier.
+  * @param bool $reset
+  *   Whether to reset the internal cache for os2intra_bi.
+  *
+  * @return mixed
+  *   An actual entity, or false.
+  */
+ function os2intra_bi_load($id, $reset = FALSE) {
+   $entities = os2intra_bi_load_multiple(array($id), array(), $reset);
+   return reset($entities);
+ }
+
+ /**
+  * Load multiple instances of os2intra_bi.
+  *
+  * @param array $ids
+  *   Entity identifiers.
+  * @param array $conditions
+  *   (deprecated) An associative array of conditions on the base entity table.
+  * @param bool $reset
+  *   Whether to reset the internal cache for os2intra_bi.
+  *
+  * @return array
+  *   Founded entities.
+  */
+ function os2intra_bi_load_multiple($ids = array(), $conditions = array(), $reset = FALSE) {
+   return entity_load('os2intra_bi', $ids, $conditions, $reset);
+ }
+
+ /**
+  * Load an instance of os2intra_bi_plugin.
+  *
+  * @param string $entity_type
+  *   Name of the entity type to load.
+  *
+  * @return mixed
+  *   Founded entity type, or false.
+  */
+ function os2intra_bi_plugin_load($entity_type) {
+   return os2intra_bi_plugin_load_multiple($entity_type);
+ }
+
+ /**
+  * Load multiple instances of os2intra_bi_plugin.
+  *
+  * @param string $type_name
+  *   Name of the entity type to load.
+  *
+  * @return mixed
+  *   Founded entity type, or false.
+  */
+ function os2intra_bi_plugin_load_multiple($type_name = NULL) {
+   $types = entity_load_multiple_by_name('os2intra_bi_plugin', isset($type_name) ? array($type_name) : FALSE);
+   return isset($type_name) ? reset($types) : $types;
+ }
+
+ /**
+  * Access callback for os2intra_bi_plugin.
+  */
+ function os2intra_bi_plugin_access($op, $entity = NULL) {
+   return user_access('administer os2intra_bi_plugin content');
+ }

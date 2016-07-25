@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * @file
+ * Create tables for entity and entity bundles.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function os2intra_bi_schema() {
+  $schema = array();
+
+  // Table for storing data of entities.
+  $schema['os2intra_bi'] = array(
+    'description' => 'The base table for os2intra_bi.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'type' => array(
+        'description' => 'Entity bundle.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'title' => array(
+        'description' => 'Entity title.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'description' => array(
+        'description' => 'Entity description.',
+        'type' => 'text',
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+
+  // Table for storing data of entity exportable bundles.
+  $schema['os2intra_bi_plugin'] = array(
+    'description' => 'The base table for data of bundles of "os2intra_bi" entities.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'type' => array(
+        'description' => 'Plugin/bundle machine name.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ),
+      'label' => array(
+        'description' => 'Human-readable name of plugin/bundle.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'description' => array(
+        'description' => 'A brief description of plugin/bundle.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'medium',
+        'translatable' => TRUE,
+      ),
+    ) + entity_exportable_schema_fields(),
+    'primary key' => array('id'),
+    'unique keys' => array(
+      'type' => array('type'),
+    ),
+  );
+
+  return $schema;
+}
