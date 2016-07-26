@@ -21,7 +21,7 @@ function os2intra_bi_choose_bundle() {
     'list' => array(
       '#theme' => 'item_list',
       '#items' => $items,
-      '#title' => t('Choose type of entity to add.'),
+      '#title' => t('Choose type of OS2intra BI plugin to add'),
     ),
   );
 }
@@ -37,7 +37,9 @@ function os2intra_bi_choose_bundle() {
  */
 function os2intra_bi_add($type) {
   $entity_type = os2intra_bi_plugin_load_multiple($type);
-  drupal_set_title(t('Create @name', array('@name' => entity_label('entity_type', $entity_type))));
+  drupal_set_title(t('Create @name', array(
+    '@name' => $entity_type->label
+  )));
 
   // Return form for the given entity bundle.
   $entity = entity_create('os2intra_bi', array('type' => $type));
@@ -88,7 +90,7 @@ function os2intra_bi_form($form, &$form_state, $entity) {
   );
   $form['actions']['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Save entity'),
+    '#value' => t('Save plugin'),
     '#submit' => $submit + array('os2intra_bi_form_submit'),
   );
   $entity_id = entity_id('os2intra_bi', $entity);
@@ -165,7 +167,7 @@ function os2intra_bi_delete_form_submit($form, &$form_state) {
 
   // Redirect user.
   drupal_set_message(t('Entity %title deleted.', array('%title' => entity_label('os2intra_bi', $entity))));
-  $form_state['redirect'] = '<front>';
+  $form_state['redirect'] = '/os2intra-bi';
 }
 
 /**
@@ -245,7 +247,7 @@ function os2intra_bi_plugin_form_submit(&$form, &$form_state) {
   entity_save('os2intra_bi_plugin', $entity_type);
 
   // Redirect user.
-  $form_state['redirect'] = 'admin/structure/os2intra_bi';
+  $form_state['redirect'] = 'admin/structure/os2intra-bi';
 }
 
 /**
@@ -253,7 +255,7 @@ function os2intra_bi_plugin_form_submit(&$form, &$form_state) {
  */
 function os2intra_bi_plugin_form_submit_delete(&$form, &$form_state) {
   // Redirect user to "Delete" URI for this entity type.
-  $form_state['redirect'] = 'admin/structure/os2intra_bi/' . $form_state['os2intra_bi_plugin']->type . '/delete';
+  $form_state['redirect'] = 'admin/structure/os2intra-bi/' . $form_state['os2intra_bi_plugin']->type . '/delete';
 }
 
 /**
@@ -291,5 +293,5 @@ function os2intra_bi_plugin_form_delete_confirm_submit($form, &$form_state) {
 
   // Redirect user.
   drupal_set_message(t('@type %title has been deleted.', array('@type' => $entity_type->type, '%title' => $entity_type->label)));
-  $form_state['redirect'] = 'admin/structure/os2intra_bi';
+  $form_state['redirect'] = 'admin/structure/os2intra-bi';
 }

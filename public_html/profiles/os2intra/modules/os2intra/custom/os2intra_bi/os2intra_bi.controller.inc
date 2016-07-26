@@ -20,7 +20,7 @@ class OS2intraBI extends Entity {
    * Specify the default uri, which is picked up by uri() by default.
    */
   protected function defaultUri() {
-    return array('path' => 'os2intra_bi/' . $this->identifier());
+    return array('path' => 'os2intra-bi/' . $this->identifier());
   }
 }
 
@@ -100,7 +100,7 @@ class OS2intraBIPluginUiController extends EntityDefaultUIController {
    */
   public function hook_menu() {
     $items = parent::hook_menu();
-    $items[$this->path]['description'] = 'Manage OS2Intra BI plugins.';
+    $items[$this->path]['description'] = 'Manage OS2Intra BI Plugin Types.';
     return $items;
   }
 }
