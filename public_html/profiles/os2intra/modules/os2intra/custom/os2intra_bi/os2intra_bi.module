@@ -170,18 +170,6 @@ include_once 'os2intra_bi.features.inc';
  }
 
  /**
-  * Implements hook_views_api().
-  */
- function os2intra_bi_views_api() {
-   // Describe the folder where "os2intra_bi.views_default.inc" file
-   // is located.
-   return array(
-     'api' => 3,
-     'path' => drupal_get_path('module', 'os2intra_bi'),
-   );
- }
-
- /**
   * Implements hook_menu().
   */
  function os2intra_bi_menu() {
