@@ -63,7 +63,7 @@ include_once 'os2intra_bi.features.inc';
      'entity class' => 'OS2intraBIPlugin',
      'controller class' => 'OS2intraBIPluginController',
      'metadata controller class' => '',
-     'fieldable' => FALSE,
+     'fieldable' => TRUE,
      'exportable' => TRUE,
      'module' => 'os2intra_bi',
      // Automatically create page for managing entity bundles.
@@ -314,4 +314,147 @@ include_once 'os2intra_bi.features.inc';
   */
  function os2intra_bi_plugin_access($op, $entity = NULL) {
    return user_access('administer os2intra_bi_plugin content');
+ }
+
+ /**
+  * Implementation of hook_field_formatter_info().
+  */
+ function os2intra_bi_field_formatter_info() {
+   return array(
+     'tablefield_preview' => array(
+       'label' => t('Tabular Preview'),
+       'field types' => array('tablefield'),
+     ),
+   );
+ }
+
+ /**
+  * Implements hook_field_formatter_view().
+  */
+ function os2intra_bi_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+   $element = array();
+   $settings = $display['settings'];
+   $formatter = $display['type'];
+
+   foreach ($items as $delta => $table) {
+     // Rationalize the stored data
+     if (!empty($table['tabledata'])) {
+       $tabledata = array_slice($table['tabledata'], 0, 11);
+     }
+     elseif (!empty($table['value'])) {
+       $tabledata = tablefield_rationalize_table(unserialize(array_slice($table['value'], 0, 11)));
+     }
+
+     // Run the table through input filters
+     if (isset($tabledata)) {
+       if (!empty($tabledata)) {
+         foreach ($tabledata as $row_key => $row) {
+           foreach ($row as $col_key => $cell) {
+             if (!empty($table['format'])) {
+               $tabledata[$row_key][$col_key] = array('data' => check_markup($cell, $table['format']), 'class' => array('row_' . $row_key, 'col_' . $col_key));
+             }
+             else {
+               $tabledata[$row_key][$col_key] = array('data' => check_plain($cell), 'class' => array('row_' . $row_key, 'col_' . $col_key));
+             }
+           }
+         }
+       }
+
+       $tabledata = array_slice($tabledata, 0, 11);
+
+       $preview_tabledata = array();
+
+       foreach ($tabledata as $row_key => $row) {
+         foreach ($row as $col_key => $cell) {
+           if ($col_key > 3) {
+             unset($row[$col_key]);
+           }
+           else {
+             $preview_tabledata[$row_key][$col_key] = $cell;
+           }
+         }
+       }
+
+      // Pull the header for theming
+      $header_data = array_shift($preview_tabledata);
+
+       // Check for an empty header, if so we don't want to theme it.
+       $noheader = TRUE;
+       foreach ($header_data as $cell) {
+         if (strlen($cell['data']) > 0) {
+           $noheader = FALSE;
+           break;
+         }
+       }
+
+       $header = $noheader ? NULL : $header_data;
+
+       $entity_info = entity_get_info($entity_type);
+       $entity_id = !empty($entity_info['entity keys']['id']) ? $entity->{$entity_info['entity keys']['id']} : NULL;
+
+       // Theme the table for display
+       $element[$delta]['#markup'] = theme('tablefield_preview', array(
+         'header' => $header,
+         'rows' => $preview_tabledata,
+         'delta' => $delta,
+         'export' => isset($field['settings']['export']) ? $field['settings']['export'] : NULL,
+         'entity_type' => $entity_type,
+         'entity_id' => $entity_id,
+         'field_name' => $field['field_name'],
+         'langcode' => $langcode,
+       ));
+     }
+
+   }
+   return $element;
+ }
+
+ /**
+  * Implements hook_theme().
+  */
+ function os2intra_bi_theme() {
+   return array(
+     'tablefield_preview' => array(
+       'variables' => array(
+         'header' => NULL,
+         'rows' => NULL,
+         'delta' => NULL,
+         'export' => NULL,
+         'entity_type' => NULL,
+         'entity_id' => NULL,
+         'field_name' => NULL,
+         'langcode' => NULL,
+       ),
+     ),
+   );
+ }
+
+ /**
+  * Theme function for table view
+  */
+ function theme_tablefield_preview($variables) {
+   $attributes = array(
+     'id' => 'tablefield-' . $variables['delta'],
+     'class' => array(
+       'tablefield'
+     ),
+   );
+
+   // If the user has access to the csv export option, display it now.
+   $export = '';
+   if ($variables['export'] && user_access('export tablefield')) {
+     $url = sprintf('tablefield/export/%s/%s/%s/%s/%s', $variables['entity_type'], $variables['entity_id'], $variables['field_name'], $variables['langcode'], $variables['delta']);
+     $export = '<div id="tablefield-export-link-' . $variables['delta'] . '" class="tablefield-export-link">' . l(t('Export Table Data'), $url) . '</div>';
+   }
+
+   return '<div id="tablefield-wrapper-' . $variables['delta'] . '" class="tablefield-wrapper">'
+     . theme('table',
+       array(
+         'header' => $variables['header'],
+         'rows' => $variables['rows'],
+         'attributes' => $attributes,
+       )
+     )
+     . $export
+     . '</div>';
  }
