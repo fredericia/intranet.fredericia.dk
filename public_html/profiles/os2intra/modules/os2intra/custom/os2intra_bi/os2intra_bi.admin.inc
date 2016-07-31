@@ -244,6 +244,160 @@ function os2intra_bi_plugin_form_submit(&$form, &$form_state) {
   // Automatically get edited entity type from the form and save it.
   // @see entity_ui_form_submit_build_entity()
   $entity_type = entity_ui_form_submit_build_entity($form, $form_state);
+
+  $import_file_field_instance = array(
+    'label' => 'Import file',
+    'widget' =>
+    array (
+      'type' => 'tablefield',
+      'module' => 'tablefield',
+      'active' => 0,
+      'settings' =>
+      array (
+      ),
+    ),
+    'settings' =>
+    array (
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => false,
+    ),
+    'display' =>
+    array (
+      'default' =>
+      array (
+        'label' => 'above',
+        'type' => 'tablefield_default',
+        'settings' =>
+        array (
+        ),
+        'module' => 'tablefield',
+        'weight' => 0,
+      ),
+    ),
+    'required' => 1,
+    'description' => '',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' =>
+    array (
+      0 =>
+      array (
+        'tablefield' =>
+        array (
+          'cell_0_0' => '',
+          'cell_0_1' => '',
+          'cell_0_2' => '',
+          'cell_0_3' => '',
+          'cell_0_4' => '',
+          'cell_1_0' => '',
+          'cell_1_1' => '',
+          'cell_1_2' => '',
+          'cell_1_3' => '',
+          'cell_1_4' => '',
+          'cell_2_0' => '',
+          'cell_2_1' => '',
+          'cell_2_2' => '',
+          'cell_2_3' => '',
+          'cell_2_4' => '',
+          'cell_3_0' => '',
+          'cell_3_1' => '',
+          'cell_3_2' => '',
+          'cell_3_3' => '',
+          'cell_3_4' => '',
+          'cell_4_0' => '',
+          'cell_4_1' => '',
+          'cell_4_2' => '',
+          'cell_4_3' => '',
+          'cell_4_4' => '',
+          'rebuild' =>
+          array (
+            'count_cols' => 5,
+            'count_rows' => 5,
+            'rebuild' => 'Rebuild Table',
+          ),
+          'import' =>
+          array (
+            'file' => '',
+            'import' => 'Upload CSV',
+          ),
+        ),
+      ),
+    ),
+    'id' => '243',
+    'field_id' => '143',
+    'field_name' => 'os2intra_bi_import_file',
+    'entity_type' => 'os2intra_bi',
+    'bundle' => $entity_type->type,
+    'deleted' => '0',
+  );
+
+  $opus_roles_field_instance = array (
+    'label' => 'Opus Roles',
+    'widget' =>
+    array (
+      'weight' => '32',
+      'type' => 'entityreference_autocomplete_tags',
+      'module' => 'entityreference',
+      'active' => 1,
+      'settings' =>
+      array (
+        'match_operator' => 'CONTAINS',
+        'size' => '60',
+        'entityreference_autocreate' =>
+        array (
+          'active' => 0,
+          'author_current_user' => 1,
+          'author' => '',
+          'status' => '-1',
+        ),
+        'path' => '',
+      ),
+    ),
+    'settings' =>
+    array (
+      'behaviors' =>
+      array (
+        'prepopulate' =>
+        array (
+          'status' => 0,
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => false,
+    ),
+    'display' =>
+    array (
+      'default' =>
+      array (
+        'label' => 'above',
+        'type' => 'entityreference_label',
+        'settings' =>
+        array (
+          'link' => false,
+        ),
+        'module' => 'entityreference',
+        'weight' => 1,
+      ),
+    ),
+    'required' => 0,
+    'description' => '',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'id' => '246',
+    'field_id' => '144',
+    'field_name' => 'os2intra_bi_opus_roles',
+    'entity_type' => 'os2intra_bi',
+    'bundle' => $entity_type->type,
+    'deleted' => '0',
+  );
+
+  field_create_instance($import_file_field_instance);
+  field_create_instance($opus_roles_field_instance);
+
   entity_save('os2intra_bi_plugin', $entity_type);
 
   // Redirect user.
