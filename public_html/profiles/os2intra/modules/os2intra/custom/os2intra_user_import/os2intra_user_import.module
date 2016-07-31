@@ -293,6 +293,7 @@ function os2intra_user_import_settings() {
     13,
     14,
     15,
+    16,
   );
 
   $form['placeholder'] = array(
@@ -472,6 +473,13 @@ function os2intra_user_import_settings() {
     '#title'         => t('Birthdate'),
     '#options'       => $csv_cols,
     '#default_value' => variable_get('os2intra_mapping_birthdate'),
+  );
+
+  $form['mapping']['os2intra_mapping_opus_roles'] = array(
+    '#type'          => 'select',
+    '#title'         => t('Opus Roles'),
+    '#options'       => $csv_cols,
+    '#default_value' => variable_get('os2intra_mapping_opus_roles'),
   );
 
   $form['cleanup_help_block'] = array(
@@ -654,6 +662,7 @@ function _os2intra_user_import_process_file($file_path) {
     variable_get('os2intra_mapping_mobile')               => 'mobile',
     variable_get('os2intra_mapping_email')                => 'email',
     variable_get('os2intra_mapping_birthdate')            => 'birthdate',
+    variable_get('os2intra_mapping_opus_roles')           => 'opus_roles',
   );
 
   // Load data from file
@@ -877,6 +886,9 @@ function os2intra_user_import_save_user($user, $uid = '') {
     // Set department membership
     'og_user_node2'                   => array(LANGUAGE_NONE => array(0 => array('target_id' => array($department_nid)))),
 
+    // Set Opus Roles
+    'os2intra_users_opus_roles'       => array(LANGUAGE_NONE => array(0 => array('target_id' => array($user['opus_roles'])))),
+
 
     // Activate user
     'status'                          => ($account->uid != 0) ? $account->status : 1,
@@ -912,6 +924,14 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $fields['name'] = $user['ad_id'];
     $fields['pass'] = $password;
   }
+
+  // Create Opus Roles
+  $opus_roles = array();
+  foreach ($fields['os2intra_users_opus_roles'] as $opus_role) {
+    $opus_roles[] = explode(',', $opus_role[0]['target_id'][0]);
+  }
+
+  os2intra_user_import_create_opus_roles($opus_roles);
 
   // Save user
   $account = user_save($account, $fields);
@@ -1322,5 +1342,38 @@ function os2intra_user_import_add_managers_to_departments($form, &$form_state) {
     }
 
     $child->save();
+  }
+}
+
+/**
+ * Create terms for Opus Roles
+ *
+ * @param
+ *  array of Opus Roles to create if they do not exist already
+ */
+function os2intra_user_import_create_opus_roles($opus_roles) {
+  if (empty($opus_roles[0][0])) {
+    return;
+  }
+
+  $existing_roles = array();
+
+  $vocabulary = taxonomy_vocabulary_machine_name_load('os2intra_bi_opus_roles');
+  $terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
+
+  foreach ($terms as $term) {
+    $term = entity_metadata_wrapper('taxonomy_term', $term->tid);
+    $existing_roles[] = $term->os2intra_bi_machine_name->value();
+  }
+
+  foreach ($opus_roles[0] as $opus_role) {
+    if (!in_array($opus_role, $existing_roles)) {
+      $newterm = new stdClass();
+      $newterm->name = $opus_role;
+      $newterm->vid = $vocabulary->vid;
+      $newterm->parent = 0;
+      $newterm->os2intra_bi_machine_name[LANGUAGE_NONE][0]['value'] = $opus_role;
+      taxonomy_term_save($newterm);
+    }
   }
 }
