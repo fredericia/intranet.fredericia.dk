@@ -11,8 +11,8 @@ function os2intra_bi_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'taxonomy_term-os2intra_bi_opus_roles-field_os2intra_bi_machine_name'.
-  $field_instances['taxonomy_term-os2intra_bi_opus_roles-field_os2intra_bi_machine_name'] = array(
+  // 'taxonomy_term-os2intra_bi_opus_roles-os2intra_bi_machine_name'.
+  $field_instances['taxonomy_term-os2intra_bi_opus_roles-os2intra_bi_machine_name'] = array(
     'bundle' => 'os2intra_bi_opus_roles',
     'default_value' => NULL,
     'deleted' => 0,
@@ -39,7 +39,7 @@ function os2intra_bi_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_os2intra_bi_machine_name',
+    'field_name' => 'os2intra_bi_machine_name',
     'label' => 'Machine name',
     'required' => FALSE,
     'settings' => array(
