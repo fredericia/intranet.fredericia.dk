@@ -862,6 +862,26 @@ function os2intra_user_import_save_user($user, $uid = '') {
   // Get user membership to department
   $department_nid = _os2intra_user_import_get_department_nid($user['department']);
 
+  // Create Opus Roles and set them on user
+  $opus_roles = array();
+  $opus_role_tids = array();
+  $opus_role_vocabulary = taxonomy_vocabulary_machine_name_load('os2intra_bi_opus_roles');
+  foreach (explode(',', $user['opus_roles']) as $opus_role) {
+    $opus_roles[] = $opus_role;
+    $query = new EntityFieldQuery;
+    $result = $query
+      ->entityCondition('entity_type', 'taxonomy_term')
+      ->propertyCondition('name', $opus_role)
+      ->propertyCondition('vid', $opus_role_vocabulary->vid)
+      ->execute();
+
+    foreach ($result['taxonomy_term'] as $term) {
+      $opus_role_tids[] = array('tid' => $term->tid);
+    }
+  }
+
+  os2intra_user_import_create_opus_roles($opus_roles);
+
   // Populate fields
   $fields = array(
 
@@ -887,8 +907,7 @@ function os2intra_user_import_save_user($user, $uid = '') {
     'og_user_node2'                   => array(LANGUAGE_NONE => array(0 => array('target_id' => array($department_nid)))),
 
     // Set Opus Roles
-    'os2intra_users_opus_roles'       => array(LANGUAGE_NONE => array(0 => array('target_id' => array($user['opus_roles'])))),
-
+    'os2intra_users_opus_roles'       => array(LANGUAGE_NONE => $opus_role_tids),
 
     // Activate user
     'status'                          => ($account->uid != 0) ? $account->status : 1,
@@ -924,14 +943,6 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $fields['name'] = $user['ad_id'];
     $fields['pass'] = $password;
   }
-
-  // Create Opus Roles
-  $opus_roles = array();
-  foreach ($fields['os2intra_users_opus_roles'] as $opus_role) {
-    $opus_roles[] = explode(',', $opus_role[0]['target_id'][0]);
-  }
-
-  os2intra_user_import_create_opus_roles($opus_roles);
 
   // Save user
   $account = user_save($account, $fields);
@@ -1352,7 +1363,7 @@ function os2intra_user_import_add_managers_to_departments($form, &$form_state) {
  *  array of Opus Roles to create if they do not exist already
  */
 function os2intra_user_import_create_opus_roles($opus_roles) {
-  if (empty($opus_roles[0][0])) {
+  if (empty($opus_roles[0])) {
     return;
   }
 
@@ -1366,7 +1377,7 @@ function os2intra_user_import_create_opus_roles($opus_roles) {
     $existing_roles[] = $term->os2intra_bi_machine_name->value();
   }
 
-  foreach ($opus_roles[0] as $opus_role) {
+  foreach ($opus_roles as $opus_role) {
     if (!in_array($opus_role, $existing_roles)) {
       $newterm = new stdClass();
       $newterm->name = $opus_role;
