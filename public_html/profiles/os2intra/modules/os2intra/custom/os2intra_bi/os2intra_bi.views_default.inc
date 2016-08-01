@@ -155,5 +155,84 @@ function os2intra_bi_views_default_views() {
   );
   $export['os2intra_bi'] = $view;
 
+  $view = new view();
+  $view->name = 'os2intra_bi_block';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'users';
+  $view->human_name = 'OS2intra BI block';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'OS2intra BI block';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: User: User Opus Roles (os2intra_users_opus_roles) */
+  $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['id'] = 'os2intra_users_opus_roles_tid';
+  $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['table'] = 'field_data_os2intra_users_opus_roles';
+  $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['field'] = 'os2intra_users_opus_roles_tid';
+  $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['label'] = 'term fra os2intra_users_opus_roles';
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_os2intra_bi_opus_roles_os2intra_bi']['id'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
+  $handler->display->display_options['relationships']['reverse_os2intra_bi_opus_roles_os2intra_bi']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_os2intra_bi_opus_roles_os2intra_bi']['field'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
+  $handler->display->display_options['relationships']['reverse_os2intra_bi_opus_roles_os2intra_bi']['relationship'] = 'os2intra_users_opus_roles_tid';
+  $handler->display->display_options['relationships']['reverse_os2intra_bi_opus_roles_os2intra_bi']['label'] = 'OS2intra BI refererer til Ord i ordforråd fra os2intra_bi_opus_roles';
+  /* Field: OS2intra BI: BI plugin title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'os2intra_bi';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: OS2intra BI: Import file */
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['id'] = 'os2intra_bi_import_file';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['table'] = 'field_data_os2intra_bi_import_file';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['field'] = 'os2intra_bi_import_file';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['relationship'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['label'] = '';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['type'] = 'tablefield_preview';
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: User: Current */
+  $handler->display->display_options['filters']['uid_current']['id'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current']['value'] = '1';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['os2intra_bi_block'] = array(
+    t('Master'),
+    t('OS2intra BI block'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('term fra os2intra_users_opus_roles'),
+    t('OS2intra BI refererer til Ord i ordforråd fra os2intra_bi_opus_roles'),
+    t('Block'),
+  );
+  $export['os2intra_bi_block'] = $view;
+
   return $export;
 }
