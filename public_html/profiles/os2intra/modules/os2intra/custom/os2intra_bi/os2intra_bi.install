@@ -251,6 +251,10 @@ function os2intra_bi_install() {
     ),
   );
 
-  field_create_field($os2intra_bi_import_file);
-  field_create_field($field_opus_roles);
+  if (!field_info_field('os2intra_bi_import_file')) {
+    field_create_field($os2intra_bi_import_file);
+  }
+  if (!field_info_field('os2intra_bi_opus_roles')) {
+    field_create_field($field_opus_roles);
+  }
 }

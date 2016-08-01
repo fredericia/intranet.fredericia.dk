@@ -629,29 +629,57 @@ function os2intra_bi_create_fi($bundle) {
 /**
  * Create bundles from directories
  */
-function os2intra_bi_create_bundles() {
+function os2intra_bi_create_bundles_and_content() {
   $directory = variable_get('os2intra_bi_file_directory', '../bi');
   $scanned_directory = array_diff(scandir($directory), array('..', '.', '.DS_Store'));
   foreach ($scanned_directory as $dir) {
-    $machine_readable = strtolower($dir);
-    $machine_readable = preg_replace('@[^a-z0-9_]+@','_', $machine_readable);
+    $bundle_name = strtolower($dir);
+    $bundle_name = str_replace('æ', 'ae', $bundle_name);
+    $bundle_name = str_replace('ø', 'oe', $bundle_name);
+    $bundle_name = str_replace('å', 'aa', $bundle_name);
+    $bundle_name = preg_replace('@[^a-z0-9_]+@','_', $bundle_name);
 
+    // Check if bundle exists
     $query = new EntityFieldQuery;
     $query->entityCondition('entity_type', 'os2intra_bi_plugin');
-    $query->propertyCondition('type', $machine_readable);
+    $query->propertyCondition('type', $bundle_name);
     $result = $query->execute();
 
+    // If not, create the bundle
     if (!$result) {
       $bundle = new stdClass();
-      $bundle->type = $machine_readable;
+      $bundle->type = $bundle_name;
       $bundle->label = t($dir);
       $bundle->is_new = true;
       $bundle->description = t("Automatically created");
 
       $controller = new OS2intraBIPluginController('os2intra_bi_plugin');
       $controller->save($bundle);
+
+      // Attach fields to bundle
+      os2intra_bi_create_fi($bundle_name);
     }
 
-    os2intra_bi_create_fi($machine_readable);
+    // Look for files
+    $files = array_diff(scandir($directory . '/' . $dir), array('..', '.', '.DS_Store'));
+    $files = str_replace('.csv', '', $files);
+
+    foreach ($files as $file) {
+      // Check if content exists
+      $query = new EntityFieldQuery;
+      $query->entityCondition('entity_type', 'os2intra_bi');
+      $query->propertyCondition('type', $bundle_name);
+      $query->propertyCondition('title', $file);
+      $result = $query->execute();
+
+      if (!$result) {
+        // Create/update content
+        $entity_type = 'os2intra_bi';
+        $entity = entity_create($entity_type, array('type' => $bundle_name));
+        $wrapper = entity_metadata_wrapper($entity_type, $entity);
+        $wrapper->title = $file;
+        $wrapper->save();
+      }
+    }
   }
 }
