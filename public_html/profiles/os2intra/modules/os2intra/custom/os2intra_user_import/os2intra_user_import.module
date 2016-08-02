@@ -293,6 +293,7 @@ function os2intra_user_import_settings() {
     13,
     14,
     15,
+    16,
   );
 
   $form['placeholder'] = array(
@@ -474,6 +475,13 @@ function os2intra_user_import_settings() {
     '#default_value' => variable_get('os2intra_mapping_birthdate'),
   );
 
+  $form['mapping']['os2intra_mapping_department_name'] = array(
+    '#type'          => 'select',
+    '#title'         => t('Department name'),
+    '#options'       => $csv_cols,
+    '#default_value' => variable_get('os2intra_mapping_department_name'),
+  );
+
   $form['cleanup_help_block'] = array(
     '#type'   => 'item',
     '#title'  => t('Cleanup script'),
@@ -555,6 +563,18 @@ function os2intra_user_import_overview() {
  */
 function os2intra_user_import_run_with_drush() {
   if (variable_get('os2intra_user_import_enable', FALSE)) {
+    // Check if import has run successfully in 1.5 day
+    $last_import_epoch = variable_get('os2intra_user_import_epoch', time());
+    if (time() > $last_import_epoch + 129600) {
+      // Send mail
+      $params = array(
+        'subject' => t('1.5 day since last import'),
+        'body' => 'Check if the import is running correctly.',
+      );
+      $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'), 'drift@bellcom.dk');
+      drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
+    }
+
     setlocale(LC_ALL, "en_DK.UTF-8");
     $import_dir = variable_get('os2intra_user_import_dir', 'private://user_import');
 
@@ -571,6 +591,7 @@ function os2intra_user_import_run_with_drush() {
 
       os2intra_user_import_clear_log();
       os2intra_user_import_save_log('', 'Starting import');
+
       // Parse file, map data accordingly
       $users = _os2intra_user_import_process_file($realpath);
 
@@ -598,6 +619,9 @@ function os2intra_user_import_run_with_drush() {
       // Logging
       os2intra_user_import_save_log('', 'User import finished');
       os2intra_user_import_save_log('', 'Import finished');
+
+      // Timestamp to check if import has run successfully
+      variable_set('os2intra_user_import_epoch', time());
     }
     else {
       os2intra_user_import_save_log('', 'File does not exist');
@@ -654,6 +678,7 @@ function _os2intra_user_import_process_file($file_path) {
     variable_get('os2intra_mapping_mobile')               => 'mobile',
     variable_get('os2intra_mapping_email')                => 'email',
     variable_get('os2intra_mapping_birthdate')            => 'birthdate',
+    variable_get('os2intra_mapping_department_name')      => 'department_name',
   );
 
   // Load data from file
@@ -718,6 +743,24 @@ function os2intra_user_import_check_users(&$users) {
 
     if (!$user['first_name'] || !$user['employee_id']) {
       unset($users[$key]);
+    }
+
+    $query = new EntityFieldQuery;
+    $query->entityCondition('entity_type', 'user');
+    $query->propertyCondition('mail', $user['email']);
+    $result = $query->execute();
+
+    if ($result) {
+      $update_users[key(array_shift($result))] = $user;
+      unset($users[$key]);
+
+      // Send mail
+      $params = array(
+        'subject' => t('An email address appeared two times in the import'),
+        'body' => 'The email ' . $user['email'] . ' appeared two times in the import. Only one was created.',
+      );
+      $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'));
+      drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
     }
   }
 
@@ -979,9 +1022,30 @@ function os2intra_user_import_groups($users) {
     // Check if term already exists
     $result = os2intra_user_import_query_term_by_department($group);
 
+    // Term already exists
     if (!empty($result)) {
-      os2intra_user_import_save_log('', 'Group already exists: ' . $group);
-      os2intra_user_import_create_department(key($result['taxonomy_term']), $user['department']);
+      os2intra_user_import_save_log('', 'Group already exists: ' . $group . ' with name ' . $user['department_name']);
+      // Rename group term if needed
+      $term = taxonomy_term_load(key($result['taxonomy_term']));
+      $term->name = $user['department_name'];
+      taxonomy_term_save($term);
+      os2intra_user_import_create_department($term->tid, $user['department'], $user['department_name']);
+
+      // Search for parent tid for department
+      $result = os2intra_user_import_query_term_by_department($user['centre']);
+
+      if (!empty($result)) {
+        $parent_term = taxonomy_term_load(key($result['taxonomy_term']));
+        $parent_tid = $parent_term->tid;
+
+        // Send mail
+        $params = array(
+          'subject' => t('Department have new parent department'),
+          'body' => 'The department ' . $user['department_name'] . ' has a new parent department.',
+        );
+        $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'));
+        drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
+      }
     }
     else {
       // Create taxonomy terms
@@ -993,10 +1057,18 @@ function os2intra_user_import_groups($users) {
       if (!empty($result)) {
         $parent_term = taxonomy_term_load(key($result['taxonomy_term']));
         $parent_tid = $parent_term->tid;
+
+        // Send mail
+        $params = array(
+          'subject' => t('Department have new parent department'),
+          'body' => 'The department ' . $user['department_name'] . ' has a new parent department.',
+        );
+        $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'));
+        drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
       }
 
       $term = new stdClass();
-      $term->name = $group;
+      $term->name = $user['department_name'];
       $term->parent = array($parent_tid);
       $term->field_os2intra_department_id[LANGUAGE_NONE][0]['value'] = $group;
       $term->field_os2intra_shortname[LANGUAGE_NONE][0]['value'] = $user['department_shortname'];
@@ -1020,11 +1092,16 @@ function os2intra_user_import_groups($users) {
 /**
  * Create department nodes
  */
-function os2intra_user_import_create_department($tid, $department) {
+function os2intra_user_import_create_department($tid, $department, $department_name) {
 
-  // Check if department node already exists. If so, then do nothing.
+  // Check if department node already exists.
   $nid = _os2intra_user_import_get_department_nid($department);
   if ($nid) {
+    // Rename group node name if needed
+    $nid = _os2intra_user_import_get_department_nid($department);
+    $node = node_load($nid);
+    $node->title = $department_name;
+    node_save($node);
     return;
   }
 
