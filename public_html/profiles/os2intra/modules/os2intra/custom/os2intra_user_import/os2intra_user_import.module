@@ -875,8 +875,12 @@ function os2intra_user_import_save_user($user, $uid = '') {
       ->propertyCondition('vid', $opus_role_vocabulary->vid)
       ->execute();
 
-    foreach ($result['taxonomy_term'] as $term) {
-      $opus_role_tids[] = array('tid' => $term->tid);
+    if ($result) {
+      $tids = array_shift(array_values($result['taxonomy_term']));
+
+      foreach ($tids as $tid) {
+        $opus_role_tids[] = array('tid' => $tid);
+      }
     }
   }
 
