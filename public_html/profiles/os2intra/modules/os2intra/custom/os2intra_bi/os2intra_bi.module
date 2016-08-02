@@ -182,7 +182,8 @@ include_once 'os2intra_bi.features.inc';
    // Settings
    $items['os2intra-bi/settings'] = array(
      'title' => 'BI Settings',
-     'page callback' => 'os2intra_bi_settings',
+     'page callback' => 'drupal_get_form',
+     'page arguments' => array('os2intra_bi_settings'),
      'access arguments' => array('administer os2intra_bi content'),
      'file' => 'os2intra_bi.admin.inc',
      'type' => MENU_LOCAL_ACTION,
