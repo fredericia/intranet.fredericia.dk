@@ -301,15 +301,13 @@ function os2intra_bi_plugin_form_delete_confirm_submit($form, &$form_state) {
  * Settings form.
  */
 function os2intra_bi_settings() {
+  $form = array();
+
   $form['os2intra_bi_file_directory'] = array(
     '#type' => 'textfield',
     '#title' => t('Import directory'),
     '#default_value' => variable_get('os2intra_bi_file_directory', '../bi'),
   );
-  $form['os2intra_bi_import_frequency'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Import frequency'),
-    '#default_value' => variable_get('os2intra_bi_file_directory', '../bi'),
-  );
+
   return system_settings_form($form);
 }
