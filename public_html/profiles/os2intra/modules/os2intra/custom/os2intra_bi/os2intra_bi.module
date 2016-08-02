@@ -671,18 +671,53 @@ function os2intra_bi_create_bundles_and_content() {
       $query->entityCondition('entity_type', 'os2intra_bi');
       $query->propertyCondition('type', $bundle_name);
       $query->propertyCondition('title', $file);
-      $result = $query->execute();
+      $results = $query->execute();
 
-      if (!$result) {
-        // Create/update content
-        $entity_type = 'os2intra_bi';
+      $entity_type = 'os2intra_bi';
+
+      // Create content
+      if (!$results) {
         $entity = entity_create($entity_type, array('type' => $bundle_name));
         $wrapper = entity_metadata_wrapper($entity_type, $entity);
         $wrapper->title = $file;
+        $wrapper->os2intra_bi_import_file->set(os2intra_bi_csv_value($directory . '/' . $dir . '/' . $file . '.csv'));
+        $wrapper->save();
+      }
+
+      // Update content
+      foreach ($results as $result) {
+        $result = reset($result);
+        // $entity = entity_load($result->id);
+        $wrapper = entity_metadata_wrapper($entity_type, $result->id);
+        $wrapper->os2intra_bi_import_file->set(os2intra_bi_csv_value($directory . '/' . $dir . '/' . $file . '.csv'));
         $wrapper->save();
       }
     }
   }
+}
+
+/**
+ *
+ */
+function os2intra_bi_csv_value($fileuri) {
+  if (($handle = fopen($fileuri, "r")) !== FALSE) {
+    // Populate CSV values
+    $max_col_count = 0;
+    $row_count = 0;
+    $imported_tablefield = array();
+    while (($csv = fgetcsv($handle, 0, variable_get('tablefield_csv_separator', ','))) !== FALSE) {
+      $col_count = count($csv);
+      foreach ($csv as $col_id => $col) {
+        $imported_tablefield['cell_'. $row_count .'_'. $col_id] = $col;
+      }
+      $max_col_count = $col_count > $max_col_count ? $col_count : $max_col_count;
+      $row_count++;
+    }
+    fclose($handle);
+    $imported_tablefield['rebuild'] = array('count_cols' => $max_col_count, 'count_rows' => $row_count);
+  }
+
+  return array('value' => serialize($imported_tablefield));
 }
 
 /**
