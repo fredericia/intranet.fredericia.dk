@@ -1,0 +1,238 @@
+<?php
+/**
+ * @file
+ * os2intra_bi.views_default.inc
+ */
+
+/**
+ * Implements hook_views_default_views().
+ */
+function os2intra_bi_views_default_views() {
+  $export = array();
+
+  $view = new view();
+  $view->name = 'os2intra_bi';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'os2intra_bi';
+  $view->human_name = 'OS2intra BI';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'BI plugins';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'view os2intra_bi content';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'id' => 'id',
+    'title' => 'title',
+    'type' => 'type',
+    'nothing' => 'nothing',
+    'nothing_1' => 'nothing_1',
+  );
+  $handler->display->display_options['style_options']['default'] = 'type';
+  $handler->display->display_options['style_options']['info'] = array(
+    'id' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'type' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nothing' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nothing_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<a href="<?php print url(\'os2intra-bi/add\'); ?>>Add OS2intra BI</a>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Field: OS2intra BI: BI Plugin ID */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'os2intra_bi';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['label'] = 'ID';
+  $handler->display->display_options['fields']['id']['exclude'] = TRUE;
+  /* Field: OS2intra BI: BI plugin title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'os2intra_bi';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'BI plugin';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'os2intra-bi/[id]';
+  /* Field: OS2intra BI: BI Plugin type (bundle) */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'os2intra_bi';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = 'BI plugin type';
+  $handler->display->display_options['fields']['type']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['type']['alter']['path'] = '/admin/structure/os2intra_bi/manage/[type]';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Edit';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Edit';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = '/os2intra-bi/[id]/edit';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['label'] = 'Delete';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Delete';
+  $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'os2intra-bi/[id]/delete';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['path'] = 'os2intra-bi';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'OS2intra BI';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $translatables['os2intra_bi'] = array(
+    t('Master'),
+    t('BI plugins'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('<a href="<?php print url(\'os2intra-bi/add\'); ?>>Add OS2intra BI</a>'),
+    t('ID'),
+    t('.'),
+    t(','),
+    t('BI plugin'),
+    t('BI plugin type'),
+    t('Edit'),
+    t('Delete'),
+    t('Page'),
+  );
+  $export['os2intra_bi'] = $view;
+
+  $view = new view();
+  $view->name = 'os2intra_bi_block';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'users';
+  $view->human_name = 'OS2intra BI block';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'OS2intra BI block';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: User: User Opus Roles (os2intra_users_opus_roles) */
+  $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['id'] = 'os2intra_users_opus_roles_tid';
+  $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['table'] = 'field_data_os2intra_users_opus_roles';
+  $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['field'] = 'os2intra_users_opus_roles_tid';
+  $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['label'] = 'term fra os2intra_users_opus_roles';
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_os2intra_bi_opus_roles_os2intra_bi']['id'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
+  $handler->display->display_options['relationships']['reverse_os2intra_bi_opus_roles_os2intra_bi']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_os2intra_bi_opus_roles_os2intra_bi']['field'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
+  $handler->display->display_options['relationships']['reverse_os2intra_bi_opus_roles_os2intra_bi']['relationship'] = 'os2intra_users_opus_roles_tid';
+  $handler->display->display_options['relationships']['reverse_os2intra_bi_opus_roles_os2intra_bi']['label'] = 'OS2intra BI refererer til Ord i ordforråd fra os2intra_bi_opus_roles';
+  /* Field: OS2intra BI: BI plugin title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'os2intra_bi';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: OS2intra BI: Import file */
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['id'] = 'os2intra_bi_import_file';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['table'] = 'field_data_os2intra_bi_import_file';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['field'] = 'os2intra_bi_import_file';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['relationship'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['label'] = '';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['type'] = 'tablefield_preview';
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: User: Current */
+  $handler->display->display_options['filters']['uid_current']['id'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current']['table'] = 'users';
+  $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
+  $handler->display->display_options['filters']['uid_current']['value'] = '1';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['os2intra_bi_block'] = array(
+    t('Master'),
+    t('OS2intra BI block'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('term fra os2intra_users_opus_roles'),
+    t('OS2intra BI refererer til Ord i ordforråd fra os2intra_bi_opus_roles'),
+    t('Block'),
+  );
+  $export['os2intra_bi_block'] = $view;
+
+  return $export;
+}

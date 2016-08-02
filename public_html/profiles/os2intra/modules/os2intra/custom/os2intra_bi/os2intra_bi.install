@@ -1,0 +1,260 @@
+<?php
+
+/**
+ * @file
+ * Create tables for entity and entity bundles.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function os2intra_bi_schema() {
+  $schema = array();
+
+  // Table for storing data of entities.
+  $schema['os2intra_bi'] = array(
+    'description' => 'The base table for os2intra_bi.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'type' => array(
+        'description' => 'Entity bundle.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'title' => array(
+        'description' => 'Entity title.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'description' => array(
+        'description' => 'Entity description.',
+        'type' => 'text',
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+
+  // Table for storing data of entity exportable bundles.
+  $schema['os2intra_bi_plugin'] = array(
+    'description' => 'The base table for data of bundles of "os2intra_bi" entities.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'type' => array(
+        'description' => 'Plugin/bundle machine name.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ),
+      'label' => array(
+        'description' => 'Human-readable name of plugin/bundle.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'description' => array(
+        'description' => 'A brief description of plugin/bundle.',
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'medium',
+        'translatable' => TRUE,
+      ),
+    ) + entity_exportable_schema_fields(),
+    'primary key' => array('id'),
+    'unique keys' => array(
+      'type' => array('type'),
+    ),
+  );
+
+  return $schema;
+}
+
+function os2intra_bi_install() {
+  $os2intra_bi_import_file = array(
+    'translatable' => '0',
+    'entity_types' =>
+    array(
+    ),
+    'settings' =>
+    array(
+      'export' => 0,
+      'restrict_rebuild' => 0,
+      'lock_values' => 0,
+      'cell_processing' => '0',
+    ),
+    'storage' =>
+    array(
+      'type' => 'field_sql_storage',
+      'settings' =>
+      array(
+      ),
+      'module' => 'field_sql_storage',
+      'active' => '1',
+      'details' =>
+      array(
+        'sql' =>
+        array(
+          'FIELD_LOAD_CURRENT' =>
+          array(
+            'field_data_os2intra_bi_import_file' =>
+            array(
+              'value' => 'os2intra_bi_import_file_value',
+              'format' => 'os2intra_bi_import_file_format',
+            ),
+          ),
+          'FIELD_LOAD_REVISION' =>
+          array(
+            'field_revision_os2intra_bi_import_file' =>
+            array(
+              'value' => 'os2intra_bi_import_file_value',
+              'format' => 'os2intra_bi_import_file_format',
+            ),
+          ),
+        ),
+      ),
+    ),
+    'foreign keys' =>
+    array(
+    ),
+    'indexes' =>
+    array(
+    ),
+    'id' => '143',
+    'field_name' => 'os2intra_bi_import_file',
+    'type' => 'tablefield',
+    'module' => 'tablefield',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '1',
+    'deleted' => '0',
+    'columns' =>
+    array(
+      'value' =>
+      array(
+        'type' => 'text',
+        'size' => 'big',
+      ),
+      'format' =>
+      array(
+        'type' => 'varchar',
+        'length' => 255,
+        'default value' => '',
+      ),
+    ),
+  );
+
+  $field_opus_roles = array(
+    'translatable' => '0',
+    'entity_types' =>
+    array(
+    ),
+    'settings' =>
+    array(
+      'target_type' => 'taxonomy_term',
+      'handler' => 'base',
+      'handler_settings' =>
+      array(
+        'target_bundles' =>
+        array(
+          'os2intra_bi_opus_roles' => 'os2intra_bi_opus_roles',
+        ),
+        'sort' =>
+        array(
+          'type' => 'none',
+        ),
+        'behaviors' =>
+        array(
+          'views-select-list' =>
+          array(
+            'status' => 0,
+          ),
+        ),
+      ),
+    ),
+    'storage' =>
+    array(
+      'type' => 'field_sql_storage',
+      'settings' =>
+      array(
+      ),
+      'module' => 'field_sql_storage',
+      'active' => '1',
+      'details' =>
+      array(
+        'sql' =>
+        array(
+          'FIELD_LOAD_CURRENT' =>
+          array(
+            'field_data_os2intra_bi_opus_roles' =>
+            array(
+              'target_id' => 'os2intra_bi_opus_roles_target_id',
+            ),
+          ),
+          'FIELD_LOAD_REVISION' =>
+          array(
+            'field_revision_os2intra_bi_opus_roles' =>
+            array(
+              'target_id' => 'os2intra_bi_opus_roles_target_id',
+            ),
+          ),
+        ),
+      ),
+    ),
+    'foreign keys' =>
+    array(
+      'taxonomy_term_data' =>
+      array(
+        'table' => 'taxonomy_term_data',
+        'columns' =>
+        array(
+          'target_id' => 'tid',
+        ),
+      ),
+    ),
+    'indexes' =>
+    array(
+      'target_id' =>
+      array(
+        0 => 'target_id',
+      ),
+    ),
+    'id' => '144',
+    'field_name' => 'os2intra_bi_opus_roles',
+    'type' => 'entityreference',
+    'module' => 'entityreference',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '-1',
+    'deleted' => '0',
+    'columns' =>
+    array(
+      'target_id' =>
+      array(
+        'description' => 'The id of the target entity.',
+        'type' => 'int',
+        'unsigned' => true,
+        'not null' => true,
+      ),
+    ),
+  );
+
+  if (!field_info_field('os2intra_bi_import_file')) {
+    field_create_field($os2intra_bi_import_file);
+  }
+  if (!field_info_field('os2intra_bi_opus_roles')) {
+    field_create_field($field_opus_roles);
+  }
+}
