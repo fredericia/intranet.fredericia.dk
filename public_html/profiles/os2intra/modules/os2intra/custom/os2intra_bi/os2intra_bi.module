@@ -631,7 +631,7 @@ function os2intra_bi_create_fi($bundle) {
  * Create bundles from directories
  */
 function os2intra_bi_create_bundles_and_content() {
-  $directory = variable_get('os2intra_bi_file_directory', '../bi');
+  $directory = variable_get('os2intra_bi_file_directory', '/var/www/test.intranet.fredericia.dk/bi');
   $scanned_directory = array_diff(scandir($directory), array('..', '.', '.DS_Store'));
   foreach ($scanned_directory as $dir) {
     $bundle_name = strtolower($dir);
@@ -683,4 +683,18 @@ function os2intra_bi_create_bundles_and_content() {
       }
     }
   }
+}
+
+/**
+ * Implements hook_cronapi().
+ */
+function os2intra_bi_cronapi() {
+  $items = array();
+
+  $items['os2intra_bi_import'] = array(
+    'title' => t('OS2intra BI import'),
+    'callback' => 'os2intra_bi_create_bundles_and_content',
+  );
+
+  return $items;
 }

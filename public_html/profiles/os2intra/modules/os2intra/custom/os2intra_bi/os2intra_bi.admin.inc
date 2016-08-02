@@ -306,7 +306,8 @@ function os2intra_bi_settings() {
   $form['os2intra_bi_file_directory'] = array(
     '#type' => 'textfield',
     '#title' => t('Import directory'),
-    '#default_value' => variable_get('os2intra_bi_file_directory', '../bi'),
+    '#description' => t('Needs to be the full path.'),
+    '#default_value' => variable_get('os2intra_bi_file_directory', '/var/www/test.intranet.fredericia.dk/bi'),
   );
 
   return system_settings_form($form);
