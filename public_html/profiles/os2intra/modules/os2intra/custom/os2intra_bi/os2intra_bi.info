@@ -11,6 +11,7 @@ dependencies[] = strongarm
 dependencies[] = tablefield
 dependencies[] = taxonomy
 dependencies[] = text
+dependencies[] = ultimate_cron
 dependencies[] = views
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
