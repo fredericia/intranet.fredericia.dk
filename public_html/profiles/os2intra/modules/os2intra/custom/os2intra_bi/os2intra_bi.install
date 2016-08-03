@@ -39,6 +39,21 @@ function os2intra_bi_schema() {
         'description' => 'Entity description.',
         'type' => 'text',
       ),
+      'status' => array(
+        'status' => 'Entity status.',
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'filepath' => array(
+        'filepath' => 'Entity filepath.',
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'modified' => array(
+        'filepath' => 'Entity file modified.',
+        'type' => 'integer',
+        'length' => 11,
+      ),
     ),
     'primary key' => array('id'),
   );
