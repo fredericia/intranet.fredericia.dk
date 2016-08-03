@@ -910,6 +910,7 @@ function os2intra_user_import_save_user($user, $uid = '') {
   $opus_role_vocabulary = taxonomy_vocabulary_machine_name_load('os2intra_bi_opus_roles');
   foreach (explode(',', $user['opus_roles']) as $opus_role) {
     $opus_roles[] = $opus_role;
+    os2intra_user_import_create_opus_roles($opus_roles);
     $query = new EntityFieldQuery;
     $result = $query
       ->entityCondition('entity_type', 'taxonomy_term')
@@ -925,8 +926,6 @@ function os2intra_user_import_save_user($user, $uid = '') {
       }
     }
   }
-
-  os2intra_user_import_create_opus_roles($opus_roles);
 
   // Populate fields
   $fields = array(
