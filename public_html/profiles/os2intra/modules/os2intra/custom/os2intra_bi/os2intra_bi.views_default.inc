@@ -189,12 +189,23 @@ function os2intra_bi_views_default_views() {
   $handler->display->display_options['relationships']['reverse_os2intra_bi_opus_roles_os2intra_bi']['field'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
   $handler->display->display_options['relationships']['reverse_os2intra_bi_opus_roles_os2intra_bi']['relationship'] = 'os2intra_users_opus_roles_tid';
   $handler->display->display_options['relationships']['reverse_os2intra_bi_opus_roles_os2intra_bi']['label'] = 'OS2intra BI refererer til Ord i ordforråd fra os2intra_bi_opus_roles';
+  /* Field: OS2intra BI: BI Plugin ID */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'os2intra_bi';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['relationship'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
+  $handler->display->display_options['fields']['id']['label'] = '';
+  $handler->display->display_options['fields']['id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
   /* Field: OS2intra BI: BI plugin title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'os2intra_bi';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'os2intra-bi/[id]';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: OS2intra BI: Import file */
   $handler->display->display_options['fields']['os2intra_bi_import_file']['id'] = 'os2intra_bi_import_file';
@@ -230,6 +241,8 @@ function os2intra_bi_views_default_views() {
     t('Desc'),
     t('term fra os2intra_users_opus_roles'),
     t('OS2intra BI refererer til Ord i ordforråd fra os2intra_bi_opus_roles'),
+    t('.'),
+    t(','),
     t('Block'),
   );
   $export['os2intra_bi_block'] = $view;
