@@ -117,6 +117,27 @@ include_once 'os2intra_bi.features.inc';
      'description' => t('Description of BI plugin.'),
      'setter callback' => 'entity_property_verbatim_set',
    );
+   $properties['status'] = array(
+     'type' => 'text',
+     'schema field' => 'status',
+     'label' => t('BI plugin status'),
+     'description' => t('Status of BI plugin.'),
+     'setter callback' => 'entity_property_verbatim_set',
+   );
+   $properties['filepath'] = array(
+     'type' => 'text',
+     'schema field' => 'filepath',
+     'label' => t('BI plugin filepath'),
+     'description' => t('Filepath of BI plugin.'),
+     'setter callback' => 'entity_property_verbatim_set',
+   );
+   $properties['modified'] = array(
+     'type' => 'date',
+     'schema field' => 'modified',
+     'label' => t('BI plugin modified timestamp'),
+     'description' => t('When BI plugin was modified.'),
+     'setter callback' => 'entity_property_verbatim_set',
+   );
 
    // Describe properties of entity type.
    $type_properties = &$info['os2intra_bi_plugin']['properties'];
@@ -666,6 +687,16 @@ function os2intra_bi_create_bundles_and_content() {
     $files = str_replace('.csv', '', $files);
 
     foreach ($files as $file) {
+      $filepath = $directory . '/' . $dir . '/' . $file . '.csv';
+
+      // Check if it is a valid CSV file
+      $file_info = new finfo(FILEINFO_MIME);
+      $mime_type = $file_info->buffer(file_get_contents($filepath));
+
+      if (!preg_match('/text\/plain/', $mime_type)) {
+        continue;
+      }
+
       // Check if content exists
       $query = new EntityFieldQuery;
       $query->entityCondition('entity_type', 'os2intra_bi');
@@ -680,18 +711,34 @@ function os2intra_bi_create_bundles_and_content() {
         $entity = entity_create($entity_type, array('type' => $bundle_name));
         $wrapper = entity_metadata_wrapper($entity_type, $entity);
         $wrapper->title = $file;
+        $wrapper->filepath->set($directory . '/' . $dir . '/' . $file . '.csv');
         $wrapper->os2intra_bi_import_file->set(os2intra_bi_csv_value($directory . '/' . $dir . '/' . $file . '.csv'));
+        $wrapper->modified->set(filemtime($filepath));
         $wrapper->save();
       }
 
       // Update content
       foreach ($results as $result) {
         $result = reset($result);
-        // $entity = entity_load($result->id);
         $wrapper = entity_metadata_wrapper($entity_type, $result->id);
+        $wrapper->filepath->set($directory . '/' . $dir . '/' . $file . '.csv');
         $wrapper->os2intra_bi_import_file->set(os2intra_bi_csv_value($directory . '/' . $dir . '/' . $file . '.csv'));
+        $wrapper->modified->set(filemtime($filepath));
         $wrapper->save();
       }
+    }
+  }
+
+  // Check if files exists and set satus
+  $query = new EntityFieldQuery;
+  $query->entityCondition('entity_type', $entity_type);
+  $results = $query->execute();
+
+  foreach ($results as $result) {
+    foreach ($result as $key => $value) {
+      $wrapper = entity_metadata_wrapper($entity_type, $key);
+      file_exists($wrapper->filepath->value()) ? $wrapper->status->set('OK') : $wrapper->status->set('File is missing');
+      $wrapper->save();
     }
   }
 }
@@ -732,4 +779,24 @@ function os2intra_bi_cronapi() {
   );
 
   return $items;
+}
+
+/**
+ * Add status to os2intra_bi entities
+ */
+function os2intra_bi_update_7005() {
+  db_add_field('os2intra_bi', 'status', array(
+    'type' => 'varchar',
+    'length' => 255,
+  ));
+
+  db_add_field('os2intra_bi', 'filepath', array(
+    'type' => 'varchar',
+    'length' => 255,
+  ));
+
+  db_add_field('os2intra_bi', 'modified', array(
+    'type' => 'int',
+    'length' => 11,
+  ));
 }

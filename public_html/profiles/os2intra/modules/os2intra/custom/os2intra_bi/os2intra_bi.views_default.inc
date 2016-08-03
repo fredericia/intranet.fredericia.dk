@@ -84,22 +84,35 @@ function os2intra_bi_views_default_views() {
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'os2intra_bi';
   $handler->display->display_options['fields']['id']['field'] = 'id';
-  $handler->display->display_options['fields']['id']['label'] = 'ID';
+  $handler->display->display_options['fields']['id']['label'] = '';
   $handler->display->display_options['fields']['id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
   /* Field: OS2intra BI: BI plugin title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'os2intra_bi';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = 'BI plugin';
+  $handler->display->display_options['fields']['title']['label'] = 'Title';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['path'] = 'os2intra-bi/[id]';
   /* Field: OS2intra BI: BI Plugin type (bundle) */
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'os2intra_bi';
   $handler->display->display_options['fields']['type']['field'] = 'type';
-  $handler->display->display_options['fields']['type']['label'] = 'BI plugin type';
+  $handler->display->display_options['fields']['type']['label'] = 'Type';
   $handler->display->display_options['fields']['type']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['type']['alter']['path'] = '/admin/structure/os2intra_bi/manage/[type]';
+  $handler->display->display_options['fields']['type']['alter']['path'] = 'admin/structure/os2intra-bi/manage/[type]';
+  /* Field: OS2intra BI: BI plugin status */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'os2intra_bi';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['label'] = 'Status';
+  /* Field: OS2intra BI: BI plugin modified timestamp */
+  $handler->display->display_options['fields']['modified_1']['id'] = 'modified_1';
+  $handler->display->display_options['fields']['modified_1']['table'] = 'os2intra_bi';
+  $handler->display->display_options['fields']['modified_1']['field'] = 'modified';
+  $handler->display->display_options['fields']['modified_1']['label'] = 'Fil sidst ændret';
+  $handler->display->display_options['fields']['modified_1']['date_format'] = 'time ago';
+  $handler->display->display_options['fields']['modified_1']['second_date_format'] = 'long';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -144,11 +157,12 @@ function os2intra_bi_views_default_views() {
     t('next ›'),
     t('last »'),
     t('<a href="<?php print url(\'os2intra-bi/add\'); ?>>Add OS2intra BI</a>'),
-    t('ID'),
     t('.'),
     t(','),
-    t('BI plugin'),
-    t('BI plugin type'),
+    t('Title'),
+    t('Type'),
+    t('Status'),
+    t('Fil sidst ændret'),
     t('Edit'),
     t('Delete'),
     t('Page'),
@@ -178,7 +192,7 @@ function os2intra_bi_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: User: User Opus Roles (os2intra_users_opus_roles) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['id'] = 'os2intra_users_opus_roles_tid';
   $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['table'] = 'field_data_os2intra_users_opus_roles';
   $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['field'] = 'os2intra_users_opus_roles_tid';
