@@ -51,24 +51,6 @@ function os2intra_user_import_check_users(&$users) {
     if (!$user['first_name'] || !$user['employee_id']) {
       unset($users[$key]);
     }
-
-    $query = new EntityFieldQuery;
-    $query->entityCondition('entity_type', 'user');
-    $query->propertyCondition('mail', $user['email']);
-    $result = $query->execute();
-
-    if ($result) {
-      $update_users[key(array_shift($result))] = $user;
-      unset($users[$key]);
-
-      // Send mail
-      $params = array(
-        'subject' => t('An email address appeared two times in the import'),
-        'body' => 'The email ' . $user['email'] . ' appeared two times in the import. Only one was created.',
-      );
-      $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'));
-      drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
-    }
   }
 
   return $update_users;
@@ -266,6 +248,14 @@ function os2intra_user_import_save_user($user, $uid = '') {
   // Save user
   $account = user_save($account, $fields);
 
+  // Remove all department memberships
+  $gid_types = og_get_groups_by_user($account);
+  foreach ($gid_types as $gid_type) {
+    foreach ($gid_type as $gid) {
+      og_role_revoke('node', $gid, $account->uid, variable_get('os2intra_user_import_og_role_id_primary', 16));
+    }
+  }
+
   // Set department membership and role
   $values = array(
     'entity' => $account,
@@ -273,7 +263,6 @@ function os2intra_user_import_save_user($user, $uid = '') {
   );
   og_group('node', $department_nid, $values);
   og_role_grant('node', $department_nid, $account->uid, variable_get('os2intra_user_import_og_role_id_primary', 16));
-
 
   // Create authmap for user
   $authmap = array(
