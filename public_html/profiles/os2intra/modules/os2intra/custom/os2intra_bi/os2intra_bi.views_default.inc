@@ -181,7 +181,7 @@ function os2intra_bi_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'OS2intra BI block';
+  $handler->display->display_options['title'] = 'OS2intra BI';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access user profiles';
@@ -190,9 +190,10 @@ function os2intra_bi_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Broken/missing handler */
+  /* Relationship: User: User Opus Roles (os2intra_users_opus_roles) */
   $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['id'] = 'os2intra_users_opus_roles_tid';
   $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['table'] = 'field_data_os2intra_users_opus_roles';
   $handler->display->display_options['relationships']['os2intra_users_opus_roles_tid']['field'] = 'os2intra_users_opus_roles_tid';
@@ -242,11 +243,54 @@ function os2intra_bi_views_default_views() {
   $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
   $handler->display->display_options['filters']['uid_current']['value'] = '1';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Full */
+  $handler = $view->new_display('block', 'Full', 'block');
+
+  /* Display: Titles */
+  $handler = $view->new_display('block', 'Titles', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'OS2intra BI';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '›';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: OS2intra BI: BI Plugin ID */
+  $handler->display->display_options['fields']['id']['id'] = 'id';
+  $handler->display->display_options['fields']['id']['table'] = 'os2intra_bi';
+  $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['relationship'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
+  $handler->display->display_options['fields']['id']['label'] = '';
+  $handler->display->display_options['fields']['id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
+  /* Field: OS2intra BI: BI plugin title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'os2intra_bi';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'os2intra-bi/[id]';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: OS2intra BI: Import file */
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['id'] = 'os2intra_bi_import_file';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['table'] = 'field_data_os2intra_bi_import_file';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['field'] = 'os2intra_bi_import_file';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['relationship'] = 'reverse_os2intra_bi_opus_roles_os2intra_bi';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['label'] = '';
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['os2intra_bi_import_file']['type'] = 'tablefield_preview';
   $translatables['os2intra_bi_block'] = array(
     t('Master'),
-    t('OS2intra BI block'),
+    t('OS2intra BI'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -257,7 +301,15 @@ function os2intra_bi_views_default_views() {
     t('OS2intra BI refererer til Ord i ordforråd fra os2intra_bi_opus_roles'),
     t('.'),
     t(','),
-    t('Block'),
+    t('Full'),
+    t('Titles'),
+    t('Antal elementer'),
+    t('- Alle -'),
+    t('Forskydning'),
+    t('« first'),
+    t('‹'),
+    t('›'),
+    t('last »'),
   );
   $export['os2intra_bi_block'] = $view;
 
