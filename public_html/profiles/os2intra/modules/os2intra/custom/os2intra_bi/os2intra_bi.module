@@ -222,13 +222,21 @@ include_once 'os2intra_bi.features.inc';
    // URI for adding entity of proper bundle.
    foreach (os2intra_bi_plugin_load_multiple() as $type => $info) {
      $items['os2intra-bi/add/' . $type] = array(
-       'title' => 'Add BI Plugin of type ' . $type,
+       'title' => t('Add BI Plugin of type ') . $type,
        'page callback' => 'os2intra_bi_add',
        'page arguments' => array(2),
        'access arguments' => array('administer os2intra_bi content'),
        'file' => 'os2intra_bi.admin.inc',
      );
    }
+
+   // URI for viewing entity bundles
+   $items['os2intra-bi'] = array(
+     'title' => t('OS2intra BI plugin types'),
+     'page callback' => 'os2intra_bi_view_bundles',
+     'access arguments' => array('view os2intra_bi content'),
+     'file' => 'os2intra_bi.pages.inc',
+   );
 
    // URI for viewing entity instances.
    $items[$base_uri] = array(
