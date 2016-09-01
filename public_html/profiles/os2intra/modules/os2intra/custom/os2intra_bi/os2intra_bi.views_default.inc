@@ -22,7 +22,6 @@ function os2intra_bi_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'BI plugins';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'view os2intra_bi content';
@@ -79,7 +78,8 @@ function os2intra_bi_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<a href="<?php print url(\'os2intra-bi/add\'); ?>>Add OS2intra BI</a>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['format'] = 'fuld_html';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Field: OS2intra BI: BI Plugin ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'os2intra_bi';
@@ -129,11 +129,25 @@ function os2intra_bi_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Delete';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'os2intra-bi/[id]/delete';
+  /* Contextual filter: OS2intra BI: BI Plugin type (bundle) */
+  $handler->display->display_options['arguments']['type']['id'] = 'type';
+  $handler->display->display_options['arguments']['type']['table'] = 'os2intra_bi';
+  $handler->display->display_options['arguments']['type']['field'] = 'type';
+  $handler->display->display_options['arguments']['type']['exception']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['type']['exception']['title'] = 'alle';
+  $handler->display->display_options['arguments']['type']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['type']['title'] = 'Viser %1 OS2intra plugins';
+  $handler->display->display_options['arguments']['type']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['type']['default_argument_options']['index'] = '2';
+  $handler->display->display_options['arguments']['type']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['type']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['type']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['type']['limit'] = '0';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['path'] = 'os2intra-bi';
+  $handler->display->display_options['path'] = 'os2intra-bi/types/%';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'OS2intra BI';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -142,7 +156,6 @@ function os2intra_bi_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['os2intra_bi'] = array(
     t('Master'),
-    t('BI plugins'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -165,6 +178,8 @@ function os2intra_bi_views_default_views() {
     t('Fil sidst ændret'),
     t('Edit'),
     t('Delete'),
+    t('alle'),
+    t('Viser %1 OS2intra plugins'),
     t('Page'),
   );
   $export['os2intra_bi'] = $view;
