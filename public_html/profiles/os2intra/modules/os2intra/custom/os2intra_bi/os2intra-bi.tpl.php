@@ -29,13 +29,18 @@
  */
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      hide($content['description']);
-      hide($content['os2intra_bi_import_file_modified']);
-      print render($content);
-      print render($content['os2intra_bi_import_file_modified']);
-    ?>
+  <?php print render($content['os2intra_bi_plugin_logo']); ?>
+  <div class="entity-os2intra-bi-inner">
+    <div class="content"<?php print $content_attributes; ?>>
+      <?php
+        hide($content['description']);
+        hide($content['os2intra_bi_import_file_modified']);
+        hide($content['os2intra_bi_plugin_logo']);
+        print render($content);
+      ?>
+      <div class="bi-import-file-modified">
+        <?php print render($content['os2intra_bi_import_file_modified']); ?>
+      </div>
+    </div>
   </div>
 </div>

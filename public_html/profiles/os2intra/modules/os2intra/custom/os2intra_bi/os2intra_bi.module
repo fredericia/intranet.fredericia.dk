@@ -477,13 +477,21 @@ include_once 'os2intra_bi.features.inc';
  *
  * Runs a entity specific preprocess function, if it exists.
  */
-function os2intra_bi_preprocess_entity(&$variables, $hook) {
+function os2intra_bi_preprocess_entity(&$variables) {
   if ($variables['entity_type'] == 'os2intra_bi') {
+
+    // Last modified date
     $variables['content']['#attached']['css'][] = drupal_get_path('module', 'os2intra_bi') . '/css/view.css';
     $variables['content']['os2intra_bi_import_file_modified'] = array(
-      '#prefix' => '<div class="bi-import-file-modified">',
       '#markup' => '<b>' . t('File last updated') . '</b><br />' . format_date($variables['os2intra_bi']->modified),
-      '#suffix' => '</div>',
+    );
+
+    // BI plugin logo
+    $image = file_load(variable_get('os2intra_bi_plugin_logo_fid'));
+    $variables['content']['os2intra_bi_plugin_logo'] = array(
+      '#theme' => 'image',
+      '#path' => $image->uri,
+      '#alt' => t('OS2intra BI Plugin logo'),
     );
   }
 }
