@@ -168,6 +168,14 @@ include_once 'os2intra_bi.features.inc';
      'label' => t('Type description'),
      'setter callback' => 'entity_property_verbatim_set',
    );
+   $type_properties['split'] = array(
+     'description' => 'Split CSV files into mutliple entities.',
+     'type' => 'boolean',
+     'schema field' => 'split',
+     'required' => FALSE,
+     'label' => t('Split CSV'),
+     'setter callback' => 'entity_property_verbatim_set',
+   );
 
    return $info;
  }
@@ -820,7 +828,7 @@ function os2intra_bi_cronapi() {
 /**
  * Add status to os2intra_bi entities
  */
-function os2intra_bi_update_7005() {
+function os2intra_bi_update_7001() {
   db_add_field('os2intra_bi', 'status', array(
     'type' => 'varchar',
     'length' => 255,

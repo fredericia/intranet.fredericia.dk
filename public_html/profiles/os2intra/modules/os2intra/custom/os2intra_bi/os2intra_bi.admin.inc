@@ -216,6 +216,10 @@ function os2intra_bi_plugin_form($form, &$form_state, $entity_type, $op = 'edit'
     '#default_value' => isset($entity_type->description) ? $entity_type->description : '',
     '#description' => t('Description about the entity type.'),
   );
+  $form['split'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Split files on this type.'),
+  );
 
   // Add some buttons.
   $form['actions'] = array('#type' => 'actions');

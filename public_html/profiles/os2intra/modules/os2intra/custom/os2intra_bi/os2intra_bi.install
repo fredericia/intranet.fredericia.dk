@@ -51,7 +51,7 @@ function os2intra_bi_schema() {
       ),
       'modified' => array(
         'filepath' => 'Entity file modified.',
-        'type' => 'integer',
+        'type' => 'int',
         'length' => 11,
       ),
     ),
@@ -86,6 +86,13 @@ function os2intra_bi_schema() {
         'not null' => TRUE,
         'size' => 'medium',
         'translatable' => TRUE,
+      ),
+      'split' => array(
+        'description' => 'Split CSV files into mutliple entities.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
       ),
     ) + entity_exportable_schema_fields(),
     'primary key' => array('id'),
