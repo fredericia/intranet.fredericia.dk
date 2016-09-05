@@ -313,7 +313,6 @@ function os2intra_bi_settings() {
     '#description' => t('Needs to be the full path.'),
     '#default_value' => variable_get('os2intra_bi_file_directory', '/var/www/test.intranet.fredericia.dk/bi'),
   );
-
   $form['os2intra_bi_plugin_logo_fid'] = array(
     '#title' => t('Logo'),
     '#type' => 'managed_file',
@@ -321,6 +320,27 @@ function os2intra_bi_settings() {
     '#default_value' => variable_get('os2intra_bi_plugin_logo_fid', ''),
     '#upload_location' => 'public://os2intra_bi/',
   );
+  $form['header_background_color'] = array(
+    '#type' => 'jquery_colorpicker',
+    '#title' => t('Table header background color'),
+    '#default_value' => variable_get('header_background_color', '06416D'),
+  );
+  $form['header_text_color'] = array(
+    '#type' => 'jquery_colorpicker',
+    '#title' => t('Table header text color'),
+    '#default_value' => variable_get('header_text_color', 'FFFFFF'),
+  );
+  $form['odd_background_color'] = array(
+    '#type' => 'jquery_colorpicker',
+    '#title' => t('Table odd background color'),
+    '#default_value' => variable_get('odd_background_color', 'F9F9F9'),
+  );
+  $form['even_background_color'] = array(
+    '#type' => 'jquery_colorpicker',
+    '#title' => t('Table even background color'),
+    '#default_value' => variable_get('even_background_color', 'FFFFFF'),
+  );
+
   $form['#submit'][] = 'os2intra_bi_settings_submit';
   return system_settings_form($form);
 }
