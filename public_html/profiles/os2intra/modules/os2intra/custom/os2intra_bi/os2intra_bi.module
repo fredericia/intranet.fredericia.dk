@@ -471,7 +471,6 @@ include_once 'os2intra_bi.features.inc';
        'entity_id' => NULL,
        'field_name' => NULL,
        'langcode' => NULL,
-       ),
      ),
    );
    return $theme;
