@@ -216,6 +216,10 @@ function os2intra_bi_plugin_form($form, &$form_state, $entity_type, $op = 'edit'
     '#default_value' => isset($entity_type->description) ? $entity_type->description : '',
     '#description' => t('Description about the entity type.'),
   );
+  $form['split'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Split files on this type.'),
+  );
 
   // Add some buttons.
   $form['actions'] = array('#type' => 'actions');
@@ -309,6 +313,49 @@ function os2intra_bi_settings() {
     '#description' => t('Needs to be the full path.'),
     '#default_value' => variable_get('os2intra_bi_file_directory', '/var/www/test.intranet.fredericia.dk/bi'),
   );
+  $form['os2intra_bi_plugin_logo_fid'] = array(
+    '#title' => t('Logo'),
+    '#type' => 'managed_file',
+    '#description' => t('The logo will be shown in the top right when viewing the plugins.'),
+    '#default_value' => variable_get('os2intra_bi_plugin_logo_fid', ''),
+    '#upload_location' => 'public://os2intra_bi/',
+  );
+  $form['header_background_color'] = array(
+    '#type' => 'jquery_colorpicker',
+    '#title' => t('Table header background color'),
+    '#default_value' => variable_get('header_background_color', '06416D'),
+  );
+  $form['header_text_color'] = array(
+    '#type' => 'jquery_colorpicker',
+    '#title' => t('Table header text color'),
+    '#default_value' => variable_get('header_text_color', 'FFFFFF'),
+  );
+  $form['odd_background_color'] = array(
+    '#type' => 'jquery_colorpicker',
+    '#title' => t('Table odd background color'),
+    '#default_value' => variable_get('odd_background_color', 'F9F9F9'),
+  );
+  $form['even_background_color'] = array(
+    '#type' => 'jquery_colorpicker',
+    '#title' => t('Table even background color'),
+    '#default_value' => variable_get('even_background_color', 'FFFFFF'),
+  );
 
+  $form['#submit'][] = 'os2intra_bi_settings_submit';
   return system_settings_form($form);
+}
+
+/**
+ * Settings form submit handler.
+ *
+ * Save file permanently.
+ */
+function os2intra_bi_settings_submit($form, &$form_state) {
+  $file = file_load($form_state['values']['os2intra_bi_plugin_logo_fid']);
+  if ($file) {
+    $file->status = FILE_STATUS_PERMANENT;
+    file_save($file);
+    variable_set('os2intra_bi_plugin_logo_fid', $file->fid);
+    unset($form_state['values']['os2intra_bi_plugin_logo_fid']);
+  }
 }

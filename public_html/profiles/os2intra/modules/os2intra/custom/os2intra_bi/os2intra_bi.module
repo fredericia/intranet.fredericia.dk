@@ -168,6 +168,14 @@ include_once 'os2intra_bi.features.inc';
      'label' => t('Type description'),
      'setter callback' => 'entity_property_verbatim_set',
    );
+   $type_properties['split'] = array(
+     'description' => 'Split CSV files into mutliple entities.',
+     'type' => 'boolean',
+     'schema field' => 'split',
+     'required' => FALSE,
+     'label' => t('Split CSV'),
+     'setter callback' => 'entity_property_verbatim_set',
+   );
 
    return $info;
  }
@@ -452,21 +460,55 @@ include_once 'os2intra_bi.features.inc';
   * Implements hook_theme().
   */
  function os2intra_bi_theme() {
-   return array(
-     'tablefield_preview' => array(
-       'variables' => array(
-         'header' => NULL,
-         'rows' => NULL,
-         'delta' => NULL,
-         'export' => NULL,
-         'entity_type' => NULL,
-         'entity_id' => NULL,
-         'field_name' => NULL,
-         'langcode' => NULL,
-       ),
+   $theme = array();
+   $theme['tablefield_preview'] = array(
+     'variables' => array(
+       'header' => NULL,
+       'rows' => NULL,
+       'delta' => NULL,
+       'export' => NULL,
+       'entity_type' => NULL,
+       'entity_id' => NULL,
+       'field_name' => NULL,
+       'langcode' => NULL,
      ),
    );
+   $theme['os2intra_bi'] = array(
+     'render element' => 'elements',
+     'template' => 'os2intra-bi'
+   );
+   return $theme;
  }
+
+ /**
+ * Implements template_preprocess_entity().
+ *
+ * Runs a entity specific preprocess function, if it exists.
+ */
+function os2intra_bi_preprocess_entity(&$variables) {
+  if ($variables['entity_type'] == 'os2intra_bi') {
+
+    // Last modified date
+    $variables['content']['#attached']['css'][] = drupal_get_path('module', 'os2intra_bi') . '/css/view.css';
+    $variables['content']['os2intra_bi_import_file_modified'] = array(
+      '#markup' => '<b>' . t('File last updated') . '</b><br />' . format_date($variables['os2intra_bi']->modified),
+    );
+
+    // BI plugin logo
+    $image = file_load(variable_get('os2intra_bi_plugin_logo_fid'));
+    $variables['content']['os2intra_bi_plugin_logo'] = array(
+      '#theme' => 'image',
+      '#path' => $image->uri,
+      '#alt' => t('OS2intra BI Plugin logo'),
+    );
+
+    // Override table colors
+    drupal_add_css('.table-striped > tbody > tr:nth-of-type(odd) { background: #' . variable_get('odd_background_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
+    drupal_add_css('.table-striped > tbody > tr:nth-of-type(even) { background: #' . variable_get('even_background_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
+    drupal_add_css('.table-striped > tbody > tr:nth-of-type(1) { background: #' . variable_get('header_background_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
+    drupal_add_css('.table-striped > tbody > tr:nth-of-type(1) { color: #' . variable_get('header_text_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
+  }
+}
 
  /**
   * Theme function for table view
@@ -792,7 +834,7 @@ function os2intra_bi_cronapi() {
 /**
  * Add status to os2intra_bi entities
  */
-function os2intra_bi_update_7005() {
+function os2intra_bi_update_7001() {
   db_add_field('os2intra_bi', 'status', array(
     'type' => 'varchar',
     'length' => 255,
