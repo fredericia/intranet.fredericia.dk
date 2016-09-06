@@ -473,10 +473,6 @@ include_once 'os2intra_bi.features.inc';
        'langcode' => NULL,
      ),
    );
-   $theme['os2intra_bi'] = array(
-     'render element' => 'elements',
-     'template' => 'os2intra-bi'
-   );
    return $theme;
  }
 
@@ -487,21 +483,6 @@ include_once 'os2intra_bi.features.inc';
  */
 function os2intra_bi_preprocess_entity(&$variables) {
   if ($variables['entity_type'] == 'os2intra_bi') {
-
-    // Last modified date
-    $variables['content']['#attached']['css'][] = drupal_get_path('module', 'os2intra_bi') . '/css/view.css';
-    $variables['content']['os2intra_bi_import_file_modified'] = array(
-      '#markup' => '<b>' . t('File last updated') . '</b><br />' . format_date($variables['os2intra_bi']->modified),
-    );
-
-    // BI plugin logo
-    $image = file_load(variable_get('os2intra_bi_plugin_logo_fid'));
-    $variables['content']['os2intra_bi_plugin_logo'] = array(
-      '#theme' => 'image',
-      '#path' => $image->uri,
-      '#alt' => t('OS2intra BI Plugin logo'),
-    );
-
     // Override table colors
     drupal_add_css('.table-striped > tbody > tr:nth-of-type(odd) { background: #' . variable_get('odd_background_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
     drupal_add_css('.table-striped > tbody > tr:nth-of-type(even) { background: #' . variable_get('even_background_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
