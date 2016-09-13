@@ -38,7 +38,7 @@ function os2intra_users_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_account|user|user|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -66,7 +66,7 @@ function os2intra_users_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_billede|user|user|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -94,7 +94,7 @@ function os2intra_users_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_grupper|user|user|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -129,7 +129,7 @@ function os2intra_users_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_name|user|user|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -159,7 +159,7 @@ function os2intra_users_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_profile|user|user|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -195,7 +195,7 @@ function os2intra_users_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_slet|user|user|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -230,7 +230,7 @@ function os2intra_users_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_system|user|user|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -258,7 +258,7 @@ function os2intra_users_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_tools|user|user|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -289,7 +289,7 @@ function os2intra_users_field_group_info() {
       ),
     ),
   );
-  $field_groups['group_user|user|user|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.
