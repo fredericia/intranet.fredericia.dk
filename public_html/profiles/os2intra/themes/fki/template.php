@@ -388,6 +388,11 @@ function fki_preprocess_taxonomy_term__os2web_taxonomies_tax_places(&$variables)
       //$place = '<span class="os2-place-name">' . $term->name . '</span>';
     }
 
+    // Name
+    if ($field_os2web_taxonomies_name = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_name')) {
+      $place .= '<h4 class="os2-place-name">' . $field_os2web_taxonomies_name[0]['value'] . '</h4>';
+    }
+    
     // Address
     if ($field_os2web_taxonomies_address = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_address')) {
       $place .= '<span class="os2-place-address">' . $field_os2web_taxonomies_address[0]['value'] . '</span>';
@@ -397,6 +402,7 @@ function fki_preprocess_taxonomy_term__os2web_taxonomies_tax_places(&$variables)
     if ($field_os2web_taxonomies_city = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_city')) {
       $place .= ', <span class="os2-place-city">' . $field_os2web_taxonomies_city[0]['value'] . '</span>';
     }
+
     $variables['place'] = $place;
 
     // Google map
