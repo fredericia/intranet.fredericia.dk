@@ -675,8 +675,13 @@ function os2intra_bi_create_fi($bundle) {
     'deleted' => '0',
   );
 
-  field_create_instance($import_file_field_instance);
-  field_create_instance($opus_roles_field_instance);
+  if (empty(field_info_instance('os2intra_bi', 'os2intra_bi_import_file', $bundle))) {
+    field_create_instance($import_file_field_instance);
+  }
+
+  if (empty(field_info_instance('os2intra_bi', 'os2intra_bi_opus_roles', $bundle))) {
+    field_create_instance($opus_roles_field_instance);
+  }
 }
 
 /**
