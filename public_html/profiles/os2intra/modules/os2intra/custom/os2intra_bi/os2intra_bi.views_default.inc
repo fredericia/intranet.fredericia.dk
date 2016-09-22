@@ -24,7 +24,7 @@ function os2intra_bi_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'view os2intra_bi content';
+  $handler->display->display_options['access']['perm'] = 'administer os2intra_bi content';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
@@ -36,6 +36,8 @@ function os2intra_bi_views_default_views() {
     'id' => 'id',
     'title' => 'title',
     'type' => 'type',
+    'status' => 'status',
+    'modified_1' => 'modified_1',
     'nothing' => 'nothing',
     'nothing_1' => 'nothing_1',
   );
@@ -62,6 +64,20 @@ function os2intra_bi_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'status' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'modified_1' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'nothing' => array(
       'align' => '',
       'separator' => '',
@@ -73,13 +89,6 @@ function os2intra_bi_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<a href="<?php print url(\'os2intra-bi/add\'); ?>>Add OS2intra BI</a>';
-  $handler->display->display_options['header']['area']['format'] = 'fuld_html';
-  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Field: OS2intra BI: BI Plugin ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'os2intra_bi';
@@ -87,6 +96,7 @@ function os2intra_bi_views_default_views() {
   $handler->display->display_options['fields']['id']['label'] = '';
   $handler->display->display_options['fields']['id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['id']['separator'] = '';
   /* Field: OS2intra BI: BI plugin title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'os2intra_bi';
@@ -147,8 +157,7 @@ function os2intra_bi_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['path'] = 'os2intra-bi/types/%';
-  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['path'] = 'admin/structure/os2intra-bi/types/%';
   $handler->display->display_options['menu']['title'] = 'OS2intra BI';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'management';
@@ -169,9 +178,7 @@ function os2intra_bi_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('<a href="<?php print url(\'os2intra-bi/add\'); ?>>Add OS2intra BI</a>'),
     t('.'),
-    t(','),
     t('Title'),
     t('Type'),
     t('Status'),
