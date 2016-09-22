@@ -45,7 +45,7 @@ function os2intra_bi_view_bundles() {
       '#prefix' => '<tr>',
       '#suffix' => '</tr>',
       '#markup' => '
-        <td><a href="/os2intra-bi/types/' . $system_name . '">' . $label . '</a></td>
+        <td><a href="/admin/structure/os2intra-bi/types/' . $system_name . '">' . $label . '</a></td>
         <td><a href="/admin/structure/os2intra-bi/manage/' . $system_name . '">' . t('Edit') . '</a></td>
         <td><a href="/admin/structure/os2intra-bi/manage/' . $system_name . '/delete">' . t('Delete') . '</a></td>
       ',

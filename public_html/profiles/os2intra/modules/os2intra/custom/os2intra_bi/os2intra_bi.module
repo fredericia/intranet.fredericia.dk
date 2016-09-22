@@ -209,7 +209,7 @@ include_once 'os2intra_bi.features.inc';
    $base_uri_argument_position = 1;
 
    // Settings
-   $items['os2intra-bi/settings'] = array(
+   $items['admin/structure/os2intra-bi/settings'] = array(
      'title' => 'BI Settings',
      'page callback' => 'drupal_get_form',
      'page arguments' => array('os2intra_bi_settings'),
@@ -219,7 +219,7 @@ include_once 'os2intra_bi.features.inc';
    );
 
    // URI for choosing bundle of entity to add.
-   $items['os2intra-bi/add'] = array(
+   $items['admin/structure/os2intra-bi/add'] = array(
      'title' => 'Add BI Plugin',
      'page callback' => 'os2intra_bi_choose_bundle',
      'access arguments' => array('administer os2intra_bi content'),
@@ -229,7 +229,7 @@ include_once 'os2intra_bi.features.inc';
 
    // URI for adding entity of proper bundle.
    foreach (os2intra_bi_plugin_load_multiple() as $type => $info) {
-     $items['os2intra-bi/add/' . $type] = array(
+     $items['admin/structure/os2intra-bi/add/' . $type] = array(
        'title' => t('Add BI Plugin of type ') . $type,
        'page callback' => 'os2intra_bi_add',
        'page arguments' => array(2),
@@ -239,11 +239,13 @@ include_once 'os2intra_bi.features.inc';
    }
 
    // URI for viewing entity bundles
-   $items['os2intra-bi'] = array(
-     'title' => t('OS2intra BI plugin types'),
+   $items['admin/structure/os2intra-bi'] = array(
+     'title' => t('OS2intra BI'),
+     'description' => t('Manage OS2intra BI'),
      'page callback' => 'os2intra_bi_view_bundles',
-     'access arguments' => array('view os2intra_bi content'),
+     'access arguments' => array('administer os2intra_bi content'),
      'file' => 'os2intra_bi.pages.inc',
+     'type' => MENU_NORMAL_ITEM,
    );
 
    // URI for viewing entity instances.
@@ -675,8 +677,13 @@ function os2intra_bi_create_fi($bundle) {
     'deleted' => '0',
   );
 
-  field_create_instance($import_file_field_instance);
-  field_create_instance($opus_roles_field_instance);
+  if (empty(field_info_instance('os2intra_bi', 'os2intra_bi_import_file', $bundle))) {
+    field_create_instance($import_file_field_instance);
+  }
+
+  if (empty(field_info_instance('os2intra_bi', 'os2intra_bi_opus_roles', $bundle))) {
+    field_create_instance($opus_roles_field_instance);
+  }
 }
 
 /**
@@ -728,34 +735,142 @@ function os2intra_bi_create_bundles_and_content() {
         continue;
       }
 
-      // Check if content exists
-      $query = new EntityFieldQuery;
-      $query->entityCondition('entity_type', 'os2intra_bi');
-      $query->propertyCondition('type', $bundle_name);
-      $query->propertyCondition('title', $file);
-      $results = $query->execute();
-
       $entity_type = 'os2intra_bi';
 
-      // Create content
-      if (!$results) {
-        $entity = entity_create($entity_type, array('type' => $bundle_name));
-        $wrapper = entity_metadata_wrapper($entity_type, $entity);
-        $wrapper->title = $file;
-        $wrapper->filepath->set($directory . '/' . $dir . '/' . $file . '.csv');
-        $wrapper->os2intra_bi_import_file->set(os2intra_bi_csv_value($directory . '/' . $dir . '/' . $file . '.csv'));
-        $wrapper->modified->set(filemtime($filepath));
-        $wrapper->save();
+      // Check if content exists
+      $query = new EntityFieldQuery;
+      $query->entityCondition('entity_type', $entity_type);
+      $query->propertyCondition('type', $bundle_name);
+      $query->propertyCondition('title', $file);
+      $results['exists'] = $query->execute();
+
+      // Check if we need to split the CSV file
+      $query = new EntityFieldQuery;
+      $query->entityCondition('entity_type', 'os2intra_bi_plugin');
+      $query->propertyCondition('type', $bundle_name);
+      $query->propertyCondition('split', 1);
+      $results['split'] = $query->execute();
+
+      if (!$results['split']) {
+        // Create content
+        if (!$results['exists']) {
+          $entity = entity_create($entity_type, array('type' => $bundle_name));
+          $wrapper = entity_metadata_wrapper($entity_type, $entity);
+          $wrapper->title = $file;
+          $wrapper->filepath->set($directory . '/' . $dir . '/' . $file . '.csv');
+          $wrapper->os2intra_bi_import_file->set(os2intra_bi_csv_value($directory . '/' . $dir . '/' . $file . '.csv'));
+          $wrapper->modified->set(filemtime($filepath));
+          $wrapper->save();
+        }
+
+        // Update content
+        foreach ($results['exists'] as $result) {
+          $result = reset($result);
+          $wrapper = entity_metadata_wrapper($entity_type, $result->id);
+          $wrapper->filepath->set($directory . '/' . $dir . '/' . $file . '.csv');
+          $wrapper->os2intra_bi_import_file->set(os2intra_bi_csv_value($directory . '/' . $dir . '/' . $file . '.csv'));
+          $wrapper->modified->set(filemtime($filepath));
+          $wrapper->save();
+        }
       }
 
-      // Update content
-      foreach ($results as $result) {
-        $result = reset($result);
-        $wrapper = entity_metadata_wrapper($entity_type, $result->id);
-        $wrapper->filepath->set($directory . '/' . $dir . '/' . $file . '.csv');
-        $wrapper->os2intra_bi_import_file->set(os2intra_bi_csv_value($directory . '/' . $dir . '/' . $file . '.csv'));
-        $wrapper->modified->set(filemtime($filepath));
-        $wrapper->save();
+      // Bundle type needs to split CSV files
+      if ($results['split']) {
+        // Find entities of this bundle type
+        $query = new EntityFieldQuery;
+        $query->entityCondition('entity_type', 'os2intra_bi');
+        $query->propertyCondition('type', $bundle_name);
+        $results = $query->execute();
+
+        foreach($results['os2intra_bi'] as $result) {
+          $title = '';
+          $entity = entity_load('os2intra_bi', array($result->id));
+          $entity = array_values($entity)[0];
+          $entity_wrapper = $entity->wrapper();
+
+          $filepath = $entity_wrapper->filepath->value();
+          $handle = fopen($filepath, 'r');
+
+          $rows = array();
+
+          while (!feof($handle)) {
+            $line = fgetcsv($handle);
+            $rows[] = $line;
+          }
+
+          $parsed_array = array();
+          $row_count = 0;
+          $col = 0;
+          $opus_roles = array();
+
+          foreach ($rows as $row_key => $row) {
+            $count = 0;
+
+            foreach ($row as $col => $value) {
+              if (!empty($value) && $empty_array) {
+                $empty_array = FALSE;
+                $title = $value;
+                $row_count = 0;
+              }
+
+              if (empty($title)) {
+                $title = $value;
+              }
+
+              if ($row_count == 1 && $col == 0 && !$empty_array) {
+                $term = reset(taxonomy_get_term_by_name($value, 'os2intra_bi_opus_roles'));
+                $tid = $term->tid;
+                $opus_roles[$title] = $tid;
+              }
+
+              if ($col == 0 && empty($value)) {
+                $empty_array = TRUE;
+              }
+
+              if (!$empty_array) {
+                $parsed_array[$title]['cell_' . $row_count . '_' . $col] = $value;
+              }
+
+              $count++;
+            }
+
+            $row_count++;
+          }
+
+          foreach ($parsed_array as $title => $data) {
+            // Check if content exists
+            $query = new EntityFieldQuery;
+            $query->entityCondition('entity_type', $entity_type);
+            $query->propertyCondition('type', $bundle_name);
+            $query->propertyCondition('title', $title);
+            $results['exists'] = $query->execute();
+
+            // Create content
+            if (!$results['exists']) {
+              $entity = entity_create($entity_type, array('type' => $bundle_name));
+              $wrapper = entity_metadata_wrapper($entity_type, $entity);
+              $wrapper->title = $title;
+              $wrapper->filepath->set($directory . '/' . $dir . '/' . $file . '.csv');
+              $wrapper->os2intra_bi_import_file->set(os2intra_bi_csv_value_split($data, $col, $row_count));
+              $wrapper->os2intra_bi_opus_roles->set(array($opus_roles[$title]));
+              $wrapper->modified->set(filemtime($filepath));
+              $wrapper->save();
+            }
+
+            // Update content
+            // foreach ($results['exists'] as $result) {
+            //   $result = reset($result);
+            //   $wrapper = entity_metadata_wrapper($entity_type, $result->id);
+            //   $wrapper->filepath->set($directory . '/' . $dir . '/' . $file . '.csv');
+            //   $wrapper->os2intra_bi_import_file->set(os2intra_bi_csv_value_split($data, $col, $row_count));
+            //   $wrapper->os2intra_bi_opus_roles->set(array($opus_roles[$title]));
+            //   $wrapper->modified->set(filemtime($filepath));
+            //   $wrapper->save();
+            // }
+          }
+
+          fclose($handle);
+        }
       }
     }
   }
@@ -775,7 +890,7 @@ function os2intra_bi_create_bundles_and_content() {
 }
 
 /**
- *
+ * Tablefield data from file
  */
 function os2intra_bi_csv_value($fileuri) {
   if (($handle = fopen($fileuri, "r")) !== FALSE) {
@@ -795,6 +910,15 @@ function os2intra_bi_csv_value($fileuri) {
     $imported_tablefield['rebuild'] = array('count_cols' => $max_col_count, 'count_rows' => $row_count);
   }
 
+  return array('value' => serialize($imported_tablefield));
+}
+
+/**
+ * Tablefield data from custom data
+ */
+function os2intra_bi_csv_value_split($imported_tablefield, $col, $row_count) {
+  // Populate CSV values
+  $imported_tablefield['rebuild'] = array('count_cols' => $col, 'count_rows' => $row_count);
   return array('value' => serialize($imported_tablefield));
 }
 
