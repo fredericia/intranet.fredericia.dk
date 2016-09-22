@@ -314,6 +314,16 @@ function os2intra_bi_settings() {
     '#description' => t('Needs to be the full path.'),
     '#default_value' => variable_get('os2intra_bi_file_directory', '/var/www/test.intranet.fredericia.dk/bi'),
   );
+  $form['header_background_color'] = array(
+    '#type' => 'jquery_colorpicker',
+    '#title' => t('Table header background color'),
+    '#default_value' => variable_get('header_background_color', '06416D'),
+  );
+  $form['header_text_color'] = array(
+    '#type' => 'jquery_colorpicker',
+    '#title' => t('Table header text color'),
+    '#default_value' => variable_get('header_text_color', 'FFFFFF'),
+  );
   $form['odd_background_color'] = array(
     '#type' => 'jquery_colorpicker',
     '#title' => t('Table odd background color'),
