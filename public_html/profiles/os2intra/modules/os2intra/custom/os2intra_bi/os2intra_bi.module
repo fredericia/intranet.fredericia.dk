@@ -488,7 +488,7 @@ function os2intra_bi_preprocess_entity(&$variables) {
     // Override table colors
     drupal_add_css('.table-striped > tbody > tr:nth-of-type(odd) { background: #' . variable_get('odd_background_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
     drupal_add_css('.table-striped > tbody > tr:nth-of-type(even) { background: #' . variable_get('even_background_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
-    drupal_add_css('.table-striped > tbody > tr:nth-of-type(1) { background: #' . variable_get('header_background_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
+    drupal_add_css('.table-striped > thead > tr:nth-of-type(1) { background: #' . variable_get('header_background_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
     drupal_add_css('.table-striped > tbody > tr:nth-of-type(1) { color: #' . variable_get('header_text_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
   }
 }
