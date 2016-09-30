@@ -69,7 +69,7 @@ function os2intra_user_import_groups($users) {
       taxonomy_term_save($term);
       $created_terms[] = $term;
 
-      os2intra_user_import_create_department($term->tid, $user['department']);
+      os2intra_user_import_create_department($term->tid, $user['department'], $user['department_name']);
     }
   }
   os2intra_user_import_save_log('', 'Finished importing groups');
