@@ -462,25 +462,24 @@ include_once 'os2intra_bi.features.inc';
   * Implements hook_theme().
   */
  function os2intra_bi_theme() {
-   $theme = array();
-   $theme['tablefield_preview'] = array(
-     'variables' => array(
-       'header' => NULL,
-       'rows' => NULL,
-       'delta' => NULL,
-       'export' => NULL,
-       'entity_type' => NULL,
-       'entity_id' => NULL,
-       'field_name' => NULL,
-       'langcode' => NULL,
-       ),
-     ),
-   );
-   $theme['os2intra_bi'] = array(
-     'render element' => 'elements',
-     'template' => 'os2intra-bi'
-   );
-   return $theme;
+  $theme = array();
+  $theme['tablefield_preview'] = array(
+    'variables' => array(
+      'header' => NULL,
+      'rows' => NULL,
+      'delta' => NULL,
+      'export' => NULL,
+      'entity_type' => NULL,
+      'entity_id' => NULL,
+      'field_name' => NULL,
+      'langcode' => NULL,
+    )
+  );
+  $theme['os2intra_bi'] = array(
+    'render element' => 'elements',
+    'template' => 'os2intra-bi'
+  );
+  return $theme;
  }
 
  /**
