@@ -1,4 +1,50 @@
 .entity-os2intra-bi .bi-import-file-modified {
   float: right;
   text-align: right;
+  margin-bottom: 10px;
+}
+
+.os2intra-bi-plugin-logo {
+  display: inline-block;
+  width: 100%;
+}
+
+.os2intra-bi-plugin-logo img {
+  float: right;
+}
+
+.page-os2intra-bi .os2-box .os2-box-body {
+  padding: 0;
+}
+
+.entity-os2intra-bi-inner {
+  padding: 5px 15px;
+}
+
+.field-name-os2intra-bi-import-file td {
+  text-align: right;
+}
+
+.entity-os2intra-bi img.img-responsive {
+  margin: 30px auto;
+  max-width: 450px;
+}
+
+.entity-os2intra-bi {
+  background: url('../img/lion.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+}
+
+.entity-os2intra-bi .table-striped > tbody > tr:nth-of-type(even) {
+  background: transparent !important;
+}
+
+.entity-os2intra-bi-inner .content {
+  padding: 0;
+}
+
+.field-name-os2intra-bi-import-file .field-label {
+  display: none;
 }
