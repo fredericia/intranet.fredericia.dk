@@ -713,9 +713,9 @@ function os2intra_bi_create_bundles_and_content() {
   $scanned_directory = array_diff(scandir($directory), array('..', '.', '.DS_Store'));
   foreach ($scanned_directory as $dir) {
     $bundle_name = strtolower($dir);
-    $bundle_name = str_replace('æ', 'ae', $bundle_name);
-    $bundle_name = str_replace('ø', 'oe', $bundle_name);
-    $bundle_name = str_replace('å', 'aa', $bundle_name);
+    $search = array('æ', 'ø', 'å', 'Æ', 'Ø', 'Å');
+    $replace = array('ae', 'oe', 'aa', 'AE', 'OE', 'AA');
+    $bundle_name = str_replace($search, $replace, $bundle_name);
     $bundle_name = preg_replace('@[^a-z0-9_]+@','_', $bundle_name);
 
     // Check if bundle exists
