@@ -19,3 +19,7 @@
 .entity-os2intra-bi-inner {
   padding: 5px 15px;
 }
+
+.field-name-os2intra-bi-import-file td {
+  text-align: right;
+}
