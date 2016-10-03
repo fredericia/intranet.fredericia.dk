@@ -2,3 +2,20 @@
   float: right;
   text-align: right;
 }
+
+.os2intra-bi-plugin-logo {
+  display: inline-block;
+  width: 100%;
+}
+
+.os2intra-bi-plugin-logo img {
+  float: right;
+}
+
+.page-os2intra-bi .os2-box .os2-box-body {
+  padding: 0;
+}
+
+.entity-os2intra-bi-inner {
+  padding: 5px 15px;
+}
