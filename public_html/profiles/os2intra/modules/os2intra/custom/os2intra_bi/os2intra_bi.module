@@ -937,6 +937,8 @@ function os2intra_bi_csv_value($fileuri) {
  */
 function os2intra_bi_csv_value_split($imported_tablefield, $col, $row_count) {
   // Populate CSV values
+  $col = $col + 1;
+  $row_count = $row_count + 1;
   $imported_tablefield['rebuild'] = array('count_cols' => $col, 'count_rows' => $row_count);
   return array('value' => serialize($imported_tablefield));
 }
