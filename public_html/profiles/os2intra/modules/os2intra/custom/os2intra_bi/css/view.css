@@ -26,15 +26,8 @@
   max-width: 450px;
 }
 
-.entity-os2intra-bi {
-  background: url('../img/lion.png');
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: contain;
-}
-
-.entity-os2intra-bi .table-striped > tbody > tr:nth-of-type(even) {
-  background: transparent !important;
+.entity-os2intra-bi .tablefield > tbody > tr:last-child {
+  font-weight: bold;
 }
 
 .entity-os2intra-bi-inner .content {
