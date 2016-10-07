@@ -5,22 +5,6 @@
  */
 
 /**
-  * Implements hook_menu().
-  */
-function os2intra_base_menu() {
-  $items = array();
-
-  $items['admin/config/os2intra/dwe'] = array(
-    'title' => t('Departments without employees'),
-    'description' => t('A list of departments without employees'),
-    'page callback' => 'os2intra_base_departments_without_employees',
-    'access arguments' => array('administer os2intra'),
-  );
-
-  return $items;
-}
-
-/**
  * Implements hook_init();
  */
 function os2intra_base_init(){
@@ -138,54 +122,4 @@ function os2intra_base_form_alter(&$form, &$form_state, $form_id) {
       unset($form['title_custom']);
     }
   }
-}
-
-/**
- * Returns a list of all departments without users with role 14 and role 16
- */
-function os2intra_base_departments_without_employees() {
-  $departments_without_employees = array();
-  $gid_arrays = array();
-  $gids = array();
-
-  // Select all group ID's where role ID is not 14 and not 16
-  $results = db_query('SELECT gid FROM og_users_roles WHERE rid != 14 AND rid != 16;');
-
-  while ($result = $results->fetchAssoc()) {
-    $gid_arrays[] = $result;
-  }
-
-  // Create array with group ID's
-  foreach ($gid_arrays as $key => $value) {
-    foreach ($value as $key => $gid) {
-      $gids[] = $gid;
-    }
-  }
-
-  // Only show unique values
-  $gids = array_unique($gids);
-
-  // Load all nodes
-  $nodes = node_load_multiple($gids);
-
-  // Loop through and return only ID's of type 'os2intra_org_group_unit' / department nodes
-  foreach ($nodes as $node) {
-    if ($node->type == 'os2intra_org_group_unit') {
-      $node_link = '/node/' . $node->nid;
-      $rows[] = array(
-        l($node->nid, $node_link),
-        l($node->title, $node_link),
-        l(t('Edit'), $node_link . '/edit'),
-      );
-    }
-  }
-
-  // Return render array with NID and title
-  $table['departments_without_employees'] = array(
-    '#theme' => 'table',
-    '#header' => array(t('ID'), t('Department'), t('Operations')),
-    '#rows' => $rows,
-  );
-
-  return $table;
 }
