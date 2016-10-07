@@ -234,28 +234,42 @@ function os2intra_user_import_run_with_drush() {
  */
 function os2intra_user_import_departments_without_employees() {
   $departments_without_employees = array();
-  $gid_arrays = array();
-  $gids = array();
+  $gid_arrays_with = array();
+  $gid_arrays_without = array();
+  $gids_with = array();
+  $gids_without = array();
+
+  // Select all distinct group ID's where role ID is 14 and 16
+  $results_with = db_query('SELECT DISTINCT gid FROM og_users_roles WHERE rid=14 OR rid=16;');
 
   // Select all group ID's where role ID is not 14 and not 16
-  $results = db_query('SELECT gid FROM og_users_roles WHERE rid != 14 AND rid != 16;');
+  $results_without = db_query('SELECT DISTINCT gid FROM og_users_roles WHERE rid != 14 AND rid != 16;');
 
-  while ($result = $results->fetchAssoc()) {
-    $gid_arrays[] = $result;
+  while ($result_with = $results_with->fetchAssoc()) {
+    $gid_arrays_with[] = $result_with;
   }
 
-  // Create array with group ID's
-  foreach ($gid_arrays as $key => $value) {
+  while ($result_without = $results_without->fetchAssoc()) {
+    $gid_arrays_without[] = $result_without;
+  }
+
+  // Create array with group ID's for those with rid 14 and 16
+  foreach ($gid_arrays_with as $key => $value) {
     foreach ($value as $key => $gid) {
-      $gids[] = $gid;
+      $gids_with[] = $gid;
     }
   }
 
-  // Only show unique values
-  $gids = array_unique($gids);
+  // Create array with group ID's for those without rid 14 and 16
+  foreach ($gid_arrays_without as $key => $value) {
+    foreach ($value as $key => $gid) {
+      $gids_without[] = $gid;
+    }
+  }
 
   // Load all nodes
-  $nodes = node_load_multiple($gids);
+  $nids = array_diff($gids_without, $gids_with);
+  $nodes = node_load_multiple($nids);
 
   // Loop through and return only ID's of type 'os2intra_org_group_unit' / department nodes
   foreach ($nodes as $node) {
