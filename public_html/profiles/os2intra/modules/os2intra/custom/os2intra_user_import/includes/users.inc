@@ -180,9 +180,19 @@ function os2intra_user_import_save_user($user, $uid = '') {
   }
 
   // Create Opus Roles and set them on user
-  $opus_roles = array();
+  $keep_opus_roles = array();
   $opus_role_tids = array();
   $opus_role_vocabulary = taxonomy_vocabulary_machine_name_load('os2intra_bi_opus_roles');
+  $opus_roles = array();
+
+  if ($uid) {
+    foreach ($account->os2intra_users_opus_roles as $os2intra_users_opus_role) {
+      foreach ($os2intra_users_opus_role as $key => $value) {
+        $keep_opus_roles[] = $value;
+      }
+    }
+  }
+
   foreach (explode(',', $user['opus_roles']) as $opus_role) {
     $opus_roles[] = $opus_role;
     $query = new EntityFieldQuery;
@@ -196,6 +206,8 @@ function os2intra_user_import_save_user($user, $uid = '') {
       $opus_role_tids[] = $term->tid;
     }
   }
+
+  $opus_role_tids = array_diff($keep_opus_roles, $opus_role_tids);
 
   os2intra_user_import_create_opus_roles($opus_roles);
 
@@ -240,6 +252,8 @@ function os2intra_user_import_save_user($user, $uid = '') {
   );
 
   // Set Opus Roles
+  $fields['os2intra_users_opus_roles'][LANGUAGE_NONE] = array();
+
   foreach ($opus_role_tids as $opus_role_tid) {
     $fields['os2intra_users_opus_roles'][LANGUAGE_NONE][]['tid'] = $opus_role_tid;
   }
