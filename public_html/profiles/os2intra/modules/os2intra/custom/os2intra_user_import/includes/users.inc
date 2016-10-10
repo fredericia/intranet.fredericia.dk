@@ -195,8 +195,6 @@ function os2intra_user_import_save_user($user, $uid = '') {
     foreach ($result['taxonomy_term'] as $term) {
       $opus_role_tids[] = $term->tid;
     }
-
-    print_r($opus_role_tids);
   }
 
   os2intra_user_import_create_opus_roles($opus_roles);
