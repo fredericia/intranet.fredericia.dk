@@ -21,6 +21,7 @@ function _os2intra_user_import_process_file($file_path) {
     variable_get('os2intra_mapping_email')                => 'email',
     variable_get('os2intra_mapping_birthdate')            => 'birthdate',
     variable_get('os2intra_mapping_department_name')      => 'department_name',
+    variable_get('os2intra_mapping_opus_roles')           => 'opus_roles',
   );
 
   // Load data from file
