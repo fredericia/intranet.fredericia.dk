@@ -14,6 +14,7 @@ module_load_include('inc', 'os2intra_user_import', 'includes/departments');
 module_load_include('inc', 'os2intra_user_import', 'includes/log');
 module_load_include('inc', 'os2intra_user_import', 'includes/mail');
 module_load_include('inc', 'os2intra_user_import', 'includes/og_roles');
+module_load_include('inc', 'os2intra_user_import', 'includes/opus');
 module_load_include('inc', 'os2intra_user_import', 'includes/settings_form');
 module_load_include('inc', 'os2intra_user_import', 'includes/users');
 module_load_include('inc', 'os2intra_user_import', 'includes/utilities');
