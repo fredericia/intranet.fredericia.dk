@@ -978,3 +978,27 @@ function os2intra_bi_update_7001() {
     'length' => 11,
   ));
 }
+
+/**
+ * Add default Opus term and add it to all users
+ */
+function os2intra_bi_update_7002() {
+  $vocabulary = taxonomy_vocabulary_machine_name_load('os2intra_bi_opus_roles');
+  $term_name = 'Everyone';
+  $matched_terms = taxonomy_get_term_by_name($term_name, $vocabulary->machine_name);
+  if (empty($matched_terms)) {
+    $term = new stdClass();
+    $term->vid = $vocabulary->vid;
+    $term->name = $term_name;
+    taxonomy_term_save($term);
+  }
+
+  $users = entity_load('user');
+  unset($users[0]);
+
+  foreach ($users as $user) {
+    $wrapper = entity_metadata_wrapper('user', $user);
+    $wrapper->os2intra_users_opus_roles[] = $term->tid;
+    $wrapper->save();
+  }
+}
