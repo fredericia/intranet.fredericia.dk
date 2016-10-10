@@ -895,15 +895,17 @@ function os2intra_bi_create_bundles_and_content() {
   }
 
   // Check if files exists and set satus
-  $query = new EntityFieldQuery;
-  $query->entityCondition('entity_type', $entity_type);
-  $results = $query->execute();
+  if (!empty($entity_type)) {
+    $query = new EntityFieldQuery;
+    $query->entityCondition('entity_type', $entity_type);
+    $results = $query->execute();
 
-  foreach ($results as $result) {
-    foreach ($result as $key => $value) {
-      $wrapper = entity_metadata_wrapper($entity_type, $key);
-      file_exists($wrapper->filepath->value()) ? $wrapper->status->set('OK') : $wrapper->status->set('File is missing');
-      $wrapper->save();
+    foreach ($results as $result) {
+      foreach ($result as $key => $value) {
+        $wrapper = entity_metadata_wrapper($entity_type, $key);
+        file_exists($wrapper->filepath->value()) ? $wrapper->status->set('OK') : $wrapper->status->set('File is missing');
+        $wrapper->save();
+      }
     }
   }
 }
