@@ -1,6 +1,4 @@
 
-var _fredericia_first_pageload = true;
-
 function fredericia_menu() {
 	var items = {};
 
@@ -181,42 +179,6 @@ function fredericia_block_view(delta, region) {
 /* Slider Menu functions (END) */
 
 
-function fredericia_services_postprocess(options, result) {
-	try {
-		var user_data, lang;
-
-		if (options.service == 'system' &&
-			options.resource == 'connect' &&
-			_fredericia_first_pageload == true) {
-
-			if (!Drupal.user.uid || Drupal.user.uid === 0) {
-				Drupal.settings.language_default = _fredericia_site_lang();
-			} else {
-				Drupal.settings.language_default = _fredericia_user_lang(Drupal.user.uid);
-			}
-
-			drupalgap_goto(drupalgap.settings.front, {reloadPage: true});
-			_fredericia_first_pageload = false;
-		}
-
-		if (options.service == 'user') {
-			if (options.resource == 'login') {
-				if (Drupal.user.uid === 0) return;
-
-				Drupal.settings.language_default = _fredericia_user_lang(Drupal.user.uid);
-				drupalgap_goto(drupalgap.settings.front, {reloadPage: true});
-			} else if (options.resource == 'logout') {
-				Drupal.settings.language_default = _fredericia_site_lang();
-				drupalgap_goto(drupalgap.settings.front, {reloadPage: true});
-			}
-		}
-
-	} catch (error) {
-		console.log('fredericia_services_postprocess - ' + error);
-	}
-}
-
-
 function fredericia_install() {
 	var css_1 = drupalgap_get_path('module', 'fredericia') + '/font-awesome/css/font-awesome.min.css';
 	var css_2 = drupalgap_get_path('module', 'fredericia') + '/fredericia.css';
@@ -232,6 +194,8 @@ function fredericia_locale() {
 
 function fredericia_deviceready() {
 	try {
+		Drupal.settings.language_default = 'da';
+
 		drupalgap.menu_links['user/%/edit'].page_callback = 'drupalgap_get_form';
 		drupalgap.menu_links['user/%/edit'].page_arguments = ['fredericia_user_profile_edit_form'];
 	}
@@ -457,17 +421,5 @@ function _fredericia_get_taxomony_terms_array(url) {
 	}
 
 	return fieldObject;
-}
-
-
-function _fredericia_user_lang(user_id) {
-	var user_data = _fredericia_get_JSON_data('/?q=drupalgap/user/' + user_id + '.json');
-	return (user_data['language'] === '') ? 'und' : user_data['language'];
-}
-
-
-function _fredericia_site_lang() {
-	var site_data = _fredericia_get_JSON_data('/lang-data.json');
-	return (site_data['language'] === '') ? 'und' : site_data['language'];
 }
 

@@ -170,7 +170,7 @@ Drupal.modules.custom['fredericia'] = {};
 
 drupalgap.settings.push_notifications = {
 	android: {
-		senderID: '402433140637'
+		senderID: '776243468156'
 	},
 
 	ios: {
