@@ -10,458 +10,500 @@ include_once 'os2intra_bi.features.inc';
  * Module for integrating statistics from KMD BI
  */
 
- /**
-  * Implements hook_permission().
-  */
- function os2intra_bi_permission() {
-   $permissions = array(
-     'view os2intra_bi content' => array(
-       'title' => t('View OS2intra BI content'),
-     ),
-     'administer os2intra_bi content' => array(
-       'title' => t('Administer OS2intra BI content'),
-       'restrict access' => TRUE,
-     ),
-   );
-   return $permissions;
- }
+/**
+ * Implements hook_permission().
+ */
+function os2intra_bi_permission() {
+  $permissions = array(
+    'view os2intra_bi content' => array(
+      'title' => t('View OS2intra BI content'),
+    ),
+    'administer os2intra_bi content' => array(
+      'title' => t('Administer OS2intra BI content'),
+      'restrict access' => TRUE,
+    ),
+  );
+  return $permissions;
+}
 
- /**
-  * Implements hook_entity_info().
-  */
- function os2intra_bi_entity_info() {
-   $info = array(
-     'os2intra_bi' => array(
-       'label' => t('OS2intra BI'),
-       'base table' => 'os2intra_bi',
-       'entity keys' => array(
-         'id' => 'id',
-         'bundle' => 'type',
-       ),
-       'bundle keys' => array(
-         'bundle' => 'type',
-       ),
-       'bundles' => array(),
-       'entity class' => 'OS2intraBI',
-       'controller class' => 'OS2intraBIController',
-       'metadata controller class' => '',
-       'fieldable' => TRUE,
-       'uri callback' => 'entity_class_uri',
-       'label callback' => 'entity_class_label',
-       'module' => 'os2intra_bi',
-     ),
-   );
-   $info['os2intra_bi_plugin'] = array(
-     'label' => t('OS2intra BI Plugin Type'),
-     'base table' => 'os2intra_bi_plugin',
-     'entity keys' => array(
-       'id' => 'id',
-       'name' => 'type',
-       'label' => 'label',
-     ),
-     'bundle of' => 'os2intra_bi',
-     'entity class' => 'OS2intraBIPlugin',
-     'controller class' => 'OS2intraBIPluginController',
-     'metadata controller class' => '',
-     'fieldable' => TRUE,
-     'exportable' => TRUE,
-     'module' => 'os2intra_bi',
-     // Automatically create page for managing entity bundles.
-     'admin ui' => array(
-       'path' => 'admin/structure/os2intra-bi',
-       'file' => 'os2intra_bi.admin.inc',
-       'controller class' => 'OS2intraBIPluginUiController',
-     ),
-     // Access callback is necessary for admin UI.
-     // @see http://drupal.org/node/1021576
-     'access callback' => 'os2intra_bi_plugin_access',
-   );
-   return $info;
- }
+/**
+ * Implements hook_entity_info().
+ */
+function os2intra_bi_entity_info() {
+  $info = array(
+    'os2intra_bi' => array(
+      'label' => t('OS2intra BI'),
+      'base table' => 'os2intra_bi',
+      'entity keys' => array(
+        'id' => 'id',
+        'bundle' => 'type',
+      ),
+      'bundle keys' => array(
+        'bundle' => 'type',
+      ),
+      'bundles' => array(),
+      'entity class' => 'OS2intraBI',
+      'controller class' => 'OS2intraBIController',
+      'metadata controller class' => '',
+      'fieldable' => TRUE,
+      'uri callback' => 'entity_class_uri',
+      'label callback' => 'entity_class_label',
+      'module' => 'os2intra_bi',
+    ),
+  );
+  $info['os2intra_bi_plugin'] = array(
+    'label' => t('OS2intra BI Plugin Type'),
+    'base table' => 'os2intra_bi_plugin',
+    'entity keys' => array(
+      'id' => 'id',
+      'name' => 'type',
+      'label' => 'label',
+    ),
+    'bundle of' => 'os2intra_bi',
+    'entity class' => 'OS2intraBIPlugin',
+    'controller class' => 'OS2intraBIPluginController',
+    'metadata controller class' => '',
+    'fieldable' => TRUE,
+    'exportable' => TRUE,
+    'module' => 'os2intra_bi',
+    // Automatically create page for managing entity bundles.
+    'admin ui' => array(
+      'path' => 'admin/structure/os2intra-bi',
+      'file' => 'os2intra_bi.admin.inc',
+      'controller class' => 'OS2intraBIPluginUiController',
+    ),
+    // Access callback is necessary for admin UI.
+    // @see http://drupal.org/node/1021576
+    'access callback' => 'os2intra_bi_plugin_access',
+  );
+  return $info;
+}
 
- /**
-  * Implements hook_entity_property_info().
-  */
- function os2intra_bi_entity_property_info() {
-   $info = array();
+/**
+ * Implements hook_entity_property_info().
+ */
+function os2intra_bi_entity_property_info() {
+  $info = array();
 
-   // Describe properties of entity.
-   $properties = &$info['os2intra_bi']['properties'];
-   $properties['id'] = array(
-     'type' => 'integer',
-     'schema field' => 'id',
-     'label' => t('BI Plugin ID'),
-     'description' => t('The internal ID of the BI Plugin.'),
-     'setter callback' => 'entity_property_verbatim_set',
-   );
-   $properties['type'] = array(
-     'type' => 'text',
-     'schema field' => 'type',
-     'required' => TRUE,
-     'label' => t('BI Plugin type (bundle)'),
-     'description' => t('Type of BI plugin.'),
-     'setter callback' => 'entity_property_verbatim_set',
-   );
-   $properties['title'] = array(
-     'type' => 'text',
-     'schema field' => 'title',
-     'required' => TRUE,
-     'label' => t('BI plugin title'),
-     'description' => t('Title of BI plugin.'),
-     'setter callback' => 'entity_property_verbatim_set',
-   );
-   $properties['description'] = array(
-     'type' => 'text',
-     'schema field' => 'description',
-     'label' => t('BI plugin description'),
-     'description' => t('Description of BI plugin.'),
-     'setter callback' => 'entity_property_verbatim_set',
-   );
-   $properties['status'] = array(
-     'type' => 'text',
-     'schema field' => 'status',
-     'label' => t('BI plugin status'),
-     'description' => t('Status of BI plugin.'),
-     'setter callback' => 'entity_property_verbatim_set',
-   );
-   $properties['filepath'] = array(
-     'type' => 'text',
-     'schema field' => 'filepath',
-     'label' => t('BI plugin filepath'),
-     'description' => t('Filepath of BI plugin.'),
-     'setter callback' => 'entity_property_verbatim_set',
-   );
-   $properties['modified'] = array(
-     'type' => 'date',
-     'schema field' => 'modified',
-     'label' => t('BI plugin modified timestamp'),
-     'description' => t('When BI plugin was modified.'),
-     'setter callback' => 'entity_property_verbatim_set',
-   );
+  // Describe properties of entity.
+  $properties = &$info['os2intra_bi']['properties'];
+  $properties['id'] = array(
+    'type' => 'integer',
+    'schema field' => 'id',
+    'label' => t('BI Plugin ID'),
+    'description' => t('The internal ID of the BI Plugin.'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
+  $properties['type'] = array(
+    'type' => 'text',
+    'schema field' => 'type',
+    'required' => TRUE,
+    'label' => t('BI Plugin type (bundle)'),
+    'description' => t('Type of BI plugin.'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
+  $properties['title'] = array(
+    'type' => 'text',
+    'schema field' => 'title',
+    'required' => TRUE,
+    'label' => t('BI plugin title'),
+    'description' => t('Title of BI plugin.'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
+  $properties['description'] = array(
+    'type' => 'text',
+    'schema field' => 'description',
+    'label' => t('BI plugin description'),
+    'description' => t('Description of BI plugin.'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
+  $properties['status'] = array(
+    'type' => 'text',
+    'schema field' => 'status',
+    'label' => t('BI plugin status'),
+    'description' => t('Status of BI plugin.'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
+  $properties['filepath'] = array(
+    'type' => 'text',
+    'schema field' => 'filepath',
+    'label' => t('BI plugin filepath'),
+    'description' => t('Filepath of BI plugin.'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
+  $properties['modified'] = array(
+    'type' => 'date',
+    'schema field' => 'modified',
+    'label' => t('BI plugin modified timestamp'),
+    'description' => t('When BI plugin was modified.'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
 
-   // Describe properties of entity type.
-   $type_properties = &$info['os2intra_bi_plugin']['properties'];
-   $type_properties['id'] = array(
-     'type' => 'integer',
-     'schema field' => 'id',
-     'label' => t('Type ID'),
-     'setter callback' => 'entity_property_verbatim_set',
-   );
-   $type_properties['type'] = array(
-     'type' => 'text',
-     'schema field' => 'type',
-     'required' => TRUE,
-     'label' => t('Type name'),
-     'setter callback' => 'entity_property_verbatim_set',
-   );
-   $type_properties['label'] = array(
-     'type' => 'text',
-     'schema field' => 'label',
-     'required' => TRUE,
-     'label' => t('Type label'),
-     'setter callback' => 'entity_property_verbatim_set',
-   );
-   $type_properties['description'] = array(
-     'type' => 'text',
-     'schema field' => 'description',
-     'required' => TRUE,
-     'label' => t('Type description'),
-     'setter callback' => 'entity_property_verbatim_set',
-   );
-   $type_properties['split'] = array(
-     'description' => 'Split CSV files into mutliple entities.',
-     'type' => 'boolean',
-     'schema field' => 'split',
-     'required' => FALSE,
-     'label' => t('Split CSV'),
-     'setter callback' => 'entity_property_verbatim_set',
-   );
+  // Describe properties of entity type.
+  $type_properties = &$info['os2intra_bi_plugin']['properties'];
+  $type_properties['id'] = array(
+    'type' => 'integer',
+    'schema field' => 'id',
+    'label' => t('Type ID'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
+  $type_properties['type'] = array(
+    'type' => 'text',
+    'schema field' => 'type',
+    'required' => TRUE,
+    'label' => t('Type name'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
+  $type_properties['label'] = array(
+    'type' => 'text',
+    'schema field' => 'label',
+    'required' => TRUE,
+    'label' => t('Type label'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
+  $type_properties['description'] = array(
+    'type' => 'text',
+    'schema field' => 'description',
+    'required' => TRUE,
+    'label' => t('Type description'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
+  $type_properties['split'] = array(
+    'description' => 'Split CSV files into mutliple entities.',
+    'type' => 'boolean',
+    'schema field' => 'split',
+    'required' => FALSE,
+    'label' => t('Split CSV'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
 
-   return $info;
- }
+  return $info;
+}
 
- /**
-  * Implements hook_entity_info_alter().
-  *
-  * Specify admin pages for all existing entity bundles.
-  */
- function os2intra_bi_entity_info_alter(&$entity_info) {
-   foreach (os2intra_bi_plugin_load_multiple() as $type => $info) {
-     $entity_info['os2intra_bi']['bundles'][$type] = array(
-       'label' => $info->label,
-       'admin' => array(
-         'path' => 'admin/structure/os2intra-bi/manage/%os2intra_bi_plugin',
-         'real path' => 'admin/structure/os2intra-bi/manage/' . $type,
-         'bundle argument' => 4,
-       ),
-     );
-   }
- }
+/**
+ * Implements hook_entity_info_alter().
+ *
+ * Specify admin pages for all existing entity bundles.
+ */
+function os2intra_bi_entity_info_alter(&$entity_info) {
+  foreach (os2intra_bi_plugin_load_multiple() as $type => $info) {
+    $entity_info['os2intra_bi']['bundles'][$type] = array(
+      'label' => $info->label,
+      'admin' => array(
+        'path' => 'admin/structure/os2intra-bi/manage/%os2intra_bi_plugin',
+        'real path' => 'admin/structure/os2intra-bi/manage/' . $type,
+        'bundle argument' => 4,
+      ),
+    );
+  }
+}
 
- /**
-  * Implements hook_menu().
-  */
- function os2intra_bi_menu() {
-   $items = array();
+/**
+ * Implements hook_menu().
+ */
+function os2intra_bi_menu() {
+  $items = array();
 
-   // Base URI for dealing with entity.
-   $base_uri = 'os2intra-bi/%os2intra_bi';
-   $base_uri_argument_position = 1;
+  // Base URI for dealing with entity.
+  $base_uri = 'os2intra-bi/%os2intra_bi';
+  $base_uri_argument_position = 1;
 
-   // Settings
-   $items['admin/structure/os2intra-bi/settings'] = array(
-     'title' => 'BI Settings',
-     'page callback' => 'drupal_get_form',
-     'page arguments' => array('os2intra_bi_settings'),
-     'access arguments' => array('administer os2intra_bi content'),
-     'file' => 'os2intra_bi.admin.inc',
-     'type' => MENU_LOCAL_ACTION,
-   );
+  // Settings
+  $items['admin/structure/os2intra-bi/settings'] = array(
+    'title' => 'BI Settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('os2intra_bi_settings'),
+    'access arguments' => array('administer os2intra_bi content'),
+    'file' => 'os2intra_bi.admin.inc',
+    'type' => MENU_LOCAL_ACTION,
+  );
 
-   // URI for choosing bundle of entity to add.
-   $items['admin/structure/os2intra-bi/add'] = array(
-     'title' => 'Add BI Plugin',
-     'page callback' => 'os2intra_bi_choose_bundle',
-     'access arguments' => array('administer os2intra_bi content'),
-     'file' => 'os2intra_bi.admin.inc',
-     'type' => MENU_LOCAL_ACTION,
-   );
+  // URI for choosing bundle of entity to add.
+  $items['admin/structure/os2intra-bi/add'] = array(
+    'title' => 'Add BI Plugin',
+    'page callback' => 'os2intra_bi_choose_bundle',
+    'access arguments' => array('administer os2intra_bi content'),
+    'file' => 'os2intra_bi.admin.inc',
+    'type' => MENU_LOCAL_ACTION,
+  );
 
-   // URI for adding entity of proper bundle.
-   foreach (os2intra_bi_plugin_load_multiple() as $type => $info) {
-     $items['admin/structure/os2intra-bi/add/' . $type] = array(
-       'title' => t('Add BI Plugin of type ') . $type,
-       'page callback' => 'os2intra_bi_add',
-       'page arguments' => array(2),
-       'access arguments' => array('administer os2intra_bi content'),
-       'file' => 'os2intra_bi.admin.inc',
-     );
-   }
+  // URI for choosing bundle of entity to add.
+  $items['admin/structure/os2intra-bi/create-bundles'] = array(
+    'title' => 'Create bundles',
+    'page callback' => 'os2intra_bi_create_bundles_and_content',
+    'access arguments' => array('administer os2intra_bi content'),
+    'type' => MENU_LOCAL_ACTION,
+  );
 
-   // URI for viewing entity bundles
-   $items['admin/structure/os2intra-bi'] = array(
-     'title' => t('OS2intra BI'),
-     'description' => t('Manage OS2intra BI'),
-     'page callback' => 'os2intra_bi_view_bundles',
-     'access arguments' => array('administer os2intra_bi content'),
-     'file' => 'os2intra_bi.pages.inc',
-     'type' => MENU_NORMAL_ITEM,
-   );
+  // URI for adding entity of proper bundle.
+  foreach (os2intra_bi_plugin_load_multiple() as $type => $info) {
+    $items['admin/structure/os2intra-bi/add/' . $type] = array(
+      'title' => t('Add BI Plugin of type ') . $type,
+      'page callback' => 'os2intra_bi_add',
+      'page arguments' => array(2),
+      'access arguments' => array('administer os2intra_bi content'),
+      'file' => 'os2intra_bi.admin.inc',
+    );
+  }
 
-   // URI for viewing entity instances.
-   $items[$base_uri] = array(
-     'title callback' => 'entity_label',
-     'title arguments' => array('os2intra_bi', $base_uri_argument_position),
-     'page callback' => 'os2intra_bi_view',
-     'page arguments' => array($base_uri_argument_position),
-     'access arguments' => array('view os2intra_bi content'),
-     'file' => 'os2intra_bi.pages.inc',
-   );
-   $items[$base_uri . '/view'] = array(
-     'title' => 'View OS2intra BI',
-     'type' => MENU_DEFAULT_LOCAL_TASK,
-     'weight' => -10,
-   );
+  // URI for viewing entity bundles
+  $items['admin/structure/os2intra-bi'] = array(
+    'title' => t('OS2intra BI'),
+    'description' => t('Manage OS2intra BI'),
+    'page callback' => 'os2intra_bi_view_bundles',
+    'access arguments' => array('administer os2intra_bi content'),
+    'file' => 'os2intra_bi.pages.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
 
-   // URI for editing entity instances.
-   $items[$base_uri . '/edit'] = array(
-     'title' => 'Edit OS2intra BI',
-     'page callback' => 'drupal_get_form',
-     'page arguments' => array('os2intra_bi_form', $base_uri_argument_position),
-     'access arguments' => array('administer os2intra_bi content'),
-     'file' => 'os2intra_bi.admin.inc',
-     'type' => MENU_LOCAL_TASK,
-     'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
-   );
+  // URI for viewing entity instances.
+  $items[$base_uri] = array(
+    'title callback' => 'entity_label',
+    'title arguments' => array('os2intra_bi', $base_uri_argument_position),
+    'page callback' => 'os2intra_bi_view',
+    'page arguments' => array($base_uri_argument_position),
+    'access arguments' => array('view os2intra_bi content'),
+    'file' => 'os2intra_bi.pages.inc',
+  );
+  $items[$base_uri . '/view'] = array(
+    'title' => 'View OS2intra BI',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10,
+  );
 
-   // URI for deleting entity instances.
-   $items[$base_uri . '/delete'] = array(
-     'title callback' => 'os2intra_bi_label',
-     'title arguments' => array($base_uri_argument_position),
-     'page callback' => 'drupal_get_form',
-     'page arguments' => array('os2intra_bi_delete_form', $base_uri_argument_position),
-     'access arguments' => array('administer os2intra_bi content'),
-     'file' => 'os2intra_bi.admin.inc',
-   );
+  // URI for editing entity instances.
+  $items[$base_uri . '/edit'] = array(
+    'title' => 'Edit OS2intra BI',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('os2intra_bi_form', $base_uri_argument_position),
+    'access arguments' => array('administer os2intra_bi content'),
+    'file' => 'os2intra_bi.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+    'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
+  );
 
-   // URI for deleting entity bundles.
-   $items['admin/structure/os2intra-bi/%os2intra_bi_plugin/delete'] = array(
-     'title' => 'Delete BI plugin type',
-     'page callback' => 'drupal_get_form',
-     'page arguments' => array('os2intra_bi_plugin_form_delete_confirm', 4),
-     'access arguments' => array('administer os2intra_bi content'),
-     'weight' => 1,
-     'type' => MENU_NORMAL_ITEM,
-     'file' => 'os2intra_bi.admin.inc',
-   );
+  // URI for deleting entity instances.
+  $items[$base_uri . '/delete'] = array(
+    'title callback' => 'os2intra_bi_label',
+    'title arguments' => array($base_uri_argument_position),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array(
+      'os2intra_bi_delete_form',
+      $base_uri_argument_position,
+    ),
+    'access arguments' => array('administer os2intra_bi content'),
+    'file' => 'os2intra_bi.admin.inc',
+  );
 
-   return $items;
- }
+  // URI for deleting entity bundles.
+  $items['admin/structure/os2intra-bi/%os2intra_bi_plugin/delete'] = array(
+    'title' => 'Delete BI plugin type',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('os2intra_bi_plugin_form_delete_confirm', 4),
+    'access arguments' => array('administer os2intra_bi content'),
+    'weight' => 1,
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'os2intra_bi.admin.inc',
+  );
 
- /**
-  * Load an instance of os2intra_bi.
-  *
-  * @param int $id
-  *   Entity identifier.
-  * @param bool $reset
-  *   Whether to reset the internal cache for os2intra_bi.
-  *
-  * @return mixed
-  *   An actual entity, or false.
-  */
- function os2intra_bi_load($id, $reset = FALSE) {
-   $entities = os2intra_bi_load_multiple(array($id), array(), $reset);
-   return reset($entities);
- }
+  return $items;
+}
 
- /**
-  * Load multiple instances of os2intra_bi.
-  *
-  * @param array $ids
-  *   Entity identifiers.
-  * @param array $conditions
-  *   (deprecated) An associative array of conditions on the base entity table.
-  * @param bool $reset
-  *   Whether to reset the internal cache for os2intra_bi.
-  *
-  * @return array
-  *   Founded entities.
-  */
- function os2intra_bi_load_multiple($ids = array(), $conditions = array(), $reset = FALSE) {
-   return entity_load('os2intra_bi', $ids, $conditions, $reset);
- }
+/**
+ * Load an instance of os2intra_bi.
+ *
+ * @param int $id
+ *   Entity identifier.
+ * @param bool $reset
+ *   Whether to reset the internal cache for os2intra_bi.
+ *
+ * @return mixed
+ *   An actual entity, or false.
+ */
+function os2intra_bi_load($id, $reset = FALSE) {
+  $entities = os2intra_bi_load_multiple(array($id), array(), $reset);
+  return reset($entities);
+}
 
- /**
-  * Load an instance of os2intra_bi_plugin.
-  *
-  * @param string $entity_type
-  *   Name of the entity type to load.
-  *
-  * @return mixed
-  *   Founded entity type, or false.
-  */
- function os2intra_bi_plugin_load($entity_type) {
-   return os2intra_bi_plugin_load_multiple($entity_type);
- }
+/**
+ * Load multiple instances of os2intra_bi.
+ *
+ * @param array $ids
+ *   Entity identifiers.
+ * @param array $conditions
+ *   (deprecated) An associative array of conditions on the base entity table.
+ * @param bool $reset
+ *   Whether to reset the internal cache for os2intra_bi.
+ *
+ * @return array
+ *   Founded entities.
+ */
+function os2intra_bi_load_multiple(
+  $ids = array(),
+  $conditions = array(),
+  $reset = FALSE
+) {
+  return entity_load('os2intra_bi', $ids, $conditions, $reset);
+}
 
- /**
-  * Load multiple instances of os2intra_bi_plugin.
-  *
-  * @param string $type_name
-  *   Name of the entity type to load.
-  *
-  * @return mixed
-  *   Founded entity type, or false.
-  */
- function os2intra_bi_plugin_load_multiple($type_name = NULL) {
-   $types = entity_load_multiple_by_name('os2intra_bi_plugin', isset($type_name) ? array($type_name) : FALSE);
-   return isset($type_name) ? reset($types) : $types;
- }
+/**
+ * Load an instance of os2intra_bi_plugin.
+ *
+ * @param string $entity_type
+ *   Name of the entity type to load.
+ *
+ * @return mixed
+ *   Founded entity type, or false.
+ */
+function os2intra_bi_plugin_load($entity_type) {
+  return os2intra_bi_plugin_load_multiple($entity_type);
+}
 
- /**
-  * Access callback for os2intra_bi_plugin.
-  */
- function os2intra_bi_plugin_access($op, $entity = NULL) {
-   return user_access('administer os2intra_bi_plugin content');
- }
+/**
+ * Load multiple instances of os2intra_bi_plugin.
+ *
+ * @param string $type_name
+ *   Name of the entity type to load.
+ *
+ * @return mixed
+ *   Founded entity type, or false.
+ */
+function os2intra_bi_plugin_load_multiple($type_name = NULL) {
+  $types = entity_load_multiple_by_name(
+    'os2intra_bi_plugin',
+    isset($type_name) ? array($type_name) : FALSE
+  );
+  return isset($type_name) ? reset($types) : $types;
+}
 
- /**
-  * Implementation of hook_field_formatter_info().
-  */
- function os2intra_bi_field_formatter_info() {
-   return array(
-     'tablefield_preview' => array(
-       'label' => t('Tabular Preview'),
-       'field types' => array('tablefield'),
-     ),
-   );
- }
+/**
+ * Access callback for os2intra_bi_plugin.
+ */
+function os2intra_bi_plugin_access($op, $entity = NULL) {
+  return user_access('administer os2intra_bi_plugin content');
+}
 
- /**
-  * Implements hook_field_formatter_view().
-  */
- function os2intra_bi_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
-   $element = array();
-   $settings = $display['settings'];
-   $formatter = $display['type'];
+/**
+ * Implementation of hook_field_formatter_info().
+ */
+function os2intra_bi_field_formatter_info() {
+  return array(
+    'tablefield_preview' => array(
+      'label' => t('Tabular Preview'),
+      'field types' => array('tablefield'),
+    ),
+  );
+}
 
-   foreach ($items as $delta => $table) {
-     // Rationalize the stored data
-     if (!empty($table['tabledata'])) {
-       $tabledata = array_slice($table['tabledata'], 0, 11);
-     }
-     elseif (!empty($table['value'])) {
-       $tabledata = tablefield_rationalize_table(unserialize(array_slice($table['value'], 0, 11)));
-     }
+/**
+ * Implements hook_field_formatter_view().
+ */
+function os2intra_bi_field_formatter_view(
+  $entity_type,
+  $entity,
+  $field,
+  $instance,
+  $langcode,
+  $items,
+  $display
+) {
+  $element = array();
+  $settings = $display['settings'];
+  $formatter = $display['type'];
 
-     // Run the table through input filters
-     if (isset($tabledata)) {
-       if (!empty($tabledata)) {
-         foreach ($tabledata as $row_key => $row) {
-           foreach ($row as $col_key => $cell) {
-             if (!empty($table['format'])) {
-               $tabledata[$row_key][$col_key] = array('data' => check_markup($cell, $table['format']), 'class' => array('row_' . $row_key, 'col_' . $col_key));
-             }
-             else {
-               $tabledata[$row_key][$col_key] = array('data' => check_plain($cell), 'class' => array('row_' . $row_key, 'col_' . $col_key));
-             }
-           }
-         }
-       }
+  foreach ($items as $delta => $table) {
+    // Rationalize the stored data
+    if (!empty($table['tabledata'])) {
+      $tabledata = array_slice($table['tabledata'], 0, 11);
+    }
+    elseif (!empty($table['value'])) {
+      $tabledata = tablefield_rationalize_table(
+        unserialize(array_slice($table['value'], 0, 11))
+      );
+    }
 
-       $tabledata = array_slice($tabledata, 0, 11);
+    // Run the table through input filters
+    if (isset($tabledata)) {
+      if (!empty($tabledata)) {
+        foreach ($tabledata as $row_key => $row) {
+          foreach ($row as $col_key => $cell) {
+            if (!empty($table['format'])) {
+              $tabledata[$row_key][$col_key] = array(
+                'data' => check_markup(
+                  $cell,
+                  $table['format']
+                ),
+                'class' => array('row_' . $row_key, 'col_' . $col_key),
+              );
+            }
+            else {
+              $tabledata[$row_key][$col_key] = array(
+                'data' => check_plain(
+                  $cell
+                ),
+                'class' => array('row_' . $row_key, 'col_' . $col_key),
+              );
+            }
+          }
+        }
+      }
 
-       $preview_tabledata = array();
+      $tabledata = array_slice($tabledata, 0, 11);
 
-       foreach ($tabledata as $row_key => $row) {
-         foreach ($row as $col_key => $cell) {
-           if ($col_key > 3) {
-             unset($row[$col_key]);
-           }
-           else {
-             $preview_tabledata[$row_key][$col_key] = $cell;
-           }
-         }
-       }
+      $preview_tabledata = array();
+
+      foreach ($tabledata as $row_key => $row) {
+        foreach ($row as $col_key => $cell) {
+          if ($col_key > 3) {
+            unset($row[$col_key]);
+          }
+          else {
+            $preview_tabledata[$row_key][$col_key] = $cell;
+          }
+        }
+      }
 
       // Pull the header for theming
       $header_data = array_shift($preview_tabledata);
 
-       // Check for an empty header, if so we don't want to theme it.
-       $noheader = TRUE;
-       foreach ($header_data as $cell) {
-         if (strlen($cell['data']) > 0) {
-           $noheader = FALSE;
-           break;
-         }
-       }
+      // Check for an empty header, if so we don't want to theme it.
+      $noheader = TRUE;
+      foreach ($header_data as $cell) {
+        if (strlen($cell['data']) > 0) {
+          $noheader = FALSE;
+          break;
+        }
+      }
 
-       $header = $noheader ? NULL : $header_data;
+      $header = $noheader ? NULL : $header_data;
 
-       $entity_info = entity_get_info($entity_type);
-       $entity_id = !empty($entity_info['entity keys']['id']) ? $entity->{$entity_info['entity keys']['id']} : NULL;
+      $entity_info = entity_get_info($entity_type);
+      $entity_id = !empty($entity_info['entity keys']['id']) ? $entity->{$entity_info['entity keys']['id']} : NULL;
 
-       // Theme the table for display
-       $element[$delta]['#markup'] = theme('tablefield_preview', array(
-         'header' => $header,
-         'rows' => $preview_tabledata,
-         'delta' => $delta,
-         'export' => isset($field['settings']['export']) ? $field['settings']['export'] : NULL,
-         'entity_type' => $entity_type,
-         'entity_id' => $entity_id,
-         'field_name' => $field['field_name'],
-         'langcode' => $langcode,
-       ));
-     }
+      // Theme the table for display
+      $element[$delta]['#markup'] = theme(
+        'tablefield_preview',
+        array(
+          'header' => $header,
+          'rows' => $preview_tabledata,
+          'delta' => $delta,
+          'export' => isset($field['settings']['export']) ? $field['settings']['export'] : NULL,
+          'entity_type' => $entity_type,
+          'entity_id' => $entity_id,
+          'field_name' => $field['field_name'],
+          'langcode' => $langcode,
+        )
+      );
+    }
 
-   }
-   return $element;
- }
+  }
+  return $element;
+}
 
- /**
-  * Implements hook_theme().
-  */
- function os2intra_bi_theme() {
+/**
+ * Implements hook_theme().
+ */
+function os2intra_bi_theme() {
   $theme = array();
   $theme['tablefield_preview'] = array(
     'variables' => array(
@@ -473,16 +515,16 @@ include_once 'os2intra_bi.features.inc';
       'entity_id' => NULL,
       'field_name' => NULL,
       'langcode' => NULL,
-    )
+    ),
   );
   $theme['os2intra_bi'] = array(
     'render element' => 'elements',
-    'template' => 'os2intra-bi'
+    'template' => 'os2intra-bi',
   );
   return $theme;
- }
+}
 
- /**
+/**
  * Implements template_preprocess_entity().
  *
  * Runs a entity specific preprocess function, if it exists.
@@ -491,9 +533,14 @@ function os2intra_bi_preprocess_entity(&$variables) {
   if ($variables['entity_type'] == 'os2intra_bi') {
 
     // Last modified date
-    $variables['content']['#attached']['css'][] = drupal_get_path('module', 'os2intra_bi') . '/css/view.css';
+    $variables['content']['#attached']['css'][] = drupal_get_path(
+        'module',
+        'os2intra_bi'
+      ) . '/css/view.css';
     $variables['content']['os2intra_bi_import_file_modified'] = array(
-      '#markup' => '<b>' . t('File last updated') . '</b><br />' . format_date($variables['os2intra_bi']->modified),
+      '#markup' => '<b>' . t('File last updated') . '</b><br />' . format_date(
+          $variables['os2intra_bi']->modified
+        ),
     );
 
     // BI plugin logo
@@ -505,126 +552,155 @@ function os2intra_bi_preprocess_entity(&$variables) {
     );
 
     // Override table colors
-    drupal_add_css('.table-striped > tbody > tr:nth-of-type(odd) { background: #' . variable_get('odd_background_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
-    drupal_add_css('.table-striped > tbody > tr:nth-of-type(even) { background: #' . variable_get('even_background_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
-    drupal_add_css('.table-striped > thead > tr:nth-of-type(1) { background: #' . variable_get('header_background_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
-    drupal_add_css('.table-striped > thead > tr:nth-of-type(1) { color: #' . variable_get('header_text_color') . ' !important; }', array('group' => CSS_THEME, 'type' => 'inline'));
+    drupal_add_css(
+      '.table-striped > tbody > tr:nth-of-type(odd) { background: #' . variable_get(
+        'odd_background_color'
+      ) . ' !important; }',
+      array('group' => CSS_THEME, 'type' => 'inline')
+    );
+    drupal_add_css(
+      '.table-striped > tbody > tr:nth-of-type(even) { background: #' . variable_get(
+        'even_background_color'
+      ) . ' !important; }',
+      array('group' => CSS_THEME, 'type' => 'inline')
+    );
+    drupal_add_css(
+      '.table-striped > thead > tr:nth-of-type(1) { background: #' . variable_get(
+        'header_background_color'
+      ) . ' !important; }',
+      array('group' => CSS_THEME, 'type' => 'inline')
+    );
+    drupal_add_css(
+      '.table-striped > thead > tr:nth-of-type(1) { color: #' . variable_get(
+        'header_text_color'
+      ) . ' !important; }',
+      array('group' => CSS_THEME, 'type' => 'inline')
+    );
   }
 }
 
- /**
-  * Theme function for table view
-  */
- function theme_tablefield_preview($variables) {
-   $attributes = array(
-     'id' => 'tablefield-' . $variables['delta'],
-     'class' => array(
-       'tablefield'
-     ),
-   );
+/**
+ * Theme function for table view
+ */
+function theme_tablefield_preview($variables) {
+  $attributes = array(
+    'id' => 'tablefield-' . $variables['delta'],
+    'class' => array(
+      'tablefield',
+    ),
+  );
 
-   // If the user has access to the csv export option, display it now.
-   $export = '';
-   if ($variables['export'] && user_access('export tablefield')) {
-     $url = sprintf('tablefield/export/%s/%s/%s/%s/%s', $variables['entity_type'], $variables['entity_id'], $variables['field_name'], $variables['langcode'], $variables['delta']);
-     $export = '<div id="tablefield-export-link-' . $variables['delta'] . '" class="tablefield-export-link">' . l(t('Export Table Data'), $url) . '</div>';
-   }
+  // If the user has access to the csv export option, display it now.
+  $export = '';
+  if ($variables['export'] && user_access('export tablefield')) {
+    $url = sprintf(
+      'tablefield/export/%s/%s/%s/%s/%s',
+      $variables['entity_type'],
+      $variables['entity_id'],
+      $variables['field_name'],
+      $variables['langcode'],
+      $variables['delta']
+    );
+    $export = '<div id="tablefield-export-link-' . $variables['delta'] . '" class="tablefield-export-link">' . l(
+        t('Export Table Data'),
+        $url
+      ) . '</div>';
+  }
 
-   return '<div id="tablefield-wrapper-' . $variables['delta'] . '" class="tablefield-wrapper">'
-     . theme('table',
-       array(
-         'header' => $variables['header'],
-         'rows' => $variables['rows'],
-         'attributes' => $attributes,
-       )
-     )
-     . $export
-     . '</div>';
- }
+  return '<div id="tablefield-wrapper-' . $variables['delta'] . '" class="tablefield-wrapper">'
+  . theme(
+    'table',
+    array(
+      'header' => $variables['header'],
+      'rows' => $variables['rows'],
+      'attributes' => $attributes,
+    )
+  )
+  . $export
+  . '</div>';
+}
 
- /**
-  * Field instances for new bundles
-  */
+/**
+ * Field instances for new bundles
+ */
 function os2intra_bi_create_fi($bundle) {
   $import_file_field_instance = array(
     'label' => 'Import file',
     'widget' =>
-    array (
-      'type' => 'tablefield',
-      'module' => 'tablefield',
-      'active' => 0,
-      'settings' =>
-      array (
-      ),
-    ),
-    'settings' =>
-    array (
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => false,
-    ),
-    'display' =>
-    array (
-      'default' =>
-      array (
-        'label' => 'above',
-        'type' => 'tablefield_default',
-        'settings' =>
-        array (
-        ),
+      array(
+        'type' => 'tablefield',
         'module' => 'tablefield',
-        'weight' => 0,
+        'active' => 0,
+        'settings' =>
+          array(),
       ),
-    ),
+    'settings' =>
+      array(
+        'custom_add_another' => '',
+        'custom_remove' => '',
+        'user_register_form' => FALSE,
+      ),
+    'display' =>
+      array(
+        'default' =>
+          array(
+            'label' => 'above',
+            'type' => 'tablefield_default',
+            'settings' =>
+              array(),
+            'module' => 'tablefield',
+            'weight' => 0,
+          ),
+      ),
     'required' => 1,
     'description' => '',
     'custom_add_another' => '',
     'custom_remove' => '',
     'default_value' =>
-    array (
-      0 =>
-      array (
-        'tablefield' =>
-        array (
-          'cell_0_0' => '',
-          'cell_0_1' => '',
-          'cell_0_2' => '',
-          'cell_0_3' => '',
-          'cell_0_4' => '',
-          'cell_1_0' => '',
-          'cell_1_1' => '',
-          'cell_1_2' => '',
-          'cell_1_3' => '',
-          'cell_1_4' => '',
-          'cell_2_0' => '',
-          'cell_2_1' => '',
-          'cell_2_2' => '',
-          'cell_2_3' => '',
-          'cell_2_4' => '',
-          'cell_3_0' => '',
-          'cell_3_1' => '',
-          'cell_3_2' => '',
-          'cell_3_3' => '',
-          'cell_3_4' => '',
-          'cell_4_0' => '',
-          'cell_4_1' => '',
-          'cell_4_2' => '',
-          'cell_4_3' => '',
-          'cell_4_4' => '',
-          'rebuild' =>
-          array (
-            'count_cols' => 5,
-            'count_rows' => 5,
-            'rebuild' => 'Rebuild Table',
+      array(
+        0 =>
+          array(
+            'tablefield' =>
+              array(
+                'cell_0_0' => '',
+                'cell_0_1' => '',
+                'cell_0_2' => '',
+                'cell_0_3' => '',
+                'cell_0_4' => '',
+                'cell_1_0' => '',
+                'cell_1_1' => '',
+                'cell_1_2' => '',
+                'cell_1_3' => '',
+                'cell_1_4' => '',
+                'cell_2_0' => '',
+                'cell_2_1' => '',
+                'cell_2_2' => '',
+                'cell_2_3' => '',
+                'cell_2_4' => '',
+                'cell_3_0' => '',
+                'cell_3_1' => '',
+                'cell_3_2' => '',
+                'cell_3_3' => '',
+                'cell_3_4' => '',
+                'cell_4_0' => '',
+                'cell_4_1' => '',
+                'cell_4_2' => '',
+                'cell_4_3' => '',
+                'cell_4_4' => '',
+                'rebuild' =>
+                  array(
+                    'count_cols' => 5,
+                    'count_rows' => 5,
+                    'rebuild' => 'Rebuild Table',
+                  ),
+                'import' =>
+                  array(
+                    'file' => '',
+                    'import' => 'Upload CSV',
+                  ),
+              ),
           ),
-          'import' =>
-          array (
-            'file' => '',
-            'import' => 'Upload CSV',
-          ),
-        ),
       ),
-    ),
     'id' => '243',
     'field_id' => '143',
     'field_name' => 'os2intra_bi_import_file',
@@ -633,55 +709,55 @@ function os2intra_bi_create_fi($bundle) {
     'deleted' => '0',
   );
 
-  $opus_roles_field_instance = array (
+  $opus_roles_field_instance = array(
     'label' => 'Opus Roles',
     'widget' =>
-    array (
-      'weight' => '32',
-      'type' => 'entityreference_autocomplete_tags',
-      'module' => 'entityreference',
-      'active' => 1,
-      'settings' =>
-      array (
-        'match_operator' => 'CONTAINS',
-        'size' => '60',
-        'entityreference_autocreate' =>
-        array (
-          'active' => 0,
-          'author_current_user' => 1,
-          'author' => '',
-          'status' => '-1',
-        ),
-        'path' => '',
-      ),
-    ),
-    'settings' =>
-    array (
-      'behaviors' =>
-      array (
-        'prepopulate' =>
-        array (
-          'status' => 0,
-        ),
-      ),
-      'custom_add_another' => '',
-      'custom_remove' => '',
-      'user_register_form' => false,
-    ),
-    'display' =>
-    array (
-      'default' =>
-      array (
-        'label' => 'above',
-        'type' => 'entityreference_label',
-        'settings' =>
-        array (
-          'link' => false,
-        ),
+      array(
+        'weight' => '32',
+        'type' => 'entityreference_autocomplete_tags',
         'module' => 'entityreference',
-        'weight' => 1,
+        'active' => 1,
+        'settings' =>
+          array(
+            'match_operator' => 'CONTAINS',
+            'size' => '60',
+            'entityreference_autocreate' =>
+              array(
+                'active' => 0,
+                'author_current_user' => 1,
+                'author' => '',
+                'status' => '-1',
+              ),
+            'path' => '',
+          ),
       ),
-    ),
+    'settings' =>
+      array(
+        'behaviors' =>
+          array(
+            'prepopulate' =>
+              array(
+                'status' => 0,
+              ),
+          ),
+        'custom_add_another' => '',
+        'custom_remove' => '',
+        'user_register_form' => FALSE,
+      ),
+    'display' =>
+      array(
+        'default' =>
+          array(
+            'label' => 'above',
+            'type' => 'entityreference_label',
+            'settings' =>
+              array(
+                'link' => FALSE,
+              ),
+            'module' => 'entityreference',
+            'weight' => 1,
+          ),
+      ),
     'required' => 0,
     'description' => '',
     'custom_add_another' => '',
@@ -696,11 +772,21 @@ function os2intra_bi_create_fi($bundle) {
     'deleted' => '0',
   );
 
-  if (empty(field_info_instance('os2intra_bi', 'os2intra_bi_import_file', $bundle))) {
+  if (empty(field_info_instance(
+    'os2intra_bi',
+    'os2intra_bi_import_file',
+    $bundle
+  ))
+  ) {
     field_create_instance($import_file_field_instance);
   }
 
-  if (empty(field_info_instance('os2intra_bi', 'os2intra_bi_opus_roles', $bundle))) {
+  if (empty(field_info_instance(
+    'os2intra_bi',
+    'os2intra_bi_opus_roles',
+    $bundle
+  ))
+  ) {
     field_create_instance($opus_roles_field_instance);
   }
 }
@@ -709,14 +795,20 @@ function os2intra_bi_create_fi($bundle) {
  * Create bundles from directories
  */
 function os2intra_bi_create_bundles_and_content() {
-  $directory = variable_get('os2intra_bi_file_directory', '/var/www/test.intranet.fredericia.dk/bi');
-  $scanned_directory = array_diff(scandir($directory), array('..', '.', '.DS_Store'));
+  $directory = variable_get(
+    'os2intra_bi_file_directory',
+    '/var/www/test.intranet.fredericia.dk/bi'
+  );
+  $scanned_directory = array_diff(
+    scandir($directory),
+    array('..', '.', '.DS_Store')
+  );
   foreach ($scanned_directory as $dir) {
     $bundle_name = strtolower($dir);
     $search = array('æ', 'ø', 'å', 'Æ', 'Ø', 'Å');
     $replace = array('ae', 'oe', 'aa', 'AE', 'OE', 'AA');
     $bundle_name = str_replace($search, $replace, $bundle_name);
-    $bundle_name = preg_replace('@[^a-z0-9_]+@','_', $bundle_name);
+    $bundle_name = preg_replace('@[^a-z0-9_]+@', '_', $bundle_name);
 
     // Check if bundle exists
     $query = new EntityFieldQuery;
@@ -729,7 +821,7 @@ function os2intra_bi_create_bundles_and_content() {
       $bundle = new stdClass();
       $bundle->type = $bundle_name;
       $bundle->label = t($dir);
-      $bundle->is_new = true;
+      $bundle->is_new = TRUE;
       $bundle->description = t("Automatically created");
 
       $controller = new OS2intraBIPluginController('os2intra_bi_plugin');
@@ -740,7 +832,10 @@ function os2intra_bi_create_bundles_and_content() {
     }
 
     // Look for files
-    $files = array_diff(scandir($directory . '/' . $dir), array('..', '.', '.DS_Store'));
+    $files = array_diff(
+      scandir($directory . '/' . $dir),
+      array('..', '.', '.DS_Store')
+    );
     $files = str_replace('.csv', '', $files);
 
     foreach ($files as $file) {
@@ -776,8 +871,14 @@ function os2intra_bi_create_bundles_and_content() {
           $entity = entity_create($entity_type, array('type' => $bundle_name));
           $wrapper = entity_metadata_wrapper($entity_type, $entity);
           $wrapper->title = $file;
-          $wrapper->filepath->set($directory . '/' . $dir . '/' . $file . '.csv');
-          $wrapper->os2intra_bi_import_file->set(os2intra_bi_csv_value($directory . '/' . $dir . '/' . $file . '.csv'));
+          $wrapper->filepath->set(
+            $directory . '/' . $dir . '/' . $file . '.csv'
+          );
+          $wrapper->os2intra_bi_import_file->set(
+            os2intra_bi_csv_value(
+              $directory . '/' . $dir . '/' . $file . '.csv'
+            )
+          );
           $wrapper->modified->set(filemtime($filepath));
           $wrapper->save();
         }
@@ -786,8 +887,14 @@ function os2intra_bi_create_bundles_and_content() {
         foreach ($results['exists'] as $result) {
           $result = reset($result);
           $wrapper = entity_metadata_wrapper($entity_type, $result->id);
-          $wrapper->filepath->set($directory . '/' . $dir . '/' . $file . '.csv');
-          $wrapper->os2intra_bi_import_file->set(os2intra_bi_csv_value($directory . '/' . $dir . '/' . $file . '.csv'));
+          $wrapper->filepath->set(
+            $directory . '/' . $dir . '/' . $file . '.csv'
+          );
+          $wrapper->os2intra_bi_import_file->set(
+            os2intra_bi_csv_value(
+              $directory . '/' . $dir . '/' . $file . '.csv'
+            )
+          );
           $wrapper->modified->set(filemtime($filepath));
           $wrapper->save();
         }
@@ -801,7 +908,7 @@ function os2intra_bi_create_bundles_and_content() {
         $query->propertyCondition('type', $bundle_name);
         $results = $query->execute();
 
-        foreach($results['os2intra_bi'] as $result) {
+        foreach ($results['os2intra_bi'] as $result) {
           $title = '';
           $entity = entity_load('os2intra_bi', array($result->id));
           $entity = array_values($entity)[0];
@@ -837,7 +944,9 @@ function os2intra_bi_create_bundles_and_content() {
               }
 
               if ($row_count == 1 && $col == 0 && !$empty_array) {
-                $term = reset(taxonomy_get_term_by_name($value, 'os2intra_bi_opus_roles'));
+                $term = reset(
+                  taxonomy_get_term_by_name($value, 'os2intra_bi_opus_roles')
+                );
                 $tid = $term->tid;
                 $opus_roles[$title] = $tid;
               }
@@ -866,11 +975,18 @@ function os2intra_bi_create_bundles_and_content() {
 
             // Create content
             if (!$results['exists']) {
-              $entity = entity_create($entity_type, array('type' => $bundle_name));
+              $entity = entity_create(
+                $entity_type,
+                array('type' => $bundle_name)
+              );
               $wrapper = entity_metadata_wrapper($entity_type, $entity);
               $wrapper->title = $title;
-              $wrapper->filepath->set($directory . '/' . $dir . '/' . $file . '.csv');
-              $wrapper->os2intra_bi_import_file->set(os2intra_bi_csv_value_split($data, $col, $row_count));
+              $wrapper->filepath->set(
+                $directory . '/' . $dir . '/' . $file . '.csv'
+              );
+              $wrapper->os2intra_bi_import_file->set(
+                os2intra_bi_csv_value_split($data, $col, $row_count)
+              );
               $wrapper->os2intra_bi_opus_roles->set(array($opus_roles[$title]));
               $wrapper->modified->set(filemtime($filepath));
               $wrapper->save();
@@ -903,7 +1019,9 @@ function os2intra_bi_create_bundles_and_content() {
     foreach ($results as $result) {
       foreach ($result as $key => $value) {
         $wrapper = entity_metadata_wrapper($entity_type, $key);
-        file_exists($wrapper->filepath->value()) ? $wrapper->status->set('OK') : $wrapper->status->set('File is missing');
+        file_exists($wrapper->filepath->value()) ? $wrapper->status->set(
+          'OK'
+        ) : $wrapper->status->set('File is missing');
         $wrapper->save();
       }
     }
@@ -919,16 +1037,23 @@ function os2intra_bi_csv_value($fileuri) {
     $max_col_count = 0;
     $row_count = 0;
     $imported_tablefield = array();
-    while (($csv = fgetcsv($handle, 0, variable_get('tablefield_csv_separator', ','))) !== FALSE) {
+    while (($csv = fgetcsv(
+        $handle,
+        0,
+        variable_get('tablefield_csv_separator', ',')
+      )) !== FALSE) {
       $col_count = count($csv);
       foreach ($csv as $col_id => $col) {
-        $imported_tablefield['cell_'. $row_count .'_'. $col_id] = $col;
+        $imported_tablefield['cell_' . $row_count . '_' . $col_id] = $col;
       }
       $max_col_count = $col_count > $max_col_count ? $col_count : $max_col_count;
       $row_count++;
     }
     fclose($handle);
-    $imported_tablefield['rebuild'] = array('count_cols' => $max_col_count, 'count_rows' => $row_count);
+    $imported_tablefield['rebuild'] = array(
+      'count_cols' => $max_col_count,
+      'count_rows' => $row_count,
+    );
   }
 
   return array('value' => serialize($imported_tablefield));
@@ -941,7 +1066,10 @@ function os2intra_bi_csv_value_split($imported_tablefield, $col, $row_count) {
   // Populate CSV values
   $col = $col + 1;
   $row_count = $row_count + 1;
-  $imported_tablefield['rebuild'] = array('count_cols' => $col, 'count_rows' => $row_count);
+  $imported_tablefield['rebuild'] = array(
+    'count_cols' => $col,
+    'count_rows' => $row_count,
+  );
   return array('value' => serialize($imported_tablefield));
 }
 
@@ -963,20 +1091,32 @@ function os2intra_bi_cronapi() {
  * Add status to os2intra_bi entities
  */
 function os2intra_bi_update_7001() {
-  db_add_field('os2intra_bi', 'status', array(
-    'type' => 'varchar',
-    'length' => 255,
-  ));
+  db_add_field(
+    'os2intra_bi',
+    'status',
+    array(
+      'type' => 'varchar',
+      'length' => 255,
+    )
+  );
 
-  db_add_field('os2intra_bi', 'filepath', array(
-    'type' => 'varchar',
-    'length' => 255,
-  ));
+  db_add_field(
+    'os2intra_bi',
+    'filepath',
+    array(
+      'type' => 'varchar',
+      'length' => 255,
+    )
+  );
 
-  db_add_field('os2intra_bi', 'modified', array(
-    'type' => 'int',
-    'length' => 11,
-  ));
+  db_add_field(
+    'os2intra_bi',
+    'modified',
+    array(
+      'type' => 'int',
+      'length' => 11,
+    )
+  );
 }
 
 /**
@@ -985,7 +1125,10 @@ function os2intra_bi_update_7001() {
 function os2intra_bi_update_7002() {
   $vocabulary = taxonomy_vocabulary_machine_name_load('os2intra_bi_opus_roles');
   $term_name = 'Everyone';
-  $matched_terms = taxonomy_get_term_by_name($term_name, $vocabulary->machine_name);
+  $matched_terms = taxonomy_get_term_by_name(
+    $term_name,
+    $vocabulary->machine_name
+  );
   if (empty($matched_terms)) {
     $term = new stdClass();
     $term->vid = $vocabulary->vid;
@@ -1000,5 +1143,179 @@ function os2intra_bi_update_7002() {
     $wrapper = entity_metadata_wrapper('user', $user);
     $wrapper->os2intra_users_opus_roles[] = $term->tid;
     $wrapper->save();
+  }
+}
+
+function os2intra_bi_update_7003() {
+  $os2intra_bi_import_file = array(
+    'translatable' => '0',
+    'entity_types' =>
+      array(),
+    'settings' =>
+      array(
+        'export' => 0,
+        'restrict_rebuild' => 0,
+        'lock_values' => 0,
+        'cell_processing' => '0',
+      ),
+    'storage' =>
+      array(
+        'type' => 'field_sql_storage',
+        'settings' =>
+          array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' =>
+          array(
+            'sql' =>
+              array(
+                'FIELD_LOAD_CURRENT' =>
+                  array(
+                    'field_data_os2intra_bi_import_file' =>
+                      array(
+                        'value' => 'os2intra_bi_import_file_value',
+                        'format' => 'os2intra_bi_import_file_format',
+                      ),
+                  ),
+                'FIELD_LOAD_REVISION' =>
+                  array(
+                    'field_revision_os2intra_bi_import_file' =>
+                      array(
+                        'value' => 'os2intra_bi_import_file_value',
+                        'format' => 'os2intra_bi_import_file_format',
+                      ),
+                  ),
+              ),
+          ),
+      ),
+    'foreign keys' =>
+      array(),
+    'indexes' =>
+      array(),
+    'id' => '143',
+    'field_name' => 'os2intra_bi_import_file',
+    'type' => 'tablefield',
+    'module' => 'tablefield',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '1',
+    'deleted' => '0',
+    'columns' =>
+      array(
+        'value' =>
+          array(
+            'type' => 'text',
+            'size' => 'big',
+          ),
+        'format' =>
+          array(
+            'type' => 'varchar',
+            'length' => 255,
+            'default value' => '',
+          ),
+      ),
+  );
+
+  if (!field_info_field('os2intra_bi_import_file')) {
+    field_create_field($os2intra_bi_import_file);
+  }
+}
+
+function os2intra_bi_update_7004() {
+  $field_opus_roles = array(
+    'translatable' => '0',
+    'entity_types' =>
+      array(),
+    'settings' =>
+      array(
+        'target_type' => 'taxonomy_term',
+        'handler' => 'base',
+        'handler_settings' =>
+          array(
+            'target_bundles' =>
+              array(
+                'os2intra_bi_opus_roles' => 'os2intra_bi_opus_roles',
+              ),
+            'sort' =>
+              array(
+                'type' => 'none',
+              ),
+            'behaviors' =>
+              array(
+                'views-select-list' =>
+                  array(
+                    'status' => 0,
+                  ),
+              ),
+          ),
+      ),
+    'storage' =>
+      array(
+        'type' => 'field_sql_storage',
+        'settings' =>
+          array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' =>
+          array(
+            'sql' =>
+              array(
+                'FIELD_LOAD_CURRENT' =>
+                  array(
+                    'field_data_os2intra_bi_opus_roles' =>
+                      array(
+                        'target_id' => 'os2intra_bi_opus_roles_target_id',
+                      ),
+                  ),
+                'FIELD_LOAD_REVISION' =>
+                  array(
+                    'field_revision_os2intra_bi_opus_roles' =>
+                      array(
+                        'target_id' => 'os2intra_bi_opus_roles_target_id',
+                      ),
+                  ),
+              ),
+          ),
+      ),
+    'foreign keys' =>
+      array(
+        'taxonomy_term_data' =>
+          array(
+            'table' => 'taxonomy_term_data',
+            'columns' =>
+              array(
+                'target_id' => 'tid',
+              ),
+          ),
+      ),
+    'indexes' =>
+      array(
+        'target_id' =>
+          array(
+            0 => 'target_id',
+          ),
+      ),
+    'id' => '144',
+    'field_name' => 'os2intra_bi_opus_roles',
+    'type' => 'entityreference',
+    'module' => 'entityreference',
+    'active' => '1',
+    'locked' => '0',
+    'cardinality' => '-1',
+    'deleted' => '0',
+    'columns' =>
+      array(
+        'target_id' =>
+          array(
+            'description' => 'The id of the target entity.',
+            'type' => 'int',
+            'unsigned' => TRUE,
+            'not null' => TRUE,
+          ),
+      ),
+  );
+
+  if (!field_info_field('os2intra_bi_opus_roles')) {
+    field_create_field($field_opus_roles);
   }
 }
