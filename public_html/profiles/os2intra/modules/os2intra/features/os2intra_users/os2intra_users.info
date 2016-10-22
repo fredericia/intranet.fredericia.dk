@@ -17,7 +17,6 @@ dependencies[] = number
 dependencies[] = og
 dependencies[] = og_ui
 dependencies[] = options
-dependencies[] = os2intra_bi
 dependencies[] = os2intra_content_types
 dependencies[] = os2intra_organisationsgrupper
 dependencies[] = page_manager
