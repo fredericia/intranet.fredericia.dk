@@ -1055,7 +1055,7 @@ function os2intra_bi_csv_value($fileuri) {
       'count_rows' => $row_count,
     );
   }
-
+  error_log(print_r($imported_tablefield,true));
   return array('value' => serialize($imported_tablefield));
 }
 

@@ -185,6 +185,7 @@ function os2intra_user_import_save_user($user, $uid = '') {
   $opus_role_vocabulary = taxonomy_vocabulary_machine_name_load('os2intra_bi_opus_roles');
   $opus_roles = array();
 
+  if($user['opus_roles']) {
   if ($uid) {
     foreach ($account->os2intra_users_opus_roles as $os2intra_users_opus_role) {
       foreach ($os2intra_users_opus_role as $key => $value) {
@@ -210,6 +211,7 @@ function os2intra_user_import_save_user($user, $uid = '') {
   $opus_role_tids = array_diff($keep_opus_roles, $opus_role_tids);
 
   os2intra_user_import_create_opus_roles($opus_roles);
+  }
 
   // User title tid
   $title_tid = os2intra_user_import_user_title($user['job_description']);

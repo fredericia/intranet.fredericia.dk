@@ -33,12 +33,23 @@ function os2intra_user_import_user_title($job_description) {
  * Searches for terms by department id and resturns an EntityFieldQuery result.
  */
 function os2intra_user_import_query_term_by_department($department_id) {
+
   $query = new EntityFieldQuery;
   $query->entityCondition('entity_type', 'taxonomy_term');
   $query->fieldCondition('field_os2intra_department_id', 'value', $department_id, '=');
   $result = $query->execute();
 
-  return $result;
+  // Looking up if the Taxonomy actualy exists.  
+  if($result) {
+    $term = taxonomy_term_load(key($result['taxonomy_term']));
+  }
+  // Returning the array if exists and FALSE if not. 
+  if($term) {
+    return $result;
+  } else {
+    return FALSE;
+  }
+
 }
 
 /**
