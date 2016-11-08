@@ -38,7 +38,15 @@ function os2intra_user_import_query_term_by_department($department_id) {
   $query->fieldCondition('field_os2intra_department_id', 'value', $department_id, '=');
   $result = $query->execute();
 
-  return $result;
+ if($result) {
+     $term = taxonomy_term_load(key($result['taxonomy_term']));
+   }
+   // Returning the array if exists and FALSE if not. 
+  if($term) {
+    return $result;
+   } else {
+     return FALSE;
+   }
 }
 
 /**
