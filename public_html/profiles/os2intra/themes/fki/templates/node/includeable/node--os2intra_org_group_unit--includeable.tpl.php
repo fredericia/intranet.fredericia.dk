@@ -5,10 +5,10 @@
 
     <!-- Begin - heading -->
     <div class="os2-node-includeable-heading">
-      <a href="<?php print $node_url; ?>" class="os2-node-includeable-heading-title"><?php print $title_shortened; ?></a>
       <div class="os2-toggler-element-toggle">
         <span class="os2-toggler-element-toggle-icon"></span>
       </div>
+      <a href="<?php print $node_url; ?>" class="os2-node-includeable-heading-title"><?php print $title_shortened; ?></a>
     </div>
     <!-- End - heading -->
 
