@@ -27,55 +27,52 @@ function fredericia_main_page() {
 
 
 function fredericia_main_page_pageshow() {
-	views_datasource_get_view_result('os2intra-group-term-activity.json', {
-		success: function(data) {
-			var items = [];
 
-			if (data.nodes.length > 0) {
-				$.each(data.nodes, function(index, object) {
-					var node = object.node;
-					var url = Drupal.settings.site_path + node.path;
-					var link = _fredericia_link(url, node.title);
+	var json_data = _fredericia_get_JSON_data('/os2intra-group-term-activity.json');
+	var items = [];
+	var node, url, link, author_url, author_link, group_url, group_link;
 
-					var author_url = Drupal.settings.site_path + '/user/' + node.author_uid;
-					var author_link = _fredericia_link(author_url, node.author_name);
+	for (var i in json_data['nodes']) {
+		node = json_data['nodes'][i]['node'];
+		url = Drupal.settings.site_path + node.path;
+		link = _fredericia_link(url, node.title);
 
-					var group_url = Drupal.settings.site_path + '/node/' + node.group_division_id;
-					var group_link = _fredericia_link(group_url, node.group_division);
+		author_url = Drupal.settings.site_path + '/user/' + node.author_uid;
+		author_link = _fredericia_link(author_url, node.author_name);
 
-					items.push(
-						'<div class="fredericia-feed-item">' +
-						'<div class="fredericia-feed-item-author">' +
-						'<span class="fredericia-custom-icon custom-icon-' + node.type + '"></span>' +
-						author_link + '</div>' +
-						'/ opd. ' + node.date_updated +
-						'<h1 class="fredericia-feed-item-title">' + link + '</h1>' +
+		group_url = Drupal.settings.site_path + '/node/' + node.group_division_id;
+		group_link = _fredericia_link(group_url, node.group_division);
 
-						'<div class="fredericia-feed-item-date">' +
-						_fredericia_date_formatter(node.date) + '</div>' +
+		items.push(
+			'<div class="fredericia-feed-item">' +
+			'<div class="fredericia-feed-item-author">' +
+			'<span class="fredericia-custom-icon custom-icon-' + node.type + '"></span>' +
+			author_link + '</div>' +
+			'/ opd. ' + node.date_updated +
+			'<h1 class="fredericia-feed-item-title">' + link + '</h1>' +
 
-						'<div class="fredericia-feed-item-body">' + node.body + '</div>' +
-						'<h3 class="fredericia-feed-item-group">' + group_link + '</h3>' +
+			'<div class="fredericia-feed-item-date">' +
+			_fredericia_date_formatter(node.date) + '</div>' +
 
-						'<div class="fredericia-feed-item-info">' + 
-						'<div class="fredericia-feed-item-viewings">' +
-						'<span class="icon fa fa-eye""></span>' + 
-						'Seen by ' + node.total_views + ' ' +
-						(node.total_views === '1' ? 'person' : 'persons') + '</div>' +
-						'<div class="fredericia-feed-item-comments">' + 
-						'<span class="icon fa fa-comment"></span>' +
-						node.comment_count + ' ' + (node.comment_count === '1' ? 'comment' : 'comments') + '</div>' +
-						'<div class="fredericia-clearboth"></div>' +
-						'</div><!-- .fredericia-feed-item-info //-->' +
+			'<div class="fredericia-feed-item-body">' + node.body + '</div>' +
+			'<h3 class="fredericia-feed-item-group">' + group_link + '</h3>' +
+
+			'<div class="fredericia-feed-item-info">' + 
+			'<div class="fredericia-feed-item-viewings">' +
+			'<span class="icon fa fa-eye""></span>' + 
+			'Seen by ' + node.total_views + ' ' +
+			(node.total_views === '1' ? 'person' : 'persons') + '</div>' +
+			'<div class="fredericia-feed-item-comments">' + 
+			'<span class="icon fa fa-comment"></span>' +
+			node.comment_count + ' ' + (node.comment_count === '1' ? 'comment' : 'comments') + '</div>' +
+			'<div class="fredericia-clearboth"></div>' +
+			'</div><!-- .fredericia-feed-item-info //-->' +
 						
-						'</div><!-- .fredericia-feed-item //-->'
-					);
-				});
+			'</div><!-- .fredericia-feed-item //-->'
+		);
+	}
 
-				drupalgap_item_list_populate('#fredericia-feed-list', items);
-			}
-		}
-	});
+	drupalgap_item_list_populate('#fredericia-feed-list', items);
 }
 
 
