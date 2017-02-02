@@ -228,13 +228,15 @@ function os2intra_user_import_run_with_drush() {
         #error_log('Emails:  ' . print_r($user_email,true));
       #error_log('Users: ' . $cusers . ' Emails ' . $cemail);
       if (count($users) !== count(array_unique($user_email))) {
-         os2intra_user_import_save_log('', 'Dublicate email found in import file');
+         $dup_emails = array_unique(array_diff_assoc($user_email,array_unique($user_email)));
+         os2intra_user_import_save_log('', 'Dublicate email found in import file: '. implode(', ', $dup_emails ));
          variable_set('os2intra_user_import_epoch', time());
          exit();
        }
 
         $user_id = array_column($users, 'ad_id');
        if (count($users) !== count(array_unique($user_id))) {
+         $dup_id = array_unique(array_diff_assoc($user_id, array_unique($user_id)));
          os2intra_user_import_save_log('', 'Dublicate User id found in import file');
          variable_set('os2intra_user_import_epoch', time());
          exit();
