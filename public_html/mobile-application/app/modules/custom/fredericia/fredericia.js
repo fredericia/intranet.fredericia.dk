@@ -397,11 +397,13 @@ function _fredericia_get_JSON_data(addr) {
 	var arr = [];
 	var xml_http = new XMLHttpRequest();
 
-	if (xml_http != null) {
-		xml_http.open('GET', Drupal.settings.site_path + addr, false);
-		xml_http.send(null);
-		arr = JSON.parse(xml_http.responseText);
-	}
+	try {
+		if (xml_http != null) {
+			xml_http.open('GET', Drupal.settings.site_path + addr, false);
+			xml_http.send(null);
+			arr = JSON.parse(xml_http.responseText);
+		}
+	} catch(error) {}
 
 	return arr;
 }
