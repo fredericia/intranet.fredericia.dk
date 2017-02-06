@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Create department terms
  *
@@ -24,6 +25,16 @@ function os2intra_user_import_groups($users) {
   }
 
   foreach ($users as $user) {
+    if (empty($user['centre'])) {
+      error_log('Center is missing - dropping ' . $user['ad_id']);
+      os2intra_user_import_save_log('', 'Skipping group. Parent department is missing. AD_ID:' . $user['ad_id'] . ' User ' . $user['first_name'] . ' ' . $user['last_name']);
+      continue;
+    } elseif (empty($user['department'])) {
+      error_log('Department missing - dropping ' . $group_line['ad_id']);
+      os2intra_user_import_save_log('', 'Skipping group. department is missing. AD_ID:' . $user['ad_id'] . ' User ' . $user['first_name'] . ' ' . $user['last_name']);
+      continue;
+    }
+
     $group = $user['department'];
     $parent_tid = $default_parent_tid;
 
@@ -34,20 +45,24 @@ function os2intra_user_import_groups($users) {
     if (!empty($result)) {
       // Rename group term if needed
       $term = taxonomy_term_load(key($result['taxonomy_term']));
-      $term->name = $user['department_name'];
-      os2intra_user_import_create_department($term->tid, $user['department'], $user['department_name']);
+      $department_name = empty($user['department_name']) ? $user['department'] : $user['department_name'];
+      if (empty($user['department_name'])) {
+        os2intra_user_import_save_log('', 'Department name is missing. AD_ID:' . $user['department'] . ' User ' . $user['first_name'] . ' ' . $user['last_name']);
+      }
+      $term->name = $department_name;
+
+      os2intra_user_import_create_department($term->tid, $user['department'], $department_name);
 
       // Search for parent tid for department
-      $result = os2intra_user_import_query_term_by_department($user['centre']);
+      $result_parent = os2intra_user_import_query_term_by_department($user['centre']);
 
-      if (!empty($result)) {
-        $parent_term = taxonomy_term_load(key($result['taxonomy_term']));
+      if (!empty($result_parent)) {
+        $parent_term = taxonomy_term_load(key($result_parent['taxonomy_term']));
         $parent_tid = $parent_term->tid;
         $term->parent = $parent_tid;
       }
       taxonomy_term_save($term);
-    }
-    else {
+    } else {
       // Create taxonomy terms
       os2intra_user_import_save_log('', 'Create department: ' . $group);
 
@@ -60,8 +75,13 @@ function os2intra_user_import_groups($users) {
       }
 
       $term = new stdClass();
-      $term->name = $user['department_name'];
-      $term->parent = array($parent_tid);
+      //$term->name = $user['department_name'];
+      $department_name = empty($user['department_name']) ? $user['department'] : $user['department_name'];
+      if (empty($user['department_name'])) {
+        os2intra_user_import_save_log('', 'Department name is missing. AD_ID:' . $user['department'] . ' User ' . $user['first_name'] . ' ' . $user['last_name']);
+      }
+      $term->name = $department_name;
+      $term->parent = $parent_tid;
       $term->field_os2intra_department_id[LANGUAGE_NONE][0]['value'] = $group;
       $term->field_os2intra_shortname[LANGUAGE_NONE][0]['value'] = $user['department_shortname'];
       $term->vid = $vocab->vid;
@@ -69,9 +89,10 @@ function os2intra_user_import_groups($users) {
       taxonomy_term_save($term);
       $created_terms[] = $term;
 
-      os2intra_user_import_create_department($term->tid, $user['department']);
+      os2intra_user_import_create_department($term->tid, $user['department'], $department_name);
     }
   }
+
   os2intra_user_import_save_log('', 'Finished importing groups');
 
   // Send email that new groups has been created
