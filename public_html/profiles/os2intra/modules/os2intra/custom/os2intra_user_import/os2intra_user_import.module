@@ -225,14 +225,15 @@ function os2intra_user_import_run_with_drush() {
 
       $cemail = count(array_unique($user_email));
       $cusers = count($users);
+      $count_emails = array_count_values($user_email);
         #error_log('Emails:  ' . print_r($user_email,true));
       #error_log('Users: ' . $cusers . ' Emails ' . $cemail);
-      if (count($users) !== count(array_unique($user_email))) {
+     /* if (count($users) !== count(array_unique($user_email))) {
          $dup_emails = array_unique(array_diff_assoc($user_email,array_unique($user_email)));
          os2intra_user_import_save_log('', 'Dublicate email found in import file: '. implode(', ', $dup_emails ));
          variable_set('os2intra_user_import_epoch', time());
          exit();
-       }
+       }*/
 
         $user_id = array_column($users, 'ad_id');
        if (count($users) !== count(array_unique($user_id))) {
@@ -249,13 +250,21 @@ function os2intra_user_import_run_with_drush() {
          // Loop over users and create
          os2intra_user_import_save_log('', 'Start Creating Users');
         foreach ($users as $user) {
-           os2intra_user_import_save_user($user);
+          if ($count_emails[$user['email']] > 1) {
+            os2intra_user_import_save_log('', 'Skipping user ' . $user['email'] . ' Duplicate email');
+            continue;
+          }
+          os2intra_user_import_save_user($user);
          }
         os2intra_user_import_save_log('', 'End Creating Users');
          // Update users
          os2intra_user_import_save_log('', 'Start Update Users');
          foreach ($update_users as $uid => $user) {
-           os2intra_user_import_save_user($user, $uid);
+           if ($count_emails[$user['email']] > 1) {
+            os2intra_user_import_save_log('', 'Skipping user ' . $user['email'] . ' Duplicate email');
+            continue;
+          }
+          os2intra_user_import_save_user($user, $uid);
          }
          os2intra_user_import_save_log('', 'End Update Users');
          os2intra_user_import_save_log('', 'Ending User Loop');
@@ -264,7 +273,7 @@ function os2intra_user_import_run_with_drush() {
        } else
        {
          os2intra_user_import_save_log('', 'Skipping user update. Last import is the same as the running import' . $last_import_temp . ' / ' . $last_import_temp_users );
-        }
+       }
 
       // Disable users
        if($last_import_temp != $last_import_temp_users_disable) {
