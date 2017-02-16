@@ -29,7 +29,9 @@
  */
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <?php print render($content['os2intra_bi_plugin_logo']); ?>
+  <?php if ($content['os2intra_bi_plugin_logo']): ?>
+    <?php print render($content['os2intra_bi_plugin_logo']); ?>
+  <?php endif; ?>
   <div class="entity-os2intra-bi-inner">
     <div class="content"<?php print $content_attributes; ?>>
       <?php
