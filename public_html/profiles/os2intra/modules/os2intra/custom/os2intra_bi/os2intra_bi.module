@@ -1119,6 +1119,10 @@ function os2intra_bi_csv_value($fileuri) {
         variable_get('tablefield_csv_separator', ',')
       )) !== FALSE) {
       $col_count = count($csv);
+      if ($col_count == 1){
+        $csv = str_getcsv(array_pop($csv));
+        $col_count = count($csv);
+      }  
       foreach ($csv as $col_id => $col) {
         $imported_tablefield['cell_' . $row_count . '_' . $col_id] = $col;
       }
