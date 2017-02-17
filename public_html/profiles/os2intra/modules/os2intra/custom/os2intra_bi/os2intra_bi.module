@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the OS2intra BI feature.
@@ -392,6 +393,10 @@ function os2intra_bi_field_formatter_info() {
       'label' => t('Tabular Preview'),
       'field types' => array('tablefield'),
     ),
+    'tablefield_view' => array(
+      'label' => t('Os2intra BI Tabular View'),
+      'field types' => array('tablefield'),
+    ),
   );
 }
 
@@ -407,11 +412,14 @@ function os2intra_bi_field_formatter_view(
   $items,
   $display
 ) {
+
   $element = array();
   $settings = $display['settings'];
   $formatter = $display['type'];
 
-  foreach ($items as $delta => $table) {
+  switch ($display['type']) {
+    case 'tablefield_preview':
+      foreach ($items as $delta => $table) {
     // Rationalize the stored data
     if (!empty($table['tabledata'])) {
       $tabledata = array_slice($table['tabledata'], 0, 11);
@@ -496,6 +504,69 @@ function os2intra_bi_field_formatter_view(
       );
     }
 
+  }
+  break;
+
+    case 'tablefield_view':
+      foreach ($items as $delta => $table) {
+        // Rationalize the stored data
+        if (!empty($table['tabledata'])) {
+          $tabledata = $table['tabledata'];
+        }
+        elseif (!empty($table['value'])) {
+          $tabledata = tablefield_rationalize_table(unserialize($table['value']));
+        }
+
+        // Run the table through input filters
+        if (isset($tabledata)) {
+          if (!empty($tabledata)) {
+            foreach ($tabledata as $row_key => $row) {
+              foreach ($row as $col_key => $cell) {
+                $classes = array('row_' . $row_key, 'col_' . $col_key);
+                if (preg_match('/^[+,-]?([0-9].?[0-9]?)*([,.][0-9]*)?%?$/', $cell))
+                  $classes[] = 'text-right';
+
+                if (!empty($table['format'])) {
+                $tabledata[$row_key][$col_key] = array('data' => check_markup($cell, $table['format']), 'class' => $classes);
+                }
+                else {
+                  $tabledata[$row_key][$col_key] = array('data' => check_plain($cell), 'class' => $classes);
+                }
+              }
+            }
+          }
+
+          // Pull the header for theming
+          $header_data = array_shift($tabledata);
+
+          // Check for an empty header, if so we don't want to theme it.
+          $noheader = TRUE;
+          foreach ($header_data as $cell) {
+            if (strlen($cell['data']) > 0) {
+              $noheader = FALSE;
+              break;
+            }
+          }
+
+          $header = $noheader ? NULL : $header_data;
+
+          $entity_info = entity_get_info($entity_type);
+          $entity_id = !empty($entity_info['entity keys']['id']) ? $entity->{$entity_info['entity keys']['id']} : NULL;
+
+          // Theme the table for display
+          $element[$delta]['#markup'] = theme('tablefield_view', array(
+            'header' => $header,
+            'rows' => $tabledata,
+            'delta' => $delta,
+            'export' => isset($field['settings']['export']) ? $field['settings']['export'] : NULL,
+            'entity_type' => $entity_type,
+            'entity_id' => $entity_id,
+            'field_name' => $field['field_name'],
+            'langcode' => $langcode,
+          ));
+        }
+      }
+    break;
   }
   return $element;
 }
@@ -647,7 +718,7 @@ function os2intra_bi_create_fi($bundle) {
         'default' =>
           array(
             'label' => 'above',
-            'type' => 'tablefield_default',
+            'type' => 'tablefield_view',
             'settings' =>
               array(),
             'module' => 'tablefield',
