@@ -37,3 +37,7 @@
 .field-name-os2intra-bi-import-file .field-label {
   display: none;
 }
+
+.text-bold {
+  font-weight: 700;
+}

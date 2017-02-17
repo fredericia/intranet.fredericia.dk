@@ -321,6 +321,12 @@ function os2intra_bi_settings() {
     '#default_value' => variable_get('os2intra_bi_plugin_logo_fid', ''),
     '#upload_location' => 'public://os2intra_bi/',
   );
+  $form['os2intra_bi_bold_text'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Title of "Total" row'),
+    '#description' => t('List comma separated all beginnings of strings, which would shown in bold textt.'),
+    '#default_value' => variable_get('os2intra_bi_bold_text', 'resultat i alt, sum'),
+  );
   $form['header_background_color'] = array(
     '#type' => 'jquery_colorpicker',
     '#title' => t('Table header background color'),

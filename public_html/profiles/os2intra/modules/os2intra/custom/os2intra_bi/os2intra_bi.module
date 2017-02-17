@@ -521,11 +521,14 @@ function os2intra_bi_field_formatter_view(
         if (isset($tabledata)) {
           if (!empty($tabledata)) {
             foreach ($tabledata as $row_key => $row) {
+              $needles = explode(',', variable_get('os2intra_bi_bold_text', 'resultat i alt, sum'));
+              $isBold = _os2intra_bi_strpos_array($row[0], $needles);
               foreach ($row as $col_key => $cell) {
                 $classes = array('row_' . $row_key, 'col_' . $col_key);
                 if (preg_match('/^[+,-]?([0-9].?[0-9]?)*([,.][0-9]*)?%?$/', $cell))
                   $classes[] = 'text-right';
-
+                if ($isBold)
+                  $classes[] = 'text-bold';
                 if (!empty($table['format'])) {
                 $tabledata[$row_key][$col_key] = array('data' => check_markup($cell, $table['format']), 'class' => $classes);
                 }
@@ -1391,4 +1394,17 @@ function os2intra_bi_update_7004() {
   if (!field_info_field('os2intra_bi_opus_roles')) {
     field_create_field($field_opus_roles);
   }
+}
+/*
+ * return TRUE if string start with any substring in array
+ * $needle  - array
+ */
+function _os2intra_bi_strpos_array($string, $needles) {
+  if (is_array($needles)) {
+    foreach ($needles as $needle) {
+      if (preg_match('/^' . $needle . '/i', $string))
+        return TRUE;
+    }
+    return FALSE;
+	}
 }
