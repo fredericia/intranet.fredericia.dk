@@ -525,7 +525,7 @@ function os2intra_bi_field_formatter_view(
               $isBold = _os2intra_bi_strpos_array($row[0], $needles);
               foreach ($row as $col_key => $cell) {
                 $classes = array('row_' . $row_key, 'col_' . $col_key);
-                if (preg_match('/^[+,-]?([0-9].?[0-9]?)*([,.][0-9]*)?%?$/', $cell))
+                if (preg_match('/^[+,-]?([0-9]\.?[0-9]?)*([,.][0-9]*)?%?$/', $cell))
                   $classes[] = 'text-right';
                 if ($isBold)
                   $classes[] = 'text-bold';
