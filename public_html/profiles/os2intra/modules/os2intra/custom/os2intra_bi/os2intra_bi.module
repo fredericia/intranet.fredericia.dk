@@ -848,6 +848,7 @@ function os2intra_bi_create_fi($bundle) {
     'deleted' => '0',
   );
 
+  _os2intra_bi_create_if_missing_field_os2intra_bi_import_file();
   if (empty(field_info_instance(
     'os2intra_bi',
     'os2intra_bi_import_file',
@@ -857,6 +858,7 @@ function os2intra_bi_create_fi($bundle) {
     field_create_instance($import_file_field_instance);
   }
 
+  _os2intra_bi_create_if_missing_field_os2intra_bi_opus_roles();
   if (empty(field_info_instance(
     'os2intra_bi',
     'os2intra_bi_opus_roles',
@@ -1176,65 +1178,9 @@ function os2intra_bi_cronapi() {
 }
 
 /**
- * Add status to os2intra_bi entities
+ * Creates a field os2intra_bi_import_file if it is missing.
  */
-function os2intra_bi_update_7001() {
-  db_add_field(
-    'os2intra_bi',
-    'status',
-    array(
-      'type' => 'varchar',
-      'length' => 255,
-    )
-  );
-
-  db_add_field(
-    'os2intra_bi',
-    'filepath',
-    array(
-      'type' => 'varchar',
-      'length' => 255,
-    )
-  );
-
-  db_add_field(
-    'os2intra_bi',
-    'modified',
-    array(
-      'type' => 'int',
-      'length' => 11,
-    )
-  );
-}
-
-/**
- * Add default Opus term and add it to all users
- */
-function os2intra_bi_update_7002() {
-  $vocabulary = taxonomy_vocabulary_machine_name_load('os2intra_bi_opus_roles');
-  $term_name = 'Everyone';
-  $matched_terms = taxonomy_get_term_by_name(
-    $term_name,
-    $vocabulary->machine_name
-  );
-  if (empty($matched_terms)) {
-    $term = new stdClass();
-    $term->vid = $vocabulary->vid;
-    $term->name = $term_name;
-    taxonomy_term_save($term);
-  }
-
-  $users = entity_load('user');
-  unset($users[0]);
-
-  foreach ($users as $user) {
-    $wrapper = entity_metadata_wrapper('user', $user);
-    $wrapper->os2intra_users_opus_roles[] = $term->tid;
-    $wrapper->save();
-  }
-}
-
-function os2intra_bi_update_7003() {
+function _os2intra_bi_create_if_missing_field_os2intra_bi_import_file() {
   $os2intra_bi_import_file = array(
     'translatable' => '0',
     'entity_types' =>
@@ -1309,7 +1255,10 @@ function os2intra_bi_update_7003() {
   }
 }
 
-function os2intra_bi_update_7004() {
+/**
+ * Creates a field field_os2intra_bi_opus_roles if it is missing.
+ */
+function _os2intra_bi_create_if_missing_field_os2intra_bi_opus_roles() {
   $field_opus_roles = array(
     'translatable' => '0',
     'entity_types' =>
@@ -1407,6 +1356,7 @@ function os2intra_bi_update_7004() {
     field_create_field($field_opus_roles);
   }
 }
+
 /*
  * return TRUE if string start with any substring in array
  * $needle  - array
@@ -1419,4 +1369,77 @@ function _os2intra_bi_strpos_array($string, $needles) {
     }
     return FALSE;
 	}
+}
+
+/**
+ * Add status to os2intra_bi entities
+ */
+function os2intra_bi_update_7001() {
+  db_add_field(
+    'os2intra_bi',
+    'status',
+    array(
+      'type' => 'varchar',
+      'length' => 255,
+    )
+  );
+
+  db_add_field(
+    'os2intra_bi',
+    'filepath',
+    array(
+      'type' => 'varchar',
+      'length' => 255,
+    )
+  );
+
+  db_add_field(
+    'os2intra_bi',
+    'modified',
+    array(
+      'type' => 'int',
+      'length' => 11,
+    )
+  );
+}
+
+/**
+ * Add default Opus term and add it to all users
+ */
+function os2intra_bi_update_7002() {
+  $vocabulary = taxonomy_vocabulary_machine_name_load('os2intra_bi_opus_roles');
+  $term_name = 'Everyone';
+  $matched_terms = taxonomy_get_term_by_name(
+    $term_name,
+    $vocabulary->machine_name
+  );
+  if (empty($matched_terms)) {
+    $term = new stdClass();
+    $term->vid = $vocabulary->vid;
+    $term->name = $term_name;
+    taxonomy_term_save($term);
+  }
+
+  $users = entity_load('user');
+  unset($users[0]);
+
+  foreach ($users as $user) {
+    $wrapper = entity_metadata_wrapper('user', $user);
+    $wrapper->os2intra_users_opus_roles[] = $term->tid;
+    $wrapper->save();
+  }
+}
+
+/**
+ * Creates a field os2intra_bi_import_file if it is missing.
+ */
+function os2intra_bi_update_7003() {
+  _os2intra_bi_create_if_missing_field_os2intra_bi_import_file();
+}
+
+/**
+ * Creates a field field_os2intra_bi_opus_roles if it is missing.
+ */
+function os2intra_bi_update_7004() {
+  _os2intra_bi_create_if_missing_field_os2intra_bi_opus_roles();
 }
