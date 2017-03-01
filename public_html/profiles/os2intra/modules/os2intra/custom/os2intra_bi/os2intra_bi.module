@@ -1364,7 +1364,7 @@ function _os2intra_bi_create_if_missing_field_os2intra_bi_opus_roles() {
 function _os2intra_bi_strpos_array($string, $needles) {
   if (is_array($needles)) {
     foreach ($needles as $needle) {
-      if (preg_match('/^' . $needle . '/i', $string))
+      if (preg_match('/^' . trim($needle) . '/i', trim($string)))
         return TRUE;
     }
     return FALSE;

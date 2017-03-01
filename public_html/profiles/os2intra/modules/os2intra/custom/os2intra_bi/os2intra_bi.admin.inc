@@ -362,6 +362,7 @@ function os2intra_bi_settings_submit($form, &$form_state) {
   if ($file) {
     $file->status = FILE_STATUS_PERMANENT;
     file_save($file);
+    file_usage_add($file, 'os2intra_bi', 'os2intra_bi', $file->fid);
     variable_set('os2intra_bi_plugin_logo_fid', $file->fid);
     unset($form_state['values']['os2intra_bi_plugin_logo_fid']);
   }
