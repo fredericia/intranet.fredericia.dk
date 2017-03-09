@@ -221,6 +221,12 @@ function os2intra_bi_plugin_form($form, &$form_state, $entity_type, $op = 'edit'
     '#default_value' => $entity_type->split,
     '#title' => t('Split files on this type.'),
   );
+  $form['header_rows'] = array(
+    '#type' => 'textfield',
+    '#default_value' => $entity_type->header_rows,
+    '#title' => t('Amount of table header rows'),
+    '#description' => t('For these rows ingore number format')
+  );
 
   // Add some buttons.
   $form['actions'] = array('#type' => 'actions');
@@ -248,6 +254,7 @@ function os2intra_bi_plugin_form($form, &$form_state, $entity_type, $op = 'edit'
 function os2intra_bi_plugin_form_submit(&$form, &$form_state) {
   // Automatically get edited entity type from the form and save it.
   // @see entity_ui_form_submit_build_entity()
+  $form_state['values']['header_rows'] =  (int) $form_state['values']['header_rows'];
   $entity_type = entity_ui_form_submit_build_entity($form, $form_state);
   entity_save('os2intra_bi_plugin', $entity_type);
   os2intra_bi_create_fi($entity_type->type);

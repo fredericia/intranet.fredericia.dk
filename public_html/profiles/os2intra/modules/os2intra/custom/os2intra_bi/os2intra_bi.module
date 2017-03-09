@@ -177,6 +177,14 @@ function os2intra_bi_entity_property_info() {
     'label' => t('Split CSV'),
     'setter callback' => 'entity_property_verbatim_set',
   );
+  $type_properties['header_rows'] = array(
+    'description' => 'Amount of table header rows (For these rows ingore number format',
+    'type' => 'integer',
+    'schema field' => 'header_rows',
+    'required' => FALSE,
+    'label' => t('Amount of hearder rows'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
 
   return $info;
 }
@@ -881,6 +889,7 @@ function os2intra_bi_create_bundles_and_content() {
     scandir($directory),
     array('..', '.', '.DS_Store')
   );
+  
   foreach ($scanned_directory as $dir) {
     $bundle_name = strtolower($dir);
     $search = array('æ', 'ø', 'å', 'Æ', 'Ø', 'Å');
@@ -935,15 +944,16 @@ function os2intra_bi_create_bundles_and_content() {
       $query->entityCondition('entity_type', $entity_type);
       $query->propertyCondition('type', $bundle_name);
       $query->propertyCondition('title', $file);
-      $results['exists'] = $query->execute();
-
+      $results['exists'] = $query->execute();      
+      
       // Check if we need to split the CSV file
       $query = new EntityFieldQuery;
       $query->entityCondition('entity_type', 'os2intra_bi_plugin');
       $query->propertyCondition('type', $bundle_name);
       $query->propertyCondition('split', 1);
       $results['split'] = $query->execute();
-
+      
+      $header_rows = _os2intra_bi_get_hearder_rows_amount($bundle_name);
       if (!$results['split']) {
         // Create content
         if (!$results['exists']) {
@@ -955,7 +965,7 @@ function os2intra_bi_create_bundles_and_content() {
           );
           $wrapper->os2intra_bi_import_file->set(
             os2intra_bi_csv_value(
-              $directory . '/' . $dir . '/' . $file . '.csv'
+              $directory . '/' . $dir . '/' . $file . '.csv', $header_rows
             )
           );
           $wrapper->modified->set(filemtime($filepath));
@@ -971,7 +981,8 @@ function os2intra_bi_create_bundles_and_content() {
           );
           $wrapper->os2intra_bi_import_file->set(
             os2intra_bi_csv_value(
-              $directory . '/' . $dir . '/' . $file . '.csv'
+              $directory . '/' . $dir . '/' . $file . '.csv',
+              $header_rows
             )
           );
           $wrapper->modified->set(filemtime($filepath));
@@ -1038,6 +1049,9 @@ function os2intra_bi_create_bundles_and_content() {
                 $empty_array = TRUE;
               }
               if (!$empty_array && !empty($value)) {
+                if ($header_rows > 0 && $row_count >= $header_rows && is_numeric($value)){
+                  $value = number_format((float) $value, _os2intra_bi_number_of_decimals($value), ',', '.');
+                }
                 $parsed_array[$title]['cell_' . $row_count . '_' . $col] = $value;
                 if ($cols_count[$title]<$col)
                   $cols_count[$title]=$col;
@@ -1117,7 +1131,7 @@ function os2intra_bi_create_bundles_and_content() {
 /**
  * Tablefield data from file
  */
-function os2intra_bi_csv_value($fileuri) {
+function os2intra_bi_csv_value($fileuri, $header_rows) {
   if (($handle = fopen($fileuri, "r")) !== FALSE) {
     // Populate CSV values
     $max_col_count = 0;
@@ -1134,6 +1148,10 @@ function os2intra_bi_csv_value($fileuri) {
         $col_count = count($csv);
       }
       foreach ($csv as $col_id => $col) {
+        if ($header_rows > 0 && $row_count >= $header_rows && is_numeric($col)){
+          $col = number_format((float) $col, _os2intra_bi_number_of_decimals($col), ',', '.');
+        }
+          
         $imported_tablefield['cell_' . $row_count . '_' . $col_id] = $col;
       }
       $max_col_count = $col_count > $max_col_count ? $col_count : $max_col_count;
@@ -1175,6 +1193,13 @@ function os2intra_bi_cronapi() {
   );
 
   return $items;
+}
+
+function _os2intra_bi_number_of_decimals($value){
+  if ((int)$value == $value){
+      return 0;
+  }
+  return strlen($value) - strrpos($value, ',') - 1;
 }
 
 /**
@@ -1369,6 +1394,15 @@ function _os2intra_bi_strpos_array($string, $needles) {
     }
     return FALSE;
 	}
+}
+
+function _os2intra_bi_get_hearder_rows_amount($bundle_name){
+    // get amount of rows for which should be ignored number format
+  $query = db_select('os2intra_bi_plugin', 'bi')
+            ->fields('bi', array('header_rows'))
+            ->condition('bi.type', $bundle_name);
+  $result = $query->execute();
+  return $result->fetchField();
 }
 
 /**
