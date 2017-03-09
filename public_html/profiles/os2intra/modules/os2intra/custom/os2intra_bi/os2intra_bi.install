@@ -111,7 +111,7 @@ function os2intra_bi_schema() {
   return $schema;
 }
 /**
- * Add default Opus term and add it to all users
+ * Add header_rows field to os2intra_bi_plugin
  */
 function os2intra_bi_update_7005() {
 db_add_field('os2intra_bi_plugin', 'header_rows', array(
