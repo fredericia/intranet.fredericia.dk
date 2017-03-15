@@ -1,0 +1,186 @@
+
+body {
+	background-color:#eeeff4 !important;
+}
+
+.ui-header {
+	background-color:#00406f !important;
+	border:none !important;
+	color:#ffffff !important;
+}
+
+.ui-icon-bars, .ui-icon-user {
+	background-color:#003156 !important;
+	border-bottom-color:#003156 !important;
+	border-left-color:#003156 !important;
+	border-right-color:#003156 !important;
+	border-top-color:#003156 !important;
+	color:#ffffff !important;
+	text-shadow:none !important;
+}
+
+.ui-panel.ui-panel-position-left.ui-panel-display-overlay.ui-body-inherit.ui-panel-open {
+	background-color:#00406f !important;
+	box-shadow:inset -5px 0 5px rgba(0,0,0,.2);
+}
+
+.ui-panel.ui-panel-position-left.ui-panel-display-overlay.ui-body-inherit.ui-panel-open .ui-listview a {
+	background:none !important;
+	border-color:#0c4975;
+	-webkit-border-radius:0 !important;
+	-moz-border-radius:0 !important;
+	border-radius:0 !important;
+	color:#ffffff;
+	font-weight:normal !important;
+	text-shadow:none;
+}
+
+a.fredericia-ui-panel-logo {
+	background-image:url(fredericia_logo.png);
+	background-repeat:no-repeat;
+	background-size:100%;
+	border:none !important;
+	display:block !important;
+	height:100px !important;
+	right:5px;
+	position:relative;
+	text-decoration:none !important;
+	width:100% !important;
+}
+
+.ui-content {
+	text-align:center;
+}
+
+.ui-content img {
+	height:auto;
+	max-width:90%;
+	width:200px;
+}
+
+.ui-content a.ui-link.ui-btn, button.ui-btn {
+	color:#00406f !important;
+	box-shadow:0 0 0 #dddddd !important;
+}
+
+.ui-content a.ui-link.ui-btn:hover, button.ui-btn:hover {
+	background-color:#4ec6f8 !important;
+	box-shadow:0 0 0 #4ec6f8 !important;
+	color:#ffffff !important;
+	text-shadow:none !important;
+}
+
+button.dg_form_submit_button {
+	background-color:#4ec6f8 !important;
+	border-color:#4ec6f8 !important;
+	color:#ffffff !important;
+	text-shadow:none !important;
+}
+
+input[type=text] {
+	color:#00406f !important;
+}
+
+.region_footer.ui-footer.ui-bar-b.ui-footer-fixed.slideup {
+	display:none !important;
+}
+
+ul#item-list li a {
+	font-size:13px !important;
+	font-weight:normal !important;
+}
+
+ul#item-list li a h1 {
+	font-size:18px !important;
+}
+
+ul#fredericia-feed-list {
+	background:#ff0000;
+	margin:0 auto;
+}
+
+ul#fredericia-feed-list li {
+	border-left:none !important;
+	border-right:none !important;
+	border-top:none !important;
+	border-bottom:1px solid #437aa2 !important;
+	padding:15px 30px;
+}
+
+ul#fredericia-feed-list li:last-child {
+	border-bottom:none !important;
+}
+
+.fredericia-clearboth {
+	clear:both;
+}
+
+.fredericia-feed-item {
+	background:#ffffff;
+	color:#00406f;
+	font-size:14px;
+	white-space:normal !important;
+}
+
+.fredericia-feed-item a {
+	color:#00406f !important;
+	text-decoration:none;
+}
+
+.fredericia-feed-item a:hover {
+	text-decoration:underline;
+}
+
+.fredericia-feed-item-title {
+	font-size:16px !important;
+}
+
+.fredericia-feed-item-date {
+	font-size:16px !important;
+	font-weight:bold;
+	margin-bottom:5px;
+	margin-top:20px;
+}
+
+.fredericia-feed-item-body {
+	color:#43698f !important;
+}
+
+.fredericia-feed-item-info {
+	font-size:11px;
+}
+
+.fredericia-feed-item-info .icon {
+	font-size:14px;
+	margin-right:6px;
+}
+
+.fredericia-feed-item-viewings {
+	float:left;
+}
+
+.fredericia-feed-item-comments {
+	float:left;
+	margin-left:20px;
+}
+
+.fredericia-feed-item-viewings:hover .icon,
+.fredericia-feed-item-comments:hover .icon {
+	color:#4ec6f8;
+}
+
+.fredericia-custom-icon {
+	font-family:"FontAwesome";
+	margin-right:5px;
+}
+
+.custom-icon-post:before { content:"\f003"; }
+.custom-icon-wiki:before { content:"\f0f6"; }
+.custom-icon-event:before { content:"\f073"; }
+.custom-icon-spotbox:before { content:"\f06e"; }
+.custom-icon-node_basket:before { content:"\f291"; }
+.custom-icon-os2intra_referat:before { content:"\f0cb"; }
+.custom-icon-os2intra_base_page:before { content:"\f1ea"; }
+.custom-icon-os2intra_org_group_unit:before { content:"\f015"; }
+.custom-icon-os2web_base_selfservice_link:before { content:"\f046"; }
+
