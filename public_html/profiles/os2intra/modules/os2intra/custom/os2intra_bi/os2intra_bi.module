@@ -528,6 +528,16 @@ function os2intra_bi_field_formatter_view(
         // Run the table through input filters
         if (isset($tabledata)) {
           if (!empty($tabledata)) {
+            $max_col = 0;
+            foreach ($tabledata as $row_key => $row) {
+              if ($max_col < $cols) {
+                $max_col = $cols;
+              }
+              $cols = 0;
+              foreach ($row as $col_key => $cell) {
+                $cols ++;
+              }
+            }
             foreach ($tabledata as $row_key => $row) {
               $needles = explode(',', variable_get('os2intra_bi_bold_text', 'resultat i alt, sum'));
               $isBold = _os2intra_bi_strpos_array($row[0], $needles);
@@ -542,6 +552,11 @@ function os2intra_bi_field_formatter_view(
                 }
                 else {
                   $tabledata[$row_key][$col_key] = array('data' => check_plain($cell), 'class' => $classes);
+                }
+              }
+              if ( $col_key < $max_col ) {
+                for ($i = $col_key;  $i<=$max_col;  $i++) {
+                  $tabledata[$row_key][$i] = array('data' => '', 'class' => $classes);
                 }
               }
             }
