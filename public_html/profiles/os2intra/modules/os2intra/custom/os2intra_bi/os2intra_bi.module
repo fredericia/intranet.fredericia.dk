@@ -538,10 +538,12 @@ function os2intra_bi_field_formatter_view(
                 $cols ++;
               }
             }
+            $columns = 0;
             foreach ($tabledata as $row_key => $row) {
               $needles = explode(',', variable_get('os2intra_bi_bold_text', 'resultat i alt, sum'));
               $isBold = _os2intra_bi_strpos_array($row[0], $needles);
               foreach ($row as $col_key => $cell) {
+                $cols++;
                 $classes = array('row_' . $row_key, 'col_' . $col_key);
                 if (preg_match('/^[+,-]?([0-9]\.?[0-9]?)*([,.][0-9]*)?%?$/', $cell))
                   $classes[] = 'text-right';
@@ -554,11 +556,13 @@ function os2intra_bi_field_formatter_view(
                   $tabledata[$row_key][$col_key] = array('data' => check_plain($cell), 'class' => $classes);
                 }
               }
-              if ( $col_key < $max_col ) {
-                for ($i = $col_key;  $i<=$max_col;  $i++) {
-                  $tabledata[$row_key][$i] = array('data' => '', 'class' => $classes);
+              if ($cols < $max_col ) {
+                for ($i = $cols;  $i<=$max_col;  $i++) {
+                  $classes = array('row_' . $row_key, 'col_' . $col_key++);
+                  $tabledata[$row_key][$col_key++] = array('data' => '', 'class' => $classes);
                 }
               }
+              $cols=0;
             }
           }
 
