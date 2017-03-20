@@ -557,7 +557,7 @@ function os2intra_bi_field_formatter_view(
                 }
               }
               if ($cols < $max_col ) {
-                for ($i = $cols;  $i<=$max_col;  $i++) {
+                for ($i = $cols;  $i<$max_col;  $i++) {
                   $classes = array('row_' . $row_key, 'col_' . $col_key++);
                   $tabledata[$row_key][$col_key++] = array('data' => '', 'class' => $classes);
                 }
