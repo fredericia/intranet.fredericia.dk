@@ -30,10 +30,19 @@ function os2intra_user_import_disable_users() {
 /**
  * Check if the user is already created in the system
  */
-function os2intra_user_import_check_users(&$users) {
+function os2intra_user_import_check_users(&$users, $duplicate_emails, $duplicate_ids) {
   $update_users = array();
-
   foreach ($users as $key => $user) {
+    if (array_search($user['email'], $duplicate_emails) !== false) {
+      unset($users[$key]);
+      continue;
+    }
+
+    if (array_search($user['ad_id'], $duplicate_ids) !== false) {
+      unset($users[$key]);
+      continue;
+    }
+
     $ad_id = $user['ad_id'];
 
     $query = new EntityFieldQuery;
