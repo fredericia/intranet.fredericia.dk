@@ -321,6 +321,13 @@ function os2intra_bi_settings() {
     '#description' => t('Needs to be the full path.'),
     '#default_value' => variable_get('os2intra_bi_file_directory', '/var/www/test.intranet.fredericia.dk/bi'),
   );
+  
+   $form['os2intra_bi_pdf_file_directory'] = array(
+    '#type' => 'textfield',
+    '#title' => t('PDF files import directory'),
+    '#description' => t('Needs to be the full path.'),
+    '#default_value' => variable_get('os2intra_bi_pdf_file_directory', '/var/www/test.intranet.fredericia.dk/bi_pdf'),
+  );
   $form['os2intra_bi_plugin_logo_fid'] = array(
     '#title' => t('Logo'),
     '#type' => 'managed_file',
