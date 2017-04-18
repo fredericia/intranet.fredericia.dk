@@ -949,14 +949,14 @@ function os2intra_bi_create_fi($bundle) {
  * Create bundles from directories
  */
 function os2intra_bi_create_bundles_and_content(){
-  os2intra_bi_create_bundles_and_content_from_csv();
-  os2intra_bi_create_bundles_and_content_from_pdf();
+  //os2intra_bi_create_bundles_and_content_from_csv();
+  os2intra_bi_create_bundles_and_content_from_html();
 }
 
 /**
  * Create bundles from directories (pdf)
  */
-function os2intra_bi_create_bundles_and_content_from_pdf() {
+function os2intra_bi_create_bundles_and_content_from_html() {
   $directory = variable_get(
     'os2intra_pdf2htmlex_rendering_path', ''
   );
@@ -964,6 +964,7 @@ function os2intra_bi_create_bundles_and_content_from_pdf() {
     scandir($directory),
     array('..', '.', '.DS_Store')
   );
+
   foreach ($scanned_directory as $dir) {
     $bundle_name = strtolower($dir);
     $search = array('æ', 'ø', 'å', 'Æ', 'Ø', 'Å');
@@ -1016,9 +1017,9 @@ function os2intra_bi_create_bundles_and_content_from_pdf() {
       $query->entityCondition('entity_type', $entity_type);
       $query->propertyCondition('type', $bundle_name);
       $query->propertyCondition('title', $entity_name); //should be changed after split
-      //var_dump($entity_name);
+
       $results['exists'] = $query->execute();
-      var_dump($results['exists']);
+
        // Create content
       if (!$results['exists']) {
         $entity = entity_create($entity_type, array('type' => $bundle_name));

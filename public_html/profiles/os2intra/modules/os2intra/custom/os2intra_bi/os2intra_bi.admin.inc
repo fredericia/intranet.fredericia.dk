@@ -321,14 +321,6 @@ function os2intra_bi_settings() {
     '#description' => t('Needs to be the full path.'),
     '#default_value' => variable_get('os2intra_bi_file_directory', '/var/www/test.intranet.fredericia.dk/bi'),
   );
-
-   $form['os2intra_bi_pdf_file_directory'] = array(
-    '#type' => 'textfield',
-    '#title' => t('PDF files import directory'),
-    '#description' => t('Needs to be the full path.'),
-    '#default_value' => variable_get('os2intra_bi_pdf_file_directory', '/var/www/test.intranet.fredericia.dk/bi_pdf'),
-  );
-
   if (module_exists('media_browser_plus')) {
     $vid = db_select('taxonomy_vocabulary', 'tv')
         ->fields('tv', array('vid'))
