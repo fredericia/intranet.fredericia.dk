@@ -123,19 +123,19 @@ db_add_field('os2intra_bi_plugin', 'header_rows', array(
   ));
 }
 /**
-  * Increase size of type field in os2intra_bi_plugin table
-  */
- function os2intra_bi_update_7006()  {
-   // Create the definition for the field
-   $type = array(
-         'description' => 'Plugin/bundle machine name.',
-         'type' => 'varchar',
-         'length' => 255,
-         'not null' => TRUE,
-       );
+ * Increase size of type field in os2intra_bi_plugin table
+ */
+function os2intra_bi_update_7006()  {
+  // Create the definition for the field
+  $type = array(
+        'description' => 'Plugin/bundle machine name.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      );
 
-   db_change_field('os2intra_bi_plugin', 'type', 'type', $type);
- }
+  db_change_field('os2intra_bi_plugin', 'type', 'type', $type);
+}
 /**
  * Implements hook_install().
  */
