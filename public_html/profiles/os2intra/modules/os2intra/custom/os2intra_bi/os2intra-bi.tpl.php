@@ -38,8 +38,10 @@
         hide($content['description']);
         hide($content['os2intra_bi_import_file_modified']);
         hide($content['os2intra_bi_plugin_logo']);
+        hide($content['os2intra_bi_html_file']);
         print render($content);
       ?>
+      <div class="bi-import-html-file"> <?php print file_get_contents($content['os2intra_bi_html_file']["#items"][0]['uri']);?></div>
       <div class="bi-import-file-modified">
         <?php print render($content['os2intra_bi_import_file_modified']); ?>
       </div>

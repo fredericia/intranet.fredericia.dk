@@ -321,13 +321,32 @@ function os2intra_bi_settings() {
     '#description' => t('Needs to be the full path.'),
     '#default_value' => variable_get('os2intra_bi_file_directory', '/var/www/test.intranet.fredericia.dk/bi'),
   );
-  
+
    $form['os2intra_bi_pdf_file_directory'] = array(
     '#type' => 'textfield',
     '#title' => t('PDF files import directory'),
     '#description' => t('Needs to be the full path.'),
     '#default_value' => variable_get('os2intra_bi_pdf_file_directory', '/var/www/test.intranet.fredericia.dk/bi_pdf'),
   );
+
+  if (module_exists('media_browser_plus')) {
+    $vid = db_select('taxonomy_vocabulary', 'tv')
+        ->fields('tv', array('vid'))
+        ->condition('machine_name', 'media_folders')
+        ->execute()
+        ->fetchField();
+    $folders = taxonomy_get_tree($vid);
+    foreach ($folders as $meedia_folder) {
+      $options_folders[$meedia_folder->tid] = $meedia_folder->name;
+    }
+    $form['os2intra_bi_html_files_folder'] = array(
+      '#type' => 'select',
+      '#title' => t('Select a media folder where html files will be saved'),
+      '#options' => $options_folders,
+      '#empty_option' => t('- None - '),
+      '#default_value' => variable_get('os2intra_bi_html_files_folder', FALSE),
+    );
+  }
   $form['os2intra_bi_plugin_logo_fid'] = array(
     '#title' => t('Logo'),
     '#type' => 'managed_file',

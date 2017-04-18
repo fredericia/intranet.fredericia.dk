@@ -1,0 +1,104 @@
+<?php
+
+/**
+ * os2dagsorden_adlib_api
+ *
+ * PHP version 5
+ *
+ * @category OS2Dagsorden
+ * @package  OS2Dagsorden_Adlib_Api
+ * @file     Install file
+ * @author   Jesper Mathiassen <jm@bellcom.dk>
+ * @license  http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
+ * @link     http://bellcom.dk
+ */
+
+/**
+ * Creates a table in the database that will controll the workflow of the module.
+ *
+ * @return created schema
+ */
+function os2intra_pdf2htmlex_schema() {
+    $schema['os2intra_pdf2htmlex_files'] = array(
+        'description' => 'This table is used as schedule for PDF -> HTML convertion',
+        'fields' => array(
+            'id' => array(
+                'description' => 'The Id.',
+                'type' => 'serial',
+                'not null' => TRUE
+            ),
+            'filename' => array(
+                'description' => 'Name of the file',
+                'type' => 'varchar',
+                'length' => 1024,
+                'serialize' => TRUE,
+            ),
+            'created_filepath' => array(
+                'description' => 'The path of the created HTML output',
+                'type' => 'varchar',
+                'length' => 1024,
+                'serialize' => TRUE,
+            ),
+            'progress' => array(
+                'description' => 'The information about the job',
+                'type' => 'varchar',
+                'length' => 1024,
+                'serialize' => TRUE,
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}
+
+
+/**
+ * Implements hook_requirements().
+ */
+function os2intra_pdf2htmlex_requirements($phase) {
+  if ($phase !== 'runtime') {
+    return array();
+  }
+  $t = get_t();
+
+  $exec = shell_exec(variable_get('osintra_pdf2htmlex_path', "") . ' --version 2>&1');
+  preg_match('/(\d+\.)(\d+)(\.d+)?(\.d+)?/', $exec, $version);
+  $requirements['os2intra_pdf2htmlex_app'] = array(
+      'title' => $t('OS2Intra pdf2htmlEX'),
+  );
+  $pdf2htmlex_version = array_shift($version);
+  if (version_compare($pdf2htmlex_version, MIN_PDF2HTMLEX_VERSION) == -1) {
+     $requirements['os2intra_pdf2htmlex_app']['severity'] = REQUIREMENT_ERROR;
+     $requirements['os2intra_pdf2htmlex_app']['description'] = t('Update pdf2htmlex version up to %req_ver or higher', array('%req_ver' => MIN_PDF2HTMLEX_VERSION));
+
+   }
+  else {
+    $requirements['os2intra_pdf2htmlex_app']['severity'] = REQUIREMENT_OK;
+    $requirements['os2intra_pdf2htmlex_app']['value'] = t('Pdf2htmlex version %ver', array('%ver' => $pdf2htmlex_version));
+  }
+
+  $pdf2html_rendering_path = drupal_realpath(variable_get('os2intra_pdf2htmlex_rendering_path'));
+  if (empty($pdf2html_rendering_path))
+    $requirements['os2intra_pdf2htmlex_rendering_dir_missing'] = array(
+      'title' => $t('OS2Intra pdf2htmlEX'),
+      'value' => $t('Directory for files rendering'),
+      'severity' => REQUIREMENT_ERROR,
+      'description' => t('Path for HTML files to be rendered is missing')
+  );
+  else {
+   if (!(is_dir($pdf2html_rendering_path) && is_writable($pdf2html_rendering_path)))
+    $requirements['os2intra_pdf2htmlex_rendering_dir'] = array(
+      'title' => $t('OS2Intra pdf2htmlEX'),
+      'value' => $t('Directory for files rendering'),
+      'severity' => REQUIREMENT_ERROR,
+      'description' => t('Directory for files rendering  %variable is not exists or not writable' , array('%variable' => variable_get('os2intra_pdf2htmlex_rendering_path')))
+    );
+  else
+    $requirements['os2intra_pdf2htmlex_rendering_dir'] = array(
+      'title' => $t('OS2Intra pdf2htmlEX'),
+      'value' => $t('Directory for files rendering is  exists and writable'),
+      'severity' => REQUIREMENT_OK
+    );
+  }
+  return $requirements;
+}

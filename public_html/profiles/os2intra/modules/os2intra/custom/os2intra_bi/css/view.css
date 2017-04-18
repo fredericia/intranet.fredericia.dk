@@ -41,3 +41,12 @@
 .text-bold {
   font-weight: 700;
 }
+
+.bi-import-html-file #page-container {
+  position: relative;
+  background: none;
+}
+
+.bi-import-html-file #sidebar {
+  display: none;
+}
