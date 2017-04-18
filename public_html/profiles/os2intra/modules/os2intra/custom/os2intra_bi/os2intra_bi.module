@@ -949,7 +949,7 @@ function os2intra_bi_create_fi($bundle) {
  * Create bundles from directories
  */
 function os2intra_bi_create_bundles_and_content(){
-  //os2intra_bi_create_bundles_and_content_from_csv();
+  os2intra_bi_create_bundles_and_content_from_csv();
   os2intra_bi_create_bundles_and_content_from_html();
 }
 
