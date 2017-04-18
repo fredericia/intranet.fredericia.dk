@@ -949,7 +949,7 @@ function os2intra_bi_create_fi($bundle) {
  * Create bundles from directories
  */
 function os2intra_bi_create_bundles_and_content(){
-  //os2intra_bi_create_bundles_and_content_from_csv();
+  os2intra_bi_create_bundles_and_content_from_csv();
   os2intra_bi_create_bundles_and_content_from_pdf();
 }
 
@@ -1054,7 +1054,6 @@ if ($type=='os2intra_bi' && isset($entity->os2intra_bi_html_file[LANGUAGE_NONE])
           ->condition('filename', $filename)
       ->execute();
   }
-  dpm($filename);
 }
 /**
  * Create bundles from directories (csv files)
