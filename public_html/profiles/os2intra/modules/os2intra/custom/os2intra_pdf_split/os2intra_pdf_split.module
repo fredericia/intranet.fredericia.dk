@@ -86,6 +86,13 @@ function os2intra_pdf_split_cronapi($op, $job = NULL) {
  * @return none
  */
 function os2intra_pdf_split_cron() {
+  os2intra_pdf_transliterate_files();
+  os2intra_pdf_split_files();
+}
+/**
+ * Split files original pdf files with sejda-console
+ */
+function os2intra_pdf_split_files() {
 
   $directory = variable_get(
       'os2intra_pdf_split_source_folder', '/var/www/test.intranet.fredericia.dk/bi_pdf'
@@ -98,12 +105,11 @@ function os2intra_pdf_split_cron() {
   foreach ($scanned_directory as $dir) {
     // Look for files
     $files = array_diff(
-        scandir($directory . '/' . $dir), array('..', '.', '.DS_Store')
+        scandir($directory . '/' . $dir), array('..', '.', 'original_name.txt', '.DS_Store')
     );
-    $files = str_replace('.pdf', '', $files);
 
     foreach ($files as $file) {
-      $filepath = $directory . '/' . $dir . '/' . $file . '.pdf';
+      $filepath = $directory . '/' . $dir . '/' . $file;
       // Check if it is a valid CSV file
       $file_info = new finfo(FILEINFO_MIME);
       $mime_type = $file_info->buffer(file_get_contents($filepath));
@@ -122,8 +128,66 @@ function os2intra_pdf_split_cron() {
       setlocale(LC_CTYPE, "en_DK.UTF-8");
       $bookmarks_level = variable_get('os2intra_pdf_split_bookmarks_level', 2);
       watchdog('os2intra_pdf_spli', 'Start split file   %filename ', array('%filename' => $filepath), WATCHDOG_WARNING);
-      shell_exec(variable_get('os2intra_sejda_console_path') . ' splitbybookmarks -f ' . escapeshellarg($filepath) . ' -l ' . $bookmarks_level . ' -o ' . escapeshellarg($dest_folder) . ' -p [TIMESTAMP]_[BOOKMARK_NAME_STRICT]');
+      shell_exec(variable_get('os2intra_sejda_console_path') . ' splitbybookmarks -f ' . escapeshellarg($filepath) . ' -l ' . $bookmarks_level . ' -o ' . escapeshellarg($dest_folder) . ' -p [TIMESTAMP]_[BOOKMARK_NAME]');
+    }
+
+    if (file_exists($directory . '/' . $dir . '/original_name.txt')) {
+      copy($directory . '/' . $dir . '/original_name.txt', $dest_folder . '/original_name.txt');
     }
   }
   variable_set('os2intra_pdf_split_last_cron_time', time());
+}
+/*
+ * translitarate directory and files
+ */
+function os2intra_pdf_transliterate_files() {
+  setlocale(LC_CTYPE, "en_DK.UTF-8");
+
+  $directory = variable_get(
+      'os2intra_pdf_split_source_folder', '/var/www/test.intranet.fredericia.dk/bi_pdf'
+  );
+  $scanned_directory = array_diff(
+      scandir($directory), array('..', '.', '.DS_Store')
+  );
+  $last_cron_time = variable_get('os2intra_pdf_split_last_cron_time', 0);
+  foreach ($scanned_directory as $dir) {
+    $dir_name = _os2intra_pdf_transliterate($dir);
+    if ($dir !== $dir_name) {
+      $fp = fopen($directory . '/' . $dir .'/original_name.txt', 'w');
+      fwrite($fp, $dir);
+      fclose($fp);
+    }
+    $files = array_diff(
+      scandir($directory . '/' . $dir), array('..', '.', '.DS_Store')
+    );
+
+     foreach ($files as $file) {
+      $filepath = $directory . '/' . $dir . '/' . $file;
+      // Check if it is a valid CSV file
+      $file_info = new finfo(FILEINFO_MIME);
+      $mime_type = $file_info->buffer(file_get_contents($filepath));
+
+      //if file is not PDF we not split it
+      if (!preg_match('/application\/pdf/', $mime_type))   continue;
+
+      //if file modification time < last cron rin time we not need to split it
+      if($last_cron_time >= filemtime($filepath))   continue;
+
+      $new_filename = _os2intra_pdf_transliterate(pathinfo($file, PATHINFO_FILENAME )) . '.pdf';
+      $new_filepath =  $directory . '/' . $dir . '/' . $new_filename;
+      rename($filepath , $new_filepath);
+    }
+    rename($directory . '/' . $dir , $directory . '/' . $dir_name);
+
+  }
+}
+
+function _os2intra_pdf_transliterate($str) {
+  $str = strtolower($str);
+  $search = array('æ', 'ø', 'å', 'Æ', 'Ø', 'Å');
+  $replace = array('ae', 'oe', 'aa', 'AE', 'OE', 'AA');
+  $str = str_replace($search, $replace, $str);
+  $str = preg_replace('@[^a-z0-9_]+@', '_', $str);
+
+  return $str;
 }
