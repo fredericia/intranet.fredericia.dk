@@ -950,7 +950,7 @@ function os2intra_bi_create_fi($bundle) {
  */
 function os2intra_bi_create_bundles_and_content(){
   os2intra_bi_create_bundles_and_content_from_csv();
-    os2intra_bi_create_bundles_and_content_from_html();
+  os2intra_bi_create_bundles_and_content_from_html();
 }
 
 /**
