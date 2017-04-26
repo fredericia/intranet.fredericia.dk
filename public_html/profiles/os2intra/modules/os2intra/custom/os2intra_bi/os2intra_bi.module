@@ -571,13 +571,14 @@ function os2intra_bi_field_formatter_view(
 
           // Check for an empty header, if so we don't want to theme it.
           $noheader = TRUE;
-          foreach ($header_data as $cell) {
-            if (strlen($cell['data']) > 0) {
-              $noheader = FALSE;
-              break;
+          if(!empty($header_data)) {
+            foreach ($header_data as $cell) {
+              if (strlen($cell['data']) > 0) {
+                $noheader = FALSE;
+                break;
+              }
             }
           }
-
           $header = $noheader ? NULL : $header_data;
 
           $entity_info = entity_get_info($entity_type);
@@ -966,6 +967,7 @@ function os2intra_bi_create_bundles_and_content_from_html() {
   );
 
   foreach ($scanned_directory as $dir) {
+    if (!is_dir($directory . '/' . $dir)) continue; // create bundle only if this is dir
     $bundle_name = strtolower($dir);
     $search = array('æ', 'ø', 'å', 'Æ', 'Ø', 'Å');
     $replace = array('ae', 'oe', 'aa', 'AE', 'OE', 'AA');
@@ -1070,6 +1072,7 @@ function os2intra_bi_create_bundles_and_content_from_csv() {
   );
 
   foreach ($scanned_directory as $dir) {
+    if (!is_dir($directory . '/' . $dir)) continue;
     $bundle_name = strtolower($dir);
     $search = array('æ', 'ø', 'å', 'Æ', 'Ø', 'Å');
     $replace = array('ae', 'oe', 'aa', 'AE', 'OE', 'AA');

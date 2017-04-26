@@ -108,7 +108,10 @@ function os2intra_pdf_split_files() {
       }
       $dest_folder_safe = escapeshellarg($dest_folder);
 
-      shell_exec($sedja . ' splitbybookmarks -f ' . $filepath_safe . ' -l ' . 2 . ' -o ' . $dest_folder_safe . ' -p [TIMESTAMP]_[BOOKMARK_NAME]');
+      $bookmarks_level = variable_get('os2intra_pdf_split_bookmarks_level', 2);
+ -    watchdog('os2intra_pdf_spli', 'Start split file   %filename ', array('%filename' => $filepath), WATCHDOG_WARNING);
+
+      shell_exec($sedja . ' splitbybookmarks -f ' . $filepath_safe . ' -l ' . $bookmarks_level . ' -o ' . $dest_folder_safe . ' -p [TIMESTAMP]_[BOOKMARK_NAME]');
     }
   }
   variable_set('os2intra_pdf_split_last_cron_time', time());
