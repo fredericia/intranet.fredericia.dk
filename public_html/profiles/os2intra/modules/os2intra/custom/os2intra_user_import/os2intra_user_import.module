@@ -227,25 +227,27 @@ function os2intra_user_import_run_with_drush() {
       $cusers = count($users);
         #error_log('Emails:  ' . print_r($user_email,true));
       #error_log('Users: ' . $cusers . ' Emails ' . $cemail);
+      $dup_emails = array();
+      $dup_id = array();
+
       if (count($users) !== count(array_unique($user_email))) {
          $dup_emails = array_unique(array_diff_assoc($user_email,array_unique($user_email)));
-         os2intra_user_import_save_log('', 'Dublicate email found in import file: '. implode(', ', $dup_emails ));
-         variable_set('os2intra_user_import_epoch', time());
-         exit();
+         os2intra_user_import_save_log('', 'Dublicate email found in import file  - Removing '. implode(', ', $dup_emails ));
+        // variable_set('os2intra_user_import_epoch', time());
+        // exit();
        }
 
         $user_id = array_column($users, 'ad_id');
        if (count($users) !== count(array_unique($user_id))) {
          $dup_id = array_unique(array_diff_assoc($user_id, array_unique($user_id)));
-         os2intra_user_import_save_log('', 'Dublicate User id found in import file');
-         variable_set('os2intra_user_import_epoch', time());
-         exit();
+         os2intra_user_import_save_log('', 'Dublicate User id found in import file  - Removing '. implode(', ', $dup_id));
+        // variable_set('os2intra_user_import_epoch', time());
+        // exit();
        }
-
        // Check and update users
        if($last_import_temp != $last_import_temp_users) {
          os2intra_user_import_save_log('', 'Starting User Loop');
-         $update_users = os2intra_user_import_check_users($users);
+         $update_users = os2intra_user_import_check_users($users, $dup_emails, $dup_id);
          // Loop over users and create
          os2intra_user_import_save_log('', 'Start Creating Users');
         foreach ($users as $user) {
