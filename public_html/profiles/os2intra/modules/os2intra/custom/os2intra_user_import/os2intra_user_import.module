@@ -282,7 +282,7 @@ function os2intra_user_import_run_with_drush() {
       // Logging
       //os2intra_user_import_save_log('', 'User import finished');
       os2intra_user_import_save_log('', 'Import finished');
-      if (time() == $last_import_epoch + 86400) {
+      if (time() >= $last_import_epoch + 86400) {
          os2intra_user_import_save_log('', 'Last import updated changed - older than one day:');
          // Timestamp to check if import has run successfully
          variable_set('os2intra_user_import_epoch', time());
