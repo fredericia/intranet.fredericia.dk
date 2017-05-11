@@ -1,0 +1,5 @@
+name = OS2Intra PDF to HTML converter
+description = The functionality of this module is taken from https://github.com/coolwanglu/pdf2htmlEX, requires this program installed!
+package = OS2Intra
+core = 7.x
+

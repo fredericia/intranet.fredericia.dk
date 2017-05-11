@@ -1,0 +1,118 @@
+<?php
+setlocale(LC_CTYPE, "en_US.UTF-8");
+
+/**
+ * os2intra_split_pdf
+ *
+ * PHP version 5
+ *
+ * @category OS2Intra
+ * @package  OS2Intra_pdf_split
+ * @author   Juulia Devadze <juulia@bellcom.ee>
+ * @license  http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
+ * @link     http://bellcom.dk
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function os2intra_pdf_split_menu() {
+  $items = array();
+
+  $items['admin/structure/os2intra-bi/pdf_split'] = array(
+    'title' => 'Split PDF Settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('os2intra_pdf_split_settings'),
+    'access arguments' => array('administer os2intra_bi content'),
+    'type' => MENU_LOCAL_ACTION,
+  );
+
+  return $items;
+}
+
+/**
+ * Settings form.
+ */
+function os2intra_pdf_split_settings() {
+  $form = array();
+  $form['os2intra_sejda_console_path'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Path to Sejda-console',
+    '#description' => 'Absolute path to sejda-console',
+    '#default_value' => variable_get('os2intra_sejda_console_path', "")
+  );
+
+  $form['os2intra_pdf_split_source_folder'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Path to folder with original pdf files'),
+    '#default_value' => variable_get('os2intra_pdf_split_source_folder', ''),
+    '#description' => t('Absolute path to original PDF files which should be splited.'));
+
+  $form['os2intra_pdf_split_dest_folder'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Path to folder with splited  PDF files'),
+    '#default_value' => variable_get('os2intra_pdf_split_dest_folder', ''),
+    '#description' => t('Absolute  path to folder where splited files should be saved'));
+
+  $form['os2intra_pdf_split_bookmarks_level'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Bookmarks level'),
+    '#default_value' => variable_get('os2intra_pdf_split_bookmarks_level', ''));
+
+  return system_settings_form($form);
+}
+
+/**
+ * Split files original pdf files with sejda-console
+ */
+function os2intra_pdf_split_files() {
+
+  setlocale(LC_CTYPE, "en_US.UTF-8");
+
+  $last_cron_time = variable_get('os2intra_pdf_split_last_cron_time', 0);
+
+  $directory = variable_get(
+      'os2intra_pdf_split_source_folder', '/var/www/test.intranet.fredericia.dk/bi_pdf'
+  );
+  $scanned_directory = array_diff(
+      scandir($directory), array('..', '.', '.DS_Store')
+  );
+  //$destination_dir = '/Users/stan/Desktop/pdf';
+  $sedja = variable_get('os2intra_sejda_console_path');
+
+  foreach ($scanned_directory as $dir) {
+    // Look for files
+    $files = array_diff(
+        scandir($directory . '/' . $dir), array('..', '.', '.DS_Store')
+    );
+
+    foreach ($files as $file) {
+      $filepath = $directory . '/' . $dir . '/' . $file;
+
+      $file_info = new finfo(FILEINFO_MIME);
+      $mime_type = $file_info->buffer(file_get_contents($filepath));
+
+      //if file modification time < last cron rin time we not need to split it
+      if($last_cron_time >= filemtime($filepath))      continue;
+
+
+      //if file is not PDF we not split it
+      if (!preg_match('/application\/pdf/', $mime_type))   continue;
+
+      $filepath_safe = escapeshellarg($filepath);
+
+      // create destination dir if not exists
+      $dest_folder = variable_get('os2intra_pdf_split_dest_folder') . '/' . $dir;
+      if (!file_exists($dest_folder)) {
+        mkdir($dest_folder);
+      }
+      $dest_folder_safe = escapeshellarg($dest_folder);
+
+      $bookmarks_level = variable_get('os2intra_pdf_split_bookmarks_level', 2);
+ -    watchdog('os2intra_pdf_spli', 'Start split file   %filename ', array('%filename' => $filepath), WATCHDOG_WARNING);
+
+      shell_exec($sedja . ' splitbybookmarks -f ' . $filepath_safe . ' -l ' . $bookmarks_level . ' -o ' . $dest_folder_safe . ' -p [TIMESTAMP]_[BOOKMARK_NAME]');
+    }
+  }
+  variable_set('os2intra_pdf_split_last_cron_time', time());
+}

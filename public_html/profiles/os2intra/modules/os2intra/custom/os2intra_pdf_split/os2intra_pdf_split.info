@@ -1,0 +1,5 @@
+name = OS2Intra split PDF files
+description = The functionality of this module is taken from http://sejda.org/, requires this program installed!
+package = OS2Intra
+core = 7.x
+

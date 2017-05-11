@@ -571,13 +571,14 @@ function os2intra_bi_field_formatter_view(
 
           // Check for an empty header, if so we don't want to theme it.
           $noheader = TRUE;
-          foreach ($header_data as $cell) {
-            if (strlen($cell['data']) > 0) {
-              $noheader = FALSE;
-              break;
+          if(!empty($header_data)) {
+            foreach ($header_data as $cell) {
+              if (strlen($cell['data']) > 0) {
+                $noheader = FALSE;
+                break;
+              }
             }
           }
-
           $header = $noheader ? NULL : $header_data;
 
           $entity_info = entity_get_info($entity_type);
@@ -875,6 +876,46 @@ function os2intra_bi_create_fi($bundle) {
     'deleted' => '0',
   );
 
+    $html_file_field_instance = array(
+      'bundle' => $bundle,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'file',
+          'settings' => array(),
+          'type' => 'default',
+          'weight' => 5,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'os2intra_bi',
+      'field_name' => 'os2intra_bi_html_file',
+      'label' => 'HTML file',
+      'required' => 0,
+      'settings' => array(
+        'description_field' => 0,
+        'file_directory' => '',
+        'file_extensions' => 'html',
+        'max_filesize' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'file',
+        'settings' => array(
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'file_generic',
+      ),
+    );
+
   _os2intra_bi_create_if_missing_field_os2intra_bi_import_file();
   if (empty(field_info_instance(
     'os2intra_bi',
@@ -894,12 +935,133 @@ function os2intra_bi_create_fi($bundle) {
   ) {
     field_create_instance($opus_roles_field_instance);
   }
+
+  _os2intra_bi_create_if_missing_field_os2intra_bi_html_file();
+  if (empty(field_info_instance(
+    'os2intra_bi',
+    'os2intra_bi_html_file',
+    $bundle
+  ))
+  ) {field_create_instance($html_file_field_instance);
+  }
 }
 
 /**
  * Create bundles from directories
  */
-function os2intra_bi_create_bundles_and_content() {
+function os2intra_bi_create_bundles_and_content(){
+  os2intra_bi_create_bundles_and_content_from_csv();
+  os2intra_bi_create_bundles_and_content_from_html();
+}
+
+/**
+ * Create bundles from directories (pdf)
+ */
+function os2intra_bi_create_bundles_and_content_from_html() {
+  $directory = variable_get(
+    'os2intra_pdf2htmlex_rendering_path', ''
+  );
+  $scanned_directory = array_diff(
+    scandir($directory),
+    array('..', '.', '.DS_Store')
+  );
+
+  foreach ($scanned_directory as $dir) {
+    if (!is_dir($directory . '/' . $dir)) continue; // create bundle only if this is dir
+    $bundle_name = strtolower($dir);
+    $search = array('æ', 'ø', 'å', 'Æ', 'Ø', 'Å');
+    $replace = array('ae', 'oe', 'aa', 'AE', 'OE', 'AA');
+    $bundle_name = str_replace($search, $replace, $bundle_name);
+    $bundle_name = preg_replace('@[^a-z0-9_]+@', '_', $bundle_name);
+
+    // Check if bundle exists
+    $query = new EntityFieldQuery;
+    $query->entityCondition('entity_type', 'os2intra_bi_plugin');
+    $query->propertyCondition('type', $bundle_name);
+    $result = $query->execute();
+
+    // If not, create the bundle
+    if (!$result) {
+      $bundle = new stdClass();
+      $bundle->type = $bundle_name;
+      $bundle->label = t($dir);
+      $bundle->is_new = TRUE;
+      $bundle->description = t("Automatically created");
+
+      $controller = new OS2intraBIPluginController('os2intra_bi_plugin');
+      $controller->save($bundle);
+
+      // Attach fields to bundle
+      os2intra_bi_create_fi($bundle_name);
+    }
+    // Look for files
+    $files = array_diff(
+      scandir($directory . '/' . $dir ),
+      array('..', '.', '.DS_Store')
+    );
+
+    $files = str_replace('.html', '', $files);
+
+    foreach ($files as $file) {
+      $filepath = $directory . '/' . $dir . '/'  . $file . '.html';
+      preg_match('#^\d+_\d+_#',  $file, $matches);
+      $timestamp =  str_replace('_', '', array_shift($matches));
+      $entity_name = preg_replace('#^\d+_\d+_#', '', $file);
+      // Check if it is a valid CSV file
+      $file_info = new finfo(FILEINFO_MIME);
+      $mime_type = $file_info->buffer(file_get_contents($filepath));
+      watchdog('os2inta_bi_import', 'start import  %filename', array('%filename' => $filepath), WATCHDOG_INFO);
+
+      $entity_type = 'os2intra_bi';
+
+      // Check if content exists
+      $query = new EntityFieldQuery;
+      $query->entityCondition('entity_type', $entity_type);
+      $query->propertyCondition('type', $bundle_name);
+      $query->propertyCondition('title', $entity_name); //should be changed after split
+
+      $results['exists'] = $query->execute();
+
+       // Create content
+      if (!$results['exists']) {
+        $entity = entity_create($entity_type, array('type' => $bundle_name));
+        $wrapper = entity_metadata_wrapper($entity_type, $entity);
+        $wrapper->title = $entity_name;
+        $wrapper->modified->set(filemtime($filepath));
+        $html_file_obj = os2intra_bi_import_html_file($filepath);
+        $wrapper->os2intra_bi_html_file->file->set($html_file_obj);
+        $wrapper->save();
+      }
+       // Update content
+      foreach ($results['exists'] as $result) {
+        $result = reset($result);
+        $wrapper = entity_metadata_wrapper($entity_type, $result->id);
+        $file_obj = $wrapper->os2intra_bi_html_file->value();
+        preg_match('#^\d+_\d+_#',  $file_obj['filename'], $matches);
+        $old_timestamp =  str_replace('_', '', array_shift($matches));
+        if ($old_timestamp < $timestamp) {
+          $wrapper->modified->set(filemtime($filepath));
+          $html_file_obj = os2intra_bi_import_html_file($filepath);
+          $wrapper->os2intra_bi_html_file->file->set($html_file_obj);
+          $wrapper->save();
+        }
+      }
+    }
+  }
+}
+
+function os2intra_bi_entity_delete($entity, $type) {
+if ($type=='os2intra_bi' && isset($entity->os2intra_bi_html_file[LANGUAGE_NONE])) {
+ $filename = pathinfo($entity->os2intra_bi_html_file[LANGUAGE_NONE][0]['uri'], PATHINFO_FILENAME);
+  db_delete('os2intra_pdf2htmlex_files')
+          ->condition('filename', $filename)
+      ->execute();
+  }
+}
+/**
+ * Create bundles from directories (csv files)
+ */
+function os2intra_bi_create_bundles_and_content_from_csv() {
   $directory = variable_get(
     'os2intra_bi_file_directory',
     '/var/www/test.intranet.fredericia.dk/bi'
@@ -908,8 +1070,9 @@ function os2intra_bi_create_bundles_and_content() {
     scandir($directory),
     array('..', '.', '.DS_Store')
   );
-  
+
   foreach ($scanned_directory as $dir) {
+    if (!is_dir($directory . '/' . $dir)) continue;
     $bundle_name = strtolower($dir);
     $search = array('æ', 'ø', 'å', 'Æ', 'Ø', 'Å');
     $replace = array('ae', 'oe', 'aa', 'AE', 'OE', 'AA');
@@ -963,15 +1126,15 @@ function os2intra_bi_create_bundles_and_content() {
       $query->entityCondition('entity_type', $entity_type);
       $query->propertyCondition('type', $bundle_name);
       $query->propertyCondition('title', $file);
-      $results['exists'] = $query->execute();      
-      
+      $results['exists'] = $query->execute();
+
       // Check if we need to split the CSV file
       $query = new EntityFieldQuery;
       $query->entityCondition('entity_type', 'os2intra_bi_plugin');
       $query->propertyCondition('type', $bundle_name);
       $query->propertyCondition('split', 1);
       $results['split'] = $query->execute();
-      
+
       $header_rows = _os2intra_bi_get_hearder_rows_amount($bundle_name);
       if (!$results['split']) {
         // Create content
@@ -1170,7 +1333,7 @@ function os2intra_bi_csv_value($fileuri, $header_rows) {
         if ($header_rows > 0 && $row_count >= $header_rows && is_numeric($col)){
           $col = number_format((float) $col, _os2intra_bi_number_of_decimals($col), ',', '.');
         }
-          
+
         $imported_tablefield['cell_' . $row_count . '_' . $col_id] = $col;
       }
       $max_col_count = $col_count > $max_col_count ? $col_count : $max_col_count;
@@ -1401,6 +1564,45 @@ function _os2intra_bi_create_if_missing_field_os2intra_bi_opus_roles() {
   }
 }
 
+function _os2intra_bi_create_if_missing_field_os2intra_bi_html_file(){
+  $field_os2intra_bi_html_file = array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'os2intra_bi_html_file',
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'file',
+      'settings' => array(
+        'display_default' => 0,
+        'display_field' => 0,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'file',
+    );
+
+   if (!field_info_field('os2intra_bi_html_file')) {
+    field_create_field($field_os2intra_bi_html_file);
+  }
+}
+
+ /*function _os2intra_bi_create_if_missing_field_os2intra_bi_html_file(){
+
+ }*/
 /*
  * return TRUE if string start with any substring in array
  * $needle  - array
@@ -1495,4 +1697,38 @@ function os2intra_bi_update_7003() {
  */
 function os2intra_bi_update_7004() {
   _os2intra_bi_create_if_missing_field_os2intra_bi_opus_roles();
+}
+
+
+/**
+ * Creates a field field_os2intra_bi_html_file if it is missing.
+ */
+function os2intra_bi_update_7007() {
+  _os2intra_bi_create_if_missing_field_os2intra_bi_html_file();
+}
+
+
+function os2intra_bi_import_html_file($uri) {
+  $fid = db_select('file_managed', 'fm')
+          ->fields('fm', array('fid'))
+          ->condition('uri', $uri)
+          ->execute()->fetchField();
+
+  $file = new stdClass();
+  if ($fid) {
+    $file->fid = $fid;
+  }
+  if (module_exists('media_browser_plus')) {
+   $file->field_folder[LANGUAGE_NONE][0]['tid']=variable_get('os2intra_bi_html_files_folder', '');
+  }
+  $file->uri = $uri;
+
+  $file->display = 1;
+  $file->filename = drupal_basename($uri);
+  $file->filemime = file_get_mimetype($uri);
+  $file->uid = 1;
+  $file->destination = $uri;
+  $file->status = FILE_STATUS_PERMANENT;
+  $file = file_save($file);
+  return $file;
 }
