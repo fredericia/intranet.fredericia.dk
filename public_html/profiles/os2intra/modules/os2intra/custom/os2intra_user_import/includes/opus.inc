@@ -21,12 +21,12 @@ function os2intra_user_import_create_opus_roles($opus_roles) {
   }
 
   foreach ($opus_roles as $opus_role) {
-    if (!in_array($opus_role, $existing_roles)) {
+    if (!in_array(strtolower($opus_role), $existing_roles)) {
       $newterm = new stdClass();
       $newterm->name = $opus_role;
       $newterm->vid = $vocabulary->vid;
       $newterm->parent = 0;
-      $newterm->os2intra_bi_machine_name[LANGUAGE_NONE][0]['value'] = $opus_role;
+      $newterm->os2intra_bi_machine_name[LANGUAGE_NONE][0]['value'] = strtolower($opus_role);
       taxonomy_term_save($newterm);
     }
   }
