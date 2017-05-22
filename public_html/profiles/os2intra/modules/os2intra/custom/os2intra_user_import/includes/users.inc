@@ -192,9 +192,10 @@ function os2intra_user_import_save_user($user, $uid = '') {
       }
     }
   }
+  $opus_roles =  explode(',', $user['opus_roles']);
+  os2intra_user_import_create_opus_roles($opus_roles);
 
-  foreach (explode(',', $user['opus_roles']) as $opus_role) {
-    $opus_roles[] = $opus_role;
+  foreach ($opus_roles as $opus_role) {
     $query = new EntityFieldQuery;
     $result = $query
       ->entityCondition('entity_type', 'taxonomy_term')
@@ -206,10 +207,7 @@ function os2intra_user_import_save_user($user, $uid = '') {
       $opus_role_tids[] = $term->tid;
     }
   }
-
-  $opus_role_tids = array_diff($keep_opus_roles, $opus_role_tids);
-
-  os2intra_user_import_create_opus_roles($opus_roles);
+  $opus_role_tids = array_diff($opus_role_tids, $keep_opus_roles);
 
   // User title tid
   $title_tid = os2intra_user_import_user_title($user['job_description']);
@@ -257,7 +255,6 @@ function os2intra_user_import_save_user($user, $uid = '') {
   foreach ($opus_role_tids as $opus_role_tid) {
     $fields['os2intra_users_opus_roles'][LANGUAGE_NONE][]['tid'] = $opus_role_tid;
   }
-
   // For some reason, the first zero is chopped somewhere. Let's add it.
   if (strlen($user['birthdate']) < 6) {
     $fields['field_os2intra_birthdate'] = array(LANGUAGE_NONE => array(0 => array('value' => '0' . $user['birthdate'])));
