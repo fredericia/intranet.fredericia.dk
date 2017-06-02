@@ -190,7 +190,6 @@ function os2intra_bi_plugin_form($form, &$form_state, $entity_type, $op = 'edit'
     $entity_type->label .= ' (cloned)';
     $entity_type->type = '';
   }
-
   // Describe all properties of the entity which shall be shown on the form.
   $form['label'] = array(
     '#title' => t('Label'),
@@ -220,6 +219,11 @@ function os2intra_bi_plugin_form($form, &$form_state, $entity_type, $op = 'edit'
     '#type' => 'checkbox',
     '#default_value' => $entity_type->split,
     '#title' => t('Split files on this type.'),
+  );
+  $form['show_title_logo'] = array(
+    '#type' => 'checkbox',
+    '#default_value' => $entity_type->show_title_logo,
+    '#title' => t('Show title and logo on entity view page'),
   );
   $form['header_rows'] = array(
     '#type' => 'textfield',
