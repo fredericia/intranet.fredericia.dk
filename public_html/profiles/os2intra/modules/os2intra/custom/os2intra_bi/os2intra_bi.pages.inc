@@ -15,8 +15,11 @@
  *   Renderable array.
  */
 function os2intra_bi_view($entity) {
-  drupal_set_title(entity_label('os2intra_bi', $entity));
-
+  $show_title = os2intra_bi_import_get_show_title_logo_setting ($entity->type);
+  if ($show_title)
+    drupal_set_title(entity_label('os2intra_bi', $entity));
+  else 
+    drupal_set_title("");
   // Return automatically generated view page.
   return entity_view('os2intra_bi', array(entity_id('os2intra_bi', $entity) => $entity));
 }

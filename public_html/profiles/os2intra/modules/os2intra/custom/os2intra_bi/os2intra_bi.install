@@ -101,6 +101,14 @@ function os2intra_bi_schema() {
         'not null' => FALSE,
         'default' => 0,
       ),
+      'show_title_logo' => array(
+        'description' => 'Show title and logo on entity page',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      )
+      
     ) + entity_exportable_schema_fields(),
     'primary key' => array('id'),
     'unique keys' => array(
@@ -135,6 +143,19 @@ function os2intra_bi_update_7006()  {
       );
 
   db_change_field('os2intra_bi_plugin', 'type', 'type', $type);
+}
+/**
+ * Add show_title_logo field
+ */
+function os2intra_bi_update_7008()  {
+db_add_field('os2intra_bi_plugin', 'show_title_logo', array(
+        'description' => 'Show title and logo on entity page',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      )
+    );
 }
 /**
  * Implements hook_install().

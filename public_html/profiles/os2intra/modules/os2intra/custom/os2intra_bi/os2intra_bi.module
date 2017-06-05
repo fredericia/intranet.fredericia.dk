@@ -185,7 +185,14 @@ function os2intra_bi_entity_property_info() {
     'label' => t('Amount of hearder rows'),
     'setter callback' => 'entity_property_verbatim_set',
   );
-
+  $type_properties['show_title_logo'] = array(
+    'description' => 'Show title and logo on entity page.',
+    'type' => 'boolean',
+    'schema field' => 'show_title_logo',
+    'required' => FALSE,
+    'label' => t('Show title and logo on entity page'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
   return $info;
 }
 
@@ -644,17 +651,18 @@ function os2intra_bi_preprocess_entity(&$variables) {
           $variables['os2intra_bi']->modified
         ),
     );
-
-    // BI plugin logo
-    $image = file_load(variable_get('os2intra_bi_plugin_logo_fid'));
-    if ($image) {
-      $variables['content']['os2intra_bi_plugin_logo'] = array(
-        '#theme' => 'image',
-        '#path' => $image->uri,
-        '#alt' => t('OS2intra BI Plugin logo'),
-      );
+    $show_logo = os2intra_bi_import_get_show_title_logo_setting($variables['elements']['#bundle']);
+    if($show_logo)  {
+      // BI plugin logo
+      $image = file_load(variable_get('os2intra_bi_plugin_logo_fid'));
+      if ($image) {
+        $variables['content']['os2intra_bi_plugin_logo'] = array(
+          '#theme' => 'image',
+          '#path' => $image->uri,
+          '#alt' => t('OS2intra BI Plugin logo'),
+        );
+      }
     }
-
     // Override table colors
     drupal_add_css(
       '.table-striped > tbody > tr:nth-of-type(odd) { background: #' . variable_get(
@@ -1732,3 +1740,15 @@ function os2intra_bi_import_html_file($uri) {
   $file = file_save($file);
   return $file;
 }
+function os2intra_bi_import_get_show_title_logo_setting($bundle_name) {
+  $query = new EntityFieldQuery;
+  $query->entityCondition('entity_type', 'os2intra_bi_plugin');
+  $query->propertyCondition('type', $bundle_name );
+  $result = $query->execute();
+  if ($result) {
+    $array = reset($result);
+    $bundle = array_pop(entity_load('os2intra_bi_plugin', array(key($array))));
+    return $bundle->show_title_logo;
+  }
+  return FALSE;
+}   
