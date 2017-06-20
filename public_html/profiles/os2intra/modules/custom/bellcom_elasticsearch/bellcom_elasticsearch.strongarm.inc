@@ -23,7 +23,8 @@ Køb, salg, markedspladsen, til salg, byttebørs
 Kriser,krise,beredskab,akut,actionscard,actioncards,terror,brand,ulykke
 Pædagogisk Psykologisk Rådgivning, ppr
 Rådhusbetjentene,rådhusbetjent,betjent
-';
+brilleskade,brilleskader
+Indkøb,Rakat,e-handel,aftale,kontrakt,leverandør,udbud,opus,vare,køb,handle';
   $export['bellcom_elasticsearch_synonyms'] = $strongarm;
 
   $strongarm = new stdClass();

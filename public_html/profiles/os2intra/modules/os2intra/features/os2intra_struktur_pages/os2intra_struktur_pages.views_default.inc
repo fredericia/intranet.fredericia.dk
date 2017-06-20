@@ -116,7 +116,10 @@ function os2intra_struktur_pages_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
@@ -200,11 +203,6 @@ function os2intra_struktur_pages_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomy term: Content with term */
-  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['label'] = 'indholdselement';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Ikon */
   $handler->display->display_options['fields']['field_os2web_base_icon']['id'] = 'field_os2web_base_icon';
@@ -276,7 +274,6 @@ function os2intra_struktur_pages_views_default_views() {
     t('Content pane'),
     t('View panes'),
     t('Content pane 2'),
-    t('indholdselement'),
   );
   $export['term_panel_views_term_'] = $view;
 
