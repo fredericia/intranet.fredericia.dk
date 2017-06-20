@@ -45,22 +45,127 @@ function os2intra_elasticsearch_default_search_api_index() {
       "collect_index_statistics" : 1,
       "log_only_not_found" : 0,
       "index_statistics_ttl" : "365d",
-      "data_alter_callbacks" : { "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] } },
+      "data_alter_callbacks" : {
+        "search_api_alter_bundle_filter" : {
+          "status" : 1,
+          "weight" : "-10",
+          "settings" : {
+            "default" : "1",
+            "bundles" : {
+              "os2intra_message_notification" : "os2intra_message_notification",
+              "os2web_base_selfservice_link" : "os2web_base_selfservice_link",
+              "spotbox" : "spotbox"
+            }
+          }
+        },
+        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_status" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
+        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
+        "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] }
+      },
       "processors" : {
-        "search_api_case_ignore" : { "status" : 0, "weight" : "0", "settings" : { "strings" : 0 } },
+        "search_api_case_ignore" : {
+          "status" : 0,
+          "weight" : "0",
+          "settings" : { "fields" : {
+              "title" : true,
+              "body:value" : true,
+              "field_os2intra_paragraph:field_os2intra_paragraph_title" : true,
+              "field_os2intra_paragraph:field_os2intra_paragraph_text:value" : true
+            }
+          }
+        },
         "search_api_html_filter" : {
           "status" : 0,
           "weight" : "10",
           "settings" : {
+            "fields" : {
+              "title" : true,
+              "body:value" : true,
+              "field_os2intra_paragraph:field_os2intra_paragraph_title" : true,
+              "field_os2intra_paragraph:field_os2intra_paragraph_text:value" : true
+            },
             "title" : 0,
             "alt" : 1,
-            "tags" : "h1 = 5\\nh2 = 3\\nh3 = 2\\nstrong = 2\\nb = 2\\nem = 1.5\\nu = 1.5"
+            "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"
+          }
+        },
+        "search_api_transliteration" : {
+          "status" : 0,
+          "weight" : "15",
+          "settings" : { "fields" : {
+              "title" : true,
+              "body:value" : true,
+              "field_os2intra_paragraph:field_os2intra_paragraph_title" : true,
+              "field_os2intra_paragraph:field_os2intra_paragraph_text:value" : true
+            }
           }
         },
         "search_api_tokenizer" : {
           "status" : 0,
           "weight" : "20",
-          "settings" : { "spaces" : "[^\\\\p{L}\\\\p{N}]", "ignorable" : "[-]" }
+          "settings" : {
+            "fields" : {
+              "title" : true,
+              "body:value" : true,
+              "field_os2intra_paragraph:field_os2intra_paragraph_title" : true,
+              "field_os2intra_paragraph:field_os2intra_paragraph_text:value" : true
+            },
+            "spaces" : "[^\\\\p{L}\\\\p{N}]",
+            "ignorable" : "[-]"
+          }
+        },
+        "search_api_stopwords" : {
+          "status" : 0,
+          "weight" : "30",
+          "settings" : {
+            "fields" : {
+              "title" : true,
+              "body:value" : true,
+              "field_os2intra_paragraph:field_os2intra_paragraph_title" : true,
+              "field_os2intra_paragraph:field_os2intra_paragraph_text:value" : true
+            },
+            "file" : "",
+            "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
+          }
+        },
+        "search_api_highlighting" : {
+          "status" : 0,
+          "weight" : "35",
+          "settings" : {
+            "prefix" : "\\u003Cstrong\\u003E",
+            "suffix" : "\\u003C\\/strong\\u003E",
+            "excerpt" : 1,
+            "excerpt_length" : "256",
+            "exclude_fields" : [],
+            "highlight" : "always"
+          }
+        },
+        "search_api_elasticsearch_highlighting" : {
+          "status" : 1,
+          "weight" : "35",
+          "settings" : {
+            "prefix" : "\\u003Cstrong\\u003E",
+            "suffix" : "\\u003C\\/strong\\u003E",
+            "excerpt" : 1,
+            "excerpt_length" : "256",
+            "excerpt_fragments" : "3",
+            "concatenator" : "...",
+            "highlight" : "always"
+          }
+        },
+        "search_api_elasticsearch_prefix_search" : {
+          "status" : 0,
+          "weight" : "35",
+          "settings" : { "fields" : {
+              "title" : true,
+              "body:value" : true,
+              "field_os2intra_paragraph:field_os2intra_paragraph_title" : true,
+              "field_os2intra_paragraph:field_os2intra_paragraph_text:value" : true
+            }
+          }
         }
       },
       "fields" : {
