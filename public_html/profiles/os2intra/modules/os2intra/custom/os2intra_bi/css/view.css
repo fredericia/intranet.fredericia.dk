@@ -50,3 +50,12 @@
 .bi-import-html-file #sidebar {
   display: none;
 }
+.bi-import-html-file .h1,
+.bi-import-html-file .h2,
+.bi-import-html-file .h3,
+.bi-import-html-file .h4,
+.bi-import-html-file .h5,
+.bi-import-html-file .h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
