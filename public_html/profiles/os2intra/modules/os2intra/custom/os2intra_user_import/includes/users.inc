@@ -93,7 +93,17 @@ function os2intra_user_import_save_user($user, $uid = '') {
   // Load users values from account
   if (is_object($account)) {
     $og_user_node = array();
+    $user_node = array();
     $import_groups = array();
+    // Get  current user's content
+    if ($og_user_node_field = field_get_items('user', $account, 'og_user_node')) { // gruppemedlemskab
+      foreach ($og_user_node_field as $key => $field) {
+        //check if node exists;
+          if (node_load($field['target_id'])) {
+            $user_node[] = array('target_id' => $field['target_id']);
+          }
+      }
+    };
     // Get a list of current group nids
     if ($og_user_node_field = field_get_items('user', $account, 'og_user_node2')) { // gruppemedlemskab
       foreach ($og_user_node_field as $key => $field) {
@@ -218,6 +228,9 @@ function os2intra_user_import_save_user($user, $uid = '') {
     // Set department membership
     'og_user_node2'                   => array(LANGUAGE_NONE => array(0 => array('target_id' => array($department_nid)))),
 
+    // Set user nodes
+    'og_user_node'                   =>  array(LANGUAGE_NONE => $user_node),
+
 
     // Activate user
     'status'                          => ($account->uid != 0) ? $account->status : 1,
@@ -253,7 +266,6 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $fields['name'] = $user['ad_id'];
     $fields['pass'] = $password;
   }
-
   // Save user
   $account = user_save($account, $fields);
 
