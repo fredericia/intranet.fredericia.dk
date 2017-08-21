@@ -5,23 +5,43 @@
 function os2intra_user_import_disable_users() {
   os2intra_user_import_save_log('', 'Start disabling users');
   $timestamp = strtotime('midnight tomorrow');
+  if (variable_get('os2intra_user_import_user_disable_action', 'user_disable') == 'user_delete_reassign') {
+    $query = new EntityFieldQuery;
+    $query->entityCondition('entity_type', 'user');
+    $query->fieldCondition('field_os2intra_termination_date', 'value', $timestamp, '<');
+    $query->fieldCondition('field_os2intra_termination_date', 'value', 1, '>');
+    $result = reset($query->execute());
 
-  // Query all users with termination date today.
-  $query = new EntityFieldQuery;
-  $query->entityCondition('entity_type', 'user');
-  $query->fieldCondition('field_os2intra_termination_date', 'value', $timestamp, '<');
-  $query->fieldCondition('field_os2intra_termination_date', 'value', 1, '>');
-  $query->propertyCondition('status', 1);
-  $result = reset($query->execute());
+    $method = 'user_cancel_reassign';
+    // Delete  users
+    if (is_array($result)) {
+      foreach ($result as $uid => $item) {
+        $account =  user_load($uid);
+        module_invoke_all('user_cancel', array(), $account, $method);
+        user_delete($uid);
+        os2intra_user_import_save_log('', 'Delete uid: ' . $uid);
+      }
+    }
 
-  // Array holding new status for user
-  $disable_array = array('status' => 0);
+  }
+  else {
+    // Query all users with termination date today.
+    $query = new EntityFieldQuery;
+    $query->entityCondition('entity_type', 'user');
+    $query->fieldCondition('field_os2intra_termination_date', 'value', $timestamp, '<');
+    $query->fieldCondition('field_os2intra_termination_date', 'value', 1, '>');
+    $query->propertyCondition('status', 1);
+    $result = reset($query->execute());
 
-  // Disable users
-  if (is_array($result)) {
-    foreach ($result as $uid => $item) {
-      os2intra_user_import_save_log('', 'Disable uid: ' . $uid);
-      user_save(user_load($uid), $disable_array);
+    // Array holding new status for user
+    $disable_array = array('status' => 0);
+
+    // Disable users
+    if (is_array($result)) {
+      foreach ($result as $uid => $item) {
+        os2intra_user_import_save_log('', 'Disable uid: ' . $uid);
+        user_save(user_load($uid), $disable_array);
+      }
     }
   }
   os2intra_user_import_save_log('', 'User disabling finished');
@@ -30,10 +50,19 @@ function os2intra_user_import_disable_users() {
 /**
  * Check if the user is already created in the system
  */
-function os2intra_user_import_check_users(&$users) {
+function os2intra_user_import_check_users(&$users, $duplicate_emails, $duplicate_ids) {
   $update_users = array();
-
   foreach ($users as $key => $user) {
+    if (array_search($user['email'], $duplicate_emails) !== false) {
+      unset($users[$key]);
+      continue;
+    }
+
+    if (array_search($user['ad_id'], $duplicate_ids) !== false) {
+      unset($users[$key]);
+      continue;
+    }
+
     $ad_id = $user['ad_id'];
 
     $query = new EntityFieldQuery;

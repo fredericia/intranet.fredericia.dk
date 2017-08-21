@@ -60,7 +60,7 @@ function os2intra_base_views_pre_render(&$view) {
     }
   }
 
-  // Remove all groups which are of an organization type.  
+  // Remove all groups which are of an organization type.
   if($view->name == "commons_groups_directory") {
     foreach($view->result as $i => $row) {
       $tid = field_get_items('node', node_load($row->nid), 'field_os2intra_grouptype');

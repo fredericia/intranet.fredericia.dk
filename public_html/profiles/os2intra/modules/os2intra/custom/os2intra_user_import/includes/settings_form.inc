@@ -96,6 +96,12 @@ function os2intra_user_import_settings() {
     '#default_value' => variable_get('os2intra_user_import_authmap_name_suffix'),
     '#description'   => t("For example '@fredericia.dk'"),
   );
+  $form['os2intra_user_import_user_disable_action'] = array(
+    '#title'         => t("Action that sould be done when user disabled"),
+    '#type'          => 'radios',
+    '#options' =>  array('user_disable' => t('Disable user'), 'user_delete_reassign' => t('Delete the account and assign its contents to the anonymous user')),
+    '#default_value' => variable_get('os2intra_user_import_user_disable_action', 'user_disable'),
+  );
 
   $form['mapping'] = array(
     '#type'        => 'fieldset',

@@ -66,6 +66,13 @@ function os2intra_user_import_menu() {
     'file'            => 'includes/activation_form.inc',
   );
 
+  $items['admin/config/os2intra/dwe'] = array(
+    'title' => t('Departments without employees'),
+    'description' => t('A list of departments without employees'),
+    'page callback' => 'os2intra_user_import_departments_without_employees',
+    'access arguments' => array('administer os2intra'),
+  );
+
   return $items;
 }
 
@@ -159,6 +166,9 @@ function os2intra_user_import_run_with_drush() {
   if (variable_get('os2intra_user_import_enable', FALSE)) {
     // Check if import has run successfully in 1.5 day
     $last_import_epoch = variable_get('os2intra_user_import_epoch', time());
+    if(!variable_get('os2intra_user_import_epoch')) {
+      variable_set('os2intra_user_import_epoch', time());
+    }
     if (time() > $last_import_epoch + 129600) {
       // Send mail
       $params = array(
@@ -167,6 +177,7 @@ function os2intra_user_import_run_with_drush() {
       );
       $to = variable_get('os2intra_user_notification_email', variable_get('site_mail'), 'drift@bellcom.dk');
       drupal_mail('os2intra_user_import', 'os2intra_user_notification_email', $to, language_default(), $params);
+      os2intra_user_import_save_log('', 'Email about last import older than 1.5 days sent to: ' . $to );
     }
 
     setlocale(LC_ALL, "en_DK.UTF-8");
@@ -182,43 +193,168 @@ function os2intra_user_import_run_with_drush() {
     }
 
     if (file_exists($realpath)) {
+      // Uncomment this to get extensive debugging in the Drupal user import log in admin
+      variable_set('os2intra_user_import_save_extended_log', TRUE);
 
+      // Uncomment this if you want to force an import
+      #variable_set('os2intra_user_import_epoch', time());
+
+      $last_import_temp = variable_get('os2intra_user_import_epoch');
+      $last_import_temp_groups = variable_get('os2intra_user_import_epoch_groups');
+      $last_import_temp_users = variable_get('os2intra_user_import_epoch_users');
+      $last_import_temp_users_disable = variable_get('os2intra_user_import_epoch_users_disable');
       os2intra_user_import_clear_log();
+      os2intra_user_import_save_log('', 'Last registered import' . $last_import_temp);
       os2intra_user_import_save_log('', 'Starting import');
 
       // Parse file, map data accordingly
       $users = _os2intra_user_import_process_file($realpath);
 
+       // Check and create groups
+      if ($last_import_temp != $last_import_temp_groups) {
+        os2intra_user_import_save_log('', 'Starting groups. Last import different than the main import' . $last_import_temp . ' / ' . $last_import_temp_groups);
+        os2intra_user_import_save_log('', 'Starting Group Import Loop');
+        os2intra_user_import_groups($users);
+        os2intra_user_import_save_log('', 'Ending Group Import Loop');
+        variable_set('os2intra_user_import_epoch_groups', $last_import_temp);
+        $last_import_temp_groups = variable_get('os2intra_user_import_epoch', time());
+     } else {
+        os2intra_user_import_save_log('', 'Skipping groups. Last import is the same as the running import' . $last_import_temp . ' / ' . $last_import_temp_groups);
+     }
       // Check and create groups
-      os2intra_user_import_groups($users);
+      $user_email = array_column($users, 'email');
 
-      // Check for users that already exist
-      $update_users = os2intra_user_import_check_users($users);
+      $cemail = count(array_unique($user_email));
+      $cusers = count($users);
+        #error_log('Emails:  ' . print_r($user_email,true));
+      #error_log('Users: ' . $cusers . ' Emails ' . $cemail);
+      $dup_emails = array();
+      $dup_id = array();
 
-      os2intra_user_import_save_log('', 'User import');
+      if (count($users) !== count(array_unique($user_email))) {
+         $dup_emails = array_unique(array_diff_assoc($user_email,array_unique($user_email)));
+         os2intra_user_import_save_log('', 'Dublicate email found in import file  - Removing '. implode(', ', $dup_emails ));
+        // variable_set('os2intra_user_import_epoch', time());
+        // exit();
+       }
 
-      // Loop over users and create
-      foreach ($users as $user) {
-        os2intra_user_import_save_user($user);
-      }
-
-      // Update users
-      foreach ($update_users as $uid => $user) {
-        os2intra_user_import_save_user($user, $uid);
-      }
+        $user_id = array_column($users, 'ad_id');
+       if (count($users) !== count(array_unique($user_id))) {
+         $dup_id = array_unique(array_diff_assoc($user_id, array_unique($user_id)));
+         os2intra_user_import_save_log('', 'Dublicate User id found in import file  - Removing '. implode(', ', $dup_id));
+        // variable_set('os2intra_user_import_epoch', time());
+        // exit();
+       }
+       // Check and update users
+       if($last_import_temp != $last_import_temp_users) {
+         os2intra_user_import_save_log('', 'Starting User Loop');
+         $update_users = os2intra_user_import_check_users($users, $dup_emails, $dup_id);
+         // Loop over users and create
+         os2intra_user_import_save_log('', 'Start Creating Users');
+        foreach ($users as $user) {
+           os2intra_user_import_save_user($user);
+         }
+        os2intra_user_import_save_log('', 'End Creating Users');
+         // Update users
+         os2intra_user_import_save_log('', 'Start Update Users');
+         foreach ($update_users as $uid => $user) {
+           os2intra_user_import_save_user($user, $uid);
+         }
+         os2intra_user_import_save_log('', 'End Update Users');
+         os2intra_user_import_save_log('', 'Ending User Loop');
+         variable_set('os2intra_user_import_epoch_users', $last_import_temp);
+         $last_import_temp_users = variable_get('os2intra_user_import_epoch', time());
+       } else
+       {
+         os2intra_user_import_save_log('', 'Skipping user update. Last import is the same as the running import' . $last_import_temp . ' / ' . $last_import_temp_users );
+        }
 
       // Disable users
-      os2intra_user_import_disable_users();
+       if($last_import_temp != $last_import_temp_users_disable) {
+         os2intra_user_import_disable_users();
+         os2intra_user_import_save_log('', 'End Disabeling Users');
+         variable_set('os2intra_user_import_epoch_users_disable', $last_import_temp);
+        $last_import_temp_users_disable = variable_get('os2intra_user_import_epoch', time());
+      } else
+      {
+        os2intra_user_import_save_log('', 'Skipping user disable. Last import is the same as the running import' . $last_import_temp . ' / ' . $last_import_temp_users_disable );
+      }
 
       // Logging
-      os2intra_user_import_save_log('', 'User import finished');
+      //os2intra_user_import_save_log('', 'User import finished');
       os2intra_user_import_save_log('', 'Import finished');
-
-      // Timestamp to check if import has run successfully
-      variable_set('os2intra_user_import_epoch', time());
-    }
+      if (time() >= $last_import_epoch + 86400) {
+         os2intra_user_import_save_log('', 'Last import updated changed - older than one day:');
+         // Timestamp to check if import has run successfully
+         variable_set('os2intra_user_import_epoch', time());
+       } else
+         os2intra_user_import_save_log('', 'Last import time NOT updated - under one day old');
+       }
     else {
       os2intra_user_import_save_log('', 'File does not exist');
     }
   }
+}
+/**
+ * Returns a list of all departments without users with role 14 and role 16
+ */
+function os2intra_user_import_departments_without_employees() {
+  $departments_without_employees = array();
+  $gid_arrays_with = array();
+  $gid_arrays_without = array();
+  $gids_with = array();
+  $gids_without = array();
+
+  // Select all distinct group ID's where role ID is 14 and 16
+  $results_with = db_query('SELECT DISTINCT gid FROM og_users_roles WHERE rid=14 OR rid=16;');
+
+  // Select all group ID's where role ID is not 14 and not 16
+  $results_without = db_query('SELECT DISTINCT gid FROM og_users_roles WHERE rid != 14 AND rid != 16;');
+
+  while ($result_with = $results_with->fetchAssoc()) {
+    $gid_arrays_with[] = $result_with;
+  }
+
+  while ($result_without = $results_without->fetchAssoc()) {
+    $gid_arrays_without[] = $result_without;
+  }
+
+  // Create array with group ID's for those with rid 14 and 16
+  foreach ($gid_arrays_with as $key => $value) {
+    foreach ($value as $key => $gid) {
+      $gids_with[] = $gid;
+    }
+  }
+
+  // Create array with group ID's for those without rid 14 and 16
+  foreach ($gid_arrays_without as $key => $value) {
+    foreach ($value as $key => $gid) {
+      $gids_without[] = $gid;
+    }
+  }
+
+  // Load all nodes
+  $nids = array_diff($gids_without, $gids_with);
+  $nodes = node_load_multiple($nids);
+
+  // Loop through and return only ID's of type 'os2intra_org_group_unit' / department nodes
+  foreach ($nodes as $node) {
+    if ($node->type == 'os2intra_org_group_unit') {
+      $node_link = '/node/' . $node->nid;
+      $rows[] = array(
+        l($node->nid, $node_link),
+        l($node->title, $node_link),
+        l(t('Edit'), $node_link . '/edit'),
+      );
+    }
+  }
+
+  // Return render array with NID and title
+  $table['departments_without_employees'] = array(
+    '#theme' => 'table',
+    '#header' => array(t('ID'), t('Department'), t('Operations')),
+    '#rows' => $rows,
+  );
+
+  return $table;
 }

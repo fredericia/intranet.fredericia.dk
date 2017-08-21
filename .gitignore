@@ -61,5 +61,7 @@ d7
 # dompdf log
 public_html/profiles/os2intra/libraries/dompdf/lib/fonts/log.htm
 
-# BI
-bi
+# Andre filer:
+public_html/sites/all/modules/push_notifications/certificates/*.pem
+scripts/user_search.php
+

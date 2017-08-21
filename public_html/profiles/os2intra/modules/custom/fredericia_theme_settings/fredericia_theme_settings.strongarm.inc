@@ -173,7 +173,7 @@ function fredericia_theme_settings_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'print_mail_hourly_threshold';
-  $strongarm->value = '3';
+  $strongarm->value = '50';
   $export['print_mail_hourly_threshold'] = $strongarm;
 
   $strongarm = new stdClass();
