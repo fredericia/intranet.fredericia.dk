@@ -1,0 +1,61 @@
+.entity-os2intra-bi .bi-import-file-modified {
+  float: right;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.os2intra-bi-plugin-logo {
+  display: inline-block;
+  width: 100%;
+}
+
+.os2intra-bi-plugin-logo img {
+  float: right;
+}
+
+.page-os2intra-bi .os2-box .os2-box-body {
+  padding: 0;
+}
+
+.entity-os2intra-bi-inner {
+  padding: 5px 15px;
+}
+
+.entity-os2intra-bi img.img-responsive {
+  margin: 30px auto;
+  max-width: 450px;
+}
+
+.entity-os2intra-bi .tablefield > tbody > tr:last-child {
+  font-weight: bold;
+}
+
+.entity-os2intra-bi-inner .content {
+  padding: 0;
+}
+
+.field-name-os2intra-bi-import-file .field-label {
+  display: none;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.bi-import-html-file #page-container {
+  position: relative;
+  background: none;
+}
+
+.bi-import-html-file #sidebar {
+  display: none;
+}
+.bi-import-html-file .h1,
+.bi-import-html-file .h2,
+.bi-import-html-file .h3,
+.bi-import-html-file .h4,
+.bi-import-html-file .h5,
+.bi-import-html-file .h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}

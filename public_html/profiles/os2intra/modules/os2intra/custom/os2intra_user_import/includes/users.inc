@@ -208,6 +208,36 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $termination_date_timestamp = 1;
   }
 
+  // Create Opus Roles and set them on user
+  $keep_opus_roles = array();
+  $opus_role_tids = array();
+  $opus_role_vocabulary = taxonomy_vocabulary_machine_name_load('os2intra_bi_opus_roles');
+  $opus_roles = array();
+
+  if ($uid) {
+    foreach ($account->os2intra_users_opus_roles as $os2intra_users_opus_role) {
+      foreach ($os2intra_users_opus_role as $key => $value) {
+        $keep_opus_roles[] = $value;
+      }
+    }
+  }
+  $opus_roles =  explode(',', $user['opus_roles']);
+  os2intra_user_import_create_opus_roles($opus_roles);
+
+  foreach ($opus_roles as $opus_role) {
+    $query = new EntityFieldQuery;
+    $result = $query
+      ->entityCondition('entity_type', 'taxonomy_term')
+      ->propertyCondition('name', $opus_role)
+      ->propertyCondition('vid', $opus_role_vocabulary->vid)
+      ->execute();
+
+    foreach ($result['taxonomy_term'] as $term) {
+      $opus_role_tids[] = $term->tid;
+    }
+  }
+  $opus_role_tids = array_diff($opus_role_tids, $keep_opus_roles);
+
   // User title tid
   $title_tid = os2intra_user_import_user_title($user['job_description']);
 
@@ -238,7 +268,6 @@ function os2intra_user_import_save_user($user, $uid = '') {
     // Set department membership
     'og_user_node2'                   => array(LANGUAGE_NONE => array(0 => array('target_id' => array($department_nid)))),
 
-
     // Activate user
     'status'                          => ($account->uid != 0) ? $account->status : 1,
 
@@ -249,6 +278,12 @@ function os2intra_user_import_save_user($user, $uid = '') {
     'timezone'                        => 'Europe/Copenhagen',
   );
 
+  // Set Opus Roles
+  $fields['os2intra_users_opus_roles'][LANGUAGE_NONE] = array();
+
+  foreach ($opus_role_tids as $opus_role_tid) {
+    $fields['os2intra_users_opus_roles'][LANGUAGE_NONE][]['tid'] = $opus_role_tid;
+  }
   // For some reason, the first zero is chopped somewhere. Let's add it.
   if (strlen($user['birthdate']) < 6) {
     $fields['field_os2intra_birthdate'] = array(LANGUAGE_NONE => array(0 => array('value' => '0' . $user['birthdate'])));

@@ -1,0 +1,190 @@
+<?php
+
+/**
+ * os2intra_pdf2htmlex
+ *
+ * PHP version 5
+ *
+ * @category OS2Intra
+ * @package  OS2Intra_Pdf2htmlex
+ * @author   Stanislav Kutasevits <stan@bellcom.dk>
+ * @license  http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License, version 2
+ * @link     http://bellcom.dk
+ */
+define('DEFAULT_PDF_HTML_ZOOM', 1.25); // default zoom for convertion
+define('MIN_PDF2HTMLEX_VERSION', '0.6'); //min pdf2htmlex version
+
+/**
+ * Implements hook_menu().
+ */
+
+function os2intra_pdf2htmlex_menu() {
+  $items = array();
+
+  $items['admin/structure/os2intra-bi/pdf2htmlex'] = array(
+    'title' => 'PDF2HTMLex Settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('os2intra_pdf2htmlex_settings'),
+    'access arguments' => array('administer os2intra_bi content'),
+    'type' => MENU_LOCAL_ACTION,
+  );
+  // testing
+  $items['run_pdf_html'] = array(
+    'page callback' => 'os2intra_pdf2htmlex_do_convert',
+    'access arguments' => array('administer os2web'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * Settings form.
+ */
+function os2intra_pdf2htmlex_settings() {
+  $form = array();
+  $form['os2intra_pdf2htmlex_path'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Path to pdf2htmlEX',
+    '#description' => 'Path to pdf2htmlEX',
+    '#default_value' => variable_get('os2intra_pdf2htmlex_path', "")
+  );
+
+  $form['os2intra_pdf2htmlex_rendering_path'] = array(
+    '#type' => 'textfield',
+    '#title' => t('URI of folder for HTML files'),
+    '#default_value' => variable_get('os2intra_pdf2htmlex_rendering_path', ''),
+    '#description' => t('URI of folder where HTML files should be saved by os2intra_pdf2htmlEX module.'));
+
+  $form['os2intra_pdf2htmlex_pdf_files'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Path for PDF files which should be rendered'),
+    '#default_value' => variable_get('os2intra_pdf2htmlex_pdf_files', ''),
+    '#description' => t('Absolute path for PDF files to be rendered by os2intra_pdf2htmlEX module.'));
+
+  return system_settings_form($form);
+}
+
+/**
+ * test function
+**/
+function os2intra_pdf2htmlex_do_convert() {
+  os2intra_pdf2htmlex_cron();
+}
+
+function os2intra_pdf2htmlex_cronapi($op, $job = NULL) {
+  switch ($op) {
+    case 'list':
+      return array('os2intra_pdf2htmlex_cron' => t('Converts PDF files to HTML'));
+  }
+}
+
+/**
+ * Cron implementation.
+ *
+ * @return none
+ */
+function os2intra_pdf2htmlex_cron() {
+
+  $directory = variable_get(
+      'os2intra_pdf2htmlex_pdf_files', '/var/www/test.intranet.fredericia.dk/bi_pdf'
+  );
+  $scanned_directory = array_diff(
+      scandir($directory), array('..', '.', '.DS_Store')
+  );
+  foreach ($scanned_directory as $dir) {
+    // Look for files
+    $files = array_diff(
+        scandir($directory . '/' . $dir), array('..', '.', '.DS_Store')
+    );
+    $files = str_replace('.pdf', '', $files);
+
+    foreach ($files as $file) {
+      $filepath = $directory . '/' . $dir . '/' . $file . '.pdf';
+      // Check if it is a valid PDF file
+      $file_info = new finfo(FILEINFO_MIME);
+      $mime_type = $file_info->buffer(file_get_contents($filepath));
+
+      if (!preg_match('/application\/pdf/', $mime_type)) {
+        continue;
+      }
+      //  check if file was already converted
+      $query = db_select('os2intra_pdf2htmlex_files', 'f');
+      $query->condition('f.filename', $file)
+          ->condition('f.progress', 'converted')
+          ->addExpression('COUNT(*)');
+      $count = $query->execute()->fetchField();
+
+      if ($count == 0) {
+        os2intra_pdf2htmlex_convert($filepath, $dir);
+      }
+    }
+  }
+}
+
+/**
+ * Improvment of the HTML code, produced by pdf2htmlEX
+ *
+ * @param string $data html code
+ *
+ * @return data
+ */
+function _os2intra_pdf2htmlex_improve_html($data){
+  $data = str_replace("<p>&nbsp;</p>", "", $data); //removing unneeded paragraphs
+  $data = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $data);//removing scripts tags
+  $data = preg_replace('#::selection{(.*?)}#is', '', $data);//removing ::selection css specification
+  $data = preg_replace('#::-moz-selection{(.*?)}#is', '', $data);//removing ::-moz-selection css specification
+
+  return $data;
+  }
+
+/**
+ * Call to console pdf2htmlEX programm ro convert PDF to html.
+ *
+ * @param string $filepath  path to pdf file
+ * @param string $dir directory name where saved converted html files
+ *
+ * @return none
+ */
+function os2intra_pdf2htmlex_convert($filepath, $dir) {
+  $directory = variable_get(
+      'os2intra_pdf2htmlex_rendering_path', ''
+  );
+
+  $html_files_path = $directory . '/' . $dir;
+  if (!file_exists($html_files_path)) {
+    drupal_mkdir($html_files_path);
+  }
+  setlocale(LC_CTYPE, "en_DK.UTF-8");
+  if (variable_get('os2intra_pdf2htmlex_rendering_path') && file_exists(drupal_realpath(variable_get('os2intra_pdf2htmlex_rendering_path')))) {//is set
+    shell_exec(variable_get('os2intra_pdf2htmlex_path') . ' ' . escapeshellarg($filepath) . '  --dest-dir ' . escapeshellarg(drupal_realpath($html_files_path)) . ' --zoom ' . DEFAULT_PDF_HTML_ZOOM . ' 2>&1 ' );
+    $file_pathinfo = pathinfo($filepath);
+    $html_file = $html_files_path . '/' . $file_pathinfo['filename'] . '.html'; //filename.html
+
+
+    if (file_exists($html_file)) {
+       $data = file_get_contents($html_file);
+
+	    //rewritting with improved HTML code
+	    $fh = fopen($html_file, 'w');
+	    fwrite($fh, _os2intra_pdf2htmlex_improve_html($data));
+	    fclose($fh);
+      db_insert('os2intra_pdf2htmlex_files')
+          ->fields(array(
+            'filename' => $file_pathinfo['filename'],
+            'created_filepath' => $html_file,
+            'progress' => 'converted',
+          ))
+          ->execute();
+      watchdog('os2intra_pdf2htmlex', 'File   %filename converted successfully', array('%filename' => $filepath), WATCHDOG_INFO);
+    }
+    else {
+      db_insert('os2intra_pdf2htmlex_files')
+          ->fields(array(
+            'filename' => $file_pathinfo['filename'],
+            'created_filepath' => null,
+            'progress' => 'Not converted',
+      ));
+      watchdog('os2intra_pdf2htmlex', 'File   %filename was not convert successfully', array('%filename' => $filepath), WATCHDOG_WARNING);
+    }
+  }
+}

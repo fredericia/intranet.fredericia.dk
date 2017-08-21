@@ -216,6 +216,13 @@ function os2intra_user_import_settings() {
     '#default_value' => variable_get('os2intra_mapping_department_name'),
   );
 
+  $form['mapping']['os2intra_mapping_opus_roles'] = array(
+    '#type'          => 'select',
+    '#title'         => t('Opus Roles'),
+    '#options'       => $csv_cols,
+    '#default_value' => variable_get('os2intra_mapping_opus_roles'),
+  );
+
   $form['cleanup_help_block'] = array(
     '#type'   => 'item',
     '#title'  => t('Cleanup script'),
