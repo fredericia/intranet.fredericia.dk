@@ -17,9 +17,10 @@ function os2intra_user_import_disable_users() {
     if (is_array($result)) {
       foreach ($result as $uid => $item) {
         $account =  user_load($uid);
+        $user_name = $account->field_name_first['und'][0]['value'] . ' ' . $account->field_name_first['und'][0]['field_name_last'];
         module_invoke_all('user_cancel', array(), $account, $method);
         user_delete($uid);
-        os2intra_user_import_save_log('', 'Delete uid: ' . $uid);
+        os2intra_user_import_save_log('', 'Delete user: ' . $user_name);
       }
     }
 
