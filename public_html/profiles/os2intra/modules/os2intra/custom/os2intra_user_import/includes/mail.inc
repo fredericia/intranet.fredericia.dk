@@ -17,6 +17,10 @@ function os2intra_user_import_mail($key, &$message, $params) {
  */
 function _os2intra_user_import_send_email($terms) {
 
+  if (empty($terms)) {
+    return;
+  }
+
   global $base_url;
 
   $body = "The list below contains name and URL of created departments:\n\n";

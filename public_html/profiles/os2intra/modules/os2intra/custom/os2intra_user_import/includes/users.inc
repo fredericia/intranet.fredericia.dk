@@ -5,23 +5,44 @@
 function os2intra_user_import_disable_users() {
   os2intra_user_import_save_log('', 'Start disabling users');
   $timestamp = strtotime('midnight tomorrow');
+  if (variable_get('os2intra_user_import_user_disable_action', 'user_disable') == 'user_delete_reassign') {
+    $query = new EntityFieldQuery;
+    $query->entityCondition('entity_type', 'user');
+    $query->fieldCondition('field_os2intra_termination_date', 'value', $timestamp, '<');
+    $query->fieldCondition('field_os2intra_termination_date', 'value', 1, '>');
+    $result = reset($query->execute());
 
-  // Query all users with termination date today.
-  $query = new EntityFieldQuery;
-  $query->entityCondition('entity_type', 'user');
-  $query->fieldCondition('field_os2intra_termination_date', 'value', $timestamp, '<');
-  $query->fieldCondition('field_os2intra_termination_date', 'value', 1, '>');
-  $query->propertyCondition('status', 1);
-  $result = reset($query->execute());
+    $method = 'user_cancel_reassign';
+    // Delete  users
+    if (is_array($result)) {
+      foreach ($result as $uid => $item) {
+        $account =  user_load($uid);
+        $user_name = $account->field_name_first['und'][0]['value'] . ' ' . $account->field_name_last['und'][0]['value'] . ' (' . $account->mail . ')';
+        module_invoke_all('user_cancel', array(), $account, $method);
+        user_delete($uid);
+        os2intra_user_import_save_log('', 'Delete user: ' . $user_name);
+      }
+    }
 
-  // Array holding new status for user
-  $disable_array = array('status' => 0);
+  }
+  else {
+    // Query all users with termination date today.
+    $query = new EntityFieldQuery;
+    $query->entityCondition('entity_type', 'user');
+    $query->fieldCondition('field_os2intra_termination_date', 'value', $timestamp, '<');
+    $query->fieldCondition('field_os2intra_termination_date', 'value', 1, '>');
+    $query->propertyCondition('status', 1);
+    $result = reset($query->execute());
 
-  // Disable users
-  if (is_array($result)) {
-    foreach ($result as $uid => $item) {
-      os2intra_user_import_save_log('', 'Disable uid: ' . $uid);
-      user_save(user_load($uid), $disable_array);
+    // Array holding new status for user
+    $disable_array = array('status' => 0);
+
+    // Disable users
+    if (is_array($result)) {
+      foreach ($result as $uid => $item) {
+        os2intra_user_import_save_log('', 'Disable uid: ' . $uid);
+        user_save(user_load($uid), $disable_array);
+      }
     }
   }
   os2intra_user_import_save_log('', 'User disabling finished');
@@ -188,6 +209,36 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $termination_date_timestamp = 1;
   }
 
+  // Create Opus Roles and set them on user
+  $keep_opus_roles = array();
+  $opus_role_tids = array();
+  $opus_role_vocabulary = taxonomy_vocabulary_machine_name_load('os2intra_bi_opus_roles');
+  $opus_roles = array();
+
+  if ($uid) {
+    foreach ($account->os2intra_users_opus_roles as $os2intra_users_opus_role) {
+      foreach ($os2intra_users_opus_role as $key => $value) {
+        $keep_opus_roles[] = $value;
+      }
+    }
+  }
+  $opus_roles =  explode(',', $user['opus_roles']);
+  os2intra_user_import_create_opus_roles($opus_roles);
+
+  foreach ($opus_roles as $opus_role) {
+    $query = new EntityFieldQuery;
+    $result = $query
+      ->entityCondition('entity_type', 'taxonomy_term')
+      ->propertyCondition('name', $opus_role)
+      ->propertyCondition('vid', $opus_role_vocabulary->vid)
+      ->execute();
+
+    foreach ($result['taxonomy_term'] as $term) {
+      $opus_role_tids[] = $term->tid;
+    }
+  }
+  $opus_role_tids = array_diff($opus_role_tids, $keep_opus_roles);
+
   // User title tid
   $title_tid = os2intra_user_import_user_title($user['job_description']);
 
@@ -218,7 +269,6 @@ function os2intra_user_import_save_user($user, $uid = '') {
     // Set department membership
     'og_user_node2'                   => array(LANGUAGE_NONE => array(0 => array('target_id' => array($department_nid)))),
 
-
     // Activate user
     'status'                          => ($account->uid != 0) ? $account->status : 1,
 
@@ -229,6 +279,12 @@ function os2intra_user_import_save_user($user, $uid = '') {
     'timezone'                        => 'Europe/Copenhagen',
   );
 
+  // Set Opus Roles
+  $fields['os2intra_users_opus_roles'][LANGUAGE_NONE] = array();
+
+  foreach ($opus_role_tids as $opus_role_tid) {
+    $fields['os2intra_users_opus_roles'][LANGUAGE_NONE][]['tid'] = $opus_role_tid;
+  }
   // For some reason, the first zero is chopped somewhere. Let's add it.
   if (strlen($user['birthdate']) < 6) {
     $fields['field_os2intra_birthdate'] = array(LANGUAGE_NONE => array(0 => array('value' => '0' . $user['birthdate'])));
