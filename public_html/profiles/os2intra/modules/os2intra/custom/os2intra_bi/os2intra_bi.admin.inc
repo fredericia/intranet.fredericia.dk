@@ -218,7 +218,7 @@ function os2intra_bi_plugin_form($form, &$form_state, $entity_type, $op = 'edit'
   $form['split'] = array(
     '#type' => 'checkbox',
     '#default_value' => $entity_type->split,
-    '#title' => t('Split files on this type.'),
+    '#title' => t('Split CSV files on this type.'),
   );
   $form['show_title_logo'] = array(
     '#type' => 'checkbox',
