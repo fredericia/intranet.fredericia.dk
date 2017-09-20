@@ -65,7 +65,7 @@ function os2intra_bi_entity_info() {
     'controller class' => 'OS2intraBIPluginController',
     'metadata controller class' => '',
     'fieldable' => TRUE,
-    'exportable' => TRUE,
+    //'exportable' => TRUE,
     'module' => 'os2intra_bi',
     // Automatically create page for managing entity bundles.
     'admin ui' => array(
@@ -234,13 +234,13 @@ function os2intra_bi_menu() {
   );
 
   // URI for choosing bundle of entity to add.
-  $items['admin/structure/os2intra-bi/add'] = array(
-    'title' => 'Add BI Plugin',
-    'page callback' => 'os2intra_bi_choose_bundle',
-    'access arguments' => array('administer os2intra_bi content'),
-    'file' => 'os2intra_bi.admin.inc',
-    'type' => MENU_LOCAL_ACTION,
-  );
+  //$items['admin/structure/os2intra-bi/add'] = array(
+  //  'title' => 'Add BI Plugin',
+  //  'page callback' => 'os2intra_bi_choose_bundle',
+  //  'access arguments' => array('administer os2intra_bi content'),
+  //  'file' => 'os2intra_bi.admin.inc',
+  //  'type' => MENU_LOCAL_ACTION,
+  //);
 
   // URI for choosing bundle of entity to add.
   $items['admin/structure/os2intra-bi/create-bundles'] = array(
