@@ -93,7 +93,7 @@ function os2intra_pdf_split_files() {
       $mime_type = $file_info->buffer(file_get_contents($filepath));
 
       //if file modification time < last cron rin time we not need to split it
-      if($last_cron_time >= filemtime($filepath))      continue;
+      //if($last_cron_time >= filemtime($filepath))      continue;
 
 
       //if file is not PDF we not split it
@@ -109,7 +109,7 @@ function os2intra_pdf_split_files() {
       $dest_folder_safe = escapeshellarg($dest_folder);
 
       $bookmarks_level = variable_get('os2intra_pdf_split_bookmarks_level', 2);
- -    watchdog('os2intra_pdf_spli', 'Start split file   %filename ', array('%filename' => $filepath), WATCHDOG_WARNING);
+      watchdog('os2intra_pdf_spli', 'Start split file   %filename ', array('%filename' => $filepath), WATCHDOG_WARNING);
 
       shell_exec($sedja . ' splitbybookmarks -f ' . $filepath_safe . ' -l ' . $bookmarks_level . ' -o ' . $dest_folder_safe . ' -p [TIMESTAMP]_[BOOKMARK_NAME]');
     }

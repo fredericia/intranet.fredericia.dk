@@ -544,7 +544,7 @@ function os2intra_bi_field_formatter_view(
                 $cols ++;
               }
             }
-            $columns = 0;
+            $cols = 0;
             foreach ($tabledata as $row_key => $row) {
               $needles = explode(',', variable_get('os2intra_bi_bold_text', 'resultat i alt, sum'));
               $isBold = _os2intra_bi_strpos_array($row[0], $needles);
