@@ -177,6 +177,14 @@ function os2intra_bi_entity_property_info() {
     'label' => t('Split CSV'),
     'setter callback' => 'entity_property_verbatim_set',
   );
+  $type_properties['pdf_split'] = array(
+    'description' => 'Split PDF files into mutliple entities.',
+    'type' => 'boolean',
+    'schema field' => 'pdf_split',
+    'required' => FALSE,
+    'label' => t('Split PDF'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
   $type_properties['header_rows'] = array(
     'description' => 'Amount of table header rows (For these rows ingore number format',
     'type' => 'integer',

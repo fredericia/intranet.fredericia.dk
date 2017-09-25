@@ -81,11 +81,33 @@ function os2intra_pdf_split_files() {
   $sedja = variable_get('os2intra_sejda_console_path');
 
   foreach ($scanned_directory as $dir) {
+    if (!is_dir($directory . '/' . $dir)) continue;
     // Look for files
     $files = array_diff(
         scandir($directory . '/' . $dir), array('..', '.', '.DS_Store')
     );
-
+    $bundle_name = strtolower($dir);
+    $search = array('æ', 'ø', 'å', 'Æ', 'Ø', 'Å');
+    $replace = array('ae', 'oe', 'aa', 'AE', 'OE', 'AA');
+    $bundle_name = str_replace($search, $replace, $bundle_name);
+    $bundle_name = preg_replace('@[^a-z0-9_]+@', '_', $bundle_name);
+    // Check if bundle exists
+    $query = new EntityFieldQuery;
+    $query->entityCondition('entity_type', 'os2intra_bi_plugin');
+    $query->propertyCondition('type', $bundle_name);
+    $result = $query->execute();
+    if ($result) {
+    // Check if we need to split the PDF file
+      $query = new EntityFieldQuery;
+      $query->entityCondition('entity_type', 'os2intra_bi_plugin');
+      $query->propertyCondition('type', $bundle_name);
+      $query->propertyCondition('pdf_split', 1);
+      $result['pdf_split'] = $query->execute();
+      $pdf_split = (!empty($result['pdf_split'])) ? 1 : 0;
+    }
+    else {
+      $pdf_split = 1;
+    }
     foreach ($files as $file) {
       $filepath = $directory . '/' . $dir . '/' . $file;
 
@@ -99,19 +121,23 @@ function os2intra_pdf_split_files() {
       //if file is not PDF we not split it
       if (!preg_match('/application\/pdf/', $mime_type))   continue;
 
-      $filepath_safe = escapeshellarg($filepath);
-
       // create destination dir if not exists
       $dest_folder = variable_get('os2intra_pdf_split_dest_folder') . '/' . $dir;
       if (!file_exists($dest_folder)) {
         mkdir($dest_folder);
       }
-      $dest_folder_safe = escapeshellarg($dest_folder);
+      if ($pdf_split) {
+        $filepath_safe = escapeshellarg($filepath);
+        $dest_folder_safe = escapeshellarg($dest_folder);
 
-      $bookmarks_level = variable_get('os2intra_pdf_split_bookmarks_level', 2);
-      watchdog('os2intra_pdf_spli', 'Start split file   %filename ', array('%filename' => $filepath), WATCHDOG_WARNING);
+        $bookmarks_level = variable_get('os2intra_pdf_split_bookmarks_level', 2);
+        watchdog('os2intra_pdf_spli', 'Start split file   %filename ', array('%filename' => $filepath), WATCHDOG_WARNING);
 
-      shell_exec($sedja . ' splitbybookmarks -f ' . $filepath_safe . ' -l ' . $bookmarks_level . ' -o ' . $dest_folder_safe . ' -p [TIMESTAMP]_[BOOKMARK_NAME]');
+        shell_exec($sedja . ' splitbybookmarks -f ' . $filepath_safe . ' -l ' . $bookmarks_level . ' -o ' . $dest_folder_safe . ' -p [TIMESTAMP]_[BOOKMARK_NAME]');
+      }
+      else {
+        copy($filepath, $dest_folder. '/' . $file); //just copy file
+      }
     }
   }
   variable_set('os2intra_pdf_split_last_cron_time', time());
