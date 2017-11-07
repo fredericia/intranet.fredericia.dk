@@ -197,7 +197,7 @@ function os2intra_user_import_run_with_drush() {
       variable_set('os2intra_user_import_save_extended_log', TRUE);
 
       // Uncomment this if you want to force an import
-      #variable_set('os2intra_user_import_epoch', time());
+      variable_set('os2intra_user_import_epoch', time());
 
       $last_import_temp = variable_get('os2intra_user_import_epoch');
       $last_import_temp_groups = variable_get('os2intra_user_import_epoch_groups');

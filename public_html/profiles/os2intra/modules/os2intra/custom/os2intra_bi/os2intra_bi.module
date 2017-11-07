@@ -65,7 +65,7 @@ function os2intra_bi_entity_info() {
     'controller class' => 'OS2intraBIPluginController',
     'metadata controller class' => '',
     'fieldable' => TRUE,
-    'exportable' => TRUE,
+    //'exportable' => TRUE,
     'module' => 'os2intra_bi',
     // Automatically create page for managing entity bundles.
     'admin ui' => array(
@@ -177,6 +177,14 @@ function os2intra_bi_entity_property_info() {
     'label' => t('Split CSV'),
     'setter callback' => 'entity_property_verbatim_set',
   );
+  $type_properties['pdf_split'] = array(
+    'description' => 'Split PDF files into mutliple entities.',
+    'type' => 'boolean',
+    'schema field' => 'pdf_split',
+    'required' => FALSE,
+    'label' => t('Split PDF'),
+    'setter callback' => 'entity_property_verbatim_set',
+  );
   $type_properties['header_rows'] = array(
     'description' => 'Amount of table header rows (For these rows ingore number format',
     'type' => 'integer',
@@ -219,7 +227,6 @@ function os2intra_bi_entity_info_alter(&$entity_info) {
  */
 function os2intra_bi_menu() {
   $items = array();
-
   // Base URI for dealing with entity.
   $base_uri = 'os2intra-bi/%os2intra_bi';
   $base_uri_argument_position = 1;
@@ -235,13 +242,13 @@ function os2intra_bi_menu() {
   );
 
   // URI for choosing bundle of entity to add.
-  $items['admin/structure/os2intra-bi/add'] = array(
-    'title' => 'Add BI Plugin',
-    'page callback' => 'os2intra_bi_choose_bundle',
-    'access arguments' => array('administer os2intra_bi content'),
-    'file' => 'os2intra_bi.admin.inc',
-    'type' => MENU_LOCAL_ACTION,
-  );
+  //$items['admin/structure/os2intra-bi/add'] = array(
+  //  'title' => 'Add BI Plugin',
+  //  'page callback' => 'os2intra_bi_choose_bundle',
+  //  'access arguments' => array('administer os2intra_bi content'),
+  //  'file' => 'os2intra_bi.admin.inc',
+  //  'type' => MENU_LOCAL_ACTION,
+  //);
 
   // URI for choosing bundle of entity to add.
   $items['admin/structure/os2intra-bi/create-bundles'] = array(
@@ -545,7 +552,7 @@ function os2intra_bi_field_formatter_view(
                 $cols ++;
               }
             }
-            $columns = 0;
+            $cols = 0;
             foreach ($tabledata as $row_key => $row) {
               $needles = explode(',', variable_get('os2intra_bi_bold_text', 'resultat i alt, sum'));
               $isBold = _os2intra_bi_strpos_array($row[0], $needles);
@@ -960,6 +967,7 @@ function os2intra_bi_create_fi($bundle) {
 function os2intra_bi_create_bundles_and_content(){
   os2intra_bi_create_bundles_and_content_from_csv();
   os2intra_bi_create_bundles_and_content_from_html();
+  os2intra_bi_import_set_status();
 }
 
 /**
@@ -1117,7 +1125,8 @@ function os2intra_bi_create_bundles_and_content_from_csv() {
 
     foreach ($files as $file) {
       $filepath = $directory . '/' . $dir . '/' . $file . '.csv';
-
+      if (!file_exists($filepath))
+        continue;
       // Check if it is a valid CSV file
       $file_info = new finfo(FILEINFO_MIME);
       $mime_type = $file_info->buffer(file_get_contents($filepath));
@@ -1126,7 +1135,6 @@ function os2intra_bi_create_bundles_and_content_from_csv() {
       if (!preg_match('/text\/plain/', $mime_type)) {
         continue;
       }
-
       $entity_type = 'os2intra_bi';
 
       // Check if content exists
@@ -1175,6 +1183,7 @@ function os2intra_bi_create_bundles_and_content_from_csv() {
               $header_rows
             )
           );
+
           $wrapper->modified->set(filemtime($filepath));
           $wrapper->save();
         }
@@ -1281,6 +1290,7 @@ function os2intra_bi_create_bundles_and_content_from_csv() {
               $wrapper->save();
             }
 
+
             // Update content
             // foreach ($results['exists'] as $result) {
             //   $result = reset($result);
@@ -1301,7 +1311,7 @@ function os2intra_bi_create_bundles_and_content_from_csv() {
   }
 
   // Check if files exists and set satus
-  if (!empty($entity_type)) {
+  /*if (!empty($entity_type)) {
     $query = new EntityFieldQuery;
     $query->entityCondition('entity_type', $entity_type);
     $results = $query->execute();
@@ -1309,13 +1319,15 @@ function os2intra_bi_create_bundles_and_content_from_csv() {
     foreach ($results as $result) {
       foreach ($result as $key => $value) {
         $wrapper = entity_metadata_wrapper($entity_type, $key);
+        if ($wrapper->filepath->value()) {
         file_exists($wrapper->filepath->value()) ? $wrapper->status->set(
           'OK'
         ) : $wrapper->status->set('File is missing');
         $wrapper->save();
       }
+      }
     }
-  }
+  }*/
 }
 
 /**
@@ -1751,4 +1763,35 @@ function os2intra_bi_import_get_show_title_logo_setting($bundle_name) {
     return $bundle->show_title_logo;
   }
   return FALSE;
-}   
+}
+
+/*
+ * Check if files exists and set status
+ */
+function os2intra_bi_import_set_status($entity_type = 'os2intra_bi'){
+  // Check if files exists and set satus
+  $query = new EntityFieldQuery;
+  $query->entityCondition('entity_type', $entity_type);
+  $results = $query->execute();
+
+  foreach ($results as $result) {
+    foreach ($result as $key => $value) {
+      $wrapper = entity_metadata_wrapper($entity_type, $key);
+      if ($wrapper->filepath->value()) {
+        file_exists($wrapper->filepath->value()) ? $wrapper->status->set(
+          'OK'
+        ) : $wrapper->status->set('File is missing');
+        $wrapper->save();
+      }
+      else if (isset($wrapper->os2intra_bi_html_file)) {
+        $html_file_obj = $wrapper->os2intra_bi_html_file->value();
+        if (isset($html_file_obj['uri'])) {
+          file_exists(drupal_realpath($html_file_obj['uri'])) ? $wrapper->status->set(
+           'OK'
+           ) : $wrapper->status->set('File is missing');
+          $wrapper->save();
+        }
+      }
+    }
+  }
+}
