@@ -94,6 +94,13 @@ function os2intra_bi_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
+     'pdf_split' => array(
+        'description' => 'Split PDF files into mutliple entities.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
+      ),
       'header_rows' => array(
         'description' => 'Amount of rows for which ignore number format',
         'type' => 'int',
@@ -154,6 +161,19 @@ db_add_field('os2intra_bi_plugin', 'show_title_logo', array(
         'size' => 'tiny',
         'not null' => TRUE,
         'default' => 0,
+      )
+    );
+}
+/**
+ * Add pdf_split field
+ */
+function os2intra_bi_update_7009()  {
+  db_add_field('os2intra_bi_plugin', 'pdf_split', array(
+        'description' => 'Split PDF files into mutliple entities.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 1,
       )
     );
 }
