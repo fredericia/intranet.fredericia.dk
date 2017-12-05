@@ -16629,6 +16629,81 @@ fieldset[disabled] a#homebox #homebox-add li a:not('.used') {
 #homebox .os2-box.os2-box-homebox-markedspladsen > .os2-box .os2-entity-info span {
   color: #ff911c;
 }
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-node-list .os2-node-list-heading .os2-node-list-heading-calendar-date {
+  color: #67c10e;
+}
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-node-list .os2-node-list-heading .os2-node-list-heading-time-ago {
+  color: #67c10e;
+}
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-node-includeable .os2-node-includeable-heading .os2-node-includeable-heading-title {
+  color: #67c10e;
+}
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-node-includeable .os2-node-includeable-heading .os2-node-includeable-heading-title {
+  color: #67c10e;
+}
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-node-includeable .os2-node-includeable-heading .os2-node-includeable-heading-title {
+  color: #67c10e;
+}
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-node-includeable .os2-node-includeable-heading .os2-node-includeable-heading-title {
+  color: #67c10e;
+}
+.os2-box-page-kommmende-aktiviteter .os2-box.os2-calendar .os2-calendar-day,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-calendar .os2-calendar-day {
+  color: #00406f;
+}
+.os2-box-page-kommmende-aktiviteter .os2-box.os2-calendar .os2-calendar-month,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-calendar .os2-calendar-month {
+  color: #fff;
+  background-color: #67c10e;
+}
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading {
+  background-color: #67c10e;
+}
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .pane-title,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .pane-title,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .os2-box-heading-title,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .os2-box-heading-title,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .pane-title > a,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .pane-title > a,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .os2-box-heading-title > a,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .os2-box-heading-title > a,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .pane-title:hover,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .pane-title:hover,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .os2-box-heading-title:hover,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .os2-box-heading-title:hover,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .pane-title > a:hover,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .pane-title > a:hover,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .os2-box-heading-title > a:hover,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .os2-box-heading-title > a:hover,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .pane-title:focus,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .pane-title:focus,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .os2-box-heading-title:focus,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .os2-box-heading-title:focus,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .pane-title > a:focus,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .pane-title > a:focus,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .os2-box-heading-title > a:focus,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .os2-box-heading-title > a:focus,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .pane-title:active,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .pane-title:active,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .os2-box-heading-title:active,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .os2-box-heading-title:active,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .pane-title > a:active,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .pane-title > a:active,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-box-heading .os2-box-heading-title > a:active,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-box-heading .os2-box-heading-title > a:active {
+  color: #fff;
+}
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-entity-info,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-entity-info,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-entity-info a,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-entity-info a,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-entity-info .fa,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-entity-info .fa,
+.os2-box-page-kommmende-aktiviteter .os2-box .os2-entity-info span,
+.os2-box-page-kommmende-aktiviteter .os2-box > .os2-box .os2-entity-info span {
+  color: #67c10e;
+}
 @media screen {
 }
 @media screen and (max-width: 767px) {

@@ -458,6 +458,10 @@ function os2intra_frontpage_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['view_mode'] = 'list';
+  /* Footer: Global: Unfiltered text */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
   /* Relationship: Flags: os2intra_flag_info_til_alle */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
@@ -495,6 +499,12 @@ function os2intra_frontpage_views_default_views() {
   $handler = $view->new_display('block', 'Kommmende aktiviteter', 'block');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Kommmende aktiviteter';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Unfiltered text */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<a href="/os2inta_events" class="btn btn-primary">Se flere</a>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Dato -  start date (field_os2intra_date) */
   $handler->display->display_options['sorts']['field_os2intra_date_value']['id'] = 'field_os2intra_date_value';
@@ -630,6 +640,7 @@ function os2intra_frontpage_views_default_views() {
     t('Desc'),
     t('flag'),
     t('Kommmende aktiviteter'),
+    t('<a href="/os2inta_events" class="btn btn-primary">Se flere</a>'),
     t('Fællesnyt'),
     t('Nyt og opdateret'),
     t('Underside, vises ikke på forsiden'),
