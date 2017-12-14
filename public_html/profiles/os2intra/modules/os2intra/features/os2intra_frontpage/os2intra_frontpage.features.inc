@@ -90,6 +90,17 @@ function os2intra_frontpage_homebox() {
       5 => '#E4F0F8',
     ),
     'blocks' => array(
+      'views_os2intra_bi_block-block_1' => array(
+        'module' => 'views',
+        'delta' => 'os2intra_bi_block-block_1',
+        'region' => 2,
+        'movable' => 1,
+        'status' => 0,
+        'open' => 1,
+        'closable' => 1,
+        'title' => '',
+        'weight' => -31,
+      ),
       'views_os2intra_vigtige_beskeder-block' => array(
         'module' => 'views',
         'delta' => 'os2intra_vigtige_beskeder-block',
