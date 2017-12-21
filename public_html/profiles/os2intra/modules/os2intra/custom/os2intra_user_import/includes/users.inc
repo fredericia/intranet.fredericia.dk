@@ -170,6 +170,16 @@ function os2intra_user_import_save_user($user, $uid = '') {
     $import_groups[LANGUAGE_NONE][]['target_id'] = $new_group_nid;
   }
 
+  $og_user_node = array();
+    // Get a list of current nids
+  if ( $og_user_node_field = field_get_items('user', $account, 'og_user_node') ) {
+    foreach ($og_user_node_field as $key => $field) {
+      if (isset($field['target_id']) && node_load($field['target_id']) )    {
+        $og_user_node[]['target_id'] = $field['target_id'];
+      }
+    }
+  }
+
   // Get node id for centre
   $query = new EntityFieldQuery;
   $query->entityCondition('entity_type', 'taxonomy_term');
@@ -268,6 +278,9 @@ function os2intra_user_import_save_user($user, $uid = '') {
 
     // Set department membership
     'og_user_node2'                   => array(LANGUAGE_NONE => array(0 => array('target_id' => array($department_nid)))),
+
+    //Set users nodes
+    'og_user_node'                    => array(LANGUAGE_NONE => $og_user_node),
 
     // Activate user
     'status'                          => ($account->uid != 0) ? $account->status : 1,

@@ -20,6 +20,7 @@ features[flag][] = os2intra_flag_info_til_alle
 features[homebox][] = intra
 features[page_manager_pages][] = nyt_og_opdateret
 features[user_role][] = Koncernyheder
+features[views_view][] = kommende_kurser
 features[views_view][] = koncernnyheder
 features[views_view][] = os2intra_canteen_menu
 features[views_view][] = os2intra_forside_views

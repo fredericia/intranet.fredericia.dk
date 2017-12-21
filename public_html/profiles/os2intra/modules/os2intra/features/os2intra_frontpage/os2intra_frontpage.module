@@ -5,3 +5,10 @@
  */
 
 include_once 'os2intra_frontpage.features.inc';
+
+function os2intra_frontpage_get_group_nid($title){
+  $result = db_query("SELECT n.nid FROM {node} n WHERE n.title = :title AND n.type = :type", 
+      array(":title"=> $title, ":type"=>'os2intra_group'));  
+  $nid = $result->fetchField();
+  return $nid;
+}
