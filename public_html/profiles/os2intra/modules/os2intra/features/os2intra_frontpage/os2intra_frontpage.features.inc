@@ -142,7 +142,7 @@ function os2intra_frontpage_homebox() {
         'status' => 1,
         'open' => 1,
         'closable' => 0,
-        'title' => 'FÃ¦llesnyt',
+        'title' => 'Fællesnyt',
         'weight' => -31,
       ),
       'fb_likebox_0' => array(
