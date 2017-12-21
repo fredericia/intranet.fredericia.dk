@@ -71,7 +71,7 @@ function os2intra_frontpage_flag_default_flags() {
 
 }
 
-/**
+//**
  * Implements hook_homebox().
  */
 function os2intra_frontpage_homebox() {
@@ -99,18 +99,18 @@ function os2intra_frontpage_homebox() {
         'open' => 1,
         'closable' => 1,
         'title' => ' Kommende kurser',
-        'weight' => -32,
+        'weight' => -30,
       ),
       'views_os2intra_bi_block-block_1' => array(
         'module' => 'views',
         'delta' => 'os2intra_bi_block-block_1',
         'region' => 2,
         'movable' => 1,
-        'status' => 1,
+        'status' => 0,
         'open' => 1,
         'closable' => 1,
         'title' => '',
-        'weight' => -32,
+        'weight' => -29,
       ),
       'views_os2intra_forside_views-block' => array(
         'module' => 'views',
@@ -121,7 +121,7 @@ function os2intra_frontpage_homebox() {
         'open' => 1,
         'closable' => 1,
         'title' => 'Kommende aktiviteter',
-        'weight' => -32,
+        'weight' => -28,
       ),
       'views_os2intra_markedspladsen-block' => array(
         'module' => 'views',
@@ -132,7 +132,7 @@ function os2intra_frontpage_homebox() {
         'open' => 1,
         'closable' => 1,
         'title' => 'Markedspladsen',
-        'weight' => -31,
+        'weight' => -27,
       ),
       'views_os2intra_forside_views-block_1' => array(
         'module' => 'views',
@@ -141,9 +141,9 @@ function os2intra_frontpage_homebox() {
         'movable' => 1,
         'status' => 1,
         'open' => 1,
-        'closable' => 1,
-        'title' => 'Fællesnyt',
-        'weight' => -30,
+        'closable' => 0,
+        'title' => 'FÃ¦llesnyt',
+        'weight' => -31,
       ),
       'fb_likebox_0' => array(
         'module' => 'fb_likebox',
@@ -154,7 +154,7 @@ function os2intra_frontpage_homebox() {
         'open' => 1,
         'closable' => 1,
         'title' => 'Facebook',
-        'weight' => -29,
+        'weight' => -26,
       ),
       'homebox_custom' => array(
         'module' => 'homebox',
@@ -165,7 +165,7 @@ function os2intra_frontpage_homebox() {
         'open' => 1,
         'closable' => 1,
         'title' => 'Brugerdefineret',
-        'weight' => -28,
+        'weight' => -25,
       ),
       'views_os2intra_vigtige_beskeder-block' => array(
         'module' => 'views',
