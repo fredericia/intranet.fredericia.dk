@@ -71,7 +71,7 @@ function os2intra_frontpage_flag_default_flags() {
 
 }
 
-//**
+/**
  * Implements hook_homebox().
  */
 function os2intra_frontpage_homebox() {
