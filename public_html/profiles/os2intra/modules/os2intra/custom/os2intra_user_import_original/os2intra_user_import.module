@@ -209,6 +209,7 @@ function os2intra_user_import_run_with_drush() {
 
       // Parse file, map data accordingly
       $users = _os2intra_user_import_process_file($realpath);
+      print_r($users);
 
        // Check and create groups
       if ($last_import_temp != $last_import_temp_groups) {

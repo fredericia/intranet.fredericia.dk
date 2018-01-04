@@ -3,7 +3,6 @@
  * Helper function to parse file contents to array with relevant info
  */
 function _os2intra_user_import_process_file($file_path) {
-
   // CSV field mapping
   // rewrite for settings page?
   $map = array(
@@ -59,6 +58,9 @@ function _os2intra_user_import_process_file($file_path) {
   }
 
   // Skip first row, headers
-  unset($rows[0]);
+  //unset($rows[0]);
+
+  print_r($rows);
+
   return $rows;
 }
