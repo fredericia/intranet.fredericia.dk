@@ -25,7 +25,7 @@ function fki_preprocess_html(&$variables) {
   drupal_add_html_head(array(
     '#tag'        => 'link',
     '#attributes' => array(
-      'href' => 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300,400,700',
+      'href' => 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700',
       'rel'  => 'stylesheet',
       'type' => 'text/css',
     ),
