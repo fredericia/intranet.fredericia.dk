@@ -39,7 +39,6 @@ var bs3Designer = (function ($) {
 
         optimizeFormElements();
         inputClear();
-        appear();
         bs3Tooltip();
     }
 
@@ -82,46 +81,6 @@ var bs3Designer = (function ($) {
 
             $('.inner-wrapper').css('padding-bottom', footerHeight);
         }
-    }
-
-    /**
-     * Appear
-     */
-    function appear() {
-        var $appear = $('.appear');
-        var $animation = $('.animation');
-
-        if (Modernizr.touchevents || !Modernizr.cssanimations) {
-
-            $animation
-              .removeClass('animation')
-              .removeClass('animation-appear-from-top')
-              .removeClass('animation-appear-from-right')
-              .removeClass('animation-appear-from-left')
-              .removeClass('animation-appear-from-bottom')
-              .removeClass('animation-appear-from-center');
-
-            return false;
-        }
-
-        // Enable appear
-        $appear.appear();
-
-        // Force processing on animation objects
-        $animation.appear({
-            force_process: true
-        });
-
-        // Animation object has appeared
-        $animation.on('appear', function () {
-
-            var $element = $(this);
-            var delay = $element.data('delay');
-
-            setTimeout(function () {
-                $element.addClass('animation-start');
-            }, delay);
-        });
     }
 
     /**
