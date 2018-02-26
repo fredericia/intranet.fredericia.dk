@@ -205,6 +205,9 @@ function os2intra_organisationsgrupper_views_default_views() {
 
   /* Display: Arkiv */
   $handler = $view->new_display('page', 'Arkiv', 'page');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: OG membership: OG membership from Node */
   $handler->display->display_options['relationships']['og_membership_rel']['id'] = 'og_membership_rel';
