@@ -2633,7 +2633,8 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'fences_wrapper' => 'div_div_div',
     'field_name' => 'og_group_ref',
     'label' => 'Gruppe / Afdeling',
-    'required' => 1,
+    'readmore_behaviour' => 'default',
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
