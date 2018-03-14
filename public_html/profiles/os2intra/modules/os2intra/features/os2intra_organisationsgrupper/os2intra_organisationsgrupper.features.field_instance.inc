@@ -2582,6 +2582,8 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
           'media_internet' => 0,
           'upload' => 0,
         ),
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
       'weight' => 15,
@@ -2633,19 +2635,10 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'fences_wrapper' => 'div_div_div',
     'field_name' => 'og_group_ref',
     'label' => 'Gruppe / Afdeling',
+    'readmore_behaviour' => 'default',
     'required' => 1,
     'settings' => array(
       'behaviors' => array(
-        'og_widget' => array(
-          'access_override' => 0,
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
         'prepopulate' => array(
           'action' => 'none',
           'action_on_edit' => 1,
@@ -2675,10 +2668,20 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       ),
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'entityreference_autocreate' => array(
+          'active' => 0,
+          'author' => '',
+          'author_current_user' => 1,
+          'status' => -1,
+        ),
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
       'weight' => 25,
     ),
   );
