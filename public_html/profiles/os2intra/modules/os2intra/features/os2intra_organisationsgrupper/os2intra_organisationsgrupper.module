@@ -5,3 +5,36 @@
  */
 
 include_once 'os2intra_organisationsgrupper.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Hides the group field, if the user is not part of that group.
+ */
+function os2intra_organisationsgrupper_form_node_form_alter(&$form, &$form_state) {
+  $nid = $form['nid']['#value'];
+
+  // Make sure the node bundle is a group content type.
+  $is_group_content = og_is_group_content_type('node', $form['#node']->type);
+  // If this is group content:
+  if ($nid && $is_group_content) {
+    // Get the node's groups.
+    $groups = og_get_entity_groups('node', $nid);
+
+    // Get user groups.
+    $user_groups = og_get_groups_by_user($GLOBALS['user']);
+
+    // Loops every group, if the group id (gid) is within user groups list,
+    // allow access to the field (#access = TRUE).
+    $computed_access = FALSE;
+    foreach ($groups as $gids) {
+      foreach ($gids as $gid) {
+        if (array_key_exists($gid, $user_groups['node'])) {
+          $computed_access = TRUE;
+          break;
+        }
+      }
+    }
+    $form['og_group_ref']['#access'] = $computed_access;
+  }
+}
