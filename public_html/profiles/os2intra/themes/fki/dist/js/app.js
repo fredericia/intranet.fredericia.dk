@@ -7068,7 +7068,7 @@ var bs3Designer = (function ($) {
      * Input clear
      */
     function inputClear() {
-        var $inputs = $('input[type="text"].form-control').not('.sliderfield-value-field');
+        var $inputs = $('input[type="text"].form-control').not('.sliderfield-value-field, .upload');
 
         // Run through all input fields and add elements to DOM
         $inputs.each(function(index) {
