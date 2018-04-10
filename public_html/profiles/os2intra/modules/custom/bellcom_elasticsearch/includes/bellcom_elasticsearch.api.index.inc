@@ -25,7 +25,7 @@ function bellcom_elasticsearch_api_add_analyzer($client, $index_id, $synonyms_fi
 		'analysis' => [
 		    'analyzer' => [
 			'synonym' => [
-			    'tokenizer' => 'whitespace',
+			    'tokenizer' => 'standard',
 			    'filter' => ['synonym', 'lowercase']
 			]
 		    ],
