@@ -2639,15 +2639,25 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'options_select',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
         'prepopulate' => array(
           'action' => 'none',
-          'action_on_edit' => 1,
+          'action_on_edit' => 0,
           'fallback' => 'none',
           'providers' => array(
             'og_context' => 0,
             'url' => 1,
           ),
-          'skip_perm' => 'administer nodes',
+          'skip_perm' => 0,
           'status' => 1,
         ),
       ),
@@ -2668,20 +2678,10 @@ function os2intra_organisationsgrupper_field_default_field_instances() {
       ),
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'entityreference_autocreate' => array(
-          'active' => 0,
-          'author' => '',
-          'author_current_user' => 1,
-          'status' => -1,
-        ),
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
       'weight' => 25,
     ),
   );
