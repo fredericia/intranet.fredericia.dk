@@ -47,7 +47,7 @@
 		    $(submitLink).fadeOut(function(){
 			$(lockedFields).prop('disabled', true);
 			$.ajax({
-			    url: "/kle/" + tid + "/update/" + weight + "/" + from + "/" + until,
+			    url: Drupal.settings.basePath + "kle/" + tid + "/update/" + weight + "/" + from + "/" + until,
 			}).done(function() {
 			    $(submitted).fadeIn(function(){
 				$(submitted).fadeOut(function(){
@@ -67,6 +67,7 @@
 		var displayFields = $(this).find('.display-field');
 		var displayInput = $(this).find('.display-input');
 		var editFields = $(this).find('.edit-field');
+    var deleteLink = $(this).find('.delete-link');
 
 		$(editLink).click(function(e){
 		    e.preventDefault();
@@ -76,6 +77,7 @@
 		    });
 		    $(editLink).fadeOut(function(){
 			$(submitLink).fadeIn();
+      $(deleteLink).fadeIn();
 		    });
 		});
 
@@ -100,8 +102,9 @@
 		    });
 
 		    $(submitLink).fadeOut(function(){
+          $(deleteLink).hide();
 			$.ajax({
-			    url: "/phrase/" + id + "/update",
+			    url: Drupal.settings.basePath + "phrase/" + id + "/update",
 			    data: { phrase: phraseVal, exclusive: exclusiveVal, nid: nidVal, from: fromVal, until: untilVal, weight: weightVal }
 			}).done(function() {
 			    $(submitted).fadeIn(function(){
@@ -113,8 +116,25 @@
 		    });
 		    
 		});
+    $(deleteLink).click(function (e) {
+          e.preventDefault();
 
-	    });
+          $(editFields).fadeOut(function () {
+            $(displayFields).fadeIn();
+            $(displayInput).prop('disabled', true);
+          });
+
+          $(deleteLink).fadeOut(function () {
+            $.ajax({
+              url: Drupal.settings.basePath + "phrase/" + id + "/delete"
+            }).done(function () {
+              $(phrase_row).fadeOut();
+            });
+          });
+
+        });
+
+     });
 	}
     }
 })(jQuery);
