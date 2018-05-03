@@ -213,7 +213,6 @@ function _bellcom_elasticsearch_get_boosting($query_string = NULL, $is_multi_typ
         'weight' => intval($phrase->weight) * 100,
         'filter' => array(
           'term' => array('nid' => $phrase->nid),
-           
         ),
       );
     }
@@ -227,7 +226,6 @@ function _bellcom_elasticsearch_get_boosting($query_string = NULL, $is_multi_typ
         'weight' => $weight,
         'filter' => array(
           'term' => array('node:type' => $type->type),
-           'search:search_api_relevance' => 50,5,
         ),
       );
     }
