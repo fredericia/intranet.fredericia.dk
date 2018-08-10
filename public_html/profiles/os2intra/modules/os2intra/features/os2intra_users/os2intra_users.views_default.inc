@@ -1175,23 +1175,27 @@ function os2intra_users_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  /* Filter criterion: User: Telefon nummer (field_os2intra_phone) */
-  $handler->display->display_options['filters']['field_os2intra_phone_value']['id'] = 'field_os2intra_phone_value';
-  $handler->display->display_options['filters']['field_os2intra_phone_value']['table'] = 'field_data_field_os2intra_phone';
-  $handler->display->display_options['filters']['field_os2intra_phone_value']['field'] = 'field_os2intra_phone_value';
-  $handler->display->display_options['filters']['field_os2intra_phone_value']['operator'] = 'contains';
-  $handler->display->display_options['filters']['field_os2intra_phone_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_os2intra_phone_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['operator_id'] = 'field_os2intra_phone_value_op';
-  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['label'] = 'Telefon nummer';
-  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['operator'] = 'field_os2intra_phone_value_op';
-  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['identifier'] = 'field_os2intra_phone_value';
-  $handler->display->display_options['filters']['field_os2intra_phone_value']['expose']['remember_roles'] = array(
+  /* Filter criterion: Telefon nummer */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['ui_name'] = 'Telefon nummer';
+  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Telefon nummer';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'phone';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
     5 => 0,
     7 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'field_os2intra_phone' => 'field_os2intra_phone',
+    'field_os2intra_mobile' => 'field_os2intra_mobile',
   );
   $handler->display->display_options['path'] = 'telefonbogen';
 
