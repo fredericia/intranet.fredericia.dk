@@ -11,9 +11,9 @@ files[] = plugins/notifier/abstract.inc
 
 ; Tests
 files[] = message_notify.test
-; Information added by Drupal.org packaging script on 2015-01-05
-version = "7.x-2.5+4-dev"
+; Information added by Drupal.org packaging script on 2016-05-26
+version = "7.x-2.5+6-dev"
 core = "7.x"
 project = "message_notify"
-datestamp = "1420453972"
+datestamp = "1464254948"
 

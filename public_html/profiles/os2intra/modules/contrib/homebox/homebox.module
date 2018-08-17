@@ -34,6 +34,7 @@ function homebox_menu() {
     foreach ($pages as $page) {
       $items[$page->settings['path']] = array(
         'title' => $page->settings['title'],
+        'title callback' => 'homebox_build_title',
         'page callback' => 'homebox_build',
         'page arguments' => array($page),
         'access callback' => '_homebox_user_access_view_homebox',
@@ -56,9 +57,10 @@ function homebox_menu() {
     $page = homebox_get_page($name);
     if ($page) {
       $items['user/%user/' . $page->settings['path']] = array(
-        'title' => $page->settings['title'],
-        'page callback' => 'homebox_pre_build_user',
-        'page arguments' => array($page, 1),
+        'title callback' => 'homebox_build_title',
+        'title arguments' => array($page->settings['title']),
+        'page callback' => 'homebox_build',
+        'page arguments' => array($page),
         'access callback' => '_homebox_user_access_view_user_homebox',
         'access arguments' => array($page, 1),
         'weight' => 1,
@@ -242,6 +244,16 @@ function homebox_permission() {
 }
 
 /**
+ * Implements hook_hook_info().
+ */
+function homebox_hook_info() {
+  $hooks['homebox'] = array(
+    'group' => 'homebox',
+  );
+  return $hooks;
+}
+
+/**
  * Implements hook_theme().
  */
 function homebox_theme($existing, $type, $theme, $path) {
@@ -316,6 +328,13 @@ function homebox_get_path($page) {
     return 'user/' . $user->uid . '/' . $page->settings['path'];
   }
   return $page->settings['path'];
+}
+
+/**
+ * Menu title callback.
+ */
+function homebox_build_title($title) {
+  return t($title, array('@user' => format_username($GLOBALS['user'])));
 }
 
 /**
@@ -511,26 +530,6 @@ function homebox_save_form_submit($form, &$form_state) {
 }
 
 /**
- * Helper function for performing operations prior to rendering
- * a Homebox that is set as a user profile tab
- *
- * @param $page
- *   A page object
- * @param $user
- *   A user object
- */
-function homebox_pre_build_user($page, $user) {
-  drupal_set_title(t(check_plain($page->settings['title']), array('@user' => $user->name)));
-  $output = homebox_build($page);
-
-  // Only return if output is available
-  // Certain Homeboxes print instead of return
-  if ($output) {
-    return $output;
-  }
-}
-
-/**
  * Prepare a block for rendering with theme('homebox_block').
  *
  * @param $block_key
@@ -562,10 +561,17 @@ function homebox_prepare_block($block_key, $page) {
   // configurable. Just checking for the form hook implementation isn't
   // sufficient since one module may provide more than one block.
   if (module_hook($block_settings['module'], 'homebox_block_edit_form') && module_invoke($block_settings['module'], 'homebox_block_keys', (object) $block_settings)) {
+    // Save messages not rendered by this block to avoid displaying them here.
+    $messages = isset($_SESSION['messages']) ? $_SESSION['messages'] : array();
+    $_SESSION['messages'] = array();
+
     $get_form = drupal_get_form('homebox_block_edit_' . $block_settings['module'] . '_' . $block_settings['delta'] . '_form', $page, (object) $block_settings);
     $block->edit_form = drupal_render($get_form);
     // Prepend messages the form may have generated.
     $block->edit_form = theme('status_messages', array('display' => 'error')) . $block->edit_form;
+
+    // Reset messages to state before rendering block.
+    $_SESSION['messages'] = $messages;
 
     // Apply user settings, they may have changed from the form submission.
     if (isset($_POST['form_id']) && $user_settings = _homebox_get_user_settings($page)) {
@@ -580,7 +586,7 @@ function homebox_prepare_block($block_key, $page) {
 
   // Build the $block object.
   $block->key = $block_key;
-  $block->subject = isset($block_settings['title']) ? $block_settings['title'] : NULL;
+  $block->subject = isset($page->settings['blocks'][$block_key]['title']) ? $page->settings['blocks'][$block_key]['title'] : NULL;
   $block->content = isset($block_settings['content']) ? $block_settings['content'] : NULL;
   $block->module = isset($block_settings['module']) ? $block_settings['module'] : NULL;
   $block->delta = isset($block_settings['delta']) ? $block_settings['delta'] : NULL;
@@ -1246,13 +1252,6 @@ function homebox_js_save_user_settings($page) {
 function homebox_add_block($page, $module, $delta) {
   $user_blocks = _homebox_get_user_settings($page, TRUE);
 
-  // Get default region for the blocks in page settings.
-  foreach ($page->settings['blocks'] as $item) {
-    if ($item['delta'] == $delta) {
-      $region = $item['region'];
-    }
-  }
-
   // Build custom block
   $block = array(
     'module' => $module,
@@ -1261,7 +1260,7 @@ function homebox_add_block($page, $module, $delta) {
     'open' => 1,
     'color' => 'default',
     'status' => 1,
-    'region' => isset($region) ? $region : 2,
+    'region' => 1,
     'movable' => 1,
     'closable' => 1,
   );

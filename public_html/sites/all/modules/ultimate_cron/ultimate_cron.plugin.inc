@@ -599,7 +599,7 @@ class UltimateCronPlugin {
    */
   static public function jobSettingsFormValidate($form, &$form_state, $plugin_type, $job = NULL) {
     $name = !empty($form_state['values']['settings'][$plugin_type]['name']) ? $form_state['values']['settings'][$plugin_type]['name'] : $job->hook[$plugin_type]['name'];
-    $plugin = _ultimate_cron_plugin_load($plugin_type, $name);
+    $plugin = _ultimate_cron_plugin_require($plugin_type, $name);
     $plugin->settingsFormValidate($form, $form_state, $job);
   }
 
@@ -608,7 +608,7 @@ class UltimateCronPlugin {
    */
   static public function jobSettingsFormSubmit($form, &$form_state, $plugin_type, $job = NULL) {
     $name = !empty($form_state['values']['settings'][$plugin_type]['name']) ? $form_state['values']['settings'][$plugin_type]['name'] : $job->hook[$plugin_type]['name'];
-    $plugin = _ultimate_cron_plugin_load($plugin_type, $name);
+    $plugin = _ultimate_cron_plugin_require($plugin_type, $name);
     $plugin->settingsFormSubmit($form, $form_state, $job);
 
     // Weed out blank values that have fallbacks.
@@ -1013,7 +1013,7 @@ abstract class UltimateCronLauncher extends UltimateCronPlugin {
         $_SERVER['PHP_SELF'] = $php_self;
       }
 
-      watchdog('ultimate_cron', 'Error running @name: @error', array(
+      ultimate_cron_watchdog_throwable('ultimate_cron', $e, 'Error running @name: @error', array(
         '@name' => $job->name,
         '@error' => (string) $e,
       ), WATCHDOG_ERROR);
@@ -1024,7 +1024,7 @@ abstract class UltimateCronLauncher extends UltimateCronPlugin {
         $_SERVER['PHP_SELF'] = $php_self;
       }
 
-      watchdog('ultimate_cron', 'Error running @name: @error', array(
+      watchdog_exception('ultimate_cron', $e, 'Error running @name: @error', array(
         '@name' => $job->name,
         '@error' => (string) $e,
       ), WATCHDOG_ERROR);

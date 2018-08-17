@@ -8,7 +8,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a class="accordion-toggle"
+            <a class="accordion-toggle collapsed"
               data-toggle="collapse"
               data-parent="#views-bootstrap-accordion-<?php print $id ?>"
               href="#collapse-<?php print $id . '-' . $key ?>">
