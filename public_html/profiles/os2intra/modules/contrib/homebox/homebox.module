@@ -1252,6 +1252,14 @@ function homebox_js_save_user_settings($page) {
 function homebox_add_block($page, $module, $delta) {
   $user_blocks = _homebox_get_user_settings($page, TRUE);
 
+  // Get default region for the blocks in page settings.
+  $region = 1;
+  foreach ($page->settings['blocks'] as $item) {
+    if ($item['delta'] == $delta) {
+      $region = $item['region'];
+    }
+  }
+  
   // Build custom block
   $block = array(
     'module' => $module,
@@ -1260,7 +1268,7 @@ function homebox_add_block($page, $module, $delta) {
     'open' => 1,
     'color' => 'default',
     'status' => 1,
-    'region' => 1,
+    'region' => $region,
     'movable' => 1,
     'closable' => 1,
   );
