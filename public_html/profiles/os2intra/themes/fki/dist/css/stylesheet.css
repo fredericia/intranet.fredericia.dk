@@ -4885,6 +4885,9 @@ button.list-group-item-danger.active:focus {
 .panel-group .panel-heading {
   border-bottom: 0;
 }
+.panel-group .panel-heading + .panel-collapse {
+  overflow: hidden;
+}
 .panel-group .panel-heading + .panel-collapse > .panel-body,
 .panel-group .panel-heading + .panel-collapse > .list-group {
   border-top: 1px solid #ddd;
@@ -17295,6 +17298,9 @@ a.group.unsubscribe .icon {
 }
 .os2-node-full-body .accordion-toggle.collapsed:before {
   content: "\f067";
+}
+.os2-node-full-body .panel-collapse.collapse:not(.in) {
+  height: 0px;
 }
 @media screen {
   .popover-button {
