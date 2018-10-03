@@ -192,6 +192,17 @@ function push_notifications_admin_form($form_state) {
     '#default_value' => variable_get('push_notifications_apns_certificate_folder', ''),
   );
 
+  $form['configuration_apns']['push_notifications_set_entrust_certificate'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Set Entrust root certificate'),
+    '#description' => t('If APNS does not work and you are getting errors like %php_error_string your server might be missing the Entrust root certificate. Enable this to explicitely add it when establishing a connection to APNS. See more in this !link_kb and the !link_entrust.', array(
+      '%php_error_string' => 'Warning: stream_socket_client() [...]',
+      '!link_entrust' => l('Entrust Root Certificate Downloads', 'https://www.entrust.com/get-support/ssl-certificate-support/root-certificate-downloads/', array('attributes' => array('target' => '_blank'))),
+      '!link_kb' => l('Knowledgebase Article', 'http://stackoverflow.com/questions/4817520/why-ssl-of-entrust-ssl-certificate-is-required-for-apns', array('attributes' => array('target' => '_blank'))),
+    )),
+    '#default_value' => variable_get('push_notifications_set_entrust_certificate', 0),
+  );
+
   $form['configuration_c2dm'] = array(
     '#type' => 'fieldset',
     '#title' => t('Google Push Notifications'),
@@ -334,6 +345,8 @@ function push_notifications_admin_form_submit($form, &$form_state) {
   // Set the APNS stream limit.
   variable_set('push_notifications_apns_stream_context_limit', $form_state['values']['stream_context_limit']);
 
+  variable_set('push_notifications_set_entrust_certificate', $form_state['values']['push_notifications_set_entrust_certificate']);
+
   $replacements = array(
     '@environment' => ($apns_environment) ? "Production" : "Development",
   );
@@ -369,11 +382,13 @@ function push_notifications_mass_push_form($form_state) {
   $form['message']['alert'] = array(
     '#type' => 'textfield',
     '#title' => t('Push Message'),
-    '#description' => t('Compose the message to send out (256 characters max.)'),
+    '#description' => t('Compose the message to send out (!limit characters max.)', array(
+      '!limit' => PUSH_NOTIFICATIONS_APNS_PAYLOAD_SIZE_LIMIT,
+    )),
     '#default_value' => (isset($form_state['values']['message']['alert'])) ? $form_state['values']['message']['alert'] : '',
     '#required' => TRUE,
     '#size' => 128,
-    '#maxlength' => 256,
+    '#maxlength' => PUSH_NOTIFICATIONS_APNS_PAYLOAD_SIZE_LIMIT,
     '#weight' => 10,
   );
 
@@ -439,7 +454,9 @@ function push_notifications_mass_push_form_validate($form, &$form_state) {
 
   // Validate that the message size is ok.
   if (!push_notifications_check_payload_size($form_state['values']['payload'])) {
-    form_set_error('message', t('Your message exceeds the allowed size of 256 bytes. Please shorten your message.'));
+    form_set_error('message', t('Your message exceeds the allowed size of !max_size bytes. Please shorten your message.', array(
+      '!max_size' => PUSH_NOTIFICATIONS_APNS_PAYLOAD_SIZE_LIMIT,
+    )));
   }
 }
 
@@ -456,7 +473,10 @@ function push_notifications_mass_push_form_submit($form, &$form_state) {
   // Send message to all iOS recipients.
   if (!empty($recipients['ios'])) {
     // Get all iOS recipients.
-    $tokens_ios = push_notifications_get_tokens(PUSH_NOTIFICATIONS_TYPE_ID_IOS, $language);
+    $tokens_ios = push_notifications_get_tokens(array(
+      'type_id' => PUSH_NOTIFICATIONS_TYPE_ID_IOS,
+      'language' => $language,
+    ));
     if (!empty($tokens_ios)) {
       // Convert the payload into the correct format for APNS.
       $payload_apns = array('aps' => $payload);
@@ -472,7 +492,10 @@ function push_notifications_mass_push_form_submit($form, &$form_state) {
   // Send message to all Android recipients.
   if (!empty($recipients['android'])) {
     // Get all Android recipients.
-    $tokens_android = push_notifications_get_tokens(PUSH_NOTIFICATIONS_TYPE_ID_ANDROID, $language);
+    $tokens_android = push_notifications_get_tokens(array(
+      'type_id' => PUSH_NOTIFICATIONS_TYPE_ID_ANDROID,
+      'language' => $language,
+    ));
     if (!empty($tokens_android)) {
       // Determine which method to use for Google push notifications.
       switch (PUSH_NOTIFICATIONS_GOOGLE_TYPE) {

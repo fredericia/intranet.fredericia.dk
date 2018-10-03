@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Matomo Fredericia Prod Settings feature.
+ */
+
+include_once 'matomo_fredericia_prod_settings.features.inc';
