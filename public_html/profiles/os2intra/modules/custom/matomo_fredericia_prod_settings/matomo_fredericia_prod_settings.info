@@ -1,0 +1,14 @@
+name = Matomo Fredericia Prod Settings
+description = Sets the correct site id and URL
+core = 7.x
+package = OS2Web - Backend
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = matomo
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = matomo_site_id
+features[variable][] = matomo_url_http
+features[variable][] = matomo_url_https
+project path = profiles/os2intra/modules/custom

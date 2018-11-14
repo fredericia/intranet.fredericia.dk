@@ -23,10 +23,19 @@
 
     <?php foreach ($items as $row): ?>
       <div class="row">
-        <?php foreach ($row['content'] as $column): ?>
-          <div class="col <?php print $class_prefix ?>-<?php print $column_type ?>">
+        <?php foreach ($row['content'] as $key => $column): ?>
+          <div class="<?php print $col_classes ?>">
             <?php print $column['content'] ?>
           </div>
+
+          <?php /* Add clearfix divs if required */ ?>
+          <?php if ($options['columns_horizontal'] == -1 && !empty($options['clear_columns']) && $key != 0): ?>
+            <?php foreach ($clearfix as $screen => $count): ?>
+              <?php if (($key + 1) % $count == 0): ?>
+                <div class="clearfix visible-<?php print $screen; ?>-block"></div>
+              <?php endif; ?>
+            <?php endforeach; ?>
+          <?php endif; ?>
         <?php endforeach ?>
       </div>
     <?php endforeach ?>
@@ -35,9 +44,9 @@
 
     <div class="row">
       <?php foreach ($items as $column): ?>
-        <div class="col <?php print $class_prefix ?>-<?php print $column_type ?>">
+        <div class="<?php print $col_classes ?>">
           <?php foreach ($column['content'] as $row): ?>
-            <?php print $row['content'] ?>
+              <?php print $row['content'] ?>
           <?php endforeach ?>
         </div>
       <?php endforeach ?>
