@@ -247,7 +247,7 @@ function os2intra_content_types_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Emne'),
+      'title_label' => t('Title'),
       'help' => '',
     ),
     'wiki' => array(

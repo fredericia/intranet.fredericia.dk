@@ -5451,7 +5451,7 @@ function os2intra_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_spotbox_link',
-    'label' => 'Link til side',
+    'label' => 'Navn',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -6946,7 +6946,7 @@ function os2intra_content_types_field_default_field_instances() {
   t('KL Emneord');
   t('Kantine');
   t('Kilde');
-  t('Link til side');
+  t('Navn');
   t('Organisation');
   t('Overskrift');
   t('Placering');
