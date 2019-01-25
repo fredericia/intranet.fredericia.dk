@@ -5,3 +5,25 @@
  */
 
 include_once 'os2intra_content_types.features.inc';
+
+/*
+ * Implements hook_element_info_alter
+ */
+function os2intra_content_types_element_info_alter(&$type) {
+  if (isset($type['link_field'])) {
+    $type['link_field']['#process'][] = 'os2intra_content_types_link_field_process';
+  }
+}
+
+/*
+ * Implements hook_link_field_process
+ */
+function os2intra_content_types_link_field_process($element, $form_state, $complete_form) {
+  switch ($element['#field_name']) {
+    case 'field_spotbox_link':
+      $element['title']['#title'] = t('Navn');
+      break;
+  }
+
+  return $element;
+}
