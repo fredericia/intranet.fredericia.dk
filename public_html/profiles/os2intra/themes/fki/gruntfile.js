@@ -54,7 +54,7 @@ module.exports = function (grunt) {
 
     concat: {
       options: {
-        sourceMap   : true,
+        sourceMap   : false,
         stripBanners: false
       },
       app     : {

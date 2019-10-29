@@ -59,13 +59,10 @@ video {
   }
 }
 
-// Tabs in Safari.
-.horizontal-tabs .horizontal-tab-hidden {
-  // Resets.
-  //display: block;
-  position: static !important;
-  top: initial !important;
-  
-  // New.
-  display: none !important;
+
+:not(.group-content.field-group-htab.form-wrapper.horizontal-tabs-pane.fieldgroup-effects-processed) .collapse {
+  display: block;
+}
+:not(.group-content.field-group-htab.form-wrapper.horizontal-tabs-pane.fieldgroup-effects-processed) .fade {
+  opacity: 1;
 }
