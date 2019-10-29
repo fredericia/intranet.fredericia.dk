@@ -7437,5 +7437,3 @@ var os2Toggler = (function ($) {
   $('.form-item-og-group-ref-und-0-admin .form-select').select2();
 
 })(jQuery);
-
-//# sourceMappingURL=app.js.map
