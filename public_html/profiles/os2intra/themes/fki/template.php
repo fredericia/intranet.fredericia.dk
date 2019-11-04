@@ -392,7 +392,7 @@ function fki_preprocess_taxonomy_term__os2web_taxonomies_tax_places(&$variables)
     if ($field_os2web_taxonomies_name = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_name')) {
       $place .= '<h4 class="os2-place-name">' . $field_os2web_taxonomies_name[0]['value'] . '</h4>';
     }
-    
+
     // Address
     if ($field_os2web_taxonomies_address = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_address')) {
       $place .= '<span class="os2-place-address">' . $field_os2web_taxonomies_address[0]['value'] . '</span>';
@@ -422,6 +422,17 @@ function fki_preprocess_field(&$variables, $hook) {
 
   // Make "field--FIELDNAME--BUNDLE--VIEWMODE.tpl.php" templates available.
   $variables['theme_hook_suggestions'][] = 'field__' . $variables['element']['#field_name'] . '__' . $variables['element']['#bundle'] . '__' . $variables['element']['#view_mode'];
+
+  $element = $variables['element'];
+  // Field type image
+  if ($element['#field_type'] == 'image' && $element['#bundle'] == 'post') {
+    // Reduce number of images in teaser view mode to single image
+    if ($element['#view_mode'] == 'teaser') {
+      $item = reset($variables['items']);
+      $variables['items'] = array($item);
+    }
+  }
+
 }
 
 /**
