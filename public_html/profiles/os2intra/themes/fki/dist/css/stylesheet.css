@@ -17384,6 +17384,9 @@ a.group.unsubscribe .icon {
 }
 @media print {
 }
+.file .content {
+  padding: 0;
+}
 .file a {
   color: #00335b;
   text-decoration: none;
