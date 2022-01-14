@@ -250,7 +250,7 @@ function fki_preprocess_node__spotbox(&$variables) {
  * Implements hook_preprocess_node().
  */
 function fki_preprocess_node__os2intra_base_page(&$variables) {
-  if ($variables['view_mode'] == 'full') {
+  if ($variables['view_mode'] == 'full' && !empty($variables['field_os2intra_paragraph'])) {
     $variables['sections'] = views_embed_view('os2intra_node_panes', array('panel_pane_7'));
   }
 }
@@ -392,7 +392,7 @@ function fki_preprocess_taxonomy_term__os2web_taxonomies_tax_places(&$variables)
     if ($field_os2web_taxonomies_name = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_name')) {
       $place .= '<h4 class="os2-place-name">' . $field_os2web_taxonomies_name[0]['value'] . '</h4>';
     }
-    
+
     // Address
     if ($field_os2web_taxonomies_address = field_get_items('taxonomy_term', $term, 'field_os2web_taxonomies_address')) {
       $place .= '<span class="os2-place-address">' . $field_os2web_taxonomies_address[0]['value'] . '</span>';
