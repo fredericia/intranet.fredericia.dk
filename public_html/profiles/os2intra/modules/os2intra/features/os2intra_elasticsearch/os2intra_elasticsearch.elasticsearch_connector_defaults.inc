@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * os2intra_elasticsearch.elasticsearch_connector_defaults.inc
