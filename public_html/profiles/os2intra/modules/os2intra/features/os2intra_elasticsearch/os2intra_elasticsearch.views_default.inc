@@ -173,6 +173,14 @@ function os2intra_elasticsearch_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = ' os2-box os2-box-small-spacing';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Opførsel ved ingen resultater: Global: Tekstområde */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'Ingen resultater';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Ingen resultater matchede din søgning.';
+  $handler->display->display_options['empty']['area']['format'] = 'indhold';
   /* Felt: Indexed Multiple types: ID */
   $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
   $handler->display->display_options['fields']['item_id']['table'] = 'search_api_index_intranet_multi_index';
@@ -218,6 +226,8 @@ function os2intra_elasticsearch_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
+    t('Ingen resultater'),
+    t('Ingen resultater matchede din søgning.'),
     t('Page'),
   );
   $export['multiindex_search'] = $view;
