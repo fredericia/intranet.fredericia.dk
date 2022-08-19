@@ -266,7 +266,8 @@ function os2intra_elasticsearch_default_search_api_index() {
         "search_api_language" : { "type" : "string" },
         "search_api_url" : { "type" : "uri" },
         "taxonomy_term" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "taxonomy_term:name" : { "type" : "text" },
+        "taxonomy_term:description" : { "type" : "text" },
+        "taxonomy_term:name" : { "type" : "text", "boost" : "5.0" },
         "taxonomy_term:tid" : { "type" : "integer" }
       },
       "data_alter_callbacks" : {
