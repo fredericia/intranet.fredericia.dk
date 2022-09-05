@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * os2intra_users.features.taxonomy.inc
@@ -9,6 +10,14 @@
  */
 function os2intra_users_taxonomy_default_vocabularies() {
   return array(
+    'os2intra_bi_opus_roles' => array(
+      'name' => 'Opus Roles',
+      'machine_name' => 'os2intra_bi_opus_roles',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
     'os2intra_organisation_tax' => array(
       'name' => 'OS2Intra organisation',
       'machine_name' => 'os2intra_organisation_tax',

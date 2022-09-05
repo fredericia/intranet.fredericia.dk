@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * os2intra_users.features.user_permission.inc
