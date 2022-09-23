@@ -137,8 +137,8 @@ function os2intra_webmaster_tools_views_default_views() {
       'empty_column' => 0,
     ),
     'field_os2intra_user_disable_date' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
