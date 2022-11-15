@@ -279,14 +279,17 @@ function os2intra_elasticsearch_default_search_api_index() {
             "bundles" : {
               "node:it_vejledning" : "node:it_vejledning",
               "node:os2web_base_selfservice_link" : "node:os2web_base_selfservice_link",
-              "node:spotbox" : "node:spotbox"
+              "node:spotbox" : "node:spotbox",
+              "taxonomy_term:os2web_taxonomies_tax_editor_tag" : "taxonomy_term:os2web_taxonomies_tax_editor_tag",
+              "taxonomy_term:os2web_taxonomies_tax_kle" : "taxonomy_term:os2web_taxonomies_tax_kle"
             }
           }
         },
-        "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
-        "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] }
+        "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } }
       },
       "processors" : {
         "search_api_case_ignore" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
@@ -315,6 +318,11 @@ function os2intra_elasticsearch_default_search_api_index() {
             "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
           }
         },
+        "search_api_porter_stemmer" : {
+          "status" : 0,
+          "weight" : "35",
+          "settings" : { "fields" : [], "exceptions" : "texan=texa" }
+        },
         "search_api_elasticsearch_highlighting" : {
           "status" : 1,
           "weight" : "35",
@@ -329,11 +337,6 @@ function os2intra_elasticsearch_default_search_api_index() {
           }
         },
         "search_api_elasticsearch_prefix_search" : { "status" : 0, "weight" : "35", "settings" : { "fields" : [] } },
-        "search_api_porter_stemmer" : {
-          "status" : 0,
-          "weight" : "35",
-          "settings" : { "fields" : [], "exceptions" : "texan=texa" }
-        },
         "search_api_highlighting" : {
           "status" : 0,
           "weight" : "40",
