@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * os2intra_elasticsearch.strongarm.inc
