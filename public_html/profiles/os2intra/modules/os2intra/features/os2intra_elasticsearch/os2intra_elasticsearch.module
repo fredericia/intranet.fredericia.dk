@@ -5,3 +5,8 @@
  */
 
 include_once 'os2intra_elasticsearch.features.inc';
+function os2intra_elasticsearch_views_pre_view(&$vars){
+  if ($vars->name == "multiindex_search") {
+  }
+
+}

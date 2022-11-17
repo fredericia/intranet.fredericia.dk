@@ -49,7 +49,7 @@ function fki_preprocess_html(&$variables) {
 function fki_preprocess_page(&$variables) {
 
   // Search form
-  $variables['main_navigation_search'] = module_invoke('views', 'block_view', '-exp-Search-page');
+  $variables['main_navigation_search'] = module_invoke('views', 'block_view', '-exp-multiindex_search-page');
 
   // Find colleague
   $variables['find_colleague_block'] = module_invoke('views', 'block_view', '-exp-telefonbogen-page');
