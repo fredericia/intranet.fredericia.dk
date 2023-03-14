@@ -84,6 +84,9 @@
                 <?php print render($find_colleague_block['content']); ?>
               </div>
             </div>
+            <div class="user-group-btn-wrapper">
+              <a href="/user-group" class="user-group-btn">Min afdeling</a>
+            </div>
           <div class="my-profile-btn-wrapper">
             <a href="/user" class="my-profile-btn">Min profil</a>
           </div>

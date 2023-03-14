@@ -31,11 +31,11 @@
 // Mobile
 @media @media-query-mobile {
 
-  .my-profile-btn-wrapper {
+  .my-profile-btn-wrapper, .user-group-btn-wrapper {
     display: block;
     margin-bottom: 20px;
 
-    .my-profile-btn {
+    .my-profile-btn, .user-group-btn {
       display: block;
       width: 100%;
       text-align: center;
@@ -89,10 +89,31 @@
 // Tablet
 @media @media-query-tablet {
 
+  .user-group-btn-wrapper {
+    position: absolute;
+    right: -51px;
+    top: 300px;
+    z-index: 2005;
+
+    .user-group-btn {
+      display: block;
+      transform: rotate(90deg);
+      color: white;
+      background-color: #00335b;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 5px 15px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
     .my-profile-btn-wrapper {
       position: absolute;
       right: -41px;
-      top: 300px;
+      top: 430px;
+      z-index: 2005;
 
       .my-profile-btn {
         display: block;
