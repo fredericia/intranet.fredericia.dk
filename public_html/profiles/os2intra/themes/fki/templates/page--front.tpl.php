@@ -81,6 +81,9 @@
                 <?php print render($find_colleague_block['content']); ?>
               </div>
             </div>
+            <div class="my-profile-btn-wrapper">
+              <a href="/user" class="my-profile-btn">Min profil</a>
+            </div>
             <!-- End - find colleague -->
           <?php endif ?>
         <?php endif ?>
@@ -161,14 +164,14 @@
         <?php print render($page['content']); ?>
 
         <?php else: ?>
-        
+
         <div class="os2-box">
           <div class="os2-box-body">
             <?php print render($page['content']); ?>
           </div>
         </div>
         <?php endif; ?>
-        
+
 
       </div>
     </div>
