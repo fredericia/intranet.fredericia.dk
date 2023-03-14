@@ -77,6 +77,11 @@
         <?php if (user_is_logged_in()): ?>
           <?php if (isset($find_colleague_block)): ?>
             <!-- Begin - find colleague -->
+          <div class="search-btn-wrapper">
+            <a href="/search" class="search-btn">
+              Søg <i class="fa fa-search"></i>
+            </a>
+          </div>
             <div class="popover-button popover-button-find-colleague">
               <a href="#" class="popover-button-toggle"><?php print t('Find colleague'); ?></a>
 
@@ -99,34 +104,33 @@
         </div>
 
         <?php if (user_is_logged_in()): ?>
-          <!-- Begin - main navigation -->
-          <nav class="main-navigation-wrapper">
-            <section class="main-navigation-bar">
-              <div class="row">
 
-                <!-- Begin - content -->
-                <div class="col-md-4">
-                  <div class="main-navigation-form">
-                    <?php print render($main_navigation_search); ?>
-                  </div>
-                </div>
-                <!-- End - content -->
-
-                <!-- Begin - content -->
-                <?php if (isset($main_navigation_secondary)): ?>
-                  <div class="col-md-8 main-navigation-right">
-
-                    <!-- Begin - navigation -->
-                    <?php print render($main_navigation_secondary); ?>
-                    <!-- End - navigation -->
-
-                  </div>
-                <?php endif; ?>
-                <!-- End - content -->
-
-              </div>
-            </section>
-          </nav>
+<!--         <nav class="main-navigation-wrapper">-->
+<!--            <section class="main-navigation-bar">-->
+<!--              <div class="row">-->
+<!---->
+<!--                -->
+<!--                <div class="col-md-4">-->
+<!--                  <div class="main-navigation-form">-->
+<!--                    --><?php ///*print render($main_navigation_search); */?>
+<!--                  </div>-->
+<!--                </div>-->
+<!--                -->
+<!--                -->
+<!--                --><?php ///*if (isset($main_navigation_secondary)): */?>
+<!--                  <div class="col-md-8 main-navigation-right">-->
+<!---->
+<!--                    -->
+<!--                    --><?php ///*print render($main_navigation_secondary); */?>
+<!--                    -->
+<!---->
+<!--                  </div>-->
+<!--                --><?php ///*endif; */?>
+<!--               -->
+<!---->
+<!--              </div>-->
+<!--            </section>-->
+<!--          </nav>-->
           <!-- End - main navigation -->
         <?php endif; ?>
 

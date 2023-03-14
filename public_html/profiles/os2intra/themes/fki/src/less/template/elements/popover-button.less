@@ -31,11 +31,11 @@
 // Mobile
 @media @media-query-mobile {
 
-  .my-profile-btn-wrapper, .user-group-btn-wrapper {
+  .my-profile-btn-wrapper, .user-group-btn-wrapper, .search-btn-wrapper {
     display: block;
     margin-bottom: 20px;
 
-    .my-profile-btn, .user-group-btn {
+    .my-profile-btn, .user-group-btn, .search-btn {
       display: block;
       width: 100%;
       text-align: center;
@@ -89,11 +89,31 @@
 // Tablet
 @media @media-query-tablet {
 
+  .search-btn-wrapper {
+    position: absolute;
+    right: -23px;
+    top: 40px;
+    z-index: 2004;
+
+    .search-btn {
+      padding: 5px 15px;
+      background-color: #00335b;
+      color: white;
+      border-radius: 4px;
+      transform: rotate(90deg);
+      display: block;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+
+    }
+  }
+
   .user-group-btn-wrapper {
     position: absolute;
     right: -51px;
     top: 310px;
-    z-index: 2005;
+    z-index: 2004;
 
     .user-group-btn {
       display: block;
@@ -113,7 +133,7 @@
       position: absolute;
       right: -41px;
       top: 441px;
-      z-index: 2005;
+      z-index: 2004;
 
       .my-profile-btn {
         display: block;
