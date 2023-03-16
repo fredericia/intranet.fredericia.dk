@@ -67,6 +67,10 @@
     </nav>
     <!-- End - simple navigation -->
 
+    <div class="banner-outer">
+      <div class="banner-inner"></div>
+    </div>
+
     <!-- Begin - content -->
     <div class="content">
       <div class="container container-fluid-lg-only container-fluid-md-only">
