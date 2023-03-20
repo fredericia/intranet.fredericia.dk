@@ -293,12 +293,12 @@ function _theme_settings_form(&$form, $form_state) {
 
 
 
-  $form['options']['layout'] = array(
+  $form['options']['top_banner'] = array(
     '#type' => 'fieldset',
     '#title' => t('Top banner'),
   );
 
-  $form['options']['layout']['banner_image'] = array(
+  $form['options']['top_banner']['banner_image'] = array(
     '#type' => 'managed_file',
     '#title' => t('Banner Billede'),
     '#upload_location' => 'public://',
