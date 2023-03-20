@@ -291,23 +291,6 @@ function _theme_settings_form(&$form, $form_state) {
 |
 */
 
-  $form['options']['banner'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Banner'),
-  );
-
-  $form['options']['banner']['banner_img'] = array(
-    '#type' => 'managed_file',
-    '#title' => t('Banner Billede'),
-    '#upload_location' => 'public://',
-    'default_value' => theme_get_setting('banner_img'),
-    '#description' => t('Upload banner billede'),
-    '#required' => false,
-    '#upload_validators' => array(
-      'file_validate_extensions' => array('gif png jpg jpeg'),
-    ),
-  );
-
 
 
   /*
