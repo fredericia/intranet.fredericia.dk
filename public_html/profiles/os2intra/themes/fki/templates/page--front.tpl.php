@@ -36,7 +36,7 @@
       <!-- Dine favoritter / Favorites -->
 
       <div class="favorites-wrapper">
-        <a class="favorites-link" href="/content/dine-favoritter"><i class="fa fa-heart" aria-hidden="true"><i/>Dine favoritter</a>
+        <a class="favorites-link" href="/content/dine-favoritter"><i class="fa fa-heart" aria-hidden="true"></i>Dine favoritter</a>
       </div>
 
     </div>
