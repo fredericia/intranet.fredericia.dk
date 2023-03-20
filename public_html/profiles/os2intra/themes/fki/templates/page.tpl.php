@@ -7,6 +7,12 @@
     <!-- Begin - inner wrapper -->
     <div class="sidebar-inner-wrapper">
 
+      <!-- Dine favoritter / Favorites -->
+
+      <div class="favorites-wrapper">
+        <a class="favorites-link" href="/content/dine-favoritter"><i class="fa fa-heart" aria-hidden="true"><i/>Dine favoritter</a>
+      </div>
+
       <!-- Begin - logo -->
       <div class="sidebar-logo">
         <a href="<?php print $front_page; ?>" class="sidebar-logo-link">
@@ -30,6 +36,12 @@
           <!-- End - navigation -->
         <?php endif; ?>
 
+      </div>
+
+      <!-- Dine favoritter / Favorites -->
+
+      <div class="favorites-wrapper">
+        <a class="favorites-link" href="/content/dine-favoritter"><i class="fa fa-heart" aria-hidden="true"><i/>Dine favoritter</a>
       </div>
 
     </div>

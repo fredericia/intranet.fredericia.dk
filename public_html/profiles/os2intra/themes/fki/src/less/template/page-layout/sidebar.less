@@ -30,6 +30,43 @@
     min-height: 100%;
     background-repeat: no-repeat;
     background-position: bottom 20px center;
+    display: flex;
+    flex-direction: column;
+
+    .favorites-wrapper {
+      width: 100%;
+      flex-grow: 1;
+      display: flex;
+      align-items: flex-end;
+
+      .favorites-link {
+        color: white;
+        width: 100%;
+        min-height: 45px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        border-top: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        text-decoration: none;
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+          background-color: rgba(255,255,255,0.03);
+        }
+
+        .fa-heart {
+          transition: all 0.25s ease-in-out;
+          color: #8b9eb8;
+          margin-right: 5px;
+        }
+
+        &:hover .fa-heart {
+          color: #ed1d24;
+        }
+      }
+
+    }
   }
 
 
