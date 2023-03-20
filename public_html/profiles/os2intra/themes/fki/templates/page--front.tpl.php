@@ -67,8 +67,10 @@
     </nav>
     <!-- End - simple navigation -->
 
+    <?php $image_url = file_create_url(theme_get_setting('banner_image')); ?>
+
     <div class="banner-outer">
-      <div class="banner-inner"></div>
+      <div class="banner-inner" style="background-image: url('<?php $image_url ?>')"></div>
     </div>
 
     <!-- Begin - content -->

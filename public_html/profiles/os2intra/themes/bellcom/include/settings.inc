@@ -26,6 +26,7 @@ function _theme_settings_form(&$form, $form_state) {
     '#title' => t('Sideopsætning'),
   );
 
+
   // Top bar.
   $form['options']['layout']['top_bar'] = array(
     '#type' => 'fieldset',
@@ -279,6 +280,34 @@ function _theme_settings_form(&$form, $form_state) {
     '#title' => t('Vis links til sociale tjenester'),
     '#default_value' => theme_get_setting('footer_show_social_links'),
     '#description' => t("Skal links til sociale tjenester vises i bunden af siden?"),
+  );
+
+  /*
+|--------------------------------------------------------------------------
+| Top banner
+|--------------------------------------------------------------------------
+|
+| Sets all necessary options to save data.
+|
+*/
+
+
+
+  $form['options']['layout'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Top banner'),
+  );
+
+  $form['options']['layout']['banner_image'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Banner Billede'),
+    '#upload_location' => 'public://',
+    'default_value' => theme_get_setting('banner_image'),
+    '#description' => t('Upload banner billede'),
+    '#required' => false,
+    '#upload_validators' => array(
+      'file_validate_extensions' => array('gif png jpg jpeg'),
+    ),
   );
 
   /*
