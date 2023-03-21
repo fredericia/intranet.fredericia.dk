@@ -1,26 +1,6 @@
 <?php if ($view_mode == 'teaser'): ?>
   <!-- node--teaser.tpl.php -->
 
-<nav class="main-navigation-wrapper">
-              <section class="main-navigation-bar">
-                <div class="row">
-
-
-                  <?php if (isset($main_navigation_secondary)): ?>
-                    <div class="col-md-12 main-navigation-right">
-
-
-                      <?php print render($main_navigation_secondary); ?>
-
-
-                    </div>
-                  <?php endif; ?>
-
-
-                </div>
-              </section>
-            </nav>
-
   <!-- Begin - teaser -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-teaser os2-box os2-box-small-spacing"<?php print $attributes; ?>>
     <div class="table">
