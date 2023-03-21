@@ -342,7 +342,27 @@ function fki_theme(&$existing, $type, $theme, $path) {
  * Implements template_preprocess_taxonomy_term().
  */
 function fki_preprocess_taxonomy_term(&$variables) {
-  $term = $variables['term'];
+  // Adding redirect for os2web_base_tax_site_structure, if term is only related
+  // with one node, has empty body and no children.
+  if ($variables['vocabulary_machine_name'] == 'os2web_base_tax_site_structure'
+    && empty(trim($variables['description']))) {
+
+    if (count(taxonomy_get_children($variables['tid'])) === 0) {
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'os2intra_base_page')
+        ->propertyCondition('status', NODE_PUBLISHED)
+        ->fieldCondition('field_os2intra_base_structure', 'tid', $variables['tid']);
+
+      $result = $query->execute();
+      if (isset($result['node'])) {
+        $related_nids = array_keys($result['node']);
+        if (count($related_nids) == 1) {
+          drupal_goto('node/' . array_pop($related_nids));
+        }
+      }
+    }
+  }
 
   // Add taxonomy-term--view_mode.tpl.php suggestions.
   $variables['theme_hook_suggestions'][] = 'taxonomy_term__' . $variables['view_mode'];
