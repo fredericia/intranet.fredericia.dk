@@ -100,9 +100,6 @@
               </div>
             </div>
           <div class="user-group-btn-wrapper">
-            <?php if (isset($main_navigation_secondary)): ?>
-              <?php print render($main_navigation_secondary); ?>
-              <?php endif; ?>
             <a href="/user-group" class="user-group-btn">Min afdeling</a>
           </div>
             <div class="my-profile-btn-wrapper">
