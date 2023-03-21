@@ -19,25 +19,6 @@
   ?>
   <!-- node.tpl.php -->
   <!-- Begin - full node -->
-  <nav class="main-navigation-wrapper">
-    <section class="main-navigation-bar">
-      <div class="row">
-
-
-        <?php if (isset($main_navigation_secondary)): ?>
-          <div class="col-md-12 main-navigation-right">
-
-
-            <?php print render($main_navigation_secondary); ?>
-
-
-          </div>
-        <?php endif; ?>
-
-
-      </div>
-    </section>
-  </nav>
 
 
   <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-full"<?php print $attributes; ?>>

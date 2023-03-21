@@ -99,7 +99,22 @@
                 <?php print render($find_colleague_block['content']); ?>
               </div>
             </div>
+          <?php
+            $tree = menu_tree_all_data('user-menu');
+            $menu_tree = array();
+
+            foreach ($tree as $item) {
+              if ($item['user-menu'] == 'user-menu' && $item['plid'] == 0 && count($item['below']) > 0) {
+                $menu_tree[] = $item;
+                break;
+              }
+            }
+
+            $output = menu_tree_output($menu_tree);
+
+            ?>
           <div class="user-group-btn-wrapper">
+            <?php print render($output); ?>
             <a href="/user-group" class="user-group-btn">Min afdeling</a>
           </div>
             <div class="my-profile-btn-wrapper">
