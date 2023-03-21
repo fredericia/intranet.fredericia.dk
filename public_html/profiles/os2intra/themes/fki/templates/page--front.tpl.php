@@ -100,12 +100,12 @@
               </div>
             </div>
           <div class="user-group-btn-wrapper">
+            <button class="user-group-btn">Min afdeling</button>
             <?php if (isset($main_navigation_secondary)): ?>
             <div class="usergroup-dropdown">
               <?php print render($main_navigation_secondary); ?>
             </div>
             <?php endif; ?>
-            <button class="user-group-btn">Min afdeling</button>
           </div>
             <div class="my-profile-btn-wrapper">
               <a href="/user" class="my-profile-btn">Min profil</a>
@@ -206,3 +206,18 @@
 
 </div>
 <!-- End - outer wrapper -->
+
+<script type="text/javascript">
+
+  const groupBtn = document.querySelector('.user-group-btn');
+  const menuElement = document.querySelector('.usergroup-dropdown');
+
+  groupBtn.addEventListener('click', => () {
+    if (menuElement.style.display == 'none') {
+      menuElement.style.display = 'block'
+    } else {
+      menuElement.style.display = 'none'
+    }
+  })
+
+</script>
