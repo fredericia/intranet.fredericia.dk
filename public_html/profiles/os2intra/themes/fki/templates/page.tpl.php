@@ -95,8 +95,8 @@
                 <?php print render($find_colleague_block['content']); ?>
               </div>
             </div>
-            <div class="user-group-btn-wrapper">
-              <button class="user-group-btn">Min afdeling</button>
+            <div class="user-group-btn-wrapper" style="right: -52px;">
+              <button class="user-group-btn" style="line-height: 1.2;">Min afdeling</button>
               <?php if (isset($main_navigation_secondary)): ?>
                 <div class="usergroup-dropdown">
                   <?php print render($main_navigation_secondary); ?>

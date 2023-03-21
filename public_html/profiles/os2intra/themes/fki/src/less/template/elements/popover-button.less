@@ -20,43 +20,6 @@
 // Styling
 // --------------------------------------------------
 
-.usergroup-dropdown {
-  position: absolute;
-  right: 100px;
-  top: -50px;
-  background-color: #00335b;
-  border-radius: 5px;
-  display: none;
-
-  .menu {
-    .main-navigation-list {
-      padding: 20px;
-
-      .main-navigation-list-dropdown {
-        list-style: none;
-        a{
-          color: white !important;
-        }
-        .main-navigation-list-dropdown-menu {
-          .main-navigation-list-link {
-            list-style: none;
-            color: white;
-
-            a {
-              color: white !important;
-            }
-
-            a:hover {
-              text-decoration: underline;
-              color: white !important;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 
 // --------------------------------------------------
 // Variants
@@ -68,6 +31,11 @@
 
 // Mobile
 @media @media-query-mobile {
+
+  .usergroup-dropdown {
+    position: static;
+    margin-top: 20px;
+  }
 
   .my-profile-btn-wrapper, .user-group-btn-wrapper, .search-btn-wrapper {
     display: block;
@@ -126,6 +94,43 @@
 
 // Tablet
 @media @media-query-tablet {
+
+  .usergroup-dropdown {
+    position: absolute;
+    right: 100px;
+    top: -50px;
+    background-color: #00335b;
+    border-radius: 5px;
+    display: none;
+
+    .menu {
+      .main-navigation-list {
+        padding: 20px;
+
+        .main-navigation-list-dropdown {
+          list-style: none;
+          a{
+            color: white !important;
+          }
+          .main-navigation-list-dropdown-menu {
+            .main-navigation-list-link {
+              list-style: none;
+              color: white;
+
+              a {
+                color: white !important;
+              }
+
+              a:hover {
+                text-decoration: underline;
+                color: white !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
   .search-btn-wrapper {
     position: absolute;
