@@ -105,7 +105,7 @@
               <?php print render($main_navigation_secondary); ?>
             </div>
             <?php endif; ?>
-            <a href="/user-group" class="user-group-btn">Min afdeling</a>
+            <button class="user-group-btn">Min afdeling</button>
           </div>
             <div class="my-profile-btn-wrapper">
               <a href="/user" class="my-profile-btn">Min profil</a>
