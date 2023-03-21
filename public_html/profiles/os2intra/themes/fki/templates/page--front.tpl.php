@@ -209,15 +209,17 @@
 
 <script type="text/javascript">
 
-  const groupBtn = document.querySelector('.user-group-btn');
-  const menuElement = document.querySelector('.usergroup-dropdown');
+  document.addEventListener('DOMContentLoaded', () => {
+    const groupBtn = document.querySelector('.user-group-btn');
+    const menuElement = document.querySelector('.usergroup-dropdown');
 
-  groupBtn.addEventListener('click', => () {
-    if (menuElement.style.display == 'none') {
-      menuElement.style.display = 'block'
-    } else {
-      menuElement.style.display = 'none'
-    }
-  })
+    groupBtn.addEventListener('click', (event) => {
+      if (menuElement.style.display == 'none') {
+        menuElement.style.display = 'block';
+      } else {
+        menuElement.style.display = 'none';
+      }
+    });
+  });
 
 </script>
