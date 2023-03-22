@@ -494,16 +494,3 @@ function fki_main_navigation_search_form($variables) {
 }
 
 
-function fki_form_system_theme_settings_alter(&$form, &$form_state) {
-  // Add a new field to the theme settings form for uploading an image.
-  $form['fki_image'] = array(
-    '#type' => 'managed_file',
-    '#title' => t('Banner Billede'),
-    '#description' => t('Upload et billede til banneret.'),
-    '#upload_location' => 'public://fki/images/',
-    '#default_value' => theme_get_setting('fki_image'),
-    '#upload_validators' => array(
-      'file_validate_extensions' => array('gif png jpg jpeg'),
-    ),
-  );
-}

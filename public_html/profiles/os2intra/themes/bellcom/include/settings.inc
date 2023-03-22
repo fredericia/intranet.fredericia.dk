@@ -26,6 +26,18 @@ function _theme_settings_form(&$form, $form_state) {
     '#title' => t('Sideopsætning'),
   );
 
+  // Add a new field to the theme settings form for uploading an image.
+  $form['options']['fki_image'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Banner Billede'),
+    '#description' => t('Upload et billede til banneret.'),
+    '#upload_location' => 'public://fki/images/',
+    '#default_value' => theme_get_setting('fki_image'),
+    '#upload_validators' => array(
+      'file_validate_extensions' => array('gif png jpg jpeg'),
+    ),
+  );
+
 
   // Top bar.
   $form['options']['layout']['top_bar'] = array(
