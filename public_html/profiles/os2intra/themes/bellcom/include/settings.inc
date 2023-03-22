@@ -27,11 +27,15 @@ function _theme_settings_form(&$form, $form_state) {
   );
 
   // Add a new field to the theme settings form for uploading an image.
+
+  $subtheme_path = drupal_get_path('theme', 'fki');
+  $image_upload_path = 'public://' . $subtheme_path . '/dist/img/';
+
   $form['options']['fki_image'] = array(
     '#type' => 'managed_file',
     '#title' => t('Banner Billede'),
     '#description' => t('Upload et billede til banneret.'),
-    '#upload_location' => 'public://',
+    '#upload_location' => $image_upload_path,
     '#default_value' => theme_get_setting('fki_image'),
     '#upload_validators' => array(
       'file_validate_extensions' => array('gif png jpg jpeg'),
