@@ -345,7 +345,7 @@ function fki_preprocess_taxonomy_term(&$variables) {
   // Adding redirect for os2web_base_tax_site_structure, if term is only related
   // with one node, has empty body and no children.
   if ($variables['vocabulary_machine_name'] == 'os2web_base_tax_site_structure'
-    && empty(trim($variables['description']))) {
+    && $variables['view_mode'] == 'full' && empty(trim($variables['description']))) {
 
     if (count(taxonomy_get_children($variables['tid'])) === 0) {
       $query = new EntityFieldQuery();
