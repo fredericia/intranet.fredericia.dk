@@ -1,0 +1,6 @@
+name = OS2Intra Homebox
+description = Custom homebox block with rich text
+dependencies[] = block
+dependencies[] = homebox
+package = OS2intra
+core = 7.x
