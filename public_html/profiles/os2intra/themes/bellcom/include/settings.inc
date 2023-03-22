@@ -31,7 +31,7 @@ function _theme_settings_form(&$form, $form_state) {
     '#type' => 'managed_file',
     '#title' => t('Banner Billede'),
     '#description' => t('Upload et billede til banneret.'),
-    '#upload_location' => 'public://fki/images/',
+    '#upload_location' => 'public://fki/',
     '#default_value' => theme_get_setting('fki_image'),
     '#upload_validators' => array(
       'file_validate_extensions' => array('gif png jpg jpeg'),
