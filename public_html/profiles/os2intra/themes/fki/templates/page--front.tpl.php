@@ -83,7 +83,7 @@
     ?>
 
     <div class="banner-outer">
-      <div class="banner-inner" style="background-image: url('<?php print $image_url; ?>')"></div>
+      <div class="banner-inner" style="background-image: url('<?php print $image_uri; ?>')"></div>
     </div>
 
     <!-- Begin - content -->
