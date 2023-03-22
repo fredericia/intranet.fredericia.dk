@@ -74,10 +74,16 @@
     </nav>
     <!-- End - simple navigation -->
 
+    <?php
+    // Get the image URI from theme settings
+    $image_uri = theme_get_setting('fki_image');
 
+    // Create the image URL from the image URI
+    $image_url = file_create_url($image_uri);
+    ?>
 
     <div class="banner-outer">
-      <div class="banner-inner"></div>
+      <div class="banner-inner" style="background-image: url('<?php print $image_url; ?>')"></div>
     </div>
 
     <!-- Begin - content -->
