@@ -75,11 +75,14 @@
     <!-- End - simple navigation -->
 
     <?php
-    // Get the image URI from theme settings
-    $image_uri = theme_get_setting('fki_image');
+    // Get the file ID from theme settings
+    $file_id = theme_get_setting('fki_image');
 
-    // Create the image URL from the image URI
-    $image_url = file_create_url($image_uri);
+    // Load the file object from the file ID
+    $file = file_load($file_id);
+
+    // Create the image URL from the file URI
+    $image_url = file_create_url($file->uri);
     ?>
 
     <div class="banner-outer">
