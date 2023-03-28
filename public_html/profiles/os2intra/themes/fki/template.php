@@ -487,7 +487,7 @@ function fki_main_navigation_search_form($variables) {
   $output = '<div class="input-group">';
   $output .= $variables['element']['#children'];
   $output .= '<span class="input-group-btn">';
-  $output .= '<button type="submit" class="btn btn-secondary"><span class="icon"></span></button>';
+  $output .= '<button type="submit" class="btn btn-secondary"><span class="icon fa fa-search"></span></button>';
   $output .= '</span>';
   $output .= '</div>';
   return $output;
