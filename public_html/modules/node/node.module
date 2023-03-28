@@ -2833,12 +2833,12 @@ function node_form_search_form_alter(&$form, $form_state) {
       '#size' => 30,
       '#maxlength' => 255,
     );
-    $form['advanced']['keywords']['negative'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Containing none of the words'),
-      '#size' => 30,
-      '#maxlength' => 255,
-    );
+//    $form['advanced']['keywords']['negative'] = array(
+//      '#type' => 'textfield',
+//      '#title' => t('Containing none of the words'),
+//      '#size' => 30,
+//      '#maxlength' => 255,
+//    );
 
     // Node types:
     $types = array_map('check_plain', node_type_get_names());
