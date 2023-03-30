@@ -370,7 +370,7 @@ function node_basket_save_to_basket($id = NULL){
   else {
     return array (
       'err' => TRUE,
-      'msg' => t('The page has already been saved into basket. ') . l(t('See here'), drupal_get_path_alias('node/'. $basket_nid))
+      'msg' => t('The page has already been saved into basket. ') . l(t('See here'), drupal_get_path_alias('content/dine-favoritter'))
     );
   }
 }
