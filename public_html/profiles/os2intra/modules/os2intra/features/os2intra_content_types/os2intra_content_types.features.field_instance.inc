@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * os2intra_content_types.features.field_instance.inc
@@ -397,8 +398,11 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'photoswipe',
         'settings' => array(
+          'photoswipe_caption' => '',
           'photoswipe_image_style' => '',
           'photoswipe_node_style' => '4_col_image_-_520x220',
+          'photoswipe_node_style_first' => '',
+          'photoswipe_view_mode' => '',
         ),
         'type' => 'photoswipe',
         'weight' => 2,
@@ -675,6 +679,7 @@ function os2intra_content_types_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -853,6 +858,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'medium',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -879,6 +885,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -893,6 +900,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'short',
           'fromto' => 'value',
           'multiple_from' => '',
@@ -949,6 +957,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -976,6 +985,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -1138,6 +1148,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -1567,6 +1578,7 @@ function os2intra_content_types_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'default',
         ),
         'type' => 'entityreference_entity_view',
@@ -1720,6 +1732,7 @@ function os2intra_content_types_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'list',
         ),
         'type' => 'entityreference_entity_view',
@@ -1884,6 +1897,7 @@ function os2intra_content_types_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
@@ -2014,6 +2028,7 @@ function os2intra_content_types_field_default_field_instances() {
           'delete' => 'Delete',
           'description' => 1,
           'edit' => 'Edit',
+          'translate' => 'Oversæt',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -2174,6 +2189,7 @@ function os2intra_content_types_field_default_field_instances() {
           'delete' => 'Slet',
           'description' => TRUE,
           'edit' => 'Redigér',
+          'translate' => 'Oversæt',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -2234,6 +2250,7 @@ function os2intra_content_types_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 1,
+          'use_content_language' => TRUE,
           'view_mode' => 'list',
         ),
         'type' => 'entityreference_entity_view',
@@ -2301,6 +2318,7 @@ function os2intra_content_types_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 1,
+          'use_content_language' => TRUE,
           'view_mode' => 'list',
         ),
         'type' => 'entityreference_entity_view',
@@ -2714,6 +2732,7 @@ function os2intra_content_types_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'includeable',
         ),
         'type' => 'entityreference_entity_view',
@@ -3087,9 +3106,209 @@ function os2intra_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-os2intra_base_page-field_os2intra_page_info_header'.
+  $field_instances['node-os2intra_base_page-field_os2intra_page_info_header'] = array(
+    'bundle' => 'os2intra_base_page',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 13,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2intra_page_info_header',
+    'label' => 'Sideinfo overskrift',
+    'readmore_behaviour' => 'default',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'fuld_html' => 'fuld_html',
+          'indhold' => 'indhold',
+          'kommentar' => 'kommentar',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => -6,
+            ),
+            'fuld_html' => array(
+              'weight' => -9,
+            ),
+            'indhold' => array(
+              'weight' => -10,
+            ),
+            'kommentar' => array(
+              'weight' => -8,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-os2intra_base_page-field_os2intra_page_info_text'.
+  $field_instances['node-os2intra_base_page-field_os2intra_page_info_text'] = array(
+    'bundle' => 'os2intra_base_page',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 14,
+      ),
+      'drupalgap' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'includeable' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_os2intra_page_info_text',
+    'label' => 'Sideinfo tekst',
+    'readmore_behaviour' => 'default',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'emails' => 'emails',
+          'fuld_html' => 'fuld_html',
+          'indhold' => 'indhold',
+          'kommentar' => 'kommentar',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'emails' => array(
+              'weight' => -6,
+            ),
+            'fuld_html' => array(
+              'weight' => -9,
+            ),
+            'indhold' => array(
+              'weight' => -10,
+            ),
+            'kommentar' => array(
+              'weight' => -8,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+          ),
+        ),
+      ),
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'linkit' => array(
+        'button_text' => 'Søg',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-os2intra_base_page-field_os2intra_paragraph'.
   $field_instances['node-os2intra_base_page-field_os2intra_paragraph'] = array(
     'bundle' => 'os2intra_base_page',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -3129,6 +3348,7 @@ function os2intra_content_types_field_default_field_instances() {
     'fences_wrapper' => 'div_div_div',
     'field_name' => 'field_os2intra_paragraph',
     'label' => 'Afsnit',
+    'readmore_behaviour' => 'default',
     'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
@@ -3262,7 +3482,8 @@ function os2intra_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_os2web_base_field_edi_tags',
     'label' => 'Stikord',
-    'required' => 1,
+    'readmore_behaviour' => 'default',
+    'required' => 0,
     'settings' => array(
       'custom_add_another' => '',
       'custom_remove' => '',
@@ -3685,6 +3906,7 @@ function os2intra_content_types_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'default',
         ),
         'type' => 'entityreference_entity_view',
@@ -3751,6 +3973,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -3817,6 +4040,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -4049,6 +4273,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -4113,6 +4338,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -4181,6 +4407,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -4459,6 +4686,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -4480,6 +4708,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -4531,7 +4760,9 @@ function os2intra_content_types_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 8,
       ),
@@ -4550,7 +4781,9 @@ function os2intra_content_types_field_default_field_instances() {
       'list' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 1,
       ),
@@ -4575,6 +4808,7 @@ function os2intra_content_types_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'convert_aliases' => 0,
       'custom_add_another' => '',
       'custom_remove' => '',
       'display' => array(
@@ -5128,10 +5362,11 @@ function os2intra_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'default',
         ),
         'type' => 'entityreference_entity_view',
@@ -5419,7 +5654,9 @@ function os2intra_content_types_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 1,
       ),
@@ -5463,6 +5700,7 @@ function os2intra_content_types_field_default_field_instances() {
         'target' => 'default',
         'title' => '',
       ),
+      'convert_aliases' => 0,
       'custom_add_another' => '',
       'custom_remove' => '',
       'display' => array(
@@ -6419,6 +6657,7 @@ function os2intra_content_types_field_default_field_instances() {
         'module' => 'entityreference',
         'settings' => array(
           'links' => 0,
+          'use_content_language' => TRUE,
           'view_mode' => 'default',
         ),
         'type' => 'entityreference_entity_view',
@@ -6654,6 +6893,7 @@ function os2intra_content_types_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -6952,6 +7192,8 @@ function os2intra_content_types_field_default_field_instances() {
   t('Placering');
   t('Relaterede sider');
   t('Selvbetjening');
+  t('Sideinfo overskrift');
+  t('Sideinfo tekst');
   t('Skjul automatisk relaterede links');
   t('Spotbillede');
   t('Spotbokse');
