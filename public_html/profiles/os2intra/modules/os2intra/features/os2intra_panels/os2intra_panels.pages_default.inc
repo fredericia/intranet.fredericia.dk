@@ -1594,7 +1594,7 @@ function os2intra_panels_default_page_manager_handlers() {
   $pane->panel = 'left-content';
   $pane->type = 'node_content';
   $pane->subtype = 'node_content';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'build_mode' => 'full',
