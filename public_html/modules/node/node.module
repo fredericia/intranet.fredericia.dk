@@ -2843,13 +2843,13 @@ function node_form_search_form_alter(&$form, $form_state) {
     // Node types:
     $types = array_map('check_plain', node_type_get_names());
     $exclude = array('os2intra_canteen_menu', 'it_vejledning', 'node_basket', 'os2intra_referat', 'os2web_base_selfservice_link', 'webform', 'spotbox', 'os2intra_message_notification');
-    $types = array_diff($types, $exclude);
+    $typesFormatted = array_diff($types, $exclude);
     $form['advanced']['type'] = array(
       '#type' => 'checkboxes',
       '#title' => t('Only of the type(s)'),
       '#prefix' => '<div class="criterion">',
       '#suffix' => '</div>',
-      '#options' => $types,
+      '#options' => $typesFormatted,
     );
     $form['advanced']['submit'] = array(
       '#type' => 'submit',
