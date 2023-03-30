@@ -1620,6 +1620,35 @@ function os2intra_panels_default_page_manager_handlers() {
   $display->content['new-e48c24a5-be4b-4d7e-b3ab-1d89fba1f0b9'] = $pane;
   $display->panels['left-content'][0] = 'new-e48c24a5-be4b-4d7e-b3ab-1d89fba1f0b9';
   $pane = new stdClass();
+  $pane->pid = 'new-879f5e58-9616-4df3-a0b7-3eb941b196f8';
+  $pane->panel = 'left-content';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'node_basket-my_basket';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => array(
+      0 => 'context_user_1',
+    ),
+    'items_per_page' => '10',
+    'override_title' => 0,
+    'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'use_pager' => 0,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '879f5e58-9616-4df3-a0b7-3eb941b196f8';
+  $display->content['new-879f5e58-9616-4df3-a0b7-3eb941b196f8'] = $pane;
+  $display->panels['left-content'][1] = 'new-879f5e58-9616-4df3-a0b7-3eb941b196f8';
+  $pane = new stdClass();
   $pane->pid = 'new-e74b73fd-cc12-4955-8afa-96fa84bc2a89';
   $pane->panel = 'right-content';
   $pane->type = 'views';

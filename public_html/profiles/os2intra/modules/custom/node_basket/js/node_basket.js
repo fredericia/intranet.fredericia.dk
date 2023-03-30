@@ -19,7 +19,7 @@
               }
               // Error
               else {
-                bs3Alert.push(Drupal.t('An error occured'), Drupal.t('Try to refresh the page and try again.'), 'danger');
+                bs3Alert.push(Drupal.t('Warning!'), data.msg, 'warning');
               }
             });
           });

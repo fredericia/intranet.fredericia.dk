@@ -195,9 +195,9 @@ function node_basket_basket($action, $arg1, $arg2 = NULL){
   switch($action){
     case 'add':
       $return['msg'] = 'failed to save node to basket';
-        if($msg = node_basket_save_to_basket($arg1)){
-          $return['err'] = FALSE;
-          $return['msg'] = $msg;
+        if($status = node_basket_save_to_basket($arg1)){
+          $return['err'] = $status['err'];
+          $return['msg'] = $status['msg'];
         }
       break;
 
@@ -362,7 +362,16 @@ function node_basket_save_to_basket($id = NULL){
     $node->field_node_basket_references[LANGUAGE_NONE][]['target_id'] = $id;
 
     node_save($node);
-    return t('saved to basket');
+    return array (
+      'err' => FALSE,
+      'msg' => t('saved to basket'),
+    );
+  }
+  else {
+    return array (
+      'err' => TRUE,
+      'msg' => t('The page has already been saved into basket. ') . l(t('See here'), drupal_get_path_alias('node/'. $basket_nid))
+    );
   }
 }
 
