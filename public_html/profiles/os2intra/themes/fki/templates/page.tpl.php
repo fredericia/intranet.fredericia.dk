@@ -33,10 +33,13 @@
       </div>
 
       <!-- Dine favoritter / Favorites -->
+      <?php if (user_is_logged_in()): ?>
 
-      <div class="favorites-wrapper">
-        <a class="favorites-link" href="/content/dine-favoritter"><i class="fa fa-heart" aria-hidden="true"></i>Dine favoritter</a>
-      </div>
+        <div class="favorites-wrapper">
+          <a class="favorites-link" href="/content/dine-favoritter"><i class="fa fa-heart" aria-hidden="true"></i>Dine favoritter</a>
+        </div>
+
+      <?php endif; ?>
 
     </div>
     <!-- End - inner wrapper -->
