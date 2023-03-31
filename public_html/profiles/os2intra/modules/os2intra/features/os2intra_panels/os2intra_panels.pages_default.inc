@@ -1631,9 +1631,9 @@ function os2intra_panels_default_page_manager_handlers() {
       0 => 'context_user_1',
     ),
     'items_per_page' => '10',
-    'override_title' => 0,
+    'override_title' => 1,
     'override_title_heading' => 'h2',
-    'override_title_text' => '',
+    'override_title_text' => 'Dine favoritter',
     'pager_id' => '0',
     'use_pager' => 0,
   );
@@ -1653,7 +1653,7 @@ function os2intra_panels_default_page_manager_handlers() {
   $pane->panel = 'right-content';
   $pane->type = 'views';
   $pane->subtype = 'node_basket';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'args' => '',
@@ -1688,7 +1688,7 @@ function os2intra_panels_default_page_manager_handlers() {
   $pane->panel = 'right-content';
   $pane->type = 'views';
   $pane->subtype = 'node_basket';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'args' => '',
@@ -1726,7 +1726,7 @@ function os2intra_panels_default_page_manager_handlers() {
   $pane->panel = 'right-content';
   $pane->type = 'views';
   $pane->subtype = 'node_basket';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'args' => '',

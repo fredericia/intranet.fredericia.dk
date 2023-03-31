@@ -14,7 +14,9 @@
         <?php print l($author_full_name, 'user/' . $node->uid, array('attributes' => array('class' => 'os2-node-includeable-heading-author-link'))); ?>
       </span>
       <?php endif ?>
-
+      <div class="remove_from_basket">
+        <a href="/node_basket/basket/remove/<?php print $node->nid ?>"><?php print t("Remove from basket")?></a>
+      </div>
     </div>
     <!-- End - heading -->
 
