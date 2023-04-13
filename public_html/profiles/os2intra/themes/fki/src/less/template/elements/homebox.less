@@ -47,12 +47,36 @@
               display: inline-block;
               width: 50%;
 
-              @media screen and (max-width: 992px) {
+              @media screen and (max-width: 1304px) {
                 max-width: 100%;
                 display: flex;
                 justify-content: center;
                 padding-right: 0;
+                width: 100%;
+                float: none;
               }
+
+              .field-content {
+                .img-responsive {
+                  height: 250px;
+                  width: 100%;
+                  object-fit: cover;
+
+                  @media only screen and (max-width: 1810px) {
+                    height: 300px;
+                  }
+                  @media only screen and (max-width: 1566px) {
+                    height: 350px;
+                  }
+
+                  @media only screen and (max-width: 1304px) {
+                    max-height: 400px;
+                  }
+
+
+                }
+              }
+
             }
             .views-field-title {
               font-size: 18px;
