@@ -3,9 +3,11 @@
 <div class="views-field views-field-wrapper">
 
   <div class="views-field-title-wrapper">
-    <?php print $fields['title']->content; ?>
+    <?php if (!empty($title)): ?>
+      <?php print $title ?>
+    <?php endif ?>
   </div>
-  
+
   <div class="views-field-body-wrapper">
     <?php print $fields['body']->content; ?>
   </div>
