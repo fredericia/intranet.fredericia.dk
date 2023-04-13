@@ -51,23 +51,10 @@
   </div>
 <?php endif; ?>
 
-  <?php if ($rows): ?>
+<?php if ($rows): ?>
+  <?php var_dump($rows) ?>
   <div class="view-content">
-    <?php foreach ($rows as $row): ?>
-      <div class="custom-view-row">
-        <div class="custom-view-image">
-          <?php print $row->field_os2intra_images; ?>
-        </div>
-        <div class="custom-title-body-wrapper">
-          <div class="custom-view-title">
-            <?php print $row->title; ?>
-          </div>
-          <div class="custom-view-body">
-            <?php print $row->body; ?>
-          </div>
-        </div>
-      </div>
-    <?php endforeach; ?>
+    <?php print $rows; ?>
   </div>
 <?php elseif ($empty): ?>
   <div class="view-empty">
