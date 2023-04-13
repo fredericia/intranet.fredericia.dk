@@ -1,8 +1,17 @@
-<div class="views-row">
-  <div class="views-field views-field-title">
-    {{ fields.title.content }}
+<div class="custom-view-block">
+  {% for row in rows %}
+  <div class="custom-view-row">
+    <div class="custom-view-image">
+      {{ row.content.field_os2intra_images }}
+    </div>
+    <div class="custom-view-text">
+      <div class="custom-view-title">
+        {{ row.content.title }}
+      </div>
+      <div class="custom-view-body">
+        {{ row.content.body }}
+      </div>
+    </div>
   </div>
-  <div class="views-field views-field-body">
-    {{ fields.body.content }}
-  </div>
+  {% endfor %}
 </div>
