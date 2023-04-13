@@ -56,14 +56,14 @@
     <?php foreach ($rows as $row): ?>
       <div class="custom-view-row">
         <div class="custom-view-image">
-          <?php print $row['field-os2intra-images']; ?>
+          <?php print $row->field_os2intra_images; ?>
         </div>
         <div class="custom-title-body-wrapper">
           <div class="custom-view-title">
-            <?php print $row['title']; ?>
+            <?php print $row->title; ?>
           </div>
           <div class="custom-view-body">
-            <?php print $row['body']; ?>
+            <?php print $row->body; ?>
           </div>
         </div>
       </div>
