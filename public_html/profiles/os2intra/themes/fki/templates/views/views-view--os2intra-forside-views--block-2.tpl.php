@@ -51,15 +51,11 @@
   </div>
 <?php endif; ?>
 
-  <?php if ($rows): ?>
+<?php if ($rows): ?>
   <div class="view-content">
-    <?php foreach ($rows as $id => $row): ?>
-      <?php print $row->field_os2intra_images; ?>
-      <div class="my-custom-wrapper">
-        <?php print $row->title; ?>
-        <?php print $row->body; ?>
-      </div>
-    <?php endforeach; ?>
+    <div class="test-wrapper">
+      <?php print $fields['title']->content; ?>
+    </div>
   </div>
 <?php elseif ($empty): ?>
   <div class="view-empty">
