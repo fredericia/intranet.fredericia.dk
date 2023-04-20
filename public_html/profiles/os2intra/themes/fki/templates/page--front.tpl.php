@@ -35,9 +35,13 @@
 
       <!-- Dine favoritter / Favorites -->
 
+      <?php if (user_is_logged_in()): ?>
+
       <div class="favorites-wrapper">
         <a class="favorites-link" href="/content/dine-favoritter"><i class="fa fa-heart" aria-hidden="true"></i>Dine favoritter</a>
       </div>
+
+      <?php endif; ?>
 
     </div>
     <!-- End - inner wrapper -->
@@ -74,10 +78,19 @@
     </nav>
     <!-- End - simple navigation -->
 
+    <?php
+    // Get the file ID from theme settings
+    $file_id = theme_get_setting('fki_image');
 
+    // Load the file object from the file ID
+    $file = file_load($file_id);
+
+    // Create the image URL from the file URI
+    $image_url = file_create_url($file->uri);
+    ?>
 
     <div class="banner-outer">
-      <div class="banner-inner"></div>
+      <div class="banner-inner" style="background-image: url('<?php print $image_url; ?>')"></div>
     </div>
 
     <!-- Begin - content -->
@@ -88,7 +101,7 @@
           <?php if (isset($find_colleague_block)): ?>
             <!-- Begin - find colleague -->
             <div class="search-btn-wrapper">
-              <a href="/search" class="search-btn">
+              <a href="/search/node" class="search-btn">
                 Søg <i class="fa fa-search"></i>
               </a>
             </div>

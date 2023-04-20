@@ -23,16 +23,16 @@
           <!-- End - external links -->
         <?php endif; ?>
 
-        <?php if (isset($content['field_node_basket_references']) && $basket_type == 'basket'): ?>
-          <!-- Begin - action buttons -->
-          <div class="os2-node-full-body-action-buttons">
-            <a href="/node_basket/basket/view/convert" class="btn btn-tertiary btn-sm">
-              <span class="icon fa fa-recycle"></span>
-              <?php print t('Convert to toolbox'); ?>
-            </a>
-          </div>
-          <!-- End - action buttons -->
-        <?php endif; ?>
+<!--        --><?php //if (isset($content['field_node_basket_references']) && $basket_type == 'basket'): ?>
+<!--          <!-- Begin - action buttons -->
+<!--          <div class="os2-node-full-body-action-buttons">-->
+<!--            <a href="/node_basket/basket/view/convert" class="btn btn-tertiary btn-sm">-->
+<!--              <span class="icon fa fa-recycle"></span>-->
+<!--              --><?php //print t('Convert to toolbox'); ?>
+<!--            </a>-->
+<!--          </div>-->
+<!--           End - action buttons -->
+<!--        --><?php //endif; ?>
 
       </div>
       <!-- End - body -->

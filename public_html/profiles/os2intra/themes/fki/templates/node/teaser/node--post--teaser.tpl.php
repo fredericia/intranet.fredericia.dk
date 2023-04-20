@@ -1,5 +1,5 @@
 <?php if ($view_mode == 'teaser'): ?>
-  <!-- node--teaser.tpl.php -->
+  <!-- node--post--teaser.tpl.php -->
   <!-- Begin - teaser -->
   <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-teaser os2-box os2-box-small-spacing"<?php print $attributes; ?>>
     <div class="table">
@@ -19,15 +19,29 @@
           </div>
         <?php endif; ?>
 
+        <!--        --><?php //if (isset($content['field_os2intra_images'])): ?>
+        <!--          <div class="table-cell os2-node-teaser-image-container">-->
+        <!---->
+        <!--            Begin - images -->
+        <!--            <div class="os2-node-teaser-image">-->
+        <!--              --><?php //print render($content['field_os2intra_images']); ?>
+        <!--            </div>-->
+        <!--            End - images ---->
+        <!--          </div>-->
+        <!--        --><?php //endif; ?>
+
         <?php if (isset($content['field_os2intra_images'])): ?>
           <div class="table-cell os2-node-teaser-image-container">
-
             <!-- Begin - images -->
             <div class="os2-node-teaser-image">
-              <?php print render($content['field_os2intra_images']); ?>
+              <?php
+              $first_image_item = field_get_items('node', $node, 'field_os2intra_images');
+              if (!empty($first_image_item)) {
+                print render($content['field_os2intra_images'][0]);
+              }
+              ?>
             </div>
             <!-- End - images -->
-
           </div>
         <?php endif; ?>
 
