@@ -14,11 +14,49 @@
 // Styling
 // --------------------------------------------------
 
+.view-os2intra-brugervisning {
+  .view-footer {
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      color: white;
+      background-color: #00335b;
+      padding: 8px 9px;
+      border-radius: 5px;
+
+    }
+  }
+}
+
+.btn {
+  .icon {
+    color: white !important;
+    opacity: 1 !important;
+  }
+}
+
 // Button
 .btn {
 
   &.btn-default {
     .mixin-btn-hover(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
+  }
+}
+
+.os2-node-includeable-heading {
+  .remove_from_basket {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    a {
+      color: white;
+      background-color: #00335b;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
   }
 }
 

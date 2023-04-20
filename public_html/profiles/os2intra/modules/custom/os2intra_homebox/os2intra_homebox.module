@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * Implements hook_block_info().
+ */
+function os2intra_homebox_block_info() {
+  $blocks['os2intra_homebox_custom'] = array(
+    'info' => t('OS2Intra Homebox custom block'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function os2intra_homebox_block_view($delta = '', $block) {
+  switch ($delta) {
+    case 'os2intra_homebox_custom':
+      return array(
+        'subject' => isset($block->title_custom) ? strip_tags($block->title_custom) : t('Custom block'),
+        'content' => isset($block->content) ? filter_xss_admin(_filter_autop($block->content['value'])) : t('Click the gear icon to edit.'),
+      );
+  }
+}
+
+function os2intra_homebox_homebox_block_keys() {
+  return array('title_custom', 'content');
+}
+
+function os2intra_homebox_homebox_block_edit_form($block) {
+  $form = array();
+
+  $form['title_custom'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Title'),
+    '#size' => 25,
+    '#default_value' => isset($block->title_custom) ? $block->title_custom : '',
+    '#required' => TRUE,
+  );
+  $form['content'] = array(
+    '#type' => 'text_format',
+    '#title' => t('Content'),
+    '#default_value' => isset($block->content) ? $block->content['value'] : '',
+    '#required' => TRUE,
+  );
+
+  return $form;
+}

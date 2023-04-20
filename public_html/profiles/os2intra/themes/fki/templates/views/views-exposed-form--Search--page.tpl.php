@@ -51,7 +51,7 @@
 		<input class="form-control form-text" type="text" id="edit-search-api-views-fulltext" name="search_api_views_fulltext" placeholder="Søg" size="40" maxlength="128">
 		<span class="input-group-btn">
 		    <button type="submit" class="btn btn-secondary">
-			<span class="icon"></span>
+			<span class="icon fa fa-search"></span>
 		    </button>
 		</span>
 	    </div>

@@ -19,6 +19,8 @@
   ?>
   <!-- node.tpl.php -->
   <!-- Begin - full node -->
+
+
   <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> os2-node-full"<?php print $attributes; ?>>
 
     <?php if (isset($content['field_os2intra_images'])): ?>

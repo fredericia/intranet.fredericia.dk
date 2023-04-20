@@ -342,7 +342,27 @@ function fki_theme(&$existing, $type, $theme, $path) {
  * Implements template_preprocess_taxonomy_term().
  */
 function fki_preprocess_taxonomy_term(&$variables) {
-  $term = $variables['term'];
+  // Adding redirect for os2web_base_tax_site_structure, if term is only related
+  // with one node, has empty body and no children.
+  if ($variables['vocabulary_machine_name'] == 'os2web_base_tax_site_structure'
+    && $variables['view_mode'] == 'full' && empty(trim($variables['description']))) {
+
+    if (count(taxonomy_get_children($variables['tid'])) === 0) {
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'os2intra_base_page')
+        ->propertyCondition('status', NODE_PUBLISHED)
+        ->fieldCondition('field_os2intra_base_structure', 'tid', $variables['tid']);
+
+      $result = $query->execute();
+      if (isset($result['node'])) {
+        $related_nids = array_keys($result['node']);
+        if (count($related_nids) == 1) {
+          drupal_goto('node/' . array_pop($related_nids));
+        }
+      }
+    }
+  }
 
   // Add taxonomy-term--view_mode.tpl.php suggestions.
   $variables['theme_hook_suggestions'][] = 'taxonomy_term__' . $variables['view_mode'];
@@ -467,8 +487,22 @@ function fki_main_navigation_search_form($variables) {
   $output = '<div class="input-group">';
   $output .= $variables['element']['#children'];
   $output .= '<span class="input-group-btn">';
-  $output .= '<button type="submit" class="btn btn-secondary"><span class="icon"></span></button>';
+  $output .= '<button type="submit" class="btn btn-secondary"><span class="icon fa fa-search"></span></button>';
   $output .= '</span>';
   $output .= '</div>';
   return $output;
+}
+
+function fki_form_system_theme_settings_alter(&$form, &$form_state) {
+  // Add a new field to the theme settings form for uploading an image.
+  $form['fki_image'] = array(
+    '#type' => 'managed_file',
+    '#title' => t('Banner Billede'),
+    '#description' => t('Upload et billede til at blive brugt i banneret.'),
+    '#upload_location' => 'public://fki/images/',
+    '#default_value' => theme_get_setting('fki_image'),
+    '#upload_validators' => array(
+      'file_validate_extensions' => array('gif png jpg jpeg'),
+    ),
+  );
 }

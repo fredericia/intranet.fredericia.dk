@@ -19,11 +19,26 @@
               }
               // Error
               else {
+                bs3Alert.push(Drupal.t('Warning!'), data.msg, 'warning');
+              }
+            });
+          });
+          $('.remove_from_basket > a').on('click', function (event) {
+            event.preventDefault();
+            $(this).closest('.field-item').remove();
+            $.get($(this).attr('href'), function (data) {
+
+              // Success
+              if (data.err == false) {
+                bs3Alert.push(Drupal.t('Success!'), Drupal.t('The page was sucessfully removed from the basket'), 'success');
+                $(this).closest('.field-item').remove();
+              }
+              // Error
+              else {
                 bs3Alert.push(Drupal.t('An error occured'), Drupal.t('Try to refresh the page and try again.'), 'danger');
               }
             });
           });
-
           $.get('/node_basket/basket/status/' + nid, function (data) {
             if (data.err) {
               $('#node-basket-basket').html('<a id="add-to-nodebasket" href="#">' + Drupal.t('Save to basket') + '</a>' + markup);

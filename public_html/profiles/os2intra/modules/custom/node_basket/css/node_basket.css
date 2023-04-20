@@ -51,3 +51,6 @@
 .node-basket .node-basket-basket {}
 .node-basket .node-basket-toolboxes {}
 .node-basket .node-basket-other-toolboxes {}
+.node-node-basket .remove_from_basket {
+  text-align: right;
+}

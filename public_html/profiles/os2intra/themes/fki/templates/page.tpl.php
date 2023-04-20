@@ -32,6 +32,15 @@
 
       </div>
 
+      <!-- Dine favoritter / Favorites -->
+      <?php if (user_is_logged_in()): ?>
+
+        <div class="favorites-wrapper">
+          <a class="favorites-link" href="/content/dine-favoritter"><i class="fa fa-heart" aria-hidden="true"></i>Dine favoritter</a>
+        </div>
+
+      <?php endif; ?>
+
     </div>
     <!-- End - inner wrapper -->
 
@@ -77,6 +86,11 @@
         <?php if (user_is_logged_in()): ?>
           <?php if (isset($find_colleague_block)): ?>
             <!-- Begin - find colleague -->
+          <div class="search-btn-wrapper">
+            <a href="/search/node" class="search-btn">
+              Søg <i class="fa fa-search"></i>
+            </a>
+          </div>
             <div class="popover-button popover-button-find-colleague">
               <a href="#" class="popover-button-toggle"><?php print t('Find colleague'); ?></a>
 
@@ -84,6 +98,17 @@
                 <?php print render($find_colleague_block['content']); ?>
               </div>
             </div>
+            <div class="user-group-btn-wrapper" style="right: -52px;">
+              <button class="user-group-btn" style="line-height: 1.2;">Min afdeling</button>
+              <?php if (isset($main_navigation_secondary)): ?>
+                <div class="usergroup-dropdown">
+                  <?php print render($main_navigation_secondary); ?>
+                </div>
+              <?php endif; ?>
+            </div>
+          <div class="my-profile-btn-wrapper">
+            <a href="/user" class="my-profile-btn">Min profil</a>
+          </div>
             <!-- End - find colleague -->
           <?php endif ?>
         <?php endif ?>
@@ -93,34 +118,33 @@
         </div>
 
         <?php if (user_is_logged_in()): ?>
-          <!-- Begin - main navigation -->
-          <nav class="main-navigation-wrapper">
-            <section class="main-navigation-bar">
-              <div class="row">
 
-                <!-- Begin - content -->
-                <div class="col-md-4">
-                  <div class="main-navigation-form">
-                    <?php print render($main_navigation_search); ?>
-                  </div>
-                </div>
-                <!-- End - content -->
-
-                <!-- Begin - content -->
-                <?php if (isset($main_navigation_secondary)): ?>
-                  <div class="col-md-8 main-navigation-right">
-
-                    <!-- Begin - navigation -->
-                    <?php print render($main_navigation_secondary); ?>
-                    <!-- End - navigation -->
-
-                  </div>
-                <?php endif; ?>
-                <!-- End - content -->
-
-              </div>
-            </section>
-          </nav>
+<!--         <nav class="main-navigation-wrapper">-->
+<!--            <section class="main-navigation-bar">-->
+<!--              <div class="row">-->
+<!---->
+<!--                -->
+<!--                <div class="col-md-4">-->
+<!--                  <div class="main-navigation-form">-->
+<!--                    --><?php ///*print render($main_navigation_search); */?>
+<!--                  </div>-->
+<!--                </div>-->
+<!--                -->
+<!--                -->
+<!--                --><?php ///*if (isset($main_navigation_secondary)): */?>
+<!--                  <div class="col-md-8 main-navigation-right">-->
+<!---->
+<!--                    -->
+<!--                    --><?php ///*print render($main_navigation_secondary); */?>
+<!--                    -->
+<!---->
+<!--                  </div>-->
+<!--                --><?php ///*endif; */?>
+<!--               -->
+<!---->
+<!--              </div>-->
+<!--            </section>-->
+<!--          </nav>-->
           <!-- End - main navigation -->
         <?php endif; ?>
 

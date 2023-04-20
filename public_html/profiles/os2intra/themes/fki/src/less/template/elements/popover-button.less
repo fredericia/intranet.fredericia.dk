@@ -20,6 +20,7 @@
 // Styling
 // --------------------------------------------------
 
+
 // --------------------------------------------------
 // Variants
 // --------------------------------------------------
@@ -30,6 +31,26 @@
 
 // Mobile
 @media @media-query-mobile {
+
+  .usergroup-dropdown {
+    position: static;
+    display: none;
+    margin-top: 20px;
+  }
+
+  .my-profile-btn-wrapper, .user-group-btn-wrapper, .search-btn-wrapper {
+    display: block;
+    margin-bottom: 20px;
+
+    .my-profile-btn, .user-group-btn, .search-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      color: white;
+      background-color: @brand-primary;
+      padding: 10px 0;
+    }
+  }
 
 	// Popover button
 	.popover-button {
@@ -74,6 +95,103 @@
 
 // Tablet
 @media @media-query-tablet {
+
+  .usergroup-dropdown {
+    position: absolute;
+    right: 100px;
+    top: -50px;
+    background-color: #00335b;
+    border-radius: 5px;
+    display: none;
+
+    .menu {
+      .main-navigation-list {
+        padding: 20px;
+
+        .main-navigation-list-dropdown {
+          list-style: none;
+          a{
+            color: white !important;
+          }
+          .main-navigation-list-dropdown-menu {
+            .main-navigation-list-link {
+              list-style: none;
+              color: white;
+
+              a {
+                color: white !important;
+              }
+
+              a:hover {
+                text-decoration: underline;
+                color: white !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .search-btn-wrapper {
+    position: absolute;
+    right: -23px;
+    top: 40px;
+    z-index: 2004;
+
+    .search-btn {
+      padding: 5px 15px;
+      background-color: #00335b;
+      color: white;
+      border-radius: 4px;
+      transform: rotate(90deg);
+      display: block;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+
+    }
+  }
+
+  .user-group-btn-wrapper {
+    position: absolute;
+    right: -51px;
+    top: 310px;
+    z-index: 2004;
+
+    .user-group-btn {
+      display: block;
+      transform: rotate(90deg);
+      color: white;
+      background-color: #00335b;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 5px 15px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+    .my-profile-btn-wrapper {
+      position: absolute;
+      right: -41px;
+      top: 441px;
+      z-index: 2004;
+
+      .my-profile-btn {
+        display: block;
+        transform: rotate(90deg);
+        color: white;
+        background-color: #00335b;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px 15px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
 
 	// Popover button
 	.popover-button {

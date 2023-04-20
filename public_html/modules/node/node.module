@@ -2833,21 +2833,23 @@ function node_form_search_form_alter(&$form, $form_state) {
       '#size' => 30,
       '#maxlength' => 255,
     );
-    $form['advanced']['keywords']['negative'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Containing none of the words'),
-      '#size' => 30,
-      '#maxlength' => 255,
-    );
+//    $form['advanced']['keywords']['negative'] = array(
+//      '#type' => 'textfield',
+//      '#title' => t('Containing none of the words'),
+//      '#size' => 30,
+//      '#maxlength' => 255,
+//    );
 
     // Node types:
     $types = array_map('check_plain', node_type_get_names());
+    $exclude = array('os2intra_canteen_menu', 'it_vejledning', 'node_basket', 'os2intra_referat', 'os2web_base_selfservice_link', 'webform', 'spotbox', 'os2intra_message_notification', 'wiki', 'event');// node types to exclude
+    $types_filtered = array_diff_key($types, array_flip($exclude)); // remove excluded node types
     $form['advanced']['type'] = array(
       '#type' => 'checkboxes',
       '#title' => t('Only of the type(s)'),
       '#prefix' => '<div class="criterion">',
       '#suffix' => '</div>',
-      '#options' => $types,
+      '#options' => $types_filtered,
     );
     $form['advanced']['submit'] = array(
       '#type' => 'submit',
