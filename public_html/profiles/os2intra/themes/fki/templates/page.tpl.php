@@ -101,7 +101,7 @@
             <div class="user-group-btn-wrapper" style="right: -52px;">
               <button class="user-group-btn" style="line-height: 1.2;">Min afdeling</button>
               <?php if (isset($main_navigation_secondary)): ?>
-                <div class="usergroup-dropdown">
+                <div class="usergroup-dropdown" style="display: none;">
                   <?php print render($main_navigation_secondary); ?>
                 </div>
               <?php endif; ?>
