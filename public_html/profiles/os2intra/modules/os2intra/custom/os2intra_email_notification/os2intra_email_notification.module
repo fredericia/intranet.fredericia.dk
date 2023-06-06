@@ -53,6 +53,9 @@ function os2intra_email_notification_node_update($node) {
   if (!og_is_group_content_type('node', $bundle)) {
     return;
   }
+  if (variable_get('os2intra_groups_node_type') == $bundle) {
+   return;
+  }
 
   entity_get_controller('node')->resetCache(array($node->nid));
 
