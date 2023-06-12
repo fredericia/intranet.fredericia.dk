@@ -220,19 +220,3 @@
 </div>
 <!-- End - outer wrapper -->
 
-<script type="text/javascript">
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const groupBtn = document.querySelector('.user-group-btn');
-    const menuElement = document.querySelector('.usergroup-dropdown');
-
-    groupBtn.addEventListener('click', (event) => {
-      if (menuElement.style.display == 'none') {
-        menuElement.style.display = 'block';
-      } else {
-        menuElement.style.display = 'none';
-      }
-    });
-  });
-
-</script>
