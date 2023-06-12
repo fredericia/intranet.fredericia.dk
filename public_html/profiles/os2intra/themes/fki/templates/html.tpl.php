@@ -37,6 +37,22 @@
   <meta name="msapplication-TileImage" content="<?php print $path_img; ?>/icons/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
   <!-- End - icons -->
+  <script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const groupBtn = document.querySelector('.user-group-btn');
+      const menuElement = document.querySelector('.usergroup-dropdown');
+
+      groupBtn.addEventListener('click', (event) => {
+        if (menuElement.style.display == 'block') {
+          menuElement.style.display = 'none';
+        } else {
+          menuElement.style.display = 'block';
+        }
+      });
+    });
+
+  </script>
 
 </head>
 <body class="<?php print $classes; ?>"<?php print $attributes; ?>>
