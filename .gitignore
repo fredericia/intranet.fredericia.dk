@@ -49,7 +49,7 @@ share
 import
 private
 others
-simplesamlphp
+simplesamlphp*
 /public_html/sites/all/translations
 /bi
 /bi_pdf*
