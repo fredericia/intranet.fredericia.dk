@@ -1,5 +1,26 @@
 <?php
 
+function os2intra_email_notification_form_os2intra_settings_settings_form_alter(&$form, &$form_state, $form_id) {
+
+  $form['os2intra_email_notification'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Email notification'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+
+  $form['os2intra_email_notification']['os2intra_email_notification_node_insert'] = array(
+    '#title' => t('Enable users notification on node insert'),
+    '#type' => 'checkbox',
+    '#default_value' => variable_get('os2intra_email_notification_node_insert', true),
+  );
+  $form['os2intra_email_notification']['os2intra_email_notification_node_update'] = array(
+    '#title' => t('Enable users notification on node update'),
+    '#type' => 'checkbox',
+    '#default_value' => variable_get('os2intra_email_notification_node_update', false),
+  );
+}
+
 /**
  * Implements hook_node_insert() */
 
@@ -10,6 +31,9 @@ function os2intra_email_notification_node_insert($node) {
     return;
   }
 
+  if (variable_get('os2intra_email_notification_node_insert', true) == false) {
+    return;
+  }
   entity_get_controller('node')->resetCache(array($node->nid));
 
   
@@ -57,6 +81,10 @@ function os2intra_email_notification_node_update($node) {
    return;
   }
 
+  if (variable_get('os2intra_email_notification_node_update', false) == false) {
+    return;
+  }
+  
   entity_get_controller('node')->resetCache(array($node->nid));
 
 
