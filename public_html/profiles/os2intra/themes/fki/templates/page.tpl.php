@@ -87,7 +87,7 @@
           <?php if (isset($find_colleague_block)): ?>
             <!-- Begin - find colleague -->
           <div class="search-btn-wrapper">
-            <a href="/search/node" class="search-btn">
+            <a href="/search" class="search-btn">
               Søg <i class="fa fa-search"></i>
             </a>
           </div>
