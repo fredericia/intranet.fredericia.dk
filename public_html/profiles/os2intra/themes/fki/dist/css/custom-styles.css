@@ -1,0 +1,35 @@
+.os2-box:has(#views-exposed-form-multiindex-search-page) {
+    background-color: transparent;
+}
+
+.os2-box:has(#views-exposed-form-multiindex-search-page) > .os2-box-heading {
+    background-color: transparent !important;
+}
+
+.os2-box:has(#views-exposed-form-multiindex-search-page) .os2-box-heading-title {
+    color: #00335b !important;
+}
+
+.views-widget-filter-search_api_views_fulltext .views-widget {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+
+}
+
+.views-widget-filter-search_api_views_fulltext .views-widget #edit-search-api-views-fulltext {
+    height: 50px;
+    background-color: white;
+    border: 1px solid #ededed;
+}
+
+.views-widget-filter-search_api_views_fulltext .views-widget .input-group-btn button {
+    height: 50px;
+}
+
+.view-multiindex-search .view-header {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}

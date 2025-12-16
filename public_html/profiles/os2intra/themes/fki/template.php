@@ -10,6 +10,9 @@ function fki_preprocess_html(&$variables) {
   drupal_add_css($theme_path . '/dist/css/stylesheet.css', array(
     'group' => CSS_THEME,
   ));
+  drupal_add_css($theme_path . '/dist/css/custom-styles.css', array(
+    'group' => CSS_THEME,
+  ));
   drupal_add_js($theme_path . '/dist/js/modernizr.js', array(
     'group' => JS_LIBRARY,
   ));
