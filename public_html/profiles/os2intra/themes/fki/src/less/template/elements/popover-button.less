@@ -38,11 +38,11 @@
     margin-top: 20px;
   }
 
-  .my-profile-btn-wrapper, .user-group-btn-wrapper, .search-btn-wrapper {
+  .my-profile-btn-wrapper, .user-group-btn-wrapper, .search-btn-wrapper, .ai-btn-wrapper {
     display: block;
     margin-bottom: 20px;
 
-    .my-profile-btn, .user-group-btn, .search-btn {
+    .my-profile-btn, .user-group-btn, .search-btn, .ai-btn {
       display: block;
       width: 100%;
       text-align: center;
@@ -156,7 +156,7 @@
   .user-group-btn-wrapper {
     position: absolute;
     right: -51px;
-    top: 310px;
+    top: 425px;
     z-index: 2004;
 
     .user-group-btn {
@@ -176,7 +176,7 @@
     .my-profile-btn-wrapper {
       position: absolute;
       right: -41px;
-      top: 441px;
+      top: 554px;
       z-index: 2004;
 
       .my-profile-btn {
@@ -184,6 +184,26 @@
         transform: rotate(90deg);
         color: white;
         background-color: #00335b;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px 15px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+
+    .ai-btn-wrapper {
+      position: absolute;
+      right: -42px;
+      top: 297px;
+      z-index: 2004;
+
+      .ai-btn {
+        display: block;
+        transform: rotate(90deg);
+        color: white;
+        background-color: #196620;
         border-radius: 4px;
         text-transform: uppercase;
         font-weight: bold;

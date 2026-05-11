@@ -98,13 +98,16 @@
                 <?php print render($find_colleague_block['content']); ?>
               </div>
             </div>
-            <div class="user-group-btn-wrapper" style="right: -52px;">
+            <div class="user-group-btn-wrapper" style="right: -51px;">
               <button class="user-group-btn" style="line-height: 1.2;">Min afdeling</button>
               <?php if (isset($main_navigation_secondary)): ?>
                 <div class="usergroup-dropdown" style="display: none;">
                   <?php print render($main_navigation_secondary); ?>
                 </div>
               <?php endif; ?>
+            </div>
+            <div class="ai-btn-wrapper">
+              <a href="https://promte.fredericia.dk/" class="ai-btn">ChatBotAI</a>
             </div>
           <div class="my-profile-btn-wrapper">
             <a href="/user" class="my-profile-btn">Min profil</a>
