@@ -16815,6 +16815,18 @@ a.group.unsubscribe .icon {
     background-color: #00335b;
     padding: 10px 0;
   }
+  .my-profile-btn-wrapper .ai-btn,
+  .user-group-btn-wrapper .ai-btn,
+  .search-btn-wrapper .ai-btn,
+  .ai-btn-wrapper .ai-btn {
+    background-color: #196620;
+  }
+  .my-profile-btn-wrapper .user-group-btn,
+  .user-group-btn-wrapper .user-group-btn,
+  .search-btn-wrapper .user-group-btn,
+  .ai-btn-wrapper .user-group-btn {
+    border: 0;
+  }
   .popover-button {
     display: block;
     margin-bottom: 20px;
@@ -16965,10 +16977,11 @@ a.group.unsubscribe .icon {
     transform: rotate(90deg);
     color: white;
     background-color: #00335b;
+    border: 0;
     border-radius: 4px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 5px 15px;
+    padding: 6px 15px;
     text-decoration: none;
     cursor: pointer;
   }
