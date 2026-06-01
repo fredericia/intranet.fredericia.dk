@@ -38,3 +38,13 @@
     line-height: normal !important;
     border: none;
 }
+
+@media screen and (max-width: 767px) {
+    .ai-btn-wrapper .ai-btn {
+        background-color: #196620;
+    }
+}
+
+.ai-btn-wrapper {
+    right: -39px !important;
+}
