@@ -121,7 +121,7 @@
             <?php endif; ?>
           </div>
           <div class="ai-btn-wrapper">
-              <a href="https://promte.fredericia.dk/" class="ai-btn">ChatBotAI</a>
+              <a href="https://promte.fredericia.dk/" class="ai-btn">FredeChat</a>
             </div>
             <div class="my-profile-btn-wrapper">
               <a href="/user" class="my-profile-btn">Min profil</a>
